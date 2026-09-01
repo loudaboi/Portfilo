@@ -44,8 +44,10 @@ For v0:
 - no database
 - no authentication
 - no custom CMS
-- no custom newsletter backend
+- no custom newsletter backend beyond the approved single-purpose beehiiv subscription proxy in `functions/api/subscribe.js`
 - static deployment first
+
+The newsletter proxy exists only so Portfilo can render its own accessible signup UI while beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and newsletter operations. Do not expand the proxy into a newsletter platform, subscriber database, account system, or general API layer without a new validated requirement.
 
 React, Vue, Svelte, server rendering, database infrastructure, and application state libraries require a specific current need, not hypothetical scale.
 
