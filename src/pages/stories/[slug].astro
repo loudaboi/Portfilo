@@ -214,9 +214,10 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         --ink: #171614;
         --muted: #69655e;
         --line: #cbc5bb;
-        --accent: #5635c8;
-        --accent-soft: #ebe5ff;
-        --accent-on-ink: #b8a9ff;
+        --accent: #0050a4;
+        --accent-on-ink: #8fc7ff;
+        --correction: #b42318;
+        --correction-soft: #f6e7e3;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
         --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
@@ -588,12 +589,12 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         display: grid;
         grid-template-columns: 2fr 6fr;
         gap: 1.5rem;
-        border-top: 3px solid var(--accent);
-        background: var(--accent-soft);
+        border-top: 3px solid var(--correction);
+        background: var(--correction-soft);
       }
 
       .correction h2 {
-        color: var(--accent);
+        color: var(--correction);
       }
 
       .correction p {
