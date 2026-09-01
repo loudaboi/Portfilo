@@ -2,7 +2,7 @@
 title: "Portfilo Content Architecture Test: A Deliberately Long Fixture Title for Validating Structured Story Metadata and Routing"
 description: "A synthetic development fixture used only to validate Portfilo's content schema, optional metadata, Markdown rendering, and static story route."
 contentType: explained
-topic: work
+topic: business
 author: Portfilo
 publishedAt: 2026-09-02
 updatedAt: 2026-09-02
