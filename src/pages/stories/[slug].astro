@@ -47,13 +47,23 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f0e8" />
+    <link rel="icon" href="/brand/portfilo-mark.svg" type="image/svg+xml" />
     <title>{title} | Portfilo</title>
   </head>
   <body>
     <a class="skip-link" href="#story-body">Skip to story</a>
 
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">Portfilo</a>
+      <a class="wordmark" href="/" aria-label="Portfilo home">
+        <img
+          class="wordmark__mark"
+          src="/brand/portfilo-mark.svg"
+          width="80"
+          height="64"
+          alt=""
+        />
+        <span class="wordmark__text">Portfilo</span>
+      </a>
       <p class="site-header__strapline">
         Practical intelligence for ambitious Filipinos
       </p>
@@ -282,9 +292,23 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
 
       .wordmark {
         width: fit-content;
+        display: inline-flex;
+        align-items: center;
+        gap: clamp(0.45rem, 0.7vw, 0.65rem);
         font: 600 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
         letter-spacing: -0.06em;
         text-decoration: none;
+      }
+
+      .wordmark__mark {
+        display: block;
+        width: clamp(2.15rem, 2.65vw, 2.75rem);
+        height: auto;
+        flex: none;
+      }
+
+      .wordmark__text {
+        display: block;
       }
 
       .site-header__strapline,
