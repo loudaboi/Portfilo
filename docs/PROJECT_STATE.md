@@ -4,9 +4,9 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Research & Standards Page**
+**Portfilo v0 / About Page**
 
-Research & Standards implementation is now committed as a candidate and awaits the required user-run local production build and responsive/browser QA before this phase can close.
+Research & Standards Page is complete after the user-reported final local production build, responsive/browser QA, and explicit approval on 2026-09-02.
 
 Completed phases:
 
@@ -18,8 +18,9 @@ Completed phases:
 - Editorial Taxonomy Alignment
 - Homepage Visual Design
 - Series Page Foundation & Visual Design
+- Research & Standards Page
 
-The story, homepage, and Series visual directions are frozen for v0 unless a concrete implementation problem is discovered.
+The story, homepage, Series, and Research & Standards visual directions are frozen for v0 unless a concrete implementation problem is discovered.
 
 ## Current branch
 
@@ -29,30 +30,32 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Validate the committed public **Research & Standards** surface required by `docs/V0_SCOPE.md`.
+Build the smallest credible public **About** surface required by `docs/V0_SCOPE.md`.
 
-The page explains Portfilo's editorial safeguards in reader-facing language covering sourcing, verification, AI use, corrections, and commercial/editorial separation. It is an institutional public page rather than a copy of the internal workflow standards.
+The About page should explain who Portfilo serves, what it does, and its concise company/editorial thesis in reader-facing language. It should complement the homepage and Standards page without repeating either one as a manifesto.
 
 ## Exact next task
 
-Perform final local validation of `/standards` before closing this phase:
+Perform **About Page Foundation & Implementation** in this order:
 
-1. Pull `build/portfilo-v0`.
-2. Run `npm run build` and require a clean production build.
-3. Confirm `/standards` renders and all five in-page section links work.
-4. Confirm the homepage, published story routes, and `/series/content-architecture-fixtures` still render.
-5. Confirm the draft fixture remains excluded from public story routes.
-6. Review `/standards` at desktop, intermediate/tablet, 390px, and 360px widths.
-7. Check for clipping, horizontal overflow, awkward wrapping, and unreadable long-form measures.
-8. Keyboard-test the skip link, in-page navigation, wordmark, and footer link; visible focus must remain clear.
-9. Confirm reduced-motion behavior does not force smooth scrolling.
-10. Confirm Instrument Sans, Source Serif 4, and IBM Plex Mono load correctly.
-11. Audit the public copy against `docs/COPY_STYLE.md` and the factual promises against the Editorial, Research, and Publishing standards.
-12. Do not mark Research & Standards complete until the user reports that this local build/browser QA passes.
+1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, and `docs/COPY_STYLE.md`.
+2. Inspect the current homepage, story page, Series page, and `/standards` so the About page uses the established Portfilo system rather than creating a parallel design language.
+3. Define the minimum public information architecture needed to explain:
+   - who Portfilo serves;
+   - what Portfilo covers and does;
+   - why the Philippine context matters to the publication;
+   - a concise company/editorial thesis.
+4. Keep the copy concrete and reader-facing. Do not expose internal project phases, content architecture, implementation language, or inflated brand claims.
+5. Follow `docs/COPY_STYLE.md`: clear before clever, useful before self-descriptive, familiar language, no generic trust/mission marketing, and no decorative Filipino identity language.
+6. Preserve the frozen visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, blue editorial/evidence accents, red only for wordmark/correction semantics, twelve-column grid, restrained rules, and first-class mobile layout.
+7. Give the About page its own editorial composition rather than duplicating the homepage hero or turning the page into cards.
+8. Use semantic HTML, visible keyboard focus, a skip link, and reduced-motion-safe behavior.
+9. Keep static Astro output and avoid client-side JavaScript unless a real interaction requires it.
+10. Run production build plus desktop/mobile/browser QA before marking the phase complete.
 
-After Research & Standards passes final local QA, the exact next phase is **Portfilo v0 / About Page Foundation & Implementation**.
+After About passes final local QA, the exact next phase is **Portfilo v0 / Subscribe Surface & beehiiv Integration**.
 
-Do not begin About, Subscribe integration, analytics, deployment, or editorial launch research until this phase is complete.
+Do not begin Subscribe integration, analytics, deployment, or editorial launch research until the About phase is complete.
 
 ## Portfilo editorial direction
 
@@ -203,7 +206,7 @@ User-reported PASS on 2026-09-02:
 
 **Series Page Foundation & Visual Design is formally closed.**
 
-## Research & Standards Page — IMPLEMENTED / QA PENDING
+## Research & Standards Page — COMPLETE
 
 ### Route
 
@@ -223,7 +226,7 @@ It translates the canonical internal standards into five reader-facing sections:
 4. Corrections
 5. Commercial independence
 
-The public copy was constrained to commitments already supported by `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
+The public copy is constrained to commitments supported by `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
 
 The page does not publish internal research-packet mechanics or evidence-ledger workflow as reader-facing policy.
 
@@ -249,29 +252,23 @@ No global component refactor was introduced during this phase because no current
 
 - `df26a6df07e17324a5af7d78c018866544745e9b` — initial public Research & Standards page
 - `70c4a593aa828078c60b402510076b02eaaf4bea` — conservative responsive/CSS compatibility refinement
+- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` — record implementation candidate and local QA gate
 
-A compare against the pre-phase head `8f2ec076d9cac7ac86336148849265757d11103c` confirmed that these implementation commits add only `src/pages/standards.astro`; the frozen homepage, story route, Series route, content schema, and fixtures were not modified.
+### Final validation
 
-### Validation status
+User-reported PASS on 2026-09-02:
 
-Completed in the connected-repository environment:
+- `npm run build` passed with Astro static output;
+- six pages built successfully in the supplied production-build output;
+- `/standards/index.html` generated successfully;
+- homepage generated successfully;
+- `/series/content-architecture-fixtures` generated successfully;
+- the three published story fixtures generated successfully;
+- the draft fixture was absent from generated public story routes, preserving draft filtering;
+- responsive/browser QA passed;
+- final Research & Standards appearance explicitly approved.
 
-- repository/branch verification;
-- committed-file inspection;
-- scope/copy audit against the canonical standards;
-- changed-file comparison confirming no existing implementation file was modified.
-
-Not completed in this environment:
-
-- `npm run build`;
-- rendered browser review;
-- viewport inspection at desktop, tablet, 390px, and 360px;
-- live keyboard/focus test;
-- live font-load verification.
-
-Reason: the connected GitHub repository does not provide an executable repository shell, while the separate local runtime available to the assistant does not contain Astro and has no network access to install it. These checks remain mandatory and are intentionally not recorded as PASS.
-
-**Do not close this phase until the user reports the final local production build and browser QA pass.**
+**Research & Standards Page is formally closed.**
 
 ## Zero-budget infrastructure posture
 
@@ -288,8 +285,8 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- About page — next phase after Research & Standards approval
-- Subscribe surface / beehiiv integration
+- About page — current phase
+- Subscribe surface / beehiiv integration — next after About
 - analytics
 - deployment
 - editorial launch research
@@ -310,7 +307,8 @@ Use free tiers while sufficient for v0 validation.
 | Editorial Taxonomy Alignment | PASS |
 | Homepage Visual Design | PASS |
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
-| Research & Standards Page | IMPLEMENTED — final local production build + responsive/browser QA pending |
+| Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
+| About Page | NOT STARTED — current phase |
 
 ## Phase handoff rule
 
