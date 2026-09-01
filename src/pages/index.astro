@@ -2,25 +2,25 @@
 const latestFixtures = [
   {
     number: "02.1",
-    contentType: "Guide",
-    topic: "Skills",
-    title: "What makes a skill worth learning now?",
+    contentType: "Analysis",
+    topic: "Technology",
+    title: "What does an AI product need before a company will pay for it?",
     description:
-      "A design preview for a practical guide. No reported findings are being presented.",
+      "A design preview for a technology analysis. No reported findings are being presented.",
   },
   {
     number: "02.2",
-    contentType: "Analysis",
-    topic: "Money",
-    title: "When is a higher salary actually a better deal?",
+    contentType: "Profile",
+    topic: "Founders",
+    title: "What can you learn from how a founder chooses the first market?",
     description:
-      "A design preview for an analysis story. No real-world claim is being made.",
+      "A design preview for a founder profile. No real person or company is being represented.",
   },
   {
     number: "02.3",
     contentType: "Field notes",
     topic: "Building",
-    title: "What do you learn by building something on the side?",
+    title: "How do you know when a product is ready to charge for?",
     description:
       "A design preview for field notes. This is not a published Portfilo story.",
   },
@@ -56,7 +56,7 @@ const latestFixtures = [
 
     <main id="main-content" tabindex="-1">
       <section class="identity" aria-labelledby="identity-title">
-        <p class="identity__eyebrow">Work / Money / Skills / Building / Life</p>
+        <p class="identity__eyebrow">Business / Technology / Founders / Building / Capital</p>
 
         <h1 id="identity-title">
           Practical intelligence
@@ -65,9 +65,9 @@ const latestFixtures = [
 
         <div class="identity__note">
           <p>
-            Portfilo looks closely at work, money, skills, building, and life in
-            the Philippines. We do the digging, show our work, and make the useful
-            part clear.
+            Portfilo explains how businesses, technology, founders, and markets
+            work in the Philippines. We report what happened, show the evidence,
+            and make the useful part clear.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const latestFixtures = [
       <section class="feature-section" aria-labelledby="feature-title">
         <header class="section-head">
           <p>01 / Feature preview</p>
-          <p>Explained / Work</p>
+          <p>Explained / Business</p>
           <p>Not published</p>
         </header>
 
@@ -92,11 +92,11 @@ const latestFixtures = [
           <div class="feature__copy">
             <p class="story-label">Feature preview / Not published</p>
             <h2 id="feature-title">
-              What should you know before making a big career move?
+              What should a founder know before entering a crowded market?
             </h2>
             <p class="feature__dek">
               A homepage design preview, not a published Portfilo story. It is here
-              to test how a real feature will read and feel.
+              to test how a real business feature will read and feel.
             </p>
             <dl class="feature__meta">
               <div>
@@ -105,7 +105,7 @@ const latestFixtures = [
               </div>
               <div>
                 <dt>Topic</dt>
-                <dd>Work</dd>
+                <dd>Business</dd>
               </div>
               <div>
                 <dt>Status</dt>
@@ -179,17 +179,17 @@ const latestFixtures = [
         <div class="institution__statement">
           <h2 id="institution-title">Clear enough to use. Careful enough to trust.</h2>
           <p>
-            No hustle sermons. No recycled advice pasted onto the Philippines.
-            Portfilo reports, explains, checks the evidence, and says when the
-            answer is still uncertain.
+            Portfilo follows the businesses, technologies, founders, markets, and
+            decisions shaping what gets built in the Philippines. We report what
+            happened, explain how it works, and show what the evidence can support.
           </p>
         </div>
-        <ul class="institution__topics" aria-label="Portfilo editorial topics">
-          <li>Work</li>
-          <li>Money</li>
-          <li>Skills</li>
+        <ul class="institution__topics" aria-label="Portfilo editorial areas">
+          <li>Business</li>
+          <li>Technology</li>
+          <li>Founders</li>
           <li>Building</li>
-          <li>Life</li>
+          <li>Capital</li>
         </ul>
       </section>
 
@@ -396,7 +396,7 @@ const latestFixtures = [
       }
 
       .identity__eyebrow {
-        grid-column: 1 / 4;
+        grid-column: 1 / 5;
         margin: 0.55rem 0 0;
         color: var(--muted);
         font: 400 0.67rem/1.4 var(--mono);
@@ -718,6 +718,15 @@ const latestFixtures = [
         text-transform: uppercase;
       }
 
+      .institution__index::before {
+        content: "";
+        display: block;
+        width: 2.6rem;
+        height: 3px;
+        margin-bottom: 0.9rem;
+        background: var(--correction);
+      }
+
       .institution__statement {
         grid-column: 4 / 11;
       }
@@ -774,7 +783,7 @@ const latestFixtures = [
       .newsletter__label {
         grid-column: 1 / 4;
         padding-top: 0.7rem;
-        border-top: 1px solid var(--ink);
+        border-top: 3px solid var(--correction);
         font: 400 0.64rem/1.5 var(--mono);
         letter-spacing: 0.08em;
         text-transform: uppercase;
