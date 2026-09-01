@@ -1,0 +1,976 @@
+---
+const topics = [
+  {
+    number: "01",
+    name: "Business",
+    description: "Companies, industries, markets, business models, economics, and strategy.",
+  },
+  {
+    number: "02",
+    name: "Technology",
+    description: "Software, fintech, infrastructure, platforms, devices, and emerging technology.",
+  },
+  {
+    number: "03",
+    name: "Startups",
+    description: "New companies, funding, growth, failure, acquisitions, and early-stage development.",
+  },
+  {
+    number: "04",
+    name: "AI",
+    description: "Models, products, adoption, infrastructure, economics, policy, and effects on work and companies.",
+  },
+  {
+    number: "05",
+    name: "Building",
+    description: "Product, distribution, sales, pricing, hiring, operations, and the practical work of creating.",
+  },
+] as const;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="About Portfilo, a Philippine business and technology publication for ambitious Filipinos."
+    />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>About | Portfilo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Portfilo home">
+        <span class="wordmark__inner">
+          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
+        </span>
+      </a>
+      <p class="site-header__strapline">
+        Practical intelligence for ambitious Filipinos
+      </p>
+      <p class="site-header__section">About</p>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="about-hero" aria-labelledby="about-title">
+        <p class="about-kicker">About Portfilo</p>
+
+        <h1 id="about-title">
+          A Philippine publication about business, technology, and building.
+        </h1>
+
+        <p class="about-intro">
+          Portfilo helps readers understand companies, markets, startups, AI, and
+          the practical work behind building in the Philippines. We focus on questions
+          where reporting and evidence can make the answer more useful.
+        </p>
+
+        <div class="about-positioning" aria-label="Portfilo positioning">
+          <span>Portfilo</span>
+          <strong>Practical intelligence for ambitious Filipinos.</strong>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="work-title">
+        <header class="section-head">
+          <p>01 / What we do</p>
+          <p>Coverage</p>
+        </header>
+
+        <div class="section-layout">
+          <div class="section-title">
+            <h2 id="work-title">Follow the questions that affect what gets built.</h2>
+          </div>
+
+          <div class="section-copy">
+            <p>
+              Portfilo reports and explains business, technology, startups, AI, and
+              the work of building companies and products. The aim is to make an
+              important question clearer without making the evidence say more than it
+              does.
+            </p>
+            <p>
+              Stories may report what happened, explain how something works, examine
+              a company or market, or help a reader think through a practical decision.
+              The format can change. The standard for useful, specific work does not.
+            </p>
+          </div>
+        </div>
+
+        <ol class="topic-list" aria-label="Portfilo coverage areas">
+          {
+            topics.map((topic) => (
+              <li>
+                <p class="topic-list__number">{topic.number}</p>
+                <h3>{topic.name}</h3>
+                <p>{topic.description}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="reader-section" aria-labelledby="reader-title">
+        <div class="reader-section__inner">
+          <p class="reader-section__index">02 / Who it is for</p>
+
+          <div class="reader-section__statement">
+            <h2 id="reader-title">
+              For readers who need more than a generic answer.
+            </h2>
+            <p>
+              Portfilo is for ambitious Filipinos trying to understand the companies,
+              technologies, markets, and decisions shaping what gets built. You do not
+              need to be a founder to belong here. You need a reason to understand the
+              subject clearly.
+            </p>
+          </div>
+
+          <aside class="reader-section__note" aria-label="Audience principle">
+            <p>Reader principle</p>
+            <strong>Useful before impressive.</strong>
+          </aside>
+        </div>
+      </section>
+
+      <section class="about-section context-section" aria-labelledby="context-title">
+        <header class="section-head">
+          <p>03 / Philippine context</p>
+          <p>Why place matters</p>
+        </header>
+
+        <div class="section-layout">
+          <div class="section-title">
+            <h2 id="context-title">Context can change the answer.</h2>
+          </div>
+
+          <div class="section-copy">
+            <p>
+              A global business or technology idea can look different once it meets
+              Philippine prices, regulation, infrastructure, distribution, payments,
+              labor markets, financing, geography, and consumer behavior.
+            </p>
+            <p>
+              Portfilo uses Philippine context when it materially changes the question
+              or conclusion. We do not force a local angle when it adds nothing.
+            </p>
+          </div>
+
+          <aside class="context-note" aria-label="Context principle">
+            <p>What matters</p>
+            <ul>
+              <li>What changes locally?</li>
+              <li>What stays true?</li>
+              <li>What does the evidence support?</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="about-section standards-bridge" aria-labelledby="standards-title">
+        <header class="section-head">
+          <p>04 / How we work</p>
+          <p>Research & Standards</p>
+        </header>
+
+        <div class="standards-bridge__layout">
+          <div>
+            <h2 id="standards-title">Reporting before conclusion.</h2>
+          </div>
+
+          <div class="standards-bridge__copy">
+            <p>
+              We prefer primary sources where they are available, verify consequential
+              claims, preserve important uncertainty, and correct material factual
+              errors visibly. AI can assist with research and writing, but it is not a
+              source, evidence, or verification.
+            </p>
+            <a href="/standards">
+              Read Research & Standards <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="founder-note" aria-label="Founder">
+        <p>Founded by</p>
+        <strong>Louda Tuppal</strong>
+        <p>Portfilo is being built as an independent Philippine publication.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand" aria-label="Portfilo">
+        <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
+      </div>
+      <p>Practical intelligence for ambitious Filipinos</p>
+      <a href="/">Back to home</a>
+    </footer>
+
+    <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400 700;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2")
+          format("woff2-variations");
+      }
+
+      @font-face {
+        font-family: "Source Serif 4";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200 900;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2")
+          format("woff2-variations");
+      }
+
+      @font-face {
+        font-family: "IBM Plex Mono";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2")
+          format("woff2");
+      }
+
+      :global(:root) {
+        --paper: #f4f0e8;
+        --ink: #171614;
+        --muted: #69655e;
+        --line: #cbc5bb;
+        --accent: #0050a4;
+        --accent-on-ink: #8fc7ff;
+        --correction: #b42318;
+        --page-max: 100rem;
+        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
+        --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
+        --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+        --serif: "Source Serif 4", Georgia, serif;
+        --mono: "IBM Plex Mono", "Courier New", monospace;
+      }
+
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-synthesis: none;
+      }
+
+      :global(body) {
+        margin: 0;
+        min-width: 0;
+        background: var(--paper);
+      }
+
+      :global(a) {
+        color: inherit;
+      }
+
+      :global(a:focus-visible) {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      :global(#main-content:focus) {
+        outline: none;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.65rem 0.8rem;
+        background: var(--ink);
+        color: var(--paper);
+        font: 400 0.75rem/1 var(--mono);
+        text-decoration: none;
+        transform: translateY(-200%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header,
+      .about-hero,
+      .about-section,
+      .reader-section__inner,
+      .founder-note,
+      .site-footer {
+        width: min(100%, var(--page-max));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        padding: 1.05rem var(--gutter) 0.95rem;
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        gap: var(--grid-gap);
+        align-items: end;
+        border-bottom: 1px solid var(--ink);
+      }
+
+      .wordmark {
+        width: fit-content;
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      .wordmark__inner {
+        display: inline-block;
+        white-space: nowrap;
+        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
+        letter-spacing: -0.085em;
+        transform: skewX(-12deg);
+        transform-origin: left center;
+      }
+
+      .wordmark__port,
+      .wordmark__fi,
+      .wordmark__lo,
+      .site-footer__port,
+      .site-footer__fi,
+      .site-footer__lo {
+        display: inline-block;
+      }
+
+      .wordmark__port,
+      .site-footer__port {
+        color: var(--ink);
+      }
+
+      .wordmark__fi,
+      .site-footer__fi {
+        color: var(--accent);
+      }
+
+      .wordmark__lo,
+      .site-footer__lo {
+        color: var(--correction);
+      }
+
+      .site-header__strapline,
+      .site-header__section {
+        margin: 0;
+        color: var(--muted);
+        font: 400 0.68rem/1.35 var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .site-header__strapline {
+        text-align: center;
+      }
+
+      .site-header__section {
+        color: var(--ink);
+        text-align: right;
+      }
+
+      .about-hero {
+        padding: clamp(3.8rem, 7vw, 7.5rem) var(--gutter)
+          clamp(5rem, 9vw, 9rem);
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: var(--grid-gap);
+        row-gap: clamp(2rem, 4vw, 4rem);
+      }
+
+      .about-kicker {
+        grid-column: 1 / 4;
+        margin: 0.5rem 0 0;
+        color: var(--accent);
+        font: 400 0.67rem/1.4 var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .about-hero h1 {
+        grid-column: 3 / 13;
+        min-width: 0;
+        max-width: 15ch;
+        margin: 0;
+        font: 500 clamp(3.7rem, 7.4vw, 7.7rem) / 0.9 var(--sans);
+        letter-spacing: -0.067em;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+      }
+
+      .about-intro {
+        grid-column: 5 / 11;
+        max-width: 43rem;
+        margin: 0;
+        font: 400 clamp(1.28rem, 1.7vw, 1.68rem) / 1.5 var(--serif);
+      }
+
+      .about-positioning {
+        grid-column: 1 / 4;
+        align-self: end;
+        padding-top: 0.85rem;
+        border-top: 3px solid var(--accent);
+        font: 400 0.67rem/1.55 var(--mono);
+      }
+
+      .about-positioning span {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .about-positioning strong {
+        display: block;
+        font-weight: 400;
+      }
+
+      .about-section {
+        padding-inline: var(--gutter);
+      }
+
+      .section-head {
+        padding: 0.72rem 0 0.65rem;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font: 400 0.64rem/1.4 var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .section-head p {
+        margin: 0;
+      }
+
+      .section-head p:first-child {
+        grid-column: 1 / 5;
+        color: var(--ink);
+      }
+
+      .section-head p:last-child {
+        grid-column: 9 / 13;
+        text-align: right;
+      }
+
+      .section-layout {
+        padding: clamp(3.2rem, 6vw, 6.5rem) 0 clamp(4rem, 7vw, 7rem);
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .section-title {
+        grid-column: 1 / 6;
+      }
+
+      .section-title h2,
+      .standards-bridge h2 {
+        max-width: 13ch;
+        margin: 0;
+        font: 500 clamp(2.75rem, 4.8vw, 5rem) / 0.95 var(--sans);
+        letter-spacing: -0.057em;
+        text-wrap: balance;
+      }
+
+      .section-copy {
+        grid-column: 7 / 11;
+        max-width: 39rem;
+        font: 400 clamp(1.12rem, 1.35vw, 1.3rem) / 1.67 var(--serif);
+      }
+
+      .section-copy p {
+        margin: 0 0 1.35em;
+      }
+
+      .section-copy p:last-child {
+        margin-bottom: 0;
+      }
+
+      .topic-list {
+        margin: 0;
+        padding: 0 0 clamp(5rem, 8vw, 8rem);
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        list-style: none;
+        border-top: 1px solid var(--ink);
+      }
+
+      .topic-list li {
+        min-width: 0;
+        min-height: 17rem;
+        padding: 0.9rem 1rem 1.25rem;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--line);
+      }
+
+      .topic-list li:last-child {
+        border-right: 1px solid var(--line);
+      }
+
+      .topic-list__number {
+        margin: 0;
+        color: var(--accent);
+        font: 400 0.63rem/1.35 var(--mono);
+      }
+
+      .topic-list h3 {
+        margin: auto 0 0.85rem;
+        font: 500 clamp(1.65rem, 2.1vw, 2.15rem) / 1 var(--sans);
+        letter-spacing: -0.045em;
+      }
+
+      .topic-list li > p:last-child {
+        margin: 0;
+        color: var(--muted);
+        font: 400 0.92rem/1.5 var(--serif);
+      }
+
+      .reader-section {
+        width: 100%;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .reader-section__inner {
+        padding: clamp(4.5rem, 8vw, 8rem) var(--gutter);
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .reader-section__index {
+        grid-column: 1 / 3;
+        margin: 0;
+        color: var(--accent-on-ink);
+        font: 400 0.64rem/1.4 var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .reader-section__statement {
+        grid-column: 4 / 10;
+      }
+
+      .reader-section h2 {
+        max-width: 14ch;
+        margin: 0;
+        font: 500 clamp(3rem, 5.3vw, 5.5rem) / 0.94 var(--sans);
+        letter-spacing: -0.06em;
+        text-wrap: balance;
+      }
+
+      .reader-section__statement > p {
+        max-width: 42rem;
+        margin: clamp(2rem, 3.5vw, 3.5rem) 0 0;
+        color: #d7d2c9;
+        font: 400 clamp(1.15rem, 1.45vw, 1.4rem) / 1.58 var(--serif);
+      }
+
+      .reader-section__note {
+        grid-column: 11 / 13;
+        align-self: end;
+        padding-top: 0.8rem;
+        border-top: 3px solid var(--accent-on-ink);
+        font: 400 0.66rem/1.5 var(--mono);
+      }
+
+      .reader-section__note p {
+        margin: 0 0 0.6rem;
+        color: #bdb8af;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .reader-section__note strong {
+        font-weight: 400;
+      }
+
+      .context-note {
+        grid-column: 11 / 13;
+        align-self: start;
+        padding-top: 0.8rem;
+        border-top: 3px solid var(--accent);
+        font: 400 0.67rem/1.55 var(--mono);
+      }
+
+      .context-note > p {
+        margin: 0 0 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .context-note ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .context-note li {
+        padding: 0.65rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .standards-bridge {
+        padding-top: clamp(1rem, 2vw, 2rem);
+      }
+
+      .standards-bridge__layout {
+        padding: clamp(3.5rem, 6vw, 6.5rem) 0 clamp(5rem, 8vw, 8rem);
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .standards-bridge__layout > div:first-child {
+        grid-column: 1 / 6;
+      }
+
+      .standards-bridge__copy {
+        grid-column: 7 / 12;
+      }
+
+      .standards-bridge__copy p {
+        max-width: 40rem;
+        margin: 0;
+        font: 400 clamp(1.15rem, 1.45vw, 1.38rem) / 1.64 var(--serif);
+      }
+
+      .standards-bridge__copy a {
+        width: fit-content;
+        margin-top: clamp(2rem, 3vw, 3rem);
+        padding: 0.85rem 0 0.7rem;
+        display: block;
+        border-top: 3px solid var(--accent);
+        border-bottom: 1px solid var(--ink);
+        font: 500 clamp(1.05rem, 1.4vw, 1.25rem) / 1.2 var(--sans);
+        text-decoration: none;
+      }
+
+      .standards-bridge__copy a:hover {
+        color: var(--accent);
+      }
+
+      .standards-bridge__copy a span {
+        color: var(--accent);
+      }
+
+      .founder-note {
+        padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
+        display: grid;
+        grid-template-columns: 2fr 3fr 7fr;
+        gap: var(--grid-gap);
+        align-items: baseline;
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--ink);
+        font: 400 0.68rem/1.55 var(--mono);
+      }
+
+      .founder-note p,
+      .founder-note strong {
+        margin: 0;
+      }
+
+      .founder-note > p:first-child {
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .founder-note strong {
+        font-weight: 400;
+      }
+
+      .founder-note > p:last-child {
+        color: var(--muted);
+      }
+
+      .site-footer {
+        padding: 1.2rem var(--gutter) 1.4rem;
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        gap: var(--grid-gap);
+        align-items: end;
+        font: 400 0.64rem/1.45 var(--mono);
+      }
+
+      .site-footer__brand {
+        width: fit-content;
+        white-space: nowrap;
+        font: 700 1.55rem/0.9 var(--sans);
+        letter-spacing: -0.085em;
+        transform: skewX(-12deg);
+        transform-origin: left center;
+      }
+
+      .site-footer p {
+        margin: 0;
+        color: var(--muted);
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .site-footer a {
+        justify-self: end;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.18em;
+      }
+
+      .site-footer a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 64rem) {
+        .about-hero h1 {
+          grid-column: 2 / 13;
+        }
+
+        .about-intro {
+          grid-column: 4 / 11;
+        }
+
+        .section-title {
+          grid-column: 1 / 6;
+        }
+
+        .section-copy {
+          grid-column: 6 / 10;
+        }
+
+        .context-note {
+          grid-column: 10 / 13;
+        }
+
+        .reader-section__statement {
+          grid-column: 3 / 10;
+        }
+
+        .reader-section__note {
+          grid-column: 10 / 13;
+        }
+
+        .standards-bridge__layout > div:first-child {
+          grid-column: 1 / 6;
+        }
+
+        .standards-bridge__copy {
+          grid-column: 6 / 12;
+        }
+      }
+
+      @media (max-width: 50rem) {
+        .site-header {
+          grid-template-columns: 1fr auto;
+          align-items: center;
+          padding-top: 0.9rem;
+        }
+
+        .site-header__strapline {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          max-width: 32rem;
+          padding-top: 0.55rem;
+          text-align: left;
+        }
+
+        .site-header__section {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .about-hero {
+          display: block;
+          padding-top: 3.6rem;
+          padding-bottom: 4.5rem;
+        }
+
+        .about-kicker {
+          margin: 0 0 1.35rem;
+        }
+
+        .about-hero h1 {
+          max-width: none;
+          font-size: clamp(3.05rem, 12.7vw, 4.7rem);
+          line-height: 0.93;
+          text-wrap: pretty;
+        }
+
+        .about-intro {
+          max-width: 36rem;
+          margin-top: 2.2rem;
+          font-size: 1.25rem;
+        }
+
+        .about-positioning {
+          max-width: 25rem;
+          margin-top: 3rem;
+        }
+
+        .section-head {
+          grid-template-columns: 1fr auto;
+          gap: 1rem;
+        }
+
+        .section-head p:first-child,
+        .section-head p:last-child {
+          grid-column: auto;
+        }
+
+        .section-layout,
+        .standards-bridge__layout {
+          display: block;
+          padding-top: 2.8rem;
+          padding-bottom: 4rem;
+        }
+
+        .section-title h2,
+        .standards-bridge h2 {
+          max-width: 15ch;
+          font-size: clamp(2.55rem, 10vw, 3.8rem);
+        }
+
+        .section-copy,
+        .standards-bridge__copy {
+          max-width: 37rem;
+          margin-top: 2rem;
+          font-size: 1.14rem;
+        }
+
+        .topic-list {
+          grid-template-columns: 1fr 1fr;
+          padding-bottom: 4.5rem;
+        }
+
+        .topic-list li {
+          min-height: 14rem;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .topic-list li:nth-child(odd) {
+          border-left: 0;
+        }
+
+        .topic-list li:last-child {
+          grid-column: 1 / -1;
+          min-height: 11rem;
+          border-right: 0;
+        }
+
+        .reader-section__inner {
+          display: block;
+          padding-top: 4rem;
+          padding-bottom: 4.5rem;
+        }
+
+        .reader-section__index {
+          margin-bottom: 2rem;
+        }
+
+        .reader-section h2 {
+          max-width: 15ch;
+          font-size: clamp(2.75rem, 11vw, 4.2rem);
+        }
+
+        .reader-section__statement > p {
+          margin-top: 2rem;
+          font-size: 1.2rem;
+        }
+
+        .reader-section__note {
+          max-width: 22rem;
+          margin-top: 3rem;
+        }
+
+        .context-note {
+          max-width: 25rem;
+          margin-top: 2.5rem;
+        }
+
+        .standards-bridge__copy a {
+          margin-top: 2rem;
+        }
+
+        .founder-note {
+          grid-template-columns: 1fr 2fr;
+          gap: 0.55rem 1rem;
+        }
+
+        .founder-note > p:last-child {
+          grid-column: 1 / -1;
+          padding-top: 0.5rem;
+        }
+
+        .site-footer {
+          grid-template-columns: 1fr auto;
+          align-items: center;
+        }
+
+        .site-footer p {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          padding-top: 0.7rem;
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 28rem) {
+        .about-hero h1 {
+          font-size: clamp(2.75rem, 13vw, 3.55rem);
+        }
+
+        .topic-list {
+          display: block;
+        }
+
+        .topic-list li,
+        .topic-list li:last-child {
+          min-height: 0;
+          padding: 1rem 0 1.5rem;
+          border-left: 0;
+          border-right: 0;
+        }
+
+        .topic-list h3 {
+          margin-top: 2.5rem;
+        }
+
+        .founder-note {
+          display: block;
+        }
+
+        .founder-note strong {
+          display: block;
+          margin-top: 0.35rem;
+        }
+
+        .founder-note > p:last-child {
+          margin-top: 1.1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        :global(*) {
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </body>
+</html>
