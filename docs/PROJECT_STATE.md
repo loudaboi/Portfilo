@@ -4,11 +4,11 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Brand Mark Exploration & Lock — approved and implemented; final local build/browser revalidation pending.**
+**Portfilo v0 / Wordmark Exploration & Lock**
 
-The Editorial Design phase remains complete and frozen. The approved v0 brand-mark direction has now been converted into reusable SVG assets and wired into the existing story masthead without beginning homepage design.
+The Editorial Design phase remains complete and frozen. The previously approved provisional symbol has been retired from active use after visual review showed that the symbol and wordmark did not form a coherent identity and the symbol remained too close to its Pinterest reference.
 
-The v0 mark is intentionally **provisional**. It is based on a user-supplied Pinterest reference and remains visually close enough to that reference that Portfilo should not describe it as a fully original or legally cleared identity. The user explicitly chose to accept that tradeoff for v0 rather than delay the product and intends to invest in a stronger custom identity later.
+The story surface is restored to the clean text-only `Portfilo` masthead baseline while wordmark exploration is in progress. Homepage design has not started.
 
 ## Current branch
 
@@ -18,45 +18,90 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Finish validation of the approved provisional v0 brand integration, then begin **Homepage Visual Design** as a separate phase.
+Develop and compare a small number of credible **wordmark-first Portfilo identity directions**. The wordmark itself should carry the identity; do not introduce another unrelated standalone logo.
 
-Do not start series pages, newsletter integration, analytics, deployment, editorial launch research, or another product surface before the brand integration revalidation is complete.
+Present the directions for explicit approval before implementing a final wordmark in the application.
 
-## Brand mark decision
+Do not begin homepage design, series pages, newsletter integration, analytics, deployment, editorial launch research, or another product surface during this wordmark task.
 
-Approved for v0:
+## Current brand decision
 
-- a compact forward-slanted two-part symbol that implies a `P`;
-- near-black `#171614` as the default mark color on the warm paper field;
-- reversed paper `#f4f0e8` mark on near-black for the avatar asset;
-- signal blue `#0050a4` remains an optional brand application, not required for recognition;
-- **Instrument Sans** remains the Portfilo wordmark type in the application;
-- the story masthead uses `mark + Portfilo` rather than introducing a paid wordmark font;
-- the standalone mark is suitable for compact/avatar use;
-- the identity remains provisional until Portfilo commissions or develops a more defensible original mark.
+### Retired
 
-### Provenance / risk note
+The forward-slanted two-part provisional `P` symbol is retired from active Portfilo use.
 
-The symbol direction was chosen after comparison with a user-provided Pinterest reference. Multiple attempts to move materially farther from that construction were rejected visually by the user. The approved v0 symbol therefore preserves much of the reference's broad construction.
+Reasons:
 
-This repository records that fact deliberately:
+- it did not pair naturally with the Portfilo wordmark;
+- the combined lockup felt like two unrelated identities;
+- the symbol remained visually close to the user-provided Pinterest reference;
+- further symbol exploration was not worth delaying v0.
 
-- the asset is a **working v0 identity**, not a claim of original authorship;
-- no trademark or copyright clearance has been performed;
-- the source/owner of the Pinterest reference is not verified;
-- the mark should be reconsidered before substantial brand investment, trademark filing, merchandising, or other high-exposure commercial use.
+The former SVG mark/avatar assets are removed from the active branch rather than carried forward as dormant production identity assets.
 
-## Implemented in the brand-mark phase
+### Current baseline
 
-- Added reusable vector symbol asset at `public/brand/portfilo-mark.svg`.
-- Added compact square avatar asset at `public/brand/portfilo-avatar.svg`.
-- Kept the wordmark as live Instrument Sans text rather than embedding a commercial font in an SVG.
-- Updated the existing story masthead to pair the approved symbol with the `Portfilo` wordmark.
-- Added the mark as the SVG favicon on the current story surface.
-- Preserved the existing desktop-centered and mobile-left-aligned masthead strapline behavior.
-- Preserved the existing editorial typography, grid, evidence hierarchy, correction treatment, content schema, route generation, and fixtures.
-- Added no framework, UI library, animation library, runtime script, or package dependency.
-- Did **not** modify `src/pages/index.astro`; homepage design has not started.
+Until a new wordmark is explicitly approved:
+
+- the masthead uses text-only `Portfilo`;
+- Instrument Sans remains the temporary application wordmark because it is already part of the frozen editorial type system;
+- no standalone logo is active;
+- a future social/avatar treatment should be derived from the approved wordmark, most likely a `P` or `PF` monogram from the same lettering system.
+
+### Positioning / strapline
+
+`Practical intelligence for ambitious Filipinos` remains Portfilo's current positioning line and masthead strapline.
+
+It is **not permanently frozen as the final public tagline**. The underlying positioning is strong and remains part of the product thesis, but the exact public-facing strapline may be refined later through a separate brand/editorial decision.
+
+## Wordmark exploration brief
+
+The approved direction for this phase is a **wordmark-first identity** with more personality than the current plain Instrument Sans treatment.
+
+The visual reference supplied by the user points toward:
+
+- forward motion or controlled slant;
+- compact, confident proportions;
+- tight optical spacing;
+- custom-feeling lowercase forms;
+- a contemporary creative-studio/editorial character.
+
+Do not copy the reference lettering. Portfilo should retain editorial credibility and avoid becoming sportswear, gaming, fintech, or generic tech branding.
+
+Each finalist should be judged on:
+
+1. recognizability as `Portfilo`;
+2. editorial credibility;
+3. distinctiveness without gimmickry;
+4. strength in one color;
+5. masthead legibility at small sizes;
+6. compatibility with the frozen story typography and signal-blue system;
+7. whether a coherent compact `P` or `PF` social treatment can be derived from the same lettering;
+8. licensing practicality for a commercial v0 publication.
+
+## Researched type directions
+
+Primary foundry/source research for this exploration identified several credible families:
+
+- **Instrument Sans** — open-source OFL 1.1; variable width/weight/italic axes and multiple stylistic sets. Strongest low-cost basis for a tailored custom wordmark.
+- **Founders Grotesk** — commercial grotesk with dedicated italics and strong headline spacing; credible and editorial, but requires licensing.
+- **ABC Diatype** — commercial warm/sharp neo-grotesk with italics; contemporary and screen-oriented without being overtly technological.
+- **Scto Grotesk A/B** — commercial grotesk with animated, reader-friendly details and italics; distinctive while remaining matter-of-fact.
+- **PP Editorial Sans** — commercial sans with true italics and more expressive editorial character; useful as a higher-personality comparison.
+- **PP Neue Montreal** — commercial grotesk with italics; clean and capable but more neutral and widely recognizable, so it is a secondary reference rather than the leading choice.
+
+No commercial font is approved or added to the repository at this stage.
+
+## Exploration directions to present
+
+Develop four visual wordmark studies:
+
+1. **Tailored Instrument** — use Instrument Sans italic/slant and width variation as the base, then refine spacing and selected forms so the result feels custom while preserving an open-license path.
+2. **Forward Grotesk** — compact medium/semibold italic grotesk treatment informed by Founders Grotesk / Scto Grotesk proportions; confident and editorial rather than sporty.
+3. **Sharp Editorial Italic** — a more expressive slanted sans direction informed by PP Editorial Sans / Diatype, with sharper rhythm and more visible personality.
+4. **Controlled Roman** — a non-italic but tightly spaced custom grotesk option to test whether Portfilo needs literal slant at all, or whether forward energy can come from cuts, spacing, and letter construction.
+
+These are design directions, not approvals of specific commercial typefaces.
 
 ## Completed before this phase
 
@@ -67,18 +112,15 @@ This repository records that fact deliberately:
 - One build-time `stories` Content Collection using local Markdown.
 - Controlled content types and topics.
 - Authorship, draft/published state, featured state, publish/update dates, optional series metadata, methodology metadata, and structured correction metadata.
-- Published stories require `publishedAt`.
-- `seriesOrder` is rejected unless `series` is present.
-- `updatedAt` is rejected when earlier than `publishedAt`.
 - Generic static story route at `/stories/[slug]`.
 - Production route generation filters to `status: published`.
 - Synthetic published and draft fixtures remain in place.
 
 ### Editorial design
 
-The story surface was implemented and validated before the brand-mark phase. The following remain frozen for v0 unless a concrete implementation problem is discovered:
+The story surface remains frozen for v0 unless a concrete implementation problem is discovered:
 
-- Instrument Sans for wordmark, headline, interface, and editorial headings;
+- Instrument Sans for headline/interface/editorial headings;
 - Source Serif 4 for dek and long-form reading;
 - IBM Plex Mono for metadata and technical/editorial labels;
 - warm paper `#f4f0e8`;
@@ -91,11 +133,10 @@ The story surface was implemented and validated before the brand-mark phase. The
 - twelve-column wide-screen editorial grid;
 - dedicated body measure around `42rem`;
 - desktop metadata rail and single-path mobile reading layout;
-- methodology as a high-contrast evidence module;
-- corrections as a semantically separate red treatment;
+- methodology and correction treatments;
 - skip link and visible keyboard focus treatment.
 
-Previous editorial-design validation confirmed production build success, published-route generation, draft-route exclusion, responsive/browser QA, no horizontal overflow at the required viewports, keyboard/focus behavior, exact selected webfont loading, and final signal-blue visual review.
+Previous editorial-design validation confirmed production build success, published-route generation, draft-route exclusion, responsive/browser QA, no horizontal overflow at required viewports, keyboard/focus behavior, exact selected webfont loading, and final signal-blue visual review.
 
 ## Technical decisions frozen for v0
 
@@ -105,24 +146,10 @@ Previous editorial-design validation confirmed production build success, publish
 - custom CSS
 - minimal client-side JavaScript
 - static deployment first
-- Cloudflare Pages deployment
+- Cloudflare Pages
 - Cloudflare Web Analytics
 - beehiiv newsletter infrastructure
 - GitHub source control
-
-Do not add React, Vue, Svelte, server rendering, a database, authentication, or application-state infrastructure without a specific current requirement.
-
-## Scope still not started
-
-- homepage visual design
-- series page implementation
-- Research & Standards page
-- About page
-- Subscribe surface / beehiiv integration
-- analytics
-- deployment
-- editorial launch research
-- first real article
 
 ## Validation status
 
@@ -130,33 +157,30 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 |---|---|
 | Repository access | PASS |
 | `build/portfilo-v0` branch access | PASS |
-| Canonical project/design guidance inspected | PASS |
-| Explicit final user approval for v0 identity | PASS |
-| Homepage untouched during brand task | PASS |
-| New package dependency | PASS — none added |
-| New runtime JavaScript | PASS — none added |
+| Homepage untouched | PASS |
+| Provisional symbol retired from masthead | PASS — source restored to text-only baseline |
+| Provisional symbol/avatar assets removed | PASS |
 | Content architecture changed | PASS — no schema/routing/content-model change |
-| Reusable mark SVG added | PASS |
-| Reusable avatar SVG added | PASS |
-| Story masthead integration authored | PASS |
-| Existing Instrument Sans wordmark retained | PASS |
-| Provisional-reference provenance recorded | PASS |
-| Production build after brand integration | **PENDING — not run in the current tool environment** |
-| Responsive browser QA after brand integration | **PENDING** |
-| Horizontal-overflow recheck after brand integration | **PENDING** |
-| Final masthead visual check with exact webfont | **PENDING** |
+| New package dependency | PASS — none added |
+| Commercial font added | PASS — none added |
+| Wordmark research | PASS — primary foundry/source review completed |
+| Final wordmark | PENDING — requires explicit user approval |
+| Production build after symbol retirement | PENDING — local validation required |
 
 ## Exact next task
 
-Validate the approved brand integration on `build/portfilo-v0`:
+Present the four wordmark studies for visual approval. Each study should show:
 
-1. run `npm run build`;
-2. confirm the published synthetic story is generated and the draft fixture is still excluded;
-3. inspect the story masthead at desktop and narrow mobile widths with the exact fonts loaded;
-4. confirm the new mark/wordmark lockup introduces no horizontal overflow and preserves keyboard focus behavior;
-5. if those checks pass, update this file to mark **Brand Mark Exploration & Lock Complete**, commit the validation note if needed, and begin **Portfilo v0 / Homepage Visual Design**.
+- the `Portfilo` wordmark alone;
+- masthead-scale use;
+- black on warm paper;
+- reversed use on near-black;
+- a compact `P` or `PF` treatment derived from the same lettering logic;
+- a brief assessment of strengths, risks, and licensing path.
 
-Do not begin homepage implementation before this validation pass.
+Do not implement a final wordmark until one direction is explicitly approved.
+
+Do not begin homepage design during this task.
 
 ## Phase handoff rule
 
