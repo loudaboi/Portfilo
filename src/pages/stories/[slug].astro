@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const stories = await getCollection(
+    "stories",
+    ({ data }) => data.status === "published",
+  );
+
+  return stories.map((story) => ({
+    params: { slug: story.id },
+    props: { story },
+  }));
+}
+
+const { story } = Astro.props;
+const {
+  title,
+  description,
+  contentType,
+  topic,
+  author,
+  publishedAt,
+  updatedAt,
+  series,
+  seriesOrder,
+  methodology,
+  correction,
+} = story.data;
+const { Content } = await render(story);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title} | Portfilo</title>
+  </head>
+  <body>
+    <main>
+      <article>
+        <header>
+          <p>{contentType} · {topic}</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <p>By {author}</p>
+          {
+            publishedAt && (
+              <p>
+                Published{" "}
+                <time datetime={publishedAt.toISOString()}>
+                  {publishedAt.toISOString().slice(0, 10)}
+                </time>
+                {updatedAt && (
+                  <>
+                    {" "}
+                    · Updated{" "}
+                    <time datetime={updatedAt.toISOString()}>
+                      {updatedAt.toISOString().slice(0, 10)}
+                    </time>
+                  </>
+                )}
+              </p>
+            )
+          }
+          {
+            series && (
+              <p>
+                Series: {series}
+                {seriesOrder !== undefined && ` · Part ${seriesOrder}`}
+              </p>
+            )
+          }
+        </header>
+
+        <Content />
+
+        {
+          methodology && (
+            <section aria-labelledby="methodology">
+              <h2 id="methodology">Methodology</h2>
+              <p>{methodology}</p>
+            </section>
+          )
+        }
+
+        {
+          correction && (
+            <aside aria-labelledby="correction">
+              <h2 id="correction">Correction</h2>
+              <p>
+                <time datetime={correction.correctedAt.toISOString()}>
+                  {correction.correctedAt.toISOString().slice(0, 10)}
+                </time>
+                : {correction.note}
+              </p>
+            </aside>
+          )
+        }
+      </article>
+    </main>
+  </body>
+</html>
