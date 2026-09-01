@@ -4,9 +4,9 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / About Page**
+**Portfilo v0 / Subscribe Surface & beehiiv Integration**
 
-Research & Standards Page is complete after the user-reported final local production build, responsive/browser QA, and explicit approval on 2026-09-02.
+About Page is complete after the user-reported final local production build, responsive/browser QA, and explicit approval on 2026-09-02.
 
 Completed phases:
 
@@ -19,8 +19,9 @@ Completed phases:
 - Homepage Visual Design
 - Series Page Foundation & Visual Design
 - Research & Standards Page
+- About Page
 
-The story, homepage, Series, and Research & Standards visual directions are frozen for v0 unless a concrete implementation problem is discovered.
+The story, homepage, Series, Research & Standards, and About visual directions are frozen for v0 unless a concrete implementation problem is discovered.
 
 ## Current branch
 
@@ -30,32 +31,32 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Build the smallest credible public **About** surface required by `docs/V0_SCOPE.md`.
+Build the smallest credible public **Subscribe** surface required by `docs/V0_SCOPE.md` and connect it to beehiiv without creating custom newsletter infrastructure.
 
-The About page should explain who Portfilo serves, what it does, and its concise company/editorial thesis in reader-facing language. It should complement the homepage and Standards page without repeating either one as a manifesto.
+Portfilo Brief is the planned email product. The implementation should use beehiiv for subscriber management, deliverability, unsubscribe handling, and signup rather than building those systems inside Portfilo.
 
 ## Exact next task
 
-Perform **About Page Foundation & Implementation** in this order:
+Perform **Subscribe Surface & beehiiv Integration** in this order:
 
-1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, and `docs/COPY_STYLE.md`.
-2. Inspect the current homepage, story page, Series page, and `/standards` so the About page uses the established Portfilo system rather than creating a parallel design language.
-3. Define the minimum public information architecture needed to explain:
-   - who Portfilo serves;
-   - what Portfilo covers and does;
-   - why the Philippine context matters to the publication;
-   - a concise company/editorial thesis.
-4. Keep the copy concrete and reader-facing. Do not expose internal project phases, content architecture, implementation language, or inflated brand claims.
-5. Follow `docs/COPY_STYLE.md`: clear before clever, useful before self-descriptive, familiar language, no generic trust/mission marketing, and no decorative Filipino identity language.
-6. Preserve the frozen visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, blue editorial/evidence accents, red only for wordmark/correction semantics, twelve-column grid, restrained rules, and first-class mobile layout.
-7. Give the About page its own editorial composition rather than duplicating the homepage hero or turning the page into cards.
-8. Use semantic HTML, visible keyboard focus, a skip link, and reduced-motion-safe behavior.
-9. Keep static Astro output and avoid client-side JavaScript unless a real interaction requires it.
-10. Run production build plus desktop/mobile/browser QA before marking the phase complete.
+1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, `docs/COPY_STYLE.md`, and the current zero-budget infrastructure decisions in this file.
+2. Inspect the homepage Portfilo Brief preview, `/about`, `/standards`, and the existing site shell.
+3. Verify the current beehiiv free-tier embed/integration options before choosing the implementation method.
+4. Define the minimum public Subscribe information architecture:
+   - Portfilo Brief name;
+   - what subscribers receive;
+   - clear signup action;
+   - only promises the actual newsletter operation can support.
+5. Do not promise frequency, exclusivity, or editorial benefits that have not been committed operationally.
+6. Prefer beehiiv's maintained signup/embed infrastructure over a custom form backend.
+7. Preserve the locked visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, signal blue as the active accent, and correction red only where semantically appropriate.
+8. Keep the surface static-first and add client-side behavior only if beehiiv's integration genuinely requires it.
+9. Validate accessibility, keyboard focus, mobile behavior, error/success states provided by the chosen integration, and no horizontal overflow.
+10. Run a production build and final browser QA before marking the phase complete.
 
-After About passes final local QA, the exact next phase is **Portfilo v0 / Subscribe Surface & beehiiv Integration**.
+After Subscribe passes final local QA, perform a **Global Navigation & Public Surface Integration pass** so readers can move coherently among Home, Standards, About, Subscribe, and future story/index surfaces.
 
-Do not begin Subscribe integration, analytics, deployment, or editorial launch research until the About phase is complete.
+Do not begin analytics, deployment, or editorial launch research until the Subscribe phase is complete.
 
 ## Portfilo editorial direction
 
@@ -137,7 +138,7 @@ Do not add red merely to create numerical color balance.
 
 Final user-reported validation on 2026-09-02 included a clean production build, correct homepage rendering, published/draft fixture behavior, desktop/mobile review, and explicit approval.
 
-The Portfilo Brief homepage copy was also tightened to:
+Current Portfilo Brief homepage copy:
 
 > **Portfilo Brief, by email.**
 >
@@ -147,41 +148,15 @@ Homepage Visual Design remains closed.
 
 ## Series Page Foundation & Visual Design — COMPLETE
 
-### Content model
-
-A build-time Astro `series` Content Collection stores only:
-
-- title;
-- description;
-- `active | completed` status;
-- fixture marker for synthetic development entries.
-
-Stories retain the existing `series` + `seriesOrder` relationship.
-
-No CMS, database, client-side state, secondary taxonomy, or new frontend dependency was added.
-
-### Generic route
+Generic route:
 
 `src/pages/series/[slug].astro`
 
-The page:
+The Series page generates static routes from structured Series entries, includes only published stories, sorts by `seriesOrder`, supports empty states, and uses no client-side JavaScript.
 
-- generates static routes from Series entries;
-- includes only published stories;
-- sorts by `seriesOrder`;
-- exposes title, description, status, story count, ordered story sequence, story type/topic/date, and direct story links;
-- supports a valid empty-series state;
-- uses no client-side JavaScript.
-
-### Synthetic validation fixture
-
-Series route:
+Synthetic validation route:
 
 `/series/content-architecture-fixtures`
-
-The fixture is explicitly development-only and contains no real reporting or factual findings.
-
-It contains three published synthetic stories ordered Part 1 → Part 2 → Part 3.
 
 Implementation commits:
 
@@ -191,24 +166,13 @@ Implementation commits:
 - `ea25f432125e17123553c356f3d37163a2431fda` — ordering fixture Part 3
 - `241be4fdcd783117ecd2b75af808fc5b23e29151` — generic Series page
 
-### Final validation
-
-User-reported PASS on 2026-09-02:
-
-- production build passed;
-- revised homepage remained acceptable;
-- `/series/content-architecture-fixtures` rendered correctly;
-- Active status and three published stories rendered;
-- Part 1 → Part 2 → Part 3 ordering was correct;
-- story links passed;
-- responsive/browser review passed;
-- final Series appearance explicitly approved.
+User-reported final QA PASS on 2026-09-02.
 
 **Series Page Foundation & Visual Design is formally closed.**
 
 ## Research & Standards Page — COMPLETE
 
-### Route
+Route:
 
 `/standards`
 
@@ -216,59 +180,60 @@ Implementation file:
 
 `src/pages/standards.astro`
 
-The page is static Astro with no client-side JavaScript and no new dependency.
+The page translates the internal standards into reader-facing explanations of Sources, Verification, AI use, Corrections, and Commercial independence. It is static Astro with no client-side JavaScript and no new dependency.
 
-It translates the canonical internal standards into five reader-facing sections:
-
-1. Sources
-2. Verification
-3. AI use
-4. Corrections
-5. Commercial independence
-
-The public copy is constrained to commitments supported by `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
-
-The page does not publish internal research-packet mechanics or evidence-ledger workflow as reader-facing policy.
-
-### Visual composition
-
-The page preserves the approved Portfilo shell and tokens while using a methodology-specific composition:
-
-- twelve-column editorial layout;
-- numbered standards index;
-- Source Serif long-form explanations;
-- mono evidence/process labels;
-- signal blue for sourcing, verification, and evidence cues;
-- ink background plus evidence blue for the AI section;
-- correction red only for the correction section and wordmark signature;
-- mobile collapse to a single clear reading path;
-- visible focus states;
-- skip link;
-- reduced-motion handling for in-page smooth scrolling.
-
-No global component refactor was introduced during this phase because no current requirement justified changing the already approved pages.
-
-### Implementation commits
+Implementation commits:
 
 - `df26a6df07e17324a5af7d78c018866544745e9b` — initial public Research & Standards page
-- `70c4a593aa828078c60b402510076b02eaaf4bea` — conservative responsive/CSS compatibility refinement
-- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` — record implementation candidate and local QA gate
+- `70c4a593aa828078c60b402510076b02eaaf4bea` — responsive/CSS compatibility refinement
+- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` — implementation candidate and QA gate
+
+User-reported final QA PASS on 2026-09-02, including a clean static production build, route generation, responsive/browser review, and explicit visual approval.
+
+**Research & Standards Page is formally closed.**
+
+## About Page — COMPLETE
+
+Route:
+
+`/about`
+
+Implementation file:
+
+`src/pages/about.astro`
+
+The page is institution-first and explains:
+
+- what Portfilo is and does;
+- the five locked coverage areas;
+- who the publication is for;
+- why Philippine context can materially change an answer;
+- a short bridge to `/standards` for research methodology.
+
+Founder treatment is intentionally restrained. The only personal attribution is:
+
+> Founder / Louda Tuppal
+
+No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership claim was added.
+
+Implementation commits:
+
+- `3c172cf1cadf24551380fa0dc432e6283fccad8d` — initial About page
+- `402eed67aa3b4090803ec8e3a7981d4dad42a678` — reduce founder attribution and remove unsupported independence wording
+
+A compare against the pre-About head confirmed that the implementation added only `src/pages/about.astro`; frozen public surfaces and the content schema were not modified.
 
 ### Final validation
 
 User-reported PASS on 2026-09-02:
 
-- `npm run build` passed with Astro static output;
-- six pages built successfully in the supplied production-build output;
-- `/standards/index.html` generated successfully;
-- homepage generated successfully;
-- `/series/content-architecture-fixtures` generated successfully;
-- the three published story fixtures generated successfully;
-- the draft fixture was absent from generated public story routes, preserving draft filtering;
-- responsive/browser QA passed;
-- final Research & Standards appearance explicitly approved.
+- local production build passed;
+- `/about` rendered correctly;
+- desktop/mobile/browser QA passed;
+- existing public surfaces remained acceptable;
+- final About appearance explicitly approved.
 
-**Research & Standards Page is formally closed.**
+**About Page is formally closed.**
 
 ## Zero-budget infrastructure posture
 
@@ -285,8 +250,8 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- About page — current phase
-- Subscribe surface / beehiiv integration — next after About
+- Subscribe surface / beehiiv integration — current phase
+- global navigation / public-surface integration pass — after Subscribe
 - analytics
 - deployment
 - editorial launch research
@@ -308,7 +273,8 @@ Use free tiers while sufficient for v0 validation.
 | Homepage Visual Design | PASS |
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
 | Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| About Page | NOT STARTED — current phase |
+| About Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
+| Subscribe Surface & beehiiv Integration | NOT STARTED — current phase |
 
 ## Phase handoff rule
 
