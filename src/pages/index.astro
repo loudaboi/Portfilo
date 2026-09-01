@@ -11,10 +11,10 @@ const latestFixtures = [
   {
     number: "02.2",
     contentType: "Profile",
-    topic: "Founders",
-    title: "What can you learn from how a founder chooses the first market?",
+    topic: "Startups",
+    title: "What can you learn from how a startup chooses its first market?",
     description:
-      "A design preview for a founder profile. No real person or company is being represented.",
+      "A design preview for a startup profile. No real person or company is being represented.",
   },
   {
     number: "02.3",
@@ -56,7 +56,7 @@ const latestFixtures = [
 
     <main id="main-content" tabindex="-1">
       <section class="identity" aria-labelledby="identity-title">
-        <p class="identity__eyebrow">Business / Technology / Founders / Building / Capital</p>
+        <p class="identity__eyebrow">Business / Technology / Startups / Building / Life</p>
 
         <h1 id="identity-title">
           Practical intelligence
@@ -65,8 +65,8 @@ const latestFixtures = [
 
         <div class="identity__note">
           <p>
-            Portfilo explains how businesses, technology, founders, and markets
-            work in the Philippines. We report what happened, show the evidence,
+            Portfilo covers business, technology, startups, and what it takes to
+            build in the Philippines. We report what happened, explain how it works,
             and make the useful part clear.
           </p>
         </div>
@@ -179,7 +179,7 @@ const latestFixtures = [
         <div class="institution__statement">
           <h2 id="institution-title">Clear enough to use. Careful enough to trust.</h2>
           <p>
-            Portfilo follows the businesses, technologies, founders, markets, and
+            Portfilo follows the businesses, technologies, startups, markets, and
             decisions shaping what gets built in the Philippines. We report what
             happened, explain how it works, and show what the evidence can support.
           </p>
@@ -187,9 +187,9 @@ const latestFixtures = [
         <ul class="institution__topics" aria-label="Portfilo editorial areas">
           <li>Business</li>
           <li>Technology</li>
-          <li>Founders</li>
+          <li>Startups</li>
           <li>Building</li>
-          <li>Capital</li>
+          <li>Life</li>
         </ul>
       </section>
 
@@ -718,15 +718,6 @@ const latestFixtures = [
         text-transform: uppercase;
       }
 
-      .institution__index::before {
-        content: "";
-        display: block;
-        width: 2.6rem;
-        height: 3px;
-        margin-bottom: 0.9rem;
-        background: var(--correction);
-      }
-
       .institution__statement {
         grid-column: 4 / 11;
       }
@@ -783,7 +774,7 @@ const latestFixtures = [
       .newsletter__label {
         grid-column: 1 / 4;
         padding-top: 0.7rem;
-        border-top: 3px solid var(--correction);
+        border-top: 1px solid var(--ink);
         font: 400 0.64rem/1.5 var(--mono);
         letter-spacing: 0.08em;
         text-transform: uppercase;
