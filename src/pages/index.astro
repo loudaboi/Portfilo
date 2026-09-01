@@ -196,7 +196,7 @@ const latestFixtures = [
       <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
         <div class="newsletter__label">
           <p>04 / Portfilo Brief</p>
-          <p>Email / Preview</p>
+          <p>Email / Subscribe</p>
         </div>
         <div class="newsletter__copy">
           <h2 id="newsletter-title">Portfilo Brief, by email.</h2>
@@ -205,9 +205,9 @@ const latestFixtures = [
             startups, AI, and building in the Philippines.
           </p>
         </div>
-        <p class="newsletter__action" aria-label="Newsletter signup design preview">
+        <a class="newsletter__action" href="/subscribe" aria-label="Subscribe to Portfilo Brief">
           Join Portfilo Brief <span aria-hidden="true">↗</span>
-        </p>
+        </a>
       </section>
     </main>
 
@@ -814,9 +814,14 @@ const latestFixtures = [
         border-top: 3px solid var(--accent);
         border-bottom: 1px solid var(--ink);
         font: 500 clamp(1.1rem, 1.5vw, 1.35rem) / 1.15 var(--sans);
+        text-decoration: none;
       }
 
       .newsletter__action span {
+        color: var(--accent);
+      }
+
+      .newsletter__action:hover {
         color: var(--accent);
       }
 
@@ -1086,6 +1091,7 @@ const latestFixtures = [
         }
 
         .newsletter__action {
+          display: block;
           max-width: 18rem;
           margin-top: 2.8rem;
         }
