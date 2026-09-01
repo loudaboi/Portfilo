@@ -6,7 +6,7 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Research & Standards Page**
 
-Series Page Foundation & Visual Design is complete after the user-reported final local production-build, responsive/browser QA, link checks, and explicit visual approval.
+Research & Standards implementation is now committed as a candidate and awaits the required user-run local production build and responsive/browser QA before this phase can close.
 
 Completed phases:
 
@@ -29,31 +29,28 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Build the smallest credible public **Research & Standards** surface required by `docs/V0_SCOPE.md`.
+Validate the committed public **Research & Standards** surface required by `docs/V0_SCOPE.md`.
 
-This page should explain Portfilo's editorial safeguards clearly enough for a reader to understand how the publication handles sourcing, verification, AI use, corrections, and commercial/editorial separation.
-
-It is a reader-facing institutional page, not a dump of internal workflow documentation.
+The page explains Portfilo's editorial safeguards in reader-facing language covering sourcing, verification, AI use, corrections, and commercial/editorial separation. It is an institutional public page rather than a copy of the internal workflow standards.
 
 ## Exact next task
 
-Perform **Research & Standards Page Foundation & Implementation** in this order:
+Perform final local validation of `/standards` before closing this phase:
 
-1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, `docs/COPY_STYLE.md`, `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
-2. Inspect the current homepage, story page, and Series page so the new surface uses the established Portfilo system rather than creating a parallel design language.
-3. Decide the minimum public information architecture needed to cover:
-   - sourcing;
-   - verification;
-   - AI usage;
-   - corrections;
-   - commercial/editorial separation.
-4. Translate the canonical internal standards into concise public language. Do not expose implementation/process jargon merely because it exists in the internal documents.
-5. Follow `docs/COPY_STYLE.md`: clear before clever, concrete language, familiar labels, no generic trust-marketing copy, no AI-shaped slogans.
-6. Preserve the frozen visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, blue editorial/evidence accents, red only for the wordmark/correction semantics, twelve-column grid, restrained rules, and first-class mobile layout.
-7. Prefer an institutional editorial composition over a generic FAQ/card grid.
-8. Use semantic HTML, visible keyboard focus, a skip link, and reduced-motion-safe behavior.
-9. Keep static Astro output and avoid client-side JavaScript unless a real interaction requires it.
-10. Run production build plus desktop/mobile/browser QA before marking the phase complete.
+1. Pull `build/portfilo-v0`.
+2. Run `npm run build` and require a clean production build.
+3. Confirm `/standards` renders and all five in-page section links work.
+4. Confirm the homepage, published story routes, and `/series/content-architecture-fixtures` still render.
+5. Confirm the draft fixture remains excluded from public story routes.
+6. Review `/standards` at desktop, intermediate/tablet, 390px, and 360px widths.
+7. Check for clipping, horizontal overflow, awkward wrapping, and unreadable long-form measures.
+8. Keyboard-test the skip link, in-page navigation, wordmark, and footer link; visible focus must remain clear.
+9. Confirm reduced-motion behavior does not force smooth scrolling.
+10. Confirm Instrument Sans, Source Serif 4, and IBM Plex Mono load correctly.
+11. Audit the public copy against `docs/COPY_STYLE.md` and the factual promises against the Editorial, Research, and Publishing standards.
+12. Do not mark Research & Standards complete until the user reports that this local build/browser QA passes.
+
+After Research & Standards passes final local QA, the exact next phase is **Portfilo v0 / About Page Foundation & Implementation**.
 
 Do not begin About, Subscribe integration, analytics, deployment, or editorial launch research until this phase is complete.
 
@@ -206,6 +203,76 @@ User-reported PASS on 2026-09-02:
 
 **Series Page Foundation & Visual Design is formally closed.**
 
+## Research & Standards Page — IMPLEMENTED / QA PENDING
+
+### Route
+
+`/standards`
+
+Implementation file:
+
+`src/pages/standards.astro`
+
+The page is static Astro with no client-side JavaScript and no new dependency.
+
+It translates the canonical internal standards into five reader-facing sections:
+
+1. Sources
+2. Verification
+3. AI use
+4. Corrections
+5. Commercial independence
+
+The public copy was constrained to commitments already supported by `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
+
+The page does not publish internal research-packet mechanics or evidence-ledger workflow as reader-facing policy.
+
+### Visual composition
+
+The page preserves the approved Portfilo shell and tokens while using a methodology-specific composition:
+
+- twelve-column editorial layout;
+- numbered standards index;
+- Source Serif long-form explanations;
+- mono evidence/process labels;
+- signal blue for sourcing, verification, and evidence cues;
+- ink background plus evidence blue for the AI section;
+- correction red only for the correction section and wordmark signature;
+- mobile collapse to a single clear reading path;
+- visible focus states;
+- skip link;
+- reduced-motion handling for in-page smooth scrolling.
+
+No global component refactor was introduced during this phase because no current requirement justified changing the already approved pages.
+
+### Implementation commits
+
+- `df26a6df07e17324a5af7d78c018866544745e9b` — initial public Research & Standards page
+- `70c4a593aa828078c60b402510076b02eaaf4bea` — conservative responsive/CSS compatibility refinement
+
+A compare against the pre-phase head `8f2ec076d9cac7ac86336148849265757d11103c` confirmed that these implementation commits add only `src/pages/standards.astro`; the frozen homepage, story route, Series route, content schema, and fixtures were not modified.
+
+### Validation status
+
+Completed in the connected-repository environment:
+
+- repository/branch verification;
+- committed-file inspection;
+- scope/copy audit against the canonical standards;
+- changed-file comparison confirming no existing implementation file was modified.
+
+Not completed in this environment:
+
+- `npm run build`;
+- rendered browser review;
+- viewport inspection at desktop, tablet, 390px, and 360px;
+- live keyboard/focus test;
+- live font-load verification.
+
+Reason: the connected GitHub repository does not provide an executable repository shell, while the separate local runtime available to the assistant does not contain Astro and has no network access to install it. These checks remain mandatory and are intentionally not recorded as PASS.
+
+**Do not close this phase until the user reports the final local production build and browser QA pass.**
+
 ## Zero-budget infrastructure posture
 
 Locked direction:
@@ -221,8 +288,7 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Research & Standards page — current phase
-- About page
+- About page — next phase after Research & Standards approval
 - Subscribe surface / beehiiv integration
 - analytics
 - deployment
@@ -244,7 +310,7 @@ Use free tiers while sufficient for v0 validation.
 | Editorial Taxonomy Alignment | PASS |
 | Homepage Visual Design | PASS |
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
-| Research & Standards Page | NOT STARTED — current phase |
+| Research & Standards Page | IMPLEMENTED — final local production build + responsive/browser QA pending |
 
 ## Phase handoff rule
 
