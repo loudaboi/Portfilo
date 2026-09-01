@@ -13,7 +13,7 @@ const contentTypes = [
   "partner",
 ] as const;
 
-const topics = ["business", "technology", "startups", "building", "life"] as const;
+const topics = ["business", "technology", "startups", "ai", "building"] as const;
 
 const stories = defineCollection({
   loader: glob({
