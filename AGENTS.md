@@ -81,11 +81,20 @@ If evidence is insufficient, say so or do not publish the claim.
 
 Follow `docs/DESIGN_DIRECTION.md`.
 
+Public-facing copy must also follow `docs/COPY_STYLE.md`.
+
 Do not default to generic SaaS components, card grids, gradients, glassmorphism, or decorative motion.
 
 Prefer typography, composition, photography, data, whitespace, and evidence as the visual language.
 
 Mobile is a first-class layout, not a compressed desktop design.
+
+For public copy:
+
+- use familiar interface labels before branded alternatives;
+- keep internal project language out of production surfaces;
+- prefer clear, concrete, useful language over promotional or AI-shaped phrasing;
+- express Filipino specificity through real context rather than decorative slang or clichés.
 
 ## 7. Implementation discipline
 
