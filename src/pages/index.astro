@@ -4,26 +4,25 @@ const latestFixtures = [
     number: "02.1",
     contentType: "Guide",
     topic: "Skills",
-    title:
-      "A guide fixture with a deliberately long headline to test hierarchy on narrow screens",
+    title: "What makes a skill worth learning now?",
     description:
-      "Synthetic homepage copy only. This entry tests a substantial secondary story without presenting invented reporting as published journalism.",
+      "A design preview for a practical guide. No reported findings are being presented.",
   },
   {
     number: "02.2",
     contentType: "Analysis",
     topic: "Money",
-    title: "A compact analysis fixture for testing dense editorial metadata",
+    title: "When is a higher salary actually a better deal?",
     description:
-      "Design fixture only. No statistics, findings, or real-world claims are represented here.",
+      "A design preview for an analysis story. No real-world claim is being made.",
   },
   {
     number: "02.3",
     contentType: "Field notes",
     topic: "Building",
-    title: "A shorter field-notes fixture for testing a different editorial rhythm",
+    title: "What do you learn by building something on the side?",
     description:
-      "Design fixture only. This is structural copy, not a reported Portfilo story.",
+      "A design preview for field notes. This is not a published Portfilo story.",
   },
 ] as const;
 ---
@@ -52,12 +51,12 @@ const latestFixtures = [
       <p class="site-header__strapline">
         Practical intelligence for ambitious Filipinos
       </p>
-      <p class="site-header__section">Homepage / v0</p>
+      <p class="site-header__section">Editorial / Philippines</p>
     </header>
 
     <main id="main-content" tabindex="-1">
       <section class="identity" aria-labelledby="identity-title">
-        <p class="identity__eyebrow">Portfilo / Editorial institution / v0</p>
+        <p class="identity__eyebrow">Work / Money / Skills / Building / Life</p>
 
         <h1 id="identity-title">
           Practical intelligence
@@ -66,40 +65,38 @@ const latestFixtures = [
 
         <div class="identity__note">
           <p>
-            Portfilo is being built to investigate consequential questions about
-            work, money, skills, building, and life, then make the evidence useful
-            enough to act on.
+            Portfilo looks closely at work, money, skills, building, and life in
+            the Philippines. We do the digging, show our work, and make the useful
+            part clear.
           </p>
         </div>
 
-        <aside class="fixture-note" aria-label="Homepage fixture status">
-          <span>Design state</span>
-          <strong>Launch stories not yet selected</strong>
+        <aside class="fixture-note" aria-label="Homepage preview status">
+          <span>Preview mode</span>
+          <strong>Launch stories are still being selected</strong>
           <p>
-            Editorial headlines below are clearly labeled synthetic fixtures for
-            visual testing only.
+            The story headlines on this page are design previews, not published
+            journalism.
           </p>
         </aside>
       </section>
 
       <section class="feature-section" aria-labelledby="feature-title">
         <header class="section-head">
-          <p>01 / Dominant feature</p>
+          <p>01 / Feature preview</p>
           <p>Explained / Work</p>
-          <p>Design fixture</p>
+          <p>Not published</p>
         </header>
 
         <article class="feature">
           <div class="feature__copy">
-            <p class="story-label">Feature / Design fixture</p>
+            <p class="story-label">Feature preview / Not published</p>
             <h2 id="feature-title">
-              How Portfilo will turn a consequential question into practical
-              intelligence
+              What should you know before making a big career move?
             </h2>
             <p class="feature__dek">
-              A synthetic feature used to test the homepage at full editorial
-              scale. It represents structure, hierarchy, and reading rhythm only,
-              not a reported finding or launch story.
+              A homepage design preview, not a published Portfilo story. It is here
+              to test how a real feature will read and feel.
             </p>
             <dl class="feature__meta">
               <div>
@@ -112,38 +109,37 @@ const latestFixtures = [
               </div>
               <div>
                 <dt>Status</dt>
-                <dd>Design fixture</dd>
+                <dd>Preview</dd>
               </div>
             </dl>
           </div>
 
           <aside class="evidence-panel" aria-label="Synthetic evidence panel">
             <div class="evidence-panel__topline">
-              <span>Evidence panel</span>
-              <span>Fixture / 01</span>
+              <span>How we think</span>
+              <span>Preview / 01</span>
             </div>
             <p class="evidence-panel__number" aria-hidden="true">01</p>
             <dl>
               <div>
                 <dt>Question</dt>
-                <dd>Define the decision</dd>
+                <dd>What are you deciding?</dd>
               </div>
               <div>
                 <dt>Sources</dt>
-                <dd>Show the evidence</dd>
+                <dd>What do we know?</dd>
               </div>
               <div>
                 <dt>Limits</dt>
-                <dd>Preserve uncertainty</dd>
+                <dd>What don't we know?</dd>
               </div>
               <div>
-                <dt>Decision</dt>
-                <dd>Make it useful</dd>
+                <dt>Takeaway</dt>
+                <dd>What changes?</dd>
               </div>
             </dl>
             <p class="evidence-panel__note">
-              Typography-led media fixture. No data or factual finding is being
-              represented.
+              Preview module. No data or reported findings are shown.
             </p>
           </aside>
         </article>
@@ -152,8 +148,8 @@ const latestFixtures = [
       <section class="latest" aria-labelledby="latest-title">
         <header class="section-head section-head--latest">
           <p id="latest-title">02 / Latest + selected</p>
-          <p>Editorial hierarchy test</p>
-          <p>All entries are fixtures</p>
+          <p>Story preview</p>
+          <p>Not published</p>
         </header>
 
         <div class="latest__grid">
@@ -181,13 +177,11 @@ const latestFixtures = [
       <section class="institution" aria-labelledby="institution-title">
         <p class="institution__index">03 / What Portfilo is for</p>
         <div class="institution__statement">
-          <h2 id="institution-title">
-            Useful enough to change a decision. Rigorous enough to show its work.
-          </h2>
+          <h2 id="institution-title">Clear enough to use. Careful enough to trust.</h2>
           <p>
-            Portfilo is not a motivation feed or a generic self-improvement site.
-            The editorial system is built around research, explicit evidence,
-            Philippine context where it matters, and practical reader payoff.
+            No hustle sermons. No recycled advice pasted onto the Philippines.
+            Portfilo reports, explains, checks the evidence, and says when the
+            answer is still uncertain.
           </p>
         </div>
         <ul class="institution__topics" aria-label="Portfilo editorial topics">
@@ -202,18 +196,17 @@ const latestFixtures = [
       <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
         <div class="newsletter__label">
           <p>04 / Portfilo Brief</p>
-          <p>Newsletter call to action / design fixture</p>
+          <p>Email / Preview</p>
         </div>
         <div class="newsletter__copy">
           <h2 id="newsletter-title">The useful part, in your inbox.</h2>
           <p>
-            Portfilo Brief will carry the publication's most useful reporting and
-            analysis into email. Signup will be connected to beehiiv during the
-            dedicated Subscribe phase; this block tests the homepage CTA only.
+            New stories, sharp explanations, and the useful bits worth keeping.
+            Portfilo Brief will be the simplest way to keep up.
           </p>
         </div>
-        <p class="newsletter__action" aria-label="Newsletter signup design fixture">
-          Get Portfilo Brief <span aria-hidden="true">↗</span>
+        <p class="newsletter__action" aria-label="Newsletter signup design preview">
+          Join Portfilo Brief <span aria-hidden="true">↗</span>
         </p>
       </section>
     </main>
@@ -224,7 +217,7 @@ const latestFixtures = [
       </div>
       <p>Practical intelligence for ambitious Filipinos</p>
       <a href="/stories/portfilo-content-architecture-test">
-        Open live story-system fixture
+        Open development story fixture
       </a>
     </footer>
 
@@ -418,6 +411,7 @@ const latestFixtures = [
         margin: 0;
         font: 500 clamp(3.75rem, 7.75vw, 8.2rem) / 0.88 var(--sans);
         letter-spacing: -0.07em;
+        word-spacing: 0.06em;
         text-wrap: balance;
         overflow-wrap: break-word;
       }
@@ -1007,12 +1001,20 @@ const latestFixtures = [
         }
 
         .evidence-panel {
-          min-height: 25rem;
+          min-height: 0;
           margin-top: 3rem;
         }
 
+        .evidence-panel__topline {
+          flex-wrap: wrap;
+          align-items: flex-start;
+          row-gap: 0.35rem;
+        }
+
         .evidence-panel__number {
-          font-size: clamp(7rem, 34vw, 11rem);
+          margin: 2.25rem 0 1.75rem;
+          font-size: clamp(6rem, 27vw, 8.5rem);
+          line-height: 0.8;
         }
 
         .latest {
