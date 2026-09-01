@@ -6,7 +6,9 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Subscribe Surface & beehiiv Integration**
 
-The Subscribe page is implemented and Portfilo's real beehiiv inline subscribe form is now committed. The phase remains open only for the required user-run production build, end-to-end test subscription, and responsive/browser QA.
+The third-party beehiiv embed was rejected during user visual QA because its typography, spacing, borders, sizing, and mobile behavior did not integrate with the approved Portfilo design system. The user explicitly approved replacing it with a native Portfilo form backed by one narrow Cloudflare Pages Function that forwards subscriptions to beehiiv.
+
+The native form and server-side proxy are now committed as an implementation candidate. The phase remains open for beehiiv API credential configuration, a real end-to-end confirmed-opt-in subscription, production build, and responsive/browser QA.
 
 Completed phases:
 
@@ -31,29 +33,36 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Validate the public **Subscribe** surface required by `docs/V0_SCOPE.md` and its live beehiiv signup flow without creating custom newsletter infrastructure.
+Finish and validate the native public **Subscribe** surface required by `docs/V0_SCOPE.md`.
 
-Portfilo Brief is the email product. beehiiv remains responsible for subscriber management, deliverability, unsubscribe handling, and the embedded signup form.
+Portfilo owns the visible signup form and its responsive interaction design. beehiiv remains the newsletter system of record for subscriber storage, confirmation, delivery, and unsubscribe handling. One Cloudflare Pages Function at `/api/subscribe` is the only approved newsletter server-side code.
 
 ## Exact next task
 
-Perform final local Subscribe validation in this order:
+Complete beehiiv API credential setup and end-to-end Subscribe validation in this order:
 
-1. Pull the latest `build/portfilo-v0` branch.
-2. Run `npm run build` and require a clean static production build.
-3. Run the site locally and open `/subscribe`.
-4. Confirm the real beehiiv form renders inside the Portfilo signup panel rather than a placeholder or blank area.
-5. Confirm the homepage Portfilo Brief action links to `/subscribe`.
-6. Submit a test email address through the form.
-7. Confirm the configured success behavior appears after submission.
-8. In beehiiv, confirm the test address appears in the Portfilo Brief audience/subscriber records. If double opt-in is enabled, complete the confirmation email and verify the resulting subscriber state.
-9. Check any visible beehiiv validation/error behavior with an invalid email without creating a false subscriber.
-10. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths.
-11. Check for iframe/form clipping, horizontal overflow, awkward whitespace, or unreadable scaling.
-12. Keyboard-test the Portfilo skip link, wordmark, homepage Subscribe link, and controls exposed by the beehiiv form; visible focus must remain usable.
-13. Confirm Instrument Sans, Source Serif 4, and IBM Plex Mono load on the Portfilo page.
-14. Confirm existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
-15. Do not mark Subscribe complete until the live test subscription and final local QA pass.
+1. In beehiiv, complete the required account identity verification if API access is not yet enabled.
+2. Go to `Settings > Workspace Settings > API`.
+3. Create a dedicated API key for the Portfilo website subscription endpoint. Save it securely when beehiiv shows it; the key is only displayed once. **Do not paste the API key into ChatGPT, GitHub, browser code, or any public file.**
+4. On the same beehiiv API settings page, copy the **API V2 Publication ID** for Portfilo Brief. It should begin with `pub_`.
+5. Pull the latest `build/portfilo-v0` branch.
+6. Copy `.dev.vars.example` to a local `.dev.vars` file and set:
+
+   `BEEHIIV_API_KEY="<private key>"`
+
+   `BEEHIIV_PUBLICATION_ID="<pub_... id>"`
+
+   `.dev.vars` is ignored by Git and must remain local.
+7. Run `npm run build` and require a clean static production build.
+8. For full local API testing, run Cloudflare Pages locally against the built `dist` directory with Wrangler, for example `npx wrangler pages dev dist`. Astro's normal `npm run dev` is sufficient for visual form review but does not execute the root Cloudflare Pages Function.
+9. Open the locally served `/subscribe` page through the Wrangler server and verify the native Portfilo form renders with no beehiiv iframe/widget UI.
+10. Test invalid email handling and keyboard focus without creating a subscriber.
+11. Submit a real test email. The expected Portfilo success state is: `Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.`
+12. Confirm the beehiiv double-opt-in email arrives, complete the confirmation, and verify the subscriber appears in beehiiv with the expected state.
+13. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths. The desktop form is an editorial horizontal control; mobile intentionally becomes a stacked full-width input and button rather than shrinking the desktop control.
+14. Check loading state, success state, API failure state, horizontal overflow, tap targets, visible focus, font loading, and reduced-motion behavior.
+15. Confirm the homepage Portfilo Brief link still routes to `/subscribe` and existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
+16. Do not mark Subscribe complete until the real confirmed-opt-in signup and final local QA pass.
 
 After Subscribe passes final local QA, perform a **Global Navigation & Public Surface Integration pass** so readers can move coherently among Home, Standards, About, Subscribe, and future story/index surfaces.
 
@@ -93,7 +102,7 @@ Classification rules:
 - career, salary, skills, work, and broader life questions are supporting subjects rather than Portfilo's primary identity;
 - News is a format, not Portfilo's identity;
 - `Latest` remains broader than a breaking-news feed;
-- Portfilo Brief remains the planned email product.
+- Portfilo Brief is the email product.
 
 ## Public copy standard
 
@@ -224,36 +233,32 @@ Implementation commits:
 - `3c172cf1cadf24551380fa0dc432e6283fccad8d` — initial About page
 - `402eed67aa3b4090803ec8e3a7981d4dad42a678` — reduce founder attribution and remove unsupported independence wording
 
-A compare against the pre-About head confirmed that the implementation added only `src/pages/about.astro`; frozen public surfaces and the content schema were not modified.
-
-### Final validation
-
-User-reported PASS on 2026-09-02:
-
-- local production build passed;
-- `/about` rendered correctly;
-- desktop/mobile/browser QA passed;
-- existing public surfaces remained acceptable;
-- final About appearance explicitly approved.
+User-reported final QA PASS on 2026-09-02.
 
 **About Page is formally closed.**
 
-## Subscribe Surface & beehiiv Integration — IMPLEMENTED / QA PENDING
+## Subscribe Surface & beehiiv Integration — NATIVE FORM IMPLEMENTED / CREDENTIAL + QA PENDING
 
-### beehiiv decision
+### Rejected embed approach
 
-Current official beehiiv information verified on 2026-09-02:
+A real beehiiv inline embed was initially connected and tested visually. User QA found that its internal typography, border treatment, sizing, whitespace, and responsive behavior remained visibly disconnected from the Portfilo design system even after both Portfilo-side and beehiiv-side styling adjustments.
 
-- the Launch plan is free at `$0/month`;
-- Launch supports up to 2,500 subscribers;
-- unlimited email sends are included;
-- subscribe forms are included;
-- external websites should use beehiiv's embedded subscribe forms;
-- inline embeds render where the script is placed;
-- external embedded forms do not use beehiiv Website Builder signup flows;
-- removing beehiiv branding requires a higher paid tier, so v0 accepts beehiiv branding rather than paying to remove it.
+The embed approach is therefore retired. Do not reintroduce it unless beehiiv materially changes its external-form capabilities and a future review explicitly approves it.
 
-### Route
+### Approved architecture exception
+
+The user explicitly approved a narrow exception to the prior `no custom newsletter backend` rule:
+
+- Portfilo renders a native signup form;
+- `functions/api/subscribe.js` accepts only the newsletter signup request;
+- the function validates the request and sends it to beehiiv's official subscription API;
+- the beehiiv API key remains server-side only;
+- beehiiv remains the system of record;
+- no database, subscriber store, account system, newsletter sending, or unsubscribe implementation is added to Portfilo.
+
+`AGENTS.md` and `docs/V0_SCOPE.md` have been updated to record this exception and prevent scope creep.
+
+### Native route
 
 `/subscribe`
 
@@ -261,56 +266,93 @@ Implementation file:
 
 `src/pages/subscribe.astro`
 
-The page:
+The page now:
 
-- uses the locked Portfilo visual system;
-- explains Portfilo Brief without promising a publishing frequency;
-- exposes the five coverage areas;
-- includes the real Portfilo Brief beehiiv inline signup form;
-- uses beehiiv's public `subscribe-forms` loader and the publication-specific public form ID generated by beehiiv;
-- includes a no-JavaScript explanatory fallback;
-- uses no custom newsletter backend or API;
-- adds no frontend dependency.
+- uses only Portfilo HTML/CSS for the visible signup UI;
+- contains no beehiiv iframe or loader script;
+- uses Instrument Sans for the form control typography;
+- uses Portfilo paper/ink/signal-blue tokens;
+- uses square geometry rather than third-party rounded widget styling;
+- has a large editorial horizontal email control on desktop;
+- intentionally stacks input and full-width action on mobile;
+- has visible focus states;
+- has client-side invalid-email, submitting, confirmation, and API-error states;
+- uses a hidden honeypot field as a lightweight bot filter;
+- tells successful submissions to check the inbox rather than falsely claiming subscription is complete before double opt-in confirmation.
 
-The public embed code supplied from the Portfilo beehiiv account was connected directly. Because this is public form embed metadata rather than a secret credential, the temporary `.env.example` configuration seam was removed.
+### Subscription endpoint
 
-### Implementation commits
+`functions/api/subscribe.js`
 
-- `486daf94de82cceed878fead289ffed48bf504a4` — initial Subscribe surface
-- `4c854cbcbfd89de745a4a21b9627771350ad61c1` — temporary beehiiv configuration seam
-- `42782b8db7e1ab6f618b3fc20ebe1cb57813df8a` — connect the real Portfilo Brief beehiiv form
-- `16fa235f4ec87dd725ff8121483fee7ee67507fd` — remove obsolete beehiiv environment example
-- `2fcb610567c7d121f990b0903398d321cbaa3132` — connect homepage Portfilo Brief CTA to `/subscribe`
+The Cloudflare Pages Function:
+
+- accepts POST only;
+- rejects cross-origin browser requests;
+- limits request size;
+- accepts JSON or form payloads;
+- validates email input server-side;
+- quietly drops honeypot submissions;
+- requires `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` from server-side environment bindings;
+- calls beehiiv `POST /v2/publications/:publicationId/subscriptions`;
+- sets `double_opt_override: "on"`;
+- treats an explicit form submission as consent to reactivate a previously unsubscribed address;
+- does not expose beehiiv API errors or credentials to the browser;
+- stores no subscriber data in Portfilo.
+
+### Secret handling
+
+`.dev.vars.example` documents the required local variable names.
+
+`.gitignore` excludes `.dev.vars` and environment-specific `.dev.vars.*` while allowing the example file to remain committed.
+
+Production secrets will later be configured in Cloudflare Pages/Workers environment settings rather than GitHub.
+
+### Relevant commits in the native-form transition
+
+- `5a4e49742dd9d5a93aaba51636d83b4e03e14706` — last embed-layout refinement before the embed approach was rejected
+- `e85ed39c9bc2c432a1ca5d7d5cbfaa0f4e4148ad` — secure beehiiv subscription proxy
+- `d656fcc924aa6e5d16f05e3b27c36963fa9365da` — native Portfilo subscribe form
+- `6c9f1053325aabe14c3b0517dfc2d1cd9a602da1` — local secret template
+- `efc4597438c08ecf6664e4d47f862c33ab8798b1` — protect local Cloudflare secrets
+- `4b695ed4066c62a2776818f62c9854fe7713b422` — architecture-rule exception
+- `8503a19652e03cf351c4462c00db1b100610e041` — v0 scope alignment
 
 ### Remaining validation
 
 Still required before closure:
 
-- local `npm run build` PASS after the real embed integration;
-- `/subscribe` rendered-browser review with the live beehiiv form;
-- successful real test subscription into beehiiv;
-- success/error-state review;
-- responsive/browser QA at desktop, tablet, 390px, and 360px;
-- regression check of existing public routes.
+- beehiiv account identity verification if required for API access;
+- dedicated API key creation;
+- API V2 Publication ID collection;
+- local `.dev.vars` configuration;
+- local `npm run build` PASS;
+- local Cloudflare Pages Function runtime test;
+- invalid-email state PASS;
+- real subscription request PASS;
+- double-opt-in email + confirmation PASS;
+- subscriber visible in beehiiv PASS;
+- desktop/tablet/390px/360px visual QA;
+- existing-route regression check.
 
-**Do not close this phase until the real beehiiv signup succeeds and the user reports final local QA pass.**
+**Do not close this phase until the real confirmed-opt-in signup succeeds and the user reports final local QA pass.**
 
 ## Zero-budget infrastructure posture
 
-Locked direction:
+Current locked direction:
 
 - Cloudflare Pages for static hosting/deployment;
+- one Cloudflare Pages Function solely for newsletter subscription forwarding;
 - Cloudflare Web Analytics;
-- beehiiv for newsletter sending, subscriber management, deliverability, unsubscribe handling, and embedded signup;
+- beehiiv for subscriber storage, confirmation, newsletter sending, deliverability, and unsubscribe handling;
 - GitHub source control;
 - local Markdown + Astro Content Collections;
-- no database, authentication system, custom newsletter backend, or custom analytics backend.
+- no database, authentication system, custom subscriber store, custom newsletter platform, or custom analytics backend.
 
 Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Subscribe final functional/browser QA — current phase remainder
+- Subscribe credential connection + final functional/browser QA — current phase remainder
 - global navigation / public-surface integration pass — after Subscribe
 - analytics
 - deployment
@@ -334,7 +376,7 @@ Use free tiers while sufficient for v0 validation.
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
 | Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
 | About Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| Subscribe Surface & beehiiv Integration | IMPLEMENTED — live form connected; functional signup + final QA pending |
+| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED — API credentials + functional signup + final QA pending |
 
 ## Phase handoff rule
 
