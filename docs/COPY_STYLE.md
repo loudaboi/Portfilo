@@ -20,7 +20,7 @@ For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, 
 
 ## Research basis
 
-This style is adapted from established plain-language, web-usability, and journalism guidance rather than copied from another publication's voice.
+This style is adapted from established plain-language, web-usability, journalism, and Philippine digital-use evidence rather than copied from another publication's voice.
 
 Key evidence:
 
@@ -28,6 +28,10 @@ Key evidence:
 - ISO 24495-1:2023 establishes plain-language principles for public communication. ISO's own house style emphasizes information that readers can find, understand, and use, with short sentences and one main idea per sentence.
 - GOV.UK and UK Office for National Statistics content guidance emphasizes user needs, familiar language, front-loading important information, short sentences, and descriptive headings.
 - Associated Press standards emphasize accuracy, precision, original phrasing, clear sourcing, and avoiding unsupported amplification.
+- The Philippine Statistics Authority's 2024 National Information and Communications Technology Household Survey reported that 98.8% of internet users aged 10 and over used a cellphone to access the internet. Portfilo copy therefore has to work particularly well when scanned on a small screen.
+- PSA's 2024 Functional Literacy, Education and Mass Media Survey shows that literacy and comprehension are not uniform across the country. This is not a reason to oversimplify ideas. It is a reason to treat clear language as inclusive communication rather than as a lower standard.
+
+There is no credible basis for assuming one universal Filipino tone of voice. Portfilo should not manufacture one. Filipino character should come from relevant context, reporting, examples, constraints, and cultural fluency. Reader testing should inform future refinements.
 
 Reference sources:
 
@@ -39,6 +43,8 @@ Reference sources:
 - https://service-manual.ons.gov.uk/content/writing-for-users/structuring-content
 - https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/plan-manage-content/understand-content-design/
 - https://www.ap.org/about/news-values-and-principles/telling-the-story/
+- https://psa.gov.ph/content/percentage-households-internet-connection-increased-488-percent-2024-two-every-three
+- https://psa.gov.ph/statistics/education-mass-media/node/1684076780
 
 ## The Portfilo voice
 
