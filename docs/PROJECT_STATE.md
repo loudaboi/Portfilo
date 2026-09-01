@@ -4,13 +4,21 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Homepage Visual Design**
+**Portfilo v0 / Series Page Foundation & Visual Design**
 
-The homepage design direction is approved. The editorial taxonomy is aligned with that direction. One final local production-build and browser QA pass is required before Homepage Visual Design may be formally closed.
+Homepage Visual Design is complete after the user-reported final local production-build and browser QA pass.
 
-Foundation, Content Architecture, Editorial Design, Wordmark Exploration & Lock, Public Copy Style, and Editorial Taxonomy Alignment are complete.
+Completed phases:
 
-The story visual surface remains frozen for v0 unless a concrete implementation problem is discovered.
+- Foundation
+- Content Architecture
+- Editorial Design
+- Wordmark Exploration & Lock
+- Public Copy Style
+- Editorial Taxonomy Alignment
+- Homepage Visual Design
+
+The story visual surface and homepage visual direction remain frozen for v0 unless a concrete implementation problem is discovered.
 
 ## Current branch
 
@@ -20,9 +28,39 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Perform **Homepage Final QA & Closure** after the final taxonomy and color cleanup.
+Build the smallest credible **Series** system and public series page required by `docs/V0_SCOPE.md`.
 
-The remaining work is validation, not another redesign.
+This is not only a styling task. The current story schema has story-level `series` and `seriesOrder`, but v0 scope also requires series-level metadata and an active/completed state. Resolve that minimal content-model gap first, then implement the page using the frozen Portfilo visual language.
+
+Do not build a CMS, database, dynamic application state, complex taxonomy, or speculative series-management framework.
+
+## Exact next task
+
+Perform **Series Foundation Review & Implementation** in this order:
+
+1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, `docs/EDITORIAL_STANDARD.md`, `docs/PUBLISHING_STANDARD.md`, and `docs/COPY_STYLE.md`.
+2. Inspect the current `src/` tree, `src/content.config.ts`, story fixtures, homepage, and story route.
+3. Confirm the smallest series-level data model needed to satisfy v0 scope:
+   - stable series slug/id;
+   - public title;
+   - concise description/dek;
+   - active/completed state;
+   - optional ordering/display metadata only if a current requirement proves necessary.
+4. Prefer a small build-time Content Collection or equally simple repository-native model if series-level metadata cannot live cleanly on stories without duplication.
+5. Keep story membership through the existing `series` + `seriesOrder` relationship unless a concrete problem requires changing it.
+6. Add one clearly synthetic series fixture with enough ordered published stories to prove rendering. Do not fabricate real reporting.
+7. Implement a generic static series route and page.
+8. Reuse the established visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, blue evidence/action accents, twelve-column editorial grid, restrained rules, and no generic card grid.
+9. Series page should communicate at minimum:
+   - series title;
+   - description;
+   - active/completed status;
+   - ordered story list;
+   - each story's type/topic and useful metadata;
+   - clear path into individual stories.
+10. Follow `docs/COPY_STYLE.md`; public labels should be familiar and literal rather than invented brand terminology.
+11. Preserve static output and avoid client-side JavaScript unless a real interaction requires it.
+12. Run production build and responsive/browser QA before marking the phase complete.
 
 ## Portfilo editorial direction
 
@@ -48,84 +86,26 @@ The Content Collection schema enforces:
 
 `business / technology / startups / ai / building`
 
-### Important classification rules
+### Classification rules
 
-- A story has **one primary topic** in v0.
-- **AI** is used when AI itself is the main thing the reader needs to understand. A story involving AI may still be Business, Startups, or Building when the larger question belongs there.
-- **Founders** are a recurring subject/lens, not a top-level topic. Founder profiles use the existing `profile` content type and the most appropriate primary topic.
-- **Capital**, venture, funding, investing, acquisitions, and ownership are covered primarily under Business or Startups rather than as a separate top-level topic.
+- A story has one primary topic in v0.
+- AI is used when AI itself is the main thing the reader needs to understand. A story involving AI may still be Business, Startups, or Building when the larger question belongs there.
+- Founders are a recurring subject/lens, not a top-level topic. Founder profiles use the existing `profile` content type and the most appropriate primary topic.
+- Capital, venture, funding, investing, acquisitions, and ownership are covered primarily under Business or Startups rather than as a separate top-level topic.
 - Fintech, e-commerce, SaaS, and similar beats do not require a tagging system in v0. Add secondary tags only when real publishing volume proves the need.
-- Career, salary, skills, work, and broader life questions are not banned, but they are supporting subjects when they connect to the stronger Portfilo mission rather than the publication's identity.
-- **News is a format, not Portfilo's identity.** Portfilo covers important developments when it can add explanation, evidence, context, or decision value beyond the event itself.
-- The homepage therefore keeps a broad `Latest` treatment rather than becoming a commodity breaking-news feed.
-- **Portfilo Brief** remains the planned email product and may become the faster channel for useful updates.
+- Career, salary, skills, work, and broader life questions are supporting subjects when they connect to the stronger Portfilo mission rather than the publication's identity.
+- News is a format, not Portfilo's identity. Cover developments when Portfilo can add explanation, evidence, context, or decision value beyond the event itself.
+- `Latest` remains broader than a breaking-news feed.
+- Portfilo Brief remains the planned email product and may become the faster channel for useful updates.
 
-## Homepage final direction
+## Public copy standard
 
-Approved and implemented:
-
-- locked `Port / fi / lo` black/blue/red wordmark in the masthead;
-- masthead page label is `Home`;
-- `Practical intelligence for ambitious Filipinos` is the primary homepage editorial statement;
-- `for ambitious Filipinos.` is rendered as a separate blue line to prevent the earlier collapsed word-boundary issue;
-- no reader-facing `v0` project language;
-- same twelve-column editorial grid logic, gutters, rules, and mobile collapse behavior as the frozen story page;
-- one dominant editorial feature rather than a repeated card grid;
-- dark typography-led evidence panel paired with the dominant feature;
-- mobile evidence-panel number is reduced and explicitly spaced to avoid collision with its label;
-- Latest + Selected uses one larger secondary story and two compact text-led entries;
-- asymmetric institutional section with a compact editorial-topic rail;
-- visible homepage taxonomy is `Business / Technology / Startups / AI / Building`;
-- preview stories test business, AI, startup, founder, and building subject matter rather than generic salary/career framing;
-- Portfilo Brief CTA remains a preview only until beehiiv integration;
-- all preview headlines remain clearly identified as unpublished design fixtures;
-- one footer link continues to expose the existing published development story fixture for route testing;
-- experimental extra red homepage accents were removed; red remains in the wordmark and correction semantics;
-- no React, Vue, Svelte, Tailwind, UI kit, animation library, CMS, database, authentication, or new package dependency was added;
-- implementation remains Astro + custom CSS with no client-side JavaScript requirement.
-
-### Homepage implementation history
-
-- initial homepage candidate: `8c2dbb31e4f35050e2b43d313d9a22a247abddea`
-- first copy/responsive refinement: `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c`
-- business/technology/founder positioning pass: `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8`
-- startups taxonomy + red-accent cleanup: `6c43ba19f8c58f82bd780180884fb0b1c3650305`
-- final AI homepage taxonomy pass: `eb7c38967a50072323f1e2375025f63533042b56`
-
-## Editorial taxonomy alignment
-
-Completed in this phase because the homepage direction was explicitly approved before final closure.
-
-Current state:
-
-- `src/content.config.ts` controlled topics are `business / technology / startups / ai / building`;
-- published content-architecture fixture remains `topic: business`;
-- draft-filtering fixture remains `topic: startups`;
-- `docs/EDITORIAL_STANDARD.md` is aligned to the business/technology/startup/AI/building direction;
-- the editorial standard now includes specific AI-coverage safeguards against benchmark misuse, vendor-claim amplification, capability overstatement, and speculative economic/job claims;
-- homepage topic labels use the same taxonomy.
-
-Relevant commits:
-
-- initial focused taxonomy alignment: `6d524f7070178de759fc81d63626cba5e8a95901`
-- published fixture migration: `2e27f93bf86b05ba5343dc02e0a990a86e2f2bcb`
-- draft fixture migration: `a051e5ea3089125ed90884fe2857359527243189`
-- initial editorial-standard alignment: `99cb25fe93d4e306084cff9a32cf7c8fed7d9202`
-- AI primary-topic schema: `c89556fb31963836f4a817824de5587af6a46578`
-- AI editorial coverage standard: `41ed895affcf5ab72da569e680f63843b562107f`
-
-No secondary tag/beat infrastructure was added because there is no current publishing-volume requirement for it.
-
-## Portfilo public copy standard
-
-`docs/COPY_STYLE.md` is the canonical standard for public-facing site copy, and `AGENTS.md` requires contributors to follow it.
-
-The copy strategy is repository-persistent and does not depend on prior chat context.
+`docs/COPY_STYLE.md` is canonical for reader-facing copy and `AGENTS.md` requires contributors to follow it.
 
 Core rules:
 
 - clear before clever;
-- smart without sounding academic;
+- smart without academic affect;
 - confident without hype;
 - useful before self-descriptive;
 - Filipino by concrete context, not costume;
@@ -137,81 +117,105 @@ Working principle:
 
 > **Make the useful thing clear. Keep the personality in the precision.**
 
-## Brand-color rule
+## Brand and visual system
 
-The color system is deliberately asymmetric.
+### Wordmark
 
-### Publication base
+Locked for v0:
+
+- wordmark-first identity;
+- no standalone logo symbol required;
+- forward-leaning Instrument Sans treatment with slight streetwear influence;
+- `Port` near-black `#171614`;
+- `fi` signal blue `#0050a4`;
+- `lo` correction red `#b42318`.
+
+Do not reopen symbol exploration during v0 unless a concrete production problem appears.
+
+### Color rule
+
+Publication base:
 
 - warm paper `#f4f0e8`;
 - near-black ink `#171614`.
 
-### Blue
+Blue:
 
 - signal blue `#0050a4` is the primary functional/editorial accent;
 - evidence blue `#8fc7ff` is used on dark evidence fields;
 - blue carries evidence, structure, links, section markers, methodology, navigation/action cues, and informational emphasis.
 
-### Red
+Red:
 
 - correction/brand red `#b42318`;
 - correction soft `#f6e7e3`;
-- red remains in the `lo` portion of the Portfilo wordmark;
-- on story/journalism surfaces, red is reserved for correction semantics aside from the wordmark;
-- the experimental extra red institutional accents on the homepage were removed after visual review because they felt forced;
+- red remains in the `lo` portion of the wordmark;
+- on journalism surfaces, red is reserved for correction semantics aside from the wordmark;
+- experimental extra red homepage accents were removed after visual review because they felt forced;
 - do not add red merely to create numerical color balance;
 - future non-story use requires a natural, repeatable role rather than decorative placement.
 
-Current practical rule:
+Practical rule:
 
 > **Paper/black carry the publication. Blue is the active editorial accent. Red is the wordmark signature and correction signal until a better institutional role is earned.**
 
-## Locked v0 wordmark decision
+## Homepage Visual Design — COMPLETE
 
-Approved and locked for v0:
+Approved and implemented:
 
-- Portfilo uses a wordmark-first identity;
-- no standalone logo symbol is required for v0;
-- forward-leaning editorial sans with a slight streetwear influence;
-- live masthead wordmark:
-  - `Port` near-black `#171614`;
-  - `fi` signal blue `#0050a4`;
-  - `lo` correction red `#b42318`;
-- Instrument Sans remains the wordmark and editorial sans base;
-- no standalone `P`, `PF`, avatar mark, or favicon is locked for v0.
+- masthead uses the locked `Port / fi / lo` wordmark;
+- masthead page label is `Home`;
+- `Practical intelligence for ambitious Filipinos` is the primary homepage statement;
+- `for ambitious Filipinos.` is a separate blue line to preserve the word boundary under tight tracking;
+- no reader-facing `v0` language;
+- twelve-column editorial grid and established spacing/rule system;
+- one dominant editorial feature rather than repeated generic cards;
+- dark typography-led evidence panel;
+- Latest + Selected with one larger story and two compact entries;
+- institutional dark section with compact topic rail;
+- visible homepage taxonomy is `Business / Technology / Startups / AI / Building`;
+- preview stories use business, AI, startup, founder, and building subject matter rather than generic salary/career framing;
+- Portfilo Brief CTA remains a preview until beehiiv integration;
+- preview headlines remain explicitly unpublished synthetic design fixtures;
+- footer exposes the published development story fixture for route testing;
+- extra red homepage accents removed;
+- no new frontend framework, UI kit, animation library, CMS, database, authentication, or package dependency;
+- Astro + custom CSS with no client-side JavaScript requirement.
 
-Do not reopen symbol exploration during v0 unless a concrete production problem appears.
+Implementation history:
 
-## Completed foundation
+- `8c2dbb31e4f35050e2b43d313d9a22a247abddea` — initial homepage candidate
+- `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c` — first copy/responsive refinement
+- `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8` — focused business/technology/founder positioning pass
+- `6c43ba19f8c58f82bd780180884fb0b1c3650305` — startups taxonomy + red-accent cleanup
+- `eb7c38967a50072323f1e2375025f63533042b56` — final AI homepage taxonomy pass
 
-### Content architecture
+Final validation, user-reported on 2026-09-02:
+
+- final `git pull` completed;
+- `npm run build` passed;
+- homepage rendered correctly;
+- published story fixture remained available;
+- draft-filtering behavior remained correct;
+- desktop and narrow-mobile review passed;
+- no blocking overflow/collision issue reported;
+- final homepage appearance approved.
+
+**Homepage Visual Design is formally closed.**
+
+## Completed content architecture
 
 - Astro 7.2.10 with TypeScript;
 - static output;
 - one build-time `stories` Content Collection using local Markdown;
 - controlled content types and topics;
-- authorship, draft/published state, featured state, publish/update dates, optional series metadata, methodology metadata, and structured correction metadata;
+- authorship, draft/published state, featured state, publish/update dates, optional series relationship/order, methodology metadata, and structured correction metadata;
 - published stories require `publishedAt`;
 - `seriesOrder` requires `series`;
 - `updatedAt` cannot precede `publishedAt`;
 - generic static story route at `/stories/[slug]`;
 - production route generation filters to `status: published`;
 - synthetic published and draft fixtures remain in place.
-
-### Editorial design
-
-Story surface remains frozen for v0:
-
-- Instrument Sans for headline/interface/editorial headings;
-- Source Serif 4 for dek and long-form reading;
-- IBM Plex Mono for metadata and technical/editorial labels;
-- warm paper, near-black ink, muted text, blue evidence/action accents, red correction semantics;
-- twelve-column wide-screen grid;
-- body measure around `42rem`;
-- desktop metadata rail and single-path mobile reading layout;
-- methodology as a high-contrast evidence module;
-- corrections as a separate red treatment;
-- skip link and visible keyboard focus treatment.
 
 ## Editorial media / graphics readiness
 
@@ -221,7 +225,7 @@ Before the first real visual-heavy article, add only the primitives actually nee
 
 - `Figure` with image, caption, credit/source, and meaningful alt text;
 - optional wider media/data treatment;
-- chart / diagram styling;
+- chart/diagram styling;
 - `DataPoint` where editorially justified;
 - consistent asset naming/storage conventions;
 - responsive image optimization.
@@ -245,7 +249,7 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Series page implementation
+- Series page implementation — current phase
 - Research & Standards page
 - About page
 - Subscribe surface / beehiiv integration
@@ -261,53 +265,15 @@ Use free tiers while sufficient for v0 validation.
 |---|---|
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
+| Foundation | PASS |
 | Content Architecture | PASS |
 | Editorial Design | PASS |
 | Wordmark Exploration & Lock | PASS |
 | Public Copy Style | PASS |
-| Editorial Taxonomy Alignment | PASS — implementation complete, local build required |
-| Homepage information hierarchy/composition | PASS |
-| Homepage visual direction | APPROVED |
-| Homepage taxonomy | PASS — Business / Technology / Startups / AI / Building |
-| Extra homepage red accents | REMOVED |
-| New frontend/package dependencies | NONE |
-| Production build after taxonomy + final homepage cleanup | REQUIRED — local validation |
-| Published fixture route | REQUIRED — local build/browser QA |
-| Draft fixture exclusion | REQUIRED — local production-build QA |
-| Desktop responsive review | REQUIRED — final local browser QA |
-| 390px / 360px mobile review | REQUIRED — final local browser QA |
-| Horizontal overflow | REQUIRED — final local browser QA |
-| Keyboard focus / skip link | REQUIRED — final local browser QA |
-| Exact font loading | REQUIRED — final local browser/network QA |
-| Homepage Visual Design phase complete | NO — awaiting final QA |
-
-## Exact next task
-
-Perform **Homepage Final QA & Closure** on the current `build/portfilo-v0` branch.
-
-Required local validation:
-
-1. `git pull`;
-2. `npm run build` and require a clean build;
-3. confirm `/` renders;
-4. confirm `/stories/portfilo-content-architecture-test` still builds/renders and shows the `business` topic;
-5. confirm `/stories/portfilo-draft-filtering-test` is not generated publicly;
-6. inspect wide desktop, intermediate/tablet, 390px, and 360px;
-7. confirm `Business / Technology / Startups / AI / Building` wraps cleanly with no collision;
-8. confirm the mobile evidence panel keeps comfortable separation around `01`;
-9. confirm the homepage still has the intended black/paper/blue hierarchy while the wordmark retains its red `lo`;
-10. check clipping, overlap, awkward headline wrapping, and horizontal overflow;
-11. keyboard through the page and verify usable focus states;
-12. verify Instrument Sans, Source Serif 4, and IBM Plex Mono actually load;
-13. report the build result and any concrete visual defect.
-
-If those checks pass, mark **Homepage Visual Design** complete.
-
-The exact next product-surface task after closure is:
-
-**Series Page Visual Design & Implementation**
-
-Do not begin Research & Standards, About, Subscribe integration, analytics, deployment, or editorial launch research before the homepage phase is formally closed.
+| Editorial Taxonomy Alignment | PASS |
+| Homepage Visual Design | PASS — final local QA user-reported 2026-09-02 |
+| New frontend/package dependencies from homepage | NONE |
+| Series Page Foundation & Visual Design | IN PROGRESS — next task |
 
 ## Phase handoff rule
 
