@@ -53,18 +53,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
     <a class="skip-link" href="#story-body">Skip to story</a>
 
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">
-        <svg
-          class="wordmark__svg"
-          viewBox="0 0 182 52"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <text class="wordmark__text" x="1" y="42">
-            <tspan class="wordmark__port">Port</tspan><tspan class="wordmark__fi">fi</tspan><tspan class="wordmark__lo">lo</tspan>
-          </text>
-        </svg>
-      </a>
+      <a class="wordmark" href="/" aria-label="Portfilo home">Portfilo</a>
       <p class="site-header__strapline">
         Practical intelligence for ambitious Filipinos
       </p>
@@ -228,8 +217,6 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         --accent: #5635c8;
         --accent-soft: #ebe5ff;
         --accent-on-ink: #b8a9ff;
-        --flag-blue: #0038a8;
-        --flag-red: #ce1126;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
         --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
@@ -293,36 +280,10 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       }
 
       .wordmark {
-        display: block;
-        width: clamp(6.8rem, 8vw, 8.2rem);
-        line-height: 0;
+        width: fit-content;
+        font: 600 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
+        letter-spacing: -0.06em;
         text-decoration: none;
-      }
-
-      .wordmark__svg {
-        display: block;
-        width: 100%;
-        height: auto;
-        overflow: visible;
-      }
-
-      .wordmark__text {
-        font-family: var(--sans);
-        font-size: 48px;
-        font-weight: 600;
-        letter-spacing: -3px;
-      }
-
-      .wordmark__port {
-        fill: var(--ink);
-      }
-
-      .wordmark__fi {
-        fill: var(--flag-blue);
-      }
-
-      .wordmark__lo {
-        fill: var(--flag-red);
       }
 
       .site-header__strapline,
@@ -332,6 +293,10 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         font: 400 0.68rem/1.35 var(--mono);
         letter-spacing: 0.08em;
         text-transform: uppercase;
+      }
+
+      .site-header__strapline {
+        text-align: center;
       }
 
       .site-header__section {
@@ -675,6 +640,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
           grid-row: 2;
           max-width: 32rem;
           padding-top: 0.55rem;
+          text-align: left;
         }
 
         .site-header__section {
