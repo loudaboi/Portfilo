@@ -4,21 +4,21 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Content Architecture Implemented — Local Validation Pending**
+**Content Architecture Complete**
 
-The minimum Portfilo v0 content architecture has been implemented on `build/portfilo-v0`.
+The minimum Portfilo v0 content architecture is implemented and locally validated on `build/portfilo-v0`.
 
-The GitHub-connected environment can inspect and write repository files but cannot install or execute the repository's Astro dependencies, so the production build and generated `dist/` routes still require local validation before this phase is considered fully complete.
+Local validation on 2026-09-02 confirmed that the production build passes, the published fixture generates its expected static story route, and the draft fixture does not generate a public production route.
 
 ## Current branch
 
 Use `build/portfilo-v0` for the v0 application build.
 
-Do not merge to `main` until the current phase is validated and intentionally reviewed.
+Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
 ## Current objective
 
-Validate the new content architecture locally, then begin the Editorial Design phase without expanding technical scope.
+Begin the Portfilo v0 Editorial Design phase without expanding technical scope or beginning real editorial research.
 
 ## Completed
 
@@ -40,20 +40,14 @@ Validate the new content architecture locally, then begin the Editorial Design p
 - Production route generation explicitly filters to `status: published`.
 - One synthetic published fixture added to exercise long titles, optional metadata, Markdown body rendering, and generic routing.
 - One synthetic draft fixture added to exercise draft filtering.
+- Production build validated locally after the content architecture implementation.
+- Published fixture route validated at `dist/stories/portfilo-content-architecture-test/index.html`.
+- Draft fixture confirmed absent at `dist/stories/portfilo-draft-filtering-test/index.html`.
 - No new dependencies, framework integrations, CMS, database, analytics, newsletter infrastructure, or visual-design system were added.
 
 ## In progress
 
-Local validation of the Content Architecture phase:
-
-```bash
-npm ci
-npm run build
-test -f dist/stories/portfilo-content-architecture-test/index.html
-test ! -e dist/stories/portfilo-draft-filtering-test/index.html
-```
-
-The build must pass and the route checks must return success before moving to Editorial Design.
+None. The Content Architecture phase is complete.
 
 ## Not started
 
@@ -110,8 +104,6 @@ These are frozen for v0 unless a concrete blocker is discovered.
 
 ## Known issues / unresolved decisions
 
-- Production build for this content-architecture change has not been executed in the GitHub-connected ChatGPT environment.
-- Generated route output has not been inspected because `dist/` is produced only by the pending local build.
 - No separate Astro type-check package was added because it is not currently part of the repository and is not required to satisfy the implementation itself.
 - Final production domain is not required for this phase.
 - beehiiv publication/account configuration has not been created yet.
@@ -121,13 +113,13 @@ These are frozen for v0 unless a concrete blocker is discovered.
 
 ## Next task
 
-Run the local validation commands above on `build/portfilo-v0`.
-
-If all checks pass, the Content Architecture phase is complete and the exact next phase is:
+Begin:
 
 **Portfilo v0 / Editorial Design**
 
-Do not begin real editorial research, newsletter work, analytics, or deployment as part of that design phase.
+The next phase should establish the minimum credible editorial visual system for the existing generic story surface while preserving the validated content architecture.
+
+Do not begin real editorial research, newsletter work, analytics, or deployment as part of that phase.
 
 ## Validation status
 
@@ -136,15 +128,15 @@ Do not begin real editorial research, newsletter work, analytics, or deployment 
 | Repository access | PASS |
 | `build/portfilo-v0` branch access | PASS |
 | Canonical docs inspected | PASS |
-| Content collection configured | IMPLEMENTED |
-| Story schema present | IMPLEMENTED |
-| Published fixture present | IMPLEMENTED |
-| Draft route filtering present | IMPLEMENTED |
+| Content collection configured | PASS |
+| Story schema present | PASS |
+| Published fixture present | PASS |
+| Draft route filtering present | PASS |
 | No new dependencies | PASS |
 | No runtime client JavaScript added | PASS |
-| Production build for this phase | PENDING LOCAL VALIDATION |
-| Published fixture generated in `dist/` | PENDING LOCAL VALIDATION |
-| Draft fixture absent from public `dist/` | PENDING LOCAL VALIDATION |
+| Production build for this phase | PASS — local validation 2026-09-02 |
+| Published fixture generated in `dist/` | PASS — local validation 2026-09-02 |
+| Draft fixture absent from public `dist/` | PASS — local validation 2026-09-02 |
 | Responsive QA | NOT STARTED |
 | Deployment | NOT STARTED |
 
@@ -152,8 +144,8 @@ Do not begin real editorial research, newsletter work, analytics, or deployment 
 
 Before moving to a new phase or fresh chat:
 
-- validate the production build;
-- confirm the published and draft route checks;
-- record any validation failure here if one occurs;
-- commit any required fix;
-- then begin the Editorial Design phase from the validated branch state.
+- update this file;
+- commit stable work;
+- note validation results;
+- note unresolved issues;
+- state one concrete next task.
