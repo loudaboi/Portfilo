@@ -8,7 +8,7 @@ _Last updated: 2026-09-02_
 
 The third-party beehiiv embed was rejected during user visual QA because its typography, spacing, borders, sizing, and mobile behavior did not integrate with the approved Portfilo design system. The user explicitly approved replacing it with a native Portfilo form backed by one narrow Cloudflare Pages Function that forwards subscriptions to beehiiv.
 
-The native form and server-side proxy are now committed as an implementation candidate. The phase remains open for beehiiv API credential configuration, a real end-to-end confirmed-opt-in subscription, production build, and responsive/browser QA.
+The native form and server-side proxy are now committed as an implementation candidate. The Portfilo Brief API V2 Publication ID has also been verified from the user's beehiiv account and bound in the server-side proxy. The phase remains open for beehiiv API-key creation/configuration, a real end-to-end confirmed-opt-in subscription, production build, and responsive/browser QA.
 
 Completed phases:
 
@@ -41,28 +41,24 @@ Portfilo owns the visible signup form and its responsive interaction design. bee
 
 Complete beehiiv API credential setup and end-to-end Subscribe validation in this order:
 
-1. In beehiiv, complete the required account identity verification if API access is not yet enabled.
-2. Go to `Settings > Workspace Settings > API`.
-3. Create a dedicated API key for the Portfilo website subscription endpoint. Save it securely when beehiiv shows it; the key is only displayed once. **Do not paste the API key into ChatGPT, GitHub, browser code, or any public file.**
-4. On the same beehiiv API settings page, copy the **API V2 Publication ID** for Portfilo Brief. It should begin with `pub_`.
-5. Pull the latest `build/portfilo-v0` branch.
-6. Copy `.dev.vars.example` to a local `.dev.vars` file and set:
+1. In beehiiv, complete the required account identity verification so API-key creation is enabled.
+2. Go to `Settings > Workspace Settings > API` and create a dedicated API key for the Portfilo website subscription endpoint. Save it securely when beehiiv shows it; the key is only displayed once. **Do not paste the API key into ChatGPT, GitHub, browser code, or any public file.**
+3. Pull the latest `build/portfilo-v0` branch.
+4. Copy `.dev.vars.example` to a local `.dev.vars` file and replace the placeholder with the private key:
 
    `BEEHIIV_API_KEY="<private key>"`
 
-   `BEEHIIV_PUBLICATION_ID="<pub_... id>"`
-
-   `.dev.vars` is ignored by Git and must remain local.
-7. Run `npm run build` and require a clean static production build.
-8. For full local API testing, run Cloudflare Pages locally against the built `dist` directory with Wrangler, for example `npx wrangler pages dev dist`. Astro's normal `npm run dev` is sufficient for visual form review but does not execute the root Cloudflare Pages Function.
-9. Open the locally served `/subscribe` page through the Wrangler server and verify the native Portfilo form renders with no beehiiv iframe/widget UI.
-10. Test invalid email handling and keyboard focus without creating a subscriber.
-11. Submit a real test email. The expected Portfilo success state is: `Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.`
-12. Confirm the beehiiv double-opt-in email arrives, complete the confirmation, and verify the subscriber appears in beehiiv with the expected state.
-13. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths. The desktop form is an editorial horizontal control; mobile intentionally becomes a stacked full-width input and button rather than shrinking the desktop control.
-14. Check loading state, success state, API failure state, horizontal overflow, tap targets, visible focus, font loading, and reduced-motion behavior.
-15. Confirm the homepage Portfilo Brief link still routes to `/subscribe` and existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
-16. Do not mark Subscribe complete until the real confirmed-opt-in signup and final local QA pass.
+   `.dev.vars` is ignored by Git and must remain local. The Portfilo Brief API V2 Publication ID is already bound in the server-side proxy and does not need to be configured locally.
+5. Run `npm run build` and require a clean static production build.
+6. For full local API testing, run Cloudflare Pages locally against the built `dist` directory with Wrangler, for example `npx wrangler pages dev dist`. Astro's normal `npm run dev` is sufficient for visual form review but does not execute the root Cloudflare Pages Function.
+7. Open the locally served `/subscribe` page through the Wrangler server and verify the native Portfilo form renders with no beehiiv iframe/widget UI.
+8. Test invalid email handling and keyboard focus without creating a subscriber.
+9. Submit a real test email. The expected Portfilo success state is: `Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.`
+10. Confirm the beehiiv double-opt-in email arrives, complete the confirmation, and verify the subscriber appears in beehiiv with the expected state.
+11. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths. The desktop form is an editorial horizontal control; mobile intentionally becomes a stacked full-width input and button rather than shrinking the desktop control.
+12. Check loading state, success state, API failure state, horizontal overflow, tap targets, visible focus, font loading, and reduced-motion behavior.
+13. Confirm the homepage Portfilo Brief link still routes to `/subscribe` and existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
+14. Do not mark Subscribe complete until the real confirmed-opt-in signup and final local QA pass.
 
 After Subscribe passes final local QA, perform a **Global Navigation & Public Surface Integration pass** so readers can move coherently among Home, Standards, About, Subscribe, and future story/index surfaces.
 
@@ -292,7 +288,8 @@ The Cloudflare Pages Function:
 - accepts JSON or form payloads;
 - validates email input server-side;
 - quietly drops honeypot submissions;
-- requires `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` from server-side environment bindings;
+- requires only `BEEHIIV_API_KEY` from the server-side environment;
+- binds the verified Portfilo Brief API V2 Publication ID in server code because it is a public identifier rather than a credential;
 - calls beehiiv `POST /v2/publications/:publicationId/subscriptions`;
 - sets `double_opt_override: "on"`;
 - treats an explicit form submission as consent to reactivate a previously unsubscribed address;
@@ -301,7 +298,7 @@ The Cloudflare Pages Function:
 
 ### Secret handling
 
-`.dev.vars.example` documents the required local variable names.
+`.dev.vars.example` documents the only required local secret variable: `BEEHIIV_API_KEY`.
 
 `.gitignore` excludes `.dev.vars` and environment-specific `.dev.vars.*` while allowing the example file to remain committed.
 
@@ -316,15 +313,16 @@ Production secrets will later be configured in Cloudflare Pages/Workers environm
 - `efc4597438c08ecf6664e4d47f862c33ab8798b1` — protect local Cloudflare secrets
 - `4b695ed4066c62a2776818f62c9854fe7713b422` — architecture-rule exception
 - `8503a19652e03cf351c4462c00db1b100610e041` — v0 scope alignment
+- `270a5f49031a66be404b8c0ce41504e580ecec78` — bind verified Portfilo Brief publication ID in the proxy
+- `31f4a71a0ace1bbfead539f3656054f05916374c` — reduce local configuration to the private API key only
 
 ### Remaining validation
 
 Still required before closure:
 
-- beehiiv account identity verification if required for API access;
+- beehiiv account identity verification for API-key access;
 - dedicated API key creation;
-- API V2 Publication ID collection;
-- local `.dev.vars` configuration;
+- local `.dev.vars` API-key configuration;
 - local `npm run build` PASS;
 - local Cloudflare Pages Function runtime test;
 - invalid-email state PASS;
@@ -376,7 +374,7 @@ Use free tiers while sufficient for v0 validation.
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
 | Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
 | About Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED — API credentials + functional signup + final QA pending |
+| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED — API key + functional signup + final QA pending |
 
 ## Phase handoff rule
 
