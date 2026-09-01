@@ -6,7 +6,7 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Homepage Visual Design**
 
-The homepage design direction is approved. The editorial taxonomy is now aligned with that direction. One final local production-build and browser QA pass is required before Homepage Visual Design may be formally closed.
+The homepage design direction is approved. The editorial taxonomy is aligned with that direction. One final local production-build and browser QA pass is required before Homepage Visual Design may be formally closed.
 
 Foundation, Content Architecture, Editorial Design, Wordmark Exploration & Lock, Public Copy Style, and Editorial Taxonomy Alignment are complete.
 
@@ -26,7 +26,7 @@ The remaining work is validation, not another redesign.
 
 ## Portfilo editorial direction
 
-Portfilo helps ambitious Filipinos understand business, technology, startups, building, and the ways these forces shape life in the Philippines through useful, specific, evidence-aware journalism and analysis.
+Portfilo helps ambitious Filipinos understand business, technology, startups, AI, and what it takes to build in the Philippines through useful, specific, evidence-aware journalism and analysis.
 
 Current positioning line:
 
@@ -39,22 +39,23 @@ This remains the current positioning line and masthead strapline, but is not per
 The controlled v0 story taxonomy is:
 
 - **Business** — companies, industries, markets, business models, economics, and strategy;
-- **Technology** — software, AI, fintech, infrastructure, platforms, and emerging technology where Philippine relevance is concrete;
+- **Technology** — software, fintech, infrastructure, platforms, devices, and emerging technology where Philippine relevance is concrete;
 - **Startups** — new companies, startup ecosystems, funding, growth, failure, acquisitions, and early-stage company development;
-- **Building** — product, distribution, sales, pricing, hiring, operations, and the practical work of creating companies and products;
-- **Life** — how business, technology, startups, and ambition affect how Filipinos live and make consequential choices.
+- **AI** — models, products, agents, adoption, infrastructure, economics, policy, and the effects of AI on Philippine companies and work;
+- **Building** — product, distribution, sales, pricing, hiring, operations, and the practical work of creating companies and products.
 
-The Content Collection schema now enforces:
+The Content Collection schema enforces:
 
-`business / technology / startups / building / life`
+`business / technology / startups / ai / building`
 
 ### Important classification rules
 
 - A story has **one primary topic** in v0.
+- **AI** is used when AI itself is the main thing the reader needs to understand. A story involving AI may still be Business, Startups, or Building when the larger question belongs there.
 - **Founders** are a recurring subject/lens, not a top-level topic. Founder profiles use the existing `profile` content type and the most appropriate primary topic.
 - **Capital**, venture, funding, investing, acquisitions, and ownership are covered primarily under Business or Startups rather than as a separate top-level topic.
-- AI, fintech, e-commerce, SaaS, and similar beats do not require a tagging system in v0. Add secondary tags only when real publishing volume proves the need.
-- Career, salary, skills, and work questions are not banned, but they are supporting subjects when they connect to the stronger Portfilo mission rather than the publication's identity.
+- Fintech, e-commerce, SaaS, and similar beats do not require a tagging system in v0. Add secondary tags only when real publishing volume proves the need.
+- Career, salary, skills, work, and broader life questions are not banned, but they are supporting subjects when they connect to the stronger Portfilo mission rather than the publication's identity.
 - **News is a format, not Portfilo's identity.** Portfilo covers important developments when it can add explanation, evidence, context, or decision value beyond the event itself.
 - The homepage therefore keeps a broad `Latest` treatment rather than becoming a commodity breaking-news feed.
 - **Portfilo Brief** remains the planned email product and may become the faster channel for useful updates.
@@ -74,11 +75,12 @@ Approved and implemented:
 - mobile evidence-panel number is reduced and explicitly spaced to avoid collision with its label;
 - Latest + Selected uses one larger secondary story and two compact text-led entries;
 - asymmetric institutional section with a compact editorial-topic rail;
-- visible homepage taxonomy is now `Business / Technology / Startups / Building / Life`;
-- preview stories test business, technology, startup, founder, and building subject matter rather than generic salary/career framing;
+- visible homepage taxonomy is `Business / Technology / Startups / AI / Building`;
+- preview stories test business, AI, startup, founder, and building subject matter rather than generic salary/career framing;
 - Portfilo Brief CTA remains a preview only until beehiiv integration;
 - all preview headlines remain clearly identified as unpublished design fixtures;
 - one footer link continues to expose the existing published development story fixture for route testing;
+- experimental extra red homepage accents were removed; red remains in the wordmark and correction semantics;
 - no React, Vue, Svelte, Tailwind, UI kit, animation library, CMS, database, authentication, or new package dependency was added;
 - implementation remains Astro + custom CSS with no client-side JavaScript requirement.
 
@@ -87,32 +89,38 @@ Approved and implemented:
 - initial homepage candidate: `8c2dbb31e4f35050e2b43d313d9a22a247abddea`
 - first copy/responsive refinement: `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c`
 - business/technology/founder positioning pass: `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8`
-- final taxonomy + red-accent cleanup: `6c43ba19f8c58f82bd780180884fb0b1c3650305`
+- startups taxonomy + red-accent cleanup: `6c43ba19f8c58f82bd780180884fb0b1c3650305`
+- final AI homepage taxonomy pass: `eb7c38967a50072323f1e2375025f63533042b56`
 
 ## Editorial taxonomy alignment
 
 Completed in this phase because the homepage direction was explicitly approved before final closure.
 
-Changes:
+Current state:
 
-- `src/content.config.ts` controlled topics changed from `work / money / skills / building / life` to `business / technology / startups / building / life`;
-- published content-architecture fixture migrated to `topic: business`;
-- draft-filtering fixture migrated to `topic: startups`;
-- `docs/EDITORIAL_STANDARD.md` mission and examples aligned to the focused business/technology/startup direction;
-- homepage topic labels aligned to the same taxonomy.
+- `src/content.config.ts` controlled topics are `business / technology / startups / ai / building`;
+- published content-architecture fixture remains `topic: business`;
+- draft-filtering fixture remains `topic: startups`;
+- `docs/EDITORIAL_STANDARD.md` is aligned to the business/technology/startup/AI/building direction;
+- the editorial standard now includes specific AI-coverage safeguards against benchmark misuse, vendor-claim amplification, capability overstatement, and speculative economic/job claims;
+- homepage topic labels use the same taxonomy.
 
 Relevant commits:
 
-- schema alignment: `6d524f7070178de759fc81d63626cba5e8a95901`
+- initial focused taxonomy alignment: `6d524f7070178de759fc81d63626cba5e8a95901`
 - published fixture migration: `2e27f93bf86b05ba5343dc02e0a990a86e2f2bcb`
 - draft fixture migration: `a051e5ea3089125ed90884fe2857359527243189`
-- editorial-standard alignment: `99cb25fe93d4e306084cff9a32cf7c8fed7d9202`
+- initial editorial-standard alignment: `99cb25fe93d4e306084cff9a32cf7c8fed7d9202`
+- AI primary-topic schema: `c89556fb31963836f4a817824de5587af6a46578`
+- AI editorial coverage standard: `41ed895affcf5ab72da569e680f63843b562107f`
 
 No secondary tag/beat infrastructure was added because there is no current publishing-volume requirement for it.
 
 ## Portfilo public copy standard
 
 `docs/COPY_STYLE.md` is the canonical standard for public-facing site copy, and `AGENTS.md` requires contributors to follow it.
+
+The copy strategy is repository-persistent and does not depend on prior chat context.
 
 Core rules:
 
@@ -260,7 +268,7 @@ Use free tiers while sufficient for v0 validation.
 | Editorial Taxonomy Alignment | PASS — implementation complete, local build required |
 | Homepage information hierarchy/composition | PASS |
 | Homepage visual direction | APPROVED |
-| Homepage taxonomy | PASS — Business / Technology / Startups / Building / Life |
+| Homepage taxonomy | PASS — Business / Technology / Startups / AI / Building |
 | Extra homepage red accents | REMOVED |
 | New frontend/package dependencies | NONE |
 | Production build after taxonomy + final homepage cleanup | REQUIRED — local validation |
@@ -282,12 +290,12 @@ Required local validation:
 1. `git pull`;
 2. `npm run build` and require a clean build;
 3. confirm `/` renders;
-4. confirm `/stories/portfilo-content-architecture-test` still builds/renders and shows the migrated `business` topic;
+4. confirm `/stories/portfilo-content-architecture-test` still builds/renders and shows the `business` topic;
 5. confirm `/stories/portfilo-draft-filtering-test` is not generated publicly;
 6. inspect wide desktop, intermediate/tablet, 390px, and 360px;
-7. confirm `Business / Technology / Startups / Building / Life` wraps cleanly with no collision;
+7. confirm `Business / Technology / Startups / AI / Building` wraps cleanly with no collision;
 8. confirm the mobile evidence panel keeps comfortable separation around `01`;
-9. confirm removing the extra red accents restored the intended black/paper/blue hierarchy while the wordmark retains its red `lo`;
+9. confirm the homepage still has the intended black/paper/blue hierarchy while the wordmark retains its red `lo`;
 10. check clipping, overlap, awkward headline wrapping, and horizontal overflow;
 11. keyboard through the page and verify usable focus states;
 12. verify Instrument Sans, Source Serif 4, and IBM Plex Mono actually load;
