@@ -6,13 +6,15 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Homepage Visual Design**
 
-**Wordmark Exploration & Lock is complete.**
+**Homepage implementation candidate is complete and awaiting local QA + explicit visual approval.**
 
-The Editorial Design phase remains complete and frozen. The provisional symbol-based identity is retired. Portfilo now uses the approved wordmark-first v0 identity on the story surface.
+Foundation, Content Architecture, Editorial Design, and Wordmark Exploration & Lock remain complete. The story surface remains frozen for v0 unless a concrete implementation problem is discovered.
 
-The user completed the required local validation pass and reported that the production build, fixture routing checks, desktop/mobile masthead review, and interaction checks are all good. These validation results are user-reported local results rather than independently executed in the connected repository environment.
+The homepage visual-design candidate was implemented on `build/portfilo-v0` in commit `8c2dbb31e4f35050e2b43d313d9a22a247abddea`.
 
-No homepage code was changed while closing the wordmark phase.
+The connected GitHub environment exposes repository reads/writes and commit status, but this repository currently reports no CI/status checks for the homepage commit. Production build validation and browser-based responsive/interaction QA therefore remain required locally before this phase may be marked complete.
+
+Do not proceed to Series pages, Research & Standards, About, Subscribe integration, analytics, deployment, editorial launch research, or another product surface until the homepage candidate is locally validated and explicitly approved.
 
 ## Current branch
 
@@ -22,11 +24,31 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Begin **Portfilo v0 / Homepage Visual Design** using the frozen editorial system and locked v0 wordmark.
+Validate and visually approve the implemented **Portfilo v0 / Homepage Visual Design** candidate.
 
-The homepage should establish Portfilo as a contemporary editorial institution, not a generic news site, SaaS landing page, or card-heavy content grid.
+The homepage now translates the frozen story-page visual language into an editorial index without turning the publication into a repeated card grid or SaaS-style landing page.
 
-Do not start series pages, newsletter integration, analytics, deployment, editorial launch research, or another product surface before the homepage design phase is complete enough for review.
+The next work is QA and approval, not expansion into another surface.
+
+## Homepage visual-design candidate
+
+Implemented direction:
+
+- the locked `Port / fi / lo` black/blue/red wordmark remains the masthead identity;
+- the positioning line `Practical intelligence for ambitious Filipinos` is promoted into the primary homepage editorial statement;
+- the layout uses the same 12-column wide-screen grid logic, gutters, rule system, and mobile collapse behavior as the frozen story page;
+- one dominant editorial feature occupies the primary hierarchy;
+- the dominant feature is paired with a dark typography-led evidence panel rather than a generic image/card placeholder;
+- the Latest + Selected area uses one larger secondary story and two compact text-led entries instead of identical cards;
+- an institutional dark section states what Portfilo is for and carries the controlled v0 topic set;
+- a Portfilo Brief newsletter CTA is present as a clearly labeled design fixture only;
+- no fake newsletter submission behavior was introduced before beehiiv integration;
+- all homepage editorial headlines are explicitly labeled synthetic design fixtures because real launch journalism has not been selected;
+- one real footer link points to the existing published synthetic story-system fixture so the frozen story route remains directly testable from the homepage;
+- no React, Vue, Svelte, Tailwind, UI kit, animation library, CMS, database, authentication, or new package dependency was added;
+- the implementation remains Astro + custom CSS with no client-side JavaScript requirement.
+
+The candidate intentionally uses typography and evidence-style composition as visual material. It does not add a speculative editorial-media framework.
 
 ## Locked v0 wordmark decision
 
@@ -175,7 +197,6 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 
 ## Scope still not started
 
-- homepage visual design implementation
 - series page implementation
 - Research & Standards page
 - About page
@@ -194,29 +215,40 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 | `build/portfilo-v0` branch access | PASS |
 | Editorial Design complete | PASS |
 | Wordmark Exploration & Lock complete | PASS |
-| Production build after wordmark integration | PASS — user-reported local validation |
-| Published fixture generated | PASS — user-reported local validation |
-| Draft fixture excluded | PASS — user-reported local validation |
-| Desktop/mobile wordmark QA | PASS — user-reported local validation |
-| Horizontal-overflow recheck | PASS — user-reported local validation |
-| Keyboard/focus recheck | PASS — user-reported local validation |
-| Final wordmark visual approval | PASS |
-| Homepage implementation | NOT STARTED |
+| Homepage information hierarchy/composition defined | PASS |
+| Homepage implementation candidate committed | PASS — `8c2dbb31e4f35050e2b43d313d9a22a247abddea` |
+| New frontend/package dependencies | NONE |
+| Production build after homepage implementation | REQUIRED — not available from connected GitHub environment |
+| Homepage desktop responsive review | REQUIRED — local browser QA |
+| Homepage mobile responsive review | REQUIRED — local browser QA |
+| Horizontal-overflow review | REQUIRED — local browser QA |
+| Keyboard/skip-link/focus review | REQUIRED — local browser QA |
+| Exact font loading review | REQUIRED — local browser/network QA |
+| Existing published story route after homepage change | REQUIRED — local build/browser QA |
+| Draft fixture remains excluded | REQUIRED — local production-build QA |
+| Homepage visual approval | PENDING |
+| Homepage Visual Design phase complete | NO — awaiting validation + approval |
 
 ## Exact next task
 
-Begin **Homepage Visual Design**.
+Perform **Homepage Visual Design QA & Approval** on the current `build/portfilo-v0` branch.
 
-Before implementation:
+Required local validation:
 
-1. inspect the current `src/pages/index.astro` placeholder and the frozen story-page design;
-2. use the existing v0 scope and design direction as constraints;
-3. define the homepage editorial hierarchy around one dominant feature, selected/latest stories, Portfilo identity, and newsletter CTA;
-4. avoid repeated generic cards, SaaS hero patterns, decorative AI aesthetics, and unnecessary libraries;
-5. preserve the locked wordmark, typography, palette, grid logic, accessibility requirements, and zero-budget architecture;
-6. implement only after the homepage direction is coherent enough to defend visually.
+1. run `npm run build` and require a clean production build;
+2. confirm `/` builds and renders;
+3. confirm `/stories/portfilo-content-architecture-test` still builds and renders;
+4. confirm the draft fixture does not generate a public story route;
+5. inspect the homepage at a wide desktop viewport, an intermediate/tablet viewport, and narrow mobile viewports around 390px and 360px;
+6. check for clipping, overlap, awkward headline wrapping, or horizontal overflow;
+7. keyboard through the page and verify the skip link, wordmark home link, and story-fixture link show usable focus states;
+8. verify Instrument Sans, Source Serif 4, and IBM Plex Mono actually load rather than silently falling back;
+9. review the visual hierarchy: identity → dominant feature → Latest + Selected → institutional statement → newsletter CTA;
+10. either explicitly approve the homepage candidate or record concrete visual changes required.
 
-Editorial media/figure primitives should be added when the homepage or first real article creates a concrete requirement, not as speculative infrastructure.
+Only after those checks pass and the homepage is explicitly approved should this file mark **Homepage Visual Design** complete and name the next product-surface task.
+
+Do not begin Series pages or another phase before that approval.
 
 ## Phase handoff rule
 
