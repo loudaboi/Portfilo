@@ -4,6 +4,8 @@ const JSON_HEADERS = {
   "x-content-type-options": "nosniff",
 };
 
+const BEEHIIV_PUBLICATION_ID = "pub_dde8610d-d1a8-4c74-aa13-aeb3838b2d40";
+
 function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
     status,
@@ -90,10 +92,9 @@ export async function onRequest(context) {
   }
 
   const apiKey = env.BEEHIIV_API_KEY;
-  const publicationId = env.BEEHIIV_PUBLICATION_ID;
 
-  if (!apiKey || !publicationId || !publicationId.startsWith("pub_")) {
-    console.error("Portfilo subscribe endpoint is missing beehiiv configuration.");
+  if (!apiKey) {
+    console.error("Portfilo subscribe endpoint is missing the beehiiv API key.");
     return json(
       {
         ok: false,
@@ -106,7 +107,7 @@ export async function onRequest(context) {
   let beehiivResponse;
   try {
     beehiivResponse = await fetch(
-      `https://api.beehiiv.com/v2/publications/${encodeURIComponent(publicationId)}/subscriptions`,
+      `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
       {
         method: "POST",
         headers: {
