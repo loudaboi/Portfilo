@@ -1,0 +1,30 @@
+{
+  "name": "portfilo",
+  "version": "1.0.0",
+  "description": "Portfilo is a Filipino-first media and community company built around practical intelligence for ambitious Filipinos.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loudaai/Portfilo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/loudaai/Portfilo/issues"
+  },
+  "homepage": "https://github.com/loudaai/Portfilo#readme",
+  "dependencies": {
+    "astro": "^7.2.10"
+  }
+}
