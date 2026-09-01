@@ -4,9 +4,9 @@ _Last updated: 2026-09-01_
 
 ## Current phase
 
-**Foundation / Phase 0**
+**Technical Foundation Complete**
 
-The local Git repository has been initialized. Canonical project documents are being established before application scaffolding.
+Astro 7.2.10 has been manually installed into the existing Portfilo repository and the baseline static application has been validated.
 
 ## Current branch
 
@@ -26,12 +26,16 @@ Establish a portable, versioned source of truth for Portfilo, then scaffold the 
 
 ## Completed
 
-- Portfilo chosen as working brand.
-- Long-term company thesis established: Filipino-first media/community company for ambitious Filipinos.
-- Decision made to separate website/product construction from editorial launch research.
-- Decision made to use repository files as durable project context across ChatGPT conversations.
-- Local Git repository initialized.
-- Initial v0 architecture evaluated against current official documentation.
+- Portfilo canonical foundation documents established.
+- Foundation committed and pushed to GitHub.
+- `build/portfilo-v0` branch created.
+- Astro 7.2.10 installed.
+- Strict TypeScript configuration established.
+- `.gitignore` added.
+- `node_modules/`, `dist/`, `.astro/`, and environment files excluded from Git.
+- Static production build validated.
+- Development server validated.
+- Root route `/` returns successfully.
 
 ## Frozen decisions for v0
 
@@ -104,31 +108,37 @@ These are frozen for v0 unless a concrete blocker is discovered.
 
 ## Next task
 
-After these foundation files are copied into the repository:
+Implement the minimum Portfilo v0 content architecture using Astro Content Collections.
 
-```bash
-git add .
-git commit -m "docs: establish Portfilo project foundation"
-git push -u origin main
-git switch -c build/portfilo-v0
-node --version
-npm --version
-```
+The next phase should establish:
 
-Then scaffold Astro only if the current Node version satisfies Astro's current minimum requirement.
+- story schema;
+- content types;
+- topics;
+- draft/published state;
+- authorship;
+- publish/update dates;
+- optional series membership;
+- methodology metadata;
+- correction metadata;
+- scalable story routing.
+
+Do not begin visual design or real editorial research in this phase.
 
 ## Validation status
 
 | Check | Status |
 |---|---|
-| Local Git initialized | PASS - user confirmed |
-| Foundation docs present | PENDING |
-| Foundation committed | PENDING |
-| GitHub push | PENDING |
-| v0 branch created | PENDING |
-| Node requirement verified | PENDING |
-| Astro scaffolded | NOT STARTED |
-| Production build | NOT STARTED |
+| Local Git initialized | PASS |
+| Foundation docs present | PASS |
+| Foundation committed | PASS |
+| GitHub push | PASS |
+| v0 branch created | PASS |
+| Astro installed | PASS |
+| Production build | PASS |
+| Development server | PASS |
+| `.gitignore` configured | PASS |
+| Content architecture | NOT STARTED |
 | Responsive QA | NOT STARTED |
 | Deployment | NOT STARTED |
 
