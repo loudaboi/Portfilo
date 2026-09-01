@@ -6,17 +6,19 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Homepage Visual Design**
 
-**Homepage implementation candidate is complete, has received a first visual review/refinement pass, and is awaiting local QA + explicit visual approval.**
+**The final homepage direction is implemented and approved in principle. Local production-build and browser QA remain required before this phase may be formally closed.**
 
-Foundation, Content Architecture, Editorial Design, and Wordmark Exploration & Lock remain complete. The story surface remains frozen for v0 unless a concrete implementation problem is discovered.
+Foundation, Content Architecture, Editorial Design, Wordmark Exploration & Lock, and the Portfilo public copy standard remain complete. The story surface remains frozen for v0 unless a concrete implementation problem is discovered.
 
 The homepage visual-design candidate was implemented on `build/portfilo-v0` in commit `8c2dbb31e4f35050e2b43d313d9a22a247abddea`.
 
-A first user visual review identified four issues: internal `v0` language appearing on the reader-facing page, insufficient visible spacing in the large positioning headline between `intelligence` and `for`, an overly tight mobile evidence-panel composition around the large `01`, and homepage copy that sounded too much like internal strategy/AI-generated product language. These issues were refined in commit `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c`.
+Subsequent homepage refinement work addressed reader-facing `v0` language, headline word-boundary problems, mobile evidence-panel spacing, public-copy quality, navigation clarity, the editorial subject direction, and brand-color balance.
+
+The current final homepage positioning pass is implemented in commit `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8`.
 
 The connected GitHub environment exposes repository reads/writes and commit status, but this repository currently reports no CI/status checks for the homepage commits. Production build validation and browser-based responsive/interaction QA therefore remain required locally before this phase may be marked complete.
 
-Do not proceed to Series pages, Research & Standards, About, Subscribe integration, analytics, deployment, editorial launch research, or another product surface until the homepage candidate is locally validated and explicitly approved.
+Do not proceed to Series pages, Research & Standards, About, Subscribe integration, analytics, deployment, editorial launch research, or another product surface until the homepage is locally validated.
 
 ## Current branch
 
@@ -26,27 +28,28 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Validate and visually approve the refined **Portfilo v0 / Homepage Visual Design** candidate.
+Perform final local QA on the implemented **Portfilo v0 / Homepage Visual Design** and formally close the phase if validation passes.
 
-The homepage now translates the frozen story-page visual language into an editorial index without turning the publication into a repeated card grid or SaaS-style landing page.
+The design direction itself is no longer open-ended. The remaining work is validation, not another redesign.
 
-The next work is QA and approval, not expansion into another surface.
+## Homepage final direction
 
-## Homepage visual-design candidate
-
-Implemented direction:
+Implemented and approved direction:
 
 - the locked `Port / fi / lo` black/blue/red wordmark remains the masthead identity;
-- the positioning line `Practical intelligence for ambitious Filipinos` is promoted into the primary homepage editorial statement;
-- reader-facing navigation/identity copy no longer exposes the internal `v0` project label;
-- the large positioning headline now uses explicit word-spacing so the color transition at `for` cannot visually erase the word boundary;
+- the masthead page label uses the familiar interface term `Home` rather than invented navigation language;
+- the positioning line `Practical intelligence for ambitious Filipinos` remains the primary homepage editorial statement;
+- `for ambitious Filipinos.` is deliberately rendered as a separate blue line so the word boundary cannot visually collapse under aggressive headline tracking;
+- reader-facing navigation/identity copy does not expose the internal `v0` project label;
 - the layout uses the same 12-column wide-screen grid logic, gutters, rule system, and mobile collapse behavior as the frozen story page;
 - one dominant editorial feature occupies the primary hierarchy;
 - the dominant feature is paired with a dark typography-led evidence panel rather than a generic image/card placeholder;
 - the evidence panel keeps the large `01` treatment on desktop but reduces and explicitly spaces it on small screens so it does not crowd the panel heading;
 - the Latest + Selected area uses one larger secondary story and two compact text-led entries instead of identical cards;
-- an institutional dark section states what Portfilo is for and carries the controlled v0 topic set;
-- a Portfilo Brief newsletter CTA is present as a clearly labeled preview only;
+- the institutional dark section keeps the asymmetric editorial-topic rail on the right;
+- the visible homepage editorial territory is now `Business / Technology / Founders / Building / Capital`;
+- homepage preview stories now test business, technology, founder, and building subject matter rather than salary/career/self-improvement framing;
+- a Portfilo Brief newsletter CTA remains present as a clearly labeled preview only;
 - no fake newsletter submission behavior was introduced before beehiiv integration;
 - all homepage editorial headlines remain clearly identified as previews because real launch journalism has not been selected;
 - one real footer link points to the existing published synthetic story-system fixture so the frozen story route remains directly testable from the homepage;
@@ -55,28 +58,78 @@ Implemented direction:
 
 The candidate intentionally uses typography and evidence-style composition as visual material. It does not add a speculative editorial-media framework.
 
-### Homepage copy rule
+## Editorial direction
 
-Reader-facing Portfilo copy should follow the same anti-slop discipline as the editorial standard.
+The working editorial direction is now more focused than the original broad `work / money / skills / building / life` framing.
 
-Prefer:
+Portfilo should primarily help ambitious Filipinos understand:
 
-- simple language with a clear point;
-- specific Philippine relevance where it genuinely matters;
-- short, memorable phrasing when it does not reduce precision;
-- natural human rhythm;
-- evidence language that readers can understand immediately.
+- **Business** — companies, industries, business models, economics, strategy, and markets;
+- **Technology** — software, AI, fintech, infrastructure, platforms, and emerging technology where Philippine relevance is concrete;
+- **Founders** — reported profiles, decisions, failures, ownership, funding, and company-building without founder worship;
+- **Building** — product, distribution, sales, pricing, hiring, operations, and the practical work of making companies/products;
+- **Capital** — funding, investing, acquisitions, ownership, and market economics.
 
-Avoid:
+Career, salary, skills, and personal-work topics are not categorically banned, but they should be supporting subjects when they connect to the stronger business/technology/building mission rather than the publication's primary identity.
 
-- internal project terminology such as `v0` on public surfaces;
-- strategy-document language such as `reader payoff`, `editorial system`, or similar implementation framing;
-- overexplaining Portfilo's process when a simpler reader benefit is clearer;
-- generic AI/product-copy constructions;
-- inflated mission language;
-- complexity used only to sound authoritative.
+News is a **story format**, not Portfilo's identity. Portfilo may cover important business/technology/founder developments when it can add explanation, evidence, context, or decision value beyond the event itself. The homepage should therefore keep a broad `Latest` treatment rather than becoming a commodity breaking-news feed.
 
-The user explicitly wants Portfilo copy to be simple, creative, anti-formulaic, and written for Filipinos rather than sounding like generic AI-generated publication copy.
+Portfilo Brief remains the planned email product and may become the faster channel for useful updates without forcing the website into a breaking-news operation.
+
+### Important unresolved architecture alignment
+
+The visible homepage direction now uses `Business / Technology / Founders / Building / Capital`, but the current Content Collection schema still has the older controlled topic taxonomy.
+
+This mismatch must not be left implicit.
+
+Do **not** silently change the schema as part of Homepage Visual Design. After homepage QA and formal closure, perform a dedicated **Editorial Taxonomy Alignment** task before building the Series page so the content model, documentation, fixtures, and public positioning agree.
+
+## Portfilo public copy standard
+
+`docs/COPY_STYLE.md` is now the canonical standard for public-facing site copy, and `AGENTS.md` requires contributors to follow it.
+
+The style was derived from established web-usability, plain-language, and journalism guidance rather than copied from another publication's voice.
+
+Core rules:
+
+- clear before clever;
+- smart without sounding academic;
+- confident without hype;
+- useful before self-descriptive;
+- Filipino by concrete context, not costume;
+- familiar interface language over invented brand terminology;
+- avoid generic AI/product-copy patterns and internal project language;
+- never strengthen uncertainty or factual claims for stronger copy.
+
+The working principle is:
+
+> **Make the useful thing clear. Keep the personality in the precision.**
+
+## Brand-color rule
+
+The final color hierarchy should be asymmetric rather than numerically balanced.
+
+### Publication base
+
+- warm paper `#f4f0e8` and near-black `#171614` carry most of the visual system.
+
+### Blue
+
+- signal blue `#0050a4` is the primary functional/editorial accent;
+- evidence blue `#8fc7ff` is used on dark evidence fields;
+- blue may carry evidence, structure, links, section markers, methodology, navigation/action cues, and other informational emphasis.
+
+### Red
+
+- correction/brand red `#b42318` is intentionally rarer;
+- correction soft `#f6e7e3` remains the correction field color;
+- on story/journalism surfaces, red remains reserved for corrections aside from the Portfilo wordmark;
+- on institutional/non-story surfaces, red may appear as a sparse Portfilo signature accent so the brand does not visually collapse into black + blue;
+- red should not be alternated mechanically with blue or used for generic links, evidence, data, or random headings.
+
+The homepage now uses a restrained red structural marker in the institutional section and a red rule in the Portfilo Brief label while keeping the CTA/action language blue.
+
+The intent is: **paper/black dominate, blue is the primary accent, red is rare but unmistakable.**
 
 ## Locked v0 wordmark decision
 
@@ -208,6 +261,13 @@ The story surface is frozen for v0 unless a concrete implementation problem is d
 - no paid logo font or separate mark required;
 - wordmark implementation locally validated by the user.
 
+### Public copy style
+
+- `docs/COPY_STYLE.md` created as the canonical public-copy standard;
+- `AGENTS.md` requires contributors to follow it;
+- homepage copy has been refined away from internal strategy/AI-shaped language;
+- interface labels use familiar terms such as `Home` rather than invented section names.
+
 ## Technical decisions frozen for v0
 
 - Astro + TypeScript
@@ -225,6 +285,7 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 
 ## Scope still not started
 
+- editorial taxonomy alignment to the new subject direction
 - series page implementation
 - Research & Standards page
 - About page
@@ -243,49 +304,56 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 | `build/portfilo-v0` branch access | PASS |
 | Editorial Design complete | PASS |
 | Wordmark Exploration & Lock complete | PASS |
+| Public copy standard | PASS — `docs/COPY_STYLE.md` |
 | Homepage information hierarchy/composition defined | PASS |
 | Initial homepage implementation candidate | PASS — `8c2dbb31e4f35050e2b43d313d9a22a247abddea` |
 | First user visual review | PASS — actionable feedback recorded |
-| Homepage refinement after first review | PASS — `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c` |
-| Reader-facing `v0` labels removed | PASS — code review |
-| Hero word-boundary spacing fix | IMPLEMENTED — requires browser recheck |
-| Mobile evidence-panel spacing fix | IMPLEMENTED — requires browser recheck |
-| Homepage copy anti-slop refinement | IMPLEMENTED — requires user review |
+| First homepage refinement | PASS — `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c` |
+| Reader-facing `v0` labels removed | PASS |
+| Masthead page label changed to `Home` | PASS |
+| Hero word-boundary fix | PASS — blue phrase is a separate block line |
+| Mobile evidence-panel spacing fix | IMPLEMENTED — requires final browser recheck |
+| Homepage copy anti-slop refinement | PASS — direction approved |
+| Homepage editorial direction | PASS — Business / Technology / Founders / Building / Capital approved in principle |
+| Homepage preview stories aligned to new direction | PASS — `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8` |
+| Homepage red-signature treatment | PASS — restrained institutional use implemented |
 | New frontend/package dependencies | NONE |
-| Production build after homepage refinement | REQUIRED — not available from connected GitHub environment |
-| Homepage desktop responsive review after refinement | REQUIRED — local browser QA |
-| Homepage mobile responsive review after refinement | REQUIRED — local browser QA |
+| Production build after final homepage pass | REQUIRED — local validation |
+| Homepage desktop responsive review after final pass | REQUIRED — local browser QA |
+| Homepage mobile responsive review after final pass | REQUIRED — local browser QA |
 | Horizontal-overflow review | REQUIRED — local browser QA |
 | Keyboard/skip-link/focus review | REQUIRED — local browser QA |
 | Exact font loading review | REQUIRED — local browser/network QA |
 | Existing published story route after homepage change | REQUIRED — local build/browser QA |
 | Draft fixture remains excluded | REQUIRED — local production-build QA |
-| Homepage visual approval | PENDING |
-| Homepage Visual Design phase complete | NO — awaiting validation + approval |
+| Final rendered homepage approval after latest pass | REQUIRED — user browser review |
+| Homepage Visual Design phase complete | NO — awaiting final technical/rendered QA |
 
 ## Exact next task
 
-Perform **Homepage Visual Design QA & Approval** on the current `build/portfilo-v0` branch after commit `dcef23d6abfcf7b821dfb17ed055fe6eee70dc0c`.
+Perform **Homepage Final QA & Closure** on the current `build/portfilo-v0` branch after commit `57f3fb45a756dab2bb38e156f2a2f82f7cd227a8`.
 
 Required local validation:
 
-1. run `npm run build` and require a clean production build;
-2. confirm `/` builds and renders;
-3. confirm `/stories/portfilo-content-architecture-test` still builds and renders;
-4. confirm the draft fixture does not generate a public story route;
-5. inspect the homepage at a wide desktop viewport, an intermediate/tablet viewport, and narrow mobile viewports around 390px and 360px;
-6. specifically recheck that `intelligence for` has a clear visible word boundary at desktop sizes;
-7. specifically recheck the mobile evidence panel so `01` has comfortable separation from the top label and does not dominate the narrow card;
-8. review the revised homepage copy for naturalness, simplicity, specificity, and Portfilo voice;
-9. check for clipping, overlap, awkward headline wrapping, or horizontal overflow;
-10. keyboard through the page and verify the skip link, wordmark home link, and story-fixture link show usable focus states;
-11. verify Instrument Sans, Source Serif 4, and IBM Plex Mono actually load rather than silently falling back;
-12. review the visual hierarchy: identity → dominant feature → Latest + Selected → institutional statement → newsletter CTA;
-13. either explicitly approve the homepage candidate or record concrete visual/copy changes required.
+1. run `git pull`;
+2. run `npm run build` and require a clean production build;
+3. confirm `/` builds and renders;
+4. confirm `/stories/portfilo-content-architecture-test` still builds and renders;
+5. confirm the draft fixture does not generate a public story route;
+6. inspect the homepage at a wide desktop viewport, an intermediate/tablet viewport, and narrow mobile viewports around 390px and 360px;
+7. confirm the positioning statement has a deliberate two-line black/blue treatment with no collapsed word boundary;
+8. confirm the mobile evidence panel has comfortable spacing around `01`;
+9. review the new Business / Technology / Founders / Building / Capital eyebrow and institutional rail for wrapping/collision;
+10. review the new business/technology/founder preview headlines for visual rhythm;
+11. confirm the red institutional marker and Portfilo Brief red rule feel sparse and intentional rather than correction-like or decorative noise;
+12. check for clipping, overlap, awkward headline wrapping, or horizontal overflow;
+13. keyboard through the page and verify the skip link, wordmark home link, and story-fixture link show usable focus states;
+14. verify Instrument Sans, Source Serif 4, and IBM Plex Mono actually load rather than silently falling back;
+15. either approve the final rendered homepage or record a concrete defect.
 
-Only after those checks pass and the homepage is explicitly approved should this file mark **Homepage Visual Design** complete and name the next product-surface task.
+If all checks pass, update this file to mark **Homepage Visual Design** complete.
 
-Do not begin Series pages or another phase before that approval.
+The next task after homepage closure is **Editorial Taxonomy Alignment**: decide and implement the controlled content-topic model that supports the approved Business / Technology / Founders / Building / Capital direction, including schema, documentation, fixtures, and any affected labels. Only after that alignment should Series Page Visual Design & Implementation begin.
 
 ## Phase handoff rule
 
