@@ -57,8 +57,7 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         <div class="signup-section__copy">
           <h2 id="signup-title">Join Portfilo Brief.</h2>
           <p>
-            Enter your email to subscribe. Subscriber management, delivery, and
-            unsubscribe handling are provided through beehiiv.
+            Enter your email to subscribe. You can unsubscribe at any time.
           </p>
         </div>
 
@@ -411,13 +410,12 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       }
 
       .signup-panel {
-        grid-column: 5 / 13;
+        grid-column: 5 / 11;
         min-width: 0;
-        padding: clamp(1.25rem, 2.5vw, 2.5rem);
+        padding: clamp(1.05rem, 1.8vw, 1.5rem) 0 0;
         border-top: 3px solid var(--accent);
-        border-bottom: 1px solid var(--ink);
-        background: #ebe6dc;
-        overflow: hidden;
+        background: transparent;
+        overflow: visible;
       }
 
       .signup-panel :global(iframe) {
@@ -428,10 +426,9 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       }
 
       .signup-noscript {
-        max-width: 34rem;
         margin: 0;
-        padding: 2rem 0;
-        font: 400 clamp(1.05rem, 1.25vw, 1.2rem) / 1.55 var(--serif);
+        color: var(--muted);
+        font: 400 0.9rem/1.5 var(--serif);
       }
 
       .brief-section {
@@ -583,7 +580,7 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
 
         .signup-section__copy,
         .signup-panel {
-          grid-column: 4 / 13;
+          grid-column: 4 / 11;
         }
 
         .brief-section__statement {
@@ -673,8 +670,9 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         }
 
         .signup-panel {
+          width: 100%;
           margin-top: 2.5rem;
-          padding: 1rem;
+          padding-top: 1rem;
         }
 
         .brief-section__inner {
@@ -753,10 +751,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         .subscribe-index ul {
           display: grid;
           grid-template-columns: 1fr 1fr;
-        }
-
-        .signup-panel {
-          margin-inline: -0.25rem;
         }
 
         .site-footer {
