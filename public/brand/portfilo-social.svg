@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="portfilo-social-title portfilo-social-desc">
+  <title id="portfilo-social-title">Portfilo social mark</title>
+  <desc id="portfilo-social-desc">Portfilo set over warm paper, with fi in Philippine blue and lo in Philippine red.</desc>
+  <style>
+    @font-face {
+      font-family: "Instrument Sans";
+      font-style: normal;
+      font-weight: 400 700;
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
+    }
+
+    .mark {
+      font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 78px;
+      font-weight: 600;
+      letter-spacing: -5px;
+    }
+  </style>
+  <rect x="1" y="1" width="254" height="254" fill="#f4f0e8" stroke="#171614" stroke-width="2"/>
+  <text class="mark" x="22" y="108" fill="#171614">Port</text>
+  <text class="mark" x="22" y="188"><tspan fill="#0038a8">fi</tspan><tspan fill="#ce1126">lo</tspan></text>
+</svg>
