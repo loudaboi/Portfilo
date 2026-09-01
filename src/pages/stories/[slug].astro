@@ -53,7 +53,11 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
     <a class="skip-link" href="#story-body">Skip to story</a>
 
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">Portfilo</a>
+      <a class="wordmark" href="/" aria-label="Portfilo home">
+        <span class="wordmark__inner">
+          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
+        </span>
+      </a>
       <p class="site-header__strapline">
         Practical intelligence for ambitious Filipinos
       </p>
@@ -282,9 +286,35 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
 
       .wordmark {
         width: fit-content;
-        font: 600 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
-        letter-spacing: -0.06em;
+        display: inline-block;
         text-decoration: none;
+      }
+
+      .wordmark__inner {
+        display: inline-block;
+        white-space: nowrap;
+        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
+        letter-spacing: -0.085em;
+        transform: skewX(-12deg);
+        transform-origin: left center;
+      }
+
+      .wordmark__port,
+      .wordmark__fi,
+      .wordmark__lo {
+        display: inline-block;
+      }
+
+      .wordmark__port {
+        color: var(--ink);
+      }
+
+      .wordmark__fi {
+        color: var(--accent);
+      }
+
+      .wordmark__lo {
+        color: var(--correction);
       }
 
       .site-header__strapline,
