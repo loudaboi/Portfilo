@@ -54,25 +54,63 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
           <p>Email signup</p>
         </div>
 
-        <div class="signup-section__copy">
-          <h2 id="signup-title">Join Portfilo Brief.</h2>
-          <p>
-            Enter your email to subscribe. You can unsubscribe at any time.
-          </p>
-        </div>
-
-        <div class="signup-panel" aria-label="Portfilo Brief signup form">
-          <script
-            is:inline
-            async
-            src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-            data-beehiiv-form="a3c313d1-b9d1-4d54-bced-d5ae16360141"
-          ></script>
-          <noscript>
-            <p class="signup-noscript">
-              JavaScript is required to load the Portfilo Brief signup form.
+        <div class="signup-section__main">
+          <div class="signup-section__copy">
+            <h2 id="signup-title">Join Portfilo Brief.</h2>
+            <p>
+              Enter your email to subscribe. We’ll ask you to confirm it before the
+              subscription is active.
             </p>
-          </noscript>
+          </div>
+
+          <form
+            class="subscribe-form"
+            id="subscribe-form"
+            action="/api/subscribe"
+            method="post"
+            novalidate
+          >
+            <div class="subscribe-form__field">
+              <label for="subscribe-email">Email address</label>
+              <div class="subscribe-form__row">
+                <input
+                  id="subscribe-email"
+                  name="email"
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  maxlength="320"
+                  placeholder="you@example.com"
+                  required
+                  aria-describedby="subscribe-hint subscribe-status"
+                />
+                <button type="submit">
+                  <span data-submit-label>Subscribe</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+              <p class="subscribe-form__hint" id="subscribe-hint">
+                No fixed publishing schedule. Unsubscribe any time.
+              </p>
+              <p
+                class="subscribe-form__status"
+                id="subscribe-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="subscribe-form__honeypot" aria-hidden="true">
+              <label for="subscribe-company">Company</label>
+              <input
+                id="subscribe-company"
+                name="company"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+          </form>
         </div>
       </section>
 
@@ -109,11 +147,11 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       <section class="privacy-note" aria-labelledby="privacy-title">
         <p>03 / Your email</p>
         <div>
-          <h2 id="privacy-title">Signup infrastructure stays simple.</h2>
+          <h2 id="privacy-title">Your inbox stays under your control.</h2>
           <p>
             Portfilo uses beehiiv to manage newsletter subscriptions, delivery, and
-            unsubscribe requests. Portfilo does not need a separate newsletter account
-            system for this signup.
+            unsubscribe requests. Every Portfilo Brief email will provide a way to
+            unsubscribe.
           </p>
         </div>
       </section>
@@ -126,6 +164,85 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       <p>Practical intelligence for ambitious Filipinos</p>
       <a href="/">Back to home</a>
     </footer>
+
+    <script is:inline>
+      const subscribeForm = document.querySelector("#subscribe-form");
+      const emailInput = document.querySelector("#subscribe-email");
+      const statusMessage = document.querySelector("#subscribe-status");
+      const submitButton = subscribeForm?.querySelector('button[type="submit"]');
+      const submitLabel = subscribeForm?.querySelector("[data-submit-label]");
+
+      function setStatus(message, state = "") {
+        if (!statusMessage) return;
+        statusMessage.textContent = message;
+        statusMessage.dataset.state = state;
+      }
+
+      function setSubmitting(isSubmitting) {
+        if (!submitButton || !submitLabel) return;
+        submitButton.disabled = isSubmitting;
+        submitButton.setAttribute("aria-busy", String(isSubmitting));
+        submitLabel.textContent = isSubmitting ? "Submitting…" : "Subscribe";
+      }
+
+      subscribeForm?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!(emailInput instanceof HTMLInputElement)) return;
+
+        emailInput.removeAttribute("aria-invalid");
+        setStatus("");
+
+        if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+          emailInput.setAttribute("aria-invalid", "true");
+          setStatus("Enter a valid email address.", "error");
+          emailInput.focus();
+          return;
+        }
+
+        const formData = new FormData(subscribeForm);
+        const payload = {
+          email: String(formData.get("email") || "").trim(),
+          company: String(formData.get("company") || "").trim(),
+        };
+
+        setSubmitting(true);
+
+        try {
+          const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json().catch(() => null);
+
+          if (!response.ok || !result?.ok) {
+            throw new Error(
+              result?.message || "We could not submit your email. Please try again.",
+            );
+          }
+
+          subscribeForm.reset();
+          setStatus(
+            "Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.",
+            "success",
+          );
+        } catch (error) {
+          setStatus(
+            error instanceof Error
+              ? error.message
+              : "We could not submit your email. Please try again.",
+            "error",
+          );
+        } finally {
+          setSubmitting(false);
+        }
+      });
+    </script>
 
     <style>
       @font-face {
@@ -192,7 +309,9 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         color: inherit;
       }
 
-      :global(a:focus-visible) {
+      :global(a:focus-visible),
+      .subscribe-form input:focus-visible,
+      .subscribe-form button:focus-visible {
         outline: 3px solid var(--accent);
         outline-offset: 4px;
       }
@@ -366,11 +485,10 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       }
 
       .signup-section {
-        padding: 0 var(--gutter) clamp(5rem, 9vw, 9rem);
+        padding: 0 var(--gutter) clamp(5.5rem, 9vw, 9rem);
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: var(--grid-gap);
-        row-gap: clamp(2.25rem, 4vw, 4rem);
       }
 
       .signup-section__label {
@@ -390,8 +508,9 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         color: var(--muted);
       }
 
-      .signup-section__copy {
-        grid-column: 5 / 11;
+      .signup-section__main {
+        grid-column: 5 / 13;
+        min-width: 0;
       }
 
       .signup-section__copy h2 {
@@ -409,26 +528,119 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         font: 400 clamp(1.08rem, 1.35vw, 1.28rem) / 1.6 var(--serif);
       }
 
-      .signup-panel {
-        grid-column: 5 / 11;
-        min-width: 0;
-        padding: clamp(1.05rem, 1.8vw, 1.5rem) 0 0;
+      .subscribe-form {
+        position: relative;
+        margin-top: clamp(2.75rem, 5vw, 4.75rem);
+        padding-top: clamp(1.15rem, 1.8vw, 1.5rem);
         border-top: 3px solid var(--accent);
-        background: transparent;
-        overflow: visible;
       }
 
-      .signup-panel :global(iframe) {
+      .subscribe-form__field > label {
         display: block;
-        width: 100% !important;
-        max-width: 100% !important;
-        border: 0;
+        margin-bottom: 0.75rem;
+        font: 400 0.65rem/1.4 var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .signup-noscript {
-        margin: 0;
+      .subscribe-form__row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        border-bottom: 1px solid var(--ink);
+      }
+
+      .subscribe-form input[type="email"] {
+        min-width: 0;
+        height: clamp(4.15rem, 5.2vw, 5.15rem);
+        padding: 0 clamp(1rem, 1.8vw, 1.5rem) 0 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: var(--ink);
+        font: 500 clamp(1.5rem, 2.4vw, 2.35rem) / 1 var(--sans);
+        letter-spacing: -0.035em;
+        appearance: none;
+      }
+
+      .subscribe-form input[type="email"]::placeholder {
+        color: #8a857c;
+        opacity: 1;
+      }
+
+      .subscribe-form input[type="email"]:focus-visible {
+        position: relative;
+        z-index: 1;
+        outline-offset: -1px;
+      }
+
+      .subscribe-form input[aria-invalid="true"] {
+        box-shadow: inset 0 -3px 0 var(--correction);
+      }
+
+      .subscribe-form button {
+        min-width: clamp(9.5rem, 13vw, 12.5rem);
+        min-height: clamp(4.15rem, 5.2vw, 5.15rem);
+        padding: 0 clamp(1.1rem, 2vw, 1.65rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        border: 0;
+        border-radius: 0;
+        background: var(--accent);
+        color: white;
+        font: 600 clamp(1rem, 1.2vw, 1.14rem) / 1 var(--sans);
+        cursor: pointer;
+      }
+
+      .subscribe-form button span:last-child {
+        font-size: 1.25em;
+      }
+
+      .subscribe-form button:hover {
+        background: var(--ink);
+      }
+
+      .subscribe-form button:disabled {
+        cursor: wait;
+        opacity: 0.62;
+      }
+
+      .subscribe-form__hint,
+      .subscribe-form__status {
+        max-width: 42rem;
+        font: 400 0.67rem/1.55 var(--mono);
+      }
+
+      .subscribe-form__hint {
+        margin: 0.8rem 0 0;
         color: var(--muted);
-        font: 400 0.9rem/1.5 var(--serif);
+      }
+
+      .subscribe-form__status {
+        min-height: 1.1em;
+        margin: 1rem 0 0;
+      }
+
+      .subscribe-form__status:empty {
+        margin-top: 0;
+      }
+
+      .subscribe-form__status[data-state="success"] {
+        color: var(--accent);
+      }
+
+      .subscribe-form__status[data-state="error"] {
+        color: var(--correction);
+      }
+
+      .subscribe-form__honeypot {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
       }
 
       .brief-section {
@@ -578,9 +790,8 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
           grid-column: 4 / 11;
         }
 
-        .signup-section__copy,
-        .signup-panel {
-          grid-column: 4 / 11;
+        .signup-section__main {
+          grid-column: 4 / 13;
         }
 
         .brief-section__statement {
@@ -654,14 +865,16 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
 
         .signup-section {
           display: block;
-          padding-bottom: 4.5rem;
+          padding-bottom: 5rem;
         }
 
         .signup-section__label {
+          max-width: 24rem;
           margin-bottom: 2.5rem;
         }
 
         .signup-section__copy h2 {
+          max-width: none;
           font-size: clamp(2.8rem, 12vw, 4.5rem);
         }
 
@@ -669,10 +882,27 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
           font-size: 1.08rem;
         }
 
-        .signup-panel {
+        .subscribe-form {
+          margin-top: 2.8rem;
+        }
+
+        .subscribe-form__row {
+          grid-template-columns: 1fr;
+          border-bottom: 0;
+        }
+
+        .subscribe-form input[type="email"] {
+          height: 4.25rem;
+          padding-right: 0;
+          border-bottom: 1px solid var(--ink);
+          font-size: clamp(1.35rem, 6vw, 1.85rem);
+        }
+
+        .subscribe-form button {
           width: 100%;
-          margin-top: 2.5rem;
-          padding-top: 1rem;
+          min-height: 3.85rem;
+          margin-top: 1rem;
+          padding-inline: 1.15rem;
         }
 
         .brief-section__inner {
@@ -751,6 +981,10 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         .subscribe-index ul {
           display: grid;
           grid-template-columns: 1fr 1fr;
+        }
+
+        .subscribe-form input[type="email"] {
+          font-size: 1.3rem;
         }
 
         .site-footer {
