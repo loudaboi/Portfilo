@@ -2,7 +2,7 @@
 title: "Portfilo Draft Filtering Test"
 description: "A synthetic draft fixture used only to verify that draft stories do not receive public production routes."
 contentType: explained
-topic: work
+topic: startups
 author: Portfilo
 status: draft
 featured: false
