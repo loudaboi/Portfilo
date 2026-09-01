@@ -6,7 +6,7 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Subscribe Surface & beehiiv Integration**
 
-About Page is complete after the user-reported final local production build, responsive/browser QA, and explicit approval on 2026-09-02.
+The Subscribe page and beehiiv integration hook are committed as a candidate. The phase remains open because Portfilo's publication-specific beehiiv embed code has not yet been generated/configured, and functional signup plus final local browser QA are still required.
 
 Completed phases:
 
@@ -31,28 +31,33 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Build the smallest credible public **Subscribe** surface required by `docs/V0_SCOPE.md` and connect it to beehiiv without creating custom newsletter infrastructure.
+Finish the smallest credible public **Subscribe** surface required by `docs/V0_SCOPE.md` and connect it to beehiiv without creating custom newsletter infrastructure.
 
-Portfilo Brief is the planned email product. The implementation should use beehiiv for subscriber management, deliverability, unsubscribe handling, and signup rather than building those systems inside Portfilo.
+Portfilo Brief is the planned email product. beehiiv remains responsible for subscriber management, deliverability, unsubscribe handling, and the embedded signup form.
 
 ## Exact next task
 
-Perform **Subscribe Surface & beehiiv Integration** in this order:
+Complete the beehiiv account-side connection and final validation in this order:
 
-1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, `docs/COPY_STYLE.md`, and the current zero-budget infrastructure decisions in this file.
-2. Inspect the homepage Portfilo Brief preview, `/about`, `/standards`, and the existing site shell.
-3. Verify the current beehiiv free-tier embed/integration options before choosing the implementation method.
-4. Define the minimum public Subscribe information architecture:
-   - Portfilo Brief name;
-   - what subscribers receive;
-   - clear signup action;
-   - only promises the actual newsletter operation can support.
-5. Do not promise frequency, exclusivity, or editorial benefits that have not been committed operationally.
-6. Prefer beehiiv's maintained signup/embed infrastructure over a custom form backend.
-7. Preserve the locked visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, signal blue as the active accent, and correction red only where semantically appropriate.
-8. Keep the surface static-first and add client-side behavior only if beehiiv's integration genuinely requires it.
-9. Validate accessibility, keyboard focus, mobile behavior, error/success states provided by the chosen integration, and no horizontal overflow.
-10. Run a production build and final browser QA before marking the phase complete.
+1. In beehiiv, create or open the Portfilo publication on the free Launch plan.
+2. Go to `Subscribers > Subscribe forms` and create a form for the Portfilo website.
+3. Use the **Inline** embed layout.
+4. Keep the minimum required field set for v0, preferably email only unless a real editorial need justifies another field.
+5. Set the form width/layout so it can fill the Portfilo signup panel responsively.
+6. Save/publish the form and choose **Get embed code**.
+7. From the generated single script tag, copy only the URL inside its `src="..."` attribute.
+8. Create a local `.env` file from `.env.example` and set:
+
+   `PUBLIC_BEEHIIV_EMBED_SRC=<beehiiv script URL>`
+
+9. Run `npm run build` and require a clean static production build.
+10. Run the site locally and confirm `/subscribe` renders the real beehiiv form.
+11. Submit a test email and verify it reaches the beehiiv audience/subscriber list.
+12. Verify beehiiv's success/error behavior, unsubscribe handling path, and any required terms/privacy links configured in beehiiv.
+13. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths.
+14. Check keyboard focus, skip link, form usability, font loading, and horizontal overflow.
+15. Confirm existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
+16. Do not mark Subscribe complete until the live signup flow and final local QA pass.
 
 After Subscribe passes final local QA, perform a **Global Navigation & Public Surface Integration pass** so readers can move coherently among Home, Standards, About, Subscribe, and future story/index surfaces.
 
@@ -235,6 +240,72 @@ User-reported PASS on 2026-09-02:
 
 **About Page is formally closed.**
 
+## Subscribe Surface & beehiiv Integration — IMPLEMENTED / CONNECTION PENDING
+
+### Current beehiiv decision
+
+Current official beehiiv information verified on 2026-09-02:
+
+- the Launch plan is free at `$0/month`;
+- Launch supports up to 2,500 subscribers;
+- unlimited email sends are included;
+- subscribe forms are included;
+- external websites should use beehiiv's embedded subscribe forms;
+- the current embed is generated by beehiiv as a publication/form-specific script;
+- inline embeds render where the script is placed;
+- external embedded forms do not use beehiiv Website Builder signup flows;
+- removing beehiiv branding requires a higher paid tier, so v0 accepts beehiiv branding rather than paying to remove it.
+
+### Route
+
+`/subscribe`
+
+Implementation file:
+
+`src/pages/subscribe.astro`
+
+The page:
+
+- uses the locked Portfilo visual system;
+- explains Portfilo Brief without promising a publishing frequency;
+- exposes the five coverage areas;
+- includes a dedicated inline signup panel;
+- loads the real beehiiv external form only when `PUBLIC_BEEHIIV_EMBED_SRC` is configured;
+- shows an honest non-signup fallback when the beehiiv connection is absent;
+- uses no custom newsletter backend or API;
+- adds no frontend dependency.
+
+Configuration example:
+
+`.env.example`
+
+The real local `.env` remains ignored by Git. The beehiiv embed URL is a public form asset, not a secret credential, but configuration is kept outside the page so a form-specific identifier is not fabricated during implementation.
+
+### Implementation commits
+
+- `486daf94de82cceed878fead289ffed48bf504a4` — Subscribe surface with beehiiv external-script integration hook
+- `4c854cbcbfd89de745a4a21b9627771350ad61c1` — beehiiv environment configuration example
+
+A compare against the pre-Subscribe head `7a83c8ca2acdaede49c01b285a5f213c08010add` confirmed that the current implementation adds only:
+
+- `src/pages/subscribe.astro`;
+- `.env.example`.
+
+Frozen existing public pages and the content schema were not modified during this implementation candidate.
+
+### Remaining validation/blocker
+
+Not yet complete:
+
+- Portfilo's beehiiv publication/account-side form creation;
+- real `PUBLIC_BEEHIIV_EMBED_SRC` configuration;
+- test subscription into the beehiiv audience;
+- live success/error-state review;
+- final local production build with the configured embed;
+- responsive/browser QA with the real form.
+
+**Do not close this phase until the real beehiiv signup succeeds and the user reports final local QA pass.**
+
 ## Zero-budget infrastructure posture
 
 Locked direction:
@@ -250,7 +321,7 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Subscribe surface / beehiiv integration — current phase
+- Subscribe beehiiv account-side connection + final QA — current phase remainder
 - global navigation / public-surface integration pass — after Subscribe
 - analytics
 - deployment
@@ -274,7 +345,7 @@ Use free tiers while sufficient for v0 validation.
 | Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
 | Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
 | About Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| Subscribe Surface & beehiiv Integration | NOT STARTED — current phase |
+| Subscribe Surface & beehiiv Integration | IMPLEMENTED — beehiiv connection + functional signup + final QA pending |
 
 ## Phase handoff rule
 
