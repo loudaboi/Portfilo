@@ -2,9 +2,9 @@
 
 ## Mission
 
-Portfilo should help ambitious Filipinos understand business, technology, startups, building, and the ways these forces shape life in the Philippines through useful, specific, evidence-aware journalism and analysis.
+Portfilo should help ambitious Filipinos understand business, technology, startups, AI, and what it takes to build in the Philippines through useful, specific, evidence-aware journalism and analysis.
 
-Portfilo is not a motivation feed, content farm, startup cheerleader, or generic self-improvement publication.
+Portfilo is not a motivation feed, content farm, startup cheerleader, AI hype feed, or generic self-improvement publication.
 
 ## Core editorial principles
 
@@ -82,6 +82,7 @@ When relevant, investigate how global ideas interact with Philippine realities s
 - geography and commuting;
 - local labor and talent markets;
 - startup financing and access to capital;
+- AI adoption and access to compute, data, and technical talent;
 - digital infrastructure;
 - regulation;
 - distribution and payments;
@@ -103,6 +104,23 @@ A substantial Portfilo story should contain at least one meaningful contribution
 - a conclusion that genuinely emerged from research.
 
 Rewriting existing articles is not enough.
+
+## AI coverage
+
+AI is a primary Portfilo topic, but it does not receive a lower evidence standard because the field moves quickly.
+
+When covering AI:
+
+- distinguish a product demo from a deployed system;
+- distinguish vendor claims from independently established performance;
+- state which model, product, version, date, market, or availability condition matters;
+- treat benchmarks as evidence about the benchmark, not automatic proof of real-world usefulness;
+- do not infer broad job losses, productivity gains, or economic effects from a single capability demonstration;
+- verify pricing, access, rollout status, and material product claims when they matter to the story;
+- identify meaningful uncertainty when capabilities, policies, or market conditions are changing quickly;
+- avoid language that treats AI progress as inevitable, magical, or universally beneficial.
+
+Use **AI** as the primary topic when AI itself is the main thing the reader needs to understand. If the larger question is primarily about a company, startup, or execution decision, classify the story under Business, Startups, or Building even when AI is involved.
 
 ## Content types
 
