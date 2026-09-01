@@ -1,7 +1,4 @@
 ---
-const beehiivEmbedSrc = import.meta.env.PUBLIC_BEEHIIV_EMBED_SRC?.trim();
-const hasBeehiivEmbed = Boolean(beehiivEmbedSrc);
-
 const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const;
 ---
 
@@ -66,18 +63,17 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         </div>
 
         <div class="signup-panel" aria-label="Portfilo Brief signup form">
-          {
-            hasBeehiivEmbed ? (
-              <script is:inline async src={beehiivEmbedSrc}></script>
-            ) : (
-              <div class="signup-pending" role="status">
-                <p class="signup-pending__label">Signup connection pending</p>
-                <p>
-                  Portfilo Brief is not accepting email signups on this page yet.
-                </p>
-              </div>
-            )
-          }
+          <script
+            is:inline
+            async
+            src="https://subscribe-forms.beehiiv.com/v3/loader.js"
+            data-beehiiv-form="a3c313d1-b9d1-4d54-bced-d5ae16360141"
+          ></script>
+          <noscript>
+            <p class="signup-noscript">
+              JavaScript is required to load the Portfilo Brief signup form.
+            </p>
+          </noscript>
         </div>
       </section>
 
@@ -431,25 +427,11 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         border: 0;
       }
 
-      .signup-pending {
-        min-height: 11rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .signup-pending p {
+      .signup-noscript {
         max-width: 34rem;
         margin: 0;
+        padding: 2rem 0;
         font: 400 clamp(1.05rem, 1.25vw, 1.2rem) / 1.55 var(--serif);
-      }
-
-      .signup-pending__label {
-        margin-bottom: 0.65rem !important;
-        color: var(--accent);
-        font: 400 0.65rem/1.4 var(--mono) !important;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
       }
 
       .brief-section {
