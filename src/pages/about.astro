@@ -197,9 +197,8 @@ const topics = [
       </section>
 
       <section class="founder-note" aria-label="Founder">
-        <p>Founded by</p>
+        <p>Founder</p>
         <strong>Louda Tuppal</strong>
-        <p>Portfilo is being built as an independent Philippine publication.</p>
       </section>
     </main>
 
@@ -674,7 +673,7 @@ const topics = [
       .founder-note {
         padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
         display: grid;
-        grid-template-columns: 2fr 3fr 7fr;
+        grid-template-columns: 2fr 10fr;
         gap: var(--grid-gap);
         align-items: baseline;
         border-top: 1px solid var(--ink);
@@ -687,7 +686,7 @@ const topics = [
         margin: 0;
       }
 
-      .founder-note > p:first-child {
+      .founder-note p {
         color: var(--muted);
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -695,10 +694,6 @@ const topics = [
 
       .founder-note strong {
         font-weight: 400;
-      }
-
-      .founder-note > p:last-child {
-        color: var(--muted);
       }
 
       .site-footer {
@@ -910,12 +905,6 @@ const topics = [
 
         .founder-note {
           grid-template-columns: 1fr 2fr;
-          gap: 0.55rem 1rem;
-        }
-
-        .founder-note > p:last-child {
-          grid-column: 1 / -1;
-          padding-top: 0.5rem;
         }
 
         .site-footer {
@@ -959,10 +948,6 @@ const topics = [
         .founder-note strong {
           display: block;
           margin-top: 0.35rem;
-        }
-
-        .founder-note > p:last-child {
-          margin-top: 1.1rem;
         }
       }
 
