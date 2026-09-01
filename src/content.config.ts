@@ -75,4 +75,17 @@ const stories = defineCollection({
     }),
 });
 
-export const collections = { stories };
+const series = defineCollection({
+  loader: glob({
+    base: "./src/content/series",
+    pattern: "*.md",
+  }),
+  schema: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    status: z.enum(["active", "completed"]),
+    fixture: z.boolean().default(false),
+  }),
+});
+
+export const collections = { stories, series };
