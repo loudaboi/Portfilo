@@ -1,0 +1,777 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const [seriesEntries, publishedStories] = await Promise.all([
+    getCollection("series"),
+    getCollection("stories", ({ data }) => data.status === "published"),
+  ]);
+
+  return seriesEntries.map((series) => {
+    const stories = publishedStories
+      .filter((story) => story.data.series === series.id)
+      .sort((a, b) => {
+        const aOrder = a.data.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+        const bOrder = b.data.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+
+        return aOrder - bOrder || a.data.title.localeCompare(b.data.title);
+      });
+
+    return {
+      params: { slug: series.id },
+      props: { series, stories },
+    };
+  });
+}
+
+const { series, stories } = Astro.props;
+const { title, description, status, fixture } = series.data;
+
+const dateFormatter = new Intl.DateTimeFormat("en-PH", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const formatDate = (date: Date) => dateFormatter.format(date);
+const formatLabel = (value: string) => value.replaceAll("-", " ");
+const storyCountLabel = `${stories.length} ${stories.length === 1 ? "story" : "stories"}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>{title} | Series | Portfilo</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#series-stories">Skip to stories</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Portfilo home">
+        <span class="wordmark__inner">
+          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
+        </span>
+      </a>
+      <p class="site-header__strapline">
+        Practical intelligence for ambitious Filipinos
+      </p>
+      <p class="site-header__section">Series</p>
+    </header>
+
+    <main id="main-content">
+      <section class="series-hero" aria-labelledby="series-title">
+        <p class="series-kicker">Series / {formatLabel(status)}</p>
+
+        <h1 id="series-title">{title}</h1>
+
+        <dl class="series-meta" aria-label="Series metadata">
+          <div>
+            <dt>Status</dt>
+            <dd>{formatLabel(status)}</dd>
+          </div>
+          <div>
+            <dt>Published</dt>
+            <dd>{storyCountLabel}</dd>
+          </div>
+          <div>
+            <dt>Series ID</dt>
+            <dd>{series.id}</dd>
+          </div>
+        </dl>
+
+        <p class="series-dek">{description}</p>
+
+        {
+          fixture && (
+            <aside class="fixture-note" aria-label="Development fixture notice">
+              <strong>Development fixture / Not journalism</strong>
+              <p>
+                This synthetic series exists only to test the series system before
+                a real editorial series is selected.
+              </p>
+            </aside>
+          )
+        }
+      </section>
+
+      <section class="series-index" id="series-stories" tabindex="-1" aria-labelledby="series-stories-title">
+        <header class="series-index__head">
+          <p id="series-stories-title">Stories</p>
+          <p>Series order</p>
+          <p>{storyCountLabel}</p>
+        </header>
+
+        {
+          stories.length > 0 ? (
+            <ol class="series-list">
+              {stories.map((story, index) => {
+                const order = story.data.seriesOrder ?? index + 1;
+
+                return (
+                  <li class="series-story">
+                    <p class="series-story__number" aria-label={`Part ${order}`}>
+                      {String(order).padStart(2, "0")}
+                    </p>
+
+                    <div class="series-story__meta">
+                      <span>{formatLabel(story.data.contentType)}</span>
+                      <span>{formatLabel(story.data.topic)}</span>
+                      {story.data.publishedAt && (
+                        <time datetime={story.data.publishedAt.toISOString()}>
+                          {formatDate(story.data.publishedAt)}
+                        </time>
+                      )}
+                    </div>
+
+                    <div class="series-story__copy">
+                      <h2>
+                        <a href={`/stories/${story.id}`}>{story.data.title}</a>
+                      </h2>
+                      <p>{story.data.description}</p>
+                    </div>
+
+                    <a class="series-story__action" href={`/stories/${story.id}`}>
+                      Read story <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          ) : (
+            <p class="series-empty">No published stories are in this series yet.</p>
+          )
+        }
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand" aria-label="Portfilo">
+        <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
+      </div>
+      <p>Practical intelligence for ambitious Filipinos</p>
+      <a href="/">Back to home</a>
+    </footer>
+
+    <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400 700;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2")
+          format("woff2-variations");
+      }
+
+      @font-face {
+        font-family: "Source Serif 4";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200 900;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2")
+          format("woff2-variations");
+      }
+
+      @font-face {
+        font-family: "IBM Plex Mono";
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2")
+          format("woff2");
+      }
+
+      :global(:root) {
+        --paper: #f4f0e8;
+        --ink: #171614;
+        --muted: #69655e;
+        --line: #cbc5bb;
+        --accent: #0050a4;
+        --correction: #b42318;
+        --page-max: 100rem;
+        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
+        --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
+        --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+        --serif: "Source Serif 4", Georgia, serif;
+        --mono: "IBM Plex Mono", "Courier New", monospace;
+      }
+
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-synthesis: none;
+      }
+
+      :global(body) {
+        margin: 0;
+        min-width: 0;
+        background: var(--paper);
+      }
+
+      :global(a) {
+        color: inherit;
+      }
+
+      :global(a:focus-visible) {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      :global(#series-stories:focus) {
+        outline: none;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.65rem 0.8rem;
+        background: var(--ink);
+        color: var(--paper);
+        font: 400 0.75rem/1 var(--mono);
+        text-decoration: none;
+        transform: translateY(-200%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header,
+      .series-hero,
+      .series-index,
+      .site-footer {
+        width: min(100%, var(--page-max));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        padding: 1.05rem var(--gutter) 0.95rem;
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        gap: var(--grid-gap);
+        align-items: end;
+        border-bottom: 1px solid var(--ink);
+      }
+
+      .wordmark {
+        width: fit-content;
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      .wordmark__inner {
+        display: inline-block;
+        white-space: nowrap;
+        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
+        letter-spacing: -0.085em;
+        transform: skewX(-12deg);
+        transform-origin: left center;
+      }
+
+      .wordmark__port,
+      .wordmark__fi,
+      .wordmark__lo,
+      .site-footer__port,
+      .site-footer__fi,
+      .site-footer__lo {
+        display: inline-block;
+      }
+
+      .wordmark__port,
+      .site-footer__port {
+        color: var(--ink);
+      }
+
+      .wordmark__fi,
+      .site-footer__fi {
+        color: var(--accent);
+      }
+
+      .wordmark__lo,
+      .site-footer__lo {
+        color: var(--correction);
+      }
+
+      .site-header__strapline,
+      .site-header__section {
+        margin: 0;
+        color: var(--muted);
+        font: 400 0.68rem/1.35 var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .site-header__strapline {
+        text-align: center;
+      }
+
+      .site-header__section {
+        color: var(--ink);
+        text-align: right;
+      }
+
+      .series-hero {
+        padding: clamp(3.8rem, 7vw, 7.5rem) var(--gutter)
+          clamp(4.5rem, 8vw, 8rem);
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: var(--grid-gap);
+        row-gap: clamp(2rem, 4vw, 4rem);
+      }
+
+      .series-kicker {
+        grid-column: 1 / 3;
+        margin: 0.5rem 0 0;
+        color: var(--accent);
+        font: 400 0.67rem/1.4 var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .series-hero h1 {
+        grid-column: 3 / 13;
+        min-width: 0;
+        max-width: 15ch;
+        margin: 0;
+        font: 500 clamp(3.6rem, 7.4vw, 7.6rem) / 0.9 var(--sans);
+        letter-spacing: -0.067em;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+      }
+
+      .series-meta {
+        grid-column: 1 / 4;
+        margin: 0;
+        align-self: start;
+        border-top: 1px solid var(--line);
+        font: 400 0.66rem/1.5 var(--mono);
+      }
+
+      .series-meta > div {
+        padding: 0.72rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .series-meta dt {
+        margin: 0 0 0.28rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .series-meta dd {
+        margin: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .series-dek {
+        grid-column: 5 / 11;
+        max-width: 43rem;
+        margin: 0;
+        font: 400 clamp(1.3rem, 1.75vw, 1.72rem) / 1.45 var(--serif);
+      }
+
+      .fixture-note {
+        grid-column: 5 / 10;
+        margin: -1rem 0 0;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--line);
+        font: 400 0.67rem/1.55 var(--mono);
+      }
+
+      .fixture-note strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 400;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .fixture-note p {
+        margin: 0.55rem 0 0;
+        color: var(--muted);
+      }
+
+      .series-index {
+        padding: 0 var(--gutter) clamp(5rem, 9vw, 9rem);
+      }
+
+      .series-index__head {
+        padding: 0.7rem 0 0.65rem;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font: 400 0.64rem/1.4 var(--mono);
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .series-index__head p {
+        margin: 0;
+      }
+
+      .series-index__head p:first-child {
+        grid-column: 1 / 5;
+        color: var(--ink);
+      }
+
+      .series-index__head p:nth-child(2) {
+        grid-column: 6 / 9;
+      }
+
+      .series-index__head p:last-child {
+        grid-column: 10 / 13;
+        text-align: right;
+      }
+
+      .series-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .series-story {
+        min-width: 0;
+        padding: clamp(2.6rem, 4.5vw, 4.7rem) 0;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: var(--grid-gap);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .series-story__number {
+        grid-column: 1 / 3;
+        margin: 0;
+        color: var(--accent);
+        font: 500 clamp(4.2rem, 7vw, 7.2rem) / 0.75 var(--sans);
+        letter-spacing: -0.08em;
+      }
+
+      .series-story__meta {
+        grid-column: 3 / 5;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        align-self: start;
+        color: var(--muted);
+        font: 400 0.63rem/1.45 var(--mono);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .series-story__meta span + span::before,
+      .series-story__meta time::before {
+        content: "/";
+        margin-right: 0.45rem;
+        color: var(--accent);
+      }
+
+      .series-story__copy {
+        grid-column: 5 / 11;
+        min-width: 0;
+      }
+
+      .series-story__copy h2 {
+        max-width: 19ch;
+        margin: 0;
+        font: 500 clamp(2rem, 3.1vw, 3.35rem) / 1 var(--sans);
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+      }
+
+      .series-story__copy h2 a {
+        text-decoration: none;
+      }
+
+      .series-story__copy h2 a:hover {
+        color: var(--accent);
+      }
+
+      .series-story__copy > p {
+        max-width: 38rem;
+        margin: 1.35rem 0 0;
+        color: var(--muted);
+        font: 400 1.06rem/1.58 var(--serif);
+      }
+
+      .series-story__action {
+        grid-column: 11 / 13;
+        align-self: end;
+        justify-self: stretch;
+        padding: 0.85rem 0 0.7rem;
+        border-top: 3px solid var(--accent);
+        border-bottom: 1px solid var(--ink);
+        font: 500 clamp(1rem, 1.35vw, 1.2rem) / 1.2 var(--sans);
+        text-decoration: none;
+      }
+
+      .series-story__action span {
+        color: var(--accent);
+      }
+
+      .series-story__action:hover {
+        color: var(--accent);
+      }
+
+      .series-empty {
+        margin: 0;
+        padding: 3rem 0;
+        color: var(--muted);
+        font: 400 1.1rem/1.55 var(--serif);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .site-footer {
+        padding: 1.2rem var(--gutter) 1.4rem;
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        gap: var(--grid-gap);
+        align-items: end;
+        border-top: 1px solid var(--ink);
+        font: 400 0.64rem/1.45 var(--mono);
+      }
+
+      .site-footer__brand {
+        width: fit-content;
+        white-space: nowrap;
+        font: 700 1.55rem/0.9 var(--sans);
+        letter-spacing: -0.085em;
+        transform: skewX(-12deg);
+        transform-origin: left center;
+      }
+
+      .site-footer p {
+        margin: 0;
+        color: var(--muted);
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .site-footer a {
+        justify-self: end;
+        color: var(--ink);
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.18em;
+      }
+
+      .site-footer a:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 64rem) {
+        .series-hero h1 {
+          grid-column: 2 / 13;
+        }
+
+        .series-dek {
+          grid-column: 4 / 11;
+        }
+
+        .fixture-note {
+          grid-column: 4 / 10;
+        }
+
+        .series-story__number {
+          grid-column: 1 / 2;
+        }
+
+        .series-story__meta {
+          grid-column: 2 / 5;
+        }
+
+        .series-story__copy {
+          grid-column: 5 / 10;
+        }
+
+        .series-story__action {
+          grid-column: 10 / 13;
+        }
+      }
+
+      @media (max-width: 50rem) {
+        .site-header {
+          grid-template-columns: 1fr auto;
+          align-items: center;
+          padding-top: 0.9rem;
+        }
+
+        .site-header__strapline {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          max-width: 32rem;
+          padding-top: 0.55rem;
+          text-align: left;
+        }
+
+        .site-header__section {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .series-hero {
+          display: block;
+          padding-top: 3.6rem;
+          padding-bottom: 4.5rem;
+        }
+
+        .series-kicker {
+          margin: 0 0 1.35rem;
+        }
+
+        .series-hero h1 {
+          max-width: none;
+          font-size: clamp(3.2rem, 13vw, 5rem);
+          line-height: 0.92;
+          text-wrap: pretty;
+        }
+
+        .series-meta {
+          max-width: 24rem;
+          margin-top: 2.5rem;
+        }
+
+        .series-dek {
+          max-width: 36rem;
+          margin-top: 2.5rem;
+          font-size: 1.25rem;
+        }
+
+        .fixture-note {
+          max-width: 31rem;
+          margin-top: 2.5rem;
+        }
+
+        .series-index__head {
+          grid-template-columns: 1fr auto;
+          gap: 0.5rem 1rem;
+        }
+
+        .series-index__head p:first-child,
+        .series-index__head p:last-child {
+          grid-column: auto;
+        }
+
+        .series-index__head p:nth-child(2) {
+          display: none;
+        }
+
+        .series-story {
+          display: block;
+          padding-top: 2.75rem;
+          padding-bottom: 3rem;
+        }
+
+        .series-story__number {
+          font-size: clamp(3.7rem, 17vw, 5.5rem);
+          line-height: 0.8;
+        }
+
+        .series-story__meta {
+          margin-top: 1.5rem;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.45rem 0.7rem;
+        }
+
+        .series-story__copy {
+          margin-top: 1.7rem;
+        }
+
+        .series-story__copy h2 {
+          max-width: none;
+          font-size: clamp(2rem, 8.7vw, 3rem);
+          text-wrap: pretty;
+        }
+
+        .series-story__copy > p {
+          font-size: 1.05rem;
+        }
+
+        .series-story__action {
+          display: block;
+          max-width: 15rem;
+          margin-top: 2rem;
+        }
+
+        .site-footer {
+          grid-template-columns: 1fr auto;
+          align-items: start;
+          gap: 1rem;
+        }
+
+        .site-footer p {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          text-align: left;
+        }
+
+        .site-footer a {
+          text-align: right;
+        }
+      }
+
+      @media (max-width: 28rem) {
+        .site-header__section {
+          font-size: 0.6rem;
+        }
+
+        .series-hero h1 {
+          font-size: clamp(2.9rem, 14vw, 4rem);
+        }
+
+        .series-story__meta {
+          display: block;
+        }
+
+        .series-story__meta span,
+        .series-story__meta time {
+          display: block;
+          margin-top: 0.35rem;
+        }
+
+        .series-story__meta span:first-child {
+          margin-top: 0;
+        }
+
+        .series-story__meta span + span::before,
+        .series-story__meta time::before {
+          margin-right: 0.4rem;
+        }
+
+        .site-footer {
+          display: block;
+        }
+
+        .site-footer p,
+        .site-footer a {
+          display: block;
+          margin-top: 1rem;
+          text-align: left;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .skip-link {
+          transition: none;
+        }
+      }
+    </style>
+  </body>
+</html>
