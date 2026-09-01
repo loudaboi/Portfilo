@@ -4,11 +4,15 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Wordmark Exploration & Lock — approved and locked; local build/browser revalidation pending.**
+**Portfilo v0 / Homepage Visual Design**
 
-The Editorial Design phase remains complete and frozen. The provisional symbol-based identity is retired. Portfilo now uses a wordmark-first v0 identity on the story surface.
+**Wordmark Exploration & Lock is complete.**
 
-The user has explicitly approved the current visual direction and asked to lock progress. Homepage design has not started.
+The Editorial Design phase remains complete and frozen. The provisional symbol-based identity is retired. Portfilo now uses the approved wordmark-first v0 identity on the story surface.
+
+The user completed the required local validation pass and reported that the production build, fixture routing checks, desktop/mobile masthead review, and interaction checks are all good. These validation results are user-reported local results rather than independently executed in the connected repository environment.
+
+No homepage code was changed while closing the wordmark phase.
 
 ## Current branch
 
@@ -18,9 +22,11 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Complete the local validation pass for the approved wordmark integration, then begin **Portfilo v0 / Homepage Visual Design**.
+Begin **Portfilo v0 / Homepage Visual Design** using the frozen editorial system and locked v0 wordmark.
 
-Do not start series pages, newsletter integration, analytics, deployment, editorial launch research, or another product surface before the wordmark validation pass is recorded.
+The homepage should establish Portfilo as a contemporary editorial institution, not a generic news site, SaaS landing page, or card-heavy content grid.
+
+Do not start series pages, newsletter integration, analytics, deployment, editorial launch research, or another product surface before the homepage design phase is complete enough for review.
 
 ## Locked v0 wordmark decision
 
@@ -52,16 +58,22 @@ The Pinterest-derived symbol:
 - has no active avatar role;
 - should not be revived as a production identity without a new explicit brand decision.
 
-## Implemented in the wordmark phase
+## Wordmark phase validation
 
-- Removed the provisional symbol from the active story masthead.
-- Removed the provisional mark/avatar SVG assets from the active branch.
-- Removed the custom favicon link that referenced the retired symbol.
-- Updated the story masthead to a wordmark-only treatment.
-- Implemented the approved `Port / fi / lo` color treatment.
-- Preserved the existing editorial typography, grid, evidence hierarchy, correction treatment, content schema, route generation, and fixtures.
-- Added no framework, UI library, animation library, runtime script, or package dependency.
-- Did **not** modify `src/pages/index.astro`; homepage design has not started.
+The user ran the required local validation and reported all checks good.
+
+Recorded results:
+
+- `npm run build` — **PASS, user-reported**;
+- published synthetic story generated — **PASS, user-reported**;
+- draft synthetic story excluded — **PASS, user-reported**;
+- desktop masthead/wordmark review — **PASS, user-reported**;
+- narrow mobile masthead/wordmark review — **PASS, user-reported**;
+- no visible clipping/overlap/horizontal-overflow issue — **PASS, user-reported**;
+- keyboard focus behavior remained acceptable — **PASS, user-reported**;
+- final colored wordmark treatment visually approved — **PASS**.
+
+This closes **Wordmark Exploration & Lock** for v0.
 
 ## Editorial media / graphics readiness
 
@@ -119,7 +131,7 @@ The likely unavoidable cash cost for a public launch is the domain registration 
 
 ### Editorial design
 
-The story surface was implemented and validated before the branding phases. The following remain frozen for v0 unless a concrete implementation problem is discovered:
+The story surface is frozen for v0 unless a concrete implementation problem is discovered:
 
 - Instrument Sans for wordmark base, headline, interface, and editorial headings;
 - Source Serif 4 for dek and long-form reading;
@@ -138,7 +150,13 @@ The story surface was implemented and validated before the branding phases. The 
 - corrections as a semantically separate red treatment;
 - skip link and visible keyboard focus treatment.
 
-Previous editorial-design validation confirmed production build success, published-route generation, draft-route exclusion, responsive/browser QA, no horizontal overflow at the required viewports, keyboard/focus behavior, exact selected webfont loading, and final signal-blue visual review.
+### Brand / wordmark
+
+- provisional symbol retired;
+- wordmark-first identity locked;
+- `Port / fi / lo` black/blue/red treatment locked for v0;
+- no paid logo font or separate mark required;
+- wordmark implementation locally validated by the user.
 
 ## Technical decisions frozen for v0
 
@@ -157,7 +175,7 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 
 ## Scope still not started
 
-- homepage visual design
+- homepage visual design implementation
 - series page implementation
 - Research & Standards page
 - About page
@@ -174,37 +192,31 @@ Do not add React, Vue, Svelte, server rendering, a database, authentication, or 
 |---|---|
 | Repository access | PASS |
 | `build/portfilo-v0` branch access | PASS |
-| Canonical project/design guidance inspected | PASS |
-| Explicit user approval to lock current wordmark direction | PASS |
-| Previous symbol retired from active use | PASS |
-| Homepage untouched during wordmark task | PASS |
-| New package dependency | PASS — none added |
-| New runtime JavaScript | PASS — none added |
-| Content architecture changed | PASS — no schema/routing/content-model change |
-| Wordmark-only masthead authored | PASS |
-| Approved `Port / fi / lo` color treatment authored | PASS |
-| Favicon reference to retired symbol removed | PASS |
-| Provisional symbol assets removed from active branch | PASS |
-| Zero-budget infrastructure direction recorded | PASS |
-| Editorial media readiness recorded | PASS |
-| Production build after wordmark integration | **PENDING — local validation required** |
-| Responsive browser QA after wordmark integration | **PENDING** |
-| Horizontal-overflow recheck after wordmark integration | **PENDING** |
-| Final masthead visual check with exact webfont | **USER VISUALLY APPROVED; local responsive recheck still pending** |
+| Editorial Design complete | PASS |
+| Wordmark Exploration & Lock complete | PASS |
+| Production build after wordmark integration | PASS — user-reported local validation |
+| Published fixture generated | PASS — user-reported local validation |
+| Draft fixture excluded | PASS — user-reported local validation |
+| Desktop/mobile wordmark QA | PASS — user-reported local validation |
+| Horizontal-overflow recheck | PASS — user-reported local validation |
+| Keyboard/focus recheck | PASS — user-reported local validation |
+| Final wordmark visual approval | PASS |
+| Homepage implementation | NOT STARTED |
 
 ## Exact next task
 
-Validate the locked wordmark integration on `build/portfilo-v0`:
+Begin **Homepage Visual Design**.
 
-1. run `npm run build`;
-2. confirm the published synthetic story is generated and the draft fixture is still excluded;
-3. inspect the story masthead at desktop and narrow mobile widths with the exact fonts loaded;
-4. confirm the wordmark introduces no horizontal overflow and preserves keyboard focus behavior;
-5. record the validation result in this file.
+Before implementation:
 
-If those checks pass, mark **Wordmark Exploration & Lock Complete** and begin **Portfilo v0 / Homepage Visual Design**.
+1. inspect the current `src/pages/index.astro` placeholder and the frozen story-page design;
+2. use the existing v0 scope and design direction as constraints;
+3. define the homepage editorial hierarchy around one dominant feature, selected/latest stories, Portfilo identity, and newsletter CTA;
+4. avoid repeated generic cards, SaaS hero patterns, decorative AI aesthetics, and unnecessary libraries;
+5. preserve the locked wordmark, typography, palette, grid logic, accessibility requirements, and zero-budget architecture;
+6. implement only after the homepage direction is coherent enough to defend visually.
 
-Do not reopen branding during homepage design unless implementation exposes a concrete problem.
+Editorial media/figure primitives should be added when the homepage or first real article creates a concrete requirement, not as speculative infrastructure.
 
 ## Phase handoff rule
 
