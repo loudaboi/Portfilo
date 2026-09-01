@@ -4,18 +4,17 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Editorial Design Implemented - Final Validation Pending**
+**Editorial Design Implemented - Typography Verification Pending**
 
 The minimum Portfilo v0 editorial visual system for the existing generic story surface is implemented on `build/portfilo-v0` without changing the validated content architecture.
 
-Browser-based layout and accessibility QA has now been performed against a static render reconstructed from the current story markup and CSS. The required desktop, tablet, and mobile compositions were inspected, horizontal overflow was checked at all required viewports, and one skip-link focus defect found during QA was fixed.
+Browser-based layout and accessibility QA has been performed against a static Chromium render reconstructed from the current story markup and CSS. The required desktop, tablet, and mobile compositions were inspected, horizontal overflow was checked at all required viewports, and one skip-link focus defect found during QA was fixed.
 
-This phase is still **not complete** because two required checks cannot be truthfully completed in the current execution environment:
+Local Astro validation on 2026-09-02 has now also confirmed that the post-design production build passes, the published fixture generates its expected route, and the draft fixture remains excluded from production output.
 
-1. the post-design Astro production build has not been run;
-2. the final Instrument Sans + Source Serif 4 + IBM Plex Mono combination has not been rendered with all three exact selected webfonts loaded in the browser.
+This phase is still **not complete** until the final Instrument Sans + Source Serif 4 + IBM Plex Mono combination is verified with all three exact selected webfonts loaded through the actual Astro story page.
 
-Do not begin the homepage until those checks pass and this file is updated to **Editorial Design Complete**.
+Do not begin the homepage until that check passes and this file is updated to **Editorial Design Complete**.
 
 ## Current branch
 
@@ -25,9 +24,9 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Complete **Portfilo v0 / Editorial Design Final Validation**.
+Complete **Portfilo v0 / Editorial Design Typography Verification**.
 
-The remaining work is validation, not redesign. Run the actual Astro production build, verify published/draft route generation, load the published fixture through Astro with the exact selected webfonts, correct only concrete failures if any appear, then freeze typography and close the phase.
+The remaining work is validation, not redesign. Load the published fixture through Astro with the exact selected webfonts, confirm the fonts are available and visually sound against the long-title fixture, correct only a concrete font-induced layout or legibility failure if one appears, freeze typography, update this file, commit, and stop.
 
 Do not begin homepage design, editorial launch research, newsletter work, analytics, deployment, or another product surface as part of this validation task.
 
@@ -49,7 +48,7 @@ Do not begin homepage design, editorial launch research, newsletter work, analyt
 - Generic static story route exists at `/stories/[slug]`.
 - Production route generation explicitly filters to `status: published`.
 - Synthetic published and draft fixtures remain in place.
-- The Content Architecture phase was previously validated locally before the design change: production build passed, the published fixture generated, and the draft fixture remained absent from production output.
+- Content Architecture validation previously passed before the design change.
 
 ### Editorial design implementation
 
@@ -70,7 +69,7 @@ Do not begin homepage design, editorial launch research, newsletter work, analyt
 - Added no framework, UI library, animation library, runtime client script, or package dependency.
 - Did not change the story schema, fixtures, homepage, content routing rules, or broader content architecture.
 
-### Editorial design QA completed in current environment
+### Editorial design QA completed
 
 - Rendered the current story markup and CSS through headless Chromium using Playwright without adding anything to the repository.
 - Inspected the synthetic long-title story composition at `1440x900`, `1280x800`, `768x1024`, `390x844`, and `360x800`.
@@ -85,6 +84,17 @@ Do not begin homepage design, editorial launch research, newsletter work, analyt
 - Re-tested the fix in headless Chromium: activating the skip link now scrolls to and focuses the `#story-body` element.
 - Re-ran horizontal-overflow checks after the accessibility fix; all required viewport widths remain overflow-free.
 - No substantive motion exists on the story page; no animation library or reading-blocking motion was introduced.
+
+### Post-design Astro validation
+
+Local Windows PowerShell validation on 2026-09-02 confirmed:
+
+- `npm run build` passes on Astro 7.2.10.
+- Astro reports static output mode.
+- `/stories/portfilo-content-architecture-test/index.html` is generated during the production build.
+- `Test-Path dist/stories/portfilo-content-architecture-test/index.html` returns `True`.
+- `Test-Path dist/stories/portfilo-draft-filtering-test/index.html` returns `False`.
+- The build produced exactly two public pages in the current repository state: the root route and the published synthetic story fixture.
 
 ## Design decisions for the current story surface
 
@@ -109,7 +119,7 @@ Only the roles needed by the current story page were introduced.
 
 Font files are currently loaded from pinned Fontsource CDN WOFF2 URLs with local fallbacks and no package dependency. Self-hosting the final WOFF2 files remains preferable before public launch if a clean binary-asset workflow is available, but it is not required to complete the current design phase.
 
-The QA environment could render IBM Plex Mono exactly because it was locally available. Instrument Sans was not locally installed, and the available serif was Source Serif Pro rather than Source Serif 4, so local metric proxies were used to evaluate layout mechanics. This is sufficient to validate the composition and responsive behavior, but it is not sufficient to declare the final typography frozen.
+The QA environment could render IBM Plex Mono exactly because it was locally available. Instrument Sans was not locally installed, and the available serif was Source Serif Pro rather than Source Serif 4, so local metric proxies were used to evaluate layout mechanics. This was sufficient to validate composition and responsive behavior, but it is not sufficient to declare the final typography frozen.
 
 The typography direction remains provisionally selected pending one real-browser pass with the exact webfonts loaded through the actual Astro page.
 
@@ -130,9 +140,6 @@ The typography direction remains provisionally selected pending one real-browser
 
 ## In progress
 
-- Post-design Astro production build validation.
-- Published fixture generation check after the design change.
-- Draft fixture exclusion check after the design change.
 - Final real-browser typography inspection with exact Instrument Sans, Source Serif 4, and IBM Plex Mono loaded through the actual Astro page.
 
 ## Not started
@@ -188,9 +195,7 @@ These remain frozen for v0 unless a concrete blocker is discovered.
 
 ## Known issues / unresolved decisions
 
-- The post-design production build has not been run in the current execution environment. The repository cannot be cloned there because outbound GitHub/DNS access is unavailable, Astro is not globally installed, and the local npm cache does not contain the required Astro package. This is an environment limitation, not a passing build result.
-- Exact final webfont rendering remains unverified. Instrument Sans is not installed in the QA runtime and Source Serif 4 is not available there, so the browser QA used local metric proxies for those two roles and exact IBM Plex Mono for the mono role.
-- Because the actual Astro build is still unrun, post-design production route generation and draft exclusion cannot be marked as passing even though the underlying filtering implementation is unchanged.
+- Exact final webfont rendering remains unverified on the actual Astro page. Instrument Sans and Source Serif 4 were not available in the headless QA runtime, so responsive QA used local metric proxies for those two roles and exact IBM Plex Mono for the mono role.
 - Font delivery currently uses pinned Fontsource CDN WOFF2 URLs. Self-host the final WOFF2 assets before public launch if the repository workflow can write and validate binary font assets cleanly.
 - No separate Astro type-check package has been added because it is not currently part of the repository and is not required by this phase.
 - Final production domain is not required for this phase.
@@ -223,9 +228,9 @@ These remain frozen for v0 unless a concrete blocker is discovered.
 | Correction treatment visual QA | PASS WITH QUALIFICATION - static Chromium render |
 | Skip-link visibility/focus | PASS - defect found, fixed, and re-tested |
 | Visible link focus treatment | PASS - headless Chromium QA |
-| Production build after editorial design | NOT RUN - actual Astro environment required |
-| Published fixture generated after editorial design | NOT RUN - actual Astro build required |
-| Draft fixture excluded after editorial design | NOT RUN - actual Astro build required |
+| Production build after editorial design | PASS - local Astro build on 2026-09-02 |
+| Published fixture generated after editorial design | PASS - generated and `Test-Path` returned `True` |
+| Draft fixture excluded after editorial design | PASS - `Test-Path` returned `False` |
 | Exact selected fonts render correctly against long fixture | NOT RUN - real Instrument Sans and Source Serif 4 browser load still required |
 | Deployment | NOT STARTED |
 
@@ -233,22 +238,21 @@ These remain frozen for v0 unless a concrete blocker is discovered.
 
 Begin and complete:
 
-**Portfilo v0 / Editorial Design Final Validation**
+**Portfilo v0 / Editorial Design Typography Verification**
 
 On `build/portfilo-v0`:
 
-1. Pull the latest branch and install from the existing lockfile with `npm ci`.
-2. Run `npm run build`.
-3. Confirm `dist/stories/portfilo-content-architecture-test/index.html` exists.
-4. Confirm `dist/stories/portfilo-draft-filtering-test/index.html` does not exist.
-5. Run `npm run dev` and open `/stories/portfilo-content-architecture-test`.
-6. Confirm Instrument Sans, Source Serif 4, and IBM Plex Mono requests load successfully and the browser is actually using those font families.
-7. Recheck the long headline at `1440x900`, `768x1024`, `390x844`, and `360x800`. The layout mechanics have already passed proxy-font QA, so revise only if the exact fonts expose a concrete wrapping, collision, measure, or legibility problem.
-8. Recheck `document.documentElement.scrollWidth === document.documentElement.clientWidth` after the exact fonts load.
-9. Keyboard-test the skip link once on the actual Astro page and confirm focus reaches `#story-body`.
-10. If all required checks pass, update this file to **Editorial Design Complete**, record exact build/route/font results, freeze the typography decision, record the next phase task, commit, and stop.
+1. Run `npm run dev`.
+2. Open `/stories/portfilo-content-architecture-test` in a normal browser.
+3. Wait for `document.fonts.ready`, then confirm Instrument Sans, Source Serif 4, and IBM Plex Mono are available to the page.
+4. Inspect the deliberately long headline at desktop and narrow mobile width with the exact fonts loaded.
+5. Confirm the body remains comfortable to read, the mono metadata remains legible, and no font-induced wrapping, collision, overflow, or hierarchy problem appears.
+6. Recheck `document.documentElement.scrollWidth === document.documentElement.clientWidth` once with the exact fonts loaded.
+7. Keyboard-test the skip link once on the actual Astro page and confirm focus reaches `#story-body`.
+8. If no concrete failure appears, freeze the current typography combination.
+9. Update this file to **Editorial Design Complete**, record the exact font/browser result, record the next phase task, commit, and stop.
 
-Do not begin homepage design during the final validation task.
+Do not begin homepage design during the typography verification task.
 
 ## Phase handoff rule
 
