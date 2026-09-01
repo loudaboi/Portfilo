@@ -2,9 +2,9 @@
 
 ## Mission
 
-Portfilo should help ambitious Filipinos make better decisions about work, money, skills, building, and life through useful, specific, evidence-aware journalism and analysis.
+Portfilo should help ambitious Filipinos understand business, technology, startups, building, and the ways these forces shape life in the Philippines through useful, specific, evidence-aware journalism and analysis.
 
-Portfilo is not a motivation feed, content farm, or generic self-improvement publication.
+Portfilo is not a motivation feed, content farm, startup cheerleader, or generic self-improvement publication.
 
 ## Core editorial principles
 
@@ -28,13 +28,13 @@ It is:
 
 ### 3. Useful specificity
 
-Prefer concrete Philippine context over generic advice.
+Prefer concrete Philippine context over generic business or startup advice.
 
 Weak:
-> Negotiate your salary.
+> Startups should focus on product-market fit.
 
 Better:
-> What compensation evidence can a Filipino applicant use when negotiating a role, and when does negotiation actually change the outcome?
+> Before calling a Philippine startup product-market fit, what evidence shows customers return, pay, or expand their usage?
 
 ### 4. Distinguish kinds of claims
 
@@ -76,15 +76,15 @@ Avoid clickbait that changes:
 
 When relevant, investigate how global ideas interact with Philippine realities such as:
 
-- wages and purchasing power;
+- purchasing power and consumer behavior;
 - taxes and mandatory contributions;
 - family obligations;
 - geography and commuting;
-- local labor markets;
-- remote/global work;
-- education pathways;
-- infrastructure;
+- local labor and talent markets;
+- startup financing and access to capital;
+- digital infrastructure;
 - regulation;
+- distribution and payments;
 - culture and professional networks.
 
 Do not force a Philippine angle when it adds no value.
