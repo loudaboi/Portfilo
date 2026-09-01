@@ -2,4 +2,3 @@
 # Never commit .dev.vars or a real beehiiv API key.
 
 BEEHIIV_API_KEY="replace-with-your-private-beehiiv-api-key"
-BEEHIIV_PUBLICATION_ID="pub_replace-with-your-publication-id"
