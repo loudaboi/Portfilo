@@ -4,11 +4,9 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Series Page Foundation & Visual Design**
+**Portfilo v0 / Research & Standards Page**
 
-The minimal Series content model and first generic Series page candidate are implemented on `build/portfilo-v0`.
-
-The remaining work in this phase is local production-build validation, responsive/browser QA, and explicit visual approval. Do not mark the Series phase complete until those checks pass.
+Series Page Foundation & Visual Design is complete after the user-reported final local production-build, responsive/browser QA, link checks, and explicit visual approval.
 
 Completed phases:
 
@@ -19,8 +17,9 @@ Completed phases:
 - Public Copy Style
 - Editorial Taxonomy Alignment
 - Homepage Visual Design
+- Series Page Foundation & Visual Design
 
-The story visual surface and homepage visual direction remain frozen for v0 unless a concrete implementation problem is discovered.
+The story, homepage, and Series visual directions are frozen for v0 unless a concrete implementation problem is discovered.
 
 ## Current branch
 
@@ -30,132 +29,33 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Validate and visually approve the **Series Page Foundation & Visual Design** candidate.
+Build the smallest credible public **Research & Standards** surface required by `docs/V0_SCOPE.md`.
 
-The Series system now satisfies the v0 structural requirement without adding a CMS, database, client-side state, secondary taxonomy, or new frontend dependency.
+This page should explain Portfilo's editorial safeguards clearly enough for a reader to understand how the publication handles sourcing, verification, AI use, corrections, and commercial/editorial separation.
 
-## Series foundation — implemented
+It is a reader-facing institutional page, not a dump of internal workflow documentation.
 
-### Series-level content model
+## Exact next task
 
-A second build-time Astro Content Collection named `series` now exists.
+Perform **Research & Standards Page Foundation & Implementation** in this order:
 
-Each series entry uses its filename as the stable series ID/slug and stores only:
+1. Re-read `AGENTS.md`, `docs/V0_SCOPE.md`, `docs/DESIGN_DIRECTION.md`, `docs/COPY_STYLE.md`, `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md`.
+2. Inspect the current homepage, story page, and Series page so the new surface uses the established Portfilo system rather than creating a parallel design language.
+3. Decide the minimum public information architecture needed to cover:
+   - sourcing;
+   - verification;
+   - AI usage;
+   - corrections;
+   - commercial/editorial separation.
+4. Translate the canonical internal standards into concise public language. Do not expose implementation/process jargon merely because it exists in the internal documents.
+5. Follow `docs/COPY_STYLE.md`: clear before clever, concrete language, familiar labels, no generic trust-marketing copy, no AI-shaped slogans.
+6. Preserve the frozen visual system: Instrument Sans, Source Serif 4, IBM Plex Mono, warm paper, near-black ink, blue editorial/evidence accents, red only for the wordmark/correction semantics, twelve-column grid, restrained rules, and first-class mobile layout.
+7. Prefer an institutional editorial composition over a generic FAQ/card grid.
+8. Use semantic HTML, visible keyboard focus, a skip link, and reduced-motion-safe behavior.
+9. Keep static Astro output and avoid client-side JavaScript unless a real interaction requires it.
+10. Run production build plus desktop/mobile/browser QA before marking the phase complete.
 
-- `title`
-- `description`
-- `status: active | completed`
-- `fixture` boolean used only to identify synthetic development fixtures clearly
-
-Stories continue to use the existing:
-
-- `series`
-- `seriesOrder`
-
-relationship. No duplicated series title/description/status is stored on individual stories.
-
-Implementation commit:
-
-- `799f0d8ca03a72998488b7521e03c8f98559c71f` — add Series Content Collection
-
-### Synthetic series fixture
-
-One explicitly synthetic series entry was added:
-
-`src/content/series/content-architecture-fixtures.md`
-
-Public route candidate:
-
-`/series/content-architecture-fixtures`
-
-The fixture identifies itself as development-only and states that it contains no reported claims or real-world findings.
-
-Fixture commit:
-
-- `68109c0bef0d3a83194c9220a0c58a964efcb927` — add synthetic Series fixture
-
-### Ordered story fixtures
-
-The existing published content-architecture fixture remains Part 1 of `content-architecture-fixtures`.
-
-Two more published synthetic fixtures were added solely to prove ordering and responsive list rendering:
-
-- `portfilo-series-ordering-test-two` — Part 2
-- `portfilo-series-ordering-test-three` — Part 3
-
-They contain no reported journalism, statistics, interviews, or real-world findings.
-
-Commits:
-
-- `4e9c872fdb91c45cff1eebfa24e1d2fb6318ba44`
-- `ea25f432125e17123553c356f3d37163a2431fda`
-
-## Series page candidate — implemented
-
-Generic static route:
-
-`src/pages/series/[slug].astro`
-
-Implementation commit:
-
-- `241be4fdcd783117ecd2b75af808fc5b23e29151`
-
-Behavior:
-
-- builds one static route per Series collection entry;
-- selects only `published` stories for the public series list;
-- matches stories by the existing `series` identifier;
-- sorts stories by `seriesOrder` with a stable title fallback;
-- renders series title, description, active/completed status, story count, and stable series ID;
-- clearly labels development fixtures as not journalism;
-- renders an ordered editorial story list;
-- shows each story's content type, topic, publication date, title, and description;
-- provides direct `Read story` links to individual published stories;
-- includes an empty-series state for valid series entries with no published stories;
-- uses static Astro output with no client-side JavaScript.
-
-### Series visual direction
-
-The page is intentionally closer to an editorial dossier/index than another homepage.
-
-It reuses the frozen system:
-
-- Instrument Sans
-- Source Serif 4
-- IBM Plex Mono
-- warm paper `#f4f0e8`
-- near-black `#171614`
-- signal blue `#0050a4`
-- red only in the wordmark/correction semantics
-- twelve-column editorial grid
-- strong typography
-- restrained rules
-- deliberate asymmetry
-- no generic card grid
-- first-class mobile layout
-- visible keyboard focus
-- skip link
-- reduced-motion handling
-
-Large blue order numbers are structural series markers, not decorative red/blue alternation.
-
-## Homepage copy cleanup
-
-The Portfilo Brief homepage copy was tightened to follow `docs/COPY_STYLE.md` more literally.
-
-Previous generic inbox language was replaced with:
-
-> **Portfilo Brief, by email.**
->
-> Get new reporting and clear explanations on business, technology, startups, AI, and building in the Philippines.
-
-This states what arrives and what it covers without promising an uncommitted frequency, exclusivity, or other newsletter benefit.
-
-Commit:
-
-- `80667eab6304c2fe5ca8a8997c5705cde09d69fe`
-
-Temporary development-fixture language elsewhere on the homepage remains intentionally explicit until real launch stories replace the fixtures.
+Do not begin About, Subscribe integration, analytics, deployment, or editorial launch research until this phase is complete.
 
 ## Portfilo editorial direction
 
@@ -212,7 +112,7 @@ Working principle:
 
 > **Make the useful thing clear. Keep the personality in the precision.**
 
-For factual journalism, the Copy Style does not replace the stricter Editorial, Research, and Publishing standards.
+For factual journalism, Copy Style does not replace the stricter Editorial, Research, and Publishing standards.
 
 ## Brand and visual system
 
@@ -235,17 +135,76 @@ Do not add red merely to create numerical color balance.
 
 ## Homepage Visual Design — COMPLETE
 
-Final user-reported validation on 2026-09-02 included:
+Final user-reported validation on 2026-09-02 included a clean production build, correct homepage rendering, published/draft fixture behavior, desktop/mobile review, and explicit approval.
 
-- `npm run build` passed;
-- homepage rendered correctly;
-- published fixture remained available;
-- draft filtering remained correct;
-- desktop and narrow-mobile review passed;
-- no blocking overflow/collision issue was reported;
-- final homepage appearance was approved.
+The Portfilo Brief homepage copy was also tightened to:
 
-Homepage Visual Design is formally closed.
+> **Portfilo Brief, by email.**
+>
+> Get new reporting and clear explanations on business, technology, startups, AI, and building in the Philippines.
+
+Homepage Visual Design remains closed.
+
+## Series Page Foundation & Visual Design — COMPLETE
+
+### Content model
+
+A build-time Astro `series` Content Collection stores only:
+
+- title;
+- description;
+- `active | completed` status;
+- fixture marker for synthetic development entries.
+
+Stories retain the existing `series` + `seriesOrder` relationship.
+
+No CMS, database, client-side state, secondary taxonomy, or new frontend dependency was added.
+
+### Generic route
+
+`src/pages/series/[slug].astro`
+
+The page:
+
+- generates static routes from Series entries;
+- includes only published stories;
+- sorts by `seriesOrder`;
+- exposes title, description, status, story count, ordered story sequence, story type/topic/date, and direct story links;
+- supports a valid empty-series state;
+- uses no client-side JavaScript.
+
+### Synthetic validation fixture
+
+Series route:
+
+`/series/content-architecture-fixtures`
+
+The fixture is explicitly development-only and contains no real reporting or factual findings.
+
+It contains three published synthetic stories ordered Part 1 → Part 2 → Part 3.
+
+Implementation commits:
+
+- `799f0d8ca03a72998488b7521e03c8f98559c71f` — Series Content Collection
+- `68109c0bef0d3a83194c9220a0c58a964efcb927` — synthetic Series fixture
+- `4e9c872fdb91c45cff1eebfa24e1d2fb6318ba44` — ordering fixture Part 2
+- `ea25f432125e17123553c356f3d37163a2431fda` — ordering fixture Part 3
+- `241be4fdcd783117ecd2b75af808fc5b23e29151` — generic Series page
+
+### Final validation
+
+User-reported PASS on 2026-09-02:
+
+- production build passed;
+- revised homepage remained acceptable;
+- `/series/content-architecture-fixtures` rendered correctly;
+- Active status and three published stories rendered;
+- Part 1 → Part 2 → Part 3 ordering was correct;
+- story links passed;
+- responsive/browser review passed;
+- final Series appearance explicitly approved.
+
+**Series Page Foundation & Visual Design is formally closed.**
 
 ## Zero-budget infrastructure posture
 
@@ -262,7 +221,7 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Research & Standards page
+- Research & Standards page — current phase
 - About page
 - Subscribe surface / beehiiv integration
 - analytics
@@ -284,44 +243,8 @@ Use free tiers while sufficient for v0 validation.
 | Public Copy Style | PASS |
 | Editorial Taxonomy Alignment | PASS |
 | Homepage Visual Design | PASS |
-| Homepage Portfilo Brief copy cleanup | IMPLEMENTED — browser recheck required |
-| Series Content Collection | IMPLEMENTED — local build required |
-| Synthetic Series fixture | IMPLEMENTED |
-| Ordered published Series story fixtures | IMPLEMENTED |
-| Generic `/series/[slug]` route | IMPLEMENTED — local build required |
-| Series desktop responsive review | REQUIRED |
-| Series 390px / 360px mobile review | REQUIRED |
-| Series keyboard/focus review | REQUIRED |
-| Series font loading review | REQUIRED |
-| Series visual approval | REQUIRED |
-| Series Page Foundation & Visual Design complete | NO — awaiting local QA + approval |
-
-## Exact next task
-
-Perform **Series Page Final QA & Approval** on the current `build/portfilo-v0` branch.
-
-Required local validation:
-
-1. run `git pull`;
-2. run `npm run build` and require a clean production build;
-3. confirm `/` still renders and the revised Portfilo Brief copy wraps cleanly;
-4. open `/series/content-architecture-fixtures`;
-5. confirm the Series page renders the synthetic series title, description, `active` status, and 3 published stories;
-6. confirm story order is exactly Part 1 → Part 2 → Part 3;
-7. open all three story links and confirm they route correctly;
-8. confirm the draft fixture still has no public production route;
-9. inspect the Series page at wide desktop, intermediate/tablet, 390px, and 360px;
-10. check the large blue part numbers, metadata, headlines, descriptions, and `Read story` links for collision or awkward wrapping;
-11. check for horizontal overflow or clipped content;
-12. keyboard through the page and verify the skip link, wordmark, story-title links, `Read story` links, and home footer link have usable focus states;
-13. verify Instrument Sans, Source Serif 4, and IBM Plex Mono load rather than silently falling back;
-14. either explicitly approve the Series page or report a concrete defect.
-
-Only after these checks pass should **Series Page Foundation & Visual Design** be marked complete.
-
-If Series passes, the next planned public-surface phase is:
-
-**Research & Standards Page**
+| Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
+| Research & Standards Page | NOT STARTED — current phase |
 
 ## Phase handoff rule
 
