@@ -55,7 +55,8 @@ The first real editorial series will be chosen through a separate research proje
 
 6. **Subscribe**
    - Portfilo Brief;
-   - embedded newsletter signup.
+   - native Portfilo newsletter signup UI;
+   - one narrow Cloudflare Pages Function that forwards confirmed-opt-in subscription requests to beehiiv.
 
 ### Content system
 
@@ -85,13 +86,15 @@ The first real editorial series will be chosen through a separate research proje
 - Article structured data where appropriate
 - custom 404
 - reduced-motion support
+- one single-purpose Cloudflare Pages Function for newsletter subscription forwarding
 
 ### External infrastructure
 
 - GitHub repository
 - Cloudflare Pages
+- Cloudflare Pages Functions for the single newsletter subscription endpoint
 - Cloudflare Web Analytics
-- beehiiv embedded subscribe form
+- beehiiv for subscriber storage, confirmation, delivery, and unsubscribe handling
 
 ## Explicitly out of scope
 
@@ -111,7 +114,7 @@ Do not build in v0:
 - AI assistant
 - custom CMS
 - admin dashboard
-- custom newsletter backend
+- custom newsletter platform or backend beyond the single approved beehiiv subscription proxy
 - custom analytics backend
 - advanced site search
 - paywall
@@ -125,7 +128,7 @@ Do not build in v0:
 - WebGL/3D
 - monorepo
 - microservices
-- dedicated API
+- dedicated general-purpose API
 - background jobs
 
 Valid future ideas belong in `BACKLOG.md`.
@@ -169,15 +172,16 @@ Rationale:
 - static CDN delivery;
 - custom domains;
 - simple build command and output;
-- integrates cleanly with Cloudflare Web Analytics.
+- integrates cleanly with Cloudflare Web Analytics;
+- Pages Functions allow the approved newsletter subscription proxy without converting the publication to a dynamic application.
 
 ### beehiiv
 
 Rationale:
 
-Newsletter sending, subscriber management, deliverability, unsubscribe handling, and embedded signup forms are commodity infrastructure and should not be rebuilt.
+Newsletter sending, subscriber management, confirmation, deliverability, and unsubscribe handling are commodity infrastructure and should not be rebuilt.
 
-The current free Launch tier is sufficient for v0 audience validation.
+The current free Launch tier is sufficient for v0 audience validation. Portfilo renders the signup form itself because the third-party embed did not meet the approved visual and responsive standard; the server-side proxy only forwards subscription requests to beehiiv's official API.
 
 ## Scale philosophy
 
@@ -191,7 +195,7 @@ Structured content collections mean story #500 follows the same authoring model 
 
 ### Traffic scale
 
-Static delivery minimizes application-server load.
+Static delivery minimizes application-server load. The newsletter endpoint is isolated to subscription requests rather than moving the site onto an application server.
 
 ### Editorial scale
 
