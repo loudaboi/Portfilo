@@ -50,17 +50,55 @@ Readers should not have to guess which category a consequential statement belong
 
 ### 5. Preserve uncertainty
 
-If the evidence cannot establish something, say so.
+If the evidence cannot establish something, do not invent certainty.
 
-Acceptable:
-> We could not establish her personal income from public records.
+The first options are usually to omit the unsupported claim, narrow it, or attribute it precisely.
 
-Unacceptable:
-> Her estimated net worth is probably...
+When a material uncertainty itself affects the reader's interpretation, state it accurately.
+
+Prefer evidence-specific wording such as:
+
+> Public filings reviewed for this story do not disclose her personal income.
+
+Over vague or performative wording that centers the publication merely to signal rigor.
 
 Do not convert missing evidence into fake precision.
 
-### 6. Headlines must not outrun evidence
+### 6. Verification disclosures require editorial judgment
+
+Phrases such as `Portfilo could not independently verify`, `Portfilo was unable to confirm`, or `Portfilo did not receive a response` are not default credibility language.
+
+Before using a verification or non-response disclosure, ask whether the reader materially needs that information to understand the evidentiary status, fairness, or limitation of the story.
+
+Use a disclosure when it is genuinely consequential, for example when:
+
+- a material claim from an interested, anonymous, single, or secondhand source remains necessary to the story and omission of the verification status could imply independent confirmation;
+- a serious allegation or materially negative portrayal requires a fair opportunity to respond and the relevant party could not be reached after reasonable efforts;
+- the absence of public evidence is itself part of the finding;
+- a consequential company metric, performance claim, financial claim, or other assertion cannot be corroborated and must still be reported because the claim itself is newsworthy;
+- a methodology or evidence limitation would materially change how a reasonable reader interprets the result.
+
+Do not use a disclosure merely because:
+
+- information is normally private or was never expected to be public;
+- an interview request was unanswered but the story does not depend on that response;
+- the same epistemic status can be conveyed more precisely through attribution;
+- adding `Portfilo could not...` makes the story sound more investigative;
+- the sentence describes the newsroom's effort more than the subject readers need to understand.
+
+Prefer the most specific formulation available. For example:
+
+> The company says the system cut handling time by 30%. It did not publish the baseline, sample, or measurement period.
+
+may be more informative than:
+
+> Portfilo could not independently verify the 30% figure.
+
+If a material claim cannot be verified and has no sufficient reason to remain in the story, leave it out rather than publishing it with a disclaimer.
+
+For unusual, high-risk, legally sensitive, or fairness-sensitive cases, check the relevant professional or legal standard before deciding whether and how to disclose verification limits or unsuccessful contact attempts.
+
+### 7. Headlines must not outrun evidence
 
 A headline may be sharper than the body, but never more certain than the reporting.
 
@@ -72,7 +110,7 @@ Avoid clickbait that changes:
 - anecdotes into population-level facts;
 - an estimate into a measured number.
 
-### 7. Local context is part of the value
+### 8. Local context is part of the value
 
 When relevant, investigate how global ideas interact with Philippine realities such as:
 
@@ -90,7 +128,7 @@ When relevant, investigate how global ideas interact with Philippine realities s
 
 Do not force a Philippine angle when it adds no value.
 
-### 8. Original contribution
+### 9. Original contribution
 
 A substantial Portfilo story should contain at least one meaningful contribution such as:
 
@@ -274,3 +312,4 @@ Before publication, ask:
 6. Are facts, estimates, inference, and opinion distinguishable?
 7. Does the story materially help the target reader?
 8. Would we be comfortable showing the source trail?
+9. Does every verification/non-response disclosure materially help the reader, or is it newsroom self-reference that should be removed or rewritten more precisely?
