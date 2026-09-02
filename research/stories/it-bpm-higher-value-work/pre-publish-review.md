@@ -4,21 +4,24 @@ _Last updated: 2026-09-03_
 
 ## Purpose
 
-This is the final editorial gate before C009 can be authorized for publication.
+This is the final editorial gate for C009.
 
-It applies the publication checklist in `docs/PUBLISHING_STANDARD.md` to the current draft and records any revisions made after a fresh source/currentness check.
+It applies the publication checklist in `docs/PUBLISHING_STANDARD.md` to the approved article and records revisions and remaining technical verification.
 
-Public draft:
+Public story:
 
 `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
 ## Gate result
 
 **EDITORIAL PRE-PUBLISH GATE: PASS**  
-**TECHNICAL PRE-PUBLISH GATE: PENDING**  
-**PUBLICATION AUTHORIZATION: NOT GRANTED**
+**USER PUBLICATION AUTHORIZATION: GRANTED 2026-09-03**  
+**REPOSITORY PUBLICATION STATE: APPLIED**  
+**TECHNICAL LIVE VERIFICATION: PENDING**
 
-The article remains `status: draft`.
+Louda Tuppal explicitly approved the revised article on 2026-09-03. The story entry has been changed to `status: published`, given `publishedAt: 2026-09-03`, and left `featured: false`.
+
+Homepage fixture replacement, featuring, and Portfilo Brief distribution were **not** implicitly authorized by this approval and remain separate decisions.
 
 ## Publication checklist
 
@@ -36,11 +39,12 @@ The article remains `status: draft`.
 | Topic accurate | PASS | `business`; AI is context, not the primary subject. |
 | Methodology useful and included | PASS | Method, sample design, access window and limitations are stated in frontmatter. |
 | Commercial disclosure required | N/A | No commercial relationship identified in the reporting packet. |
-| Article renders correctly | PENDING | Requires safe local/preview render before `published`. |
-| Links work | EDITORIAL PASS / FINAL CLICK PENDING | Key current source/job pages rechecked 2026-09-03; final rendered-page click-through still required. |
-| Mobile layout checked | PENDING | Requires rendered story. |
-| Metadata/description set | PASS | Title, description, content type, topic, author, methodology and draft status are present. |
-| Explicit publication approval | PENDING | Must come from Louda Tuppal after this revision is reviewed. |
+| Explicit publication approval | PASS | Louda Tuppal approved the revised article on 2026-09-03. |
+| Repository publication metadata | PASS | `status: published`, `publishedAt: 2026-09-03`, `featured: false`. |
+| Application build | PENDING | A fresh `npm run build` has not been independently completed in the active assistant environment. |
+| Live story render | PENDING | Temporary-production deployment should be checked after Cloudflare processes the publication commit. |
+| Desktop/mobile layout | PENDING | Requires live or safe preview inspection. |
+| Outbound link click-through | EDITORIAL PASS / LIVE CLICK PENDING | Source pages were rechecked before approval; rendered-page click-through remains. |
 
 ## Fresh pre-publish research findings
 
@@ -48,7 +52,7 @@ The article remains `status: draft`.
 
 IBPAP's official July 17, 2026 2028-outlook article directly states that the sector's next phase is intended to rely less on workforce scale and increasingly on higher-value capabilities and AI-enabled talent.
 
-Action:
+Action taken:
 
 - use the primary IBPAP article for the opening strategy statement;
 - keep independent reporting as a cross-check in the research packet;
@@ -60,7 +64,7 @@ OECD's 2026 survey reports approximately 1.8 million workers using IBPAP 2025 da
 
 The distinction is not central to C009 and may reflect timing, rounding or revised data.
 
-Action:
+Action taken:
 
 - remove the exact headcount from the article;
 - retain OECD's directly relevant finding about concentration in contact-center/back-office work and diversification into GCC, healthcare information management and IT/software.
@@ -69,7 +73,7 @@ Action:
 
 The current posting contains two thresholds: one block says more than seven years is preferred, while another says 3+ years in a similar role.
 
-Action:
+Action taken:
 
 - keep the clearly described forecasting/planning duties;
 - remove the experience threshold from public copy;
@@ -77,38 +81,33 @@ Action:
 
 ### 4. Link/currentness cleanup
 
-Current public examples were rechecked on 2026-09-03. The Wells Fargo analytics link was normalized to the English canonical URL. The methodology now records the final check date because live job postings can later expire or change.
+Current public examples were rechecked on 2026-09-03. The Wells Fargo analytics link was normalized to the English canonical URL. The methodology records the final check date because live job postings can later expire or change.
 
 ## Copy revision result
 
 The pre-publish edit also:
 
-- replaces the vague opening `the industry keeps talking about...` with a concrete IBPAP strategy statement;
-- makes the sample construction clearer by identifying the frontline baselines and contrasting role families;
-- removes unnecessary abstraction from the five analytical dimensions;
-- replaces `AI-versus-non-AI taxonomy` with plainer language;
-- tightens the workforce-management section;
-- shortens the conclusion and ends on the three empirical questions the current evidence cannot answer.
+- replaced the vague opening with a concrete IBPAP strategy statement;
+- made the sample construction clearer by identifying the frontline baselines and contrasting role families;
+- removed unnecessary abstraction from the five analytical dimensions;
+- replaced `AI-versus-non-AI taxonomy` with plainer language;
+- tightened the workforce-management section;
+- shortened the conclusion and ended on the three empirical questions the current evidence cannot answer.
 
 ## Visual decision
 
 **No visual is required for publication.**
 
-A five-dimension role matrix could be useful later, but the current evidence does not support a prevalence chart and a decorative visual would add little. Do not delay the first article solely to create graphics.
+A five-dimension role matrix could be useful later, but the current evidence does not support a prevalence chart and a decorative visual would add little.
 
-## Remaining technical gate
+## Technical verification note
 
-Before actual publication:
+The assistant attempted to obtain a safe local checkout for a fresh build, but the active container could not resolve GitHub and does not contain Astro/dependencies. Therefore no local `npm run build` pass is claimed.
 
-1. run `npm run build`;
-2. render the story safely outside production while it is being checked;
-3. inspect desktop and mobile;
-4. click all public article links;
-5. verify methodology and metadata rendering;
-6. then request/apply explicit publication authorization.
+The publication commit is on the configured Cloudflare Pages production branch, so Cloudflare is expected to run its normal build/deployment process. The result still needs to be confirmed from the live deployment or by running `npm run build` from an available local checkout.
 
 ## Final decision
 
-**C009 is editorially ready for publication approval.**
+**C009 is editorially approved and the repository publication state has been applied.**
 
-Do not publish yet.
+Do not mark the technical gate as passed until the live or local build/render checks are completed.
