@@ -67,3 +67,41 @@ Companies may report high employee adoption of general AI tools while still havi
 Even a strong comparative case study cannot establish which factors determine AI production success across all Philippine companies.
 
 **Required action:** frame findings as patterns in the reported cases unless a broader dataset independently supports generalization. Preserve case-selection limitations in methodology.
+
+## X11 - Candidate cases span different workflow and risk classes
+
+The strongest current leads include telecom customer/service operations, banking onboarding/underwriting/fraud systems, internal enterprise workflows, and an energy company's POC program. Their data sensitivity, regulatory exposure, error costs, system architecture, and operational cadence differ substantially.
+
+**Required action:** define a common comparison frame before treating the cases as comparable. If only superficial dimensions overlap, narrow the story rather than manufacture one pilot-to-production formula.
+
+**Effect on story:** this is now one of the main structural risks to the flagship framing.
+
+## X12 - `AI` may bundle materially different technologies
+
+Company reports often use `AI` as an umbrella term that can include conventional predictive machine learning, rules-plus-ML systems, generative AI, retrieval systems, and agentic workflows. A mature fraud model and a generative contact-center agent may have very different deployment requirements.
+
+**Required action:** identify the relevant system, model class, product/vendor, version or deployment architecture where material. Do not infer that a lesson from one AI class automatically transfers to another.
+
+## X13 - POC or not-yet-launched does not mean failure
+
+First Gen explicitly describes POC evaluation before broader deployment, and UnionBank's 2025 report describes RIA as soon to be launched. Deliberate review, staged rollout, governance approval, or a scheduled future launch may be evidence of disciplined implementation rather than inability to scale.
+
+**Required action:** distinguish `failed`, `stalled`, `constrained`, `still evaluating`, `approved for rollout`, and `scheduled but not launched`. Ask why the system remains in its current stage and what would change that state.
+
+## X14 - Public-case sourcing may bias the sample toward large enterprises
+
+The extended reconnaissance now has several credible large-company leads but no publicly reconstructable MSME production case. If the only companies willing to provide operational evidence are large firms, adding a shallow MSME example merely for balance would lower the reporting quality.
+
+**Required action:** use DOST AIgnite and regional programs to seek a smaller-company case, but narrow the scope to larger Philippine organizations if MSME evidence remains too thin. Do not imply SME applicability without evidence.
+
+## X15 - Company report language can establish disclosure, not underlying performance
+
+UnionBank, First Gen, Globe, Ayala, and PLDT materials are useful primary records of what companies say about their programs and stages. They do not independently establish productivity, quality, ROI, causation, or the absence of hidden costs.
+
+**Required action:** distinguish stage facts that can be corroborated operationally from performance claims that require baselines, methods, or independent evidence. Treat annual reports as primary company testimony, not neutral evaluation.
+
+## Current challenge assessment
+
+The new case leads make C001 source-access plausible, but they also sharpen the central methodological risk: the story can only make a useful cross-case comparison if the reporting finds common implementation dimensions beneath materially different workflows.
+
+**Current outcome remains:** `CONTINUE`.
