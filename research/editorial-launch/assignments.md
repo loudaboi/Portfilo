@@ -20,7 +20,7 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
-| C027 | Featured Perspective candidate | Which single Building idea should become Portfilo's first featured Perspective? | Building | PASS | HIGH | TOPIC RESEARCH COMPLETE / SHORTLIST FOR APPROVAL | `research/stories/building-the-foundation/` |
+| C027 | Featured Perspective candidate | How should early builders judge work that may not become the final thing but can improve the next starting point? | Building | PASS | HIGH | TOPIC APPROVED / STRUCTURE RESEARCH COMPLETE | `research/stories/building-the-foundation/` |
 
 C001, C017, and C027 are `ACTIVE`.
 
@@ -44,7 +44,7 @@ That diagnosis is accepted. Draft v1 is preserved only as editorial history in:
 
 ### Draft v2 status
 
-Draft v2 demonstrated that a one-thread essay is clearer than Draft v1, but it is **not locked as the final topic**.
+Draft v2 demonstrated that a one-thread essay is clearer than Draft v1, but it is **not the selected article**.
 
 Draft v2 explored:
 
@@ -57,7 +57,7 @@ It remains preserved as an experiment in:
 
 Do not polish or publish Draft v2 unless that topic is deliberately reopened.
 
-### Fresh topic-space research
+### Topic-space research
 
 After user feedback that topic selection should precede structure and drafting, C027 was reset again at the idea level.
 
@@ -75,28 +75,58 @@ The pass reviewed:
 
 Seven possible Perspective directions were evaluated.
 
-Current shortlist:
-
-1. **Build things that make the next thing easier.**
-   - working message: when you are early, choose work that improves your next starting point;
-   - strongest fit with the original foundation instinct without turning it into biography or a checklist;
-   - current editorial recommendation.
-
-2. **Make yourself useful before you make yourself impressive.**
-   - working message: usefulness can create some of the trust, relationships and opportunities that status cannot provide at the beginning;
-   - clearer and punchier, but easier to make moralizing or advice-heavy.
-
-The previous `first project as information` idea now ranks behind these two.
-
-No new draft has been authorized or written from the shortlist.
-
-### Next C027 decision
-
-Choose/approve one shortlisted message first. The current recommendation is:
+The user approved the editorial recommendation:
 
 > **Build things that make the next thing easier.**
 
-Only after the topic is approved should C027 run a dedicated structure-research pass for that exact idea and then create a new draft.
+Working interpretation:
+
+> When you are early, choose work that improves your next starting point.
+
+The article should not turn this into a checklist of skills, network, money, reputation, habits, or other assets. Those may appear only as examples of reusable value left behind by work.
+
+### Structure research
+
+Dedicated structure research is complete:
+
+`research/stories/building-the-foundation/structure-research.md`
+
+The pass reviewed essay and narrative craft guidance from Longreads, Nieman Storyboard and Paul Graham's idea-essay progression.
+
+Selected structure:
+
+**Contrast-led argumentative funnel.**
+
+Planned beats:
+
+1. show two efforts with similar visible outcomes but different next starting points;
+2. surface the hidden dimension: what remains usable after the project;
+3. develop the idea through two or three ordinary examples without creating a listicle;
+4. explain why this matters particularly when someone is early and has little accumulated leverage;
+5. challenge the argument directly so `I learned a lot` cannot become a flattering excuse for wasted effort or endless project-hopping;
+6. leave the reader with one practical test rather than a framework;
+7. resolve by returning to the idea that the next attempt need not begin from the same place.
+
+Recommended Draft v3 length:
+
+`1,100-1,500 words`.
+
+Presentation:
+
+- mostly continuous prose;
+- no numbered list;
+- at most two or three quiet subheads if needed for reading rhythm;
+- no methodology box;
+- no forced AI paragraph;
+- no biography inside the body;
+- no invented anecdote presented as fact;
+- factual claims require normal verification if introduced.
+
+Current state:
+
+**STRUCTURE RESEARCH COMPLETE / AWAITING USER APPROVAL BEFORE DRAFT V3.**
+
+No Draft v3 has been written.
 
 No C027 file exists under `src/content/stories/`. Nothing is public and no publication approval has been requested.
 
