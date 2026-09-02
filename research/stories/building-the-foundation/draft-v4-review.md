@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: INTERNAL EDITORIAL PASS COMPLETE / READY FOR USER PUBLICATION REVIEW_
+_Status: EDITORIAL PASS / USER PUBLICATION AUTHORIZATION GRANTED / REPOSITORY PUBLICATION STATE APPLIED / TECHNICAL VERIFICATION PENDING_
 
 ## Direction decision
 
@@ -10,7 +10,7 @@ User review of Draft v3:
 
 > `yes this is actually good`
 
-Treat this as **direction approval**, not publication authorization.
+This established direction approval.
 
 The approved core idea remains:
 
@@ -73,7 +73,7 @@ One deliberate conceptual term remains: `carryover`. It earns its place because 
 
 > **Build things that make the next thing easier**
 
-Result: **PASS / RECOMMENDED**
+Result: **PASS / APPROVED FOR PUBLICATION**
 
 Why:
 
@@ -89,23 +89,13 @@ Alternatives considered:
 - `Your next starting point matters` - too abstract;
 - `Build for the next starting point` - sounds more like a framework or productivity instruction.
 
-Keep the selected headline unless user strongly prefers another direction.
-
 ## Dek audit
 
-Selected working dek:
-
-> **Early work is usually judged by what it becomes. Another question matters too: what does it make easier to do next?**
-
-Result: **PASS WITH MINOR QUALIFICATION**
-
-`Usually` is a broad rhetorical observation rather than a measured claim, but it is not consequential. The dek accurately previews the essay and adds the second dimension rather than merely repeating the headline.
-
-Possible tighter final version:
+Final dek:
 
 > **We judge early work by what it becomes. Another question matters too: what does it make easier to do next?**
 
-Recommendation: use the tighter version for publication preparation.
+Result: **PASS / APPROVED FOR PUBLICATION**
 
 ## Portfilo fit
 
@@ -114,7 +104,7 @@ Recommendation: use the tighter version for publication preparation.
 Topic: `Building`  
 Content type: `Perspective`  
 Primary reader need: `Interpret`  
-Proposed byline: `Louda Tuppal`
+Byline: `Louda Tuppal`
 
 The article is personal in authorship but not autobiographical in subject. The reader and idea remain central.
 
@@ -122,10 +112,38 @@ The article is personal in authorship but not autobiographical in subject. The r
 
 **EDITORIAL DIRECTION: PASS**
 
-**USER PUBLICATION AUTHORIZATION: NOT YET GRANTED**
+**USER PUBLICATION AUTHORIZATION: GRANTED 2026-09-03**
 
-Do not create `src/content/stories/` entry yet.
+The user's explicit `i approve` after being asked to approve Draft v4 for publication is treated as publication authorization.
 
-Next step:
+Repository publication state has been applied in:
 
-Present Draft v4 and the final headline/dek recommendation to Louda for explicit publication approval. Only after explicit approval should the public content entry be created, marked featured if separately authorized, and moved through technical render/build QA.
+`src/content/stories/build-things-that-make-the-next-thing-easier.md`
+
+Publication metadata:
+
+- `status: published`;
+- `publishedAt: 2026-09-03`;
+- `contentType: perspective`;
+- `topic: building`;
+- `author: Louda Tuppal`;
+- `featured: false`.
+
+`featured: false` is deliberate. Publication approval does not by itself authorize homepage featuring or fixture replacement. That remains a separate editorial/product decision.
+
+## Technical publication verification
+
+**PENDING.**
+
+Do not claim a fresh application build, final deployed render, desktop/mobile review, or full live-link/console QA until those checks are actually completed.
+
+Next technical checks:
+
+1. confirm Cloudflare Pages deploys the publication commit from `build/portfilo-v0`;
+2. run `npm run build` if a usable checkout/dependency environment is available;
+3. open the published story route;
+4. inspect desktop and mobile rendering;
+5. verify title, dek, byline, publication date, topic/content-type presentation, and body formatting;
+6. check for obvious console/rendering problems.
+
+Homepage featuring remains a separate decision after publication/render verification.
