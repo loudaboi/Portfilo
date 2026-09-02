@@ -186,15 +186,95 @@ Access date for sources below: 2026-09-02 unless otherwise noted.
 
 **Use:** Interview-question generator and counterpoint lead, not central evidence.
 
+## S014 - First Gen 2025 Integrated Report, intellectual capital / AI governance and POC
+
+**Source:** First Gen Corporation  
+**URL:** https://2025integratedreport.firstgen.com.ph/value-creation/values-generated/intellectual-capital  
+**Type / tier:** Company integrated report / Tier A for company disclosures  
+**Publication:** 2026, covering 2025
+
+**Why it matters:** First Gen says it formalized a GenAI policy in 2025, requires review and approval of enterprise GenAI systems, restricts company/personal data use in public GenAI platforms, keeps accountability with process owners/management, and conducted an AI Proof of Concept program to test feasibility and operational alignment before broader deployment. This is a useful still-pre-scaling comparison rather than a success-only case.
+
+**Known limitations:** The public report does not identify the individual POCs, which advanced, which stopped, the detailed criteria used, or whether any later reached production. It is company self-report.
+
+**Use:** High-priority non-success-only / still-POC case lead and governance-stage evidence.
+
+## S015 - UnionBank 2025 Annual and Sustainability Report, AI in banking operations
+
+**Source:** UnionBank of the Philippines  
+**URL:** https://www.unionbankph.com/sites/default/files/2026-04/UBP2025ASR.pdf  
+**Type / tier:** Company annual/sustainability report / Tier A for company disclosures  
+**Publication:** 2026, covering 2025
+
+**Why it matters:** UnionBank says AI is embedded in customer onboarding, credit underwriting, and fraud detection, while separately describing its RIA voice-AI contact-center system as still to be launched. That distinction can help test C001's stage definitions within one organization. The report also names technology/transformation executives who may route operator access.
+
+**Known limitations:** Performance claims, including near-real-time processing, approval changes, risk improvements, and fraud outcomes, are company self-report and require methodology and corroboration. The report may bundle different forms of AI/ML under one label.
+
+**Use:** High-priority production case lead plus within-company contrast between operational and forthcoming systems.
+
+## S016 - From Adoption to Capability: Enterprise AI, Labor Structure, and Talent Constraints in the Philippines in a Global Context
+
+**Source:** Dominic Vincent Ligot, CirroLytix Research Services / Data Ethics PH  
+**URL:** https://ssrn.com/abstract=6163747  
+**Type / tier:** Research paper / Tier B-C analytical source  
+**Date:** 2026-02-01; posted 2026-02-03
+
+**Why it matters:** The paper argues that widespread AI tool use does not equal institutionalized enterprise capability and emphasizes data/integration infrastructure, governance, product/management capability, and specialized talent as scaling constraints. It provides an explicit countercheck to treating adoption as production.
+
+**Known limitations:** The paper synthesizes other surveys including the Swarm report and advances an analytical argument rather than providing a new representative company-level deployment dataset. Ligot also contributed to the Swarm report, so he is not independent for validating S001's disputed statistic.
+
+**Use:** Independent/challenge interview lead for production definitions and capability constraints, not a substitute for case reporting.
+
+## S017 - Ayala Corporation 2026 Annual Stockholders' Meeting minutes
+
+**Source:** Ayala Corporation  
+**URL:** https://ayala.com/app/uploads/2026/05/AC-2026-ASM-Minutes-24-April-2026-Redacted.pdf  
+**Type / tier:** Official company meeting record / Tier A for company statements  
+**Date:** 2026-04-24 meeting; published 2026
+
+**Why it matters:** Ayala's president/CEO said AI capabilities had been established across operating units while the realization of results from AI initiatives remained a work in progress. This is useful counterevidence against interpreting group-wide AI capability-building as already realized operating results.
+
+**Known limitations:** Group-level statement, not a specific deployment case. It cannot establish which operating units have production systems or why particular initiatives succeeded or stalled.
+
+**Use:** Context/challenge evidence and possible source route, not a core case by itself.
+
+## S018 - PLDT Procure-to-Pay agentic workflow on AWS for SAP
+
+**Source:** Amazon Web Services / quoted PLDT executive  
+**URL:** https://aws.amazon.com/blogs/awsforsap/building-agentic-enterprises-on-aws-using-aws-for-sap-mcp-server-on-amazon-bedrock-agentcore/  
+**Type / tier:** Partner/vendor primary statement / Tier A for the attributed claim  
+**Publication:** 2026
+
+**Why it matters:** AWS quotes PLDT's IT/transformation head saying the company is transforming Procure-to-Pay through agentic workflows and is already reducing manual work and cycle times while building toward broader systems. It may provide another PLDT workflow for testing what `production` means in practice.
+
+**Known limitations:** Partner-marketing context, no disclosed baseline/methodology, unclear production scope, and no independent verification of the claimed improvements.
+
+**Use:** Secondary PLDT case lead and interview-question generator. Do not treat performance claims as verified.
+
+## Public source-access routes supporting the next stage
+
+Publicly listed routes found during reconnaissance include:
+
+- Swarm research inquiries: `pia@swarm.work`;
+- First Gen integrated-report inquiries: `investorrelations@firstgen.com.ph`;
+- UnionBank Investor Relations: `investorrelations@unionbankph.com`;
+- DOST Caraga Technical Support Services: `tss@caraga.dost.gov.ph`;
+- DOST Caraga Field Operations: `fod@caraga.dost.gov.ph`;
+- DOST Caraga Office of the Regional Director: `ord@caraga.dost.gov.ph`;
+- DOST-ASTI general inquiries: `info@asti.dost.gov.ph`;
+- Dominic Ligot corresponding-author address: `doc@ethics.ph`.
+
+These are recorded as public routes only. No outreach has been sent.
+
 ## Immediate source gaps
 
 The packet still lacks the evidence that matters most for publication:
 
 - direct interviews with operators responsible for moving a system from pilot to production;
-- a credible stalled/failed case;
+- a deeply reported stalled/failed or still-POC case rather than a public stage label alone;
 - internal or shareable process documentation below press-release level;
 - comparable definitions of `pilot` and `production` across cases;
 - operational baselines and measurement methods for claimed benefits;
 - independent technical challenge sources who can assess architecture, integration, governance, and failure modes.
 
-These gaps determine whether C001 remains viable as the flagship.
+The expanded reconnaissance identifies enough plausible cases and contact routes to begin outreach, but these gaps still determine whether C001 remains viable as the flagship.
