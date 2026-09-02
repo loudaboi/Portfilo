@@ -4,15 +4,21 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Email System & Confirmation Experience — IMPLEMENTATION / QA ACTIVE**
+**Portfilo v0 / Custom Confirmation Bridge — IMPLEMENTED / LOCAL QA PENDING**
 
-Subscribe end-to-end functionality is **PASS / CLOSED**.
+The earlier beehiiv-owned double-opt-in flow was functionally validated, but that confirmation experience has now been intentionally **SUPERSEDED**.
 
-The email-system architecture in `docs/EMAIL_SYSTEM_PLAN.md` is **APPROVED**.
+The user approved a Portfilo-owned confirmation architecture after browser evaluation showed that beehiiv's opt-in editor/hosted confirmation experience did not provide the required control.
 
-The Portfilo-owned `/confirmed` route is implemented and the user has completed local browser review with a **PASS**.
+Canonical architecture:
 
-The immediate task is now to configure and test the branded beehiiv Double Opt-in Email. Do not set the production Opt-in Redirect URL until Portfilo has a stable public production domain.
+`docs/EMAIL_SYSTEM_PLAN.md`
+
+Operational setup:
+
+`docs/CUSTOM_CONFIRMATION_SETUP.md`
+
+Do not publish the earlier unpublished beehiiv Opt in email edits. beehiiv's own opt-in email is no longer part of the v0 runtime path.
 
 ## Current branch
 
@@ -49,8 +55,6 @@ Rejected positioning must not be restored, including:
 - `Business and tech, from the Philippines.`
 - `Business and tech make more sense when you start from here.`
 
-Philippine relevance remains part of reporting and early distribution strategy, but geography is not required brand copy.
-
 ## Locked taxonomy
 
 Top-level v0 topics:
@@ -61,14 +65,7 @@ Top-level v0 topics:
 - AI
 - Building
 
-Rules:
-
-- one primary topic per story;
-- AI is primary only when AI itself is the main subject;
-- founders are a recurring lens, not a top-level topic;
-- capital/funding normally sits under Business or Startups;
-- `Latest` is broader than breaking news;
-- Portfilo Brief is the email product.
+Founders remain a recurring lens rather than a top-level topic. Capital/funding normally sits under Business or Startups. Portfilo Brief is the email product.
 
 ## Shared site chrome — PASS
 
@@ -84,14 +81,7 @@ Primary navigation:
 - `About` → `/about`
 - `Subscribe` → `/subscribe`
 
-The Portfilo wordmark links Home. The same shared header/footer system is used across public pages. Global navigation uses Instrument Sans and remains visible on mobile.
-
-User visual QA is a PASS, including:
-
-- stable navigation across routes;
-- About topic-card alignment;
-- compact `Founder / Louda Tuppal` attribution;
-- removal of legacy `Back to home` links.
+User visual QA is a PASS, including stable navigation, About topic alignment, founder attribution spacing, and removal of legacy `Back to home` links.
 
 ## Public surfaces
 
@@ -99,17 +89,7 @@ User visual QA is a PASS, including:
 
 Implementation: `src/pages/index.astro`
 
-Approved direction:
-
-- page title `Portfilo`;
-- compact topic/coverage strip;
-- feature story is the primary `h1` and visual hero;
-- `Latest` section has `id="latest"`;
-- factual About bridge;
-- Portfilo Brief copy reduced to the email product itself;
-- no geographic/tagline positioning.
-
-Fixture story language remains clearly marked as preview material until launch stories are selected.
+Approved content-first direction remains unchanged.
 
 ### About `/about`
 
@@ -121,19 +101,11 @@ Current public framing:
 
 > We cover companies, startups, AI, markets, products, and the work of building them.
 
-No founder portrait, long biography, founder letter, or unsupported ownership/independence claim should be added without a new decision.
-
 ### Research & Standards `/standards`
 
 Implementation: `src/pages/standards.astro`
 
-Substantive standards remain unchanged:
-
-- Sources
-- Verification
-- AI use
-- Corrections
-- Commercial independence
+Substantive standards remain unchanged.
 
 ### Story template
 
@@ -144,8 +116,6 @@ Story content, metadata, methodology, corrections, and Content Collection behavi
 ### Series template
 
 Implementation: `src/pages/series/[slug].astro`
-
-Series ordering and fixture behavior remain intact.
 
 Pre-launch cleanup still required:
 
@@ -159,162 +129,118 @@ Implementation: `src/pages/confirmed.astro`
 
 Purpose:
 
-- Portfilo-owned post-double-opt-in destination;
-- transactional, not a new marketing surface;
-- uses shared SiteHeader/SiteFooter;
-- marked `noindex`;
-- one confirmation statement and one CTA back to `/#latest`.
-
-Current copy:
-
-> Subscription confirmed.
->
-> You’re subscribed to Portfilo Brief. New stories will arrive by email.
->
-> Read the latest ↗
+- Portfilo-owned successful confirmation destination;
+- shared SiteHeader/SiteFooter;
+- `noindex`;
+- one confirmation statement and CTA back to `/#latest`.
 
 Local browser review: **PASS, user reported 2026-09-02**.
 
-Do not configure beehiiv's Opt-in Redirect URL to localhost or any temporary development URL. Set it only after a stable public Portfilo production domain exists.
+## Legacy beehiiv confirmation flow — SUPERSEDED
 
-## Subscribe `/subscribe` — END-TO-END PASS
+The previous implementation sent the email to beehiiv immediately with `double_opt_override: "on"`. It was validated end-to-end and produced an Active subscriber after beehiiv confirmation.
 
-Visible page: `src/pages/subscribe.astro`
+That validation remains useful historical evidence for the beehiiv API credentials and publication ID, but the flow is no longer the intended runtime architecture.
 
-Server endpoint: `functions/api/subscribe.js`
-
-Local secret template: `.dev.vars.example`
-
-Architecture:
-
-- native Portfilo form;
-- one Cloudflare Pages Function;
-- official beehiiv API V2;
-- same-origin browser check;
-- server-side validation;
-- honeypot handling;
-- no subscriber database in Portfilo;
-- publication ID bound in source;
-- only `BEEHIIV_API_KEY` is secret;
-- `reactivate_existing: true`;
-- `send_welcome_email: false`;
-- `double_opt_override: "on"`;
-- website UTM attribution.
-
-Validated results:
-
-- beehiiv identity verification: PASS
-- dedicated API key: PASS
-- `.dev.vars` secret loading: PASS
-- production `npm run build`: PASS, 8 pages at the time of Subscribe QA
-- `npx wrangler pages dev dist`: PASS
-- Cloudflare Pages Function compilation: PASS
-- native form submission: PASS
-- `POST /api/subscribe`: 200 OK
-- pending-confirmation UI: PASS
-- double-opt-in email delivery: PASS
-- confirmation: PASS
-- subscriber status: Active
-- acquisition source: `api: portfilo / website`
-
-Subscribe functionality is closed unless deployment QA later exposes an environment/configuration regression.
-
-## Email System & Confirmation Experience — APPROVED
-
-Canonical plan:
-
-`docs/EMAIL_SYSTEM_PLAN.md`
-
-Exact beehiiv setup specification:
+The old beehiiv email-setup document is retained only as a superseded decision record:
 
 `docs/BEEHIIV_EMAIL_SETUP.md`
 
-Approved decisions:
+## Custom confirmation bridge — APPROVED / IMPLEMENTED
 
-1. Keep double opt-in.
-2. Brand the confirmation email around one literal action: confirm the subscription.
-3. Use sender name `Portfilo`.
-4. Use Portfilo-owned `/confirmed` after production redirect configuration.
-5. Do not invest in beehiiv's hosted publication website for v0.
-6. Keep the Welcome Email disabled for v0 and retain API `send_welcome_email: false`.
-7. Treat Smart Nudge as optional after confirmation-email QA, not a blocker.
-8. Build one reusable Portfilo Brief newsletter template rather than multiple formats at launch.
-9. Translate the website visually through color, hierarchy, rules, spacing, and restraint instead of forcing exact web fonts into email clients.
-10. Choose a real authorized mailing address before the first public newsletter send. Never invent one.
-11. Run real inbox QA, not beehiiv Preview only.
+### Runtime flow
 
-Approved double-opt-in copy:
+```text
+/subscribe
+  → Turnstile
+  → POST /api/subscribe
+  → encrypted 24-hour token
+  → Resend Portfilo confirmation email
+  → GET /api/confirm?token=...
+  → beehiiv Active subscriber
+  → /confirmed
+```
+
+### Runtime files
+
+- `src/pages/subscribe.astro`
+- `src/pages/confirmed.astro`
+- `functions/api/subscribe.js`
+- `functions/api/confirm.js`
+- `functions/_lib/confirmation-token.js`
+- `functions/_lib/confirmation-email.js`
+
+### Architecture rules
+
+- Cloudflare Turnstile protects signup submissions and is validated server-side.
+- Turnstile browser appearance is `interaction-only` so normal readers should not see a CAPTCHA-style widget.
+- Portfilo calls Resend directly through REST `fetch`; no npm email dependency was added.
+- Resend sends only the transactional confirmation email.
+- Confirmation tokens use stateless AES-GCM authenticated encryption through Web Crypto.
+- Tokens expire after 24 hours.
+- No email address is exposed as plaintext in the confirmation URL.
+- There is no KV namespace, pending-subscriber database, permanent subscriber database, or custom SMTP server.
+- `/api/subscribe` no longer creates a beehiiv subscriber.
+- `/api/confirm` creates the already-verified beehiiv subscriber with `double_opt_override: "off"`.
+- `reactivate_existing: true` remains because a user who completes a fresh confirmation is knowingly resubscribing.
+- `send_welcome_email: false` remains the approved v0 policy.
+- website UTM attribution remains `portfilo / website / portfilo_brief_signup`.
+- beehiiv remains the canonical confirmed-subscriber store and handles Portfilo Brief delivery/unsubscribe operations.
+
+### Portfilo confirmation email
+
+Source:
+
+`functions/_lib/confirmation-email.js`
 
 Subject:
 
 `Confirm your Portfilo Brief subscription`
 
-Preview:
+Design:
 
-`One click to finish signing up.`
-
-Body:
-
-> PORTFILO BRIEF / CONFIRMATION
->
-> Confirm your subscription.
->
-> Click below to finish signing up for Portfilo Brief.
->
-> Confirm subscription
->
-> If you did not sign up, you can ignore this email.
-
-Approved email colors:
-
-- background `#f4f0e8`
-- text `#171614`
-- primary `#0050a4`
-- divider `#cbc5bb`
-
-Use square corners, left alignment, restrained whitespace, and one primary CTA.
-
-## Brand and visual system
-
-Locked unless QA exposes a concrete implementation problem:
-
-- wordmark-first identity;
-- Instrument Sans, Source Serif 4, IBM Plex Mono on the website;
+- source-controlled HTML and plain-text fallback;
+- Portfilo ink/blue/red wordmark treatment;
 - paper `#f4f0e8`;
 - ink `#171614`;
-- muted `#69655e`;
-- signal blue `#0050a4`;
-- evidence blue `#8fc7ff`;
-- correction red `#b42318`;
-- 12-column editorial grid;
-- strong typography and restrained rules;
-- no card-heavy SaaS treatment, gradients, glassmorphism, or decorative motion;
-- red remains primarily wordmark/corrections.
+- signal blue `#0050a4` rule/CTA;
+- square CTA;
+- email-safe font stack;
+- single-column responsive layout;
+- no beehiiv branding, default beehiiv body, or hosted beehiiv confirmation page.
 
-Email should translate this system rather than reproduce unsupported website typography exactly.
+## Environment configuration
 
-## Zero-budget infrastructure posture
+Template:
 
-Current direction:
+`.dev.vars.example`
 
-- Cloudflare Pages;
-- one Cloudflare Pages Function solely for newsletter subscription forwarding;
-- Cloudflare Web Analytics;
-- beehiiv;
-- GitHub;
-- local Markdown + Astro Content Collections;
-- no database;
-- no authentication system;
-- no custom subscriber store;
-- no custom newsletter platform;
-- no custom analytics backend.
+Required runtime values:
 
-Do not make v0 depend on paid beehiiv automation features.
+- `BEEHIIV_API_KEY` — private;
+- `RESEND_API_KEY` — private;
+- `RESEND_FROM` — sender identity;
+- `TURNSTILE_SITE_KEY` — public/environment-specific;
+- `TURNSTILE_SECRET_KEY` — private;
+- `CONFIRMATION_TOKEN_SECRET` — private/random, minimum 32 characters.
 
-Local-only/generated files:
+For localhost only, `.dev.vars.example` documents Cloudflare's official always-pass Turnstile test site/secret keys.
 
-- `.dev.vars` remains ignored;
-- `.wrangler/` is ignored and must not be committed.
+`.dev.vars` remains ignored. `.wrangler/` remains ignored.
+
+Never paste API keys or `CONFIRMATION_TOKEN_SECRET` into chat, GitHub, screenshots, or committed files.
+
+## Newsletter template and mailing address
+
+The regular Portfilo Brief newsletter still uses beehiiv and remains a later email-design task.
+
+Before the first public newsletter send:
+
+- choose a legitimate physical mailing address Portfilo is authorized to use;
+- build/QA one reusable Portfilo Brief newsletter template;
+- verify sender/reply identity and real inbox rendering.
+
+Do not invent an address.
 
 ## Validation status
 
@@ -327,42 +253,63 @@ Local-only/generated files:
 | Editorial Design | PASS |
 | Wordmark | PASS |
 | Editorial Taxonomy | PASS |
-| Architecture C / content-first | APPROVED |
 | Shared SiteHeader/SiteFooter | PASS |
-| Subscribe end-to-end | PASS / CLOSED |
-| Email-system research | PASS |
-| Email-system architecture | APPROVED |
-| Portfilo `/confirmed` route | PASS, local browser QA |
-| Branded confirmation email | NEXT TASK |
-| Welcome email | DISABLED by approved v0 policy |
-| Production Opt-in Redirect URL | PENDING stable production domain |
-| Publication mailing address | PENDING before public newsletter launch |
-| Newsletter template | PENDING |
+| `/confirmed` browser QA | PASS |
+| Legacy beehiiv subscription flow | PASS / SUPERSEDED |
+| Custom confirmation architecture | APPROVED |
+| Stateless token implementation | IMPLEMENTED, unvalidated locally |
+| Portfilo HTML confirmation email | IMPLEMENTED, inbox QA pending |
+| Turnstile integration | IMPLEMENTED, local QA pending |
+| Resend integration | IMPLEMENTED, credentials/QA pending |
+| Custom `/api/subscribe` | IMPLEMENTED, local QA pending |
+| Custom `/api/confirm` | IMPLEMENTED, local QA pending |
+| Production Astro build after custom-flow changes | PENDING |
+| Wrangler compile after custom-flow changes | PENDING |
+| Real Resend confirmation delivery | PENDING |
+| Custom confirmation → Active beehiiv subscriber | PENDING |
+| Production Turnstile widget | PENDING deployment phase |
+| Production verified Resend sender | PENDING deployment phase |
+| Publication mailing address | PENDING before newsletter launch |
+| Portfilo Brief newsletter template | PENDING |
 
 ## Exact next task
 
-**Configure and QA the beehiiv Double Opt-in Email using `docs/BEEHIIV_EMAIL_SETUP.md`.**
+**Local custom-confirmation QA.**
 
 Sequence:
 
-1. update sender/subject/preview/body in beehiiv;
-2. apply the approved Portfilo email colors and restrained layout;
-3. send a beehiiv test/preview email to a real inbox;
-4. review desktop and mobile inbox rendering;
-5. if visual QA passes, test one fresh double-opt-in subscription to verify the actual transactional email still works;
-6. leave the Welcome Email disabled;
-7. leave the Opt-in Redirect URL unset until the production domain is stable;
-8. after confirmation-email QA, build the reusable Portfilo Brief newsletter template.
+1. leave beehiiv's unpublished Opt in email edits unpublished;
+2. pull the latest `build/portfilo-v0` branch;
+3. create a Resend account/API key if not already created;
+4. update local `.dev.vars` using `.dev.vars.example`, preserving the existing beehiiv key;
+5. use Resend's test sender for the first pass;
+6. generate a private random `CONFIRMATION_TOKEN_SECRET` locally;
+7. run `npm run build` and require a clean result;
+8. run `npx wrangler pages dev dist`;
+9. open Wrangler's `/subscribe` route;
+10. verify Turnstile initializes without visible friction;
+11. submit the Resend account email;
+12. require the Portfilo-designed confirmation email to arrive;
+13. review the real inbox rendering before clicking;
+14. click the Portfilo confirmation CTA;
+15. require redirect to `/confirmed`;
+16. verify the subscriber is Active in beehiiv and acquisition attribution remains correct.
 
-## Relevant latest commits
+Do not mark the custom confirmation flow PASS until steps 7–16 succeed.
 
-- `28b98e8f36964b010af93605b4fcc8547321ff71` - final About founder spacing correction
-- `dd9a527312e48562442dd7995d7a704e7a240311` - advance project to Subscribe end-to-end QA
-- `51bd213f759f211c6a1078e0583bfaebd6c10eee` - close Subscribe QA and advance to email-system planning
-- `4e6bbe31512972d607449eef27ff6f9cc7b76c68` - add email-system candidate
-- `d17f941dfb5c4a32b7cfd20d3c220da16b440cff` - mark email-system candidate ready for review
-- `7fb27968067f95505f722018b0a18bbd8ac2586f` - add Portfilo confirmation page
-- `68e6deb14afc31ed5ffb3c0c8b96c54a63a9dba5` - add beehiiv email setup specification
+## Relevant custom-confirmation commits
+
+- `25e62de68ec17ddf0c56a07db944e7ab53ec3013` - add stateless confirmation tokens
+- `fd22354b99f3c53b4a215cfbe41aedf36a5a12e1` - add Portfilo confirmation email template
+- `417f4a04e33ad73d99429168da76f1a31e4b80d8` - send Portfilo confirmation emails
+- `1639b270eed0a60de95eed319a35f690bf0607e6` - confirm subscribers into beehiiv
+- `f9d915921eae53ac10bda2a53a8235bffe19fd04` - protect custom signup confirmation flow
+- `46d7fb7520e56087faf8486bb2859c6f707cd7a8` - add custom confirmation environment variables
+- `6175eb811a7d4d25c0a2c6f105b55e697fbe5215` - update newsletter architecture guardrails
+- `1786ad4f12d36d602311a685665835a6c0a86428` - approve custom confirmation bridge in v0 scope
+- `d7568690697ad354b5427083c67c98801185505d` - adopt Portfilo-owned confirmation architecture
+- `3a4912f80b32fcf270ff5cd644d6411095ced6d8` - retire beehiiv opt-in email setup
+- `033826736c5b104f9f0e4dd07f04ff8f2a2fbf9b` - add custom confirmation setup guide
 
 ## Phase handoff rule
 
