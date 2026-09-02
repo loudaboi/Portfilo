@@ -6,7 +6,7 @@ topic: business
 author: Portfilo
 publishedAt: 2026-09-02
 updatedAt: 2026-09-02
-status: published
+status: draft
 featured: false
 series: content-architecture-fixtures
 seriesOrder: 1
