@@ -202,14 +202,19 @@ Stage 3 competitor map: COMPLETE, first pass.
 
 Stage 4 information-gap analysis: COMPLETE, first pass.
 
+Stage 5 candidate-story inventory: COMPLETE, first pass.
+
 Current findings are recorded in:
 
 - `audience-signals.md`;
 - `competitor-map.md`;
-- `information-gaps.md`.
+- `information-gaps.md`;
+- `candidate-stories.md`.
 
-The strongest current gaps are mechanism and verification gaps rather than broad topic gaps, including AI pilot-to-production execution, all-in AI implementation economics, concrete IT-BPM higher-value work, payment-fee incidence, Direct Debit PH implementation, and data-center pipeline/demand verification.
+The candidate inventory currently contains 28 stable candidate IDs. Each record preserves the question, topic, likely content type, reader need, why-now rationale, potential contribution, evidence path, reporting difficulty, related candidates, and research references.
+
+Candidates are retained rather than deleted. The inventory separates record state from editorial-gate decision so killed or held ideas can remain available as editorial history without appearing as active assignments.
 
 No launch topic, story, package, or series is selected yet.
 
-Next step: Stage 5 candidate stories. Convert the strongest gaps into a broad pool of specific investigable questions, then move to the formal editorial-gate evaluation rather than selecting a winner immediately.
+Next step: Stage 6 editorial evaluation. Apply the six gates to the current candidate pool, merge or reframe overlapping questions, archive weak candidates with explicit reasons, and assign `HIGH`, `MEDIUM`, or `LOW` priority only to candidates that pass.
