@@ -4,13 +4,17 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Voice & Positioning Reset — ARCHITECTURE APPROVED / COPY CANDIDATE NEXT**
+**Portfilo v0 / Voice & Positioning Reset — COPY CANDIDATE REVIEW**
 
 The user approved **Architecture C: Content-first / no tagline** after rejecting the previous public-copy revision during QA.
 
-The current public templates still contain the rejected implementation. They are preserved only until the next coordinated replacement is approved. Do not treat the visible `from the Philippines` copy as current direction.
+The canonical copy guide has been rewritten around that architecture, and a coordinated replacement candidate now exists at:
 
-The canonical copy guide has now been rewritten around the approved content-first architecture.
+`docs/COPY_REPLACEMENT_CANDIDATE.md`
+
+No public page has been changed as a result of the new candidate yet.
+
+The current public templates still contain the rejected `from the Philippines` implementation. Treat that visible copy as a failed candidate preserved only until the replacement package is approved and implemented.
 
 ## Current branch
 
@@ -83,6 +87,38 @@ or, if a sentence is genuinely needed:
 
 These are not permanent taglines.
 
+## Current replacement candidate
+
+`docs/COPY_REPLACEMENT_CANDIDATE.md` is the exact coordinated candidate under review.
+
+Its main approach is **deletion before replacement**.
+
+Proposed structural changes include:
+
+- remove the shared masthead positioning line instead of replacing it with another slogan;
+- remove the footer center positioning line;
+- substantially reduce the Homepage identity block;
+- make the featured story the Homepage primary `h1` and main visual statement;
+- keep only a compact coverage strip above the lead story;
+- simplify the Homepage dark institutional section into a factual About bridge;
+- remove the About positioning block;
+- remove the entire About Philippine-context section;
+- reduce Subscribe to product facts and the native signup form;
+- remove Subscribe's geographic `Perspective` explanation;
+- leave substantive Standards, Story content, Series content, taxonomy, and Subscribe backend behavior unchanged.
+
+Key candidate copy is deliberately plain:
+
+> Portfilo is a business and technology publication.
+
+> We cover companies, startups, AI, markets, products, and the work of building them.
+
+> Portfilo Brief.
+
+> New Portfilo stories by email.
+
+Do not implement the candidate until the user approves the package.
+
 ## Geography rule
 
 Philippine relevance remains part of Portfilo's reporting and early distribution strategy, but geography is no longer required brand copy.
@@ -122,16 +158,7 @@ If removing a sentence makes the page clearer, remove it.
 
 The project treats recognizably machine-shaped brand prose as a product-quality failure even when grammar is correct.
 
-Avoid:
-
-- vague connective language;
-- geographic philosophy in marketing copy;
-- symmetrical slogans;
-- repeated `not X, but Y` structures;
-- three-part mission sentences;
-- generic claims about intelligence, clarity, trust, usefulness, or ambition;
-- explanatory bridge sentences added only to make positioning logically complete;
-- over-polished copy where every sentence sounds campaign-ready.
+Avoid vague connective language, geographic philosophy in marketing copy, symmetrical slogans, repeated `not X, but Y` structures, three-part mission sentences, generic claims about intelligence/clarity/trust/usefulness, and explanatory bridge sentences that exist mainly to complete a positioning argument.
 
 ## Homepage visual exception
 
@@ -139,10 +166,7 @@ The broader visual system remains approved and frozen.
 
 Architecture C specifically reopens the **function and scale of the Homepage identity block**.
 
-The next candidate may:
-
-- reduce the identity block substantially; or
-- repurpose it into the lead story/current editorial focus.
+The current replacement candidate proposes reducing it to a compact coverage/fixture strip and moving the featured story into the primary hero role.
 
 Do not preserve the giant brand-headline area by inventing another slogan.
 
@@ -220,23 +244,20 @@ Current direction remains:
 
 ## Exact next task
 
-**Prepare a coordinated implementation candidate. Do not modify public pages yet.**
+**Review the coordinated replacement candidate. Do not modify public pages yet.**
 
-The candidate must cover:
+Review `docs/COPY_REPLACEMENT_CANDIDATE.md` as one system, especially:
 
-1. Homepage information hierarchy and exact copy;
-2. the specific reduction or repurposing of the current Homepage identity block;
-3. About exact copy;
-4. Subscribe exact copy;
-5. shared masthead/footer language;
-6. Standards, Story, and Series shared brand language only;
-7. removal of the rejected geographic positioning from all current public surfaces.
+1. removing the giant Homepage brand statement;
+2. making the feature story the Homepage primary hero;
+3. using an empty center masthead slot until navigation is implemented;
+4. using the optional one-line coverage descriptor only if the page needs it;
+5. simplifying the Homepage About bridge and Portfilo Brief section;
+6. removing the About positioning and Philippine-context sections;
+7. simplifying Subscribe to product facts;
+8. removing center positioning copy from shared headers/footers.
 
-The candidate must be evaluated as a full system before implementation.
-
-Do not create another tagline exercise. The candidate should minimize copy and let the lead story do more work.
-
-After the candidate is approved:
+After the user approves the candidate:
 
 1. implement the coordinated public replacement;
 2. run production-build and responsive QA;
@@ -252,6 +273,7 @@ After the candidate is approved:
 - `4a99047bca4112fb8f89acd65d04531dc79e1d11` - record Architecture C recommendation for review
 - `a26b2cdc21b98cf6db9b8ca3a8fb85b96abdb54f` - rewrite canonical copy style around content-first architecture
 - `41576056d7b53148c25d027694ebe05609a68c12` - record approved Architecture C decision
+- `f914cb8d83dca655213c72768d154e93cd60cf2a` - add coordinated content-first replacement candidate
 
 ## Validation status
 
@@ -269,9 +291,9 @@ After the candidate is approved:
 | Research & Standards | PASS |
 | About visual direction | PASS |
 | Previous Voice & Positioning implementation | REJECTED |
-| Architecture C: Content-first / no tagline | **APPROVED** |
-| Revised canonical copy guide | **UPDATED** |
-| Coordinated replacement candidate | **NEXT** |
+| Architecture C: Content-first / no tagline | APPROVED |
+| Revised canonical copy guide | UPDATED |
+| Coordinated replacement candidate | **PREPARED — USER REVIEW PENDING** |
 | Subscribe native architecture | IMPLEMENTED, credential/functional QA pending |
 
 ## Phase handoff rule
