@@ -204,17 +204,20 @@ Stage 4 information-gap analysis: COMPLETE, first pass.
 
 Stage 5 candidate-story inventory: COMPLETE, first pass.
 
+Stage 6 editorial evaluation: COMPLETE, first pass.
+
 Current findings are recorded in:
 
 - `audience-signals.md`;
 - `competitor-map.md`;
 - `information-gaps.md`;
-- `candidate-stories.md`.
+- `candidate-stories.md`;
+- `evaluation.md`.
 
-The candidate inventory currently contains 28 stable candidate IDs. Each record preserves the question, topic, likely content type, reader need, why-now rationale, potential contribution, evidence path, reporting difficulty, related candidates, and research references.
+The Stage 5 inventory contains 28 stable candidate IDs. Stage 6 reduced them to 11 passed candidates, 6 reframes, 7 holds, and 4 killed standalone candidates. Killed and held ideas remain preserved in the research history rather than being deleted.
 
-Candidates are retained rather than deleted. The inventory separates record state from editorial-gate decision so killed or held ideas can remain available as editorial history without appearing as active assignments.
+The current passed pool contains six `HIGH`-priority candidates and five `MEDIUM`-priority candidates. No candidate is `ACTIVE` or assigned yet.
 
 No launch topic, story, package, or series is selected yet.
 
-Next step: Stage 6 editorial evaluation. Apply the six gates to the current candidate pool, merge or reframe overlapping questions, archive weak candidates with explicit reasons, and assign `HIGH`, `MEDIUM`, or `LOW` priority only to candidates that pass.
+Next step: Stage 7 candidate-series evaluation. Test whether any of the passed candidates form a genuinely coherent series or launch package. Do not force a series if the strongest launch is a set of independent stories. Stage 8 will then make the actual launch-package recommendation.
