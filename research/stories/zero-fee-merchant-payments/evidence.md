@@ -142,11 +142,11 @@ This is a working claim ledger under `docs/RESEARCH_STANDARD.md`.
 
 **Evidence:** BSP documents establish payment cost categories and possible cross-subsidy mechanisms, but the reviewed materials do not identify the exact small-merchant implementation rule or disclose provider-level cost incidence for that treatment.
 
-**Source:** S001-S012  
+**Source:** S001-S017  
 **Tier:** Mixed, primary sources prioritized  
 **Date:** Through 2026-09-03  
 **Confidence:** HIGH as a research-status assessment  
-**Caveat:** A clearing rule, PPMI document, BSP implementation note, merchant agreement, or other authoritative source not yet located could resolve the question.  
+**Caveat:** A non-indexed clearing rule, PPMI document, BSP implementation note, merchant agreement, or narrow official clarification could resolve the question.  
 **Status:** UNRESOLVED
 
 ## E12
@@ -155,19 +155,102 @@ This is a working claim ledger under `docs/RESEARCH_STANDARD.md`.
 
 **Evidence:** To determine `who pays`, Portfilo first needs to establish what `zero fees for small merchant payments` covers: who qualifies, which payment rail and transaction type are included, which fee is waived, and which party would otherwise have paid it. The reviewed primary documents do not yet answer all of those elements consistently.
 
-**Source:** S001-S004, S005-S008  
+**Source:** S001-S004, S013-S017, S005-S008  
 **Tier:** A-focused synthesis  
 **Date:** Through 2026-09-03  
 **Confidence:** HIGH  
 **Caveat:** This is an editorial/research inference from the documentary record, not a legal conclusion about the full regulatory regime.  
 **Status:** VERIFIED AS RESEARCH INFERENCE
 
+## E13
+
+**Candidate claim:** The BSP's earlier fee-moratorium condition referred to zero fees for `small e-payments`, not specifically to a merchant MDR waiver.
+
+**Evidence:** Memorandum M-2023-037 tied future lifting of the moratorium to the payments industry's operationalization of zero fees for small e-payments, subject to BSP review.
+
+**Source:** S013 - BSP Memorandum No. M-2023-037  
+**Tier:** A  
+**Date:** 2023  
+**Confidence:** HIGH  
+**Caveat:** The wording traces policy history but does not determine the final 2026 meaning.  
+**Status:** VERIFIED
+
+## E14
+
+**Candidate claim:** Current PPMI operating information describes QR Ph P2M as fee-free to the consumer, not universally fee-free to the merchant.
+
+**Evidence:** PPMI's InstaPay/QR Ph page says consumers do not pay a fee when making QR Ph P2M payments and contrasts this with InstaPay QR P2P, where the sending institution may charge a fee.
+
+**Source:** S014 - PPMI InstaPay / QR Ph operating information  
+**Tier:** A  
+**Date:** Accessed 2026-09-03  
+**Confidence:** HIGH for PPMI's published description  
+**Caveat:** The page does not establish every merchant's MDR or any special qualifying small-merchant arrangement.  
+**Status:** VERIFIED
+
+## E15
+
+**Candidate claim:** BSP's July 2026 launch material says merchants shoulder QR Ph P2M transaction fees.
+
+**Evidence:** The BSP/PPMI launch release distinguishes QR Ph P2M, where merchants shoulder transaction fees, from InstaPay QR P2P, where account users may face transfer fees.
+
+**Source:** S015 - BSP/PPMI July 2026 digital-payment-services launch  
+**Tier:** A  
+**Date:** 2026-07-29  
+**Confidence:** HIGH for the official description  
+**Caveat:** The release does not rule out a separate exception for a defined small-merchant segment.  
+**Status:** VERIFIED / QUALIFY
+
+## E16
+
+**Candidate claim:** The July 2026 QR Ph rebranding did not itself alter QR Ph operating rules or merchant-payment functionality.
+
+**Evidence:** BSP's FAQ says the rebranding did not change technical standards, operating rules, infrastructure, interoperability, or merchant-payment functionality.
+
+**Source:** S016 - BSP FAQ on the 2026 QR Ph rebranding  
+**Tier:** A  
+**Date:** 2026  
+**Confidence:** HIGH  
+**Caveat:** This does not explain the separate zero-fee phrase in M-2026-025.  
+**Status:** VERIFIED
+
+## E17
+
+**Candidate claim:** BSP's QR Ph P2M guidance historically distinguished fee-free customer use from merchant-side acceptance economics.
+
+**Evidence:** The QR Ph P2M FAQ says customers do not pay a fee for using QR Ph P2M, while its merchant discussion focuses on low-cost acceptance and reduced equipment costs rather than stating universal zero MDR.
+
+**Source:** S017 - BSP QR Ph P2M FAQ  
+**Tier:** A  
+**Date:** Earlier guidance; accessed 2026-09-03  
+**Confidence:** HIGH for the narrow wording  
+**Caveat:** Older guidance cannot by itself establish final 2026 eligibility or pricing arrangements.  
+**Status:** VERIFIED
+
+## E18
+
+**Candidate claim:** The currently indexed primary record supports at least three plausible interpretations of `zero fees for small merchant payments`, none of which can yet be selected as the final meaning.
+
+**Evidence:** M-2026-025 uses the zero-fee phrase without definitions; Circular 1238 permits cost-based merchant fees; PPMI says QR Ph P2M is free to consumers; later BSP launch material says merchants shoulder QR Ph transaction fees; earlier guidance contemplated microenterprise P2M zero-fee pricing; and the explicit 2024 draft waiver did not carry into the signed circular.
+
+**Source:** S001-S004, S013-S017  
+**Tier:** A-focused synthesis  
+**Date:** Through 2026-09-03  
+**Confidence:** HIGH as a research-status assessment  
+**Caveat:** A separate non-indexed implementation rule or official clarification may collapse the ambiguity.  
+**Status:** UNRESOLVED
+
 ## Current evidence decision
 
-The evidence does **not** support drafting the original incidence story yet.
+The public-document route is now substantially exhausted for the reframed C017 question.
 
-The packet supports a reframe toward the antecedent question:
+The evidence supports the documentary finding that:
 
-> What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
+- Circular 1238 does not itself contain the 2024 proposed PHP250,000 micro-merchant fee waiver;
+- QR Ph fee-free language in current public operating material is clearly consumer-side in at least some contexts;
+- merchant-side fees remain part of the official and provider descriptions;
+- M-2026-025 nevertheless refers to implementation of zero fees for small merchant payments without defining the operative mechanism.
 
-The economic-incidence question may reopen after the exact eligibility, fee layer, and implementation mechanism are established.
+The packet still does **not** support choosing the final interpretation or drafting the original economic-incidence story.
+
+Next evidence step: a narrow authoritative clarification from BSP and/or PPMI. While that is pursued, another active assignment can proceed so Portfilo's publishing schedule is not blocked.
