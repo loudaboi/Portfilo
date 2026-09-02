@@ -3,27 +3,27 @@ const topics = [
   {
     number: "01",
     name: "Business",
-    description: "Companies, industries, markets, business models, economics, and strategy.",
+    description: "Companies, money, markets, strategy, and why businesses work the way they do.",
   },
   {
     number: "02",
     name: "Technology",
-    description: "Software, fintech, infrastructure, platforms, devices, and emerging technology.",
+    description: "Software, fintech, platforms, infrastructure, devices, and the technologies changing how people work.",
   },
   {
     number: "03",
     name: "Startups",
-    description: "New companies, funding, growth, failure, acquisitions, and early-stage development.",
+    description: "New companies, funding, growth, failure, acquisitions, and the choices early teams make.",
   },
   {
     number: "04",
     name: "AI",
-    description: "Models, products, adoption, infrastructure, economics, policy, and effects on work and companies.",
+    description: "Models, products, adoption, economics, policy, and what AI changes for companies and workers.",
   },
   {
     number: "05",
     name: "Building",
-    description: "Product, distribution, sales, pricing, hiring, operations, and the practical work of creating.",
+    description: "Product, sales, distribution, pricing, hiring, operations, and the work of making something real.",
   },
 ] as const;
 ---
@@ -35,7 +35,7 @@ const topics = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="About Portfilo, a Philippine business and technology publication for ambitious Filipinos."
+      content="About Portfilo, a publication covering business and tech from the Philippines."
     />
     <meta name="theme-color" content="#f4f0e8" />
     <title>About | Portfilo</title>
@@ -50,7 +50,7 @@ const topics = [
         </span>
       </a>
       <p class="site-header__strapline">
-        Practical intelligence for ambitious Filipinos
+        Business and tech, from the Philippines.
       </p>
       <p class="site-header__section">About</p>
     </header>
@@ -60,18 +60,17 @@ const topics = [
         <p class="about-kicker">About Portfilo</p>
 
         <h1 id="about-title">
-          A Philippine publication about business, technology, and building.
+          You shouldn't need an insider network to follow business and tech.
         </h1>
 
         <p class="about-intro">
-          Portfilo helps readers understand companies, markets, startups, AI, and
-          the practical work behind building in the Philippines. We focus on questions
-          where reporting and evidence can make the answer more useful.
+          Portfilo covers companies, startups, AI, markets, and the work of building.
+          Some stories are Philippine. Others are global and matter here anyway.
         </p>
 
         <div class="about-positioning" aria-label="Portfilo positioning">
           <span>Portfilo</span>
-          <strong>Practical intelligence for ambitious Filipinos.</strong>
+          <strong>Business and tech, from the Philippines.</strong>
         </div>
       </section>
 
@@ -83,20 +82,19 @@ const topics = [
 
         <div class="section-layout">
           <div class="section-title">
-            <h2 id="work-title">Follow the questions that affect what gets built.</h2>
+            <h2 id="work-title">We follow the story past the announcement.</h2>
           </div>
 
           <div class="section-copy">
             <p>
-              Portfilo reports and explains business, technology, startups, AI, and
-              the work of building companies and products. The aim is to make an
-              important question clearer without making the evidence say more than it
-              does.
+              Launches, funding rounds, product claims, policy changes, and market
+              numbers are starting points. We want to know what changed, who it
+              affects, and what still is not clear.
             </p>
             <p>
-              Stories may report what happened, explain how something works, examine
-              a company or market, or help a reader think through a practical decision.
-              The format can change. The standard for useful, specific work does not.
+              Some stories explain a company or market. Others unpack a technology,
+              a business decision, or the work behind building something. The format
+              follows the question.
             </p>
           </div>
         </div>
@@ -120,19 +118,18 @@ const topics = [
 
           <div class="reader-section__statement">
             <h2 id="reader-title">
-              For readers who need more than a generic answer.
+              You don't need to already know the room.
             </h2>
             <p>
-              Portfilo is for ambitious Filipinos trying to understand the companies,
-              technologies, markets, and decisions shaping what gets built. You do not
-              need to be a founder to belong here. You need a reason to understand the
-              subject clearly.
+              Portfilo is for people getting into business and tech, already working
+              in it, or simply trying to understand how it works. You do not need a
+              founder title, finance degree, or insider network to follow along.
             </p>
           </div>
 
-          <aside class="reader-section__note" aria-label="Audience principle">
-            <p>Reader principle</p>
-            <strong>Useful before impressive.</strong>
+          <aside class="reader-section__note" aria-label="Audience note">
+            <p>Reader note</p>
+            <strong>If a term matters, we explain it.</strong>
           </aside>
         </div>
       </section>
@@ -145,27 +142,27 @@ const topics = [
 
         <div class="section-layout">
           <div class="section-title">
-            <h2 id="context-title">Context can change the answer.</h2>
+            <h2 id="context-title">A global story can land differently here.</h2>
           </div>
 
           <div class="section-copy">
             <p>
-              A global business or technology idea can look different once it meets
-              Philippine prices, regulation, infrastructure, distribution, payments,
-              labor markets, financing, geography, and consumer behavior.
+              Prices, regulation, infrastructure, payments, labor, financing,
+              geography, and consumer behavior can change what a global business or
+              technology story means in the Philippines.
             </p>
             <p>
-              Portfilo uses Philippine context when it materially changes the question
-              or conclusion. We do not force a local angle when it adds nothing.
+              We use local context when it changes the story. We leave it out when it
+              does not.
             </p>
           </div>
 
-          <aside class="context-note" aria-label="Context principle">
+          <aside class="context-note" aria-label="Context questions">
             <p>What matters</p>
             <ul>
-              <li>What changes locally?</li>
+              <li>What changes here?</li>
               <li>What stays true?</li>
-              <li>What does the evidence support?</li>
+              <li>What should the reader know?</li>
             </ul>
           </aside>
         </div>
@@ -179,18 +176,17 @@ const topics = [
 
         <div class="standards-bridge__layout">
           <div>
-            <h2 id="standards-title">Reporting before conclusion.</h2>
+            <h2 id="standards-title">The conclusion comes after the reporting.</h2>
           </div>
 
           <div class="standards-bridge__copy">
             <p>
-              We prefer primary sources where they are available, verify consequential
-              claims, preserve important uncertainty, and correct material factual
-              errors visibly. AI can assist with research and writing, but it is not a
-              source, evidence, or verification.
+              We go to primary sources when they are available, check consequential
+              claims, keep important uncertainty in the story, and correct material
+              errors visibly. AI can help with the work, but it cannot establish a fact.
             </p>
             <a href="/standards">
-              Read Research & Standards <span aria-hidden="true">↗</span>
+              Read our standards <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -206,7 +202,7 @@ const topics = [
       <div class="site-footer__brand" aria-label="Portfilo">
         <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
       </div>
-      <p>Practical intelligence for ambitious Filipinos</p>
+      <p>Portfilo / Philippines</p>
       <a href="/">Back to home</a>
     </footer>
 
