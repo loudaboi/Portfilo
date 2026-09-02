@@ -4,47 +4,121 @@ _Last updated: 2026-09-02_
 
 ## Purpose
 
-Portfilo should sound clear, useful, precise, and distinctly human.
+Portfilo should sound like a capable person who knows the subject, did the reading, and can explain why it matters without performing intelligence.
 
-The goal is not to sound like a brand trying to sound smart. The goal is to help ambitious Filipinos understand something worth knowing and decide what to do with it.
+The job is not to make Portfilo sound impressive. The journalism should earn that impression.
 
-This standard applies to public-facing site copy, including:
+This standard applies to reader-facing copy across:
 
 - homepage and section copy;
 - navigation and interface labels;
-- newsletter copy;
 - About and Subscribe surfaces;
+- newsletter copy;
 - story headlines and deks, together with the stricter editorial standards that govern journalism.
 
 For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, or `PUBLISHING_STANDARD.md`.
 
+## Positioning
+
+The approved v0 positioning line is:
+
+> **Business and tech, from the Philippines.**
+
+This replaces:
+
+> Practical intelligence for ambitious Filipinos.
+
+Do not continue using the retired line in new public copy.
+
+### What `from the Philippines` means
+
+Portfilo starts from the Philippines, not necessarily with a Philippine subject.
+
+The publication may cover a Philippine company, a Southeast Asian startup, a global AI model, an American technology company, international capital, or another subject outside the country when the story is useful to readers here.
+
+The editorial test is not:
+
+> Did this happen in the Philippines?
+
+The better test is:
+
+> Why should someone reading from the Philippines care, and does that perspective materially improve the story?
+
+Do not bolt a Philippine angle onto a global story merely to satisfy the positioning.
+
+`From the Philippines` defines the point of view, not the ceiling of the publication.
+
+## Initial audience
+
+Portfilo can serve a broad readership over time, but v0 needs a clearer beachhead.
+
+The initial audience is younger Filipinos who are curious about business and technology and are beginning to build careers, companies, products, or simply a better understanding of how these things work.
+
+They may be:
+
+- students entering business, technology, finance, media, design, or related fields;
+- people in their first serious jobs;
+- early-career operators learning how companies and markets work;
+- builders, developers, designers, sellers, and aspiring founders;
+- people interested in startups, AI, money, careers, and business without already belonging to an insider network.
+
+Age is not a public membership test. Do not write `for Gen Z`, `for young Filipinos`, or similar labels into the brand unless a specific product genuinely requires them.
+
+The important reader traits are **curiosity and momentum**, not a flattering identity label such as `ambitious`.
+
+Do not write down to this audience. Make difficult subjects easier to enter without making the ideas smaller.
+
+## Internal voice test
+
+Use this as an editing test, not as public brand copy:
+
+> **A smart Filipino friend who actually did the reading.**
+
+That means Portfilo should be:
+
+- knowledgeable without sounding academic;
+- conversational without trying to sound trendy;
+- direct without becoming simplistic;
+- curious without turning every headline into a question;
+- skeptical when the evidence requires it;
+- comfortable admitting uncertainty;
+- specific enough that the writing could not belong to any generic publication.
+
+Portfilo should not imitate youth slang, creator mannerisms, or a manufactured `Filipino voice`.
+
 ## Research basis
 
-This style is adapted from established plain-language, web-usability, journalism, and Philippine digital-use evidence rather than copied from another publication's voice.
+The voice is informed by plain-language and usability research, journalism standards, Philippine digital-use evidence, and a review of publications that made business and technology accessible to younger or underserved audiences.
 
-Key evidence:
+Useful reference points include:
 
-- Nielsen Norman Group found substantially higher measured web usability when writing was concise, scannable, and objective rather than promotional. Their research also found that readers commonly scan web pages rather than reading every word.
-- ISO 24495-1:2023 establishes plain-language principles for public communication. ISO's own house style emphasizes information that readers can find, understand, and use, with short sentences and one main idea per sentence.
-- GOV.UK and UK Office for National Statistics content guidance emphasizes user needs, familiar language, front-loading important information, short sentences, and descriptive headings.
-- Associated Press standards emphasize accuracy, precision, original phrasing, clear sourcing, and avoiding unsupported amplification.
-- The Philippine Statistics Authority's 2024 National Information and Communications Technology Household Survey reported that 98.8% of internet users aged 10 and over used a cellphone to access the internet. Portfilo copy therefore has to work particularly well when scanned on a small screen.
-- PSA's 2024 Functional Literacy, Education and Mass Media Survey shows that literacy and comprehension are not uniform across the country. This is not a reason to oversimplify ideas. It is a reason to treat clear language as inclusive communication rather than as a lower standard.
+- Nielsen Norman Group research on concise, scannable, objective web writing;
+- ISO 24495-1 plain-language principles;
+- GOV.UK and UK Office for National Statistics content guidance;
+- Associated Press standards on accuracy, precision, sourcing, and original phrasing;
+- Philippine Statistics Authority evidence showing mobile-first internet use;
+- Morning Brew's early focus on making business coverage accessible to intellectually curious students and young professionals;
+- BackScoop's concrete, audience-first approach to startup coverage from Southeast Asia;
+- Rest of World's use of geographic perspective without restricting itself to one domestic market;
+- Every's direct positioning around what comes next in technology;
+- Reuters Institute reporting on the increasingly social, video-led, personality-led news environment among younger audiences in the Philippines;
+- linguistic research finding recurring formulaic, elevated, and overly polished tendencies in LLM-assisted writing.
 
-There is no credible basis for assuming one universal Filipino tone of voice. Portfilo should not manufacture one. Filipino character should come from relevant context, reporting, examples, constraints, and cultural fluency. Reader testing should inform future refinements.
+These are reference points, not templates to copy. Portfilo needs its own voice.
 
-Reference sources:
+Reference sources include:
 
 - https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/
 - https://www.nngroup.com/articles/how-users-read-on-the-web/
 - https://www.iso.org/standard/78907.html
-- https://www.iso.org/ISO-house-style.html
 - https://service-manual.ons.gov.uk/content/writing-for-users/plain-language
-- https://service-manual.ons.gov.uk/content/writing-for-users/structuring-content
-- https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/plan-manage-content/understand-content-design/
 - https://www.ap.org/about/news-values-and-principles/telling-the-story/
 - https://psa.gov.ph/content/percentage-households-internet-connection-increased-488-percent-2024-two-every-three
-- https://psa.gov.ph/statistics/education-mass-media/node/1684076780
+- https://www.morningbrew.com/stories/2020/04/13/morning-brew-turns-5-hits-2-million-subscribers
+- https://backscoop.com/
+- https://restofworld.org/about/
+- https://every.to/about
+- https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/philippines
 
 ## The Portfilo voice
 
@@ -52,27 +126,47 @@ Reference sources:
 
 A reader should understand the point on the first pass.
 
-Creative language is welcome when it makes an idea sharper or more memorable. It is not useful when the reader has to decode it.
+Creative language is welcome when it makes an idea sharper, more specific, or more memorable. It is not useful when the reader has to decode it.
 
 Prefer:
 
-> What should you know before changing jobs?
+> What changes when your first customers are outside Manila?
 
 Over:
 
-> Navigating the next chapter of your professional journey
+> Navigating the evolving landscape of nationwide growth.
 
-### Smart without sounding academic
+### Know the subject. Do not perform intelligence.
 
-Portfilo can discuss difficult ideas without performing intelligence.
+Portfilo can discuss difficult ideas without sounding like a consultancy, research memo, or person trying to prove they are smart.
 
-Use the simplest accurate word. Keep technical terms when they are necessary, then explain them plainly.
+Use the simplest accurate word. Keep technical terms when necessary and explain them plainly.
 
-Do not replace a precise technical term with a vague simple word merely to lower reading difficulty.
+Avoid abstraction when a concrete noun or verb can do the job.
+
+Prefer:
+
+> The company raised ₱50 million and hired 20 people.
+
+Over:
+
+> The company accelerated its growth trajectory through strategic capital deployment.
+
+### Conversational, not casual by default
+
+A sentence can sound spoken without becoming slang-heavy.
+
+Contractions are fine where natural. Short sentences are fine. A little edge or wit is fine when the subject allows it.
+
+Do not force Taglish, memes, internet slang, or creator cadence to prove that Portfilo is young.
+
+The writing should age better than the platform where a reader first finds it.
 
 ### Confident without hype
 
-State what we know. State what we do not know. Do not manufacture authority through adjectives.
+State what we know. State what we do not know.
+
+Do not manufacture authority through adjectives or promises.
 
 Avoid language such as:
 
@@ -83,53 +177,55 @@ Avoid language such as:
 - transformative;
 - unlock your potential;
 - designed to empower;
-- everything you need to know.
+- stay ahead of the curve;
+- everything you need to know;
+- the future of;
+- redefining the landscape.
 
-### Useful before self-descriptive
+### Let the work prove the brand
 
-Public copy should spend more time helping the reader than explaining Portfilo to the reader.
+Do not repeatedly tell readers that Portfilo is useful, practical, intelligent, trustworthy, clear, rigorous, evidence-driven, or ambitious.
 
-Internal language such as `v0`, `editorial system`, `content architecture`, `reader payoff`, `design fixture`, and implementation phases does not belong on a production public surface unless the reader genuinely needs it.
+Those qualities should be visible in the work.
 
-### Filipino by context, not costume
+One direct statement about how Portfilo works can be useful. Repeating the same institutional virtues across the homepage, About page, newsletter, and footer makes the publication sound insecure and machine-written.
 
-Portfilo is built for Filipinos, but Filipino identity should come through relevance, reporting, assumptions, examples, institutions, constraints, and cultural fluency.
+### Filipino by perspective, not costume
 
-Do not manufacture local identity with decorative slang.
+Filipino character should come through what Portfilo notices and understands:
 
-Do not insert Tagalog or Taglish merely to sound Filipino. Use Filipino terms when they are the clearest, most natural, or most accurate words for the subject.
+- prices and purchasing power;
+- regulation;
+- infrastructure;
+- payments;
+- labor markets;
+- commuting and geography;
+- family and household constraints when relevant;
+- local institutions;
+- distribution and consumer behavior;
+- how global technology reaches people here.
 
-Avoid cliché identity language such as:
+Do not manufacture local identity with decorative slang or cliché identity language.
+
+Avoid generic uses of:
 
 - Pinoy hustle;
 - diskarte as a catch-all explanation;
 - resilient Filipino;
 - world-class Filipino;
-- proudly Pinoy as generic decoration.
+- proudly Pinoy.
 
-When Philippine context matters, be concrete. Name the actual institution, peso amount, labor condition, commute, regulation, market, family constraint, geography, or cultural practice.
+Use Filipino or Taglish when it is genuinely the clearest or most natural language for the subject or source.
 
 ## Writing rules
 
 ### 1. Lead with the point
 
-Put the most useful information early in the page, section, paragraph, and sentence.
+Put the useful information early.
 
-Do not make readers cross an introduction before learning why something matters.
+Do not make readers cross a paragraph of scene-setting or brand language before learning what something is about.
 
-### 2. Keep sentences lean
-
-Most interface and marketing sentences should be short. Around 10 to 20 words is a useful editing range, not a mechanical rule.
-
-Longer sentences are allowed when the idea genuinely needs them and remains easy to follow.
-
-### 3. One main idea at a time
-
-Do not pack several claims, benefits, and qualifications into one sentence.
-
-Break complex reasoning into a sequence the reader can follow.
-
-### 4. Prefer concrete nouns and active verbs
+### 2. Prefer concrete nouns and active verbs
 
 Prefer:
 
@@ -139,162 +235,217 @@ Over:
 
 > Conduct an evaluation of the total compensation opportunity.
 
-### 5. Use the reader's words
+### 3. Keep one main idea per sentence when possible
+
+Sentence length can vary. Natural writing has rhythm.
+
+Do not force every sentence into the same short, polished cadence. Equally, do not pack three claims and two qualifications into one sentence just to sound sophisticated.
+
+### 4. Use the reader's words
 
 Navigation and interface labels should be obvious before they are distinctive.
 
 Prefer:
 
 - Home
+- Latest
 - Read story
 - Subscribe
-- Latest
 - About
+- Standards
 
-Do not rename familiar interface concepts just to make the site feel branded.
+Do not rename familiar interface concepts merely to make the site feel branded.
 
-### 6. Cut project language
+### 5. Cut internal project language
 
-Do not expose internal planning language as public copy.
+Do not expose terms such as `v0`, `editorial system`, `content architecture`, `reader payoff`, `design fixture`, `implementation`, or phase names on a production surface unless the reader genuinely needs them.
 
-Bad public copy:
+### 6. Do not flatter the audience
 
-> Editorial / Philippines
+Avoid copy that tells readers they are ambitious, visionary, bold, future-focused, high-performing, or part of an elite group.
 
-Better:
+Tell them what Portfilo covers and why the story is worth their time. Let readers decide what that says about them.
 
-> Home
+### 7. Avoid abstraction stacks
 
-Bad public copy:
+Words such as `intelligence`, `insights`, `innovation`, `ecosystem`, `landscape`, `journey`, `space`, `opportunity`, and `transformation` are not banned.
 
-> Our editorial system creates practical reader payoff.
+They are warning signs when several appear without concrete people, companies, products, numbers, decisions, or events around them.
 
-Better:
+### 8. Break AI-shaped patterns
 
-> We check the evidence and make the useful part clear.
+A line can be grammatically good and still feel generated.
 
-### 7. Avoid AI-shaped sentence patterns
-
-Edit aggressively when copy falls into these patterns:
+Edit aggressively when copy relies on:
 
 - repeated `not X, but Y` constructions;
+- repeated three-item lists or three-clause mission sentences;
 - three-adjective stacks;
 - `whether you're X, Y, or Z` openings;
 - `in today's fast-changing world` framing;
 - `at the intersection of` abstractions;
 - vague `insights`, `journey`, `landscape`, `space`, and `ecosystem` language;
-- repeated rhetorical questions with no reporting behind them;
-- symmetrical slogan pairs that sound polished but say little;
-- explaining the same idea in a headline, dek, and body copy.
+- symmetrical slogan pairs such as `Clear enough to X. Careful enough to Y.`;
+- a headline, dek, and paragraph all restating the same point;
+- every section headline sounding like a campaign slogan;
+- an unnatural level of polish where every sentence resolves neatly;
+- repeated rhetorical questions that have not been earned by reporting;
+- excessive positivity or elevated language where a plain sentence would be stronger.
 
-A rhetorical device is not banned. Repetition and predictability are the problem.
+Do not mechanically remove every rhetorical device. Predictability is the problem.
 
-### 8. Do not oversell uncertainty
+### 9. Allow specific personality
 
-Copy must follow the same epistemic discipline as Portfilo journalism.
+Human writing is not created by adding slang. It comes from choosing what to notice and saying it precisely.
 
-If something is a preview, estimate, hypothesis, or editorial judgment, label it accurately.
+A good Portfilo line may be unusually direct, slightly funny, skeptical, surprising, or asymmetric when that tone is earned.
 
-Never strengthen a claim because stronger copy sounds better.
+Do not smooth every line until it sounds interchangeable.
+
+### 10. Do not oversell uncertainty
+
+Copy follows the same epistemic discipline as Portfilo journalism.
+
+If something is an estimate, hypothesis, reported claim, preview, or editorial judgment, label it accurately.
+
+A stronger sentence is not worth a weaker standard of truth.
 
 ## Headlines
 
-A Portfilo headline should do at least one of these:
+A Portfilo headline should usually do one of these:
 
 - state a useful conclusion;
-- name a concrete question worth answering;
-- reveal a tension the story actually resolves;
-- tell the reader what decision the story helps with.
+- name a concrete development;
+- expose a real tension the story resolves;
+- name a question the reporting genuinely answers;
+- tell the reader what decision or subject the story helps them understand.
 
 Prefer specific nouns and verbs.
 
-Avoid headlines that could sit unchanged on hundreds of unrelated articles.
+Question headlines are allowed. Do not make them the default Portfilo house style.
 
-Question headlines are allowed, but the story must genuinely answer or investigate the question. Do not turn every headline into a question as a house gimmick.
-
-Do not use clickbait gaps such as `You won't believe`, `This changes everything`, or `Here's why` when the actual subject can be named.
+Avoid empty curiosity gaps and generic `Here's why` framing when the subject itself can be named.
 
 ## Deks and summaries
 
-The dek should add information, not restate the headline.
+A dek adds information rather than translating the headline into another sentence.
 
-A useful dek usually tells the reader one or more of:
+Useful additions include:
 
 - what was examined;
+- what changed;
 - why it matters;
-- what scope or limitation matters;
-- what the reader will be able to decide or understand.
+- what limitation or scope matters;
+- what the reader will understand by the end.
 
 Keep it to one or two sentences when possible.
 
 ## Homepage and brand copy
 
-The homepage is not a manifesto about Portfilo's internal process.
+The homepage should answer quickly:
 
-It should quickly answer:
+1. What is Portfilo?
+2. What does it cover?
+3. Is there something here for me?
+4. What can I read or subscribe to?
+5. What evidence is there that I should come back?
 
-1. What is this?
-2. Is it for me?
-3. What can I read or get here?
-4. Why should I trust it?
+Use the approved positioning line sparingly:
 
-The current positioning line remains:
+> **Business and tech, from the Philippines.**
 
-> Practical intelligence for ambitious Filipinos
+Do not turn the homepage into a manifesto about Portfilo's standards or internal philosophy.
 
-Treat it as positioning, not as permission to repeat the words `practical`, `intelligence`, `ambitious`, or `Filipinos` throughout the page.
+Do not describe the publication with five adjectives when the stories can demonstrate them.
 
-Brand copy should be sparse enough that the journalism remains the main proof of the brand.
+The homepage can have personality. It should still leave most of the attention to the journalism.
+
+## About copy
+
+The About page explains the publication without sounding like a pitch deck.
+
+It should state:
+
+- what Portfilo covers;
+- who may find it useful;
+- what `from the Philippines` means;
+- how Portfilo approaches reporting, with a concise bridge to Standards.
+
+Do not write `mission / vision / values` copy unless there is a concrete reason.
+
+Do not overstate the organization, team, reach, independence, or authority of a young publication.
 
 ## Newsletter copy
 
-Lead with what arrives and why it is useful.
+Lead with what arrives.
 
-Avoid generic inbox language unless the surrounding copy makes the value concrete.
+For Portfilo Brief, prefer concrete language such as:
 
-Do not promise frequency, exclusivity, or benefits that the actual newsletter operation has not committed to.
+> New Portfilo stories on business, tech, startups, AI, and building.
 
-## Tone by context
+Do not promise a frequency until one is operationally established.
 
-The voice stays consistent, but tone changes with the job.
+Avoid:
 
-### Homepage
+- curated intelligence;
+- exclusive insights;
+- stay ahead;
+- level up;
+- unlock;
+- your weekly dose;
+- the smartest things you need to know.
 
-Simple, assured, concise. Slight editorial edge is allowed.
+## Standards, methodology, and corrections
 
-### Story
+These surfaces are intentionally less conversational.
 
-Precise, evidence-aware, readable. The subject sets the emotional temperature.
+Use literal, restrained, unambiguous language. Accuracy and procedural clarity matter more than personality.
 
-### Methodology or correction
+Do not apply the youthful or conversational voice so aggressively that a correction, disclosure, or methodology statement becomes cute.
 
-Literal, restrained, unambiguous. No cleverness.
+## Interface copy
 
-### Newsletter
+Short and obvious.
 
-Direct and useful. More conversational than methodology copy, less promotional than conventional marketing email.
+Function beats personality.
 
-### Interface
+`Subscribe` is better than a clever branded verb. `Back to home` is better than an invented navigation phrase.
 
-Short and obvious. Function beats personality.
+## Repetition audit
+
+Before approving a page, look beyond individual sentences.
+
+Check whether the page or site repeatedly uses the same:
+
+- topic list;
+- `report / explain / evidence` sequence;
+- claim of usefulness;
+- institutional principle;
+- sentence rhythm;
+- call to action;
+- positioning line.
+
+Necessary repetition is fine. Mechanical repetition makes a publication feel templated.
 
 ## Editing test
 
 Before public copy is approved, ask:
 
 1. Can a reader understand this on the first pass?
-2. Is the useful point near the beginning?
-3. Did we use a familiar word where a complicated one adds nothing?
-4. Is any sentence doing more than one job?
-5. Does the copy contain internal project language?
-6. Does any line sound promotional without adding evidence?
-7. Does the Filipino context come from something real rather than decoration?
-8. Could this copy appear unchanged on a generic AI-generated publication?
-9. Did we repeat the same message in multiple places?
-10. If read aloud, does it sound like a capable person speaking naturally?
+2. Is there a concrete subject, action, decision, or fact where one could exist?
+3. Does this sound like someone who knows the subject rather than someone trying to sound smart?
+4. Are we telling readers what Portfilo does instead of flattering them?
+5. Is any line claiming a brand quality that the journalism should prove instead?
+6. Did we force Philippine relevance where it does not materially improve the story?
+7. Could this sentence appear unchanged on an AI-generated consultancy, newsletter, or publication?
+8. Are too many sentences built from the same balanced or three-part structure?
+9. Did the headline, dek, and body repeat the same idea?
+10. If read aloud, does it sound like a real capable person speaking naturally?
+11. Would a younger reader understand it without feeling that Portfilo is trying to imitate them?
+12. Does uncertainty remain as strong and visible as the evidence requires?
 
-If the answer to question 8 is yes, rewrite it.
+If a sentence feels generic, identify the missing specificity before trying to make it more stylish.
 
 ## Working principle
 
-**Make the useful thing clear. Keep the personality in the precision.**
+> **Say what happened. Explain what matters. Don't perform intelligence.**
