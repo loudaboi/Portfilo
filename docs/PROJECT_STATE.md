@@ -4,15 +4,15 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / First Story Publication Verification - ACTIVE**
+**Portfilo v0 / First Featured Perspective Development - ACTIVE**
 
 The publishing system, launch-selection system, and first launch research slate are in place.
 
-C009 is the first Portfilo launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, headline/dek audit, fresh pre-publish review, and explicit user publication approval.
+C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is now `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
 
-Its repository content entry is now `status: published` with `publishedAt: 2026-09-03` and `featured: false`.
+C027 is now the active featured-story candidate: a reader-centered `Building` Perspective about what to build when someone wants to make something meaningful but does not yet have much leverage. Research and a first internal draft are complete. Nothing for C027 is public yet.
 
-The remaining C009 step is technical deployment/render verification. Do not claim a fresh build, live desktop/mobile pass, or final link QA until those checks are actually completed.
+C009's full technical deployment/render checklist is still not recorded as complete. Do not claim a fresh local build, final desktop/mobile pass, or exhaustive live-link QA until those checks are actually completed.
 
 ## Current branch
 
@@ -158,7 +158,7 @@ Default WIP limits remain:
 - generally no more than three substantial stories in active research;
 - no mandatory article quota.
 
-## Active launch assignments
+## Active assignments
 
 ### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
@@ -200,7 +200,61 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-## C009 - PUBLISHED REPOSITORY STATE / LIVE VERIFICATION PENDING
+### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / PUBLISH-DRAFT READY
+
+Research question:
+
+> What do you build first when you want to make something meaningful but do not yet have much leverage?
+
+Topic: `Building`  
+Likely content type: `Perspective`  
+Primary reader need: `Interpret`  
+Priority: `HIGH`  
+Packet: `research/stories/building-the-foundation/`
+
+C027 was deliberately reframed away from a personal `grind` story. It should share a perspective that readers can map onto themselves, not narrate Louda Tuppal's life or present Portfilo as a personal blog.
+
+Core argument:
+
+> An early weak starting position can be understood as a changing sequence of bottlenecks. AI can compress some knowledge and execution barriers, but it does not eliminate the need to build durable capability such as judgment, skills, habits, relationships, trust, and an understanding of what people actually want.
+
+Research findings used to constrain the argument:
+
+- a 2026 NBER randomized experiment found generative AI substantially narrowed an education-linked performance gap on one workplace-style task, but a sizable gap re-emerged without AI;
+- earlier NBER workplace research found larger AI productivity gains among novice/lower-skilled customer-support workers than among experienced workers;
+- METR found experienced open-source developers working on familiar mature repositories were slower with early-2025 AI tools in its randomized study;
+- a 2026 programming meta-analysis found a moderate productivity benefit overall but no statistically significant improvement in measured learning outcomes;
+- current builder commentary is already crowded with `taste is the new bottleneck`, so C027's contribution is broader bottleneck migration rather than another taste essay.
+
+Current packet:
+
+- `brief.md`;
+- `sources.md`;
+- `evidence.md`;
+- `contradictions.md`;
+- `notes.md`;
+- `draft.md`.
+
+Current state:
+
+- planning: `PASS`;
+- research outcome: `PUBLISH / DRAFT READY`;
+- first internal draft: complete;
+- adversarial review: not yet run;
+- claim audit: not yet run;
+- public story entry: **does not exist**;
+- publication approval: **not requested / not granted**.
+
+The piece must not claim:
+
+- that anyone can succeed through effort alone;
+- that all starting positions are equivalent;
+- that AI makes building free;
+- that AI erases expertise, capital, network, or opportunity differences;
+- that the bottleneck sequence is universal;
+- that the author's experience proves a general rule.
+
+## C009 - PUBLISHED SUPPORTING STORY / LIVE VERIFICATION INCOMPLETE
 
 Published question:
 
@@ -219,7 +273,7 @@ Current metadata:
 - `status: published`;
 - `publishedAt: 2026-09-03`;
 - `featured: false`;
-- author: `Louda Tuppal`;
+- author: `Portfilo`;
 - content type: `explained`;
 - topic: `business`.
 
@@ -237,15 +291,6 @@ Completed editorial checks:
 - user publication approval: **GRANTED 2026-09-03**;
 - repository publication state: applied.
 
-Pre-publish revisions included:
-
-- upgraded the opening to a primary IBPAP source for the `capacity to capability` strategy;
-- removed a nonessential exact sector headcount because OECD and updated IBPAP-outlook reporting did not present one clean identical 2025 figure;
-- removed a Concentrix experience-threshold claim after finding conflicting requirements on the same posting;
-- normalized the Wells Fargo example to the canonical English URL;
-- clarified sample construction and methodology check date;
-- tightened the opening, analytical wording, workforce-management section and conclusion.
-
 Main supported finding:
 
 `Higher-value work` is not one occupation or a clean synonym for non-voice, technical, or AI work. The current evidence is better explained through domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
@@ -258,24 +303,22 @@ The article deliberately does **not** establish:
 - worker-transition probabilities or timelines;
 - that every specialist role is intrinsically a better job.
 
-Visual decision: no visual is required for the first publication. Do not create a prevalence chart from the illustrative sample.
+Visual decision: no visual is required for C009. Do not create a prevalence chart from the illustrative sample.
 
 ### Remaining C009 technical verification
 
 A fresh local `npm run build` could not be completed from the active assistant environment because the container cannot resolve GitHub and does not have Astro/dependencies installed. No build pass is claimed.
 
-The publication commit is on the configured Cloudflare Pages production branch, so the normal Cloudflare build/deploy process is expected to run. Still verify:
+The user has viewed the deployed article, which confirms the route was reachable in their environment, but the full technical checklist is still not recorded as complete. Still verify when practical:
 
-- deployment succeeds;
-- story route renders;
-- desktop layout;
-- mobile layout;
+- deployment status;
+- desktop and mobile layout;
 - methodology module;
 - article metadata/date;
 - outbound links;
 - console/rendering errors.
 
-Homepage featuring, fixture replacement, and Portfilo Brief distribution are separate decisions and were not implied by article publication approval.
+Homepage featuring, fixture replacement, and Portfilo Brief distribution remain separate decisions. C009 should remain unfeatured unless deliberately reopened.
 
 ## C021 - OPEN / FIRST RESERVE
 
@@ -286,7 +329,7 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-C009 publication frees one substantial-research slot. Do not activate C021 automatically; choose the next assignment deliberately after the first-story technical check.
+C027 now occupies the research slot opened by C009's publication. Do not activate C021 while all three active slots are occupied.
 
 ## Public product state
 
@@ -362,36 +405,32 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | Portfilo Brief reusable template | PASS |
 | Editorial Launch Research | COMPLETE / APPROVED |
 | C001 | ACTIVE / CONTINUE |
-| C009 research | PUBLISH |
-| C009 adversarial review | PASS after revisions |
-| C009 claim audit | PASS |
-| C009 pre-publish editorial gate | PASS |
-| C009 publication approval | GRANTED 2026-09-03 |
-| C009 repository content entry | PUBLISHED / `featured: false` |
-| C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
-| C009 live deployment/render QA | PENDING |
 | C017 | ACTIVE / REFRAME / CONTINUE |
-| C021 | OPEN / QUEUED; slot now available |
+| C027 planning/research | PASS / PUBLISH-DRAFT READY |
+| C027 internal draft | COMPLETE / NOT PUBLIC |
+| C027 adversarial review | PENDING |
+| C027 public content entry | DOES NOT EXIST |
+| C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
+| C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
+| C009 full live deployment/render QA | INCOMPLETE |
+| C021 | OPEN / QUEUED; no slot available |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Complete C009 technical publication verification.**
+**Louda reviews the C027 internal draft for voice, relatability, and Portfilo fit.**
 
-Immediate checks:
+If the direction passes:
 
-1. confirm Cloudflare Pages successfully deployed the current production-branch publication commit;
-2. if an available local checkout is used, run `npm run build` and record the result;
-3. open the C009 story route on the temporary production deployment;
-4. inspect desktop and mobile rendering;
-5. verify publication date, methodology and story metadata;
-6. click outbound article links and check for obvious rendering/console failures;
-7. update this file and `pre-publish-review.md` to `TECHNICAL PASS` only after those checks are complete.
+1. run an adversarial review against `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/COPY_STYLE.md`;
+2. resolve unsupported or overly motivational claims;
+3. run the factual claim audit on the AI research paragraphs;
+4. run the editorial/copy pass;
+5. audit the headline and dek;
+6. present the revised article to Louda for explicit publication approval;
+7. only after approval create a public story entry and proceed through technical publication QA.
 
-After that checkpoint, make two deliberate decisions rather than bundling them into publication approval:
-
-- whether C009 should replace the homepage fixtures / become featured;
-- which story should take the now-open research slot.
+C009's remaining technical verification can be completed independently and should not block C027 editorial development.
 
 ## Phase handoff rule
 
