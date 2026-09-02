@@ -1,12 +1,14 @@
 # Portfilo Launch Assignments
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-03_
 
 ## Purpose
 
 This file is the current assignment view for the first Portfilo launch slate.
 
-`candidate-stories.md` preserves the Stage 5 candidate inventory. `evaluation.md` preserves Stage 6 decisions. `recommendation.md` preserves the approved launch recommendation. This file answers the operational question:
+`candidate-stories.md` preserves the Stage 5 candidate inventory. `evaluation.md` preserves Stage 6 planning decisions. `recommendation.md` preserves the approved launch recommendation. Individual research packets may later produce `PUBLISH`, `REFRAME`, `CONTINUE`, or `KILL` without rewriting the planning history.
+
+This file answers the operational question:
 
 > What is Portfilo actively researching now?
 
@@ -14,13 +16,15 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 
 ## Active assignments
 
-| ID | Role | Question | Topic | Decision | Priority | Research packet |
-|---|---|---|---|---|---|---|
-| C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | `research/stories/ai-pilot-to-production/` |
-| C009 | Supporting | What does "higher-value work" actually mean inside Philippine IT-BPM? | Business | PASS | HIGH | `research/stories/it-bpm-higher-value-work/` |
-| C017 | Supporting | Who ultimately pays when qualifying small-merchant digital payments become free to the merchant? | Business | PASS | HIGH | `research/stories/zero-fee-merchant-payments/` |
+| ID | Role | Current research question | Topic | Planning decision | Priority | Research outcome | Research packet |
+|---|---|---|---|---|---|---|---|
+| C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
+| C009 | Supporting | What does "higher-value work" actually mean inside Philippine IT-BPM? | Business | PASS | HIGH | CONTINUE | `research/stories/it-bpm-higher-value-work/` |
+| C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME | `research/stories/zero-fee-merchant-payments/` |
 
-State for C001, C009, and C017: `ACTIVE`.
+State for C001, C009, and C017 remains `ACTIVE`.
+
+C017's original planning question asked who ultimately bears the cost when qualifying small-merchant payments become free to the merchant. The first full public-evidence pass found that the zero-fee implementation itself must be defined before economic incidence can be reported. The original question remains preserved in the C017 packet.
 
 ## First reserve
 
