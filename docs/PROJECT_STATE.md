@@ -4,11 +4,18 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Content-First Copy + Global Navigation — IMPLEMENTED / LOCAL QA PENDING**
+**Portfilo v0 / Shared Site Chrome Reset — IMPLEMENTED / LOCAL QA PENDING**
 
-The user approved **Architecture C: Content-first / no tagline**, then approved the coordinated replacement copy and the decision to pull Global Navigation into the same implementation pass.
+The previously implemented global-navigation prototype failed visual QA because different routes used different masthead geometry, typography, and responsive behavior.
 
-The replacement is now implemented across Homepage, About, Subscribe, Standards, Story, and Series.
+That prototype has now been replaced with shared site chrome:
+
+- `src/components/SiteHeader.astro`
+- `src/components/SiteFooter.astro`
+
+Homepage, About, Subscribe, Standards, Story, and Series all render those shared components.
+
+The same pass also corrected the About topic-card alignment, tightened the Founder/name spacing, and removed legacy `Back to home` footer links.
 
 Do **not** treat this phase as closed yet. A local production build and responsive/browser QA are still required.
 
@@ -32,8 +39,9 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 - Research & Standards Page
 - About Page visual direction
 - Voice & Positioning architecture research
+- Content-first copy architecture approval
 
-The overall visual language remains approved. The current pass intentionally reopened only the Homepage identity hierarchy and shared masthead/navigation behavior because those were directly involved in the copy/usability problem.
+The overall visual language remains approved. Recent work intentionally reopened only the Homepage identity hierarchy and shared site chrome because those were directly involved in copy/usability failures.
 
 ## Voice reset history
 
@@ -60,9 +68,13 @@ Architecture research/decision:
 
 `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`
 
-Approved implementation record:
+Approved copy implementation record:
 
 `docs/COPY_REPLACEMENT_CANDIDATE.md`
+
+Navigation reset research/implementation record:
+
+`docs/NAVIGATION_RESEARCH.md`
 
 ### Architecture C: Content-first / no tagline
 
@@ -103,28 +115,72 @@ This is an internal editorial/distribution focus, not a public label.
 
 Do not brand Portfilo as `Gen Z media`, `for young Filipinos`, or `for ambitious Filipinos` by default.
 
-## Global navigation — IMPLEMENTED
+## Shared site chrome — IMPLEMENTED / QA PENDING
 
-Primary navigation is now visible across all public templates:
+### Header
 
-- `Latest` → Homepage `#latest`;
+Runtime source of truth:
+
+`src/components/SiteHeader.astro`
+
+Every public route now uses the same component.
+
+Primary navigation is exactly:
+
+- `Latest` → `/#latest`;
 - `Standards` → `/standards`;
 - `About` → `/about`;
 - `Subscribe` → `/subscribe`.
 
 The Portfilo wordmark links to `/` and acts as Home.
 
-Do not add a redundant `Home` link.
+Do not add a redundant `Home` text link.
 
-Do not add Business, Technology, Startups, AI, or Building to primary navigation until real topic-index routes exist.
+Do not add Business, Technology, Startups, AI, or Building until real topic-index routes exist.
 
 Do not add Series while Series is represented only by fixtures.
 
-There is no hamburger menu in v0 while these four short links fit visibly. On narrow layouts, navigation becomes a visible second row.
+Header behavior:
 
-Subscribe may use the signal-blue accent but should not become a rounded SaaS-style button.
+- desktop: wordmark left, navigation right;
+- global navigation uses Instrument Sans everywhere;
+- sentence case;
+- identical order and spacing logic on every route;
+- current top-level destination uses signal blue plus a non-shifting underline;
+- Subscribe is not permanently blue;
+- Story and Series do not falsely mark a top-level destination current;
+- no route-specific `Story`, `Series`, `Standards`, or other context label appears inside the global header;
+- no hamburger menu while four short links fit visibly;
+- mobile uses the same two-row geometry on every route: wordmark first row, visible navigation second row.
 
-Standards, Story, and Series retain their small right-side page/context labels in addition to the primary navigation. This is intentional for the current implementation and should be judged during visual QA.
+Page-specific orientation stays below the global header in local metadata and indexes.
+
+### Footer
+
+Runtime source of truth:
+
+`src/components/SiteFooter.astro`
+
+Every public route now uses the same footer.
+
+Footer destinations use the same vocabulary and order as the header:
+
+- Latest;
+- Standards;
+- About;
+- Subscribe.
+
+The footer wordmark also links Home.
+
+Legacy `Back to home` links have been removed.
+
+### About layout corrections
+
+The five topic containers remain part of the approved visual composition.
+
+Desktop topic descriptions now reserve a consistent minimum vertical area so the five topic names and description starts align horizontally without flattening the containers. That reservation is removed on narrower layouts.
+
+Founder attribution now uses a bounded label column rather than the previous `2fr / 10fr` split, bringing `Founder` and `Louda Tuppal` into a readable metadata pair.
 
 ## Homepage `/` — CONTENT-FIRST IMPLEMENTED
 
@@ -132,24 +188,22 @@ Implementation file:
 
 `src/pages/index.astro`
 
-Implemented changes:
+Current direction:
 
 - page title is simply `Portfilo`;
 - metadata description names the five coverage areas without geographic positioning;
 - giant institutional positioning hero removed;
-- compact coverage strip added;
+- compact coverage strip retained;
 - temporary fixture-era descriptor: `Stories about companies, products, markets, and the people building them.`;
 - synthetic fixture notice retained;
-- feature story promoted to the page's primary `h1` and visual hero;
+- feature story is the page's primary `h1` and visual hero;
 - `Latest` has `id="latest"` for global navigation;
-- dark institutional block simplified into a factual About bridge;
-- repeated topic list removed from that About bridge;
-- Homepage Portfilo Brief copy reduced to `Portfilo Brief` / `New stories by email.`;
-- footer positioning slogan removed.
+- dark institutional block is a factual About bridge;
+- Homepage Portfilo Brief copy is reduced to `Portfilo Brief` / `New stories by email.`.
 
 The temporary coverage descriptor is not a tagline. During browser QA, remove it if the page is clearer without it.
 
-## About `/about` — SIMPLIFIED IMPLEMENTED
+## About `/about` — SIMPLIFIED + ALIGNMENT FIX IMPLEMENTED
 
 Implementation file:
 
@@ -161,21 +215,22 @@ Current public framing:
 
 > We cover companies, startups, AI, markets, products, and the work of building them.
 
-Implemented changes:
+Implemented direction:
 
 - old positioning block removed;
-- entire Philippine-context manifesto section removed;
+- Philippine-context manifesto section removed;
 - topic descriptions simplified;
-- `Stories take different forms.` introduces formats;
+- topic-card title/description baselines aligned on desktop;
 - audience section reduced to people curious about business and technology;
 - `If a term matters, we explain it.` retained as the small reader note;
 - Standards bridge reduced to `Our standards are public.` plus a link;
 - founder remains only `Founder / Louda Tuppal`;
-- footer positioning slogan removed.
+- Founder/name spacing tightened;
+- shared footer replaces `Back to home`.
 
 No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership/independence claim should be added without a new decision.
 
-## Research & Standards `/standards` — SUBSTANTIVE COPY UNCHANGED
+## Research & Standards `/standards`
 
 Implementation file:
 
@@ -183,9 +238,9 @@ Implementation file:
 
 The substantive Sources, Verification, AI use, Corrections, and Commercial independence material remains unchanged.
 
-Only shared masthead/navigation/footer integration changed.
+The route now uses shared site chrome. The old centered mono navigation and separate `Standards` masthead label are gone.
 
-## Story template — NAVIGATION INTEGRATED
+## Story template
 
 Implementation file:
 
@@ -193,9 +248,9 @@ Implementation file:
 
 Story content, metadata, methodology, corrections, and Content Collection behavior were not reopened.
 
-The rejected masthead strapline was replaced by primary navigation. `Story / {contentType}` remains as page context.
+The template now uses shared site chrome. The former global-header `Story / {contentType}` label is gone; story classification remains in local story metadata below the header.
 
-## Series template — NAVIGATION INTEGRATED
+## Series template
 
 Implementation file:
 
@@ -203,7 +258,7 @@ Implementation file:
 
 Series content, ordering logic, fixture behavior, and story presentation remain unchanged.
 
-The rejected masthead strapline was replaced by primary navigation. `Series` remains as page context. Footer positioning copy was removed.
+The template now uses shared site chrome. The former global-header `Series` label is gone; Series context remains in local page metadata.
 
 Separate pre-launch cleanup still required:
 
@@ -211,13 +266,13 @@ Separate pre-launch cleanup still required:
 
 Do not silently expand that cleanup into a Series redesign.
 
-## Subscribe `/subscribe` — NATIVE FORM + SIMPLIFIED COPY IMPLEMENTED
+## Subscribe `/subscribe`
 
 Implementation file:
 
 `src/pages/subscribe.astro`
 
-Visible product copy is now intentionally literal:
+Visible product copy remains intentionally literal:
 
 - `Portfilo Brief`;
 - `New Portfilo stories by email.`;
@@ -225,15 +280,7 @@ Visible product copy is now intentionally literal:
 - `Enter your email. We’ll send a confirmation link.`;
 - `No fixed schedule yet. Unsubscribe any time.`.
 
-The old coverage/perspective explanation was removed.
-
-Product facts now state:
-
-- Schedule / No fixed schedule yet;
-- Confirmation / Required before the subscription is active;
-- Unsubscribe / Any time.
-
-The beehiiv provider note remains literal and operational.
+The route now uses shared site chrome. The native form and client interaction code were not changed in the chrome reset.
 
 ### Native subscription architecture
 
@@ -249,7 +296,7 @@ The function:
 - validates email server-side;
 - quietly drops honeypot submissions;
 - requires only `BEEHIIV_API_KEY` from the server-side environment;
-- binds the verified Portfilo Brief API V2 Publication ID in server code;
+- binds the verified Portfilo Brief Publication ID in server code;
 - calls beehiiv's subscription API;
 - sets double opt-in on;
 - can reactivate an address after an explicit resubscribe form submission;
@@ -324,22 +371,22 @@ Current direction remains:
 
 ## Exact next task
 
-**Local production-build and responsive/browser QA.**
+**Local production-build and shared-chrome visual QA.**
 
 The user should:
 
 1. pull the latest `build/portfilo-v0` branch;
 2. run `npm run build` and require a clean production build;
-3. run `npm run dev` for browser review;
-4. inspect `/`, `/about`, `/subscribe`, `/standards`, `/series/content-architecture-fixtures`, and at least one published Story fixture;
-5. check desktop, intermediate/tablet, 390px, and 360px widths;
-6. confirm the navigation is visible and usable on every route;
-7. confirm `Latest` reaches the Homepage Latest section;
-8. confirm the wordmark returns Home;
-9. check active navigation styling, focus states, tap targets, wrapping, and horizontal overflow;
-10. check Homepage hierarchy and decide whether the temporary descriptor earns its place;
-11. confirm no current public surface shows the rejected geographic/tagline positioning;
-12. visually check Subscribe form states without requiring a successful beehiiv submission yet.
+3. run `npm run dev` if the build passes;
+4. inspect `/`, `/about`, `/subscribe`, `/standards`, `/series/content-architecture-fixtures`, and at least one published Story fixture at the same desktop viewport;
+5. confirm the Portfilo wordmark position, nav baseline, header height, nav font, link order, and spacing do not change between routes;
+6. confirm active-state underline/color does not shift adjacent links;
+7. confirm `Latest` reaches the Homepage Latest section and the wordmark returns Home;
+8. inspect 390px and 360px and confirm the same two-row mobile header appears everywhere with no horizontal overflow;
+9. inspect the shared footer on every route and confirm the vocabulary is identical and `Back to home` is gone;
+10. watch for a double separator where a page-ending section already has a bottom border immediately above the shared footer;
+11. inspect About desktop topic-card alignment and Founder/name spacing;
+12. decide whether the temporary Homepage descriptor earns its place.
 
 Do **not** claim this QA has passed until the user reports the local results.
 
@@ -359,28 +406,28 @@ After this QA passes, resume Subscribe end-to-end credential testing when the AP
 | Architecture C: Content-first / no tagline | APPROVED |
 | Canonical copy guide | UPDATED |
 | Coordinated content-first replacement | IMPLEMENTED, local QA pending |
-| Global primary navigation | IMPLEMENTED, local QA pending |
-| Homepage content hierarchy | IMPLEMENTED, local QA pending |
-| About simplified copy | IMPLEMENTED, local QA pending |
-| Standards substantive content | PASS, navigation regression QA pending |
-| Story template | PASS baseline, navigation regression QA pending |
-| Series template | PASS baseline, navigation regression QA pending |
+| First navigation prototype | REJECTED |
+| Shared `SiteHeader` | IMPLEMENTED, browser QA pending |
+| Shared `SiteFooter` | IMPLEMENTED, browser QA pending |
+| Six-route shared-chrome integration | IMPLEMENTED, browser QA pending |
+| About topic-card baseline fix | IMPLEMENTED, browser QA pending |
+| About Founder/name spacing fix | IMPLEMENTED, browser QA pending |
+| Legacy `Back to home` footer links | REMOVED |
+| Production Astro build after chrome reset | **NOT YET VALIDATED** |
 | Subscribe native architecture | IMPLEMENTED, visual QA + API credential/end-to-end QA pending |
 
-## Relevant current-pass commits
+## Relevant shared-chrome commits
 
-- `f348937dd6594ecdc07bbdc75f4263821c1b6071` - mark previous copy revision rejected
-- `609dae0dae803357e5b0086b422ffa05ca40fc03` - add positioning architecture exploration
-- `a26b2cdc21b98cf6db9b8ca3a8fb85b96abdb54f` - rewrite canonical copy guide
-- `41576056d7b53148c25d027694ebe05609a68c12` - record Architecture C approval
-- `f914cb8d83dca655213c72768d154e93cd60cf2a` - prepare content-first replacement candidate
-- `771c0f93cdde76213b0d06716ac60d08a8b09092` - content-first Homepage + navigation
-- `8cfc9ece78fc6525ae95e184dd556f821c7024ec` - simplified About + navigation
-- `2857355685522e5bbe32b270b8ab969a03ebd6cd` - simplified Subscribe + navigation
-- `f73b909f42c4560c7a8b5e0c6a273cc9f79d216f` - Standards navigation integration
-- `995b098282ca3e38515c93087ab1f6a87efb72df` - Story navigation integration
-- `6b2df694b8858e97d5fa73157ecdfa02d0fd6643` - Series navigation integration
-- `74eeebcee07ed19b90597182cf5c477d0955f09f` - record approved copy/navigation implementation
+- `53227236af966c111d476095b29b89767ea5c89a` - document navigation research and reject inconsistent prototype
+- `e058ba85bb252ebe94bf03e4008ac8b441dab6eb` - add shared SiteHeader
+- `0de109e699d428e817e6ef7fc21f72d0d69d06e4` - add shared SiteFooter
+- `4b4122c297bb6fda3946357119d30f8793ae4bb8` - integrate About chrome and alignment fixes
+- `156d23f9117cf6b237f8c762ebadf7dda90d02fb` - integrate Homepage shared chrome
+- `85eeffb264ae310e9c0d1a680a00eeab44a78e1f` - integrate Subscribe shared chrome
+- `60b78bc9da5bfee92eddf3d95cbb4f4c6675b464` - integrate Standards shared chrome
+- `9bcd49b546791ab1585889f40d2ffece6d317b8e` - integrate Story shared chrome
+- `e6b649b32fd6df05abe12cad6129dbe6cdf7c3b8` - integrate Series shared chrome
+- `4fb110a9ae79a7ef30bdcb95711f9aa616f49ac3` - record navigation reset implementation
 
 ## Phase handoff rule
 
