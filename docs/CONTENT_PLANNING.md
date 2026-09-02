@@ -1,6 +1,6 @@
 # Portfilo Content Planning
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-03_
 
 ## Purpose
 
@@ -164,6 +164,12 @@ Consider:
 - expected research time;
 - whether the question can be scoped down without damaging its value.
 
+Feasibility must also reflect **Portfilo's current reporting position**, not an imagined mature newsroom. At assignment time, assess which sources are realistically reachable given the publication's current relationships, prior response history, warm introductions, public contact routes, reputation, time horizon, and the specificity of the request.
+
+This assessment determines the outreach strategy and how much the story may depend on interviews. It does not determine whether a person or institution is important enough to contact, and it does not make an easy-to-reach source more credible than a difficult one.
+
+For an important but low-probability source, Portfilo may still make the attempt. The assignment should not become indefinitely blocked by that reply unless the source is genuinely necessary to establish the story. Use public records, datasets, calculations, alternative knowledgeable sources, or a narrower framing where they can answer the question rigorously.
+
 A good idea can still be the wrong assignment right now.
 
 ## Gate outcomes
@@ -280,6 +286,9 @@ Why now:
 Possible Portfilo contribution:
 
 Evidence path:
+
+Access / outreach plan:
+Who is realistically reachable now, which sources are essential versus optional, and what non-interview evidence can carry the story if replies do not arrive?
 
 Existing coverage / information gap:
 
@@ -431,6 +440,8 @@ Possible revisit triggers:
 - prioritization repeatedly selects stories that underperform their intended reader need;
 - a repeated editorial problem cannot be solved through the existing gates;
 - multiple editors require clearer assignment ownership or workflow state.
+
+As Portfilo gains publication history, relationships, response history, and audience reach, also revisit the access assumptions used during feasibility checks. Sources that are unrealistic today may become realistic later; the reverse can also happen. Do not permanently downgrade a class of reporting because access was weak at an earlier stage.
 
 Do not expand the system in anticipation of hypothetical scale.
 
