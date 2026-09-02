@@ -4,21 +4,21 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Launch Story Research - ACTIVE**
+**Portfilo v0 / First Story Approval - ACTIVE**
 
-The publishing machine and launch-selection system are ready. Editorial Launch Research is complete and the first research slate is approved.
+The publishing system, launch-selection system, and first launch research slate are in place.
 
-C009 is now the first launch assignment whose research packet has reached a `PUBLISH` story decision. `PUBLISH` means evidence supports drafting; it does not mean the story is publicly published yet.
+C009 is the first launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, and headline/dek audit.
 
-Do not create public story content before drafting, adversarial review, claim audit, and headline/methodology review are complete.
+A real story content entry has been prepared with `status: draft`. It is **not published** and must remain unpublished until Louda Tuppal explicitly approves the finished article.
 
 ## Current branch
 
-Use `build/portfilo-v0` for the authoritative v0 application and editorial state.
+Authoritative branch:
+
+`build/portfilo-v0`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
-
-Historical implementation and validation detail remains in git history and the canonical documents referenced below.
 
 ## Canonical documents
 
@@ -46,36 +46,11 @@ Email/deployment:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-## Approved product direction
+## Locked editorial model
 
-Portfilo v0 is a content-first business and technology publication.
+Portfilo is the publication. Articles are the journalism. Portfilo Brief distributes published work by email.
 
-Public-brand rules:
-
-- no permanent tagline by default;
-- no forced geographic slogan;
-- no audience-flattering slogan;
-- the wordmark establishes the publication;
-- the Homepage leads with journalism rather than a brand manifesto;
-- About explains Portfilo plainly;
-- Standards demonstrates editorial rigor;
-- Subscribe explains the email product only.
-
-Canonical copy rule:
-
-> **Say the thing. Then stop.**
-
-Rejected positioning must not be restored, including:
-
-- `Practical intelligence for ambitious Filipinos.`
-- `Business and tech, from the Philippines.`
-- `Business and tech make more sense when you start from here.`
-
-Philippine relevance remains part of reporting and early distribution strategy, but geography is not required brand copy and should not be forced into global stories.
-
-## Locked taxonomy
-
-Top-level v0 topics:
+Top-level topics:
 
 - Business
 - Technology
@@ -83,72 +58,83 @@ Top-level v0 topics:
 - AI
 - Building
 
-Rules:
+Content types:
 
-- one primary topic per story;
-- AI is primary only when AI itself is the main subject;
-- founders are a recurring lens, not a top-level topic;
-- capital/funding normally sits under Business or Startups;
-- `Latest` is broader than breaking news;
-- Portfilo Brief is the email product.
+- Reported
+- Explained
+- Guide
+- Profile
+- Analysis
+- Perspective
+- Field Notes
 
-## Content Planning System v0 - APPROVED / PASS
+Primary reader needs:
 
-Canonical guide:
+- Update
+- Understand
+- Interpret
+- Decide
 
-`docs/CONTENT_PLANNING.md`
+Core rule:
 
-Planning boundary:
+> **Help through reporting and evidence, not generic advice.**
+
+Copy rule:
+
+> **Say the thing. Then stop.**
+
+No permanent tagline by default. Do not restore previously rejected positioning copy.
+
+## Editorial workflow
+
+Canonical pipeline:
 
 ```text
-Signal -> Story question -> Editorial gate -> Priority -> Research assignment
+IDEA
+↓
+RESEARCH BRIEF
+↓
+SOURCE MAP
+↓
+PRIMARY / SECONDARY RESEARCH
+↓
+EVIDENCE LEDGER
+↓
+CONTRADICTION SEARCH
+↓
+STORY DECISION
+↓
+DRAFT
+↓
+ADVERSARIAL REVIEW
+↓
+CLAIM AUDIT
+↓
+EDITORIAL PASS
+↓
+HEADLINE AUDIT
+↓
+PUBLISH
+↓
+DISTRIBUTE
+↓
+CORRECT / UPDATE WHEN NEEDED
 ```
 
-Research/publishing boundary:
+AI output has zero evidentiary weight. Drafts must be built from verified/qualified packet evidence.
 
-```text
-Research brief -> Sources -> Evidence -> Contradictions -> Story decision -> Draft -> Verification -> Publish
-```
+Before making a story depend on interviews, evaluate current source reachability using existing relationships, warm introductions, response history, public routes, publication visibility, reporting window, and alternative evidence paths.
 
-Substantial candidates are checked for question, importance, timing, contribution, evidence, and feasibility. Gate outcomes remain `PASS`, `REFRAME`, `HOLD`, or `KILL`. Passed candidates receive `HIGH`, `MEDIUM`, or `LOW` priority.
+Operational access labels:
 
-Default work-in-progress limits remain:
+- `DIRECT / LIKELY`
+- `PLAUSIBLE`
+- `LOW-PROBABILITY`
+- `NOT REQUIRED`
 
-- maximum one flagship investigation in active production at once;
-- generally no more than three substantial stories in active research at once;
-- no mandatory article quota.
+These measure reachability, not source credibility.
 
-### Access-aware source planning
-
-Before making a story depend on interviews, Portfilo evaluates current source reachability using the present relationships, warm introductions, known response history, public routes, publication visibility, reporting window, and alternative evidence paths.
-
-Operational access labels are:
-
-- `DIRECT / LIKELY`;
-- `PLAUSIBLE`;
-- `LOW-PROBABILITY`;
-- `NOT REQUIRED`.
-
-These labels measure reachability, not credibility. They should be reevaluated as Portfilo's relationships, publication history, and influence change.
-
-Interviews remain one form of original reporting, not a mandatory ingredient in every substantial story.
-
-### Verification-disclosure judgment
-
-Generic language such as `Portfilo could not independently verify`, `Portfilo was unable to confirm`, or `Portfilo did not receive a response` is not default credibility copy.
-
-The research packet should record uncertainty aggressively. Public copy should disclose a verification limit only when it materially helps the reader understand the evidence, fairness, or limitation of the story.
-
-Preferred order:
-
-1. verify;
-2. remove an unnecessary unsupported claim;
-3. attribute a reported claim precisely;
-4. state the specific missing/conflicting evidence if materially relevant;
-5. use newsroom-centered verification language only when it is the clearest accurate formulation;
-6. research professional/legal requirements for unusual fairness-sensitive or high-risk cases.
-
-Canonical details are in `docs/EDITORIAL_STANDARD.md` and `docs/RESEARCH_STANDARD.md`.
+Generic `Portfilo could not independently verify...` language is not default credibility copy. Use specific evidence limitations when they materially help the reader.
 
 ## Editorial Launch Research - COMPLETE / APPROVED
 
@@ -156,31 +142,21 @@ Workspace:
 
 `research/editorial-launch/`
 
-Completed outputs:
-
-- `brief.md`
-- `audience-signals.md`
-- `competitor-map.md`
-- `information-gaps.md`
-- `candidate-stories.md`
-- `evaluation.md`
-- `candidate-series.md`
-- `recommendation.md`
-- `assignments.md`
-
-Stage 5 produced 28 stable candidate IDs. Stage 6 produced 11 passes, 6 reframes, 7 holds, and 4 killed standalone candidates. The series check found no formal launch series justified.
-
-Louda Tuppal approved the final launch recommendation on 2026-09-02.
-
 Approved approach:
 
 **Launch with a small package of independent stories, not a formal series.**
 
-## Active launch assignments
-
-Operational assignment state is recorded in:
+Operational assignment state:
 
 `research/editorial-launch/assignments.md`
+
+Default WIP limits remain:
+
+- maximum one flagship investigation in active production;
+- generally no more than three substantial stories in active research;
+- no mandatory article quota.
+
+## Active launch assignments
 
 ### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
@@ -192,25 +168,18 @@ Topic: `AI`
 Priority: `HIGH`  
 Packet: `research/stories/ai-pilot-to-production/`
 
-Current packet includes:
+Current state:
 
-- `brief.md`
-- `sources.md`
-- `evidence.md`
-- `contradictions.md`
-- `notes.md`
+- source reconnaissance: `PASS / OUTREACH READY`;
+- drafting threshold: not met;
+- research outcome: `CONTINUE`;
+- realistic outreach may proceed, but launch must not wait indefinitely on low-probability corporate replies.
 
-Current story outcome: `CONTINUE`.
+The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page shows proof-of-concept at 40%. Do not use 65% as a clean factual anchor until reconciled.
 
-Source reconnaissance is `PASS / OUTREACH READY`, while the drafting threshold remains unmet. The packet evaluates source reachability relative to Portfilo's current position rather than assuming large-company interviews will arrive on a launch timetable.
+### C009 - ACTIVE / SUPPORTING / PUBLISH / DRAFT READY
 
-C001 remains active and may pursue realistic outreach, but it must not make Portfilo's publishing schedule depend indefinitely on low-probability corporate replies.
-
-The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page labels proof-of-concept at 40%. Do not use the 65% figure as a Portfilo factual anchor until the denominator/question logic is reconciled.
-
-### C009 - ACTIVE / SUPPORTING / PUBLISH
-
-Original planning question:
+Original question:
 
 > What does "higher-value work" actually mean inside Philippine IT-BPM?
 
@@ -222,42 +191,55 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/it-bpm-higher-value-work/`
 
-Current packet includes:
+Research packet now includes:
 
-- `brief.md`;
-- `sources.md`;
-- `sample.md`;
-- `evidence.md`;
-- `contradictions.md`;
-- `notes.md`.
+- `brief.md`
+- `sources.md`
+- `sample.md`
+- `evidence.md`
+- `contradictions.md`
+- `notes.md`
+- `draft.md`
+- `adversarial-review.md`
+- `fact-check.md`
 
-The first full public-data/source pass is complete and produced the first `PUBLISH` decision in the launch slate.
+Prepared public content entry:
 
-### C009 findings now established
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
-- `higher-value work` is not a standardized occupation category;
-- official Philippine skills frameworks show specialized work across contact-center/BPM, GCC/shared services, healthcare information management, software/security and related capability areas;
-- specialized roles can exist inside traditional contact-center/BPM operations, including workforce management, quality, transformation and security;
-- a 15-role structured illustrative sample of current employer postings shows domain-intensive finance/healthcare work, data/technology work, process/control work and GCC/capability-ownership work;
-- the most defensible explanatory dimensions are domain depth, technical/data depth, judgment/control responsibility, process/system ownership and stakeholder scope;
-- `voice vs non-voice`, `AI vs non-AI`, job title and `technical vs non-technical` are inadequate shortcuts by themselves;
-- some specialist work is accessible earlier in a career while other roles require professional credentials or substantial experience.
+Current content-entry state:
 
-The packet does **not** establish representative sector-wide job shares, wage premiums, displacement/absorption, worker-transition probabilities, or that every specialist role is a better job.
+`status: draft`
 
-Compensation was removed from the central C009 conclusion because the current employer-primary sample lacks sufficiently comparable salary disclosure and broad official wage data do not map cleanly onto the role taxonomy.
+No `publishedAt` is set. The current story route only emits entries whose status is `published`, so this story is intentionally excluded from public story routes pending approval.
 
-Interviews are `NOT REQUIRED` for this documentary Explained/Analysis version. They may become important for later worker-transition, realized-pay, job-quality, or employer-strategy questions.
+Completed editorial checks:
 
-**Drafting status: READY TO DRAFT FROM VERIFIED PACKET.**
+- research decision: `PUBLISH`;
+- draft: complete;
+- adversarial review: complete and resolved;
+- claim audit: `PASS`;
+- editorial/copy pass: `PASS`;
+- headline/dek audit: `PASS`;
+- methodology wording: `PASS`.
+
+Main supported finding:
+
+`Higher-value work` is not one occupation or a clean synonym for non-voice, technical, or AI work. The current evidence is better explained through domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
+
+The article deliberately does **not** establish:
+
+- representative sector-wide job shares;
+- a universal wage premium;
+- specialist-role growth sufficient to absorb routine-work displacement;
+- worker-transition probabilities or timelines;
+- that every specialist role is intrinsically a better job.
+
+**Publication approval: PENDING USER REVIEW.**
 
 ### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
 
-Original planning question:
-
-> Who ultimately pays when qualifying small-merchant digital payments become free to the merchant?
-
-Reframed working question:
+Reframed question:
 
 > What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
 
@@ -265,34 +247,16 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/zero-fee-merchant-payments/`
 
-Current packet includes:
+The public-document route is substantially exhausted for currently indexed BSP/PPMI materials.
 
-- `brief.md`;
-- `sources.md`;
-- `evidence.md`;
-- `contradictions.md`;
-- `notes.md`;
-- `implementation-basis.md`.
+Established tension:
 
-The first public-evidence pass reframed the story. A second implementation-basis audit substantially exhausted the currently indexed BSP/PPMI documentary route.
+- the 2024 exposure draft proposed a micro-merchant definition and explicit merchant-fee waiver;
+- signed Circular 1238 does not reproduce that waiver and permits cost-based merchant fees;
+- M-2026-025 still says `zero fees for small merchant payments` have been implemented without defining the fee layer or implementation instrument;
+- current PPMI/BSP material distinguishes consumer-side QR Ph fee treatment from merchant-side transaction fees.
 
-### C017 findings now established
-
-- the 2024 BSP exposure draft proposed a `micro-merchant` definition, a PHP250,000 monthly gross-receipts threshold, and an explicit merchant-fee waiver;
-- signed Circular No. 1238 does not reproduce that definition or waiver and instead permits cost-based merchant fees under Section 503.7(c);
-- same-day BSP Memorandum No. M-2026-025 nevertheless says the fee moratorium was lifted in view of the `implementation of zero fees for small merchant payments` without defining the eligibility test, payment rail, fee layer, or implementation instrument;
-- earlier BSP guidance used broader `small e-payments` language and treated zero-fee P2M payments for microenterprises as an inclusive-pricing practice rather than establishing the final 2026 mechanism;
-- current PPMI material says QR Ph P2M is free to consumers;
-- BSP's 29 July 2026 launch material separately says merchants shoulder QR Ph transaction fees;
-- current standard public merchant pricing remains nonzero for QR/QR Ph products.
-
-These findings do **not** prove that no separate small-merchant zero-fee arrangement exists. They establish that Portfilo should not attribute the 2024 proposed waiver to Circular 1238 or equate consumer-side fee-free QR Ph use with universal zero merchant MDR.
-
-The decisive remaining C017 source need is now a narrow written clarification from BSP and/or PPMI identifying the intended meaning and operative instrument. A broad interview campaign is unnecessary.
-
-C017 remains active while that clarification path is available, but the publishing schedule must not wait on the response.
-
-**Drafting status: DO NOT DRAFT YET.**
+Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
 ### C021 - OPEN / FIRST RESERVE
 
@@ -303,11 +267,11 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-Do not activate C021 while C001, C009, and C017 occupy the three substantial active-research slots.
+Do not activate while all three active research slots remain occupied.
 
-## Public surfaces - PASS
+## Public product state
 
-Current validated surfaces remain:
+Validated public surfaces remain:
 
 - shared `SiteHeader` / `SiteFooter`;
 - Homepage `/`;
@@ -316,55 +280,25 @@ Current validated surfaces remain:
 - Story template;
 - Series template;
 - Confirmation `/confirmed`;
-- Subscribe `/subscribe` plus the approved single-purpose Cloudflare Pages Function.
+- Subscribe `/subscribe` and single-purpose Cloudflare Pages subscription proxy.
 
-Fixture story language remains preview material until real launch stories are researched, approved, and published.
+Fixture stories remain development/preview material until deliberately retired or replaced by approved real stories.
 
-## Email system - PASS
+## Email system
 
-Reusable template:
+Portfilo Brief reusable template remains `PASS` based on prior desktop/mobile/inbox testing.
 
-`Portfilo Brief v0`
+Validated state includes:
 
-Canonical instructions:
-
-`docs/BEEHIIV_EMAIL_SETUP.md`
-
-Validated state remains:
-
-- desktop preview: PASS;
-- mobile preview: PASS;
-- long-headline wrapping: PASS;
-- one-story behavior: PASS;
-- optional correction treatment: PASS;
-- optional lead-image treatment: PASS;
-- real inbox test: PASS, user reported;
-- double-opt-in confirmation flow: PASS;
-- Welcome Email: OFF;
-- Smart Nudge: OFF for v0;
+- double opt-in flow: PASS;
 - sender name: `Portfilo`;
-- Reply-To: `portfilo.ph@gmail.com`.
+- Reply-To: `portfilo.ph@gmail.com`;
+- Welcome Email: OFF;
+- Smart Nudge: OFF for v0.
 
 beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and deliverability infrastructure.
 
-## Site launch foundation / repository hardening - PASS
-
-Task 1A and Task 1B remain validated, including:
-
-- optional production `SITE_URL` contract;
-- canonical/social metadata when `SITE_URL` is set;
-- sitemap/robots behavior when `SITE_URL` is set;
-- Article structured data;
-- custom 404 and Privacy page;
-- static security headers;
-- `astro check` in production build;
-- 4 KB subscribe request cap;
-- same-origin, honeypot, validation, safe-error, and beehiiv behavior;
-- prior dependency audit at 0 vulnerabilities on 2026-09-02.
-
-No application code changed during launch research or the current research-packet work, so no new build validation is claimed for these research/documentation commits.
-
-## Temporary production deployment - PASS / final domain pending
+## Deployment state
 
 Cloudflare Pages project:
 
@@ -378,28 +312,21 @@ Production branch:
 
 `build/portfilo-v0`
 
-Previously validated, user reported:
+Previously user-validated temporary deployment state remains PASS.
 
-- Pages deployment: PASS;
-- production `BEEHIIV_API_KEY` secret: PASS;
-- live signup: PASS;
-- beehiiv confirmation email: PASS;
-- Pending -> Active subscriber state: PASS;
-- cross-platform link-arrow rendering: PASS on iOS.
-
-Still pending:
+Still pending before final public launch:
 
 - final public domain;
-- production `SITE_URL` after the final domain is live;
+- production `SITE_URL` after domain connection;
 - Cloudflare `/api/subscribe` edge rate limit;
-- Cloudflare Web Analytics enablement/verification;
-- final beehiiv Opt-in Redirect URL;
-- final-domain subscribe -> confirm -> `/confirmed` -> Active -> unsubscribe QA;
-- mailing-address/compliance clearance before the first public newsletter send.
+- Cloudflare Web Analytics enable/verification;
+- final beehiiv Opt-in Redirect to canonical `/confirmed`;
+- final-domain subscribe/confirm/unsubscribe QA;
+- mailing-address/compliance clearance before first public newsletter send;
+- final browser/responsive/link/console QA;
+- MFA/passkeys where applicable.
 
-The temporary beehiiv redirect target was identified during testing but its saved configuration was not separately re-verified. Do not claim it is configured unless explicitly tested/confirmed.
-
-Do not add Turnstile unless deployed traffic shows a real abuse problem after the existing honeypot and edge rate limit are active.
+Do not add Turnstile unless real traffic demonstrates abuse after honeypot and edge rate limiting are active.
 
 ## Validation status
 
@@ -408,73 +335,43 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
 | Foundation / Content Architecture / Editorial Design | PASS |
-| Shared chrome and public pages | PASS |
-| Story and series templates | PASS |
-| Subscribe end-to-end | PASS, local + temporary live flow through Active |
-| beehiiv double opt in | PASS |
+| Public pages / shared chrome | PASS from prior validation |
+| Story and series templates | PASS from prior validation |
+| Subscribe temporary live flow | PASS, user reported |
 | Portfilo Brief reusable template | PASS |
-| Portfilo Brief inbox test | PASS, user reported |
-| Task 1A site launch foundation | PASS |
-| Task 1B request-body hardening | PASS |
-| Dependency audit | PASS, 0 vulnerabilities on 2026-09-02 |
-| Cloudflare temporary production deployment | PASS, user reported |
-| Content Planning System v0 | APPROVED / PASS |
 | Editorial Launch Research | COMPLETE / APPROVED |
-| First real launch package | APPROVED |
-| C001 flagship packet | ACTIVE / CONTINUE / outreach ready, not draft ready |
-| C009 supporting packet | ACTIVE / PUBLISH / ready to draft from packet |
-| C017 supporting packet | ACTIVE / REFRAME / CONTINUE / public-document route substantially exhausted |
-| C021 reserve | OPEN / QUEUED |
-| Fixture content replacement | PENDING verified launch stories |
-| Final-domain Cloudflare configuration | PENDING domain |
-| Production Opt-in Redirect | PENDING final canonical domain; temporary target not separately re-verified |
-| Cloudflare edge rate limiting | PENDING |
-| Cloudflare Web Analytics | PENDING verification |
-| Production unsubscribe QA | PENDING |
-| Mailing-address/compliance clearance | PENDING before first public send |
+| C001 | ACTIVE / CONTINUE |
+| C009 research | PUBLISH |
+| C009 adversarial review | PASS after revisions |
+| C009 claim audit | PASS |
+| C009 content entry | DRAFT / NOT PUBLIC |
+| C009 publication approval | PENDING USER APPROVAL |
+| C017 | ACTIVE / REFRAME / CONTINUE |
+| C021 | OPEN / QUEUED |
+| Current application build after C009 draft entry | NOT YET RUN / DO NOT CLAIM PASS |
+| Final-domain configuration | PENDING DOMAIN |
 
-## Remaining launch scope
-
-### Editorial track
-
-- draft C009 from its verified/qualified research packet;
-- run C009 adversarial review, claim audit, headline/dek audit and methodology/source presentation decision;
-- only then create the public C009 story file and replace the relevant fixture content;
-- pursue a narrow BSP/PPMI clarification for C017 when appropriate, without blocking the publishing schedule;
-- keep C001 active with access-aware outreach/document research rather than waiting indefinitely for low-probability replies;
-- prepare visuals/graphics only where evidence makes them useful;
-- populate the homepage and Portfilo Brief from published work.
-
-### Deployment track
-
-When the canonical domain is available:
-
-- connect the public domain;
-- set `SITE_URL`;
-- configure edge rate limiting;
-- enable/verify Web Analytics;
-- update beehiiv Opt-in Redirect to canonical `/confirmed`;
-- complete final subscribe/confirm/unsubscribe QA;
-- verify canonical/social/sitemap/robots behavior;
-- complete mailing-address/compliance clearance;
-- run final browser, responsive, link, and console QA.
-
-Do not treat post-launch enhancements as v0 blockers.
+A new Markdown content entry was added for C009, so a fresh `npm run build` is required before publication. No new application build is claimed at this checkpoint.
 
 ## Exact next task
 
-**Draft C009 from the verified research packet.**
+**Louda reviews the finished C009 article and decides whether to approve publication.**
 
-Drafting requirements:
+Until explicit approval:
 
-1. use the narrowed question and supported finding recorded in `research/stories/it-bpm-higher-value-work/brief.md`;
-2. use official skills frameworks as the structural backbone and the 15-role sample as concrete evidence;
-3. do not introduce unsupported salary, prevalence, displacement, growth or worker-transition claims;
-4. distinguish industry claims from Portfilo's analytical synthesis;
-5. keep the structured sample's non-prevalence limitation visible where it materially affects interpretation;
-6. after drafting, run adversarial review and a claim-by-claim audit before creating public story content.
+- keep `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` as `status: draft`;
+- do not set `publishedAt`;
+- do not mark it featured;
+- do not replace the public fixture/homepage presentation with this story;
+- do not distribute it through Portfilo Brief.
 
-C001 and C017 remain active in parallel, but C009 is now the first story ready to move from research into drafting.
+If publication is approved:
+
+1. set the story to `published` and add `publishedAt`;
+2. decide whether it should be `featured`;
+3. run `npm run build` and fix any content/schema/rendering problems;
+4. inspect the rendered desktop/mobile story and outbound links;
+5. then proceed to fixture replacement/homepage integration and newsletter distribution as separately approved.
 
 ## Phase handoff rule
 
