@@ -1,18 +1,4 @@
 # Copy this file to .dev.vars for local Cloudflare Pages Function testing.
-# Never commit .dev.vars or real API keys/secrets.
+# Never commit .dev.vars or a real beehiiv API key.
 
-# beehiiv remains the final subscriber store after Portfilo verifies the email.
 BEEHIIV_API_KEY="replace-with-your-private-beehiiv-api-key"
-
-# Resend sends only Portfilo's transactional confirmation email.
-RESEND_API_KEY="replace-with-your-private-resend-api-key"
-RESEND_FROM="Portfilo <onboarding@resend.dev>"
-
-# Official Cloudflare Turnstile always-pass TEST keys for localhost only.
-# Replace both with a real Turnstile widget in production.
-TURNSTILE_SITE_KEY="1x00000000000000000000AA"
-TURNSTILE_SECRET_KEY="1x0000000000000000000000000000000AA"
-
-# Use a private, random value of at least 32 characters.
-# This encrypts the stateless 24-hour confirmation token.
-CONFIRMATION_TOKEN_SECRET="replace-with-a-random-secret-at-least-32-characters-long"
