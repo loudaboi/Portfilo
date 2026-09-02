@@ -1,16 +1,18 @@
 # Portfilo Email System & Confirmation Experience
 
-_Status: APPROVED / simplified after architecture review_
+_Status: APPROVED / v0 email system locked_
 
 _Last updated: 2026-09-02_
 
 ## Decision
 
-Portfilo v0 uses beehiiv to own subscriber confirmation.
+Portfilo v0 uses beehiiv to own subscriber confirmation, confirmed-subscriber storage, newsletter sending, unsubscribe handling, and deliverability infrastructure.
 
-Portfilo owns the signup interface and the post-confirmation website experience. It does not operate a transactional email service, confirmation-token system, pending-subscriber store, or custom newsletter backend.
+Portfilo owns the signup interface, the narrow subscription proxy, the post-confirmation website experience, and the editorial design of Portfilo Brief.
 
-This is the deliberately simpler architecture.
+Portfilo does not operate a transactional email service, custom confirmation-token system, pending-subscriber store, subscriber database, or custom newsletter backend.
+
+This is the canonical v0 architecture.
 
 ## Runtime flow
 
@@ -58,7 +60,7 @@ and preserves Portfilo website attribution through the existing UTM values.
 - the honeypot filter;
 - the narrow Cloudflare Pages Function that forwards the signup to beehiiv;
 - `/confirmed` as the eventual post-confirmation destination;
-- Portfilo Brief editorial/newsletter design decisions.
+- Portfilo Brief editorial selection, design, copy, and QA.
 
 ### beehiiv owns
 
@@ -69,6 +71,7 @@ and preserves Portfilo website attribution through the existing UTM values.
 - confirmed subscriber storage;
 - newsletter delivery;
 - unsubscribe handling;
+- provider footer/compliance mechanisms;
 - newsletter operations and deliverability infrastructure.
 
 ## Rejected custom confirmation architecture
@@ -90,55 +93,54 @@ Do not reintroduce Resend, custom confirmation tokens, KV, or Turnstile for this
 
 ## Double opt-in policy
 
-Keep double opt-in for v0.
+Keep double opt in enabled for v0.
 
-The purpose is list quality and verified consent, not visual branding. It protects against obvious typos, unwanted signups, and invalid addresses before they become active newsletter recipients.
+The purpose is list quality and verified consent. It protects against obvious typos, unwanted signups, and invalid addresses before they become active newsletter recipients.
 
-Do not switch to single opt-in merely because the confirmation-email editor is inconvenient.
+Do not switch to single opt in merely because of editor preference.
 
-A future single-opt-in decision should be based on real conversion/deliverability evidence rather than editor preference.
+A future single-opt-in decision should be based on real conversion and deliverability evidence.
 
-## Confirmation email product rule
+## Published confirmation email
 
-The confirmation email is a utility surface with one job:
+The beehiiv double-opt-in email is now intentionally designed and published.
 
-> Confirm the subscription.
-
-It does **not** need to reproduce the Portfilo website or become a miniature editorial product.
-
-Visual perfection in beehiiv's preset-email editor is not a v0 blocker.
-
-If simple customization is easy, preferred copy is:
+Copy:
 
 **Subject**
 
 `Confirm your Portfilo Brief subscription`
 
-**Body**
+**Preview text**
 
+`Confirm your email to finish subscribing.`
+
+**Visible content**
+
+> PORTFILO BRIEF / CONFIRMATION
+>
 > Confirm your subscription.
 >
 > Click below to finish signing up for Portfilo Brief.
 >
 > Confirm subscription
 
-No brand manifesto, founder note, topic list, illustration, or complex layout is required.
+Design rule:
 
-If the editor makes further customization cumbersome, preserve a functional confirmation email and move on. Do not add infrastructure to solve a styling inconvenience.
+- paper background `#F4F0E8`;
+- Arial for structural text and CTA;
+- Georgia for body copy;
+- ink `#171614`;
+- muted text `#69655E`;
+- Portfilo blue `#0050A4`;
+- square CTA, no rounded card treatment;
+- footer aligned with the recurring Portfilo Brief system.
 
-## Current unpublished beehiiv edits
-
-The user made experimental changes in the beehiiv Opt in email editor while evaluating the visual limitations.
-
-Those changes were shown as **Unpublished changes**.
-
-Do not publish those experimental edits merely to complete this phase. The previously published functional confirmation flow remains the baseline.
-
-A later minimal cleanup can be done in beehiiv if it is straightforward, but it is not required before continuing site/deployment work.
+This remains a utility email with one job: confirm the subscription. Do not expand it into a brand manifesto, founder note, topic list, illustration, or multi-section marketing email.
 
 ## Post-confirmation destination
 
-Portfilo already has:
+Portfilo owns:
 
 `/confirmed`
 
@@ -158,9 +160,9 @@ The route uses shared Portfilo site chrome and is marked `noindex`.
 
 Once Portfilo has a stable production domain, configure beehiiv's Opt-in Redirect URL to the full production `/confirmed` URL.
 
-Do not point beehiiv to localhost or a temporary development URL.
+Do not point beehiiv to localhost, a Wrangler development URL, or a temporary preview URL.
 
-Until that production redirect exists, beehiiv's hosted confirmation destination is an accepted temporary test artifact.
+The production redirect remains pending until the stable public domain is known.
 
 ## Welcome email
 
@@ -178,68 +180,160 @@ Do not send a generic second email merely to explain the brand again.
 
 ## Smart Nudge
 
-Not required for v0.
+Keep Smart Nudge disabled for v0.
 
-It may be evaluated later if Pending subscriber drop-off becomes a measurable problem.
+Revisit only if Pending subscriber drop-off becomes a measurable problem.
 
-## Portfilo Brief newsletter design
+## Sender and reply identity
 
-The recurring Portfilo Brief newsletter is a more important design surface than the one-time confirmation email.
+Current v0 settings:
 
-Use one reusable v0 template rather than multiple formats at launch.
+- sender name: `Portfilo`;
+- do not use the individual post author as sender;
+- Reply-To: `portfilo.ph@gmail.com`;
+- beehiiv remains the sending provider;
+- do not make the v0 architecture depend on a paid custom sending-domain feature.
 
-Recommended structure:
+A custom Portfilo domain can replace the provider-managed sender domain later if the production domain and plan make that practical.
 
-1. Portfilo Brief/date identity;
-2. strongest lead story;
-3. short dek or explanation;
-4. `Read →`;
-5. optional additional Portfilo stories when useful;
-6. compliant footer.
+## Portfilo Brief v0
 
-Do not create empty sections to satisfy a template.
+The recurring newsletter uses one reusable beehiiv template named:
 
-Subject lines should normally lead with the strongest concrete story rather than issue numbering or generic phrases such as `Your weekly dose of...`.
+`Portfilo Brief v0`
+
+It was built from a blank beehiiv Visual Editor template rather than the stock newsletter template. Custom HTML is not a foundational dependency.
+
+The master template contains:
+
+1. `PORTFILO BRIEF` identity;
+2. issue date;
+3. blue editorial rule;
+4. one lead-story module;
+5. one reusable secondary-story Section;
+6. beehiiv-managed footer.
+
+Optional correction and image treatments are inserted only when needed. They are not permanent empty modules in the master.
+
+### Editorial structure
+
+Lead story:
+
+- topic;
+- headline;
+- one- or two-sentence dek;
+- optional lead image;
+- blue `Read story →` button.
+
+Secondary story:
+
+- neutral top separator;
+- topic;
+- smaller headline;
+- optional dek;
+- blue underlined `Read story →` text link.
+
+Story-count rule:
+
+- 1 story: delete the entire secondary Section;
+- 2 stories: use the one secondary Section in the template;
+- 3 stories: duplicate the whole secondary Section once;
+- 4 stories: duplicate it twice;
+- 5+ available stories: curate the strongest few rather than dumping every story into the email.
+
+Never leave empty optional sections or empty dek blocks.
+
+### Image rule
+
+Default lead-photo ratio: `16:9`.
+
+Recommended export: approximately `1200 × 675` px, compressed without obvious quality loss.
+
+Use `3:2` only when the composition genuinely benefits from additional height. Charts and data graphics may use an appropriate native ratio such as `4:3`.
+
+Lead images are full-column, square-cornered, borderless, shadowless, and optional. Live headline, dek, and CTA must remain sufficient if images are blocked.
+
+### Correction rule
+
+Corrections are optional and appear after the masthead rule and before the lead story.
+
+Use a restrained correction treatment:
+
+- `2 px` top rule in correction red `#B42318`;
+- `CORRECTION` label in the same red;
+- correction copy in the normal muted Georgia paragraph style;
+- no red background;
+- no red CTA;
+- optional blue `Read corrected story →` link only when a corrected destination is useful.
+
+### Subject and preview rule
+
+Subject lines should normally lead with the strongest concrete story, not issue numbering or generic newsletter language.
+
+Preview text should add useful context rather than repeat the subject.
+
+The internal post title may remain operational, for example:
+
+`Portfilo Brief / YYYY-MM-DD`
+
+Native beehiiv title, subtitle, and date display elements are hidden from the email because the template supplies its own masthead.
+
+### Placeholder-link rule
+
+The master template may retain `https://example.com` in CTA placeholders because it is deliberately conspicuous during QA.
+
+Before every real send, replace every placeholder URL with the exact Portfilo story URL it describes. Lead image links, when used, should point to the same lead story.
+
+Never ship a public issue with an `example.com` link.
 
 ## Mailing address
 
-A legitimate physical mailing address remains required before the first public Portfilo Brief newsletter send.
+The beehiiv publication address field is currently left unset. beehiiv may show its provider fallback address in test/output email.
 
-Do not invent an address.
+Do not represent that fallback address as Portfilo's own address, and do not invent a Portfilo address.
 
-Do not casually publish a private/home address without considering privacy.
+The user has accepted this temporary configuration for v0 setup and testing. Whether the provider fallback is sufficient for the first public send under all applicable requirements has not been established in this repository. Treat mailing-address clearance as a deployment-readiness item before public newsletter sending.
 
-The exact authorized address must be resolved before public newsletter sending.
+## QA status
 
-## V0 QA
+Validated locally and in beehiiv:
 
-The already-completed local end-to-end test proved:
+- native Portfilo signup submission: PASS;
+- Cloudflare Pages Function execution: PASS;
+- beehiiv API acceptance: PASS;
+- Pending confirmation state: PASS;
+- double-opt-in email delivery: PASS;
+- confirmation click: PASS;
+- Active subscriber state: PASS;
+- Portfilo website/API acquisition attribution: PASS;
+- `/confirmed` local browser experience: PASS;
+- production Astro build after architecture simplification: PASS;
+- Portfilo Brief desktop preview: PASS;
+- Portfilo Brief mobile preview: PASS;
+- long-headline wrapping: PASS;
+- one-story issue behavior: PASS;
+- optional correction treatment: PASS;
+- optional 16:9 image treatment: PASS;
+- real inbox test send: PASS, user reported;
+- published confirmation-email revision: PASS.
 
-- native Portfilo signup submission;
-- Cloudflare Pages Function execution;
-- beehiiv API acceptance;
-- Pending confirmation state;
-- beehiiv confirmation-email delivery;
-- confirmation click;
-- Active subscriber state;
-- Portfilo website/API acquisition attribution.
+A specific dark-mode pass was not separately recorded and should not be inferred from the general inbox pass.
 
-After the current simplification cleanup, require a clean production build. A full new subscription test is only necessary if the restored subscription files change again or deployment configuration differs from local QA.
-
-Before public launch, additionally verify:
+Before the first public newsletter send, additionally verify the production environment itself:
 
 - production `BEEHIIV_API_KEY` configuration;
 - production signup submission;
 - production confirmation email delivery;
 - production Opt-in Redirect URL to `/confirmed`;
 - Active subscriber after confirmation;
-- legitimate newsletter footer mailing address;
 - unsubscribe behavior;
-- sender/reply identity;
-- one real newsletter test send.
+- sender/reply identity in the deployed flow;
+- mailing-address/compliance clearance;
+- all real issue links and content;
+- final test send from the production issue.
 
 ## Architecture principle
 
 Use commodity infrastructure for commodity problems.
 
-Portfilo should spend its design and engineering effort on the publication, journalism, and recurring reader experience, not on rebuilding subscriber-confirmation infrastructure that beehiiv already provides.
+Portfilo should spend design and engineering effort on the publication, journalism, and recurring reader experience, not on rebuilding subscriber-confirmation infrastructure that beehiiv already provides.

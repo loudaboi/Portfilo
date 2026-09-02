@@ -4,19 +4,17 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Email Architecture Simplification — CODE RESTORED / BUILD QA PENDING**
+**Portfilo v0 / Email System Lock — PASS**
 
-The custom Resend/Turnstile/token confirmation experiment has been rejected as overengineering for v0 and fully removed from runtime.
+The publication foundation, content architecture, editorial design, core public pages, subscription flow, confirmation flow, and reusable Portfilo Brief v0 email system have all passed their current v0 QA.
 
-Portfilo has returned to the previously validated beehiiv-owned double-opt-in architecture.
-
-The runtime subscription files are restored exactly to the known-good pre-experiment state. The only remaining work from this correction is a clean local production build after the user pulls the latest branch.
+The next task is a deployment-readiness audit. Do not expand scope before that audit identifies a real launch blocker.
 
 Canonical email architecture:
 
 `docs/EMAIL_SYSTEM_PLAN.md`
 
-Operational beehiiv guidance:
+Operational beehiiv configuration:
 
 `docs/BEEHIIV_EMAIL_SETUP.md`
 
@@ -25,6 +23,11 @@ Operational beehiiv guidance:
 Use `build/portfilo-v0` for the v0 application build.
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
+
+Latest stable branch work before this documentation lock includes:
+
+- `6fc6638` — remove reader-facing series id;
+- prior email-architecture simplification commits restoring beehiiv-owned confirmation.
 
 ## Approved product direction
 
@@ -92,18 +95,15 @@ Primary navigation:
 
 The Portfilo wordmark links Home. The same shared header/footer system is used across public pages. Global navigation uses Instrument Sans and remains visible on mobile.
 
-User visual QA is a PASS, including:
-
-- stable navigation across routes;
-- About topic-card alignment;
-- compact `Founder / Louda Tuppal` attribution;
-- removal of legacy `Back to home` links.
+User visual QA: PASS, including stable route navigation, About topic-card alignment, compact `Founder / Louda Tuppal` attribution, and removal of legacy `Back to home` links.
 
 ## Public surfaces
 
-### Homepage `/`
+### Homepage `/` — PASS
 
-Implementation: `src/pages/index.astro`
+Implementation:
+
+`src/pages/index.astro`
 
 Approved direction:
 
@@ -117,9 +117,11 @@ Approved direction:
 
 Fixture story language remains clearly marked as preview material until launch stories are selected.
 
-### About `/about`
+### About `/about` — PASS
 
-Implementation: `src/pages/about.astro`
+Implementation:
+
+`src/pages/about.astro`
 
 Current public framing:
 
@@ -129,11 +131,13 @@ Current public framing:
 
 No founder portrait, long biography, founder letter, or unsupported ownership/independence claim should be added without a new decision.
 
-### Research & Standards `/standards`
+### Research & Standards `/standards` — PASS
 
-Implementation: `src/pages/standards.astro`
+Implementation:
 
-Substantive standards remain unchanged:
+`src/pages/standards.astro`
+
+Substantive standards remain:
 
 - Sources
 - Verification
@@ -141,34 +145,38 @@ Substantive standards remain unchanged:
 - Corrections
 - Commercial independence
 
-### Story template
+### Story template — PASS
 
-Implementation: `src/pages/stories/[slug].astro`
+Implementation:
+
+`src/pages/stories/[slug].astro`
 
 Story content, metadata, methodology, corrections, and Content Collection behavior remain intact.
 
-### Series template
+### Series template — PASS
 
-Implementation: `src/pages/series/[slug].astro`
+Implementation:
+
+`src/pages/series/[slug].astro`
 
 Series ordering and fixture behavior remain intact.
 
-Pre-launch cleanup still required:
-
-- remove reader-facing `Series ID` before public launch.
+Reader-facing `Series ID` cleanup is complete in commit `6fc6638`.
 
 Do not expand that cleanup into an unapproved Series redesign.
 
 ### Confirmation `/confirmed` — PASS
 
-Implementation: `src/pages/confirmed.astro`
+Implementation:
+
+`src/pages/confirmed.astro`
 
 Purpose:
 
 - Portfilo-owned post-double-opt-in destination;
 - transactional, not a marketing surface;
-- uses shared SiteHeader/SiteFooter;
-- marked `noindex`;
+- shared SiteHeader/SiteFooter;
+- `noindex`;
 - one confirmation statement and one CTA back to `/#latest`.
 
 Current copy:
@@ -179,11 +187,11 @@ Current copy:
 >
 > Read the latest ↗
 
-Local browser review: **PASS, user reported 2026-09-02**.
+Local browser review: PASS, user reported 2026-09-02.
 
 The route becomes the actual post-confirmation destination only after beehiiv's production Opt-in Redirect URL is configured to the stable public Portfilo domain.
 
-## Subscribe `/subscribe` — END-TO-END PASS
+### Subscribe `/subscribe` — END-TO-END PASS
 
 Visible page:
 
@@ -197,7 +205,7 @@ Local secret template:
 
 `.dev.vars.example`
 
-### Approved architecture
+Approved architecture:
 
 Portfilo renders its own native signup form and forwards the request through one narrow Cloudflare Pages Function to the official beehiiv API.
 
@@ -218,95 +226,168 @@ The function:
 - returns safe errors without exposing beehiiv credentials or raw responses;
 - stores no subscriber database in Portfilo.
 
-beehiiv owns Pending subscriber state, confirmation-token handling, double-opt-in delivery, Pending → Active transition, confirmed subscriber storage, newsletter delivery, and unsubscribe handling.
+beehiiv owns Pending state, confirmation-token handling, Pending → Active transition, confirmed subscriber storage, newsletter delivery, unsubscribe handling, and provider deliverability infrastructure.
 
-### Validated end-to-end results
+Validated local end-to-end results:
 
-The earlier real local test already proved:
+- beehiiv identity verification: PASS;
+- dedicated API key: PASS;
+- `.dev.vars` secret loading: PASS;
+- Astro production build: PASS;
+- `npx wrangler pages dev dist`: PASS;
+- Cloudflare Pages Function compilation: PASS;
+- native form submission: PASS;
+- `POST /api/subscribe`: 200 OK;
+- Portfilo pending-confirmation UI: PASS;
+- beehiiv double-opt-in email delivered: PASS;
+- confirmation completed: PASS;
+- subscriber state in beehiiv: Active;
+- acquisition source: `api: portfilo / website`.
 
-- beehiiv identity verification: PASS
-- dedicated API key: PASS
-- `.dev.vars` secret loading: PASS
-- production Astro build at that time: PASS
-- `npx wrangler pages dev dist`: PASS
-- Cloudflare Pages Function compilation: PASS
-- native form submission: PASS
-- `POST /api/subscribe`: 200 OK
-- Portfilo pending-confirmation UI: PASS
-- beehiiv double-opt-in email delivered: PASS
-- confirmation completed: PASS
-- subscriber state in beehiiv: Active
-- acquisition source: `api: portfilo / website`
+The custom Resend/Turnstile/token confirmation experiment remains rejected and removed.
 
-The runtime subscription files have now been restored exactly to that known-good implementation after the rejected custom-confirmation experiment.
+## Production build — PASS
 
-## Email architecture simplification — APPROVED
+After the simplified beehiiv-owned architecture was restored, the user pulled the branch and ran a clean production build on 2026-09-02.
 
-Canonical plan:
+Result: PASS.
 
-`docs/EMAIL_SYSTEM_PLAN.md`
+Astro completed static generation successfully, including the restored email architecture state. No Resend/Turnstile/custom-confirmation runtime dependency remains.
 
-Decision:
+## beehiiv confirmation email — PUBLISHED / PASS
 
-- keep double opt-in;
-- beehiiv owns confirmation;
-- Portfilo owns `/subscribe` and `/confirmed`;
-- do not add Resend;
-- do not add custom confirmation tokens;
-- do not add Workers KV for confirmation state;
-- do not require Turnstile unless real abuse later justifies it;
-- keep Welcome Email disabled;
-- do not rebuild newsletter infrastructure to improve one utility email's appearance.
+Double opt in remains ON.
 
-The Resend/Turnstile/custom-token experiment has been fully removed from runtime and local config templates.
+The revised beehiiv opt-in email is now intentionally published.
 
-## beehiiv confirmation email
-
-The confirmation email is a utility surface, not a major brand-design surface.
-
-Preferred minimal copy if straightforward to configure:
+Canonical copy:
 
 **Subject**
 
 `Confirm your Portfilo Brief subscription`
 
-**Body**
+**Preview text**
 
+`Confirm your email to finish subscribing.`
+
+**Visible content**
+
+> PORTFILO BRIEF / CONFIRMATION
+>
 > Confirm your subscription.
 >
 > Click below to finish signing up for Portfilo Brief.
 >
 > Confirm subscription
 
-The user currently has experimental changes in the beehiiv Opt in email editor that were shown as **Unpublished changes**.
+Design is aligned with the Portfilo Brief system using paper `#F4F0E8`, Arial structural typography, Georgia body copy, Portfilo blue `#0050A4`, ink `#171614`, muted `#69655E`, and a square blue CTA.
 
-Do not publish those experimental edits merely to finish this phase.
+Do not turn the confirmation email into a larger marketing surface.
 
-The existing published confirmation flow is functional. Deeper visual customization is not a v0 blocker.
+## Welcome email / Smart Nudge
 
-## Welcome email
-
-Keep disabled for v0.
+Welcome Email: OFF.
 
 The API remains:
 
 `send_welcome_email: false`
 
-Revisit only when real launch stories make a welcome email useful.
+Smart Nudge: OFF for v0.
 
-## Newsletter template
+Revisit only when actual subscriber behavior justifies either feature.
 
-A reusable Portfilo Brief newsletter template is still pending.
+## Portfilo Brief v0 — DESIGN + QA PASS
 
-This is a more important design surface than the confirmation email, but it should not block the current architecture cleanup/build check.
+The reusable beehiiv template is:
 
-## Mailing address
+`Portfilo Brief v0`
 
-A legitimate physical mailing address remains required before the first public Portfilo Brief send.
+Architecture:
 
-The beehiiv New York address visible during testing is a fallback, not Portfilo's address.
+- blank beehiiv Visual Editor template;
+- one column;
+- paper background;
+- Arial for structure/headlines/CTAs;
+- Georgia for editorial deks/prose;
+- no custom HTML dependency;
+- no cards, gradients, shadows, or rounded editorial containers;
+- Portfilo blue as the primary signal color;
+- correction red reserved for corrections.
 
-Do not invent an address.
+Master structure:
+
+1. `PORTFILO BRIEF` masthead;
+2. issue date;
+3. `3 px` blue editorial rule;
+4. lead story;
+5. one reusable secondary-story Section;
+6. beehiiv-managed footer.
+
+Variable issue rules:
+
+- delete the whole secondary Section for a one-story issue;
+- duplicate the whole Section for additional curated stories;
+- do not create empty sections;
+- curate rather than dump 5+ available stories into one email.
+
+Optional lead images:
+
+- default `16:9`;
+- approximately `1200 × 675` export;
+- full-column, square corners, no border/shadow;
+- live text must still carry the story if images are blocked.
+
+Optional corrections:
+
+- inserted after masthead rule and before lead story;
+- restrained `#B42318` top rule and label;
+- no red background or red CTA.
+
+Footer:
+
+- paper background;
+- Arial;
+- muted text;
+- neutral top rule;
+- blue underlined links;
+- copyright `Portfilo`;
+- beehiiv provider branding left alone for v0.
+
+QA completed:
+
+- desktop preview: PASS;
+- mobile preview: PASS;
+- long-headline wrapping: PASS;
+- one-story issue behavior: PASS;
+- optional correction treatment: PASS;
+- optional 16:9 image treatment: PASS;
+- real inbox test send: PASS, user reported;
+- revised opt-in email publication: PASS.
+
+A specific dark-mode QA result was not separately recorded.
+
+Exact settings and per-issue workflow:
+
+`docs/BEEHIIV_EMAIL_SETUP.md`
+
+## Current sender/reply settings
+
+- sender name: `Portfilo`;
+- post-author-as-sender: OFF;
+- Reply-To: `portfilo.ph@gmail.com`;
+- beehiiv/provider-managed sending remains the v0 default.
+
+Do not make custom HTML or paid-only sending/presentation features a v0 dependency.
+
+## Mailing address status
+
+The beehiiv publication address field is currently left unset. beehiiv may display its provider fallback address.
+
+That fallback is not Portfilo's own address and must not be represented as such.
+
+The user accepted the fallback for setup/testing. The repository does not establish that this is sufficient for every applicable public-sending requirement. Mailing-address/compliance clearance remains part of the deployment-readiness audit before the first public Portfilo Brief send.
+
+Do not invent an address or casually expose a private/home address.
 
 ## Zero-budget infrastructure posture
 
@@ -343,45 +424,61 @@ Local-only/generated files:
 | Editorial Taxonomy | PASS |
 | Architecture C / content-first | APPROVED |
 | Shared SiteHeader/SiteFooter | PASS |
-| About topic alignment | PASS |
-| About founder spacing | PASS |
+| Homepage | PASS |
+| About | PASS |
+| Standards | PASS |
+| Story template | PASS |
+| Series template | PASS |
+| Reader-facing Series ID cleanup | PASS |
 | `/confirmed` route | PASS, local browser QA |
 | Subscribe end-to-end | PASS, prior real local QA |
-| beehiiv double opt-in | PASS |
+| beehiiv double opt in | PASS |
 | Custom confirmation experiment | REJECTED / REMOVED |
 | Simplified runtime restoration | COMPLETE |
-| Production build after simplification | **PENDING USER RUN** |
+| Production build after simplification | PASS |
+| Published opt-in email revision | PASS |
+| Portfilo Brief reusable template | PASS |
+| Portfilo Brief desktop/mobile QA | PASS |
+| Portfilo Brief real inbox test | PASS, user reported |
 | Production Opt-in Redirect URL | PENDING stable production domain |
-| Publication mailing address | PENDING before public newsletter launch |
-| Portfilo Brief reusable template | PENDING |
-| Series ID public cleanup | PENDING before public launch |
+| Mailing-address/compliance clearance | PENDING deployment-readiness audit |
+| Production environment end-to-end email QA | PENDING deployment |
+| Real launch stories/content replacement | PENDING launch preparation |
+
+## Deployment-readiness audit scope
+
+The next phase is not another design pass. Audit what is actually required to put Portfilo online safely and coherently.
+
+The audit should verify:
+
+- deployment target and production domain;
+- Cloudflare Pages production configuration;
+- production `BEEHIIV_API_KEY` secret;
+- production `/subscribe` → beehiiv → `/confirmed` flow;
+- beehiiv Opt-in Redirect URL after the domain exists;
+- mailing-address/compliance clearance before the first public newsletter send;
+- unsubscribe behavior;
+- final sender/reply behavior;
+- analytics production configuration;
+- SEO/metadata/robots/sitemap behavior;
+- replacement/removal of fixture content;
+- real launch stories and imagery;
+- broken-link and route QA;
+- final responsive/browser QA;
+- launch rollback/recovery basics.
+
+Do not treat every possible improvement as a blocker. Separate true launch blockers from post-launch enhancements.
 
 ## Exact next task
 
-**Pull the simplified branch and run one clean production build.**
+**Run the Portfilo v0 deployment-readiness audit against the current branch and produce a prioritized blocker list before implementing more features.**
 
-From the repository root:
+The audit should end with:
 
-```powershell
-git pull origin build/portfilo-v0
-npm run build
-```
-
-Expected result:
-
-- clean Astro build;
-- `/confirmed` remains generated;
-- no Resend/Turnstile/custom-confirmation runtime errors;
-- no additional secrets required beyond the existing beehiiv key for Pages Function testing.
-
-If the build passes, record it and move forward. Do not return to the beehiiv visual editor as a blocker.
-
-## Relevant latest decisions
-
-- Subscribe native form + beehiiv API proxy: validated and retained.
-- `/confirmed`: implemented and user-approved.
-- custom Resend/Turnstile/token confirmation: researched, implemented experimentally, then rejected as overengineering and removed.
-- provider-owned beehiiv double opt-in: restored as the v0 architecture.
+- blockers that must be solved before deployment;
+- items required before the first public newsletter send;
+- safe post-launch improvements;
+- one concrete next implementation task.
 
 ## Phase handoff rule
 
