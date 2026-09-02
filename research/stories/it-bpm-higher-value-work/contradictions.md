@@ -106,6 +106,20 @@ A role advertised in August or September 2026 proves a vacancy existed, not that
 
 **Required treatment:** Avoid trend language unless supported by a longitudinal dataset.
 
+## X18 - One Concentrix posting has inconsistent experience requirements
+
+The current `2026 Workforce Management GVPKP` page says in one block that more than seven years of relevant experience with at least two years of progressive management experience is preferred. A separate Qualifications block on the same page says `3+ years of experience in a similar role`.
+
+**Required treatment:** Use the posting for its clearly described workforce-planning tasks, but do not quote or infer a single experience threshold from it in the public story.
+
+## X19 - Current sources do not give one clean exact 2025 sector headcount
+
+OECD's 2026 survey says approximately 1.8 million workers using IBPAP 2025 data, while July 2026 reporting on IBPAP's updated outlook refers to 1.9 million employees as of 2025.
+
+The difference may reflect timing, rounding, or revised data, but C009 does not need the exact number to answer its question.
+
+**Required treatment:** Remove the nonessential exact headcount from the public story rather than create false precision or a distracting data-reconciliation detour.
+
 ## Current contradiction decision
 
 The contradictions do **not** kill the story. They materially improve its framing.
