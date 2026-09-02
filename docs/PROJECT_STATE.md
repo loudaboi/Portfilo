@@ -204,7 +204,7 @@ Current packet includes:
 
 Current story outcome: `CONTINUE`.
 
-Source reconnaissance is `PASS / OUTREACH READY`, while the drafting threshold remains unmet. The packet now evaluates source reachability relative to Portfilo's current position rather than assuming large-company interviews will arrive on a launch timetable.
+Source reconnaissance is `PASS / OUTREACH READY`, while the drafting threshold remains unmet. The packet evaluates source reachability relative to Portfilo's current position rather than assuming large-company interviews will arrive on a launch timetable.
 
 C001 remains active and may pursue realistic outreach, but it must not make Portfilo's publishing schedule depend indefinitely on low-probability corporate replies.
 
@@ -220,9 +220,9 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/it-bpm-higher-value-work/`
 
-Current packet stage: research brief created. Detailed public-data/source research remains pending.
+Current packet stage: research brief created. Detailed public-data/source research is the next active reporting task.
 
-### C017 - ACTIVE / SUPPORTING / REFRAME
+### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
 
 Original planning question:
 
@@ -236,28 +236,32 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/zero-fee-merchant-payments/`
 
-The first full public-evidence pass is complete and produced a formal research outcome: `REFRAME`.
-
 Current packet includes:
 
 - `brief.md`;
 - `sources.md`;
 - `evidence.md`;
 - `contradictions.md`;
-- `notes.md`.
+- `notes.md`;
+- `implementation-basis.md`.
 
-### Why C017 reframed
+The first public-evidence pass reframed the story. A second implementation-basis audit has now substantially exhausted the currently indexed BSP/PPMI documentary route.
 
-The original incidence question assumed a sufficiently defined zero-fee small-merchant regime. Primary documents do not yet support that premise cleanly enough:
+### C017 findings now established
 
 - the 2024 BSP exposure draft proposed a `micro-merchant` definition, a PHP250,000 monthly gross-receipts threshold, and an explicit merchant-fee waiver;
-- signed Circular No. 1238 does not reproduce that definition or waiver in the reviewed text and instead says Ops-MAL merchant fees may be charged under cost-based, transparent pricing;
-- same-day BSP Memorandum No. M-2026-025 nevertheless says the lifting of the InstaPay/PESONet fee moratorium is grounded in the `implementation of zero fees for small merchant payments`;
-- current public QR/QRPh merchant pricing from GCash, Maya, and PayMongo remains nonzero, although standard rate cards do not establish the treatment of any qualifying special segment.
+- signed Circular No. 1238 does not reproduce that definition or waiver and instead permits cost-based merchant fees under Section 503.7(c);
+- same-day BSP Memorandum No. M-2026-025 nevertheless says the fee moratorium was lifted in view of the `implementation of zero fees for small merchant payments` without defining the eligibility test, payment rail, fee layer, or implementation instrument;
+- earlier BSP guidance used broader `small e-payments` language and treated zero-fee P2M payments for microenterprises as an inclusive-pricing practice rather than establishing the final 2026 mechanism;
+- current PPMI material says QR Ph P2M is free to consumers;
+- BSP's 29 July 2026 launch material separately says merchants shoulder QR Ph transaction fees;
+- current standard public merchant pricing remains nonzero for QR/QR Ph products.
 
-This is a documentary mismatch to resolve, not proof that no zero-fee implementation exists. A separate BSP, PPMI, ACH, participant, or program rule may supply the missing mechanics.
+These findings do **not** prove that no separate small-merchant zero-fee arrangement exists. They establish that Portfilo should not attribute the 2024 proposed waiver to Circular 1238 or equate consumer-side fee-free QR Ph use with universal zero merchant MDR.
 
-The economic-incidence question remains possible only after Portfilo establishes who qualifies, which payment type/rail is covered, which fee is zero, and what instrument implements the condition.
+The decisive remaining C017 source need is now a narrow written clarification from BSP and/or PPMI identifying the intended meaning and operative instrument. A broad interview campaign is unnecessary.
+
+C017 remains active while that clarification path is available, but the publishing schedule must not wait on the response.
 
 **Drafting status: DO NOT DRAFT YET.**
 
@@ -390,7 +394,7 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 | First real launch package | APPROVED |
 | C001 flagship packet | ACTIVE / CONTINUE / outreach ready, not draft ready |
 | C009 supporting packet | ACTIVE / CONTINUE / brief started |
-| C017 supporting packet | ACTIVE / REFRAME / first public-evidence pass complete |
+| C017 supporting packet | ACTIVE / REFRAME / CONTINUE / public-document route substantially exhausted |
 | C021 reserve | OPEN / QUEUED |
 | Fixture content replacement | PENDING verified launch stories |
 | Final-domain Cloudflare configuration | PENDING domain |
@@ -404,8 +408,7 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 
 ### Editorial track
 
-- resolve C017's reframed zero-fee implementation question from authoritative sources;
-- establish which merchants, payment types, and fee layers the BSP's `zero fees for small merchant payments` wording actually covers;
+- pursue a narrow BSP/PPMI clarification for C017 when approved, without blocking the publishing schedule;
 - keep C001 active with access-aware outreach/document research rather than waiting indefinitely for low-probability replies;
 - run detailed public-data/source research for C009;
 - make story decisions separately for each active packet;
@@ -433,18 +436,19 @@ Do not treat post-launch enhancements as v0 blockers.
 
 ## Exact next task
 
-**Resolve the reframed C017 question: what `zero fees for small merchant payments` actually means under the BSP's 2026 payment rules.**
+**Run the first full public-data/source research pass for C009: what `higher-value work` actually means inside Philippine IT-BPM.**
 
 Immediate priorities:
 
-1. locate an authoritative BSP, PPMI, ACH, participant, or implementation document governing the zero-fee condition;
-2. establish the operative merchant eligibility definition;
-3. identify the covered payment rail/transaction type and exact fee layer;
-4. reconcile the rule with current provider merchant-pricing documentation;
-5. determine whether the reframed C017 question can reach `PUBLISH` from public evidence or requires narrow official clarification;
-6. only then reassess the original economic-incidence question.
+1. define a defensible working taxonomy for the roles described as higher-value or AI-enabled;
+2. identify current employer career pages and job postings suitable for a structured sample;
+3. establish the skills, experience, education, and compensation fields that can be compared reliably;
+4. collect current IBPAP, official, employer, and high-quality industry evidence on the sector's stated transition;
+5. distinguish advertised roles and compensation from actual employment outcomes;
+6. build `sources.md`, `evidence.md`, `contradictions.md`, and working notes before any drafting decision;
+7. make a C009 story decision after the first public-data pass.
 
-Do not draft C017 before this implementation basis is established.
+C017 remains active for targeted clarification and C001 remains active for access-aware reporting, but neither should block this public-data assignment.
 
 ## Phase handoff rule
 
