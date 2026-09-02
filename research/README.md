@@ -4,6 +4,12 @@ Research is intentionally separate from public story content.
 
 The purpose is to preserve the messy evidence-gathering process without allowing unfinished or unverified material to leak into publishable articles.
 
+Story selection before research follows:
+
+`docs/CONTENT_PLANNING.md`
+
+The planning system decides which questions deserve research time. This workspace holds the strategy research and story evidence that follow those decisions.
+
 ## Two research layers
 
 ### 1. Editorial launch research
@@ -14,6 +20,8 @@ Answers:
 
 This is strategy research, not an article.
 
+Use `docs/CONTENT_PLANNING.md` as the decision framework.
+
 Suggested structure:
 
 ```text
@@ -23,24 +31,37 @@ research/
     ├── audience-signals.md
     ├── competitor-map.md
     ├── information-gaps.md
+    ├── candidate-stories.md
     ├── candidate-series.md
     ├── evaluation.md
     └── recommendation.md
 ```
 
-It should evaluate potential series by:
+The research should evaluate candidate stories and, where justified, candidate series by:
 
 - reader importance;
+- primary reader need;
 - information gap;
+- timing / why now;
 - evidence availability;
 - potential originality;
 - Portfilo fit;
-- shareability;
-- series depth;
-- longevity;
+- reporting feasibility;
+- useful lifespan;
+- derivative/distribution potential as a secondary consideration;
+- series depth where a series is actually justified;
 - commercial audience relevance without compromising editorial independence.
 
-The first real series should not be selected until this research is complete.
+`candidate-stories.md` is required. Do not assume that Portfilo must launch with a series.
+
+The research may recommend:
+
+- one standalone flagship;
+- several unrelated strong stories;
+- one coherent launch package;
+- a real series.
+
+The first real launch package should not be selected until this research is complete.
 
 ### 2. Individual story research
 
@@ -156,7 +177,7 @@ At minimum check:
 
 ## Research outcome
 
-Every packet should end with one explicit outcome:
+Every story packet should end with one explicit outcome:
 
 - `PUBLISH`
 - `REFRAME`
@@ -164,6 +185,8 @@ Every packet should end with one explicit outcome:
 - `KILL`
 
 Do not force research into publication merely because time has already been spent.
+
+Editorial launch research should end with a clear recommendation about the first real launch package and why the selected questions survived the planning gates.
 
 ## AI rule
 
