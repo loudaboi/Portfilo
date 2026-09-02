@@ -4,13 +4,15 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / First Story Approval - ACTIVE**
+**Portfilo v0 / First Story Publication Verification - ACTIVE**
 
 The publishing system, launch-selection system, and first launch research slate are in place.
 
-C009 is the first launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, headline/dek audit, and a fresh pre-publish editorial/currentness review.
+C009 is the first Portfilo launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, headline/dek audit, fresh pre-publish review, and explicit user publication approval.
 
-A real story content entry has been prepared with `status: draft`. It is **not published** and must remain unpublished until Louda Tuppal explicitly approves publication and the remaining technical gate passes.
+Its repository content entry is now `status: published` with `publishedAt: 2026-09-03` and `featured: false`.
+
+The remaining C009 step is technical deployment/render verification. Do not claim a fresh build, live desktop/mobile pass, or final link QA until those checks are actually completed.
 
 ## Current branch
 
@@ -177,81 +179,6 @@ Current state:
 
 The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page shows proof-of-concept at 40%. Do not use 65% as a clean factual anchor until reconciled.
 
-### C009 - ACTIVE / SUPPORTING / PUBLISH / PRE-PUBLISH EDITORIAL PASS
-
-Original question:
-
-> What does "higher-value work" actually mean inside Philippine IT-BPM?
-
-Current publishable question:
-
-> What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
-
-Topic: `Business`  
-Priority: `HIGH`  
-Packet: `research/stories/it-bpm-higher-value-work/`
-
-Research packet now includes:
-
-- `brief.md`
-- `sources.md`
-- `sample.md`
-- `evidence.md`
-- `contradictions.md`
-- `notes.md`
-- `draft.md`
-- `adversarial-review.md`
-- `fact-check.md`
-- `pre-publish-review.md`
-
-Prepared public content entry:
-
-`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
-
-Current content-entry state:
-
-`status: draft`
-
-No `publishedAt` is set. The current story route only emits entries whose status is `published`, so this story is intentionally excluded from public story routes pending approval.
-
-Completed editorial checks:
-
-- research decision: `PUBLISH`;
-- draft: complete;
-- adversarial review: complete and resolved;
-- claim audit: `PASS`;
-- editorial/copy pass: `PASS`;
-- headline/dek audit: `PASS`;
-- methodology wording: `PASS`;
-- fresh source/currentness recheck: `PASS`;
-- pre-publish editorial gate: `PASS`.
-
-Pre-publish revisions made on 2026-09-03:
-
-- upgraded the opening to a primary IBPAP source for the `capacity to capability` strategy;
-- removed a nonessential exact sector headcount because OECD and the updated IBPAP-outlook coverage do not present one clean identical 2025 figure;
-- removed a Concentrix experience-threshold claim after finding conflicting requirements on the same posting;
-- normalized the Wells Fargo example to the canonical English URL;
-- clarified sample construction and the final methodology access/check date;
-- tightened the opening, analytical-dimension wording, workforce-management section and conclusion.
-
-Main supported finding:
-
-`Higher-value work` is not one occupation or a clean synonym for non-voice, technical, or AI work. The current evidence is better explained through domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
-
-The article deliberately does **not** establish:
-
-- representative sector-wide job shares;
-- a universal wage premium;
-- specialist-role growth sufficient to absorb routine-work displacement;
-- worker-transition probabilities or timelines;
-- that every specialist role is intrinsically a better job.
-
-Visual decision: no visual is required for the first publication. Do not create a prevalence chart from the illustrative sample.
-
-**Technical pre-publish gate: PENDING.**  
-**Publication approval: PENDING USER REVIEW.**
-
 ### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
 
 Reframed question:
@@ -273,7 +200,84 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-### C021 - OPEN / FIRST RESERVE
+## C009 - PUBLISHED REPOSITORY STATE / LIVE VERIFICATION PENDING
+
+Published question:
+
+> What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
+
+Topic: `Business`  
+Role: Supporting  
+Packet: `research/stories/it-bpm-higher-value-work/`
+
+Story file:
+
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
+
+Current metadata:
+
+- `status: published`;
+- `publishedAt: 2026-09-03`;
+- `featured: false`;
+- author: `Louda Tuppal`;
+- content type: `explained`;
+- topic: `business`.
+
+Completed editorial checks:
+
+- research decision: `PUBLISH`;
+- draft: complete;
+- adversarial review: complete and resolved;
+- claim audit: `PASS`;
+- editorial/copy pass: `PASS`;
+- headline/dek audit: `PASS`;
+- methodology wording: `PASS`;
+- fresh source/currentness recheck: `PASS`;
+- pre-publish editorial gate: `PASS`;
+- user publication approval: **GRANTED 2026-09-03**;
+- repository publication state: applied.
+
+Pre-publish revisions included:
+
+- upgraded the opening to a primary IBPAP source for the `capacity to capability` strategy;
+- removed a nonessential exact sector headcount because OECD and updated IBPAP-outlook reporting did not present one clean identical 2025 figure;
+- removed a Concentrix experience-threshold claim after finding conflicting requirements on the same posting;
+- normalized the Wells Fargo example to the canonical English URL;
+- clarified sample construction and methodology check date;
+- tightened the opening, analytical wording, workforce-management section and conclusion.
+
+Main supported finding:
+
+`Higher-value work` is not one occupation or a clean synonym for non-voice, technical, or AI work. The current evidence is better explained through domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
+
+The article deliberately does **not** establish:
+
+- representative sector-wide job shares;
+- a universal wage premium;
+- specialist-role growth sufficient to absorb routine-work displacement;
+- worker-transition probabilities or timelines;
+- that every specialist role is intrinsically a better job.
+
+Visual decision: no visual is required for the first publication. Do not create a prevalence chart from the illustrative sample.
+
+### Remaining C009 technical verification
+
+A fresh local `npm run build` could not be completed from the active assistant environment because the container cannot resolve GitHub and does not have Astro/dependencies installed. No build pass is claimed.
+
+The publication commit is on the configured Cloudflare Pages production branch, so the normal Cloudflare build/deploy process is expected to run. Still verify:
+
+- deployment succeeds;
+- story route renders;
+- desktop layout;
+- mobile layout;
+- methodology module;
+- article metadata/date;
+- outbound links;
+- console/rendering errors.
+
+Homepage featuring, fixture replacement, and Portfilo Brief distribution are separate decisions and were not implied by article publication approval.
+
+## C021 - OPEN / FIRST RESERVE
 
 Question:
 
@@ -282,11 +286,11 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-Do not activate while all three active research slots remain occupied.
+C009 publication frees one substantial-research slot. Do not activate C021 automatically; choose the next assignment deliberately after the first-story technical check.
 
 ## Public product state
 
-Validated public surfaces remain:
+Validated public surfaces from prior work remain:
 
 - shared `SiteHeader` / `SiteFooter`;
 - Homepage `/`;
@@ -297,7 +301,7 @@ Validated public surfaces remain:
 - Confirmation `/confirmed`;
 - Subscribe `/subscribe` and single-purpose Cloudflare Pages subscription proxy.
 
-Fixture stories remain development/preview material until deliberately retired or replaced by approved real stories.
+The Homepage still contains fixture/preview content. C009 publication does not automatically replace that presentation because homepage integration remains a separate task.
 
 ## Email system
 
@@ -312,6 +316,8 @@ Validated state includes:
 - Smart Nudge: OFF for v0.
 
 beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and deliverability infrastructure.
+
+No C009 newsletter distribution has been authorized or sent.
 
 ## Deployment state
 
@@ -360,36 +366,32 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C009 adversarial review | PASS after revisions |
 | C009 claim audit | PASS |
 | C009 pre-publish editorial gate | PASS |
-| C009 content entry | DRAFT / NOT PUBLIC |
-| C009 technical pre-publish gate | PENDING |
-| C009 publication approval | PENDING USER APPROVAL |
+| C009 publication approval | GRANTED 2026-09-03 |
+| C009 repository content entry | PUBLISHED / `featured: false` |
+| C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
+| C009 live deployment/render QA | PENDING |
 | C017 | ACTIVE / REFRAME / CONTINUE |
-| C021 | OPEN / QUEUED |
-| Current application build after C009 draft entry | NOT YET RUN / DO NOT CLAIM PASS |
+| C021 | OPEN / QUEUED; slot now available |
 | Final-domain configuration | PENDING DOMAIN |
-
-A Markdown content entry exists for C009, so a fresh build is required before the production publication commit. No new application build is claimed at this checkpoint.
 
 ## Exact next task
 
-**Louda reviews the pre-publish-revised C009 article and decides whether to approve publication.**
+**Complete C009 technical publication verification.**
 
-Until explicit publication approval:
+Immediate checks:
 
-- keep `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` as `status: draft`;
-- do not set `publishedAt`;
-- do not mark it featured;
-- do not replace the public fixture/homepage presentation with this story;
-- do not distribute it through Portfilo Brief.
+1. confirm Cloudflare Pages successfully deployed the current production-branch publication commit;
+2. if an available local checkout is used, run `npm run build` and record the result;
+3. open the C009 story route on the temporary production deployment;
+4. inspect desktop and mobile rendering;
+5. verify publication date, methodology and story metadata;
+6. click outbound article links and check for obvious rendering/console failures;
+7. update this file and `pre-publish-review.md` to `TECHNICAL PASS` only after those checks are complete.
 
-If publication is approved, do the technical gate **before pushing a production-visible published state**:
+After that checkpoint, make two deliberate decisions rather than bundling them into publication approval:
 
-1. pull the current authoritative branch into a local/safe worktree or use a non-production preview branch;
-2. apply `status: published`, `publishedAt`, and any approved `featured` setting only in that safe validation context;
-3. run `npm run build` and fix any content/schema/rendering problems;
-4. inspect the rendered desktop/mobile story and click outbound links;
-5. only after those checks pass, commit/push the production publication state to `build/portfilo-v0`;
-6. then proceed to fixture replacement/homepage integration and Portfilo Brief distribution as separately approved.
+- whether C009 should replace the homepage fixtures / become featured;
+- which story should take the now-open research slot.
 
 ## Phase handoff rule
 
