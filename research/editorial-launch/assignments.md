@@ -19,12 +19,34 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 | ID | Role | Current research question | Topic | Planning decision | Priority | Research outcome | Research packet |
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
-| C009 | Supporting | What does "higher-value work" actually mean inside Philippine IT-BPM? | Business | PASS | HIGH | CONTINUE | `research/stories/it-bpm-higher-value-work/` |
+| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH | `research/stories/it-bpm-higher-value-work/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 
-State for C001, C009, and C017 remains `ACTIVE`.
+State for C001, C009, and C017 remains `ACTIVE`. `PUBLISH` for C009 means its evidence packet supports drafting; it does not mean a public story has been published yet.
 
-### C017 checkpoint
+## C009 checkpoint
+
+C009 is the first launch assignment to reach a `PUBLISH` story decision.
+
+The original planning question asked what `higher-value work` means inside Philippine IT-BPM. The first full public-data/source pass narrowed the publishable question to:
+
+> What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
+
+The packet now contains official Philippine skills-framework evidence and a 15-role structured illustrative sample of current employer postings.
+
+The main supported finding is that `higher-value work` is not a single occupation or a clean synonym for non-voice, technical, or AI work. In the current evidence it is better explained through observable dimensions such as domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
+
+The current story deliberately does **not** claim:
+
+- representative sector-wide job shares;
+- a universal wage premium;
+- that specialist jobs are growing fast enough to absorb routine-work displacement;
+- that frontline workers can transition into the roles on a particular timetable;
+- that every specialist role is intrinsically a better job.
+
+Next C009 step: draft from the verified packet, then adversarial review and claim audit before any public story file is created.
+
+## C017 checkpoint
 
 C017's original planning question asked who ultimately bears the cost when qualifying small-merchant payments become free to the merchant.
 
