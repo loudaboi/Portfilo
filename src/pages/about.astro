@@ -1,4 +1,7 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
 const topics = [
   {
     number: "01",
@@ -43,22 +46,7 @@ const topics = [
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">
-        <span class="wordmark__inner">
-          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a href="/#latest">Latest</a></li>
-          <li><a href="/standards">Standards</a></li>
-          <li><a href="/about" aria-current="page">About</a></li>
-          <li><a class="site-nav__subscribe" href="/subscribe">Subscribe</a></li>
-        </ul>
-      </nav>
-    </header>
+    <SiteHeader current="about" />
 
     <main id="main-content" tabindex="-1">
       <section class="about-hero" aria-labelledby="about-title">
@@ -152,12 +140,7 @@ const topics = [
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="site-footer__brand" aria-label="Portfilo">
-        <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
-      </div>
-      <a href="/">Back to home</a>
-    </footer>
+    <SiteFooter />
 
     <style>
       @font-face {
@@ -219,72 +202,13 @@ const topics = [
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .site-header,
       .about-hero,
       .about-section,
       .reader-section__inner,
-      .founder-note,
-      .site-footer {
+      .founder-note {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
-
-      .site-header {
-        padding: 1.05rem var(--gutter) 0.95rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: clamp(1.5rem, 3vw, 3.5rem);
-        align-items: center;
-        border-bottom: 1px solid var(--ink);
-      }
-      .wordmark { width: fit-content; display: inline-block; text-decoration: none; }
-      .wordmark__inner {
-        display: inline-block;
-        white-space: nowrap;
-        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-      .wordmark__port,
-      .wordmark__fi,
-      .wordmark__lo,
-      .site-footer__port,
-      .site-footer__fi,
-      .site-footer__lo { display: inline-block; }
-      .wordmark__port, .site-footer__port { color: var(--ink); }
-      .wordmark__fi, .site-footer__fi { color: var(--accent); }
-      .wordmark__lo, .site-footer__lo { color: var(--correction); }
-
-      .site-nav { justify-self: end; }
-      .site-nav ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        gap: clamp(1rem, 2vw, 2rem);
-        list-style: none;
-      }
-      .site-nav a {
-        position: relative;
-        font: 500 0.76rem/1 var(--sans);
-        text-decoration: none;
-      }
-      .site-nav a::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: -0.45rem;
-        left: 0;
-        height: 2px;
-        background: transparent;
-      }
-      .site-nav a:hover,
-      .site-nav a[aria-current="page"] { color: var(--accent); }
-      .site-nav a[aria-current="page"]::after { background: var(--accent); }
-      .site-nav__subscribe { color: var(--accent); }
 
       .about-hero {
         padding: clamp(3.8rem, 7vw, 7.5rem) var(--gutter) clamp(5rem, 9vw, 9rem);
@@ -380,7 +304,12 @@ const topics = [
         font: 500 clamp(1.65rem, 2.1vw, 2.15rem) / 1 var(--sans);
         letter-spacing: -0.045em;
       }
-      .topic-list li > p:last-child { margin: 0; color: var(--muted); font: 400 0.92rem/1.5 var(--serif); }
+      .topic-list li > p:last-child {
+        min-height: 4.5em;
+        margin: 0;
+        color: var(--muted);
+        font: 400 0.92rem/1.5 var(--serif);
+      }
 
       .reader-section { width: 100%; background: var(--ink); color: var(--paper); }
       .reader-section__inner {
@@ -456,40 +385,15 @@ const topics = [
       .founder-note {
         padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
         display: grid;
-        grid-template-columns: 2fr 10fr;
-        gap: var(--grid-gap);
+        grid-template-columns: minmax(7rem, 9rem) 1fr;
+        gap: clamp(1.5rem, 3vw, 3rem);
         align-items: baseline;
         border-top: 1px solid var(--ink);
-        border-bottom: 1px solid var(--ink);
         font: 400 0.68rem/1.55 var(--mono);
       }
       .founder-note p, .founder-note strong { margin: 0; }
       .founder-note p { color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
       .founder-note strong { font-weight: 400; }
-
-      .site-footer {
-        padding: 1.2rem var(--gutter) 1.4rem;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: var(--grid-gap);
-        align-items: end;
-        font: 400 0.64rem/1.45 var(--mono);
-      }
-      .site-footer__brand {
-        width: fit-content;
-        white-space: nowrap;
-        font: 700 1.55rem/0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-      .site-footer a {
-        justify-self: end;
-        text-decoration-color: var(--accent);
-        text-decoration-thickness: 0.1em;
-        text-underline-offset: 0.18em;
-      }
-      .site-footer a:hover { color: var(--accent); }
 
       @media (max-width: 64rem) {
         .about-hero h1 { grid-column: 2 / 13; }
@@ -501,15 +405,6 @@ const topics = [
       }
 
       @media (max-width: 50rem) {
-        .site-header { grid-template-columns: 1fr; align-items: start; padding-top: 0.9rem; }
-        .site-nav {
-          width: 100%;
-          padding-top: 0.8rem;
-          justify-self: stretch;
-          border-top: 1px solid var(--line);
-        }
-        .site-nav ul { justify-content: flex-start; gap: 0.8rem 1.3rem; }
-
         .about-hero { display: block; padding-top: 3.6rem; padding-bottom: 4.5rem; }
         .about-kicker { margin: 0 0 1.35rem; }
         .about-hero h1 { max-width: none; font-size: clamp(3.05rem, 12.7vw, 4.7rem); line-height: 0.93; text-wrap: pretty; }
@@ -525,19 +420,16 @@ const topics = [
         .topic-list li { min-height: 14rem; border-bottom: 1px solid var(--line); }
         .topic-list li:nth-child(odd) { border-left: 0; }
         .topic-list li:last-child { grid-column: 1 / -1; min-height: 11rem; border-right: 0; }
+        .topic-list li > p:last-child { min-height: 0; }
 
         .reader-section__inner { display: block; padding-top: 4rem; padding-bottom: 4.5rem; }
         .reader-section__index { margin-bottom: 2rem; }
         .reader-section h2 { max-width: 15ch; font-size: clamp(2.75rem, 11vw, 4.2rem); }
         .reader-section__statement > p { margin-top: 2rem; font-size: 1.2rem; }
         .reader-section__note { max-width: 22rem; margin-top: 3rem; }
-
-        .founder-note { grid-template-columns: 1fr 2fr; }
       }
 
       @media (max-width: 28rem) {
-        .site-nav ul { gap: 0.7rem 1rem; }
-        .site-nav a { font-size: 0.7rem; }
         .about-hero h1 { font-size: clamp(2.75rem, 13vw, 3.55rem); }
         .topic-list { display: block; }
         .topic-list li, .topic-list li:last-child {
@@ -549,8 +441,6 @@ const topics = [
         .topic-list h3 { margin-top: 2.5rem; }
         .founder-note { display: block; }
         .founder-note strong { display: block; margin-top: 0.35rem; }
-        .site-footer { display: block; }
-        .site-footer a { display: inline-block; margin-top: 1rem; }
       }
 
       @media (prefers-reduced-motion: reduce) {
