@@ -43,24 +43,17 @@ Portfilo owns:
 - confirmation endpoint;
 - post-confirmation page.
 
-Resend owns:
+Resend owns transactional confirmation-email delivery only.
 
-- transactional confirmation-email delivery only.
-
-beehiiv owns:
-
-- confirmed subscriber storage;
-- Portfilo Brief newsletter delivery;
-- unsubscribe handling;
-- newsletter operations.
+beehiiv owns confirmed subscriber storage, Portfilo Brief delivery, unsubscribe handling, and newsletter operations.
 
 There is no Portfilo subscriber database and no pending-subscriber store.
 
 ## Why no Workers KV
 
-Workers KV was evaluated for temporary confirmation tokens but rejected for this flow because it is eventually consistent; writes may take time to become visible in another Cloudflare location.
+Workers KV was evaluated for temporary confirmation tokens but rejected because it is eventually consistent. A newly written value can take time to become visible in another Cloudflare location.
 
-Portfilo instead uses a stateless encrypted token. The token contains the email and expiry inside AES-GCM authenticated encryption, so the email address is not readable from the URL and no pending state needs to be stored.
+Portfilo instead uses a stateless encrypted token. The email and expiry are inside AES-GCM authenticated encryption, so the address is not readable from the URL and no pending state needs to be stored.
 
 Reference:
 
@@ -70,7 +63,7 @@ Reference:
 
 Implementation:
 
-`functions/_lib/confirmation-token.js`
+`server/confirmation-token.js`
 
 Properties:
 
@@ -83,7 +76,7 @@ Properties:
 - no database/KV write;
 - invalid/expired tokens return to `/subscribe` with a safe status message.
 
-A replay of a still-valid link can call the confirmation endpoint again, but it cannot change the encoded email or create a different subscriber. beehiiv receives the same verified address with `reactivate_existing: true`.
+A replay of a still-valid link can call the confirmation endpoint again, but it cannot alter the encoded email or create a different subscriber. beehiiv receives the same verified address with `reactivate_existing: true`.
 
 ## Signup abuse protection
 
@@ -93,7 +86,7 @@ Implementation:
 
 - the public site key is returned at runtime by `GET /api/subscribe`;
 - the browser explicitly renders Turnstile;
-- appearance is `interaction-only`, so most readers do not see a CAPTCHA-style UI;
+- appearance is `interaction-only`, so most readers do not see CAPTCHA-style UI;
 - the token is validated server-side through Cloudflare Siteverify before any email is sent;
 - the existing honeypot remains as a cheap first filter.
 
@@ -108,7 +101,7 @@ References:
 
 Implementation:
 
-`functions/_lib/confirmation-email.js`
+`server/confirmation-email.js`
 
 Sender service:
 
@@ -147,8 +140,8 @@ Visual direction:
 - email-safe Arial/Helvetica and Georgia/Courier fallbacks;
 - single-column layout;
 - mobile adjustment below 640px;
-- plain-text fallback sent explicitly;
-- no decorative hero image, cards, gradients, or beehiiv chrome.
+- explicit plain-text fallback;
+- no decorative hero image, cards, gradients, beehiiv body copy, or beehiiv confirmation chrome.
 
 Reference:
 
@@ -178,7 +171,7 @@ POST:
 9. send Portfilo confirmation email through Resend;
 10. return the existing `Check your inbox` success state.
 
-The POST does **not** create a beehiiv subscriber.
+The POST does not create a beehiiv subscriber.
 
 ## `/api/confirm`
 
@@ -208,7 +201,11 @@ beehiiv request policy:
 }
 ```
 
-`double_opt_override` is intentionally `off` at this stage because Portfilo has already performed the confirmation step. beehiiv must not send another opt-in email.
+`double_opt_override` is intentionally `off` because Portfilo has already performed the confirmation step. beehiiv must not send another opt-in email.
+
+Reference:
+
+- https://developers.beehiiv.com/api-reference/subscriptions/create
 
 ## Post-confirmation page
 
@@ -253,11 +250,11 @@ Recommended structure:
 
 Subject lines should lead with the strongest concrete story rather than issue numbering or generic newsletter language.
 
-The confirmation email and the regular newsletter do not need to share the same implementation. Confirmation is source-controlled transactional HTML; Portfilo Brief remains a beehiiv newsletter product.
+The confirmation email and regular newsletter do not need to share an implementation. Confirmation is source-controlled transactional HTML; Portfilo Brief remains a beehiiv newsletter product.
 
 ## Mailing address
 
-A real authorized physical mailing address remains a blocker before the first public **newsletter** send.
+A real authorized physical mailing address remains a blocker before the first public newsletter send.
 
 Do not invent an address or casually publish a private/home address. The exact address choice must be verified before launch.
 
@@ -289,7 +286,7 @@ Reference:
 Before declaring the custom confirmation flow complete:
 
 - production Astro build passes;
-- Wrangler compiles both Pages Functions;
+- Wrangler compiles both Pages Functions and imported server helpers;
 - Turnstile public config loads;
 - invalid email is rejected;
 - Turnstile failure path is safe;
@@ -299,7 +296,7 @@ Before declaring the custom confirmation flow complete:
 - plain-text content is sensible;
 - confirmation CTA points to Portfilo, not beehiiv;
 - confirmation creates an Active beehiiv subscriber;
-- acquisition source remains `api: portfilo / website` or the equivalent beehiiv display;
+- acquisition source remains the Portfilo website/API attribution;
 - confirmation redirects to `/confirmed`;
 - expired/invalid token returns safely to `/subscribe`;
 - no secret is present in Git, browser HTML, screenshots, or logs.
