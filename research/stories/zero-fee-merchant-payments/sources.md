@@ -119,7 +119,7 @@ Access date for sources below: 2026-09-03 unless otherwise stated.
 
 **Current public rate:** QR Ph rack rate starts at 1.0% on the pricing page.
 
-**Important limitation:** A separate Maya QR Ph page displays different percentages for some solutions. Public pages may reflect different products, legacy copy, or different pricing bases. Do not infer one universal Maya rate without product-level clarification.
+**Important limitation:** Maya offers customized pricing. A separate Maya QR Ph page displays different percentages for some solutions. Public pages may reflect different products, legacy copy, or different pricing bases. Do not infer one universal Maya rate without product-level clarification.
 
 ## S008 - PayMongo pricing
 
@@ -178,10 +178,65 @@ Access date for sources below: 2026-09-03 unless otherwise stated.
 
 **Important limitation:** PayMongo is a regulated payment provider with commercial interests. Its interpretation is useful as a lead and cross-check, not controlling legal authority.
 
+## S013 - BSP Memorandum No. M-2023-037
+
+**Source:** Bangko Sentral ng Pilipinas  
+**URL:** https://www.bsp.gov.ph/Regulations/Issuances/2023/M-2023-037.pdf  
+**Type / tier:** Official memorandum / Tier A  
+**Date:** 2023
+
+**Why it matters:** The earlier fee moratorium said it would be lifted, subject to BSP review, once the payments industry operationalized zero fees for `small e-payments`. This wording is broader than the later phrase `small merchant payments` and helps trace how the policy framing evolved.
+
+**Important limitation:** The memorandum does not itself establish the final 2026 implementation mechanism or define a merchant-side MDR waiver.
+
+## S014 - PPMI InstaPay / QR Ph operating information
+
+**Source:** Philippine Payments Management, Inc.  
+**URL:** https://www.philpayments.org.ph/instapay  
+**Type / tier:** Payment-system operator information / Tier A for PPMI's published operating description  
+**Current page:** accessed 2026-09-03
+
+**Why it matters:** PPMI states that consumers do not pay a fee when making QR Ph P2M payments, while InstaPay QR P2P may carry a sending-institution fee.
+
+**Important limitation:** The page does not state that every merchant receives QR Ph P2M payments free of MDR or other merchant-side charges.
+
+## S015 - BSP/PPMI July 2026 digital-payment-services launch
+
+**Source:** Bangko Sentral ng Pilipinas release carried by Philippine Information Agency  
+**URL:** https://pia.gov.ph/press-release/bsp-ppmi-launch-new-digital-payment-services/  
+**Type / tier:** Official launch statement / Tier A  
+**Date:** 2026-07-29
+
+**Why it matters:** The release distinguishes QR Ph P2M from InstaPay QR P2P and says QR Ph refers to merchant payments `where merchants shoulder the transaction fees`. The statement postdates Circular 1238 and is directly relevant to merchant-side interpretation.
+
+**Important limitation:** It does not explain whether a defined small-merchant subset receives an exception under another rule or arrangement.
+
+## S016 - BSP FAQ on the 2026 QR Ph rebranding
+
+**Source:** Bangko Sentral ng Pilipinas  
+**URL:** https://www.bsp.gov.ph/Media_And_Research/Primers%20Faqs/FAQs-QR-Ph-Rebranding.pdf  
+**Type / tier:** Official FAQ / Tier A  
+**Date:** 2026
+
+**Why it matters:** BSP says the rebranding did not change QR Ph technical standards, operating rules, infrastructure, interoperability, or merchant-payment functionality. It also explains that the branding change is intended partly to reduce mistaken P2P QR use and unnecessary transfer fees.
+
+**Important limitation:** The FAQ does not define the `small merchant payments` phrase in M-2026-025.
+
+## S017 - BSP QR Ph P2M FAQ
+
+**Source:** Bangko Sentral ng Pilipinas  
+**URL:** https://www.bsp.gov.ph/Media_and_Research/Primers%20Faqs/QR_Ph_P2M_FAQs.pdf  
+**Type / tier:** Official FAQ / Tier A  
+**Date:** Earlier QR Ph P2M guidance; accessed 2026-09-03
+
+**Why it matters:** The FAQ says customers using QR Ph P2M do not pay a fee for using the facility. Its merchant-benefit discussion focuses on low-cost acceptance and avoidance of expensive POS equipment rather than stating that all merchant MDRs are zero.
+
+**Important limitation:** Older FAQ language is useful for operating interpretation but does not replace a current 2026 final implementation rule.
+
 ## Immediate source gap
 
 The public record still lacks one decisive item:
 
-> the authoritative rule, clearing arrangement, BSP/PPMI implementation document, or official explanatory text that states exactly which `small merchant payments` are zero-fee, who qualifies, which party's fee is waived, which payment rail is covered, and how the condition coexists with current public merchant MDR schedules.
+> the authoritative rule, clearing arrangement, BSP/PPMI implementation document, or official explanatory text that states exactly what `zero fees for small merchant payments` in M-2026-025 means, including which fee layer is zero, who qualifies, and how the condition coexists with current merchant-side QR Ph charges.
 
-Until that is established, the original C017 question should not assume that every qualifying small merchant is universally receiving digital payments without merchant charges.
+The currently indexed documentary route is now substantially exhausted. The next C017 evidence step should be a narrow written clarification from BSP and/or PPMI, not another broad public-source sweep.
