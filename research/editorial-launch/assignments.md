@@ -20,14 +20,15 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
+| C029 | Supporting / third launch | What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them? | Technology - provisional | PASS TO RESEARCH | MEDIUM | CONTINUE / FIELDWORK READY | `research/stories/second-question-after-headline/` |
 
-C001 and C017 are `ACTIVE`.
+C001, C017, and C029 are `ACTIVE`. C029 fills the normal v0 three-story active-research limit.
 
 ## Published launch stories
 
 | ID | Role | Published question / idea | Topic | Research outcome | Publication state | Story file |
 |---|---|---|---|---|---|---|
-| C027 | Perspective / first-feature candidate | Build things that make the next thing easier | Building | PUBLISH | `status: published`; `featured: false`; technical verification pending | `src/content/stories/build-things-that-make-the-next-thing-easier.md` |
+| C027 | Perspective / first homepage feature | Build things that make the next thing easier | Building | PUBLISH | `status: published`; `featured: true`; newest live share-readiness verification pending | `src/content/stories/build-things-that-make-the-next-thing-easier.md` |
 | C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PUBLISH | `status: published`; `featured: false`; technical live verification pending | `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` |
 
 ## C027 publication checkpoint
@@ -47,7 +48,8 @@ The development path deliberately rejected two earlier drafts before locking the
 - dedicated structure research selected a contrast-led argumentative funnel;
 - Draft v3 established the direction and received positive user review;
 - adversarial review, claim audit, editorial/copy pass and headline/dek audit produced Draft v4;
-- user explicitly approved Draft v4 for publication on 2026-09-03.
+- user explicitly approved Draft v4 for publication on 2026-09-03;
+- homepage feature authorization was later granted and `featured: true` was applied.
 
 Research packet:
 
@@ -62,11 +64,9 @@ Final public metadata:
 - author: `Louda Tuppal`;
 - publishedAt: `2026-09-03`;
 - status: `published`;
-- featured: `false`.
+- featured: `true`.
 
-`featured: false` is deliberate. Publication authorization did not also authorize homepage featuring, fixture replacement, or Portfilo Brief distribution. Those remain separate decisions.
-
-Technical publication verification is still pending. Do not claim a fresh build, final desktop/mobile render pass, or complete deployed QA until completed.
+The user has viewed the deployed article, but the newest share-readiness fixes still require live re-verification. Do not claim the newest homepage/mobile deployment is fully verified until the user confirms it.
 
 ## C009 publication checkpoint
 
@@ -106,7 +106,7 @@ The current story deliberately does **not** claim:
 
 Technical live verification remains pending. Do not claim a fresh `npm run build`, desktop/mobile render check, or final live-link QA until completed.
 
-Homepage featuring, fixture replacement, and Portfilo Brief distribution remain separate approval/implementation decisions.
+Homepage featuring and Portfilo Brief distribution remain separate approval/implementation decisions.
 
 ## C017 checkpoint
 
@@ -123,13 +123,44 @@ The second implementation-basis audit establishes that:
 
 The reframed C017 therefore remains `CONTINUE`, with one narrow BSP/PPMI clarification now the decisive remaining source need. No broad interview campaign is required and Portfilo's publishing schedule should not wait on that response.
 
+## C029 checkpoint
+
+Louda Tuppal approved Direction A, `The second question after the headline`, on 2026-09-03.
+
+The first-phase evaluation rejected a generic `Why we built Portfilo`, `news needs context`, and jargon-focused story. Post-approval research then narrowed the testable question to:
+
+> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
+
+The packet now contains:
+
+- `brief.md` - scope, hypothesis, disproof conditions, originality threshold and reporting threshold;
+- `sources.md` - current DNR, Philippine audience research, prior local qualitative work and methodological sources;
+- `evidence.md` - documentary evidence ledger;
+- `contradictions.md` - minority-AI-use, trust, sampling and causality challenges;
+- `fieldwork-plan.md` - natural encounter diary plus real-time walkthrough method;
+- `structure.md` - provisional behavior-first story architecture, explicitly blocked from drafting until fieldwork supports publication.
+
+Key documentary finding:
+
+Philippine 2026 Digital News Report coverage indicates that AI chatbots are still a minority news interface, but among weekly generative-AI news users, summaries and follow-up questions are prominent uses while trust in AI answers remains low. This supports studying the distinction between tool use, usefulness and trust, not treating AI as a replacement for journalism.
+
+Originality constraint:
+
+VERA Files already published 2024 qualitative research with 20 Filipinos aged 18-34 finding demand for news that is easier to understand and more interactive. C029 therefore must add observed behavior: the actual follow-up questions, next-step sources/tools and stopping points after real business/technology news encounters.
+
+Current outcome:
+
+`CONTINUE / FIELDWORK READY`.
+
+Drafting threshold is not met.
+
 ## First reserve
 
 | ID | Role | Question | Topic | Decision | Priority | State |
 |---|---|---|---|---|---|---|
 | C021 | First reserve | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | OPEN / QUEUED |
 
-C027's publication frees one research slot. Do **not** activate C021 automatically. Activating the next substantial research assignment remains a deliberate editorial decision.
+C029 now occupies the third active research slot. Do **not** activate C021 until an active assignment clears or is deliberately stopped.
 
 ## Passed but unassigned
 
