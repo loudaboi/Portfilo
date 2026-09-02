@@ -18,8 +18,8 @@ Runtime files:
 - `src/pages/confirmed.astro`
 - `functions/api/subscribe.js`
 - `functions/api/confirm.js`
-- `functions/_lib/confirmation-token.js`
-- `functions/_lib/confirmation-email.js`
+- `server/confirmation-token.js`
+- `server/confirmation-email.js`
 
 No npm email dependency was added. Resend is called through its REST API with `fetch`.
 
