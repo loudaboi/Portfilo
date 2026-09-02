@@ -6,9 +6,9 @@ _Last updated: 2026-09-02_
 
 **Portfilo v0 / Custom Confirmation Bridge — IMPLEMENTED / LOCAL QA PENDING**
 
-The earlier beehiiv-owned double-opt-in flow was functionally validated, but that confirmation experience has now been intentionally **SUPERSEDED**.
+The earlier beehiiv-owned double-opt-in flow was functionally validated, but that confirmation experience has been intentionally **SUPERSEDED**.
 
-The user approved a Portfilo-owned confirmation architecture after browser evaluation showed that beehiiv's opt-in editor/hosted confirmation experience did not provide the required control.
+The user approved a Portfilo-owned confirmation architecture after browser evaluation showed that beehiiv's opt-in editor and hosted confirmation experience did not provide the required control.
 
 Canonical architecture:
 
@@ -41,9 +41,7 @@ Public-brand rules:
 - Standards demonstrates editorial rigor;
 - Subscribe explains the email product only.
 
-Canonical copy guide:
-
-`docs/COPY_STYLE.md`
+Canonical copy guide: `docs/COPY_STYLE.md`.
 
 Internal editing rule:
 
@@ -142,9 +140,7 @@ The previous implementation sent the email to beehiiv immediately with `double_o
 
 That validation remains useful historical evidence for the beehiiv API credentials and publication ID, but the flow is no longer the intended runtime architecture.
 
-The old beehiiv email-setup document is retained only as a superseded decision record:
-
-`docs/BEEHIIV_EMAIL_SETUP.md`
+`docs/BEEHIIV_EMAIL_SETUP.md` is retained only as a superseded decision record.
 
 ## Custom confirmation bridge — APPROVED / IMPLEMENTED
 
@@ -167,13 +163,15 @@ The old beehiiv email-setup document is retained only as a superseded decision r
 - `src/pages/confirmed.astro`
 - `functions/api/subscribe.js`
 - `functions/api/confirm.js`
-- `functions/_lib/confirmation-token.js`
-- `functions/_lib/confirmation-email.js`
+- `server/confirmation-token.js`
+- `server/confirmation-email.js`
+
+Server-only helpers intentionally live outside `/functions` so they are imported modules rather than file-routed Pages Function endpoints.
 
 ### Architecture rules
 
 - Cloudflare Turnstile protects signup submissions and is validated server-side.
-- Turnstile browser appearance is `interaction-only` so normal readers should not see a CAPTCHA-style widget.
+- Turnstile browser appearance is `interaction-only` so normal readers should not see CAPTCHA-style UI.
 - Portfilo calls Resend directly through REST `fetch`; no npm email dependency was added.
 - Resend sends only the transactional confirmation email.
 - Confirmation tokens use stateless AES-GCM authenticated encryption through Web Crypto.
@@ -189,9 +187,7 @@ The old beehiiv email-setup document is retained only as a superseded decision r
 
 ### Portfilo confirmation email
 
-Source:
-
-`functions/_lib/confirmation-email.js`
+Source: `server/confirmation-email.js`
 
 Subject:
 
@@ -211,9 +207,7 @@ Design:
 
 ## Environment configuration
 
-Template:
-
-`.dev.vars.example`
+Template: `.dev.vars.example`
 
 Required runtime values:
 
@@ -299,8 +293,8 @@ Do not mark the custom confirmation flow PASS until steps 7–16 succeed.
 
 ## Relevant custom-confirmation commits
 
-- `25e62de68ec17ddf0c56a07db944e7ab53ec3013` - add stateless confirmation tokens
-- `fd22354b99f3c53b4a215cfbe41aedf36a5a12e1` - add Portfilo confirmation email template
+- `25e62de68ec17ddf0c56a07db944e7ab53ec3013` - initial stateless confirmation token helper
+- `fd22354b99f3c53b4a215cfbe41aedf36a5a12e1` - initial Portfilo confirmation email helper
 - `417f4a04e33ad73d99429168da76f1a31e4b80d8` - send Portfilo confirmation emails
 - `1639b270eed0a60de95eed319a35f690bf0607e6` - confirm subscribers into beehiiv
 - `f9d915921eae53ac10bda2a53a8235bffe19fd04` - protect custom signup confirmation flow
@@ -310,6 +304,13 @@ Do not mark the custom confirmation flow PASS until steps 7–16 succeed.
 - `d7568690697ad354b5427083c67c98801185505d` - adopt Portfilo-owned confirmation architecture
 - `3a4912f80b32fcf270ff5cd644d6411095ced6d8` - retire beehiiv opt-in email setup
 - `033826736c5b104f9f0e4dd07f04ff8f2a2fbf9b` - add custom confirmation setup guide
+- `a80de77fccf889dbce6dce1b64bed522bcde4d41` - move token helper outside Functions routing
+- `e2f7fc36560230be560fe75c74bfb592f9c3b0f6` - move email helper outside Functions routing
+- `02442cd18041e5725e43da06aaea060525ddaba3` - import server helpers from subscribe endpoint
+- `c0432a0752ac5da9eae0ba9908eb3475fdce57df` - import server helper from confirm endpoint
+- `3bc7baeeb620ab30ad5ebbea5ac60e6152cfbd8b` - remove routed helper copies
+- `09c6d06c2a7cc12e0a25375e0fcf4c0f7daf98b8` - correct custom confirmation setup paths
+- `f4c84106eab6c1c2485579174a6dead248664460` - finalize custom confirmation runtime paths
 
 ## Phase handoff rule
 
