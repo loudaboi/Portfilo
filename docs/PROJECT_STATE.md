@@ -4,13 +4,13 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Production Hardening — PARTIAL PASS**
+**Portfilo v0 / Launch Preparation — ACTIVE**
 
-The publication foundation, content architecture, editorial design, core public pages, subscription flow, confirmation flow, reusable Portfilo Brief v0 email system, and Task 1A site launch foundation have passed their current v0 validation.
+The publication foundation, content architecture, editorial design, core public pages, subscription flow, confirmation flow, reusable Portfilo Brief v0 email system, Task 1A site launch foundation, and Task 1B repository-side hardening have passed their current v0 validation.
 
-Task 1A adds the production-origin contract, canonical/social metadata, sitemap and robots behavior, Article structured data, custom 404, privacy surface, default social image, static security-header baseline, and Astro type/content checking.
+A live Cloudflare Pages checkpoint now also passes on the temporary production deployment at `portfilo-app.pages.dev`: the Pages project deploys from `build/portfilo-v0`, the production `BEEHIIV_API_KEY` secret is available to the Pages Function, a real signup reaches beehiiv, the double-opt-in confirmation email is delivered, confirmation completes, and the subscriber becomes Active in beehiiv.
 
-The final public domain is still intentionally unset. Task 1B repository-side hardening is complete and validated. Production account configuration and deployed end-to-end QA remain pending until the final domain and Cloudflare production settings are available.
+The final public domain is still intentionally unset. `SITE_URL` must remain unset until the canonical public domain is connected. Final-domain Cloudflare configuration, final beehiiv redirect configuration, edge rate limiting, Web Analytics verification, unsubscribe QA, and mailing-address/compliance clearance remain deployment-readiness work rather than blockers to beginning launch-content preparation.
 
 Canonical email architecture:
 
@@ -20,6 +20,10 @@ Operational beehiiv configuration:
 
 `docs/BEEHIIV_EMAIL_SETUP.md`
 
+Production Cloudflare checklist:
+
+`docs/CLOUDFLARE_PRODUCTION_SETUP.md`
+
 ## Current branch
 
 Use `build/portfilo-v0` for the v0 application build.
@@ -28,7 +32,9 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 Latest stable checkpoints include:
 
-- Task 1A site launch foundation — current checkpoint;
+- `4461647` — render link arrows consistently across platforms; user production/mobile QA PASS;
+- `84c0da9` — trigger Cloudflare production deployment used for live Pages testing;
+- `8ce33ec` — record Task 1B repository hardening;
 - `e8b53ad` — lock Portfilo Brief v0 email system;
 - `6fc6638` — remove reader-facing series id;
 - prior email-architecture simplification commits restoring beehiiv-owned confirmation.
@@ -99,7 +105,7 @@ Primary navigation:
 
 The Portfilo wordmark links Home. The same shared header/footer system is used across public pages. Global navigation uses Instrument Sans and remains visible on mobile.
 
-User visual QA: PASS, including stable route navigation, About topic-card alignment, compact `Founder / Louda Tuppal` attribution, and removal of legacy `Back to home` links.
+User visual QA: PASS, including stable route navigation, About topic-card alignment, compact `Founder / Louda Tuppal` attribution, removal of legacy `Back to home` links, and consistent non-emoji up-right link arrows on iOS after commit `4461647`.
 
 ## Public surfaces
 
@@ -193,7 +199,7 @@ Current copy:
 
 Local browser review: PASS, user reported 2026-09-02.
 
-The route becomes the actual post-confirmation destination only after beehiiv's production Opt-in Redirect URL is configured to the stable public Portfilo domain.
+The temporary Pages route is available at `https://portfilo-app.pages.dev/confirmed`. The final beehiiv Opt-in Redirect must point to the canonical production `/confirmed` route after the public domain is connected. A temporary beehiiv redirect target was identified for testing, but its saved configuration was not separately re-verified in this repository checkpoint.
 
 ### Subscribe `/subscribe` — END-TO-END PASS
 
@@ -248,6 +254,17 @@ Validated local end-to-end results:
 - subscriber state in beehiiv: Active;
 - acquisition source: `api: portfilo / website`.
 
+Validated live Cloudflare Pages results on 2026-09-02, user reported:
+
+- Cloudflare Pages project `portfilo-app`: deployed successfully;
+- temporary production URL `https://portfilo-app.pages.dev`: reachable;
+- production branch `build/portfilo-v0`: active deployment source;
+- production `BEEHIIV_API_KEY` secret: available to the deployed function;
+- native live signup: PASS;
+- beehiiv double-opt-in confirmation email: delivered;
+- confirmation: PASS;
+- beehiiv subscriber state after confirmation: Active.
+
 The custom Resend/Turnstile/token confirmation experiment remains rejected and removed.
 
 ## Site launch foundation — PASS
@@ -260,7 +277,7 @@ Implementation:
 - no production domain, `pages.dev` URL, or preview URL is hard-coded;
 - `@astrojs/sitemap` is enabled only when `SITE_URL` is present;
 - `/confirmed` and `/404` are excluded from the sitemap;
-- `src/components/SiteHead.astro` centralizes description, canonical, Open Graph, Twitter/X card metadata, sitemap discovery, and Article JSON-LD;
+- `src/components/SiteHead.astro` centralizes description, canonical, Open Graph, Twitter/X card metadata, sitemap discovery, Article JSON-LD, and the cross-platform vector treatment for small up-right link arrows;
 - story pages emit Article structured data when a canonical site origin is configured;
 - `src/pages/robots.txt.ts` emits a crawl policy and production sitemap reference when available;
 - `src/pages/404.astro` provides the custom static 404;
@@ -280,7 +297,7 @@ Security-header baseline for static Pages responses:
 - camera/geolocation/microphone disabled through `Permissions-Policy`;
 - CSP limited to `base-uri 'self'`, `form-action 'self'`, `frame-ancestors 'none'`, and `object-src 'none'`.
 
-Cloudflare Pages `_headers` applies to static responses, not Pages Functions. The existing `/api/subscribe` function continues to set its own `no-store` and `nosniff` response headers. No rate limiting or Turnstile was added in Task 1A.
+Cloudflare Pages `_headers` applies to static responses, not Pages Functions. The existing `/api/subscribe` function continues to set its own `no-store` and `nosniff` response headers.
 
 Validation completed on 2026-09-02 through an isolated GitHub Actions run:
 
@@ -300,25 +317,25 @@ Validation completed on 2026-09-02 through an isolated GitHub Actions run:
 - default social image copied to build output: PASS;
 - static `_headers` copied to build output: PASS.
 
-Still pending because they require deployment or launch content:
+Still pending because they require the final domain, production account configuration, or launch content:
 
 - final production domain;
 - production Cloudflare `SITE_URL`;
-- production `BEEHIIV_API_KEY`;
-- production beehiiv Opt-in Redirect URL;
-- production subscription/confirmation/unsubscribe QA;
+- final production beehiiv Opt-in Redirect URL;
+- Cloudflare edge rate limiting for `/api/subscribe`;
+- Cloudflare Web Analytics enablement/verification;
+- production unsubscribe QA;
 - mailing-address/compliance clearance before the first public newsletter send;
-- Cloudflare edge rate limiting for `/api/subscribe` under Task 1B;
 - replacement/removal of published development fixture content before public launch;
 - real launch stories and final editorial imagery.
 
-## Task 1B repository hardening — PASS / production account configuration pending
+## Task 1B repository hardening — PASS / final-domain configuration pending
 
 Repository-side Task 1B work is complete without adding a new runtime service.
 
 Implementation:
 
-- `functions/api/subscribe.js` now enforces the 4 KB request cap against the actual body bytes, not only the caller-supplied `Content-Length` header;
+- `functions/api/subscribe.js` enforces the 4 KB request cap against the actual body bytes, not only the caller-supplied `Content-Length` header;
 - the existing `Content-Length` check remains as an early rejection path;
 - JSON, URL-encoded form, and multipart form inputs remain supported;
 - same-origin browser checking, honeypot behavior, server-side email validation, safe errors, beehiiv double opt in, and server-only `BEEHIIV_API_KEY` behavior remain unchanged;
@@ -337,17 +354,35 @@ Validation completed on 2026-09-02 through an isolated GitHub Actions run:
 - `npm run build`: PASS;
 - build with temporary validation-only `SITE_URL`: PASS.
 
-Production account-side items remain pending because no final public domain is recorded and Cloudflare account actions were not available to this execution session after connection:
+Production account checkpoint completed on 2026-09-02:
+
+- Cloudflare account and Pages project created: PASS;
+- repository connected to Pages: PASS;
+- production branch `build/portfilo-v0`: PASS;
+- build command `npm run build`: PASS in Cloudflare deployment;
+- build output directory `dist`: PASS;
+- production `BEEHIIV_API_KEY` configured as a Cloudflare secret: PASS;
+- live signup through deployed Pages Function: PASS;
+- beehiiv double opt-in confirmation and Active transition: PASS.
+
+Final-domain/account items still pending:
 
 - connect/finalize the public domain;
-- set production `SITE_URL`;
-- set production `BEEHIIV_API_KEY`;
-- create the Cloudflare `/api/subscribe` rate-limiting rule;
+- set production `SITE_URL` only after the canonical domain is live;
+- create the Cloudflare `/api/subscribe` edge rate-limiting rule;
 - enable/verify Cloudflare Web Analytics;
-- set beehiiv's Opt-in Redirect URL to the canonical production `/confirmed` route;
-- run deployed subscription → confirmation → Active subscriber → unsubscribe QA.
+- set beehiiv's final Opt-in Redirect URL to the canonical production `/confirmed` route;
+- run final-domain subscribe → confirm → Active → unsubscribe QA.
 
 Do not add Turnstile unless deployed traffic shows a real abuse problem after the existing honeypot and edge rate limit are active.
+
+## Cross-platform link-arrow fix — PASS
+
+Commit `4461647` replaces platform-dependent rendering of the literal up-right arrow with a centrally applied vector mask in supported browsers while retaining the existing accessible/fallback markup.
+
+User production QA on iOS after Cloudflare deployment: PASS.
+
+The purpose is visual consistency only. Link destinations, semantics, and existing color behavior remain unchanged. No dependency or icon library was added.
 
 ## Production build — PASS
 
@@ -534,7 +569,7 @@ Local-only/generated files:
 | Series template | PASS |
 | Reader-facing Series ID cleanup | PASS |
 | `/confirmed` route | PASS, local browser QA |
-| Subscribe end-to-end | PASS, prior real local QA |
+| Subscribe end-to-end | PASS, local + live Cloudflare QA through Active |
 | beehiiv double opt in | PASS |
 | Custom confirmation experiment | REJECTED / REMOVED |
 | Simplified runtime restoration | COMPLETE |
@@ -555,27 +590,33 @@ Local-only/generated files:
 | Static security-header baseline | PASS |
 | Task 1B request-body hardening | PASS |
 | Dependency audit | PASS, 0 vulnerabilities on 2026-09-02 |
-| Task 1B Cloudflare production configuration | PENDING final domain/account configuration |
-| Production Opt-in Redirect URL | PENDING stable production domain |
+| Cloudflare Pages temporary production deployment | PASS, user reported |
+| Production `BEEHIIV_API_KEY` secret | PASS, live function verified by signup |
+| Live subscribe → confirm → Active flow | PASS, user reported |
+| Cross-platform link-arrow rendering | PASS, user iOS QA after deployment |
+| Task 1B final-domain Cloudflare configuration | PENDING final domain/account configuration |
+| Production Opt-in Redirect URL | PENDING final canonical domain; temporary target identified |
+| Cloudflare edge rate limiting | PENDING |
+| Cloudflare Web Analytics | PENDING verification |
+| Production unsubscribe QA | PENDING |
 | Mailing-address/compliance clearance | PENDING clearance before first public send |
-| Production environment end-to-end email QA | PENDING deployment |
 | Real launch stories/content replacement | PENDING launch preparation |
 
 ## Remaining deployment-readiness scope
 
-Task 1A resolved the repository-side launch-foundation gaps. The remaining work is production configuration, launch content, and deployed-environment QA.
+Repository-side launch foundations and the temporary live Pages email flow are validated. Remaining launch work is final-domain configuration, launch content, and final deployed-environment QA.
 
 The remaining launch process should verify:
 
-- deployment target and production domain;
-- Cloudflare Pages production configuration;
-- production `BEEHIIV_API_KEY` secret;
-- production `/subscribe` → beehiiv → `/confirmed` flow;
-- beehiiv Opt-in Redirect URL after the domain exists;
+- final production domain and custom-domain routing;
+- production `SITE_URL` after the domain is live;
+- final beehiiv Opt-in Redirect URL;
+- Cloudflare `/api/subscribe` edge rate limit;
+- Cloudflare Web Analytics;
+- final-domain subscribe → confirmation → `/confirmed` behavior;
 - mailing-address/compliance clearance before the first public newsletter send;
 - unsubscribe behavior;
 - final sender/reply behavior;
-- analytics production configuration;
 - SEO/metadata/robots/sitemap behavior;
 - replacement/removal of fixture content;
 - real launch stories and imagery;
@@ -587,19 +628,19 @@ Do not treat every possible improvement as a blocker. Separate true launch block
 
 ## Exact next task
 
-**Finish Task 1B in the production accounts after the final Portfilo domain is selected.**
+**Launch Content Preparation: select and prepare the first real Portfilo launch content package.**
 
-Use `docs/CLOUDFLARE_PRODUCTION_SETUP.md` as the execution checklist. The remaining sequence is:
+The immediate sequence is:
 
-1. connect the final public domain to Cloudflare Pages;
-2. set production `SITE_URL` to the canonical HTTPS origin;
-3. set the production `BEEHIIV_API_KEY` secret;
-4. create the `/api/subscribe` edge rate-limiting rule;
-5. enable/verify Cloudflare Web Analytics;
-6. set beehiiv's production Opt-in Redirect URL to `/confirmed`;
-7. run the production subscribe → confirm → Active → unsubscribe flow end to end.
+1. decide the initial editorial package and choose the lead story;
+2. select the supporting launch stories and their primary topics;
+3. research and produce each story under `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, and `PUBLISHING_STANDARD.md`;
+4. prepare final story imagery/graphics where editorially justified;
+5. replace or remove the synthetic development fixture content;
+6. populate the homepage with real launch content and validate hierarchy;
+7. run editorial, responsive, browser, link, and metadata QA before public launch.
 
-After Task 1B production QA passes, move to launch-content replacement and final browser/link QA.
+Final-domain Cloudflare tasks remain tracked in `docs/CLOUDFLARE_PRODUCTION_SETUP.md` and should be completed when the canonical public domain is selected and connected. They do not block starting editorial launch preparation.
 
 ## Phase handoff rule
 
