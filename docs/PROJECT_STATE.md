@@ -4,21 +4,13 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Voice & Positioning Reset — ARCHITECTURE REVIEW**
+**Portfilo v0 / Voice & Positioning Reset — ARCHITECTURE APPROVED / COPY CANDIDATE NEXT**
 
-The most recent public-copy revision was **rejected by the user during copy QA**. It must not be treated as approved direction.
+The user approved **Architecture C: Content-first / no tagline** after rejecting the previous public-copy revision during QA.
 
-The rejected revision introduced lines such as:
+The current public templates still contain the rejected implementation. They are preserved only until the next coordinated replacement is approved. Do not treat the visible `from the Philippines` copy as current direction.
 
-- `Business and tech, from the Philippines.`
-- `Business and tech make more sense when you start from here.`
-- `Some stories start here. Others start somewhere else and matter here anyway.`
-
-The user found this copy vague, over-explained, geographically forced, and recognizably AI-shaped. That assessment is authoritative for the current phase.
-
-The current public templates still contain the rejected implementation because no replacement has been approved yet. Treat them as a failed candidate preserved only until the next approved rewrite is ready.
-
-Research has now been completed for a new positioning architecture. Three architectures are documented in `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`. No public page or copy guide has been changed as a result of that research.
+The canonical copy guide has now been rewritten around the approved content-first architecture.
 
 ## Current branch
 
@@ -37,159 +29,124 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 - Series Page Foundation & Visual Design
 - Research & Standards Page
 - About Page visual direction
+- Voice & Positioning architecture research
 
-The core visual system remains approved. The current blocker is voice/positioning architecture. Research also identified that the large homepage identity hero may itself be contributing to the copy problem by creating pressure for a large brand slogan.
+## Voice reset history
 
-## Active blocker
+The previous public-copy revision was rejected because it became vague, geographically forced, over-explained, and recognizably AI-shaped.
 
-Portfilo does not yet have an approved public voice or positioning architecture.
+Rejected lines include:
 
-The previous strategy over-indexed on explaining:
+- `Practical intelligence for ambitious Filipinos.`
+- `Business and tech, from the Philippines.`
+- `Business and tech make more sense when you start from here.`
+- `Some stories start here. Others start somewhere else and matter here anyway.`
 
-- why the publication is Philippine;
-- how global stories relate back to the Philippines;
-- why the journalism is useful, evidence-aware, or trustworthy;
-- who the audience should imagine themselves to be.
+Do not iterate on these lines.
 
-This created abstract connective language instead of product clarity.
+The failure was partly structural. The existing Homepage identity hero created pressure to fill the site's largest visual moment with a large brand statement even when the publication did not need one.
 
-The new research direction is inspired primarily by **BackScoop** and other publications that reach younger readers through direct product language rather than elaborate brand manifestos.
+## Approved positioning architecture
 
-## Research result
+Canonical decision document:
 
-### BackScoop lesson
+`docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`
 
-BackScoop is the primary reference for the reset because it began with a young founder from the Philippines solving a concrete information problem and built a regional audience without making the founder's nationality or a geographic philosophy carry the brand copy.
+Canonical copy guide:
 
-Current BackScoop public copy is direct and product-led. It generally:
+`docs/COPY_STYLE.md`
 
-1. names the subject;
-2. states what the reader gets;
-3. states cadence or format;
-4. shows real stories immediately.
+### Architecture C: Content-first / no tagline
 
-Its personality comes primarily from story selection, headlines, writing, and product execution rather than from a long positioning explanation.
+Approved rules:
 
-Amanda Cua has also described the original problem in concrete terms: following Southeast Asian tech required checking too many places, and existing articles could provide a funding number without explaining the product, positioning, or problem being solved.
+- no permanent public tagline by default;
+- no geographic slogan in the masthead or hero;
+- no audience-flattering slogan;
+- the wordmark establishes the publication;
+- a small taxonomy descriptor may orient readers when useful;
+- the featured story becomes the main Homepage statement;
+- About explains the publication plainly;
+- Standards demonstrates editorial rigor;
+- Subscribe explains the email product only;
+- story selection, headlines, deks, and editorial writing carry most of the personality.
 
-Portfilo should learn from that model without copying BackScoop's exact scope, tone, or wording.
+### Temporary coverage descriptor
 
-### Other useful references
+While fixture journalism remains, the site may use functional coverage copy such as:
 
-Morning Brew uses a short reader benefit tied to a real product cadence and then moves quickly into content.
+> Business / Technology / Startups / AI / Building
 
-The Hustle uses a compact personality line and relies heavily on story selection and headlines for its voice.
+or, if a sentence is genuinely needed:
 
-The common lesson is not that Portfilo needs a cleverer slogan. It is that brand copy can be much smaller when the product and journalism do the explanatory work.
+> Stories about companies, products, markets, and the people building them.
 
-## Positioning architectures under review
+These are not permanent taglines.
 
-`docs/POSITIONING_ARCHITECTURE_EXPLORATION.md` contains three complete systems:
+## Geography rule
 
-### Architecture A — Coverage-first
+Philippine relevance remains part of Portfilo's reporting and early distribution strategy, but geography is no longer required brand copy.
 
-A conventional publication approach with no geographic philosophy and no aspirational audience label. It tells readers what Portfilo covers and keeps the rest plain.
+Do not force `Philippines`, `Filipino`, `here`, `local`, or similar wording into the masthead, hero, About, or newsletter merely to establish identity.
 
-Strength: highest immediate clarity and easiest fit with the current large hero.
+Use Philippine context when the actual subject or reporting requires it.
 
-Risk: can become a generic enlarged topic list.
-
-### Architecture B — Reader-job-first
-
-Starts from the reader problem of keeping up with and understanding fragmented business/tech information.
-
-Strength: gives Portfilo a direct reason to exist beyond taxonomy.
-
-Risk: because Portfilo does not yet publish at high frequency, a strong `keep up` promise may outrun the current product and invite more explanatory marketing copy.
-
-### Architecture C — Content-first / no tagline
-
-Removes the assumption that Portfilo needs a large public positioning sentence. The wordmark, small coverage descriptor, featured story, latest stories, About page, Standards page, and newsletter each do one job.
-
-Strength: lowest AI-copy risk, highest flexibility, and best alignment with the research.
-
-Risk: it requires reopening the function of the current large homepage identity block even though the broader visual system remains approved.
-
-### Current recommendation
-
-**Architecture C: Content-first / no tagline.**
-
-Recommended direction:
-
-- no permanent public tagline in v0;
-- no `Philippines`, `Filipino`, `here`, or geographic philosophy in the masthead/hero by default;
-- use the topic taxonomy as a small descriptor when useful, not as a mission statement;
-- make the featured story the main homepage statement;
-- keep About plain and factual;
-- keep Subscribe product-only;
-- let Standards prove rigor;
-- let story selection, headlines, and editorial writing create personality.
-
-A temporary one-line coverage descriptor may be useful while Portfilo still relies on launch fixtures, but it should not automatically become a permanent tagline.
+A global story does not need a manufactured Philippine justification to belong on Portfilo.
 
 ## Audience
 
-The intended early audience remains younger readers around the founder's peer group who are curious about business, technology, startups, AI, companies, careers, and building.
+The early audience remains younger readers around the founder's peer group who are curious about business, technology, startups, AI, companies, careers, and building.
 
-This is an internal distribution/editorial focus, not necessarily public-facing brand copy.
+This is an internal editorial/distribution focus, not a public label.
 
-Do not label the publication `Gen Z media`, `for young Filipinos`, or `for ambitious Filipinos` unless future evidence gives a concrete reason.
+Do not brand Portfilo as `Gen Z media`, `for young Filipinos`, or `for ambitious Filipinos` by default.
 
-The public copy should make the product interesting and legible without asking readers to identify with a flattering demographic label.
+## Canonical voice rules
 
-## Temporary voice reset rules
+`docs/COPY_STYLE.md` is authoritative.
 
-Until a revised copy guide is approved:
+Core internal editing rule:
 
-- prefer nouns, verbs, facts, formats, and schedules over abstractions;
-- say what the publication covers before explaining why it exists;
-- do not write geographic philosophy into the homepage hero;
-- do not explain Portfilo's global-versus-local permission in marketing copy;
-- avoid slogans built around `clarity`, `intelligence`, `insight`, `context`, `ambition`, `what matters`, `what comes next`, or `making sense` unless a specific line proves unusually strong;
-- avoid balanced mission sentences when a shorter concrete sentence works;
-- avoid symmetrical contrast slogans and repeated `not X, but Y` constructions;
-- do not claim trust, usefulness, rigor, or intelligence when the product can demonstrate them;
-- one short sentence is preferable to a paragraph that pre-answers objections;
-- allow copy to be plain when plain is stronger;
-- personality should come from specific word choice and editorial taste, not forced cleverness;
-- Standards, corrections, methodology, and disclosures remain literal and restrained.
+> **Say the thing. Then stop.**
 
-## AI-writing concern
-
-The project treats recognizably machine-shaped brand prose as a product-quality failure even when the grammar is correct.
-
-The practical editing concern is broader than detecting specific AI words. Portfilo should avoid prose that feels excessively polished, explanatory, symmetrical, generic, or structurally predictable.
-
-The rejected lines are useful negative examples because they used vague connective language (`here`) and extra bridge sentences to make an internal strategy logically complete rather than giving the reader useful information.
-
-Human-language gate for future copy:
+Human-language gate:
 
 1. Does this sentence add information?
 2. Would a normal person say it aloud?
 3. Can it be shorter without losing meaning?
-4. Is it describing the product, or explaining internal strategy?
-5. Does the reader need it before seeing a story?
+4. Is it describing the product or explaining internal strategy?
+5. Does the reader need this before seeing a story?
 6. Would removing it make the page clearer?
 
-If removal makes the page clearer, remove it.
+If removing a sentence makes the page clearer, remove it.
 
-## Exact next task
+The project treats recognizably machine-shaped brand prose as a product-quality failure even when grammar is correct.
 
-**Architecture decision only. Do not implement another public-copy rewrite yet.**
+Avoid:
 
-Review `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md` and decide whether to:
+- vague connective language;
+- geographic philosophy in marketing copy;
+- symmetrical slogans;
+- repeated `not X, but Y` structures;
+- three-part mission sentences;
+- generic claims about intelligence, clarity, trust, usefulness, or ambition;
+- explanatory bridge sentences added only to make positioning logically complete;
+- over-polished copy where every sentence sounds campaign-ready.
 
-1. approve Architecture C as the basis for v0;
-2. combine Architecture C with the strongest coverage descriptor from Architecture A;
-3. request a revision to one of the three architectures.
+## Homepage visual exception
 
-After the user approves an architecture:
+The broader visual system remains approved and frozen.
 
-1. revise `docs/COPY_STYLE.md` around the chosen architecture;
-2. decide whether the homepage identity block must be reduced/reworked;
-3. prepare a coordinated Homepage / About / Subscribe / shared-copy candidate;
-4. review that candidate before implementation;
-5. only then replace the rejected public copy.
+Architecture C specifically reopens the **function and scale of the Homepage identity block**.
+
+The next candidate may:
+
+- reduce the identity block substantially; or
+- repurpose it into the lead story/current editorial focus.
+
+Do not preserve the giant brand-headline area by inventing another slogan.
+
+Typography, wordmark, color system, 12-column grid, dark evidence module, editorial rules, and overall visual language remain approved.
 
 ## Locked editorial taxonomy
 
@@ -203,11 +160,11 @@ The v0 topics remain:
 
 One primary topic per story remains the rule. Founders are a recurring lens rather than a top-level topic. Funding/capital normally sits under Business or Startups. `Latest` remains broader than breaking news. Portfilo Brief remains the email product.
 
-The positioning reset does not reopen the taxonomy unless later research identifies a concrete problem.
+The voice reset does not reopen taxonomy.
 
 ## Brand and visual system
 
-Locked for v0 unless a concrete implementation issue appears:
+Locked unless a concrete implementation issue appears:
 
 - wordmark-first identity;
 - Instrument Sans, Source Serif 4, IBM Plex Mono;
@@ -221,8 +178,6 @@ Locked for v0 unless a concrete implementation issue appears:
 - strong typography and restrained rules;
 - no card-heavy SaaS treatment, gradients, glassmorphism, or decorative motion;
 - red remains primarily wordmark/corrections.
-
-The broad visual system remains approved. Architecture C, if approved, would specifically reopen the **function and scale of the Homepage identity block**, not the overall visual language.
 
 ## Subscribe engineering status
 
@@ -238,7 +193,7 @@ Functional Subscribe QA remains blocked on beehiiv identity verification and API
 
 Do not reintroduce the beehiiv iframe/embed.
 
-## Remaining Subscribe validation
+### Remaining Subscribe validation
 
 After beehiiv identity verification is complete:
 
@@ -249,7 +204,7 @@ After beehiiv identity verification is complete:
 - verify invalid-email and loading states;
 - complete one real double-opt-in signup;
 - confirm the subscriber appears in beehiiv;
-- run final responsive QA after the next copy revision is approved.
+- run final responsive QA after the approved copy replacement is implemented.
 
 ## Zero-budget infrastructure posture
 
@@ -263,17 +218,40 @@ Current direction remains:
 - local Markdown + Astro Content Collections;
 - no database, authentication system, custom subscriber store, custom newsletter platform, or custom analytics backend.
 
-## Next phases after the blocker is resolved
+## Exact next task
 
-1. approve a new Voice & Positioning architecture;
-2. update the canonical copy guide;
-3. prepare and approve coordinated public copy;
-4. implement Homepage / About / Subscribe / shared-copy revision;
-5. production-build and responsive copy QA;
-6. finish Subscribe credential and end-to-end QA;
-7. Global Navigation & Public Surface Integration;
-8. analytics and deployment preparation;
-9. editorial launch research and first real article.
+**Prepare a coordinated implementation candidate. Do not modify public pages yet.**
+
+The candidate must cover:
+
+1. Homepage information hierarchy and exact copy;
+2. the specific reduction or repurposing of the current Homepage identity block;
+3. About exact copy;
+4. Subscribe exact copy;
+5. shared masthead/footer language;
+6. Standards, Story, and Series shared brand language only;
+7. removal of the rejected geographic positioning from all current public surfaces.
+
+The candidate must be evaluated as a full system before implementation.
+
+Do not create another tagline exercise. The candidate should minimize copy and let the lead story do more work.
+
+After the candidate is approved:
+
+1. implement the coordinated public replacement;
+2. run production-build and responsive QA;
+3. finish Subscribe credential/end-to-end QA when the beehiiv API key is available;
+4. complete Global Navigation & Public Surface Integration;
+5. continue to analytics/deployment preparation;
+6. begin editorial launch research and the first real article.
+
+## Relevant voice-reset commits
+
+- `f348937dd6594ecdc07bbdc75f4263821c1b6071` - mark previous copy revision rejected and reopen research
+- `609dae0dae803357e5b0086b422ffa05ca40fc03` - add positioning architecture exploration
+- `4a99047bca4112fb8f89acd65d04531dc79e1d11` - record Architecture C recommendation for review
+- `a26b2cdc21b98cf6db9b8ca3a8fb85b96abdb54f` - rewrite canonical copy style around content-first architecture
+- `41576056d7b53148c25d027694ebe05609a68c12` - record approved Architecture C decision
 
 ## Validation status
 
@@ -286,12 +264,14 @@ Current direction remains:
 | Editorial Design | PASS |
 | Wordmark | PASS |
 | Editorial Taxonomy | PASS |
-| Homepage visual direction | PASS — identity-block function may reopen if Architecture C is approved |
+| Homepage visual direction | PASS, identity-block function reopened only |
 | Series visual/system | PASS |
 | Research & Standards | PASS |
 | About visual direction | PASS |
-| Latest Voice & Positioning implementation | **REJECTED** |
-| Positioning architecture research | **COMPLETE — Architecture C recommended, user decision pending** |
+| Previous Voice & Positioning implementation | REJECTED |
+| Architecture C: Content-first / no tagline | **APPROVED** |
+| Revised canonical copy guide | **UPDATED** |
+| Coordinated replacement candidate | **NEXT** |
 | Subscribe native architecture | IMPLEMENTED, credential/functional QA pending |
 
 ## Phase handoff rule
