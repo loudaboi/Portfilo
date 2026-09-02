@@ -1,34 +1,34 @@
 ---
+import { getCollection } from "astro:content";
 import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
-const latestFixtures = [
-  {
-    number: "02.1",
-    contentType: "Analysis",
-    topic: "AI",
-    title: "What does an AI product need before a company will pay for it?",
-    description:
-      "A design preview for an AI analysis. No reported findings are being presented.",
-  },
-  {
-    number: "02.2",
-    contentType: "Profile",
-    topic: "Startups",
-    title: "What can you learn from how a startup chooses its first market?",
-    description:
-      "A design preview for a startup profile. No real person or company is being represented.",
-  },
-  {
-    number: "02.3",
-    contentType: "Field notes",
-    topic: "Building",
-    title: "How do you know when a product is ready to charge for?",
-    description:
-      "A design preview for field notes. This is not a published Portfilo story.",
-  },
-] as const;
+const publishedStories = await getCollection(
+  "stories",
+  ({ data }) => data.status === "published",
+);
+
+const storiesByDate = [...publishedStories].sort(
+  (a, b) =>
+    (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+);
+
+const featuredStory =
+  storiesByDate.find(({ data }) => data.featured) ?? storiesByDate[0];
+const latestStories = storiesByDate.filter(
+  (story) => story.id !== featuredStory?.id,
+);
+
+const dateFormatter = new Intl.DateTimeFormat("en-PH", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
+const formatLabel = (value: string) => value.replaceAll("-", " ");
 ---
 
 <!doctype html>
@@ -50,109 +50,101 @@ const latestFixtures = [
         <p class="identity__descriptor">
           Stories about companies, products, markets, and the people building them.
         </p>
-
-        <aside class="fixture-note" aria-label="Homepage preview status">
-          <span>Preview mode</span>
-          <strong>Launch stories are still being selected</strong>
-          <p>
-            The story headlines on this page are design previews, not published
-            journalism.
-          </p>
-        </aside>
       </section>
 
-      <section class="feature-section" aria-labelledby="feature-title">
-        <header class="section-head">
-          <p>01 / Feature preview</p>
-          <p>Explained / Business</p>
-          <p>Not published</p>
-        </header>
+      {
+        featuredStory && (
+          <section class="feature-section" aria-labelledby="feature-title">
+            <header class="section-head">
+              <p>01 / Featured</p>
+              <p>
+                {formatLabel(featuredStory.data.contentType)} / {formatLabel(featuredStory.data.topic)}
+              </p>
+              <p>{formatDate(featuredStory.data.publishedAt)}</p>
+            </header>
 
-        <article class="feature">
-          <div class="feature__copy">
-            <p class="story-label">Feature preview / Not published</p>
-            <h1 id="feature-title">
-              What should a founder know before entering a crowded market?
-            </h1>
-            <p class="feature__dek">
-              A design preview for a future business story. No reported findings are
-              being presented.
-            </p>
-            <dl class="feature__meta">
-              <div>
-                <dt>Editorial type</dt>
-                <dd>Explained</dd>
-              </div>
-              <div>
-                <dt>Topic</dt>
-                <dd>Business</dd>
-              </div>
-              <div>
-                <dt>Status</dt>
-                <dd>Preview</dd>
-              </div>
-            </dl>
-          </div>
+            <article class="feature">
+              <div class="feature__copy">
+                <p class="story-label">Featured story</p>
+                <h1 id="feature-title">
+                  <a href={`/stories/${featuredStory.id}`}>{featuredStory.data.title}</a>
+                </h1>
+                <p class="feature__dek">{featuredStory.data.description}</p>
 
-          <aside class="evidence-panel" aria-label="Synthetic evidence panel">
-            <div class="evidence-panel__topline">
-              <span>How we think</span>
-              <span>Preview / 01</span>
-            </div>
-            <p class="evidence-panel__number" aria-hidden="true">01</p>
-            <dl>
-              <div>
-                <dt>Question</dt>
-                <dd>What are you deciding?</dd>
-              </div>
-              <div>
-                <dt>Sources</dt>
-                <dd>What do we know?</dd>
-              </div>
-              <div>
-                <dt>Limits</dt>
-                <dd>What don't we know?</dd>
-              </div>
-              <div>
-                <dt>Takeaway</dt>
-                <dd>What changes?</dd>
-              </div>
-            </dl>
-            <p class="evidence-panel__note">
-              Preview module. No data or reported findings are shown.
-            </p>
-          </aside>
-        </article>
-      </section>
+                <dl class="feature__meta">
+                  <div>
+                    <dt>Author</dt>
+                    <dd>{featuredStory.data.author}</dd>
+                  </div>
+                  <div>
+                    <dt>Editorial type</dt>
+                    <dd>{formatLabel(featuredStory.data.contentType)}</dd>
+                  </div>
+                  <div>
+                    <dt>Topic</dt>
+                    <dd>{formatLabel(featuredStory.data.topic)}</dd>
+                  </div>
+                </dl>
 
-      <section class="latest" id="latest" aria-labelledby="latest-title">
-        <header class="section-head section-head--latest">
-          <p id="latest-title">02 / Latest + selected</p>
-          <p>Story preview</p>
-          <p>Not published</p>
-        </header>
+                <a class="feature__action" href={`/stories/${featuredStory.id}`}>
+                  Read story <span aria-hidden="true">↗</span>
+                </a>
+              </div>
 
-        <div class="latest__grid">
-          {
-            latestFixtures.map((story, index) => (
-              <article
-                class:list={[
-                  "latest-story",
-                  index === 0 ? "latest-story--lead" : "latest-story--compact",
-                ]}
-              >
-                <div class="latest-story__meta">
-                  <span>{story.number}</span>
-                  <span>{story.contentType}</span>
-                  <span>{story.topic}</span>
+              <aside class="feature-panel" aria-label="Featured story cover">
+                <div class="feature-panel__topline">
+                  <span>Portfilo / {formatLabel(featuredStory.data.contentType)}</span>
+                  <span>01</span>
                 </div>
-                <h2>{story.title}</h2>
-                <p>{story.description}</p>
-              </article>
-            ))
-          }
-        </div>
-      </section>
+                <p class="feature-panel__topic">{formatLabel(featuredStory.data.topic)}</p>
+                <div class="feature-panel__bottom">
+                  <p>{featuredStory.data.author}</p>
+                  <a href={`/stories/${featuredStory.id}`} aria-label={`Read ${featuredStory.data.title}`}>
+                    Read <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </aside>
+            </article>
+          </section>
+        )
+      }
+
+      {
+        latestStories.length > 0 && (
+          <section class="latest" id="latest" aria-labelledby="latest-title">
+            <header class="section-head section-head--latest">
+              <p id="latest-title">02 / Latest</p>
+              <p>Published stories</p>
+              <p>{latestStories.length === 1 ? "1 story" : `${latestStories.length} stories`}</p>
+            </header>
+
+            <div class="latest__list">
+              {latestStories.map((story, index) => (
+                <article class="latest-story">
+                  <div class="latest-story__index">02.{index + 1}</div>
+                  <div class="latest-story__content">
+                    <div class="latest-story__meta">
+                      <span>{formatLabel(story.data.contentType)}</span>
+                      <span>{formatLabel(story.data.topic)}</span>
+                      <span>{formatDate(story.data.publishedAt)}</span>
+                    </div>
+                    <h2>
+                      <a href={`/stories/${story.id}`}>{story.data.title}</a>
+                    </h2>
+                    <p>{story.data.description}</p>
+                    <div class="latest-story__footer">
+                      <span>{story.data.author}</span>
+                      <a href={`/stories/${story.id}`}>
+                        Read story <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )
+      }
 
       <section class="institution" aria-labelledby="institution-title">
         <p class="institution__index">03 / About</p>
@@ -217,7 +209,6 @@ const latestFixtures = [
         --line: #cbc5bb;
         --accent: #0050a4;
         --accent-on-ink: #8fc7ff;
-        --correction: #b42318;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
         --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
@@ -256,7 +247,7 @@ const latestFixtures = [
       }
 
       .identity {
-        padding: clamp(2.2rem, 4vw, 3.8rem) var(--gutter) clamp(2.6rem, 4.5vw, 4.5rem);
+        padding: clamp(2.2rem, 4vw, 3.8rem) var(--gutter) clamp(2.8rem, 5vw, 5rem);
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--grid-gap);
@@ -276,22 +267,6 @@ const latestFixtures = [
         margin: 0;
         font: 400 clamp(1.15rem, 1.45vw, 1.4rem) / 1.5 var(--serif);
       }
-      .fixture-note {
-        grid-column: 1 / 5;
-        margin-top: clamp(1.5rem, 3vw, 3rem);
-        padding-top: 0.85rem;
-        border-top: 1px solid var(--line);
-        font: 400 0.68rem/1.55 var(--mono);
-      }
-      .fixture-note span {
-        display: block;
-        margin-bottom: 0.45rem;
-        color: var(--muted);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .fixture-note strong { display: block; font-weight: 400; }
-      .fixture-note p { margin: 0.55rem 0 0; color: var(--muted); }
 
       .feature-section,
       .latest,
@@ -329,15 +304,17 @@ const latestFixtures = [
         text-transform: uppercase;
       }
       .feature h1 {
-        max-width: 16ch;
+        max-width: 15ch;
         margin: 0;
         font: 500 clamp(3.6rem, 6.5vw, 7rem) / 0.91 var(--sans);
         letter-spacing: -0.065em;
         text-wrap: balance;
         overflow-wrap: break-word;
       }
+      .feature h1 a { text-decoration: none; }
+      .feature h1 a:hover { color: var(--accent); }
       .feature__dek {
-        max-width: 40rem;
+        max-width: 42rem;
         margin: clamp(2rem, 3.4vw, 3.25rem) 0 0;
         font: 400 clamp(1.2rem, 1.55vw, 1.5rem) / 1.5 var(--serif);
       }
@@ -351,15 +328,26 @@ const latestFixtures = [
         border-top: 1px solid var(--line);
         font: 400 0.67rem/1.5 var(--mono);
       }
-      .feature__meta dt, .evidence-panel dt {
+      .feature__meta dt {
         margin-bottom: 0.3rem;
         color: var(--muted);
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-      .feature__meta dd, .evidence-panel dd { margin: 0; }
+      .feature__meta dd { margin: 0; text-transform: capitalize; }
+      .feature__action {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.8rem 0 0.6rem;
+        border-top: 3px solid var(--accent);
+        border-bottom: 1px solid var(--ink);
+        font: 500 1rem/1.2 var(--sans);
+        text-decoration: none;
+      }
+      .feature__action span { color: var(--accent); }
+      .feature__action:hover { color: var(--accent); }
 
-      .evidence-panel {
+      .feature-panel {
         grid-column: 9 / 13;
         min-width: 0;
         min-height: 36rem;
@@ -369,7 +357,7 @@ const latestFixtures = [
         background: var(--ink);
         color: var(--paper);
       }
-      .evidence-panel__topline {
+      .feature-panel__topline {
         display: flex;
         justify-content: space-between;
         gap: 1rem;
@@ -378,58 +366,80 @@ const latestFixtures = [
         letter-spacing: 0.09em;
         text-transform: uppercase;
       }
-      .evidence-panel__number {
-        margin: auto 0 1.2rem;
+      .feature-panel__topic {
+        margin: auto 0 1.5rem;
         color: var(--accent-on-ink);
-        font: 500 clamp(7rem, 13vw, 13rem) / 0.72 var(--sans);
-        letter-spacing: -0.09em;
+        font: 500 clamp(4.5rem, 8vw, 8.5rem) / 0.78 var(--sans);
+        letter-spacing: -0.08em;
+        text-transform: capitalize;
+        overflow-wrap: anywhere;
       }
-      .evidence-panel dl {
-        margin: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      .feature-panel__bottom {
+        padding-top: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
         border-top: 1px solid #55524d;
+        font: 400 0.68rem/1.5 var(--mono);
       }
-      .evidence-panel dl > div {
-        min-width: 0;
-        padding: 0.85rem 0.75rem 0.85rem 0;
-        border-bottom: 1px solid #55524d;
-      }
-      .evidence-panel dl > div:nth-child(even) {
-        padding-left: 0.75rem;
-        border-left: 1px solid #55524d;
-      }
-      .evidence-panel dt { color: var(--accent-on-ink); font: 400 0.58rem/1.35 var(--mono); }
-      .evidence-panel dd { font: 400 0.78rem/1.45 var(--mono); overflow-wrap: anywhere; }
-      .evidence-panel__note { margin: 1.15rem 0 0; color: #bdb8af; font: 400 0.62rem/1.55 var(--mono); }
+      .feature-panel__bottom p { margin: 0; }
+      .feature-panel__bottom a { color: var(--accent-on-ink); text-decoration: none; }
+      .feature-panel__bottom a:hover { color: var(--paper); }
 
       .latest { padding-bottom: clamp(5rem, 8vw, 8rem); scroll-margin-top: 1rem; }
-      .latest__grid {
+      .latest__list { display: grid; }
+      .latest-story {
+        padding: clamp(2.4rem, 4vw, 4.2rem) 0;
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--grid-gap);
+        border-bottom: 1px solid var(--line);
       }
-      .latest-story { min-width: 0; padding-top: clamp(2rem, 3vw, 3rem); }
+      .latest-story__index {
+        grid-column: 1 / 3;
+        color: var(--accent);
+        font: 400 0.65rem/1.4 var(--mono);
+        letter-spacing: 0.08em;
+      }
+      .latest-story__content { grid-column: 4 / 11; min-width: 0; }
       .latest-story__meta {
         display: flex;
         flex-wrap: wrap;
         gap: 0.55rem;
-        margin-bottom: 1.1rem;
+        margin-bottom: 1.15rem;
         color: var(--muted);
         font: 400 0.62rem/1.4 var(--mono);
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
       .latest-story__meta span + span::before { content: "/"; margin-right: 0.55rem; color: var(--accent); }
-      .latest-story h2 { margin: 0; font-weight: 500; letter-spacing: -0.045em; overflow-wrap: break-word; }
-      .latest-story > p { margin: 1.2rem 0 0; color: var(--muted); font: 400 1.03rem/1.56 var(--serif); }
-      .latest-story--lead { grid-column: 1 / 8; grid-row: 1 / 3; padding-right: clamp(1rem, 3vw, 3rem); }
-      .latest-story--lead h2 { max-width: 17ch; font-size: clamp(2.4rem, 3.8vw, 4rem); line-height: 0.98; }
-      .latest-story--lead > p { max-width: 35rem; font-size: 1.15rem; }
-      .latest-story--compact { grid-column: 9 / 13; padding-bottom: clamp(2rem, 3vw, 3rem); border-bottom: 1px solid var(--line); }
-      .latest-story--compact:nth-child(2) { grid-row: 1; }
-      .latest-story--compact:nth-child(3) { grid-row: 2; }
-      .latest-story--compact h2 { font-size: clamp(1.65rem, 2.25vw, 2.3rem); line-height: 1.04; }
+      .latest-story h2 {
+        max-width: 19ch;
+        margin: 0;
+        font: 500 clamp(2.35rem, 4vw, 4.5rem) / 0.98 var(--sans);
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+      .latest-story h2 a { text-decoration: none; }
+      .latest-story h2 a:hover { color: var(--accent); }
+      .latest-story__content > p {
+        max-width: 42rem;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font: 400 clamp(1.05rem, 1.3vw, 1.2rem) / 1.58 var(--serif);
+      }
+      .latest-story__footer {
+        margin-top: 1.8rem;
+        padding-top: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-top: 1px solid var(--line);
+        font: 400 0.68rem/1.5 var(--mono);
+      }
+      .latest-story__footer a { text-decoration: none; }
+      .latest-story__footer a span { color: var(--accent); }
+      .latest-story__footer a:hover { color: var(--accent); }
 
       .institution {
         width: 100%;
@@ -514,9 +524,8 @@ const latestFixtures = [
 
       @media (max-width: 64rem) {
         .feature__copy { grid-column: 1 / 8; }
-        .evidence-panel { grid-column: 8 / 13; }
-        .latest-story--lead { grid-column: 1 / 8; }
-        .latest-story--compact { grid-column: 8 / 13; }
+        .feature-panel { grid-column: 8 / 13; }
+        .latest-story__content { grid-column: 3 / 12; }
         .institution__statement { grid-column: 3 / 10; }
         .institution__action { grid-column: 10 / 13; }
         .newsletter__copy { grid-column: 4 / 10; }
@@ -530,7 +539,6 @@ const latestFixtures = [
           padding-bottom: 3.5rem;
         }
         .identity__descriptor { max-width: 34rem; margin-top: 1.25rem; font-size: 1.2rem; }
-        .fixture-note { max-width: 24rem; margin-top: 2.4rem; }
 
         .section-head { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; }
         .section-head p:first-child, .section-head p:nth-child(2), .section-head p:last-child { grid-column: auto; }
@@ -543,15 +551,14 @@ const latestFixtures = [
         .feature__dek { font-size: 1.2rem; }
         .feature__meta { grid-template-columns: 1fr 1fr; gap: 1rem; }
         .feature__meta div:last-child { grid-column: 1 / -1; }
-        .evidence-panel { min-height: 0; margin-top: 3rem; }
-        .evidence-panel__topline { flex-wrap: wrap; row-gap: 0.35rem; }
-        .evidence-panel__number { margin: 2.25rem 0 1.75rem; font-size: clamp(6rem, 27vw, 8.5rem); line-height: 0.8; }
+        .feature-panel { min-height: 22rem; margin-top: 3rem; }
+        .feature-panel__topic { margin-top: 5rem; font-size: clamp(4rem, 20vw, 7rem); }
 
         .latest { padding-bottom: 4.75rem; }
-        .latest__grid { display: block; }
-        .latest-story--lead, .latest-story--compact { padding-right: 0; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
-        .latest-story--lead h2 { max-width: none; font-size: clamp(2.3rem, 9vw, 3.35rem); }
-        .latest-story--compact h2 { font-size: clamp(1.75rem, 7vw, 2.4rem); }
+        .latest-story { display: block; padding-top: 2.7rem; padding-bottom: 3rem; }
+        .latest-story__index { margin-bottom: 1rem; }
+        .latest-story h2 { max-width: none; font-size: clamp(2.3rem, 9vw, 3.5rem); }
+        .latest-story__footer { flex-wrap: wrap; }
 
         .institution { display: block; padding-top: 4rem; padding-bottom: 4.25rem; }
         .institution__index { margin-bottom: 2.1rem; }
@@ -568,8 +575,6 @@ const latestFixtures = [
 
       @media (max-width: 30rem) {
         .feature h1 { font-size: clamp(2.75rem, 13vw, 3.8rem); }
-        .evidence-panel dl { grid-template-columns: 1fr; }
-        .evidence-panel dl > div:nth-child(even) { padding-left: 0; border-left: 0; }
       }
 
       @media (prefers-reduced-motion: reduce) {
