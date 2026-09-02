@@ -4,11 +4,13 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Subscribe Surface & beehiiv Integration**
+**Portfilo v0 / Voice & Positioning Revision**
 
-The third-party beehiiv embed was rejected during user visual QA because its typography, spacing, borders, sizing, and mobile behavior did not integrate with the approved Portfilo design system. The user explicitly approved replacing it with a native Portfilo form backed by one narrow Cloudflare Pages Function that forwards subscriptions to beehiiv.
+The user approved a positioning and copy-strategy revision after a research-led review of Portfilo's current public voice, younger initial audience, comparable business/technology publications, and recurring patterns that make brand copy feel machine-written.
 
-The native form and server-side proxy are now committed as an implementation candidate. The Portfilo Brief API V2 Publication ID has also been verified from the user's beehiiv account and bound in the server-side proxy. The phase remains open for beehiiv API-key creation/configuration, a real end-to-end confirmed-opt-in subscription, production build, and responsive/browser QA.
+The canonical copy guide has been revised. Public page copy has **not** yet been rewritten under the new standard.
+
+Subscribe engineering remains implemented but temporarily blocked on beehiiv identity verification and API-key creation. Do not remove or redesign the native Subscribe architecture while this copy phase is active.
 
 Completed phases:
 
@@ -16,14 +18,14 @@ Completed phases:
 - Content Architecture
 - Editorial Design
 - Wordmark Exploration & Lock
-- Public Copy Style
+- Public Copy Style - initial standard
 - Editorial Taxonomy Alignment
 - Homepage Visual Design
 - Series Page Foundation & Visual Design
 - Research & Standards Page
 - About Page
 
-The story, homepage, Series, Research & Standards, and About visual directions are frozen for v0 unless a concrete implementation problem is discovered. The homepage newsletter block received only the minimum functional change required to link the approved Portfilo Brief CTA to `/subscribe` and remove its obsolete preview status.
+The story, homepage, Series, Research & Standards, About, and native Subscribe visual directions remain frozen for v0 unless a concrete implementation problem is discovered. **Copy is explicitly reopened** for Homepage, About, Subscribe, and shared brand surfaces during the current Voice & Positioning Revision.
 
 ## Current branch
 
@@ -33,62 +35,113 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Finish and validate the native public **Subscribe** surface required by `docs/V0_SCOPE.md`.
+Bring all major public brand copy into one coherent voice before navigation integration and launch work.
 
-Portfilo owns the visible signup form and its responsive interaction design. beehiiv remains the newsletter system of record for subscriber storage, confirmation, delivery, and unsubscribe handling. One Cloudflare Pages Function at `/api/subscribe` is the only approved newsletter server-side code.
+The revised copy system should feel knowledgeable, conversational, specific, and human without trying to sound young, corporate, academic, or AI-polished.
+
+## Approved positioning
+
+The approved v0 positioning line is:
+
+> **Business and tech, from the Philippines.**
+
+This replaces:
+
+> Practical intelligence for ambitious Filipinos.
+
+Do not add the retired line to new public surfaces.
+
+### Scope meaning
+
+`From the Philippines` defines Portfilo's point of view, not the geographic ceiling of its reporting.
+
+Portfilo starts from the Philippines, not necessarily with a Philippine subject.
+
+Global companies, AI systems, markets, capital, technology, and regional developments belong when the subject matters to readers here and the Philippine perspective materially improves the story.
+
+Do not force a Philippine angle where it adds nothing.
+
+## Initial audience
+
+The v0 beachhead audience is younger Filipinos who are curious about business and technology and are beginning to build careers, companies, products, or a better understanding of how these things work.
+
+This may include students, early-career operators, developers, designers, sellers, aspiring founders, and readers interested in companies, startups, AI, markets, money, and work without already belonging to an insider network.
+
+Age is not a permanent public boundary. Portfilo should not brand itself as `Gen Z media` or repeatedly call readers young.
+
+The important reader traits are **curiosity and momentum**, not a flattering label such as `ambitious`.
+
+## Canonical public copy standard
+
+`docs/COPY_STYLE.md` is canonical for public-facing copy and has been revised for the new positioning.
+
+Internal voice test:
+
+> **A smart Filipino friend who actually did the reading.**
+
+This is an editing test, not public brand copy.
+
+Core direction:
+
+- clear before clever;
+- know the subject without performing intelligence;
+- conversational without trying to sound trendy;
+- concrete nouns and active verbs before abstractions;
+- let the journalism prove that Portfilo is useful, rigorous, and trustworthy;
+- do not flatter the reader;
+- Philippine character comes from perspective and context, not decorative slang;
+- break repeated three-part mission sentences and symmetrical slogan structures;
+- avoid unnatural levels of polish where every sentence resolves like campaign copy;
+- allow specific, asymmetric, occasionally skeptical personality when earned;
+- preserve uncertainty exactly as the evidence requires.
+
+Working principle:
+
+> **Say what happened. Explain what matters. Don't perform intelligence.**
 
 ## Exact next task
 
-Complete beehiiv API credential setup and end-to-end Subscribe validation in this order:
+Perform a coordinated public-copy audit and prepare a candidate rewrite under the revised `docs/COPY_STYLE.md`.
 
-1. In beehiiv, complete the required account identity verification so API-key creation is enabled.
-2. Go to `Settings > Workspace Settings > API` and create a dedicated API key for the Portfilo website subscription endpoint. Save it securely when beehiiv shows it; the key is only displayed once. **Do not paste the API key into ChatGPT, GitHub, browser code, or any public file.**
-3. Pull the latest `build/portfilo-v0` branch.
-4. Copy `.dev.vars.example` to a local `.dev.vars` file and replace the placeholder with the private key:
+Audit in this order:
 
-   `BEEHIIV_API_KEY="<private key>"`
+1. Homepage `/`
+2. About `/about`
+3. Subscribe `/subscribe`
+4. shared masthead strapline, page titles/descriptions, and footer copy
+5. Standards `/standards` only where the retired positioning or unnecessary brand language appears
+6. Series and Story fixtures only for shared brand copy, not editorial fixture content unless required
 
-   `.dev.vars` is ignored by Git and must remain local. The Portfilo Brief API V2 Publication ID is already bound in the server-side proxy and does not need to be configured locally.
-5. Run `npm run build` and require a clean static production build.
-6. For full local API testing, run Cloudflare Pages locally against the built `dist` directory with Wrangler, for example `npx wrangler pages dev dist`. Astro's normal `npm run dev` is sufficient for visual form review but does not execute the root Cloudflare Pages Function.
-7. Open the locally served `/subscribe` page through the Wrangler server and verify the native Portfilo form renders with no beehiiv iframe/widget UI.
-8. Test invalid email handling and keyboard focus without creating a subscriber.
-9. Submit a real test email. The expected Portfilo success state is: `Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.`
-10. Confirm the beehiiv double-opt-in email arrives, complete the confirmation, and verify the subscriber appears in beehiiv with the expected state.
-11. Review `/subscribe` at desktop, intermediate/tablet, 390px, and 360px widths. The desktop form is an editorial horizontal control; mobile intentionally becomes a stacked full-width input and button rather than shrinking the desktop control.
-12. Check loading state, success state, API failure state, horizontal overflow, tap targets, visible focus, font loading, and reduced-motion behavior.
-13. Confirm the homepage Portfilo Brief link still routes to `/subscribe` and existing `/`, `/about`, `/standards`, Series, and published story routes remain acceptable.
-14. Do not mark Subscribe complete until the real confirmed-opt-in signup and final local QA pass.
+The candidate rewrite must:
 
-After Subscribe passes final local QA, perform a **Global Navigation & Public Surface Integration pass** so readers can move coherently among Home, Standards, About, Subscribe, and future story/index surfaces.
+- replace every public use of `Practical intelligence for ambitious Filipinos`;
+- use `Business and tech, from the Philippines.` sparingly rather than repeating it everywhere;
+- remove or rewrite generic symmetrical slogans such as `Clear enough to use. Careful enough to trust.`;
+- reduce repeated `report / explain / evidence / useful` brand-language loops;
+- avoid repeatedly listing all five topics when the surrounding context already establishes them;
+- make the younger beachhead audience feel welcome without naming or imitating an age cohort;
+- keep Standards, methodology, corrections, and disclosures more literal than the rest of the site;
+- preserve the approved page layouts unless copy length reveals a concrete layout problem.
 
-Do not begin analytics, deployment, or editorial launch research until the Subscribe phase is complete.
+**Do not implement the public-page rewrite until the candidate copy has been evaluated as a coherent package.**
 
-## Portfilo editorial direction
+After the revised public copy is approved and implemented, resume Subscribe credential/functional QA when the beehiiv API key is available. Then complete Global Navigation & Public Surface Integration.
 
-Portfilo helps ambitious Filipinos understand business, technology, startups, AI, and what it takes to build in the Philippines through useful, specific, evidence-aware journalism and analysis.
+## Locked primary topics
 
-Current positioning line:
+The controlled v0 story taxonomy remains:
 
-> **Practical intelligence for ambitious Filipinos**
-
-This remains the current positioning line and masthead strapline, but is not permanently frozen as the final long-term public tagline.
-
-### Locked primary topics
-
-The controlled v0 story taxonomy is:
-
-- **Business** — companies, industries, markets, business models, economics, and strategy;
-- **Technology** — software, fintech, infrastructure, platforms, devices, and emerging technology where Philippine relevance is concrete;
-- **Startups** — new companies, startup ecosystems, funding, growth, failure, acquisitions, and early-stage company development;
-- **AI** — models, products, agents, adoption, infrastructure, economics, policy, and the effects of AI on Philippine companies and work;
-- **Building** — product, distribution, sales, pricing, hiring, operations, and the practical work of creating companies and products.
+- **Business** - companies, industries, markets, business models, economics, and strategy;
+- **Technology** - software, fintech, infrastructure, platforms, devices, and emerging technology where Philippine relevance is concrete;
+- **Startups** - new companies, startup ecosystems, funding, growth, failure, acquisitions, and early-stage company development;
+- **AI** - models, products, agents, adoption, infrastructure, economics, policy, and the effects of AI on Philippine companies and work;
+- **Building** - product, distribution, sales, pricing, hiring, operations, and the practical work of creating companies and products.
 
 The Content Collection schema enforces:
 
 `business / technology / startups / ai / building`
 
-Classification rules:
+Classification rules remain:
 
 - one primary topic per story in v0;
 - AI is primary only when AI itself is the main thing the reader needs to understand;
@@ -99,27 +152,6 @@ Classification rules:
 - News is a format, not Portfilo's identity;
 - `Latest` remains broader than a breaking-news feed;
 - Portfilo Brief is the email product.
-
-## Public copy standard
-
-`docs/COPY_STYLE.md` is canonical for reader-facing copy and `AGENTS.md` requires contributors to follow it.
-
-Core rules:
-
-- clear before clever;
-- smart without academic affect;
-- confident without hype;
-- useful before self-descriptive;
-- Filipino by concrete context, not costume;
-- familiar interface language over invented brand terminology;
-- avoid generic AI/product-copy patterns and internal project language;
-- never strengthen uncertainty or factual claims for stronger copy.
-
-Working principle:
-
-> **Make the useful thing clear. Keep the personality in the precision.**
-
-For factual journalism, Copy Style does not replace the stricter Editorial, Research, and Publishing standards.
 
 ## Brand and visual system
 
@@ -140,21 +172,17 @@ Paper/black carry the publication. Blue is the active editorial accent. Red is t
 
 Do not add red merely to create numerical color balance.
 
-## Homepage Visual Design — COMPLETE
+## Homepage Visual Design - COMPLETE / COPY REOPENED
 
-Final user-reported validation on 2026-09-02 included a clean production build, correct homepage rendering, published/draft fixture behavior, desktop/mobile review, and explicit approval.
+Final user-reported visual validation on 2026-09-02 included a clean production build, correct homepage rendering, published/draft fixture behavior, desktop/mobile review, and explicit approval.
 
-Current Portfilo Brief homepage copy:
+The visual design remains closed.
 
-> **Portfilo Brief, by email.**
->
-> Get new reporting and clear explanations on business, technology, startups, AI, and building in the Philippines.
+The homepage copy is reopened because it still contains the retired positioning line and several brand sentences that do not meet the revised voice standard.
 
 During Subscribe integration, the existing `Join Portfilo Brief` action was changed from a design-preview paragraph into a real `/subscribe` link and its label changed from `Email / Preview` to `Email / Subscribe`. No homepage composition redesign was introduced.
 
-Homepage Visual Design remains closed.
-
-## Series Page Foundation & Visual Design — COMPLETE
+## Series Page Foundation & Visual Design - COMPLETE
 
 Generic route:
 
@@ -168,17 +196,15 @@ Synthetic validation route:
 
 Implementation commits:
 
-- `799f0d8ca03a72998488b7521e03c8f98559c71f` — Series Content Collection
-- `68109c0bef0d3a83194c9220a0c58a964efcb927` — synthetic Series fixture
-- `4e9c872fdb91c45cff1eebfa24e1d2fb6318ba44` — ordering fixture Part 2
-- `ea25f432125e17123553c356f3d37163a2431fda` — ordering fixture Part 3
-- `241be4fdcd783117ecd2b75af808fc5b23e29151` — generic Series page
+- `799f0d8ca03a72998488b7521e03c8f98559c71f` - Series Content Collection
+- `68109c0bef0d3a83194c9220a0c58a964efcb927` - synthetic Series fixture
+- `4e9c872fdb91c45cff1eebfa24e1d2fb6318ba44` - ordering fixture Part 2
+- `ea25f432125e17123553c356f3d37163a2431fda` - ordering fixture Part 3
+- `241be4fdcd783117ecd2b75af808fc5b23e29151` - generic Series page
 
 User-reported final QA PASS on 2026-09-02.
 
-**Series Page Foundation & Visual Design is formally closed.**
-
-## Research & Standards Page — COMPLETE
+## Research & Standards Page - COMPLETE
 
 Route:
 
@@ -188,19 +214,19 @@ Implementation file:
 
 `src/pages/standards.astro`
 
-The page translates the internal standards into reader-facing explanations of Sources, Verification, AI use, Corrections, and Commercial independence. It is static Astro with no client-side JavaScript and no new dependency.
+The page translates the internal standards into reader-facing explanations of Sources, Verification, AI use, Corrections, and Commercial independence.
 
 Implementation commits:
 
-- `df26a6df07e17324a5af7d78c018866544745e9b` — initial public Research & Standards page
-- `70c4a593aa828078c60b402510076b02eaaf4bea` — responsive/CSS compatibility refinement
-- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` — implementation candidate and QA gate
+- `df26a6df07e17324a5af7d78c018866544745e9b` - initial public Research & Standards page
+- `70c4a593aa828078c60b402510076b02eaaf4bea` - responsive/CSS compatibility refinement
+- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` - implementation candidate and QA gate
 
-User-reported final QA PASS on 2026-09-02, including a clean static production build, route generation, responsive/browser review, and explicit visual approval.
+User-reported final QA PASS on 2026-09-02.
 
-**Research & Standards Page is formally closed.**
+Standards copy should remain literal during the current voice revision. Change it only where shared/retired brand language requires correction.
 
-## About Page — COMPLETE
+## About Page - COMPLETE / COPY REOPENED
 
 Route:
 
@@ -210,49 +236,30 @@ Implementation file:
 
 `src/pages/about.astro`
 
-The page is institution-first and explains:
+The visual direction remains approved and institution-first.
 
-- what Portfilo is and does;
-- the five locked coverage areas;
-- who the publication is for;
-- why Philippine context can materially change an answer;
-- a short bridge to `/standards` for research methodology.
-
-Founder treatment is intentionally restrained. The only personal attribution is:
+Founder treatment remains restrained:
 
 > Founder / Louda Tuppal
 
-No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership claim was added.
+No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership claim should be added.
+
+The About copy is reopened because the current audience description and several institutional slogans predate the revised positioning.
 
 Implementation commits:
 
-- `3c172cf1cadf24551380fa0dc432e6283fccad8d` — initial About page
-- `402eed67aa3b4090803ec8e3a7981d4dad42a678` — reduce founder attribution and remove unsupported independence wording
+- `3c172cf1cadf24551380fa0dc432e6283fccad8d` - initial About page
+- `402eed67aa3b4090803ec8e3a7981d4dad42a678` - reduce founder attribution and remove unsupported independence wording
 
-User-reported final QA PASS on 2026-09-02.
+User-reported final visual QA PASS on 2026-09-02.
 
-**About Page is formally closed.**
+## Subscribe Surface & beehiiv Integration - NATIVE FORM IMPLEMENTED / EXTERNAL CREDENTIAL WAIT
 
-## Subscribe Surface & beehiiv Integration — NATIVE FORM IMPLEMENTED / CREDENTIAL + QA PENDING
+### Current status
 
-### Rejected embed approach
+The third-party beehiiv embed was retired after user visual QA found that its typography, border treatment, sizing, whitespace, and responsive behavior remained visibly disconnected from Portfilo.
 
-A real beehiiv inline embed was initially connected and tested visually. User QA found that its internal typography, border treatment, sizing, whitespace, and responsive behavior remained visibly disconnected from the Portfilo design system even after both Portfilo-side and beehiiv-side styling adjustments.
-
-The embed approach is therefore retired. Do not reintroduce it unless beehiiv materially changes its external-form capabilities and a future review explicitly approves it.
-
-### Approved architecture exception
-
-The user explicitly approved a narrow exception to the prior `no custom newsletter backend` rule:
-
-- Portfilo renders a native signup form;
-- `functions/api/subscribe.js` accepts only the newsletter signup request;
-- the function validates the request and sends it to beehiiv's official subscription API;
-- the beehiiv API key remains server-side only;
-- beehiiv remains the system of record;
-- no database, subscriber store, account system, newsletter sending, or unsubscribe implementation is added to Portfilo.
-
-`AGENTS.md` and `docs/V0_SCOPE.md` have been updated to record this exception and prevent scope creep.
+The user approved a native Portfilo form backed by one narrow Cloudflare Pages Function.
 
 ### Native route
 
@@ -262,19 +269,17 @@ Implementation file:
 
 `src/pages/subscribe.astro`
 
-The page now:
+The page:
 
 - uses only Portfilo HTML/CSS for the visible signup UI;
 - contains no beehiiv iframe or loader script;
-- uses Instrument Sans for the form control typography;
-- uses Portfilo paper/ink/signal-blue tokens;
-- uses square geometry rather than third-party rounded widget styling;
-- has a large editorial horizontal email control on desktop;
-- intentionally stacks input and full-width action on mobile;
+- uses Portfilo typography and tokens;
+- uses square geometry;
+- uses a horizontal editorial form on desktop and a deliberately stacked form on mobile;
 - has visible focus states;
-- has client-side invalid-email, submitting, confirmation, and API-error states;
-- uses a hidden honeypot field as a lightweight bot filter;
-- tells successful submissions to check the inbox rather than falsely claiming subscription is complete before double opt-in confirmation.
+- has invalid-email, submitting, confirmation, and API-error states;
+- uses a hidden honeypot field;
+- tells successful submissions to check the inbox rather than claiming completion before double opt-in confirmation.
 
 ### Subscription endpoint
 
@@ -289,11 +294,11 @@ The Cloudflare Pages Function:
 - validates email input server-side;
 - quietly drops honeypot submissions;
 - requires only `BEEHIIV_API_KEY` from the server-side environment;
-- binds the verified Portfilo Brief API V2 Publication ID in server code because it is a public identifier rather than a credential;
-- calls beehiiv `POST /v2/publications/:publicationId/subscriptions`;
+- binds the verified Portfilo Brief API V2 Publication ID in server code because it is a public identifier;
+- calls beehiiv's subscription API;
 - sets `double_opt_override: "on"`;
-- treats an explicit form submission as consent to reactivate a previously unsubscribed address;
-- does not expose beehiiv API errors or credentials to the browser;
+- can reactivate a previously unsubscribed address after explicit form submission;
+- exposes no beehiiv credential to the browser;
 - stores no subscriber data in Portfilo.
 
 ### Secret handling
@@ -302,25 +307,24 @@ The Cloudflare Pages Function:
 
 `.gitignore` excludes `.dev.vars` and environment-specific `.dev.vars.*` while allowing the example file to remain committed.
 
-Production secrets will later be configured in Cloudflare Pages/Workers environment settings rather than GitHub.
+Production secrets will later be configured in Cloudflare environment settings rather than GitHub.
 
-### Relevant commits in the native-form transition
+### Relevant native-form commits
 
-- `5a4e49742dd9d5a93aaba51636d83b4e03e14706` — last embed-layout refinement before the embed approach was rejected
-- `e85ed39c9bc2c432a1ca5d7d5cbfaa0f4e4148ad` — secure beehiiv subscription proxy
-- `d656fcc924aa6e5d16f05e3b27c36963fa9365da` — native Portfilo subscribe form
-- `6c9f1053325aabe14c3b0517dfc2d1cd9a602da1` — local secret template
-- `efc4597438c08ecf6664e4d47f862c33ab8798b1` — protect local Cloudflare secrets
-- `4b695ed4066c62a2776818f62c9854fe7713b422` — architecture-rule exception
-- `8503a19652e03cf351c4462c00db1b100610e041` — v0 scope alignment
-- `270a5f49031a66be404b8c0ce41504e580ecec78` — bind verified Portfilo Brief publication ID in the proxy
-- `31f4a71a0ace1bbfead539f3656054f05916374c` — reduce local configuration to the private API key only
+- `5a4e49742dd9d5a93aaba51636d83b4e03e14706` - last embed-layout refinement before rejection
+- `e85ed39c9bc2c432a1ca5d7d5cbfaa0f4e4148ad` - secure beehiiv subscription proxy
+- `d656fcc924aa6e5d16f05e3b27c36963fa9365da` - native Portfilo subscribe form
+- `6c9f1053325aabe14c3b0517dfc2d1cd9a602da1` - local secret template
+- `efc4597438c08ecf6664e4d47f862c33ab8798b1` - protect local Cloudflare secrets
+- `4b695ed4066c62a2776818f62c9854fe7713b422` - architecture-rule exception
+- `8503a19652e03cf351c4462c00db1b100610e041` - v0 scope alignment
+- `270a5f49031a66be404b8c0ce41504e580ecec78` - bind verified Portfilo Brief publication ID in the proxy
+- `31f4a71a0ace1bbfead539f3656054f05916374c` - reduce local configuration to the private API key only
 
-### Remaining validation
+### Remaining Subscribe validation
 
-Still required before closure:
+Still required after beehiiv identity verification is complete:
 
-- beehiiv account identity verification for API-key access;
 - dedicated API key creation;
 - local `.dev.vars` API-key configuration;
 - local `npm run build` PASS;
@@ -329,10 +333,10 @@ Still required before closure:
 - real subscription request PASS;
 - double-opt-in email + confirmation PASS;
 - subscriber visible in beehiiv PASS;
-- desktop/tablet/390px/360px visual QA;
+- desktop/tablet/390px/360px visual QA after revised copy is applied;
 - existing-route regression check.
 
-**Do not close this phase until the real confirmed-opt-in signup succeeds and the user reports final local QA pass.**
+Do not close Subscribe until the real confirmed-opt-in signup and final local QA pass.
 
 ## Zero-budget infrastructure posture
 
@@ -350,8 +354,9 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- Subscribe credential connection + final functional/browser QA — current phase remainder
-- global navigation / public-surface integration pass — after Subscribe
+- public copy implementation under revised positioning - current phase after candidate approval
+- Subscribe credential connection + final functional/browser QA - waiting on beehiiv identity verification
+- global navigation / public-surface integration pass
 - analytics
 - deployment
 - editorial launch research
@@ -368,13 +373,14 @@ Use free tiers while sufficient for v0 validation.
 | Content Architecture | PASS |
 | Editorial Design | PASS |
 | Wordmark Exploration & Lock | PASS |
-| Public Copy Style | PASS |
+| Initial Public Copy Style | PASS - superseded by active Voice & Positioning Revision |
+| Voice & Positioning Revision | GUIDE UPDATED - public-page rewrite pending |
 | Editorial Taxonomy Alignment | PASS |
-| Homepage Visual Design | PASS |
-| Series Page Foundation & Visual Design | PASS — final local QA + visual approval user-reported 2026-09-02 |
-| Research & Standards Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| About Page | PASS — final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED — API key + functional signup + final QA pending |
+| Homepage Visual Design | PASS - copy reopened only |
+| Series Page Foundation & Visual Design | PASS - final local QA + visual approval user-reported 2026-09-02 |
+| Research & Standards Page | PASS - final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
+| About Page | PASS - visual design retained, copy reopened |
+| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED - API key + revised copy + functional signup + final QA pending |
 
 ## Phase handoff rule
 
