@@ -8,12 +8,12 @@ This ledger records candidate claims for C009. `VERIFIED` means the narrow claim
 
 **Candidate claim:** The Philippine IT-BPM sector remains concentrated in contact-centre/back-office work while also containing GCC, healthcare-information-management and IT/software segments described as higher value.
 
-**Evidence:** OECD's 2026 Philippines survey says the sector employs about 1.8 million workers and that employment is concentrated in business-process outsourcing/contact-centre and back-office operations while diversifying into higher-value segments including GCCs, healthcare information management, and IT/software.
+**Evidence:** OECD's 2026 Philippines survey says employment is concentrated in business-process outsourcing/contact-centre and back-office operations while diversifying into higher-value segments including GCCs, healthcare information management, and IT/software.
 
 **Source:** S001  
 **Tier:** B  
 **Confidence:** HIGH for OECD's description  
-**Caveat:** `Higher-value` is not a standardized occupation category and the composition data relies partly on IBPAP.  
+**Caveat:** `Higher-value` is not a standardized occupation category and the composition data relies partly on IBPAP. OECD also reports an approximate headcount, but C009 omits the exact figure because newer IBPAP-outlook reporting presents a different 2025 rounded total and the number is not needed for this story.  
 **Status:** VERIFIED / QUALIFY
 
 ## E02
@@ -34,7 +34,7 @@ This ledger records candidate claims for C009. `VERIFIED` means the narrow claim
 
 **Evidence:** The Philippine Skills Framework for Contact Center and BPM defines six tracks: Customer Service and Support, Quality Assurance, Workforce Management, Business Transition and Transformation, Security, and Learning and Development.
 
-**Source:** S004  
+**Source:** S004, S026  
 **Tier:** A  
 **Confidence:** HIGH  
 **Caveat:** Framework tracks do not establish how many people work in each track.  
@@ -46,7 +46,7 @@ This ledger records candidate claims for C009. `VERIFIED` means the narrow claim
 
 **Evidence:** The Global In-House Center skills framework maps IT, HR, supply chain management, service-center governance and financial shared services and includes competencies in analytics, finance, risk, regulatory compliance, change management and stakeholder management.
 
-**Source:** S005  
+**Source:** S005, S026  
 **Tier:** A  
 **Confidence:** HIGH  
 **Caveat:** Framework evidence, not vacancy or salary evidence.  
@@ -145,7 +145,7 @@ This ledger records candidate claims for C009. `VERIFIED` means the narrow claim
 **Source:** S021, S022, S024  
 **Tier:** A  
 **Confidence:** HIGH for role existence; HIGH for detailed responsibilities where public text is available  
-**Caveat:** These roles differ greatly in seniority and should not be collapsed into one occupation.  
+**Caveat:** These roles differ greatly in seniority and should not be collapsed into one occupation. The Concentrix page contains inconsistent experience-threshold language, so C009 uses its task evidence but not a single experience requirement.  
 **Status:** VERIFIED
 
 ## E13
@@ -188,17 +188,17 @@ This ledger records candidate claims for C009. `VERIFIED` means the narrow claim
 
 **Candidate claim:** Current industry strategy explicitly says future growth should depend more on capability/value per worker and less on simple headcount expansion.
 
-**Evidence:** Newsbytes reports IBPAP's July 2026 revised outlook and `capacity to capability` framing, including that future growth would depend less on headcount and more on value created per worker.
+**Evidence:** IBPAP's official July 17, 2026 2028-outlook article says the industry's next phase will be driven less by workforce scale and increasingly by higher-value capabilities and AI-enabled talent, describes the change as `capacity to capability`, and says revenue per worker will become a more important competitiveness measure. Newsbytes independently reports the same IBPAP framing.
 
-**Source:** S009  
-**Tier:** B for reporting, underlying claim from IBPAP  
-**Confidence:** HIGH that IBPAP made the claim  
+**Source:** S025 primary; S009 cross-check  
+**Tier:** A for IBPAP's strategy; B for independent reporting  
+**Confidence:** HIGH that IBPAP made and currently advances the claim  
 **Caveat:** Strategy is not outcome. `Value per worker` must not be translated into higher wages, better job quality, or proven productivity gains without evidence.  
-**Status:** VERIFIED AS REPORTED CLAIM
+**Status:** VERIFIED AS ATTRIBUTED INDUSTRY CLAIM
 
 ## Current evidence decision
 
-The first public-data/source pass supports a **narrower, publishable explanation** of the original question.
+The public-data/source pass and pre-publish recheck support a **narrower, publishable explanation** of the original question.
 
 The strongest supported finding is:
 
@@ -206,4 +206,4 @@ The strongest supported finding is:
 
 The evidence does **not** support claims that these roles already dominate hiring, grow fast enough to absorb routine-work displacement, or universally pay more.
 
-Recommended research outcome after the first pass: `PUBLISH`, with the narrowed scope and limitations recorded in `brief.md` and `notes.md`.
+Current research outcome: `PUBLISH`, with the narrowed scope and limitations recorded in `brief.md`, `notes.md`, `fact-check.md`, and `pre-publish-review.md`.
