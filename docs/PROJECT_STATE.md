@@ -10,7 +10,7 @@ The publishing system, launch-selection system, and first launch research slate 
 
 C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
 
-C027 remains the active featured-story candidate, but its first draft has been rejected. A fresh topic-and-structure review selected a narrower reader-centered idea, and Draft v2 is now ready for user review. Nothing for C027 is public.
+C027 remains the active featured-story candidate. Draft v1 was rejected, Draft v2 is now treated only as an experiment, and a broader topic-space research pass has produced a two-idea shortlist. No new draft should be written until one message is explicitly approved. Nothing for C027 is public.
 
 C009's full technical deployment/render checklist is still not recorded as complete. Do not claim a fresh local build, final desktop/mobile pass, or exhaustive live-link QA until those checks are actually completed.
 
@@ -200,11 +200,7 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / REFRAME-DRAFT V2
-
-Current reader question:
-
-> What is a first project actually for when you are still figuring out what you can build and where you want to go?
+### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / TOPIC SHORTLIST
 
 Topic: `Building`  
 Likely content type: `Perspective`  
@@ -212,7 +208,7 @@ Primary reader need: `Interpret`
 Priority: `HIGH`  
 Packet: `research/stories/building-the-foundation/`
 
-C027 was deliberately reframed away from a personal `grind` story. It should share a perspective readers can map onto themselves, not narrate Louda Tuppal's life or present Portfilo as a personal blog.
+C027 should share a perspective readers can map onto themselves. It should not narrate Louda Tuppal's life, function as a personal blog post, or force every discovery input into one story.
 
 #### Draft v1 decision
 
@@ -226,58 +222,62 @@ Review:
 
 `research/stories/building-the-foundation/draft-v1-review.md`
 
-#### Topic + structure reset
+#### Draft v2 status
 
-Fresh craft and topic research reviewed Longreads, Nieman Storyboard, Paul Graham, Morgan Housel, current 2026 builder coverage, and early-builder community signals.
+Draft v2 proved that a single-thread essay is substantially clearer, but its selected thesis is no longer treated as locked.
 
-Research:
-
-`research/stories/building-the-foundation/topic-structure-research.md`
-
-The selected writing discipline is:
-
-- one clear thread;
-- main tension near the top;
-- a single-thread funnel from tension to reframe to concrete development to counterargument to resolution;
-- concrete situations instead of a multi-part abstract framework;
-- exclude material merely because it was mentioned during discovery.
-
-AI is deliberately not central to Draft v2. Current 2026 commentary already heavily covers AI making execution easier, and that thread weakened C027's clarity.
-
-#### Selected C027 idea
+Draft v2 explored:
 
 > An early project does not have to become your future. It should teach you something real about what to do next.
 
-Draft v2:
+Files:
 
-`research/stories/building-the-foundation/draft-v2.md`
+- `research/stories/building-the-foundation/draft-v2.md`;
+- `research/stories/building-the-foundation/draft-v2-evaluation.md`.
 
-Draft v2 evaluation:
+Do not polish or publish Draft v2 unless that idea is deliberately reopened.
 
-`research/stories/building-the-foundation/draft-v2-evaluation.md`
+#### Topic-space research
 
-Current result:
+After user feedback, C027 was reset again before drafting.
 
-**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+Research:
 
-Draft v2 deliberately excludes:
+`research/stories/building-the-foundation/topic-space-research.md`
 
-- AI as a theme;
-- `starting from nothing`;
-- a universal bottleneck model;
-- biography;
-- grind/hustle framing;
-- a catalogue of skills, habits, network, and reputation;
-- a claim that failure is automatically useful.
+The pass reviewed current Philippine youth-entrepreneurship evidence, current builder/community signals, established idea essays and current 2026 builder commentary. Seven possible Perspective directions were evaluated.
+
+Important findings:
+
+- the audience problem is real, but it includes both personal capability gaps and structural barriers such as finance, market access and mentorship;
+- `grind harder`, generic `just start`, personal-brand advice and tactical side-hustle lists are weak Portfilo directions;
+- `AI makes building easy, so taste matters more` is already crowded and should not be forced into C027;
+- the article needs one idea, not a bundle of knowledge, habits, network, AI, status and product advice.
+
+Current shortlist:
+
+1. **Build things that make the next thing easier.**
+   - working message: when you are early, choose work that improves your next starting point;
+   - this is the current editorial recommendation;
+   - it can include skills, knowledge, relationships, proof, money or distribution only as subordinate examples of residual value.
+
+2. **Make yourself useful before you make yourself impressive.**
+   - working message: useful work can create some trust, relationships and opportunities before status exists;
+   - clear and memorable, but more likely to become moralizing or advice-heavy.
+
+The previous Draft v2 `first project as information` idea now ranks behind these two.
 
 Current state:
 
 - planning: `PASS`;
 - Draft v1: `REJECTED`;
-- topic/structure reset: complete;
-- Draft v2: complete / internal;
-- Draft v2 self-evaluation: `DIRECTION PASS FOR USER REVIEW`;
-- adversarial review: not yet run;
+- Draft v2: `INTERNAL EXPERIMENT / NOT LOCKED`;
+- broader topic-space research: `COMPLETE`;
+- current shortlist: `2 IDEAS`;
+- recommended idea: `BUILD THINGS THAT MAKE THE NEXT THING EASIER`;
+- dedicated structure research for selected idea: `NOT STARTED`;
+- new draft: `NOT AUTHORIZED / NOT STARTED`;
+- adversarial review: not applicable until a new draft exists;
 - public story entry: **does not exist**;
 - publication approval: **not requested / not granted**.
 
@@ -434,9 +434,11 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C027 Draft v1 | REJECTED / DO NOT POLISH |
-| C027 topic + structure reset | COMPLETE |
-| C027 Draft v2 | INTERNAL / DIRECTION PASS FOR USER REVIEW |
-| C027 adversarial review | PENDING |
+| C027 Draft v2 | INTERNAL EXPERIMENT / NOT LOCKED |
+| C027 topic-space research | COMPLETE |
+| C027 topic shortlist | 2 IDEAS / AWAITING APPROVAL |
+| C027 new structure research | NOT STARTED |
+| C027 new draft | NOT STARTED |
 | C027 public content entry | DOES NOT EXIST |
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
 | C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
@@ -446,20 +448,25 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Louda reviews the selected C027 idea and Draft v2 for message clarity and Portfilo fit.**
+**Approve the C027 core message before any more drafting.**
 
-Do not run the adversarial/headline/publication pipeline merely because the prose is cleaner. First decide whether the selected idea itself deserves to be the first featured Perspective.
+Current recommendation:
 
-If the idea passes:
+> **Build things that make the next thing easier.**
 
-1. run adversarial review against `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/COPY_STYLE.md`;
-2. remove any generic `just start` or motivational drift;
-3. run the editorial/copy pass;
-4. audit headline and dek;
-5. present the revised article to Louda for explicit publication approval;
-6. only after approval create a public story entry and proceed through technical publication QA.
+Runner-up:
 
-If the idea does not pass, return to `topic-structure-research.md` and select/research another candidate rather than polishing Draft v2.
+> **Make yourself useful before you make yourself impressive.**
+
+Once one message is approved:
+
+1. run dedicated structure research for that exact idea, drawing from effective idea essays without imitating another writer's voice;
+2. choose the structure before drafting;
+3. write one new internal draft around only that message;
+4. evaluate whether a reader can state the intended idea clearly after reading;
+5. only if the direction passes, proceed to adversarial review, copy editing, headline/dek audit, explicit publication approval and public implementation.
+
+Do not revive Draft v1 or polish Draft v2 by default.
 
 C009's remaining technical verification can be completed independently and should not block C027 editorial development.
 
