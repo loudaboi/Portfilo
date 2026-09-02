@@ -1,5 +1,4 @@
 ---
-const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const;
 ---
 
 <!doctype html>
@@ -23,28 +22,22 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
           <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
         </span>
       </a>
-      <p class="site-header__strapline">
-        Business and tech, from the Philippines.
-      </p>
-      <p class="site-header__section">Subscribe</p>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#latest">Latest</a></li>
+          <li><a href="/standards">Standards</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a class="site-nav__subscribe" href="/subscribe" aria-current="page">Subscribe</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main-content" tabindex="-1">
       <section class="subscribe-hero" aria-labelledby="subscribe-title">
         <p class="subscribe-kicker">Portfilo Brief / Email</p>
-
-        <h1 id="subscribe-title">Portfilo Brief, in your inbox.</h1>
-
-        <p class="subscribe-intro">
-          New Portfilo stories, sent by email. No fixed schedule yet.
-        </p>
-
-        <div class="subscribe-index" aria-label="Portfilo Brief coverage">
-          <p>What it covers</p>
-          <ul>
-            {topics.map((topic) => <li>{topic}</li>)}
-          </ul>
-        </div>
+        <h1 id="subscribe-title">Portfilo Brief</h1>
+        <p class="subscribe-intro">New Portfilo stories by email.</p>
       </section>
 
       <section class="signup-section" aria-labelledby="signup-title">
@@ -55,11 +48,8 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
 
         <div class="signup-section__main">
           <div class="signup-section__copy">
-            <h2 id="signup-title">Get Portfilo Brief.</h2>
-            <p>
-              Enter your email. We’ll send a confirmation link before the
-              subscription is active.
-            </p>
+            <h2 id="signup-title">Subscribe</h2>
+            <p>Enter your email. We’ll send a confirmation link.</p>
           </div>
 
           <form
@@ -115,40 +105,36 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
 
       <section class="brief-section" aria-labelledby="brief-title">
         <div class="brief-section__inner">
-          <p class="brief-section__index">02 / What to expect</p>
+          <p class="brief-section__index">02 / Portfilo Brief</p>
 
           <div class="brief-section__statement">
-            <h2 id="brief-title">New stories, without another feed to check.</h2>
-            <p>
-              We have not set a fixed schedule yet. When there is something new to
-              send, Portfilo Brief will bring it to your inbox.
-            </p>
+            <h2 id="brief-title">New stories by email.</h2>
           </div>
 
           <dl class="brief-section__rules">
             <div>
-              <dt>Coverage</dt>
-              <dd>Business, tech, startups, AI, and building.</dd>
-            </div>
-            <div>
-              <dt>Perspective</dt>
-              <dd>From the Philippines. Not limited to Philippine subjects.</dd>
-            </div>
-            <div>
-              <dt>Frequency</dt>
+              <dt>Schedule</dt>
               <dd>No fixed schedule yet.</dd>
+            </div>
+            <div>
+              <dt>Confirmation</dt>
+              <dd>Required before the subscription is active.</dd>
+            </div>
+            <div>
+              <dt>Unsubscribe</dt>
+              <dd>Any time.</dd>
             </div>
           </dl>
         </div>
       </section>
 
       <section class="privacy-note" aria-labelledby="privacy-title">
-        <p>03 / Your email</p>
+        <p>03 / Email</p>
         <div>
-          <h2 id="privacy-title">Unsubscribe whenever you want.</h2>
+          <h2 id="privacy-title">Email and unsubscribe</h2>
           <p>
-            beehiiv handles subscription delivery and unsubscribe requests. Every
-            Portfilo Brief email includes an unsubscribe link.
+            beehiiv handles delivery and unsubscribe requests. Every Portfilo Brief
+            email includes an unsubscribe link.
           </p>
         </div>
       </section>
@@ -158,7 +144,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       <div class="site-footer__brand" aria-label="Portfilo">
         <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
       </div>
-      <p>Portfilo / Philippines</p>
       <a href="/">Back to home</a>
     </footer>
 
@@ -247,26 +232,21 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         font-style: normal;
         font-display: swap;
         font-weight: 400 700;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2")
-          format("woff2-variations");
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
       }
-
       @font-face {
         font-family: "Source Serif 4";
         font-style: normal;
         font-display: swap;
         font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2")
-          format("woff2-variations");
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
       }
-
       @font-face {
         font-family: "IBM Plex Mono";
         font-style: normal;
         font-display: swap;
         font-weight: 400;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2")
-          format("woff2");
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2");
       }
 
       :global(:root) {
@@ -285,37 +265,14 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         --mono: "IBM Plex Mono", "Courier New", monospace;
       }
 
-      :global(*) {
-        box-sizing: border-box;
-      }
-
-      :global(html) {
-        background: var(--paper);
-        color: var(--ink);
-        font-family: var(--sans);
-        font-synthesis: none;
-      }
-
-      :global(body) {
-        margin: 0;
-        min-width: 0;
-        background: var(--paper);
-      }
-
-      :global(a) {
-        color: inherit;
-      }
-
+      :global(*) { box-sizing: border-box; }
+      :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; }
+      :global(body) { margin: 0; min-width: 0; background: var(--paper); }
+      :global(a) { color: inherit; }
       :global(a:focus-visible),
       .subscribe-form input:focus-visible,
-      .subscribe-form button:focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 4px;
-      }
-
-      :global(#main-content:focus) {
-        outline: none;
-      }
+      .subscribe-form button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+      :global(#main-content:focus) { outline: none; }
 
       .skip-link {
         position: fixed;
@@ -329,10 +286,7 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         text-decoration: none;
         transform: translateY(-200%);
       }
-
-      .skip-link:focus {
-        transform: translateY(0);
-      }
+      .skip-link:focus { transform: translateY(0); }
 
       .site-header,
       .subscribe-hero,
@@ -347,18 +301,12 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
       .site-header {
         padding: 1.05rem var(--gutter) 0.95rem;
         display: grid;
-        grid-template-columns: 3fr 6fr 3fr;
-        gap: var(--grid-gap);
-        align-items: end;
+        grid-template-columns: auto 1fr;
+        gap: clamp(1.5rem, 3vw, 3.5rem);
+        align-items: center;
         border-bottom: 1px solid var(--ink);
       }
-
-      .wordmark {
-        width: fit-content;
-        display: inline-block;
-        text-decoration: none;
-      }
-
+      .wordmark { width: fit-content; display: inline-block; text-decoration: none; }
       .wordmark__inner {
         display: inline-block;
         white-space: nowrap;
@@ -367,58 +315,53 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         transform: skewX(-12deg);
         transform-origin: left center;
       }
-
       .wordmark__port,
       .wordmark__fi,
       .wordmark__lo,
       .site-footer__port,
       .site-footer__fi,
-      .site-footer__lo {
-        display: inline-block;
-      }
+      .site-footer__lo { display: inline-block; }
+      .wordmark__port, .site-footer__port { color: var(--ink); }
+      .wordmark__fi, .site-footer__fi { color: var(--accent); }
+      .wordmark__lo, .site-footer__lo { color: var(--correction); }
 
-      .wordmark__port,
-      .site-footer__port {
-        color: var(--ink);
-      }
-
-      .wordmark__fi,
-      .site-footer__fi {
-        color: var(--accent);
-      }
-
-      .wordmark__lo,
-      .site-footer__lo {
-        color: var(--correction);
-      }
-
-      .site-header__strapline,
-      .site-header__section {
+      .site-nav { justify-self: end; }
+      .site-nav ul {
         margin: 0;
-        color: var(--muted);
-        font: 400 0.68rem/1.35 var(--mono);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(1rem, 2vw, 2rem);
+        list-style: none;
       }
-
-      .site-header__strapline {
-        text-align: center;
+      .site-nav a {
+        position: relative;
+        font: 500 0.76rem/1 var(--sans);
+        text-decoration: none;
       }
-
-      .site-header__section {
-        color: var(--ink);
-        text-align: right;
+      .site-nav a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -0.45rem;
+        left: 0;
+        height: 2px;
+        background: transparent;
       }
+      .site-nav a:hover,
+      .site-nav a[aria-current="page"] { color: var(--accent); }
+      .site-nav a[aria-current="page"]::after { background: var(--accent); }
+      .site-nav__subscribe { color: var(--accent); }
 
       .subscribe-hero {
-        padding: clamp(4rem, 7vw, 7.5rem) var(--gutter)
-          clamp(4.5rem, 8vw, 8rem);
+        padding: clamp(4rem, 7vw, 7.5rem) var(--gutter) clamp(4.5rem, 8vw, 8rem);
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: var(--grid-gap);
         row-gap: clamp(2rem, 4vw, 4rem);
       }
-
       .subscribe-kicker {
         grid-column: 1 / 4;
         margin: 0.55rem 0 0;
@@ -427,7 +370,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: 0.09em;
         text-transform: uppercase;
       }
-
       .subscribe-hero h1 {
         grid-column: 3 / 13;
         max-width: 11ch;
@@ -436,49 +378,11 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: -0.072em;
         text-wrap: balance;
       }
-
       .subscribe-intro {
         grid-column: 5 / 11;
         max-width: 42rem;
         margin: 0;
         font: 400 clamp(1.3rem, 1.75vw, 1.72rem) / 1.5 var(--serif);
-      }
-
-      .subscribe-index {
-        grid-column: 1 / 13;
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
-        padding-top: 0.8rem;
-        border-top: 1px solid var(--ink);
-      }
-
-      .subscribe-index > p {
-        grid-column: 1 / 4;
-        margin: 0;
-        color: var(--muted);
-        font: 400 0.64rem/1.4 var(--mono);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .subscribe-index ul {
-        grid-column: 5 / 13;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.55rem 1.35rem;
-        list-style: none;
-        font: 500 clamp(1rem, 1.25vw, 1.18rem) / 1.25 var(--sans);
-      }
-
-      .subscribe-index li::before {
-        content: "■";
-        margin-right: 0.55rem;
-        color: var(--accent);
-        font-size: 0.46em;
-        vertical-align: 0.16em;
       }
 
       .signup-section {
@@ -487,7 +391,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: var(--grid-gap);
       }
-
       .signup-section__label {
         grid-column: 1 / 4;
         padding-top: 0.75rem;
@@ -496,28 +399,15 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-
-      .signup-section__label p {
-        margin: 0 0 0.4rem;
-      }
-
-      .signup-section__label p:last-child {
-        color: var(--muted);
-      }
-
-      .signup-section__main {
-        grid-column: 5 / 13;
-        min-width: 0;
-      }
-
+      .signup-section__label p { margin: 0 0 0.4rem; }
+      .signup-section__label p:last-child { color: var(--muted); }
+      .signup-section__main { grid-column: 5 / 13; min-width: 0; }
       .signup-section__copy h2 {
         max-width: 12ch;
         margin: 0;
         font: 500 clamp(3rem, 5.6vw, 5.8rem) / 0.92 var(--sans);
         letter-spacing: -0.06em;
-        text-wrap: balance;
       }
-
       .signup-section__copy p {
         max-width: 39rem;
         margin: clamp(1.6rem, 2.7vw, 2.5rem) 0 0;
@@ -531,7 +421,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         padding-top: clamp(1.15rem, 1.8vw, 1.5rem);
         border-top: 3px solid var(--accent);
       }
-
       .subscribe-form__field > label {
         display: block;
         margin-bottom: 0.75rem;
@@ -539,13 +428,11 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-
       .subscribe-form__row {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         border-bottom: 1px solid var(--ink);
       }
-
       .subscribe-form input[type="email"] {
         min-width: 0;
         height: clamp(4.15rem, 5.2vw, 5.15rem);
@@ -558,22 +445,9 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: -0.035em;
         appearance: none;
       }
-
-      .subscribe-form input[type="email"]::placeholder {
-        color: #8a857c;
-        opacity: 1;
-      }
-
-      .subscribe-form input[type="email"]:focus-visible {
-        position: relative;
-        z-index: 1;
-        outline-offset: -1px;
-      }
-
-      .subscribe-form input[aria-invalid="true"] {
-        box-shadow: inset 0 -3px 0 var(--correction);
-      }
-
+      .subscribe-form input[type="email"]::placeholder { color: #8a857c; opacity: 1; }
+      .subscribe-form input[type="email"]:focus-visible { position: relative; z-index: 1; outline-offset: -1px; }
+      .subscribe-form input[aria-invalid="true"] { box-shadow: inset 0 -3px 0 var(--correction); }
       .subscribe-form button {
         min-width: clamp(9.5rem, 13vw, 12.5rem);
         min-height: clamp(4.15rem, 5.2vw, 5.15rem);
@@ -589,48 +463,16 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         font: 600 clamp(1rem, 1.2vw, 1.14rem) / 1 var(--sans);
         cursor: pointer;
       }
-
-      .subscribe-form button span:last-child {
-        font-size: 1.25em;
-      }
-
-      .subscribe-form button:hover {
-        background: var(--ink);
-      }
-
-      .subscribe-form button:disabled {
-        cursor: wait;
-        opacity: 0.62;
-      }
-
+      .subscribe-form button span:last-child { font-size: 1.25em; }
+      .subscribe-form button:hover { background: var(--ink); }
+      .subscribe-form button:disabled { cursor: wait; opacity: 0.62; }
       .subscribe-form__hint,
-      .subscribe-form__status {
-        max-width: 42rem;
-        font: 400 0.67rem/1.55 var(--mono);
-      }
-
-      .subscribe-form__hint {
-        margin: 0.8rem 0 0;
-        color: var(--muted);
-      }
-
-      .subscribe-form__status {
-        min-height: 1.1em;
-        margin: 1rem 0 0;
-      }
-
-      .subscribe-form__status:empty {
-        margin-top: 0;
-      }
-
-      .subscribe-form__status[data-state="success"] {
-        color: var(--accent);
-      }
-
-      .subscribe-form__status[data-state="error"] {
-        color: var(--correction);
-      }
-
+      .subscribe-form__status { max-width: 42rem; font: 400 0.67rem/1.55 var(--mono); }
+      .subscribe-form__hint { margin: 0.8rem 0 0; color: var(--muted); }
+      .subscribe-form__status { min-height: 1.1em; margin: 1rem 0 0; }
+      .subscribe-form__status:empty { margin-top: 0; }
+      .subscribe-form__status[data-state="success"] { color: var(--accent); }
+      .subscribe-form__status[data-state="error"] { color: var(--correction); }
       .subscribe-form__honeypot {
         position: absolute;
         width: 1px;
@@ -640,19 +482,13 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         white-space: nowrap;
       }
 
-      .brief-section {
-        width: 100%;
-        background: var(--ink);
-        color: var(--paper);
-      }
-
+      .brief-section { width: 100%; background: var(--ink); color: var(--paper); }
       .brief-section__inner {
         padding: clamp(4.5rem, 8vw, 8rem) var(--gutter);
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--grid-gap);
       }
-
       .brief-section__index {
         grid-column: 1 / 3;
         margin: 0;
@@ -661,11 +497,7 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: 0.09em;
         text-transform: uppercase;
       }
-
-      .brief-section__statement {
-        grid-column: 4 / 10;
-      }
-
+      .brief-section__statement { grid-column: 4 / 10; }
       .brief-section__statement h2 {
         max-width: 14ch;
         margin: 0;
@@ -673,14 +505,6 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: -0.06em;
         text-wrap: balance;
       }
-
-      .brief-section__statement p {
-        max-width: 42rem;
-        margin: clamp(2rem, 3vw, 3rem) 0 0;
-        color: #d7d2c9;
-        font: 400 clamp(1.12rem, 1.4vw, 1.36rem) / 1.62 var(--serif);
-      }
-
       .brief-section__rules {
         grid-column: 10 / 13;
         margin: 0;
@@ -688,32 +512,22 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         border-top: 1px solid #55524d;
         font: 400 0.67rem/1.55 var(--mono);
       }
-
-      .brief-section__rules > div {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid #55524d;
-      }
-
+      .brief-section__rules > div { padding: 0.8rem 0; border-bottom: 1px solid #55524d; }
       .brief-section__rules dt {
         margin-bottom: 0.3rem;
         color: var(--accent-on-ink);
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-
-      .brief-section__rules dd {
-        margin: 0;
-        color: #d7d2c9;
-      }
+      .brief-section__rules dd { margin: 0; color: #d7d2c9; }
 
       .privacy-note {
-        padding: clamp(4.5rem, 8vw, 8rem) var(--gutter);
+        padding: clamp(3.5rem, 6vw, 6rem) var(--gutter);
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: var(--grid-gap);
         border-bottom: 1px solid var(--ink);
       }
-
       .privacy-note > p {
         grid-column: 1 / 4;
         margin: 0;
@@ -722,34 +536,26 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         letter-spacing: 0.09em;
         text-transform: uppercase;
       }
-
-      .privacy-note > div {
-        grid-column: 5 / 11;
-      }
-
+      .privacy-note > div { grid-column: 5 / 11; }
       .privacy-note h2 {
-        max-width: 13ch;
         margin: 0;
-        font: 500 clamp(2.8rem, 5vw, 5.1rem) / 0.95 var(--sans);
-        letter-spacing: -0.058em;
-        text-wrap: balance;
+        font: 500 clamp(1.6rem, 2.4vw, 2.5rem) / 1 var(--sans);
+        letter-spacing: -0.04em;
       }
-
       .privacy-note div > p {
         max-width: 42rem;
-        margin: clamp(1.8rem, 3vw, 2.7rem) 0 0;
-        font: 400 clamp(1.1rem, 1.35vw, 1.3rem) / 1.62 var(--serif);
+        margin: 1.4rem 0 0;
+        font: 400 clamp(1.05rem, 1.25vw, 1.2rem) / 1.62 var(--serif);
       }
 
       .site-footer {
         padding: 1.2rem var(--gutter) 1.4rem;
         display: grid;
-        grid-template-columns: 3fr 6fr 3fr;
+        grid-template-columns: 1fr auto;
         gap: var(--grid-gap);
         align-items: end;
         font: 400 0.64rem/1.45 var(--mono);
       }
-
       .site-footer__brand {
         width: fit-content;
         white-space: nowrap;
@@ -758,250 +564,73 @@ const topics = ["Business", "Technology", "Startups", "AI", "Building"] as const
         transform: skewX(-12deg);
         transform-origin: left center;
       }
-
-      .site-footer p {
-        margin: 0;
-        color: var(--muted);
-        text-align: center;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
       .site-footer a {
         justify-self: end;
         text-decoration-color: var(--accent);
         text-decoration-thickness: 0.1em;
         text-underline-offset: 0.18em;
       }
-
-      .site-footer a:hover {
-        color: var(--accent);
-      }
+      .site-footer a:hover { color: var(--accent); }
 
       @media (max-width: 64rem) {
-        .subscribe-hero h1 {
-          grid-column: 2 / 13;
-        }
-
-        .subscribe-intro {
-          grid-column: 4 / 11;
-        }
-
-        .signup-section__main {
-          grid-column: 4 / 13;
-        }
-
-        .brief-section__statement {
-          grid-column: 3 / 10;
-        }
-
-        .brief-section__rules {
-          grid-column: 10 / 13;
-        }
-
-        .privacy-note > div {
-          grid-column: 4 / 11;
-        }
+        .subscribe-hero h1 { grid-column: 2 / 13; }
+        .subscribe-intro { grid-column: 4 / 11; }
+        .signup-section__main { grid-column: 4 / 13; }
+        .brief-section__statement { grid-column: 3 / 10; }
+        .privacy-note > div { grid-column: 4 / 11; }
       }
 
       @media (max-width: 50rem) {
-        .site-header {
-          grid-template-columns: 1fr auto;
-          align-items: center;
-          padding-top: 0.9rem;
+        .site-header { grid-template-columns: 1fr; align-items: start; padding-top: 0.9rem; }
+        .site-nav {
+          width: 100%;
+          padding-top: 0.8rem;
+          justify-self: stretch;
+          border-top: 1px solid var(--line);
         }
+        .site-nav ul { justify-content: flex-start; gap: 0.8rem 1.3rem; }
 
-        .site-header__strapline {
-          grid-column: 1 / -1;
-          grid-row: 2;
-          max-width: 32rem;
-          padding-top: 0.55rem;
-          text-align: left;
-        }
+        .subscribe-hero { display: block; padding-top: 3.6rem; padding-bottom: 4.5rem; }
+        .subscribe-kicker { margin: 0 0 1.35rem; }
+        .subscribe-hero h1 { max-width: none; font-size: clamp(3.35rem, 14vw, 5.3rem); line-height: 0.91; text-wrap: pretty; }
+        .subscribe-intro { max-width: 36rem; margin-top: 2rem; font-size: 1.26rem; }
 
-        .site-header__section {
-          grid-column: 2;
-          grid-row: 1;
-        }
-
-        .subscribe-hero {
-          display: block;
-          padding-top: 3.6rem;
-          padding-bottom: 4.5rem;
-        }
-
-        .subscribe-kicker {
-          margin: 0 0 1.35rem;
-        }
-
-        .subscribe-hero h1 {
-          max-width: none;
-          font-size: clamp(3.35rem, 14vw, 5.3rem);
-          line-height: 0.91;
-          text-wrap: pretty;
-        }
-
-        .subscribe-intro {
-          max-width: 36rem;
-          margin-top: 2rem;
-          font-size: 1.26rem;
-        }
-
-        .subscribe-index {
-          display: block;
-          margin-top: 3rem;
-        }
-
-        .subscribe-index > p {
-          margin-bottom: 1rem;
-        }
-
-        .subscribe-index ul {
-          gap: 0.7rem 1rem;
-        }
-
-        .signup-section {
-          display: block;
-          padding-bottom: 5rem;
-        }
-
-        .signup-section__label {
-          max-width: 24rem;
-          margin-bottom: 2.5rem;
-        }
-
-        .signup-section__copy h2 {
-          max-width: none;
-          font-size: clamp(2.8rem, 12vw, 4.5rem);
-        }
-
-        .signup-section__copy p {
-          font-size: 1.08rem;
-        }
-
-        .subscribe-form {
-          margin-top: 2.8rem;
-        }
-
-        .subscribe-form__row {
-          grid-template-columns: 1fr;
-          border-bottom: 0;
-        }
-
+        .signup-section { display: block; padding-bottom: 5rem; }
+        .signup-section__label { max-width: 24rem; margin-bottom: 2.5rem; }
+        .signup-section__copy h2 { max-width: none; font-size: clamp(2.8rem, 12vw, 4.5rem); }
+        .signup-section__copy p { font-size: 1.08rem; }
+        .subscribe-form { margin-top: 2.8rem; }
+        .subscribe-form__row { grid-template-columns: 1fr; border-bottom: 0; }
         .subscribe-form input[type="email"] {
           height: 4.25rem;
           padding-right: 0;
           border-bottom: 1px solid var(--ink);
           font-size: clamp(1.35rem, 6vw, 1.85rem);
         }
+        .subscribe-form button { width: 100%; min-height: 3.85rem; margin-top: 1rem; padding-inline: 1.15rem; }
 
-        .subscribe-form button {
-          width: 100%;
-          min-height: 3.85rem;
-          margin-top: 1rem;
-          padding-inline: 1.15rem;
-        }
+        .brief-section__inner { display: block; padding-top: 4.5rem; padding-bottom: 4.5rem; }
+        .brief-section__index { margin-bottom: 2rem; }
+        .brief-section__statement h2 { max-width: none; font-size: clamp(2.8rem, 11.5vw, 4.5rem); text-wrap: pretty; }
+        .brief-section__rules { margin-top: 3rem; }
 
-        .brief-section__inner {
-          display: block;
-          padding-top: 4.5rem;
-          padding-bottom: 4.5rem;
-        }
-
-        .brief-section__index {
-          margin-bottom: 2rem;
-        }
-
-        .brief-section__statement h2 {
-          max-width: none;
-          font-size: clamp(2.8rem, 11.5vw, 4.5rem);
-          text-wrap: pretty;
-        }
-
-        .brief-section__statement p {
-          font-size: 1.13rem;
-        }
-
-        .brief-section__rules {
-          margin-top: 3rem;
-        }
-
-        .privacy-note {
-          display: block;
-          padding-top: 4.5rem;
-          padding-bottom: 4.5rem;
-        }
-
-        .privacy-note > p {
-          margin-bottom: 2rem;
-        }
-
-        .privacy-note h2 {
-          max-width: none;
-          font-size: clamp(2.7rem, 11vw, 4.3rem);
-        }
-
-        .privacy-note div > p {
-          font-size: 1.1rem;
-        }
-
-        .site-footer {
-          grid-template-columns: 1fr auto;
-          align-items: center;
-          gap: 0.8rem 1rem;
-        }
-
-        .site-footer p {
-          grid-column: 1 / -1;
-          grid-row: 2;
-          text-align: left;
-        }
+        .privacy-note { display: block; padding-top: 3.5rem; padding-bottom: 3.5rem; }
+        .privacy-note > p { margin-bottom: 1.5rem; }
+        .privacy-note h2 { font-size: clamp(1.7rem, 7vw, 2.5rem); }
+        .privacy-note div > p { font-size: 1.1rem; }
       }
 
       @media (max-width: 28rem) {
-        .wordmark__inner {
-          font-size: 1.68rem;
-        }
-
-        .site-header__section {
-          font-size: 0.61rem;
-        }
-
-        .subscribe-hero h1 {
-          font-size: clamp(3rem, 15vw, 4.15rem);
-        }
-
-        .subscribe-intro {
-          font-size: 1.18rem;
-        }
-
-        .subscribe-index ul {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .subscribe-form input[type="email"] {
-          font-size: 1.3rem;
-        }
-
-        .site-footer {
-          grid-template-columns: 1fr;
-        }
-
-        .site-footer a {
-          justify-self: start;
-        }
-
-        .site-footer p {
-          grid-column: 1;
-          grid-row: auto;
-        }
+        .site-nav ul { gap: 0.7rem 1rem; }
+        .site-nav a { font-size: 0.7rem; }
+        .subscribe-hero h1 { font-size: clamp(3rem, 15vw, 4.15rem); }
+        .subscribe-form input[type="email"] { font-size: 1.3rem; }
+        .site-footer { display: block; }
+        .site-footer a { display: inline-block; margin-top: 1rem; }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        :global(*) {
-          scroll-behavior: auto !important;
-        }
+        :global(*) { scroll-behavior: auto !important; }
       }
     </style>
   </body>
