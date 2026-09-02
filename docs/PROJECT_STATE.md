@@ -8,9 +8,9 @@ _Last updated: 2026-09-03_
 
 The publishing system, launch-selection system, and first launch research slate are in place.
 
-C009 is the first launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, and headline/dek audit.
+C009 is the first launch assignment to complete research, drafting, adversarial review, claim audit, editorial pass, headline/dek audit, and a fresh pre-publish editorial/currentness review.
 
-A real story content entry has been prepared with `status: draft`. It is **not published** and must remain unpublished until Louda Tuppal explicitly approves the finished article.
+A real story content entry has been prepared with `status: draft`. It is **not published** and must remain unpublished until Louda Tuppal explicitly approves publication and the remaining technical gate passes.
 
 ## Current branch
 
@@ -177,7 +177,7 @@ Current state:
 
 The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page shows proof-of-concept at 40%. Do not use 65% as a clean factual anchor until reconciled.
 
-### C009 - ACTIVE / SUPPORTING / PUBLISH / DRAFT READY
+### C009 - ACTIVE / SUPPORTING / PUBLISH / PRE-PUBLISH EDITORIAL PASS
 
 Original question:
 
@@ -202,6 +202,7 @@ Research packet now includes:
 - `draft.md`
 - `adversarial-review.md`
 - `fact-check.md`
+- `pre-publish-review.md`
 
 Prepared public content entry:
 
@@ -221,7 +222,18 @@ Completed editorial checks:
 - claim audit: `PASS`;
 - editorial/copy pass: `PASS`;
 - headline/dek audit: `PASS`;
-- methodology wording: `PASS`.
+- methodology wording: `PASS`;
+- fresh source/currentness recheck: `PASS`;
+- pre-publish editorial gate: `PASS`.
+
+Pre-publish revisions made on 2026-09-03:
+
+- upgraded the opening to a primary IBPAP source for the `capacity to capability` strategy;
+- removed a nonessential exact sector headcount because OECD and the updated IBPAP-outlook coverage do not present one clean identical 2025 figure;
+- removed a Concentrix experience-threshold claim after finding conflicting requirements on the same posting;
+- normalized the Wells Fargo example to the canonical English URL;
+- clarified sample construction and the final methodology access/check date;
+- tightened the opening, analytical-dimension wording, workforce-management section and conclusion.
 
 Main supported finding:
 
@@ -235,6 +247,9 @@ The article deliberately does **not** establish:
 - worker-transition probabilities or timelines;
 - that every specialist role is intrinsically a better job.
 
+Visual decision: no visual is required for the first publication. Do not create a prevalence chart from the illustrative sample.
+
+**Technical pre-publish gate: PENDING.**  
 **Publication approval: PENDING USER REVIEW.**
 
 ### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
@@ -344,20 +359,22 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C009 research | PUBLISH |
 | C009 adversarial review | PASS after revisions |
 | C009 claim audit | PASS |
+| C009 pre-publish editorial gate | PASS |
 | C009 content entry | DRAFT / NOT PUBLIC |
+| C009 technical pre-publish gate | PENDING |
 | C009 publication approval | PENDING USER APPROVAL |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C021 | OPEN / QUEUED |
 | Current application build after C009 draft entry | NOT YET RUN / DO NOT CLAIM PASS |
 | Final-domain configuration | PENDING DOMAIN |
 
-A new Markdown content entry was added for C009, so a fresh `npm run build` is required before publication. No new application build is claimed at this checkpoint.
+A Markdown content entry exists for C009, so a fresh build is required before the production publication commit. No new application build is claimed at this checkpoint.
 
 ## Exact next task
 
-**Louda reviews the finished C009 article and decides whether to approve publication.**
+**Louda reviews the pre-publish-revised C009 article and decides whether to approve publication.**
 
-Until explicit approval:
+Until explicit publication approval:
 
 - keep `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` as `status: draft`;
 - do not set `publishedAt`;
@@ -365,13 +382,14 @@ Until explicit approval:
 - do not replace the public fixture/homepage presentation with this story;
 - do not distribute it through Portfilo Brief.
 
-If publication is approved:
+If publication is approved, do the technical gate **before pushing a production-visible published state**:
 
-1. set the story to `published` and add `publishedAt`;
-2. decide whether it should be `featured`;
+1. pull the current authoritative branch into a local/safe worktree or use a non-production preview branch;
+2. apply `status: published`, `publishedAt`, and any approved `featured` setting only in that safe validation context;
 3. run `npm run build` and fix any content/schema/rendering problems;
-4. inspect the rendered desktop/mobile story and outbound links;
-5. then proceed to fixture replacement/homepage integration and newsletter distribution as separately approved.
+4. inspect the rendered desktop/mobile story and click outbound links;
+5. only after those checks pass, commit/push the production publication state to `build/portfilo-v0`;
+6. then proceed to fixture replacement/homepage integration and Portfilo Brief distribution as separately approved.
 
 ## Phase handoff rule
 
