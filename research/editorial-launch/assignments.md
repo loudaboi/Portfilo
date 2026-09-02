@@ -10,7 +10,7 @@ This file is the current assignment view for the first Portfilo launch slate.
 
 This file answers the operational question:
 
-> What is Portfilo actively researching now?
+> What is Portfilo actively researching, and what has reached publication?
 
 Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot retained in the Stage 5 inventory.
 
@@ -19,18 +19,21 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 | ID | Role | Current research question | Topic | Planning decision | Priority | Research outcome | Research packet |
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
-| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH / PRE-PUBLISH EDITORIAL PASS | `research/stories/it-bpm-higher-value-work/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 
-State for C001, C009, and C017 remains `ACTIVE`.
+C001 and C017 remain `ACTIVE`.
 
-`PUBLISH / PRE-PUBLISH EDITORIAL PASS` for C009 means the research and editorial gates support publication and a real content entry exists as `status: draft`. It does **not** mean the story is public. The remaining gates are technical render/build QA and Louda Tuppal's explicit publication approval.
+## Published launch stories
 
-## C009 checkpoint
+| ID | Role | Published question | Topic | Research outcome | Publication state | Story file |
+|---|---|---|---|---|---|---|
+| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PUBLISH | `status: published`; technical live verification pending | `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` |
 
-C009 is the first launch assignment to reach a `PUBLISH` story decision and pass the editorial pre-publication pipeline.
+## C009 publication checkpoint
 
-The original planning question asked what `higher-value work` means inside Philippine IT-BPM. The first full public-data/source pass narrowed the publishable question to:
+C009 is the first launch assignment to reach a `PUBLISH` story decision, pass the editorial pre-publication pipeline, receive explicit user approval, and be moved to repository publication state.
+
+The original planning question asked what `higher-value work` means inside Philippine IT-BPM. The full public-data/source pass narrowed the publishable question to:
 
 > What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
 
@@ -38,7 +41,7 @@ The packet contains official Philippine skills-framework evidence and a 15-role 
 
 The main supported finding is that `higher-value work` is not a single occupation or a clean synonym for non-voice, technical, or AI work. In the current evidence it is better explained through observable dimensions such as domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
 
-Completed C009 editorial stages:
+Completed C009 stages:
 
 - story decision: `PUBLISH`;
 - draft: complete;
@@ -49,15 +52,9 @@ Completed C009 editorial stages:
 - methodology: pass;
 - fresh currentness/source recheck: pass;
 - pre-publish editorial gate: pass;
-- public content entry: prepared as `draft`.
-
-Pre-publish review:
-
-`research/stories/it-bpm-higher-value-work/pre-publish-review.md`
-
-Prepared story file:
-
-`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
+- user publication approval: granted 2026-09-03;
+- repository content state: `published` with `publishedAt: 2026-09-03`;
+- featured status: `false`.
 
 The current story deliberately does **not** claim:
 
@@ -67,7 +64,9 @@ The current story deliberately does **not** claim:
 - that frontline workers can transition into the roles on a particular timetable;
 - that every specialist role is intrinsically a better job.
 
-Next C009 step: user review of the pre-publish revision, followed by explicit publication approval if accepted. The technical build/render gate must pass before a production-visible publication commit.
+Technical live verification remains pending. Do not claim a fresh `npm run build`, desktop/mobile render check, or final live-link QA until completed.
+
+Homepage featuring, fixture replacement, and Portfilo Brief distribution remain separate approval/implementation decisions.
 
 ## C017 checkpoint
 
@@ -90,7 +89,7 @@ The reframed C017 therefore remains `CONTINUE`, with one narrow BSP/PPMI clarifi
 |---|---|---|---|---|---|---|
 | C021 | First reserve | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | OPEN / QUEUED |
 
-Do not activate C021 while all three active slots are occupied.
+C009's publication frees one substantial-research slot. Do not activate C021 automatically; activation remains a deliberate next-assignment decision.
 
 ## Passed but unassigned
 
