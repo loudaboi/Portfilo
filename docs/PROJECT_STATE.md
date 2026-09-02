@@ -8,9 +8,9 @@ _Last updated: 2026-09-03_
 
 The publishing system, launch-selection system, and first launch research slate are in place.
 
-C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is now `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
+C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
 
-C027 is now the active featured-story candidate: a reader-centered `Building` Perspective about what to build when someone wants to make something meaningful but does not yet have much leverage. Research and a first internal draft are complete. Nothing for C027 is public yet.
+C027 remains the active featured-story candidate, but its first draft has been rejected. A fresh topic-and-structure review selected a narrower reader-centered idea, and Draft v2 is now ready for user review. Nothing for C027 is public.
 
 C009's full technical deployment/render checklist is still not recorded as complete. Do not claim a fresh local build, final desktop/mobile pass, or exhaustive live-link QA until those checks are actually completed.
 
@@ -200,11 +200,11 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / PUBLISH-DRAFT READY
+### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / REFRAME-DRAFT V2
 
-Research question:
+Current reader question:
 
-> What do you build first when you want to make something meaningful but do not yet have much leverage?
+> What is a first project actually for when you are still figuring out what you can build and where you want to go?
 
 Topic: `Building`  
 Likely content type: `Perspective`  
@@ -212,47 +212,74 @@ Primary reader need: `Interpret`
 Priority: `HIGH`  
 Packet: `research/stories/building-the-foundation/`
 
-C027 was deliberately reframed away from a personal `grind` story. It should share a perspective that readers can map onto themselves, not narrate Louda Tuppal's life or present Portfilo as a personal blog.
+C027 was deliberately reframed away from a personal `grind` story. It should share a perspective readers can map onto themselves, not narrate Louda Tuppal's life or present Portfilo as a personal blog.
 
-Core argument:
+#### Draft v1 decision
 
-> An early weak starting position can be understood as a changing sequence of bottlenecks. AI can compress some knowledge and execution barriers, but it does not eliminate the need to build durable capability such as judgment, skills, habits, relationships, trust, and an understanding of what people actually want.
+**REJECT / DO NOT POLISH.**
 
-Research findings used to constrain the argument:
+Reader review found that Draft v1 forced too many discovery inputs into one article. It combined bottlenecks, AI, skills, habits, network, trust, reputation, user understanding, and starting position, leaving the main message unclear.
 
-- a 2026 NBER randomized experiment found generative AI substantially narrowed an education-linked performance gap on one workplace-style task, but a sizable gap re-emerged without AI;
-- earlier NBER workplace research found larger AI productivity gains among novice/lower-skilled customer-support workers than among experienced workers;
-- METR found experienced open-source developers working on familiar mature repositories were slower with early-2025 AI tools in its randomized study;
-- a 2026 programming meta-analysis found a moderate productivity benefit overall but no statistically significant improvement in measured learning outcomes;
-- current builder commentary is already crowded with `taste is the new bottleneck`, so C027's contribution is broader bottleneck migration rather than another taste essay.
+The problem is treated as a topic-selection failure, not a prose-editing problem.
 
-Current packet:
+Review:
 
-- `brief.md`;
-- `sources.md`;
-- `evidence.md`;
-- `contradictions.md`;
-- `notes.md`;
-- `draft.md`.
+`research/stories/building-the-foundation/draft-v1-review.md`
+
+#### Topic + structure reset
+
+Fresh craft and topic research reviewed Longreads, Nieman Storyboard, Paul Graham, Morgan Housel, current 2026 builder coverage, and early-builder community signals.
+
+Research:
+
+`research/stories/building-the-foundation/topic-structure-research.md`
+
+The selected writing discipline is:
+
+- one clear thread;
+- main tension near the top;
+- a single-thread funnel from tension to reframe to concrete development to counterargument to resolution;
+- concrete situations instead of a multi-part abstract framework;
+- exclude material merely because it was mentioned during discovery.
+
+AI is deliberately not central to Draft v2. Current 2026 commentary already heavily covers AI making execution easier, and that thread weakened C027's clarity.
+
+#### Selected C027 idea
+
+> An early project does not have to become your future. It should teach you something real about what to do next.
+
+Draft v2:
+
+`research/stories/building-the-foundation/draft-v2.md`
+
+Draft v2 evaluation:
+
+`research/stories/building-the-foundation/draft-v2-evaluation.md`
+
+Current result:
+
+**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+
+Draft v2 deliberately excludes:
+
+- AI as a theme;
+- `starting from nothing`;
+- a universal bottleneck model;
+- biography;
+- grind/hustle framing;
+- a catalogue of skills, habits, network, and reputation;
+- a claim that failure is automatically useful.
 
 Current state:
 
 - planning: `PASS`;
-- research outcome: `PUBLISH / DRAFT READY`;
-- first internal draft: complete;
+- Draft v1: `REJECTED`;
+- topic/structure reset: complete;
+- Draft v2: complete / internal;
+- Draft v2 self-evaluation: `DIRECTION PASS FOR USER REVIEW`;
 - adversarial review: not yet run;
-- claim audit: not yet run;
 - public story entry: **does not exist**;
 - publication approval: **not requested / not granted**.
-
-The piece must not claim:
-
-- that anyone can succeed through effort alone;
-- that all starting positions are equivalent;
-- that AI makes building free;
-- that AI erases expertise, capital, network, or opportunity differences;
-- that the bottleneck sequence is universal;
-- that the author's experience proves a general rule.
 
 ## C009 - PUBLISHED SUPPORTING STORY / LIVE VERIFICATION INCOMPLETE
 
@@ -329,7 +356,7 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-C027 now occupies the research slot opened by C009's publication. Do not activate C021 while all three active slots are occupied.
+C027 occupies the research slot opened by C009's publication. Do not activate C021 while all three active slots are occupied.
 
 ## Public product state
 
@@ -406,8 +433,9 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | Editorial Launch Research | COMPLETE / APPROVED |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
-| C027 planning/research | PASS / PUBLISH-DRAFT READY |
-| C027 internal draft | COMPLETE / NOT PUBLIC |
+| C027 Draft v1 | REJECTED / DO NOT POLISH |
+| C027 topic + structure reset | COMPLETE |
+| C027 Draft v2 | INTERNAL / DIRECTION PASS FOR USER REVIEW |
 | C027 adversarial review | PENDING |
 | C027 public content entry | DOES NOT EXIST |
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
@@ -418,17 +446,20 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Louda reviews the C027 internal draft for voice, relatability, and Portfilo fit.**
+**Louda reviews the selected C027 idea and Draft v2 for message clarity and Portfilo fit.**
 
-If the direction passes:
+Do not run the adversarial/headline/publication pipeline merely because the prose is cleaner. First decide whether the selected idea itself deserves to be the first featured Perspective.
 
-1. run an adversarial review against `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/COPY_STYLE.md`;
-2. resolve unsupported or overly motivational claims;
-3. run the factual claim audit on the AI research paragraphs;
-4. run the editorial/copy pass;
-5. audit the headline and dek;
-6. present the revised article to Louda for explicit publication approval;
-7. only after approval create a public story entry and proceed through technical publication QA.
+If the idea passes:
+
+1. run adversarial review against `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, and `docs/COPY_STYLE.md`;
+2. remove any generic `just start` or motivational drift;
+3. run the editorial/copy pass;
+4. audit headline and dek;
+5. present the revised article to Louda for explicit publication approval;
+6. only after approval create a public story entry and proceed through technical publication QA.
+
+If the idea does not pass, return to `topic-structure-research.md` and select/research another candidate rather than polishing Draft v2.
 
 C009's remaining technical verification can be completed independently and should not block C027 editorial development.
 
