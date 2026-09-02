@@ -20,7 +20,7 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
-| C027 | Featured Perspective candidate | How should early builders judge work that may not become the final thing but can improve the next starting point? | Building | PASS | HIGH | TOPIC APPROVED / STRUCTURE RESEARCH COMPLETE | `research/stories/building-the-foundation/` |
+| C027 | Featured Perspective candidate | How should early builders judge work that may not become the final thing but can improve the next starting point? | Building | PASS | HIGH | DRAFT V3 COMPLETE / DIRECTION PASS FOR USER REVIEW | `research/stories/building-the-foundation/` |
 
 C001, C017, and C027 are `ACTIVE`.
 
@@ -91,42 +91,33 @@ Dedicated structure research is complete:
 
 `research/stories/building-the-foundation/structure-research.md`
 
-The pass reviewed essay and narrative craft guidance from Longreads, Nieman Storyboard and Paul Graham's idea-essay progression.
-
-Selected structure:
+The user explicitly approved the selected structure:
 
 **Contrast-led argumentative funnel.**
 
-Planned beats:
+The structure opens with two efforts that look similar by immediate outcome but leave different next starting points, reveals the overlooked dimension of what remains reusable, develops the idea through ordinary examples, challenges the `I learned a lot` rationalization, and closes on one practical test rather than a framework.
 
-1. show two efforts with similar visible outcomes but different next starting points;
-2. surface the hidden dimension: what remains usable after the project;
-3. develop the idea through two or three ordinary examples without creating a listicle;
-4. explain why this matters particularly when someone is early and has little accumulated leverage;
-5. challenge the argument directly so `I learned a lot` cannot become a flattering excuse for wasted effort or endless project-hopping;
-6. leave the reader with one practical test rather than a framework;
-7. resolve by returning to the idea that the next attempt need not begin from the same place.
+### Draft v3
 
-Recommended Draft v3 length:
+Draft v3 is complete and internal:
 
-`1,100-1,500 words`.
+`research/stories/building-the-foundation/draft-v3.md`
 
-Presentation:
+Working title:
 
-- mostly continuous prose;
-- no numbered list;
-- at most two or three quiet subheads if needed for reading rhythm;
-- no methodology box;
-- no forced AI paragraph;
-- no biography inside the body;
-- no invented anecdote presented as fact;
-- factual claims require normal verification if introduced.
+> **Build things that make the next thing easier**
 
-Current state:
+The draft is reader-centered and contains no biography, no forced AI section, no methodology block, and no numbered framework. It uses the approved throughline that good early work can improve the position from which the next attempt begins.
 
-**STRUCTURE RESEARCH COMPLETE / AWAITING USER APPROVAL BEFORE DRAFT V3.**
+Draft v3 evaluation:
 
-No Draft v3 has been written.
+`research/stories/building-the-foundation/draft-v3-evaluation.md`
+
+Current self-evaluation:
+
+**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+
+The main editorial risks for the next pass are abstraction in phrases such as `accumulated leverage` and `residual value`, some list-like rhythm in examples, and an ending that may still need a harder `Say the thing. Then stop.` edit.
 
 No C027 file exists under `src/content/stories/`. Nothing is public and no publication approval has been requested.
 
