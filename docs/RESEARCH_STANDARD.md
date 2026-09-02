@@ -263,6 +263,44 @@ For profiles or business stories:
 - avoid inferring ownership/equity without evidence;
 - note when financial information is private or unavailable.
 
+## Verification-disclosure decision
+
+Do not automatically convert every research limitation into a public sentence such as `Portfilo could not independently verify...`, `Portfilo was unable to confirm...`, or `Portfilo did not receive a response...`.
+
+The research packet should record uncertainty more aggressively than the public story. Publication then requires a separate judgment about whether the reader needs that limitation stated explicitly.
+
+Before inserting a verification, non-response, or unavailable-information disclosure into public copy, answer:
+
+1. **Materiality:** Is the underlying claim important enough that its verification status could change the reader's understanding?
+2. **Necessity:** Does the claim need to remain in the story at all? If not, omit it rather than attach a disclaimer.
+3. **Attribution:** Can precise attribution communicate the evidentiary status without centering Portfilo?
+4. **Specificity:** Can we state exactly what evidence is missing, unpublished, private, conflicting, or unavailable?
+5. **Fairness:** Is this a serious allegation or materially negative portrayal for which a reasonable opportunity to respond matters?
+6. **Effort:** Were reasonable verification or contact steps actually taken given the story's urgency, importance, and available routes?
+7. **Reader value:** Does the disclosure help the reader evaluate the claim, or merely advertise the newsroom's process?
+
+Preferred hierarchy:
+
+1. verify the claim;
+2. if it cannot be verified and is not essential, remove it;
+3. if it is a reported claim, attribute it precisely;
+4. if the unresolved verification status is itself material, disclose that limitation in specific language;
+5. if the issue is unusual, high-risk, legal, or fairness-sensitive, research the relevant professional or legal standard before publication.
+
+For example, this may be more useful:
+
+> The company says the system reduced handling time by 30%, but it did not publish the baseline, sample size, or measurement period.
+
+than the generic sentence:
+
+> Portfilo could not independently verify the 30% figure.
+
+The generic formulation may still be appropriate when the claim itself must remain and the fact that it lacks independent corroboration is material to the reader.
+
+For right-of-reply situations, record whom Portfilo contacted, by what route, when, what was asked, and the response window. The public story should mention unsuccessful contact when fairness or interpretation requires it, not as a routine footer to every unanswered request.
+
+Do not use verification language to dramatize information that is normally private, immaterial to the central story, or unnecessary to support any published conclusion.
+
 ## Story decision
 
 Research can end in four outcomes:
@@ -291,6 +329,8 @@ Draft from the verified research packet.
 
 Do not introduce new factual claims during prose generation unless they are added to and verified in the packet.
 
+Do not automatically surface every internal `QUALIFY`, source-access failure, or research gap. Apply the verification-disclosure decision above and preserve only limitations that materially help the reader understand the evidence.
+
 ## Adversarial review
 
 After drafting, run a separate skeptical pass.
@@ -300,6 +340,8 @@ Instruction concept:
 > Assume this article is wrong. Identify unsupported claims, stale information, missing context, misleading framing, weak causal reasoning, inaccurate quotations, exaggerated headlines, selection bias, and conclusions stronger than the evidence.
 
 The adversarial review is a lead generator for verification. It is not itself evidence.
+
+Also flag **performative transparency**: disclosures that make Portfilo sound careful without giving the reader useful information about the claim, evidence, or fairness of the report.
 
 ## Final claim audit
 
@@ -323,6 +365,8 @@ For unsupported material:
 2. qualify the statement; or
 3. remove it.
 
+For material verification limitations that remain in the story, audit the disclosure itself: confirm that it is necessary, precise, proportionate, and supported by the actual reporting record.
+
 ## Sources and method
 
 Serious stories should include a reader-facing methodology section when it materially improves transparency.
@@ -337,6 +381,8 @@ It may explain:
 - known limitations;
 - distinction between advertised and actual values;
 - calculation methodology.
+
+Methodology is not a dumping ground for every unsuccessful outreach attempt. Include limitations that affect interpretation of the findings.
 
 ## Research packet structure
 
