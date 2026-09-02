@@ -1,4 +1,7 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
 const latestFixtures = [
   {
     number: "02.1",
@@ -42,22 +45,7 @@ const latestFixtures = [
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">
-        <span class="wordmark__inner">
-          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#latest">Latest</a></li>
-          <li><a href="/standards">Standards</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a class="site-nav__subscribe" href="/subscribe">Subscribe</a></li>
-        </ul>
-      </nav>
-    </header>
+    <SiteHeader />
 
     <main id="main-content" tabindex="-1">
       <section class="identity" aria-label="Portfilo coverage">
@@ -198,12 +186,7 @@ const latestFixtures = [
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="site-footer__brand" aria-label="Portfilo">
-        <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
-      </div>
-      <a href="/about">About Portfilo</a>
-    </footer>
+    <SiteFooter />
 
     <style>
       @font-face {
@@ -267,74 +250,13 @@ const latestFixtures = [
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .site-header,
       .identity,
       .feature-section,
       .latest,
-      .newsletter,
-      .site-footer {
+      .newsletter {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
-
-      .site-header {
-        padding: 1.05rem var(--gutter) 0.95rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: clamp(1.5rem, 3vw, 3.5rem);
-        align-items: center;
-        border-bottom: 1px solid var(--ink);
-      }
-
-      .wordmark { width: fit-content; display: inline-block; text-decoration: none; }
-      .wordmark__inner {
-        display: inline-block;
-        white-space: nowrap;
-        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-
-      .wordmark__port,
-      .wordmark__fi,
-      .wordmark__lo,
-      .site-footer__port,
-      .site-footer__fi,
-      .site-footer__lo { display: inline-block; }
-      .wordmark__port, .site-footer__port { color: var(--ink); }
-      .wordmark__fi, .site-footer__fi { color: var(--accent); }
-      .wordmark__lo, .site-footer__lo { color: var(--correction); }
-
-      .site-nav { justify-self: end; }
-      .site-nav ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        gap: clamp(1rem, 2vw, 2rem);
-        list-style: none;
-      }
-      .site-nav a {
-        position: relative;
-        font: 500 0.76rem/1 var(--sans);
-        text-decoration: none;
-      }
-      .site-nav a::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: -0.45rem;
-        left: 0;
-        height: 2px;
-        background: transparent;
-      }
-      .site-nav a:hover,
-      .site-nav a[aria-current="page"] { color: var(--accent); }
-      .site-nav a[aria-current="page"]::after { background: var(--accent); }
-      .site-nav__subscribe { color: var(--accent); }
 
       .identity {
         padding: clamp(2.2rem, 4vw, 3.8rem) var(--gutter) clamp(2.6rem, 4.5vw, 4.5rem);
@@ -593,30 +515,6 @@ const latestFixtures = [
       .newsletter__action span { color: var(--accent); }
       .newsletter__action:hover { color: var(--accent); }
 
-      .site-footer {
-        padding: 1.2rem var(--gutter) 1.4rem;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: var(--grid-gap);
-        align-items: end;
-        font: 400 0.64rem/1.45 var(--mono);
-      }
-      .site-footer__brand {
-        width: fit-content;
-        white-space: nowrap;
-        font: 700 1.55rem/0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-      .site-footer a {
-        justify-self: end;
-        text-decoration-color: var(--accent);
-        text-decoration-thickness: 0.1em;
-        text-underline-offset: 0.18em;
-      }
-      .site-footer a:hover { color: var(--accent); }
-
       @media (max-width: 64rem) {
         .feature__copy { grid-column: 1 / 8; }
         .evidence-panel { grid-column: 8 / 13; }
@@ -629,19 +527,6 @@ const latestFixtures = [
       }
 
       @media (max-width: 50rem) {
-        .site-header {
-          grid-template-columns: 1fr;
-          align-items: start;
-          padding-top: 0.9rem;
-        }
-        .site-nav {
-          width: 100%;
-          padding-top: 0.8rem;
-          justify-self: stretch;
-          border-top: 1px solid var(--line);
-        }
-        .site-nav ul { justify-content: flex-start; gap: 0.8rem 1.3rem; }
-
         .identity {
           display: block;
           padding-top: 2.5rem;
@@ -685,13 +570,9 @@ const latestFixtures = [
       }
 
       @media (max-width: 30rem) {
-        .site-nav ul { gap: 0.7rem 1rem; }
-        .site-nav a { font-size: 0.7rem; }
         .feature h1 { font-size: clamp(2.75rem, 13vw, 3.8rem); }
         .evidence-panel dl { grid-template-columns: 1fr; }
         .evidence-panel dl > div:nth-child(even) { padding-left: 0; border-left: 0; }
-        .site-footer { display: block; }
-        .site-footer a { display: inline-block; margin-top: 1rem; }
       }
 
       @media (prefers-reduced-motion: reduce) {
