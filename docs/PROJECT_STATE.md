@@ -4,13 +4,13 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Voice & Positioning Revision**
+**Portfilo v0 / Voice & Positioning Revision — IMPLEMENTED / QA PENDING**
 
-The user approved a positioning and copy-strategy revision after a research-led review of Portfilo's current public voice, younger initial audience, comparable business/technology publications, and recurring patterns that make brand copy feel machine-written.
+The user approved a research-led revision of Portfilo's positioning and public voice. The canonical copy guide was updated first, a coordinated public-copy candidate was reviewed as a package, and the user explicitly approved that candidate for implementation.
 
-The canonical copy guide has been revised. Public page copy has **not** yet been rewritten under the new standard.
+The approved rewrite is now implemented across Homepage, About, Subscribe, Standards shared brand copy, Story shared brand copy, and Series shared brand copy. The approved visual layouts were not reopened.
 
-Subscribe engineering remains implemented but temporarily blocked on beehiiv identity verification and API-key creation. Do not remove or redesign the native Subscribe architecture while this copy phase is active.
+Subscribe engineering remains implemented but is still blocked on beehiiv identity verification and API-key creation. Do not remove or redesign the native Subscribe architecture while waiting for that external credential.
 
 Completed phases:
 
@@ -25,7 +25,7 @@ Completed phases:
 - Research & Standards Page
 - About Page
 
-The story, homepage, Series, Research & Standards, About, and native Subscribe visual directions remain frozen for v0 unless a concrete implementation problem is discovered. **Copy is explicitly reopened** for Homepage, About, Subscribe, and shared brand surfaces during the current Voice & Positioning Revision.
+The story, homepage, Series, Research & Standards, About, and native Subscribe visual directions remain frozen for v0 unless a concrete implementation problem is discovered.
 
 ## Current branch
 
@@ -35,9 +35,9 @@ Do not merge to `main` unless intentionally reviewed as part of a later release 
 
 ## Current objective
 
-Bring all major public brand copy into one coherent voice before navigation integration and launch work.
+Validate the implemented Voice & Positioning Revision in the production build and across responsive layouts.
 
-The revised copy system should feel knowledgeable, conversational, specific, and human without trying to sound young, corporate, academic, or AI-polished.
+The revised copy should feel knowledgeable, conversational, specific, and human without trying to sound young, corporate, academic, or AI-polished.
 
 ## Approved positioning
 
@@ -45,11 +45,11 @@ The approved v0 positioning line is:
 
 > **Business and tech, from the Philippines.**
 
-This replaces:
+This replaces the retired line:
 
 > Practical intelligence for ambitious Filipinos.
 
-Do not add the retired line to new public surfaces.
+The retired line may remain in internal documentation only when explicitly identified as retired or historical. It should not appear as current public copy.
 
 ### Scope meaning
 
@@ -73,7 +73,7 @@ The important reader traits are **curiosity and momentum**, not a flattering lab
 
 ## Canonical public copy standard
 
-`docs/COPY_STYLE.md` is canonical for public-facing copy and has been revised for the new positioning.
+`docs/COPY_STYLE.md` is canonical for public-facing copy.
 
 Internal voice test:
 
@@ -99,33 +99,100 @@ Working principle:
 
 > **Say what happened. Explain what matters. Don't perform intelligence.**
 
+## Implemented public-copy revision
+
+### Homepage `/`
+
+Implemented:
+
+- metadata now uses the new business-and-tech positioning;
+- masthead: `Business and tech, from the Philippines.`;
+- hero: `Business and tech make more sense when you start from here.`;
+- scope copy explicitly allows stories that start elsewhere but matter to readers here;
+- `Clear enough to use. Careful enough to trust.` was retired;
+- institutional headline now says `We do the reporting before we tell you what it means.`;
+- Portfilo Brief copy is shorter and reader-facing;
+- CTA is the familiar `Subscribe` label;
+- development-only footer action was replaced with `About Portfilo`;
+- footer center line is `Portfilo / Philippines`.
+
+### About `/about`
+
+Implemented:
+
+- metadata aligned with the new positioning;
+- hero: `You shouldn't need an insider network to follow business and tech.`;
+- global-versus-Philippine scope is explained directly;
+- `What we do` now starts from announcements, claims, policy changes, and market numbers rather than abstract brand language;
+- topic descriptions were rewritten in more concrete language;
+- audience headline: `You don't need to already know the room.`;
+- reader note: `If a term matters, we explain it.`;
+- Philippine context headline: `A global story can land differently here.`;
+- Standards bridge: `The conclusion comes after the reporting.`;
+- founder treatment remains only `Founder / Louda Tuppal`.
+
+### Subscribe `/subscribe`
+
+Implemented:
+
+- metadata simplified to what the subscriber receives;
+- hero: `Portfilo Brief, in your inbox.`;
+- intro: `New Portfilo stories, sent by email. No fixed schedule yet.`;
+- signup headline: `Get Portfilo Brief.`;
+- form hint: `No fixed schedule yet. Unsubscribe any time.`;
+- What to Expect now describes Coverage, Perspective, and Frequency rather than abstract editorial principles;
+- perspective explicitly says the publication is from the Philippines but not limited to Philippine subjects;
+- email section now says `Unsubscribe whenever you want.`;
+- native form, validation, confirmation state, API endpoint, and responsive form architecture remain unchanged.
+
+### Standards, Story, and Series
+
+The substantive Standards copy and fixture/editorial content were intentionally left unchanged.
+
+Shared positioning was updated to:
+
+> **Business and tech, from the Philippines.**
+
+Footer center lines where present now use:
+
+> **Portfilo / Philippines**
+
+The Series template still exposes `Series ID` publicly. That remains a separate pre-launch cleanup item and was not folded into this copy revision.
+
+## Voice revision commits
+
+- `6ed9093524e2f3fb549dc894cc6191cfc93a1d53` - revise canonical Portfilo voice and positioning
+- `5b1a9c16b4c659c9ed78d292d98d398d1bf375a4` - advance project state to Voice & Positioning Revision
+- `e7ff47c9c05cd6de6f1db50c9b688bbbcf5450f3` - prepare coordinated public-copy candidate
+- `0fe0f00ebf7f48400d1231585d6b690a7973b707` - revise Homepage copy
+- `750fb355fc6de23bb644d5d5da11b27c09976315` - revise About copy
+- `713d900302c5a5c517ebae1f908e0c46057b0ae9` - revise Subscribe copy
+- `c282fe310b72bd758d57a51be832c9e09ccfccc3` - update Standards shared positioning
+- `8cc25466bec1b51505f57311932531d783167807` - update Story shared positioning
+- `8984a5443b16853dc912ad2fab2d36934ea03276` - update Series shared positioning
+- `10a8313aea6063addaef4d0998bcfb52108db159` - remove the now-stale candidate review file after approval
+
+A compare from the approved candidate commit through the implementation head showed exactly six public templates changed: Homepage, About, Subscribe, Standards, Story, and Series. No CSS/layout or schema files were changed in that implementation sweep.
+
 ## Exact next task
 
-Perform a coordinated public-copy audit and prepare a candidate rewrite under the revised `docs/COPY_STYLE.md`.
+Perform local production-build and responsive copy QA:
 
-Audit in this order:
+1. Pull the latest `build/portfilo-v0` branch.
+2. Run `npm run build` and require a clean production build.
+3. Run `npm run dev` for visual review.
+4. Review `/`, `/about`, `/subscribe`, and `/standards`.
+5. Review the synthetic Series route and at least one published story fixture to confirm the shared masthead copy did not disturb those layouts.
+6. Check desktop, intermediate/tablet, 390px, and 360px widths.
+7. Pay particular attention to masthead strapline wrapping, Homepage hero line breaks, About hero and topic cards, Subscribe hero/form/What to Expect copy, footer alignment, and horizontal overflow.
+8. Confirm the Homepage footer action now routes to `/about`.
+9. Confirm no current public surface still presents `Practical intelligence for ambitious Filipinos` as active positioning.
+10. Do not submit a real Subscribe request through normal Astro dev while the beehiiv API key is unavailable. Functional Subscribe QA resumes after identity verification and API-key creation.
+11. Do not close Voice & Positioning Revision until the user reports build + responsive visual/copy QA PASS.
 
-1. Homepage `/`
-2. About `/about`
-3. Subscribe `/subscribe`
-4. shared masthead strapline, page titles/descriptions, and footer copy
-5. Standards `/standards` only where the retired positioning or unnecessary brand language appears
-6. Series and Story fixtures only for shared brand copy, not editorial fixture content unless required
+After Voice & Positioning Revision passes, resume the still-open Subscribe credential/functional QA when the beehiiv API key is available.
 
-The candidate rewrite must:
-
-- replace every public use of `Practical intelligence for ambitious Filipinos`;
-- use `Business and tech, from the Philippines.` sparingly rather than repeating it everywhere;
-- remove or rewrite generic symmetrical slogans such as `Clear enough to use. Careful enough to trust.`;
-- reduce repeated `report / explain / evidence / useful` brand-language loops;
-- avoid repeatedly listing all five topics when the surrounding context already establishes them;
-- make the younger beachhead audience feel welcome without naming or imitating an age cohort;
-- keep Standards, methodology, corrections, and disclosures more literal than the rest of the site;
-- preserve the approved page layouts unless copy length reveals a concrete layout problem.
-
-**Do not implement the public-page rewrite until the candidate copy has been evaluated as a coherent package.**
-
-After the revised public copy is approved and implemented, resume Subscribe credential/functional QA when the beehiiv API key is available. Then complete Global Navigation & Public Surface Integration.
+Global Navigation & Public Surface Integration remains after Subscribe is formally closed.
 
 ## Locked primary topics
 
@@ -172,15 +239,9 @@ Paper/black carry the publication. Blue is the active editorial accent. Red is t
 
 Do not add red merely to create numerical color balance.
 
-## Homepage Visual Design - COMPLETE / COPY REOPENED
+## Homepage Visual Design - COMPLETE / COPY QA PENDING
 
-Final user-reported visual validation on 2026-09-02 included a clean production build, correct homepage rendering, published/draft fixture behavior, desktop/mobile review, and explicit approval.
-
-The visual design remains closed.
-
-The homepage copy is reopened because it still contains the retired positioning line and several brand sentences that do not meet the revised voice standard.
-
-During Subscribe integration, the existing `Join Portfilo Brief` action was changed from a design-preview paragraph into a real `/subscribe` link and its label changed from `Email / Preview` to `Email / Subscribe`. No homepage composition redesign was introduced.
+The visual design remains approved and frozen. Only public copy was revised in the current phase.
 
 ## Series Page Foundation & Visual Design - COMPLETE
 
@@ -188,21 +249,11 @@ Generic route:
 
 `src/pages/series/[slug].astro`
 
-The Series page generates static routes from structured Series entries, includes only published stories, sorts by `seriesOrder`, supports empty states, and uses no client-side JavaScript.
-
 Synthetic validation route:
 
 `/series/content-architecture-fixtures`
 
-Implementation commits:
-
-- `799f0d8ca03a72998488b7521e03c8f98559c71f` - Series Content Collection
-- `68109c0bef0d3a83194c9220a0c58a964efcb927` - synthetic Series fixture
-- `4e9c872fdb91c45cff1eebfa24e1d2fb6318ba44` - ordering fixture Part 2
-- `ea25f432125e17123553c356f3d37163a2431fda` - ordering fixture Part 3
-- `241be4fdcd783117ecd2b75af808fc5b23e29151` - generic Series page
-
-User-reported final QA PASS on 2026-09-02.
+User-reported final visual QA PASS on 2026-09-02 before the shared-positioning copy change. Recheck the masthead during current copy QA.
 
 ## Research & Standards Page - COMPLETE
 
@@ -210,116 +261,38 @@ Route:
 
 `/standards`
 
-Implementation file:
+The substantive standards copy remains unchanged. Only shared masthead/footer positioning changed during Voice & Positioning Revision.
 
-`src/pages/standards.astro`
+User-reported final visual QA PASS on 2026-09-02 before the shared-positioning copy change. Recheck the masthead/footer during current copy QA.
 
-The page translates the internal standards into reader-facing explanations of Sources, Verification, AI use, Corrections, and Commercial independence.
-
-Implementation commits:
-
-- `df26a6df07e17324a5af7d78c018866544745e9b` - initial public Research & Standards page
-- `70c4a593aa828078c60b402510076b02eaaf4bea` - responsive/CSS compatibility refinement
-- `4bec0d2d37b158cfff8775fba7a18d2cbc30d1c9` - implementation candidate and QA gate
-
-User-reported final QA PASS on 2026-09-02.
-
-Standards copy should remain literal during the current voice revision. Change it only where shared/retired brand language requires correction.
-
-## About Page - COMPLETE / COPY REOPENED
+## About Page - COMPLETE / COPY QA PENDING
 
 Route:
 
 `/about`
 
-Implementation file:
-
-`src/pages/about.astro`
-
-The visual direction remains approved and institution-first.
-
-Founder treatment remains restrained:
-
-> Founder / Louda Tuppal
-
-No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership claim should be added.
-
-The About copy is reopened because the current audience description and several institutional slogans predate the revised positioning.
-
-Implementation commits:
-
-- `3c172cf1cadf24551380fa0dc432e6283fccad8d` - initial About page
-- `402eed67aa3b4090803ec8e3a7981d4dad42a678` - reduce founder attribution and remove unsupported independence wording
-
-User-reported final visual QA PASS on 2026-09-02.
+The visual direction and restrained founder treatment remain approved. Public copy was revised under the new canonical voice and now requires responsive review.
 
 ## Subscribe Surface & beehiiv Integration - NATIVE FORM IMPLEMENTED / EXTERNAL CREDENTIAL WAIT
 
-### Current status
+### Architecture
 
-The third-party beehiiv embed was retired after user visual QA found that its typography, border treatment, sizing, whitespace, and responsive behavior remained visibly disconnected from Portfilo.
+Portfilo renders a native signup form backed by one narrow Cloudflare Pages Function at `/api/subscribe`.
 
-The user approved a native Portfilo form backed by one narrow Cloudflare Pages Function.
+beehiiv remains responsible for subscriber storage, confirmation, newsletter sending, deliverability, and unsubscribe handling.
 
-### Native route
-
-`/subscribe`
-
-Implementation file:
-
-`src/pages/subscribe.astro`
-
-The page:
-
-- uses only Portfilo HTML/CSS for the visible signup UI;
-- contains no beehiiv iframe or loader script;
-- uses Portfilo typography and tokens;
-- uses square geometry;
-- uses a horizontal editorial form on desktop and a deliberately stacked form on mobile;
-- has visible focus states;
-- has invalid-email, submitting, confirmation, and API-error states;
-- uses a hidden honeypot field;
-- tells successful submissions to check the inbox rather than claiming completion before double opt-in confirmation.
-
-### Subscription endpoint
-
-`functions/api/subscribe.js`
-
-The Cloudflare Pages Function:
+The function:
 
 - accepts POST only;
 - rejects cross-origin browser requests;
 - limits request size;
-- accepts JSON or form payloads;
-- validates email input server-side;
+- validates email server-side;
 - quietly drops honeypot submissions;
 - requires only `BEEHIIV_API_KEY` from the server-side environment;
-- binds the verified Portfilo Brief API V2 Publication ID in server code because it is a public identifier;
+- binds the verified Portfilo Brief API V2 Publication ID in server code;
 - calls beehiiv's subscription API;
-- sets `double_opt_override: "on"`;
-- can reactivate a previously unsubscribed address after explicit form submission;
-- exposes no beehiiv credential to the browser;
+- sets double opt-in on;
 - stores no subscriber data in Portfilo.
-
-### Secret handling
-
-`.dev.vars.example` documents the only required local secret variable: `BEEHIIV_API_KEY`.
-
-`.gitignore` excludes `.dev.vars` and environment-specific `.dev.vars.*` while allowing the example file to remain committed.
-
-Production secrets will later be configured in Cloudflare environment settings rather than GitHub.
-
-### Relevant native-form commits
-
-- `5a4e49742dd9d5a93aaba51636d83b4e03e14706` - last embed-layout refinement before rejection
-- `e85ed39c9bc2c432a1ca5d7d5cbfaa0f4e4148ad` - secure beehiiv subscription proxy
-- `d656fcc924aa6e5d16f05e3b27c36963fa9365da` - native Portfilo subscribe form
-- `6c9f1053325aabe14c3b0517dfc2d1cd9a602da1` - local secret template
-- `efc4597438c08ecf6664e4d47f862c33ab8798b1` - protect local Cloudflare secrets
-- `4b695ed4066c62a2776818f62c9854fe7713b422` - architecture-rule exception
-- `8503a19652e03cf351c4462c00db1b100610e041` - v0 scope alignment
-- `270a5f49031a66be404b8c0ce41504e580ecec78` - bind verified Portfilo Brief publication ID in the proxy
-- `31f4a71a0ace1bbfead539f3656054f05916374c` - reduce local configuration to the private API key only
 
 ### Remaining Subscribe validation
 
@@ -327,13 +300,12 @@ Still required after beehiiv identity verification is complete:
 
 - dedicated API key creation;
 - local `.dev.vars` API-key configuration;
-- local `npm run build` PASS;
 - local Cloudflare Pages Function runtime test;
 - invalid-email state PASS;
 - real subscription request PASS;
 - double-opt-in email + confirmation PASS;
 - subscriber visible in beehiiv PASS;
-- desktop/tablet/390px/360px visual QA after revised copy is applied;
+- final Subscribe responsive QA with the revised copy;
 - existing-route regression check.
 
 Do not close Subscribe until the real confirmed-opt-in signup and final local QA pass.
@@ -354,9 +326,9 @@ Use free tiers while sufficient for v0 validation.
 
 ## Scope still not started
 
-- public copy implementation under revised positioning - current phase after candidate approval
+- Voice & Positioning final local QA - current task
 - Subscribe credential connection + final functional/browser QA - waiting on beehiiv identity verification
-- global navigation / public-surface integration pass
+- global navigation / public-surface integration pass - after Subscribe closes
 - analytics
 - deployment
 - editorial launch research
@@ -373,14 +345,14 @@ Use free tiers while sufficient for v0 validation.
 | Content Architecture | PASS |
 | Editorial Design | PASS |
 | Wordmark Exploration & Lock | PASS |
-| Initial Public Copy Style | PASS - superseded by active Voice & Positioning Revision |
-| Voice & Positioning Revision | GUIDE UPDATED - public-page rewrite pending |
+| Initial Public Copy Style | PASS - superseded by revised canonical guide |
+| Voice & Positioning Revision | IMPLEMENTED - production build + responsive copy QA pending |
 | Editorial Taxonomy Alignment | PASS |
-| Homepage Visual Design | PASS - copy reopened only |
-| Series Page Foundation & Visual Design | PASS - final local QA + visual approval user-reported 2026-09-02 |
-| Research & Standards Page | PASS - final local production build + responsive/browser QA + visual approval user-reported 2026-09-02 |
-| About Page | PASS - visual design retained, copy reopened |
-| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED - API key + revised copy + functional signup + final QA pending |
+| Homepage Visual Design | PASS - revised copy QA pending |
+| Series Page Foundation & Visual Design | PASS - shared masthead copy needs current QA |
+| Research & Standards Page | PASS - shared masthead/footer copy needs current QA |
+| About Page | PASS - revised copy QA pending |
+| Subscribe Surface & beehiiv Integration | NATIVE FORM IMPLEMENTED - API key + functional signup + final QA pending |
 
 ## Phase handoff rule
 
