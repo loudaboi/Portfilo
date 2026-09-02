@@ -1,4 +1,5 @@
 ---
+import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 ---
@@ -6,15 +7,13 @@ import SiteFooter from "../components/SiteFooter.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Your Portfilo Brief subscription is confirmed."
+    <SiteHead
+      title="Subscription confirmed | Portfilo"
+      description="Your Portfilo Brief subscription is confirmed."
+      robots="noindex"
+      canonical={false}
+      social={false}
     />
-    <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#f4f0e8" />
-    <title>Subscription confirmed | Portfilo</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>

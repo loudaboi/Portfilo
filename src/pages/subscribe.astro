@@ -1,4 +1,5 @@
 ---
+import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 ---
@@ -6,14 +7,10 @@ import SiteFooter from "../components/SiteFooter.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Subscribe to Portfilo Brief for new Portfilo stories, sent by email."
+    <SiteHead
+      title="Subscribe | Portfilo"
+      description="Subscribe to Portfilo Brief for new Portfilo stories, sent by email."
     />
-    <meta name="theme-color" content="#f4f0e8" />
-    <title>Subscribe | Portfilo</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -66,7 +63,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                 </button>
               </div>
               <p class="subscribe-form__hint" id="subscribe-hint">
-                No fixed schedule yet. Unsubscribe any time.
+                No fixed schedule yet. Unsubscribe any time. <a href="/privacy">Privacy</a>.
               </p>
               <p
                 class="subscribe-form__status"

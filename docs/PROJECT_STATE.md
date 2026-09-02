@@ -4,11 +4,13 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Email System Lock — PASS**
+**Portfilo v0 / Site Launch Foundation — PASS**
 
-The publication foundation, content architecture, editorial design, core public pages, subscription flow, confirmation flow, and reusable Portfilo Brief v0 email system have all passed their current v0 QA.
+The publication foundation, content architecture, editorial design, core public pages, subscription flow, confirmation flow, reusable Portfilo Brief v0 email system, and Task 1A site launch foundation have passed their current v0 validation.
 
-The next task is a deployment-readiness audit. Do not expand scope before that audit identifies a real launch blocker.
+Task 1A adds the production-origin contract, canonical/social metadata, sitemap and robots behavior, Article structured data, custom 404, privacy surface, default social image, static security-header baseline, and Astro type/content checking.
+
+The final public domain is still intentionally unset. Production-only configuration and end-to-end deployment QA remain for Task 1B.
 
 Canonical email architecture:
 
@@ -24,8 +26,10 @@ Use `build/portfilo-v0` for the v0 application build.
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
-Latest stable branch work before this documentation lock includes:
+Latest stable checkpoints include:
 
+- Task 1A site launch foundation — current checkpoint;
+- `e8b53ad` — lock Portfilo Brief v0 email system;
 - `6fc6638` — remove reader-facing series id;
 - prior email-architecture simplification commits restoring beehiiv-owned confirmation.
 
@@ -246,6 +250,68 @@ Validated local end-to-end results:
 
 The custom Resend/Turnstile/token confirmation experiment remains rejected and removed.
 
+## Site launch foundation — PASS
+
+Task 1A is implemented without changing the existing visual direction or expanding the runtime architecture.
+
+Implementation:
+
+- `astro.config.mjs` reads an optional build-time `SITE_URL` and uses it as Astro's canonical `site`;
+- no production domain, `pages.dev` URL, or preview URL is hard-coded;
+- `@astrojs/sitemap` is enabled only when `SITE_URL` is present;
+- `/confirmed` and `/404` are excluded from the sitemap;
+- `src/components/SiteHead.astro` centralizes description, canonical, Open Graph, Twitter/X card metadata, sitemap discovery, and Article JSON-LD;
+- story pages emit Article structured data when a canonical site origin is configured;
+- `src/pages/robots.txt.ts` emits a crawl policy and production sitemap reference when available;
+- `src/pages/404.astro` provides the custom static 404;
+- `src/pages/privacy.astro` records the current v0 newsletter/infrastructure privacy behavior;
+- Subscribe links directly to Privacy;
+- the shared footer includes Privacy;
+- `public/social/portfilo-default.png` is the default 1200 × 630 social/share image;
+- `public/_headers` provides a narrow static security-header baseline without introducing a CSP that would break the current inline styles/script or externally hosted fonts;
+- `npm run check` runs `astro check`;
+- `npm run build` now runs `astro check && astro build`.
+
+Security-header baseline for static Pages responses:
+
+- `X-Content-Type-Options: nosniff`;
+- `Referrer-Policy: strict-origin-when-cross-origin`;
+- `X-Frame-Options: DENY`;
+- camera/geolocation/microphone disabled through `Permissions-Policy`;
+- CSP limited to `base-uri 'self'`, `form-action 'self'`, `frame-ancestors 'none'`, and `object-src 'none'`.
+
+Cloudflare Pages `_headers` applies to static responses, not Pages Functions. The existing `/api/subscribe` function continues to set its own `no-store` and `nosniff` response headers. No rate limiting or Turnstile was added in Task 1A.
+
+Validation completed on 2026-09-02 through an isolated GitHub Actions run:
+
+- dependency install / lock synchronization: PASS;
+- `astro check`: PASS;
+- build without `SITE_URL`: PASS;
+- build with a temporary validation-only site origin: PASS;
+- generated custom 404: PASS;
+- generated Privacy route: PASS;
+- generated robots.txt: PASS;
+- generated sitemap index: PASS;
+- canonical URL output: PASS;
+- Open Graph default-image output: PASS;
+- Article JSON-LD output: PASS;
+- `/confirmed` excluded from sitemap: PASS;
+- `/404` excluded from sitemap: PASS;
+- default social image copied to build output: PASS;
+- static `_headers` copied to build output: PASS.
+
+Still pending because they require deployment or launch content:
+
+- final production domain;
+- production Cloudflare `SITE_URL`;
+- production `BEEHIIV_API_KEY`;
+- production beehiiv Opt-in Redirect URL;
+- production subscription/confirmation/unsubscribe QA;
+- mailing-address/compliance clearance before the first public newsletter send;
+- Cloudflare edge rate limiting for `/api/subscribe` under Task 1B;
+- replacement/removal of published development fixture content before public launch;
+- real launch stories and final editorial imagery.
+
 ## Production build — PASS
 
 After the simplified beehiiv-owned architecture was restored, the user pulled the branch and ran a clean production build on 2026-09-02.
@@ -440,16 +506,26 @@ Local-only/generated files:
 | Portfilo Brief reusable template | PASS |
 | Portfilo Brief desktop/mobile QA | PASS |
 | Portfilo Brief real inbox test | PASS, user reported |
+| Task 1A site launch foundation | PASS |
+| `astro check` | PASS |
+| Build without `SITE_URL` | PASS |
+| Build with validation `SITE_URL` | PASS |
+| Canonical/social metadata generation | PASS when `SITE_URL` is set |
+| Sitemap/robots generation | PASS when `SITE_URL` is set |
+| Custom 404 | PASS, generated output |
+| Privacy page + signup/footer links | PASS |
+| Article structured data | PASS when `SITE_URL` is set |
+| Static security-header baseline | PASS |
 | Production Opt-in Redirect URL | PENDING stable production domain |
-| Mailing-address/compliance clearance | PENDING deployment-readiness audit |
+| Mailing-address/compliance clearance | PENDING clearance before first public send |
 | Production environment end-to-end email QA | PENDING deployment |
 | Real launch stories/content replacement | PENDING launch preparation |
 
-## Deployment-readiness audit scope
+## Remaining deployment-readiness scope
 
-The next phase is not another design pass. Audit what is actually required to put Portfilo online safely and coherently.
+Task 1A resolved the repository-side launch-foundation gaps. The remaining work is production configuration, launch content, and deployed-environment QA.
 
-The audit should verify:
+The remaining launch process should verify:
 
 - deployment target and production domain;
 - Cloudflare Pages production configuration;
@@ -471,14 +547,21 @@ Do not treat every possible improvement as a blocker. Separate true launch block
 
 ## Exact next task
 
-**Run the Portfilo v0 deployment-readiness audit against the current branch and produce a prioritized blocker list before implementing more features.**
+**Task 1B: production Cloudflare configuration and subscription-edge protection.**
 
-The audit should end with:
+Task 1B should cover only production/deployment concerns that cannot be completed correctly inside Task 1A:
 
-- blockers that must be solved before deployment;
-- items required before the first public newsletter send;
-- safe post-launch improvements;
-- one concrete next implementation task.
+- finalize/connect the public production domain;
+- set production `SITE_URL` to that stable origin;
+- configure the production `BEEHIIV_API_KEY` secret;
+- configure sensible Cloudflare edge rate limiting for `/api/subscribe` without expanding the application runtime;
+- enable/verify the approved Cloudflare Web Analytics production configuration;
+- set beehiiv's Opt-in Redirect URL to the production `/confirmed` route after the domain is stable;
+- run the deployed subscription → confirmation → Active subscriber → unsubscribe flow end to end.
+
+Do not add Turnstile unless Task 1B testing identifies a real abuse problem that edge rate limiting and the existing honeypot do not solve.
+
+Mailing-address/compliance clearance and real launch-content replacement remain required before the applicable public launch/send, but are separate from the Task 1A repository foundation.
 
 ## Phase handoff rule
 

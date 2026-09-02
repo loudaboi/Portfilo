@@ -1,4 +1,5 @@
 ---
+import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
@@ -14,14 +15,10 @@ const standards = [
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="How Portfilo handles sourcing, verification, AI use, corrections, and commercial independence."
+    <SiteHead
+      title="Research & Standards | Portfilo"
+      description="How Portfilo handles sourcing, verification, AI use, corrections, and commercial independence."
     />
-    <meta name="theme-color" content="#f4f0e8" />
-    <title>Research & Standards | Portfilo</title>
   </head>
   <body>
     <a class="skip-link" href="#standards-content">Skip to standards</a>

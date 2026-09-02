@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 
@@ -45,11 +46,11 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#f4f0e8" />
-    <title>{title} | Portfilo</title>
+    <SiteHead
+      title={`${title} | Portfilo`}
+      description={description}
+      article={{ author, publishedAt, updatedAt }}
+    />
   </head>
   <body>
     <a class="skip-link" href="#story-body">Skip to story</a>
