@@ -10,7 +10,7 @@ The publishing system, launch-selection system, and first launch research slate 
 
 C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
 
-C027 remains the active featured-story candidate. Draft v1 was rejected, Draft v2 is now treated only as an experiment, and a broader topic-space research pass has produced a two-idea shortlist. No new draft should be written until one message is explicitly approved. Nothing for C027 is public.
+C027 remains the active featured-story candidate. Draft v1 was rejected, Draft v2 is preserved only as an experiment, broader topic-space research selected a stronger core idea, the user approved that idea, and dedicated structure research is now complete. No Draft v3 has been written. Nothing for C027 is public.
 
 C009's full technical deployment/render checklist is still not recorded as complete. Do not claim a fresh local build, final desktop/mobile pass, or exhaustive live-link QA until those checks are actually completed.
 
@@ -200,7 +200,7 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / TOPIC SHORTLIST
+### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / STRUCTURE READY
 
 Topic: `Building`  
 Likely content type: `Perspective`  
@@ -224,7 +224,7 @@ Review:
 
 #### Draft v2 status
 
-Draft v2 proved that a single-thread essay is substantially clearer, but its selected thesis is no longer treated as locked.
+Draft v2 proved that a single-thread essay is substantially clearer, but its thesis is not the selected C027 topic.
 
 Draft v2 explored:
 
@@ -239,8 +239,6 @@ Do not polish or publish Draft v2 unless that idea is deliberately reopened.
 
 #### Topic-space research
 
-After user feedback, C027 was reset again before drafting.
-
 Research:
 
 `research/stories/building-the-foundation/topic-space-research.md`
@@ -254,29 +252,63 @@ Important findings:
 - `AI makes building easy, so taste matters more` is already crowded and should not be forced into C027;
 - the article needs one idea, not a bundle of knowledge, habits, network, AI, status and product advice.
 
-Current shortlist:
+The user approved the recommended core idea:
 
-1. **Build things that make the next thing easier.**
-   - working message: when you are early, choose work that improves your next starting point;
-   - this is the current editorial recommendation;
-   - it can include skills, knowledge, relationships, proof, money or distribution only as subordinate examples of residual value.
+> **Build things that make the next thing easier.**
 
-2. **Make yourself useful before you make yourself impressive.**
-   - working message: useful work can create some trust, relationships and opportunities before status exists;
-   - clear and memorable, but more likely to become moralizing or advice-heavy.
+Working interpretation:
 
-The previous Draft v2 `first project as information` idea now ranks behind these two.
+> When you are early, choose work that improves your next starting point.
+
+Skills, knowledge, relationships, proof, money, distribution, judgment or similar benefits are subordinate examples only. They are not separate themes or a checklist.
+
+#### Structure research
+
+Research:
+
+`research/stories/building-the-foundation/structure-research.md`
+
+The dedicated craft pass reviewed current Longreads essay guidance, Nieman Storyboard structure/theme guidance and relevant Paul Graham idea essays.
+
+Selected structure:
+
+**Contrast-led argumentative funnel.**
+
+Planned progression:
+
+1. begin with two efforts that look similar by immediate outcome but leave different next starting points;
+2. reveal the overlooked dimension: what remains reusable after the work;
+3. make the idea concrete through two or three ordinary examples without turning the article into a framework;
+4. connect the idea to being early, when accumulated leverage is still limited;
+5. challenge the thesis directly: `I learned a lot` cannot become an automatic excuse for wasted effort, unfinished work or endless project-hopping;
+6. give the reader one memorable test rather than a list;
+7. resolve by returning to the fact that the next attempt can begin from a different place.
+
+Recommended length:
+
+`1,100-1,500 words`.
+
+Presentation constraints:
+
+- mostly continuous prose;
+- no numbered list;
+- at most two or three quiet subheads if useful;
+- no methodology box;
+- no forced AI section;
+- no biography inside the body;
+- no invented anecdote presented as fact;
+- factual claims must still be verified if introduced.
 
 Current state:
 
 - planning: `PASS`;
 - Draft v1: `REJECTED`;
-- Draft v2: `INTERNAL EXPERIMENT / NOT LOCKED`;
-- broader topic-space research: `COMPLETE`;
-- current shortlist: `2 IDEAS`;
-- recommended idea: `BUILD THINGS THAT MAKE THE NEXT THING EASIER`;
-- dedicated structure research for selected idea: `NOT STARTED`;
-- new draft: `NOT AUTHORIZED / NOT STARTED`;
+- Draft v2: `INTERNAL EXPERIMENT / NOT SELECTED`;
+- topic-space research: `COMPLETE`;
+- core message: **APPROVED**;
+- structure research: `COMPLETE`;
+- recommended structure: `CONTRAST-LED ARGUMENTATIVE FUNNEL`;
+- Draft v3: `NOT AUTHORIZED / NOT STARTED`;
 - adversarial review: not applicable until a new draft exists;
 - public story entry: **does not exist**;
 - publication approval: **not requested / not granted**.
@@ -434,11 +466,12 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C027 Draft v1 | REJECTED / DO NOT POLISH |
-| C027 Draft v2 | INTERNAL EXPERIMENT / NOT LOCKED |
+| C027 Draft v2 | INTERNAL EXPERIMENT / NOT SELECTED |
 | C027 topic-space research | COMPLETE |
-| C027 topic shortlist | 2 IDEAS / AWAITING APPROVAL |
-| C027 new structure research | NOT STARTED |
-| C027 new draft | NOT STARTED |
+| C027 core message | APPROVED |
+| C027 structure research | COMPLETE |
+| C027 selected structure | AWAITING USER APPROVAL |
+| C027 Draft v3 | NOT STARTED |
 | C027 public content entry | DOES NOT EXIST |
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
 | C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
@@ -448,25 +481,23 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Approve the C027 core message before any more drafting.**
+**Approve or reject the C027 structure before Draft v3.**
 
-Current recommendation:
+Recommended structure:
 
-> **Build things that make the next thing easier.**
+> **Contrast-led argumentative funnel**
 
-Runner-up:
+The draft would open with a concrete contrast, reveal the hidden `next starting point` dimension, develop that single idea through a few ordinary examples, test it against the obvious `I learned a lot` rationalization, and end with one useful question rather than a framework.
 
-> **Make yourself useful before you make yourself impressive.**
+If approved:
 
-Once one message is approved:
+1. write one new internal Draft v3 at roughly 1,100-1,500 words;
+2. evaluate only whether the message remains clear and the article feels worth featuring;
+3. if direction passes, run adversarial review, factual claim audit where needed, editorial/copy pass and headline/dek audit;
+4. present the revised story to Louda for explicit publication approval;
+5. only after publication approval create the public content entry and proceed through technical QA.
 
-1. run dedicated structure research for that exact idea, drawing from effective idea essays without imitating another writer's voice;
-2. choose the structure before drafting;
-3. write one new internal draft around only that message;
-4. evaluate whether a reader can state the intended idea clearly after reading;
-5. only if the direction passes, proceed to adversarial review, copy editing, headline/dek audit, explicit publication approval and public implementation.
-
-Do not revive Draft v1 or polish Draft v2 by default.
+Do not splice Draft v1 or Draft v2 into Draft v3 by default.
 
 C009's remaining technical verification can be completed independently and should not block C027 editorial development.
 
