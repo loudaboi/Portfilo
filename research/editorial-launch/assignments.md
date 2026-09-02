@@ -20,8 +20,46 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
+| C027 | Featured Perspective candidate | What do you build first when you want to make something meaningful but do not yet have much leverage? | Building | PASS | HIGH | PUBLISH / DRAFT READY | `research/stories/building-the-foundation/` |
 
-C001 and C017 remain `ACTIVE`.
+C001, C017, and C027 are `ACTIVE`.
+
+## C027 checkpoint
+
+C027 was added after the first published story because the early-audience review identified a separate need: a more accessible, reader-centered story about building that can carry Louda Tuppal's byline without becoming a founder profile or personal-brand post.
+
+Likely content type: `Perspective`.
+
+Primary reader need: `Interpret`.
+
+The research/evaluation pass rejected a generic `grind harder` framing and also rejected making `taste is the new bottleneck` the main thesis because that framing is already crowded in 2026 builder commentary.
+
+Current thesis:
+
+> An early weak starting position is better understood as a changing sequence of bottlenecks. AI can compress some knowledge and execution barriers, but it does not eliminate the need to build judgment, skills, habits, relationships, trust, user understanding, and other forms of durable capability.
+
+The research packet contains:
+
+- `brief.md`;
+- `sources.md`;
+- `evidence.md`;
+- `contradictions.md`;
+- `notes.md`;
+- `draft.md`.
+
+The first internal draft is **not public** and has no entry under `src/content/stories/`.
+
+Research support includes randomized and workplace evidence that generative AI can disproportionately improve performance for less-experienced or lower-education participants in specific tasks, plus counterevidence showing productivity gains are context-dependent and do not automatically translate into durable learning.
+
+The draft must not claim:
+
+- that anyone can succeed if they work hard enough;
+- that AI erases differences in expertise, opportunity, capital, or network;
+- that software or building is `free`;
+- that the bottleneck sequence is universal;
+- that the author's personal path is proof of a general rule.
+
+Next C027 step: Louda reviews the internal draft for voice, relatability, and whether the idea feels like Portfilo rather than motivational content. If the direction passes, continue with adversarial review, factual claim audit, editorial pass, and headline/dek audit before creating any public content entry.
 
 ## Published launch stories
 
@@ -54,7 +92,8 @@ Completed C009 stages:
 - pre-publish editorial gate: pass;
 - user publication approval: granted 2026-09-03;
 - repository content state: `published` with `publishedAt: 2026-09-03`;
-- featured status: `false`.
+- featured status: `false`;
+- byline: `Portfilo`.
 
 The current story deliberately does **not** claim:
 
@@ -89,7 +128,7 @@ The reframed C017 therefore remains `CONTINUE`, with one narrow BSP/PPMI clarifi
 |---|---|---|---|---|---|---|
 | C021 | First reserve | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | OPEN / QUEUED |
 
-C009's publication frees one substantial-research slot. Do not activate C021 automatically; activation remains a deliberate next-assignment decision.
+C009's publication freed one substantial-research slot. C027 now occupies that slot. Do not activate C021 while all three active slots are occupied.
 
 ## Passed but unassigned
 
