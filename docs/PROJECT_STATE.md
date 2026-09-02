@@ -4,13 +4,19 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Email System & Confirmation Experience — PLANNING**
+**Portfilo v0 / Email System & Confirmation Experience — CANDIDATE PREPARED / USER REVIEW PENDING**
 
-Subscribe end-to-end functionality is now **PASS**.
+Subscribe end-to-end functionality is **PASS / CLOSED**.
 
-The user completed one real native Portfilo subscription through the local Cloudflare Pages Function and beehiiv API. The flow produced the expected pending-confirmation state, delivered the double-opt-in email, completed confirmation, and showed the subscriber as Active in beehiiv. beehiiv also recorded the acquisition source as `api: portfilo / website`.
+The user completed one real native Portfilo subscription through the local Cloudflare Pages Function and beehiiv API. The flow produced the expected pending-confirmation state, delivered the double-opt-in email, completed confirmation, and showed the subscriber as Active in beehiiv. beehiiv recorded the acquisition source as `api: portfilo / website`.
 
-The next problem is no longer subscription plumbing. It is the branded email and post-confirmation experience.
+The remaining email work is product/design work, not subscription plumbing.
+
+Canonical email-system candidate:
+
+`docs/EMAIL_SYSTEM_PLAN.md`
+
+Do not change beehiiv email settings, enable a welcome email, change the API welcome-email flag, or build the confirmation route until the user approves that plan.
 
 ## Current branch
 
@@ -33,7 +39,9 @@ Public-brand rules:
 - Standards demonstrates editorial rigor;
 - Subscribe explains the email product only.
 
-Canonical copy guide: `docs/COPY_STYLE.md`.
+Canonical copy guide:
+
+`docs/COPY_STYLE.md`
 
 Internal editing rule:
 
@@ -73,30 +81,29 @@ Runtime components:
 - `src/components/SiteHeader.astro`
 - `src/components/SiteFooter.astro`
 
-Primary navigation is exactly:
+Primary navigation:
 
 - `Latest` → `/#latest`
 - `Standards` → `/standards`
 - `About` → `/about`
 - `Subscribe` → `/subscribe`
 
-The Portfilo wordmark links Home. There is no redundant `Home` text link and no hamburger menu while the four links fit visibly.
+The Portfilo wordmark links Home. The same header/footer components render on Homepage, About, Subscribe, Standards, Story, and Series. Global navigation uses Instrument Sans and remains visible on mobile.
 
-The same header/footer components render on Homepage, About, Subscribe, Standards, Story, and Series. Global navigation uses Instrument Sans and no route-specific page label is inserted into the masthead.
+User visual QA is a PASS, including:
 
-The user reported the shared-site-chrome/browser review as a PASS after the final founder-spacing correction.
+- stable navigation across routes;
+- About topic-card alignment;
+- compact `Founder / Louda Tuppal` attribution;
+- removal of legacy `Back to home` links.
 
-About-specific fixes accepted:
+## Public surfaces
 
-- five topic cards preserve their containers while aligning title/description starts on desktop;
-- `Founder` and `Louda Tuppal` behave as a compact metadata pair;
-- legacy `Back to home` links are removed.
-
-## Homepage `/`
+### Homepage `/`
 
 Implementation: `src/pages/index.astro`
 
-Current approved direction:
+Approved direction:
 
 - page title `Portfilo`;
 - compact topic/coverage strip;
@@ -108,7 +115,7 @@ Current approved direction:
 
 Fixture story language remains clearly marked as preview material until launch stories are selected.
 
-## About `/about`
+### About `/about`
 
 Implementation: `src/pages/about.astro`
 
@@ -120,7 +127,7 @@ Current public framing:
 
 No founder portrait, long biography, founder letter, or unsupported ownership/independence claim should be added without a new decision.
 
-## Research & Standards `/standards`
+### Research & Standards `/standards`
 
 Implementation: `src/pages/standards.astro`
 
@@ -132,13 +139,13 @@ Substantive standards remain unchanged:
 - Corrections
 - Commercial independence
 
-## Story template
+### Story template
 
 Implementation: `src/pages/stories/[slug].astro`
 
 Story content, metadata, methodology, corrections, and Content Collection behavior remain intact.
 
-## Series template
+### Series template
 
 Implementation: `src/pages/series/[slug].astro`
 
@@ -152,114 +159,115 @@ Do not expand that cleanup into an unapproved Series redesign.
 
 ## Subscribe `/subscribe` — END-TO-END PASS
 
-Visible page implementation: `src/pages/subscribe.astro`
+Visible page: `src/pages/subscribe.astro`
 
 Server endpoint: `functions/api/subscribe.js`
 
 Local secret template: `.dev.vars.example`
 
-### Architecture
+Architecture:
 
-Portfilo renders its own native form and forwards subscription requests through one Cloudflare Pages Function to the official beehiiv API.
+- native Portfilo form;
+- one Cloudflare Pages Function;
+- official beehiiv API V2;
+- same-origin browser check;
+- server-side validation;
+- honeypot handling;
+- no subscriber database in Portfilo;
+- publication ID bound in source;
+- only `BEEHIIV_API_KEY` is secret;
+- `reactivate_existing: true`;
+- `send_welcome_email: false`;
+- `double_opt_override: "on"`;
+- website UTM attribution.
 
-The function:
+Validated results:
 
-- accepts POST only;
-- performs a same-origin browser check;
-- limits request size;
-- validates email server-side;
-- quietly accepts honeypot submissions without forwarding them;
-- reads only `BEEHIIV_API_KEY` from server-side environment variables;
-- binds the Portfilo Brief publication ID in server code;
-- calls beehiiv API V2 subscription creation;
-- uses `reactivate_existing: true`;
-- uses `send_welcome_email: false`;
-- forces `double_opt_override: "on"`;
-- attributes the signup with Portfilo website UTM values;
-- returns safe errors without exposing beehiiv credentials or raw responses;
-- stores no subscriber database in Portfilo.
+- beehiiv identity verification: PASS
+- dedicated API key: PASS
+- `.dev.vars` secret loading: PASS
+- production `npm run build`: PASS, 8 pages
+- `npx wrangler pages dev dist`: PASS
+- Cloudflare Pages Function compilation: PASS
+- native form submission: PASS
+- `POST /api/subscribe`: 200 OK
+- pending-confirmation UI: PASS
+- double-opt-in email delivery: PASS
+- confirmation: PASS
+- subscriber status: Active
+- acquisition source: `api: portfilo / website`
 
-The publication ID is intentionally non-secret and remains in source code.
+Subscribe functionality is closed unless deployment QA later exposes an environment/configuration regression.
 
-The beehiiv API key is secret. Never paste it into ChatGPT, GitHub, a browser-visible file, screenshot, or committed configuration.
+## Email System & Confirmation Experience — CANDIDATE
 
-### Validated end-to-end results
+Canonical candidate:
 
-- beehiiv identity verification: **PASS**
-- dedicated API key created: **PASS**
-- `.dev.vars` local secret loading: **PASS**
-- production `npm run build`: **PASS**, 8 pages built successfully
-- `npx wrangler pages dev dist`: **PASS**
-- Cloudflare Pages Function compilation: **PASS**
-- private API key binding recognized by Wrangler: **PASS**
-- native form submission: **PASS**
-- `POST /api/subscribe`: **200 OK**
-- Portfilo pending-confirmation UI: **PASS**
-- beehiiv double-opt-in email delivered: **PASS**
-- confirmation completed: **PASS**
-- subscriber state in beehiiv: **Active**
-- acquisition source: **`api: portfilo / website`**
+`docs/EMAIL_SYSTEM_PLAN.md`
 
-Subscribe functionality is closed unless later deployment QA exposes an environment/configuration regression.
+Research confirms:
 
-## Email System & Confirmation Experience — NEXT
+- beehiiv Double Opt-in Email supports custom subject, preview text, author, body, confirmation-button text/position, and visual styling;
+- the required confirmation button cannot be removed;
+- beehiiv supports an Opt-in Redirect URL;
+- beehiiv newsletter templates can be saved/reused and styled extensively;
+- email clients have limited font support, so beehiiv uses curated email-safe fonts rather than the website's custom font set;
+- API signups require `send_welcome_email: true` for the beehiiv welcome email to send;
+- a physical mailing address is required in email footers; beehiiv's address is only a fallback when Portfilo has not supplied one.
 
-The default beehiiv double-opt-in email and post-confirmation destination are not yet brand-ready.
+Candidate recommendations pending user approval:
 
-Current findings:
+1. Keep double opt-in.
+2. Brand the confirmation email around one literal action: confirm the subscription.
+3. Use sender name `Portfilo`.
+4. Create a minimal Portfilo-owned `/confirmed` route using shared site chrome.
+5. After a stable production URL exists, set beehiiv's Opt-in Redirect URL to `/confirmed`.
+6. Do not invest in beehiiv's hosted publication website for v0.
+7. Keep the Welcome Email disabled for v0 and retain API `send_welcome_email: false` until real launch stories make a welcome email useful.
+8. Treat Smart Nudge as optional after confirmation-email QA, not a blocker.
+9. Build one reusable Portfilo Brief newsletter template rather than multiple formats at launch.
+10. Translate the site visually through color, hierarchy, rules, spacing, and restraint instead of forcing exact web fonts into email clients.
+11. Choose a real authorized mailing address before the first public newsletter send. Never invent one.
+12. Run real inbox QA, not beehiiv Preview only.
 
-- beehiiv allows the Double Opt-in Email to be edited for subject, preview text, author, body copy, confirmation-button text, position, and visual styling;
-- the confirmation button itself must remain because it performs double opt-in;
-- beehiiv supports an `Opt-in Redirect URL` after confirmation;
-- without a custom redirect, the current confirmation flow lands on beehiiv's publication website, which is not an approved Portfilo public surface;
-- the confirmation email footer currently uses beehiiv's fallback mailing address because Portfilo has not yet supplied a publication mailing address;
-- do not replace that fallback with a fake address;
-- a real authorized publication mailing address must be chosen before public newsletter sending.
+Candidate double-opt-in copy:
 
-Recommended product direction:
+Subject:
 
-1. design the Portfilo double-opt-in email in beehiiv;
-2. define the Portfilo welcome-email behavior and whether a welcome email should be enabled;
-3. create a minimal Portfilo-owned post-confirmation route such as `/confirmed` or `/welcome`;
-4. after a stable public Portfilo URL exists, set beehiiv's Opt-in Redirect URL to that Portfilo route;
-5. determine a legitimate publication mailing address before launch;
-6. test email appearance on desktop and mobile clients before sending publicly.
+`Confirm your Portfilo Brief subscription`
 
-Do not invest in styling beehiiv's hosted publication website unless Portfilo intentionally decides to use it as a public surface. The Astro/Cloudflare site remains the primary website.
+Preview:
 
-## Build and validation status
+`One click to finish signing up.`
 
-| Check | Status |
-|---|---|
-| Repository access | PASS |
-| `build/portfilo-v0` branch | PASS |
-| Foundation | PASS |
-| Content Architecture | PASS |
-| Editorial Design | PASS |
-| Wordmark | PASS |
-| Editorial Taxonomy | PASS |
-| Architecture C / content-first | APPROVED |
-| Shared SiteHeader/SiteFooter | PASS |
-| About topic alignment | PASS |
-| About founder spacing | PASS |
-| Production Astro build | PASS |
-| Subscribe native architecture | PASS |
-| beehiiv API credentials | PASS |
-| Cloudflare Pages Function local run | PASS |
-| Real subscription request | PASS |
-| Double opt-in confirmation | PASS |
-| beehiiv subscriber verification | PASS |
-| Subscribe end-to-end | **PASS / CLOSED** |
-| Email visual system | PENDING |
-| Portfilo post-confirmation destination | PENDING |
-| Publication mailing address | PENDING before newsletter launch |
+Body:
+
+> PORTFILO BRIEF / CONFIRMATION
+>
+> Confirm your subscription.
+>
+> Click below to finish signing up for Portfilo Brief.
+>
+> Confirm subscription
+>
+> If you did not sign up, you can ignore this email.
+
+Candidate `/confirmed` copy:
+
+> Subscription confirmed.
+>
+> You're subscribed to Portfilo Brief. New stories will arrive by email.
+>
+> Read the latest →
+
+No implementation is approved yet.
 
 ## Brand and visual system
 
 Locked unless QA exposes a concrete implementation problem:
 
 - wordmark-first identity;
-- Instrument Sans, Source Serif 4, IBM Plex Mono;
+- Instrument Sans, Source Serif 4, IBM Plex Mono on the website;
 - paper `#f4f0e8`;
 - ink `#171614`;
 - muted `#69655e`;
@@ -270,6 +278,8 @@ Locked unless QA exposes a concrete implementation problem:
 - strong typography and restrained rules;
 - no card-heavy SaaS treatment, gradients, glassmorphism, or decorative motion;
 - red remains primarily wordmark/corrections.
+
+Email should translate this system rather than reproduce unsupported website typography exactly.
 
 ## Zero-budget infrastructure posture
 
@@ -287,25 +297,52 @@ Current direction:
 - no custom newsletter platform;
 - no custom analytics backend.
 
+Do not make v0 depend on paid beehiiv automation features.
+
+## Validation status
+
+| Check | Status |
+|---|---|
+| Repository access | PASS |
+| `build/portfilo-v0` branch | PASS |
+| Foundation | PASS |
+| Content Architecture | PASS |
+| Editorial Design | PASS |
+| Wordmark | PASS |
+| Editorial Taxonomy | PASS |
+| Architecture C / content-first | APPROVED |
+| Shared SiteHeader/SiteFooter | PASS |
+| Production Astro build | PASS |
+| Subscribe end-to-end | PASS / CLOSED |
+| Email-system research | PASS |
+| Email-system candidate | PREPARED, user review pending |
+| Branded confirmation email | NOT IMPLEMENTED |
+| Portfilo `/confirmed` route | NOT IMPLEMENTED |
+| Welcome email | DISABLED by current API policy |
+| Publication mailing address | PENDING before public newsletter launch |
+| Newsletter template | NOT IMPLEMENTED |
+
 ## Exact next task
 
-**Portfilo Email System & Confirmation Experience design.**
+**User review of `docs/EMAIL_SYSTEM_PLAN.md`.**
 
-Research and define:
+If approved, implement in this order:
 
-- Double Opt-in Email copy and visual treatment;
-- welcome-email decision;
-- post-confirmation Portfilo route and copy;
-- beehiiv Opt-in Redirect integration point;
-- compliant publication-address plan;
-- email QA checklist.
-
-Do not change beehiiv or build the redirect page until the design/copy plan is reviewed and approved.
+1. build `/confirmed` in Astro;
+2. customize the beehiiv Double Opt-in Email;
+3. test the branded confirmation email;
+4. leave the Welcome Email disabled and API flag unchanged;
+5. optionally enable/test Smart Nudge;
+6. build one reusable Portfilo Brief newsletter template;
+7. choose/verify the legitimate mailing address before public sending;
+8. set the production Opt-in Redirect URL only after the Portfilo production domain is stable.
 
 ## Relevant latest commits
 
 - `28b98e8f36964b010af93605b4fcc8547321ff71` - final About founder spacing correction
 - `dd9a527312e48562442dd7995d7a704e7a240311` - advance project to Subscribe end-to-end QA
+- `51bd213f759f211c6a1078e0583bfaebd6c10eee` - close Subscribe QA and advance to email-system planning
+- `4e6bbe31512972d607449eef27ff6f9cc7b76c68` - add email-system candidate
 
 ## Phase handoff rule
 
