@@ -99,3 +99,20 @@ const articleStructuredData = article && canonicalUrl && site
     />
   )
 }
+
+<style is:global>
+  @supports ((-webkit-mask-image: url("")) or (mask-image: url(""))) {
+    a > span[aria-hidden="true"] {
+      display: inline-block;
+      width: 0.78em;
+      height: 0.78em;
+      overflow: hidden;
+      background-color: currentColor;
+      text-indent: 100%;
+      white-space: nowrap;
+      vertical-align: -0.05em;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 12.5 12.5 3.5M6 3.5h6.5V10' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 12.5 12.5 3.5M6 3.5h6.5V10' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+  }
+</style>
