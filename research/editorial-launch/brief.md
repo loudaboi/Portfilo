@@ -200,11 +200,16 @@ Stage 2 audience signals: COMPLETE, first pass.
 
 Stage 3 competitor map: COMPLETE, first pass.
 
+Stage 4 information-gap analysis: COMPLETE, first pass.
+
 Current findings are recorded in:
 
 - `audience-signals.md`;
-- `competitor-map.md`.
+- `competitor-map.md`;
+- `information-gaps.md`.
+
+The strongest current gaps are mechanism and verification gaps rather than broad topic gaps, including AI pilot-to-production execution, all-in AI implementation economics, concrete IT-BPM higher-value work, payment-fee incidence, Direct Debit PH implementation, and data-center pipeline/demand verification.
 
 No launch topic, story, package, or series is selected yet.
 
-Next step: Stage 4 information-gap analysis. Convert the observed coverage patterns into explicit questions that appear underexplained, then verify whether those gaps are real before `candidate-stories.md` is created.
+Next step: Stage 5 candidate stories. Convert the strongest gaps into a broad pool of specific investigable questions, then move to the formal editorial-gate evaluation rather than selecting a winner immediately.
