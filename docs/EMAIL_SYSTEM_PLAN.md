@@ -1,213 +1,146 @@
 # Portfilo Email System & Confirmation Experience
 
-_Status: APPROVED / implementation active_
+_Status: APPROVED / simplified after architecture review_
 
 _Last updated: 2026-09-02_
 
-## Goal
+## Decision
 
-Portfilo owns the signup and confirmation experience. beehiiv remains the newsletter/subscriber platform after the reader has verified the email address.
+Portfilo v0 uses beehiiv to own subscriber confirmation.
 
-The confirmation flow must not require Portfilo to operate a database, SMTP server, or custom newsletter platform.
+Portfilo owns the signup interface and the post-confirmation website experience. It does not operate a transactional email service, confirmation-token system, pending-subscriber store, or custom newsletter backend.
 
-## Approved architecture
+This is the deliberately simpler architecture.
+
+## Runtime flow
 
 ```text
 Portfilo /subscribe
         ↓
-Cloudflare Turnstile
-        ↓
 POST /api/subscribe
         ↓
-24-hour encrypted stateless token
+beehiiv subscription API
         ↓
-Resend sends Portfilo HTML confirmation email
+Pending subscriber
         ↓
-GET /api/confirm?token=...
+beehiiv double-opt-in email
         ↓
-Portfilo decrypts + validates token
+reader confirms
         ↓
-beehiiv creates verified Active subscriber
+Active subscriber in beehiiv
         ↓
-Portfilo /confirmed
+Portfilo /confirmed after production redirect is configured
 ```
 
-### Ownership boundaries
-
-Portfilo owns:
-
-- signup UI;
-- abuse protection;
-- confirmation-email HTML and plain text;
-- confirmation token creation/validation;
-- confirmation endpoint;
-- post-confirmation page.
-
-Resend owns transactional confirmation-email delivery only.
-
-beehiiv owns confirmed subscriber storage, Portfilo Brief delivery, unsubscribe handling, and newsletter operations.
-
-There is no Portfilo subscriber database and no pending-subscriber store.
-
-## Why no Workers KV
-
-Workers KV was evaluated for temporary confirmation tokens but rejected because it is eventually consistent. A newly written value can take time to become visible in another Cloudflare location.
-
-Portfilo instead uses a stateless encrypted token. The email and expiry are inside AES-GCM authenticated encryption, so the address is not readable from the URL and no pending state needs to be stored.
-
-Reference:
-
-- https://developers.cloudflare.com/kv/concepts/how-kv-works/
-
-## Confirmation token
-
 Implementation:
 
-`server/confirmation-token.js`
+- signup page: `src/pages/subscribe.astro`
+- subscription proxy: `functions/api/subscribe.js`
+- post-confirmation page: `src/pages/confirmed.astro`
 
-Properties:
+The API intentionally uses:
 
-- AES-GCM authenticated encryption using Web Crypto;
-- key derived from private `CONFIRMATION_TOKEN_SECRET`;
-- random 12-byte IV per token;
-- 24-hour expiry;
-- opaque URL-safe token;
-- no email address exposed in plaintext in the link;
-- no database/KV write;
-- invalid/expired tokens return to `/subscribe` with a safe status message.
+```js
+reactivate_existing: true
+send_welcome_email: false
+double_opt_override: "on"
+```
 
-A replay of a still-valid link can call the confirmation endpoint again, but it cannot alter the encoded email or create a different subscriber. beehiiv receives the same verified address with `reactivate_existing: true`.
+and preserves Portfilo website attribution through the existing UTM values.
 
-## Signup abuse protection
+## Ownership boundaries
 
-Portfilo uses Cloudflare Turnstile.
+### Portfilo owns
 
-Implementation:
+- the native `/subscribe` UI;
+- browser-side email validation;
+- server-side email validation;
+- the honeypot filter;
+- the narrow Cloudflare Pages Function that forwards the signup to beehiiv;
+- `/confirmed` as the eventual post-confirmation destination;
+- Portfilo Brief editorial/newsletter design decisions.
 
-- the public site key is returned at runtime by `GET /api/subscribe`;
-- the browser explicitly renders Turnstile;
-- appearance is `interaction-only`, so most readers do not see CAPTCHA-style UI;
-- the token is validated server-side through Cloudflare Siteverify before any email is sent;
-- the existing honeypot remains as a cheap first filter.
+### beehiiv owns
 
-Server-side validation is mandatory.
+- Pending subscriber state;
+- confirmation-token generation and validation;
+- double-opt-in email delivery;
+- Pending → Active transition;
+- confirmed subscriber storage;
+- newsletter delivery;
+- unsubscribe handling;
+- newsletter operations and deliverability infrastructure.
 
-References:
+## Rejected custom confirmation architecture
 
-- https://developers.cloudflare.com/turnstile/get-started/
-- https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/
+A Portfilo-owned confirmation system using Resend, Turnstile, custom encrypted tokens, and a second confirmation endpoint was researched and briefly implemented, then rejected as overengineering for v0.
 
-## Transactional confirmation email
+Reasons:
 
-Implementation:
+- it added another email provider and credentials;
+- it introduced confirmation-token security and expiry behavior;
+- it expanded the narrow newsletter proxy into custom confirmation infrastructure;
+- email-security scanners can prefetch confirmation links, requiring additional user-action safeguards for a robust custom flow;
+- the already-tested beehiiv flow solves the underlying confirmation problem correctly;
+- the visual limitations of one utility email are not a sufficient reason to rebuild commodity newsletter infrastructure.
 
-`server/confirmation-email.js`
+The custom runtime code and configuration have been removed.
 
-Sender service:
+Do not reintroduce Resend, custom confirmation tokens, KV, or Turnstile for this problem unless a new validated requirement justifies them.
 
-Resend REST API.
+## Double opt-in policy
 
-The email is source-controlled Portfilo HTML rather than a beehiiv template.
+Keep double opt-in for v0.
 
-Subject:
+The purpose is list quality and verified consent, not visual branding. It protects against obvious typos, unwanted signups, and invalid addresses before they become active newsletter recipients.
+
+Do not switch to single opt-in merely because the confirmation-email editor is inconvenient.
+
+A future single-opt-in decision should be based on real conversion/deliverability evidence rather than editor preference.
+
+## Confirmation email product rule
+
+The confirmation email is a utility surface with one job:
+
+> Confirm the subscription.
+
+It does **not** need to reproduce the Portfilo website or become a miniature editorial product.
+
+Visual perfection in beehiiv's preset-email editor is not a v0 blocker.
+
+If simple customization is easy, preferred copy is:
+
+**Subject**
 
 `Confirm your Portfilo Brief subscription`
 
-Preview:
+**Body**
 
-`One click to finish signing up.`
-
-Core content:
-
-> PORTFILO BRIEF / CONFIRMATION
->
 > Confirm your subscription.
 >
 > Click below to finish signing up for Portfilo Brief.
 >
-> Confirm subscription ↗
->
-> If you did not sign up, you can ignore this email.
+> Confirm subscription
 
-Visual direction:
+No brand manifesto, founder note, topic list, illustration, or complex layout is required.
 
-- Portfilo text wordmark with approved ink/blue/red split;
-- paper `#f4f0e8` background;
-- ink `#171614`;
-- signal blue `#0050a4` rule and CTA;
-- correction red only in the wordmark;
-- square CTA;
-- email-safe Arial/Helvetica and Georgia/Courier fallbacks;
-- single-column layout;
-- mobile adjustment below 640px;
-- explicit plain-text fallback;
-- no decorative hero image, cards, gradients, beehiiv body copy, or beehiiv confirmation chrome.
+If the editor makes further customization cumbersome, preserve a functional confirmation email and move on. Do not add infrastructure to solve a styling inconvenience.
 
-Reference:
+## Current unpublished beehiiv edits
 
-- https://resend.com/features/email-api
+The user made experimental changes in the beehiiv Opt in email editor while evaluating the visual limitations.
 
-## `/api/subscribe`
+Those changes were shown as **Unpublished changes**.
 
-Implementation:
+Do not publish those experimental edits merely to complete this phase. The previously published functional confirmation flow remains the baseline.
 
-`functions/api/subscribe.js`
+A later minimal cleanup can be done in beehiiv if it is straightforward, but it is not required before continuing site/deployment work.
 
-GET:
+## Post-confirmation destination
 
-- returns only the public Turnstile site key;
-- returns no secrets.
+Portfilo already has:
 
-POST:
-
-1. enforce same-origin browser request;
-2. enforce request-size limit;
-3. parse JSON/form payload;
-4. quietly accept honeypot submissions;
-5. validate email;
-6. validate Turnstile server-side;
-7. create encrypted 24-hour token;
-8. construct same-origin `/api/confirm` URL;
-9. send Portfilo confirmation email through Resend;
-10. return the existing `Check your inbox` success state.
-
-The POST does not create a beehiiv subscriber.
-
-## `/api/confirm`
-
-Implementation:
-
-`functions/api/confirm.js`
-
-Flow:
-
-1. accept GET from the email link;
-2. decrypt and authenticate the token;
-3. enforce token expiry;
-4. validate the recovered email address;
-5. call beehiiv subscription creation;
-6. redirect to `/confirmed` on success.
-
-beehiiv request policy:
-
-```json
-{
-  "reactivate_existing": true,
-  "send_welcome_email": false,
-  "double_opt_override": "off",
-  "utm_source": "portfilo",
-  "utm_medium": "website",
-  "utm_campaign": "portfilo_brief_signup"
-}
-```
-
-`double_opt_override` is intentionally `off` because Portfilo has already performed the confirmation step. beehiiv must not send another opt-in email.
-
-Reference:
-
-- https://developers.beehiiv.com/api-reference/subscriptions/create
-
-## Post-confirmation page
+`/confirmed`
 
 Implementation:
 
@@ -221,95 +154,92 @@ Current copy:
 >
 > Read the latest ↗
 
-The page uses shared site chrome and is `noindex`.
+The route uses shared Portfilo site chrome and is marked `noindex`.
 
-There is no beehiiv Opt-in Redirect URL in this architecture because the reader never uses beehiiv's confirmation page.
+Once Portfilo has a stable production domain, configure beehiiv's Opt-in Redirect URL to the full production `/confirmed` URL.
+
+Do not point beehiiv to localhost or a temporary development URL.
+
+Until that production redirect exists, beehiiv's hosted confirmation destination is an accepted temporary test artifact.
 
 ## Welcome email
 
-V0 policy: **disabled**.
+Keep the Welcome Email disabled for v0.
 
-The confirmation endpoint sends:
+The API remains:
 
-`send_welcome_email: false`
+```js
+send_welcome_email: false
+```
 
-Do not enable a generic welcome email. Revisit only when real launch stories make a useful onboarding email possible.
+A welcome email should only be introduced when real launch stories make it useful, for example by giving a new subscriber a small set of strong starting stories.
 
-## Portfilo Brief newsletter template
+Do not send a generic second email merely to explain the brand again.
 
-The regular newsletter is still sent through beehiiv. It should use one reusable template at launch.
+## Smart Nudge
+
+Not required for v0.
+
+It may be evaluated later if Pending subscriber drop-off becomes a measurable problem.
+
+## Portfilo Brief newsletter design
+
+The recurring Portfilo Brief newsletter is a more important design surface than the one-time confirmation email.
+
+Use one reusable v0 template rather than multiple formats at launch.
 
 Recommended structure:
 
-1. `PORTFILO BRIEF / [DATE]`;
-2. lead story headline;
-3. short dek/explanation;
+1. Portfilo Brief/date identity;
+2. strongest lead story;
+3. short dek or explanation;
 4. `Read →`;
-5. `Also in Portfilo` with only as many links as are genuinely useful;
+5. optional additional Portfilo stories when useful;
 6. compliant footer.
 
-Subject lines should lead with the strongest concrete story rather than issue numbering or generic newsletter language.
+Do not create empty sections to satisfy a template.
 
-The confirmation email and regular newsletter do not need to share an implementation. Confirmation is source-controlled transactional HTML; Portfilo Brief remains a beehiiv newsletter product.
+Subject lines should normally lead with the strongest concrete story rather than issue numbering or generic phrases such as `Your weekly dose of...`.
 
 ## Mailing address
 
-A real authorized physical mailing address remains a blocker before the first public newsletter send.
+A legitimate physical mailing address remains required before the first public Portfilo Brief newsletter send.
 
-Do not invent an address or casually publish a private/home address. The exact address choice must be verified before launch.
+Do not invent an address.
 
-The custom transactional confirmation email does not use beehiiv's fallback New York footer.
+Do not casually publish a private/home address without considering privacy.
 
-## Environment variables
+The exact authorized address must be resolved before public newsletter sending.
 
-Local template:
+## V0 QA
 
-`.dev.vars.example`
+The already-completed local end-to-end test proved:
 
-Required runtime values:
+- native Portfilo signup submission;
+- Cloudflare Pages Function execution;
+- beehiiv API acceptance;
+- Pending confirmation state;
+- beehiiv confirmation-email delivery;
+- confirmation click;
+- Active subscriber state;
+- Portfilo website/API acquisition attribution.
 
-- `BEEHIIV_API_KEY` — private;
-- `RESEND_API_KEY` — private;
-- `RESEND_FROM` — sender identity;
-- `TURNSTILE_SITE_KEY` — public but environment-specific;
-- `TURNSTILE_SECRET_KEY` — private;
-- `CONFIRMATION_TOKEN_SECRET` — private, random, at least 32 characters.
+After the current simplification cleanup, require a clean production build. A full new subscription test is only necessary if the restored subscription files change again or deployment configuration differs from local QA.
 
-For localhost, Cloudflare's official always-pass Turnstile test keys may be used. Never deploy those test keys to production.
+Before public launch, additionally verify:
 
-Reference:
+- production `BEEHIIV_API_KEY` configuration;
+- production signup submission;
+- production confirmation email delivery;
+- production Opt-in Redirect URL to `/confirmed`;
+- Active subscriber after confirmation;
+- legitimate newsletter footer mailing address;
+- unsubscribe behavior;
+- sender/reply identity;
+- one real newsletter test send.
 
-- https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+## Architecture principle
 
-## QA standard
+Use commodity infrastructure for commodity problems.
 
-Before declaring the custom confirmation flow complete:
-
-- production Astro build passes;
-- Wrangler compiles both Pages Functions and imported server helpers;
-- Turnstile public config loads;
-- invalid email is rejected;
-- Turnstile failure path is safe;
-- one real confirmation email is delivered through Resend;
-- Gmail desktop rendering is reviewed;
-- mobile inbox rendering is reviewed;
-- plain-text content is sensible;
-- confirmation CTA points to Portfilo, not beehiiv;
-- confirmation creates an Active beehiiv subscriber;
-- acquisition source remains the Portfilo website/API attribution;
-- confirmation redirects to `/confirmed`;
-- expired/invalid token returns safely to `/subscribe`;
-- no secret is present in Git, browser HTML, screenshots, or logs.
-
-## Recommendation
-
-This is the v0 confirmation architecture.
-
-It deliberately adds only what is needed to own the confirmation experience while preserving the larger zero-budget posture:
-
-- no database;
-- no KV;
-- no custom SMTP server;
-- no custom newsletter platform;
-- no subscriber accounts;
-- beehiiv remains the durable newsletter system.
+Portfilo should spend its design and engineering effort on the publication, journalism, and recurring reader experience, not on rebuilding subscriber-confirmation infrastructure that beehiiv already provides.
