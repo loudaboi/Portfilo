@@ -9,7 +9,7 @@ _Last updated: 2026-09-03_
 **Role:** Supporting  
 **Primary topic:** Business  
 **Primary reader need:** Understand  
-**Likely content type:** Explained / Analysis
+**Likely content type:** Explained
 
 ## Original research question
 
@@ -27,7 +27,9 @@ This narrower question preserves the original reader need while matching what th
 
 `PUBLISH`
 
-This is a story-decision checkpoint, not publication itself. Drafting, adversarial review, claim audit, headline audit and public-content creation still remain.
+The story-decision, drafting, adversarial review, claim audit, editorial pass and headline/dek audit are complete.
+
+**Publication authorization has not been granted.** The prepared public content entry remains `status: draft` and must not be changed to `published` until Louda Tuppal explicitly approves the finished article.
 
 ## Reader payoff
 
@@ -56,7 +58,7 @@ The current packet identifies four overlapping practical clusters:
 
 These are Portfilo analytical groupings, not official mutually exclusive categories.
 
-## Research basis
+## Research and editorial basis
 
 The packet now includes:
 
@@ -64,7 +66,16 @@ The packet now includes:
 - `sample.md` - 15-role structured illustrative employer sample;
 - `evidence.md` - claim ledger;
 - `contradictions.md` - challenge and limitation log;
-- `notes.md` - synthesis, method decisions and drafting direction.
+- `notes.md` - synthesis and method decisions;
+- `draft.md` - revised internal article draft;
+- `adversarial-review.md` - skeptical review and required revisions;
+- `fact-check.md` - final claim, terminology, causality, methodology and headline audit.
+
+Prepared content entry:
+
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
+
+The content entry is intentionally `status: draft`, has no `publishedAt`, and is excluded from the production story route by the current Astro publishing logic.
 
 The structural backbone comes from official Philippine Skills Frameworks. Current employer career pages are used to show concrete roles and requirements in the market now.
 
@@ -167,7 +178,7 @@ These limitations are part of the story, not reasons to kill it.
 
 ## Source access / interviews
 
-Interviews are `NOT REQUIRED` for this documentary Explained/Analysis version.
+Interviews are `NOT REQUIRED` for this documentary Explained version.
 
 The central answer is supported through official Philippine skills frameworks and employer-primary career pages.
 
@@ -193,20 +204,30 @@ The current Portfilo packet adds a different layer:
 - an evidence-based set of complexity dimensions;
 - clear boundaries around what the phrase does not prove.
 
-This is sufficient original synthesis for an Explained/Analysis story without claiming a representative labor-market study.
+This is sufficient original synthesis for an Explained story without claiming a representative labor-market study.
 
-## Drafting rule
+## Completed editorial checks
 
-Draft only from the verified/qualified packet.
+- Draft: **PASS after revision**
+- Adversarial review: **PASS after revisions**
+- Claim audit: **PASS**
+- Editorial/copy pass: **PASS**
+- Headline/dek audit: **PASS**
+- Methodology wording: **PASS**
+- Public content entry: **PREPARED AS DRAFT**
+- Publication approval: **PENDING USER APPROVAL**
 
-The article must state the structured sample method accurately and must not introduce salary, prevalence, transition, displacement or growth claims that are outside the evidence ledger.
+No generic `Portfilo could not verify` language is used. Material limitations are stated through the method and evidence rather than newsroom-centered boilerplate.
 
 ## Exact next task
 
-Draft C009 from this packet, then run:
+**User editorial review and explicit publication decision for the finished C009 article.**
 
-1. adversarial review;
-2. claim audit;
-3. headline/dek audit;
-4. methodology/source presentation decision;
-5. only then create the public story file.
+If approved:
+
+1. change the content entry from `draft` to `published`;
+2. set `publishedAt` and decide `featured` treatment;
+3. run `npm run build` and inspect the rendered story before treating publication as complete;
+4. then replace/retire fixture presentation and integrate the story into homepage/newsletter distribution as separately approved.
+
+Until that approval, do not publish C009.
