@@ -198,8 +198,13 @@ Stage 1 broad signal scan: COMPLETE, first pass.
 
 Stage 2 audience signals: COMPLETE, first pass.
 
-The current findings are recorded in `audience-signals.md`.
+Stage 3 competitor map: COMPLETE, first pass.
+
+Current findings are recorded in:
+
+- `audience-signals.md`;
+- `competitor-map.md`.
 
 No launch topic, story, package, or series is selected yet.
 
-Next step: Stage 3 competitor map focused first on the strongest themes from the signal scan, followed by explicit information-gap analysis before `candidate-stories.md` is created.
+Next step: Stage 4 information-gap analysis. Convert the observed coverage patterns into explicit questions that appear underexplained, then verify whether those gaps are real before `candidate-stories.md` is created.
