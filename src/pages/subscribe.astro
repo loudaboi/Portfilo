@@ -60,16 +60,11 @@ import SiteFooter from "../components/SiteFooter.astro";
                   required
                   aria-describedby="subscribe-hint subscribe-status"
                 />
-                <button type="submit" disabled>
+                <button type="submit">
                   <span data-submit-label>Subscribe</span>
                   <span aria-hidden="true">↗</span>
                 </button>
               </div>
-              <div
-                class="subscribe-form__verification"
-                id="turnstile-container"
-                aria-label="Signup verification"
-              ></div>
               <p class="subscribe-form__hint" id="subscribe-hint">
                 No fixed schedule yet. Unsubscribe any time.
               </p>
@@ -125,8 +120,8 @@ import SiteFooter from "../components/SiteFooter.astro";
         <div>
           <h2 id="privacy-title">Email and unsubscribe</h2>
           <p>
-            Resend sends the confirmation email. After you confirm, beehiiv stores
-            your subscription and handles Portfilo Brief delivery and unsubscribe requests.
+            beehiiv handles delivery and unsubscribe requests. Every Portfilo Brief
+            email includes an unsubscribe link.
           </p>
         </div>
       </section>
@@ -140,11 +135,6 @@ import SiteFooter from "../components/SiteFooter.astro";
       const statusMessage = document.querySelector("#subscribe-status");
       const submitButton = subscribeForm?.querySelector('button[type="submit"]');
       const submitLabel = subscribeForm?.querySelector("[data-submit-label]");
-      const turnstileContainer = document.querySelector("#turnstile-container");
-
-      let turnstileWidgetId = null;
-      let turnstileReady = false;
-      let isSubmitting = false;
 
       function setStatus(message, state = "") {
         if (!statusMessage) return;
@@ -152,104 +142,11 @@ import SiteFooter from "../components/SiteFooter.astro";
         statusMessage.dataset.state = state;
       }
 
-      function syncSubmitButton() {
+      function setSubmitting(isSubmitting) {
         if (!submitButton || !submitLabel) return;
-        submitButton.disabled = isSubmitting || !turnstileReady;
+        submitButton.disabled = isSubmitting;
         submitButton.setAttribute("aria-busy", String(isSubmitting));
         submitLabel.textContent = isSubmitting ? "Submitting…" : "Subscribe";
-      }
-
-      function setSubmitting(value) {
-        isSubmitting = value;
-        syncSubmitButton();
-      }
-
-      function loadTurnstileScript() {
-        if (window.turnstile) return Promise.resolve();
-
-        return new Promise((resolve, reject) => {
-          const existing = document.querySelector("script[data-portfilo-turnstile]");
-          if (existing) {
-            existing.addEventListener("load", resolve, { once: true });
-            existing.addEventListener("error", reject, { once: true });
-            return;
-          }
-
-          const script = document.createElement("script");
-          script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-          script.async = true;
-          script.defer = true;
-          script.dataset.portfiloTurnstile = "true";
-          script.addEventListener("load", resolve, { once: true });
-          script.addEventListener("error", reject, { once: true });
-          document.head.append(script);
-        });
-      }
-
-      async function initializeTurnstile() {
-        try {
-          const [configResponse] = await Promise.all([
-            fetch("/api/subscribe", {
-              method: "GET",
-              headers: { Accept: "application/json" },
-            }),
-            loadTurnstileScript(),
-          ]);
-
-          const config = await configResponse.json().catch(() => null);
-          if (!configResponse.ok || !config?.turnstileSiteKey || !window.turnstile) {
-            throw new Error("verification_unavailable");
-          }
-
-          turnstileWidgetId = window.turnstile.render(turnstileContainer, {
-            sitekey: config.turnstileSiteKey,
-            appearance: "interaction-only",
-            theme: "light",
-            callback: () => {
-              turnstileReady = true;
-              syncSubmitButton();
-            },
-            "expired-callback": () => {
-              turnstileReady = false;
-              syncSubmitButton();
-            },
-            "error-callback": () => {
-              turnstileReady = false;
-              setStatus("We could not verify this signup. Please try again.", "error");
-              syncSubmitButton();
-            },
-          });
-        } catch {
-          turnstileReady = false;
-          setStatus(
-            "Email signup is temporarily unavailable. Please try again later.",
-            "error",
-          );
-          syncSubmitButton();
-        }
-      }
-
-      function resetTurnstile() {
-        turnstileReady = false;
-        if (window.turnstile && turnstileWidgetId !== null) {
-          window.turnstile.reset(turnstileWidgetId);
-        }
-        syncSubmitButton();
-      }
-
-      const confirmationState = new URLSearchParams(window.location.search).get(
-        "confirmation",
-      );
-      if (confirmationState === "expired" || confirmationState === "invalid") {
-        setStatus(
-          "That confirmation link is invalid or has expired. Enter your email to request a new one.",
-          "error",
-        );
-      } else if (confirmationState === "error") {
-        setStatus(
-          "We could not confirm your subscription. Try the link again or request a new one.",
-          "error",
-        );
       }
 
       subscribeForm?.addEventListener("submit", async (event) => {
@@ -267,21 +164,10 @@ import SiteFooter from "../components/SiteFooter.astro";
           return;
         }
 
-        const turnstileToken =
-          window.turnstile && turnstileWidgetId !== null
-            ? window.turnstile.getResponse(turnstileWidgetId)
-            : "";
-
-        if (!turnstileToken) {
-          setStatus("Verification is still loading. Please try again.", "error");
-          return;
-        }
-
         const formData = new FormData(subscribeForm);
         const payload = {
           email: String(formData.get("email") || "").trim(),
           company: String(formData.get("company") || "").trim(),
-          turnstileToken,
         };
 
         setSubmitting(true);
@@ -318,11 +204,8 @@ import SiteFooter from "../components/SiteFooter.astro";
           );
         } finally {
           setSubmitting(false);
-          resetTurnstile();
         }
       });
-
-      initializeTurnstile();
     </script>
 
     <style>
@@ -506,7 +389,6 @@ import SiteFooter from "../components/SiteFooter.astro";
       .subscribe-form button span:last-child { font-size: 1.25em; }
       .subscribe-form button:hover { background: var(--ink); }
       .subscribe-form button:disabled { cursor: wait; opacity: 0.62; }
-      .subscribe-form__verification { margin-top: 0.8rem; min-height: 0; }
       .subscribe-form__hint,
       .subscribe-form__status { max-width: 42rem; font: 400 0.67rem/1.55 var(--mono); }
       .subscribe-form__hint { margin: 0.8rem 0 0; color: var(--muted); }
