@@ -4,17 +4,15 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Voice & Positioning Reset — COPY CANDIDATE REVIEW**
+**Portfilo v0 / Content-First Copy + Global Navigation — IMPLEMENTED / LOCAL QA PENDING**
 
-The user approved **Architecture C: Content-first / no tagline** after rejecting the previous public-copy revision during QA.
+The user approved **Architecture C: Content-first / no tagline**, then approved the coordinated replacement copy and the decision to pull Global Navigation into the same implementation pass.
 
-The canonical copy guide has been rewritten around that architecture, and a coordinated replacement candidate now exists at:
+The replacement is now implemented across Homepage, About, Subscribe, Standards, Story, and Series.
 
-`docs/COPY_REPLACEMENT_CANDIDATE.md`
+Do **not** treat this phase as closed yet. A local production build and responsive/browser QA are still required.
 
-No public page has been changed as a result of the new candidate yet.
-
-The current public templates still contain the rejected `from the Philippines` implementation. Treat that visible copy as a failed candidate preserved only until the replacement package is approved and implemented.
+Subscribe engineering remains implemented, but end-to-end newsletter QA is still waiting on beehiiv identity verification and API-key creation.
 
 ## Current branch
 
@@ -22,22 +20,24 @@ Use `build/portfilo-v0` for the v0 application build.
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
-## Completed phases
+## Completed foundation and visual phases
 
 - Foundation
 - Content Architecture
 - Editorial Design
 - Wordmark Exploration & Lock
 - Editorial Taxonomy Alignment
-- Homepage Visual Design
+- Homepage visual direction
 - Series Page Foundation & Visual Design
 - Research & Standards Page
 - About Page visual direction
 - Voice & Positioning architecture research
 
+The overall visual language remains approved. The current pass intentionally reopened only the Homepage identity hierarchy and shared masthead/navigation behavior because those were directly involved in the copy/usability problem.
+
 ## Voice reset history
 
-The previous public-copy revision was rejected because it became vague, geographically forced, over-explained, and recognizably AI-shaped.
+The previous public-copy system was rejected because it became vague, geographically forced, over-explained, and recognizably AI-shaped.
 
 Rejected lines include:
 
@@ -46,19 +46,23 @@ Rejected lines include:
 - `Business and tech make more sense when you start from here.`
 - `Some stories start here. Others start somewhere else and matter here anyway.`
 
-Do not iterate on these lines.
+Do not iterate on or restore those lines.
 
-The failure was partly structural. The existing Homepage identity hero created pressure to fill the site's largest visual moment with a large brand statement even when the publication did not need one.
+The approved architecture removes the assumption that Portfilo needs a permanent public tagline.
 
-## Approved positioning architecture
-
-Canonical decision document:
-
-`docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`
+## Canonical voice and architecture
 
 Canonical copy guide:
 
 `docs/COPY_STYLE.md`
+
+Architecture research/decision:
+
+`docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`
+
+Approved implementation record:
+
+`docs/COPY_REPLACEMENT_CANDIDATE.md`
 
 ### Architecture C: Content-first / no tagline
 
@@ -69,63 +73,25 @@ Approved rules:
 - no audience-flattering slogan;
 - the wordmark establishes the publication;
 - a small taxonomy descriptor may orient readers when useful;
-- the featured story becomes the main Homepage statement;
+- the featured story is the main Homepage statement;
 - About explains the publication plainly;
 - Standards demonstrates editorial rigor;
 - Subscribe explains the email product only;
 - story selection, headlines, deks, and editorial writing carry most of the personality.
 
-### Temporary coverage descriptor
+Internal editing rule:
 
-While fixture journalism remains, the site may use functional coverage copy such as:
+> **Say the thing. Then stop.**
 
-> Business / Technology / Startups / AI / Building
-
-or, if a sentence is genuinely needed:
-
-> Stories about companies, products, markets, and the people building them.
-
-These are not permanent taglines.
-
-## Current replacement candidate
-
-`docs/COPY_REPLACEMENT_CANDIDATE.md` is the exact coordinated candidate under review.
-
-Its main approach is **deletion before replacement**.
-
-Proposed structural changes include:
-
-- remove the shared masthead positioning line instead of replacing it with another slogan;
-- remove the footer center positioning line;
-- substantially reduce the Homepage identity block;
-- make the featured story the Homepage primary `h1` and main visual statement;
-- keep only a compact coverage strip above the lead story;
-- simplify the Homepage dark institutional section into a factual About bridge;
-- remove the About positioning block;
-- remove the entire About Philippine-context section;
-- reduce Subscribe to product facts and the native signup form;
-- remove Subscribe's geographic `Perspective` explanation;
-- leave substantive Standards, Story content, Series content, taxonomy, and Subscribe backend behavior unchanged.
-
-Key candidate copy is deliberately plain:
-
-> Portfilo is a business and technology publication.
-
-> We cover companies, startups, AI, markets, products, and the work of building them.
-
-> Portfilo Brief.
-
-> New Portfilo stories by email.
-
-Do not implement the candidate until the user approves the package.
+The project treats recognizably machine-shaped brand prose as a product-quality failure even when grammar is correct.
 
 ## Geography rule
 
-Philippine relevance remains part of Portfilo's reporting and early distribution strategy, but geography is no longer required brand copy.
+Philippine relevance remains part of reporting and early distribution strategy, but geography is not required brand copy.
 
 Do not force `Philippines`, `Filipino`, `here`, `local`, or similar wording into the masthead, hero, About, or newsletter merely to establish identity.
 
-Use Philippine context when the actual subject or reporting requires it.
+Use Philippine context when the actual subject, market, source, regulation, price, person, event, or reader consequence requires it.
 
 A global story does not need a manufactured Philippine justification to belong on Portfilo.
 
@@ -137,44 +103,180 @@ This is an internal editorial/distribution focus, not a public label.
 
 Do not brand Portfilo as `Gen Z media`, `for young Filipinos`, or `for ambitious Filipinos` by default.
 
-## Canonical voice rules
+## Global navigation — IMPLEMENTED
 
-`docs/COPY_STYLE.md` is authoritative.
+Primary navigation is now visible across all public templates:
 
-Core internal editing rule:
+- `Latest` → Homepage `#latest`;
+- `Standards` → `/standards`;
+- `About` → `/about`;
+- `Subscribe` → `/subscribe`.
 
-> **Say the thing. Then stop.**
+The Portfilo wordmark links to `/` and acts as Home.
 
-Human-language gate:
+Do not add a redundant `Home` link.
 
-1. Does this sentence add information?
-2. Would a normal person say it aloud?
-3. Can it be shorter without losing meaning?
-4. Is it describing the product or explaining internal strategy?
-5. Does the reader need this before seeing a story?
-6. Would removing it make the page clearer?
+Do not add Business, Technology, Startups, AI, or Building to primary navigation until real topic-index routes exist.
 
-If removing a sentence makes the page clearer, remove it.
+Do not add Series while Series is represented only by fixtures.
 
-The project treats recognizably machine-shaped brand prose as a product-quality failure even when grammar is correct.
+There is no hamburger menu in v0 while these four short links fit visibly. On narrow layouts, navigation becomes a visible second row.
 
-Avoid vague connective language, geographic philosophy in marketing copy, symmetrical slogans, repeated `not X, but Y` structures, three-part mission sentences, generic claims about intelligence/clarity/trust/usefulness, and explanatory bridge sentences that exist mainly to complete a positioning argument.
+Subscribe may use the signal-blue accent but should not become a rounded SaaS-style button.
 
-## Homepage visual exception
+Standards, Story, and Series retain their small right-side page/context labels in addition to the primary navigation. This is intentional for the current implementation and should be judged during visual QA.
 
-The broader visual system remains approved and frozen.
+## Homepage `/` — CONTENT-FIRST IMPLEMENTED
 
-Architecture C specifically reopens the **function and scale of the Homepage identity block**.
+Implementation file:
 
-The current replacement candidate proposes reducing it to a compact coverage/fixture strip and moving the featured story into the primary hero role.
+`src/pages/index.astro`
 
-Do not preserve the giant brand-headline area by inventing another slogan.
+Implemented changes:
 
-Typography, wordmark, color system, 12-column grid, dark evidence module, editorial rules, and overall visual language remain approved.
+- page title is simply `Portfilo`;
+- metadata description names the five coverage areas without geographic positioning;
+- giant institutional positioning hero removed;
+- compact coverage strip added;
+- temporary fixture-era descriptor: `Stories about companies, products, markets, and the people building them.`;
+- synthetic fixture notice retained;
+- feature story promoted to the page's primary `h1` and visual hero;
+- `Latest` has `id="latest"` for global navigation;
+- dark institutional block simplified into a factual About bridge;
+- repeated topic list removed from that About bridge;
+- Homepage Portfilo Brief copy reduced to `Portfilo Brief` / `New stories by email.`;
+- footer positioning slogan removed.
 
-## Locked editorial taxonomy
+The temporary coverage descriptor is not a tagline. During browser QA, remove it if the page is clearer without it.
 
-The v0 topics remain:
+## About `/about` — SIMPLIFIED IMPLEMENTED
+
+Implementation file:
+
+`src/pages/about.astro`
+
+Current public framing:
+
+> Portfilo is a business and technology publication.
+
+> We cover companies, startups, AI, markets, products, and the work of building them.
+
+Implemented changes:
+
+- old positioning block removed;
+- entire Philippine-context manifesto section removed;
+- topic descriptions simplified;
+- `Stories take different forms.` introduces formats;
+- audience section reduced to people curious about business and technology;
+- `If a term matters, we explain it.` retained as the small reader note;
+- Standards bridge reduced to `Our standards are public.` plus a link;
+- founder remains only `Founder / Louda Tuppal`;
+- footer positioning slogan removed.
+
+No founder portrait, long biography, founder letter, personal-brand hero, or unsupported ownership/independence claim should be added without a new decision.
+
+## Research & Standards `/standards` — SUBSTANTIVE COPY UNCHANGED
+
+Implementation file:
+
+`src/pages/standards.astro`
+
+The substantive Sources, Verification, AI use, Corrections, and Commercial independence material remains unchanged.
+
+Only shared masthead/navigation/footer integration changed.
+
+## Story template — NAVIGATION INTEGRATED
+
+Implementation file:
+
+`src/pages/stories/[slug].astro`
+
+Story content, metadata, methodology, corrections, and Content Collection behavior were not reopened.
+
+The rejected masthead strapline was replaced by primary navigation. `Story / {contentType}` remains as page context.
+
+## Series template — NAVIGATION INTEGRATED
+
+Implementation file:
+
+`src/pages/series/[slug].astro`
+
+Series content, ordering logic, fixture behavior, and story presentation remain unchanged.
+
+The rejected masthead strapline was replaced by primary navigation. `Series` remains as page context. Footer positioning copy was removed.
+
+Separate pre-launch cleanup still required:
+
+- remove reader-facing `Series ID` before real public launch.
+
+Do not silently expand that cleanup into a Series redesign.
+
+## Subscribe `/subscribe` — NATIVE FORM + SIMPLIFIED COPY IMPLEMENTED
+
+Implementation file:
+
+`src/pages/subscribe.astro`
+
+Visible product copy is now intentionally literal:
+
+- `Portfilo Brief`;
+- `New Portfilo stories by email.`;
+- `Subscribe`;
+- `Enter your email. We’ll send a confirmation link.`;
+- `No fixed schedule yet. Unsubscribe any time.`.
+
+The old coverage/perspective explanation was removed.
+
+Product facts now state:
+
+- Schedule / No fixed schedule yet;
+- Confirmation / Required before the subscription is active;
+- Unsubscribe / Any time.
+
+The beehiiv provider note remains literal and operational.
+
+### Native subscription architecture
+
+Portfilo renders its own form and forwards signup requests through one Cloudflare Pages Function:
+
+`functions/api/subscribe.js`
+
+The function:
+
+- accepts POST only;
+- rejects cross-origin browser requests;
+- limits request size;
+- validates email server-side;
+- quietly drops honeypot submissions;
+- requires only `BEEHIIV_API_KEY` from the server-side environment;
+- binds the verified Portfilo Brief API V2 Publication ID in server code;
+- calls beehiiv's subscription API;
+- sets double opt-in on;
+- can reactivate an address after an explicit resubscribe form submission;
+- exposes no credential to the browser;
+- stores no subscriber data in Portfilo.
+
+`.dev.vars.example` documents the only local secret variable. `.dev.vars` is ignored by Git.
+
+Do not reintroduce the beehiiv iframe/embed.
+
+### Remaining Subscribe validation
+
+After beehiiv identity verification is complete:
+
+- create a dedicated API key;
+- configure local `.dev.vars`;
+- run the site through `npx wrangler pages dev dist`;
+- verify invalid-email and loading states;
+- complete one real subscription request;
+- receive and complete the double-opt-in confirmation;
+- confirm the subscriber appears in beehiiv.
+
+Do not close Subscribe until that end-to-end flow passes.
+
+## Locked taxonomy
+
+V0 topics remain:
 
 - Business
 - Technology
@@ -182,13 +284,18 @@ The v0 topics remain:
 - AI
 - Building
 
-One primary topic per story remains the rule. Founders are a recurring lens rather than a top-level topic. Funding/capital normally sits under Business or Startups. `Latest` remains broader than breaking news. Portfilo Brief remains the email product.
+Rules remain:
 
-The voice reset does not reopen taxonomy.
+- one primary topic per story;
+- AI is primary only when AI itself is the main subject;
+- founders are a recurring lens, not a top-level topic;
+- capital/funding normally sits under Business or Startups;
+- `Latest` is broader than breaking news;
+- Portfilo Brief is the email product.
 
 ## Brand and visual system
 
-Locked unless a concrete implementation issue appears:
+Locked unless QA exposes a concrete implementation problem:
 
 - wordmark-first identity;
 - Instrument Sans, Source Serif 4, IBM Plex Mono;
@@ -202,33 +309,6 @@ Locked unless a concrete implementation issue appears:
 - strong typography and restrained rules;
 - no card-heavy SaaS treatment, gradients, glassmorphism, or decorative motion;
 - red remains primarily wordmark/corrections.
-
-## Subscribe engineering status
-
-The native Subscribe architecture remains valid and is not part of the copy failure.
-
-Portfilo renders a native signup form backed by one Cloudflare Pages Function at `/api/subscribe`.
-
-beehiiv remains responsible for subscriber storage, double-opt-in confirmation, sending, deliverability, and unsubscribe handling.
-
-The server-side function requires only `BEEHIIV_API_KEY`; the verified Publication ID is already bound in server code. The private key must never be committed or pasted into ChatGPT.
-
-Functional Subscribe QA remains blocked on beehiiv identity verification and API-key creation.
-
-Do not reintroduce the beehiiv iframe/embed.
-
-### Remaining Subscribe validation
-
-After beehiiv identity verification is complete:
-
-- create the dedicated API key;
-- configure local `.dev.vars`;
-- run a production build;
-- test with `wrangler pages dev dist`;
-- verify invalid-email and loading states;
-- complete one real double-opt-in signup;
-- confirm the subscriber appears in beehiiv;
-- run final responsive QA after the approved copy replacement is implemented.
 
 ## Zero-budget infrastructure posture
 
@@ -244,38 +324,28 @@ Current direction remains:
 
 ## Exact next task
 
-**Review the coordinated replacement candidate. Do not modify public pages yet.**
+**Local production-build and responsive/browser QA.**
 
-Review `docs/COPY_REPLACEMENT_CANDIDATE.md` as one system, especially:
+The user should:
 
-1. removing the giant Homepage brand statement;
-2. making the feature story the Homepage primary hero;
-3. using an empty center masthead slot until navigation is implemented;
-4. using the optional one-line coverage descriptor only if the page needs it;
-5. simplifying the Homepage About bridge and Portfilo Brief section;
-6. removing the About positioning and Philippine-context sections;
-7. simplifying Subscribe to product facts;
-8. removing center positioning copy from shared headers/footers.
+1. pull the latest `build/portfilo-v0` branch;
+2. run `npm run build` and require a clean production build;
+3. run `npm run dev` for browser review;
+4. inspect `/`, `/about`, `/subscribe`, `/standards`, `/series/content-architecture-fixtures`, and at least one published Story fixture;
+5. check desktop, intermediate/tablet, 390px, and 360px widths;
+6. confirm the navigation is visible and usable on every route;
+7. confirm `Latest` reaches the Homepage Latest section;
+8. confirm the wordmark returns Home;
+9. check active navigation styling, focus states, tap targets, wrapping, and horizontal overflow;
+10. check Homepage hierarchy and decide whether the temporary descriptor earns its place;
+11. confirm no current public surface shows the rejected geographic/tagline positioning;
+12. visually check Subscribe form states without requiring a successful beehiiv submission yet.
 
-After the user approves the candidate:
+Do **not** claim this QA has passed until the user reports the local results.
 
-1. implement the coordinated public replacement;
-2. run production-build and responsive QA;
-3. finish Subscribe credential/end-to-end QA when the beehiiv API key is available;
-4. complete Global Navigation & Public Surface Integration;
-5. continue to analytics/deployment preparation;
-6. begin editorial launch research and the first real article.
+After this QA passes, resume Subscribe end-to-end credential testing when the API key is available. Analytics/deployment preparation and editorial launch work follow later.
 
-## Relevant voice-reset commits
-
-- `f348937dd6594ecdc07bbdc75f4263821c1b6071` - mark previous copy revision rejected and reopen research
-- `609dae0dae803357e5b0086b422ffa05ca40fc03` - add positioning architecture exploration
-- `4a99047bca4112fb8f89acd65d04531dc79e1d11` - record Architecture C recommendation for review
-- `a26b2cdc21b98cf6db9b8ca3a8fb85b96abdb54f` - rewrite canonical copy style around content-first architecture
-- `41576056d7b53148c25d027694ebe05609a68c12` - record approved Architecture C decision
-- `f914cb8d83dca655213c72768d154e93cd60cf2a` - add coordinated content-first replacement candidate
-
-## Validation status
+## Current validation status
 
 | Check | Status |
 |---|---|
@@ -286,15 +356,31 @@ After the user approves the candidate:
 | Editorial Design | PASS |
 | Wordmark | PASS |
 | Editorial Taxonomy | PASS |
-| Homepage visual direction | PASS, identity-block function reopened only |
-| Series visual/system | PASS |
-| Research & Standards | PASS |
-| About visual direction | PASS |
-| Previous Voice & Positioning implementation | REJECTED |
 | Architecture C: Content-first / no tagline | APPROVED |
-| Revised canonical copy guide | UPDATED |
-| Coordinated replacement candidate | **PREPARED — USER REVIEW PENDING** |
-| Subscribe native architecture | IMPLEMENTED, credential/functional QA pending |
+| Canonical copy guide | UPDATED |
+| Coordinated content-first replacement | IMPLEMENTED, local QA pending |
+| Global primary navigation | IMPLEMENTED, local QA pending |
+| Homepage content hierarchy | IMPLEMENTED, local QA pending |
+| About simplified copy | IMPLEMENTED, local QA pending |
+| Standards substantive content | PASS, navigation regression QA pending |
+| Story template | PASS baseline, navigation regression QA pending |
+| Series template | PASS baseline, navigation regression QA pending |
+| Subscribe native architecture | IMPLEMENTED, visual QA + API credential/end-to-end QA pending |
+
+## Relevant current-pass commits
+
+- `f348937dd6594ecdc07bbdc75f4263821c1b6071` - mark previous copy revision rejected
+- `609dae0dae803357e5b0086b422ffa05ca40fc03` - add positioning architecture exploration
+- `a26b2cdc21b98cf6db9b8ca3a8fb85b96abdb54f` - rewrite canonical copy guide
+- `41576056d7b53148c25d027694ebe05609a68c12` - record Architecture C approval
+- `f914cb8d83dca655213c72768d154e93cd60cf2a` - prepare content-first replacement candidate
+- `771c0f93cdde76213b0d06716ac60d08a8b09092` - content-first Homepage + navigation
+- `8cfc9ece78fc6525ae95e184dd556f821c7024ec` - simplified About + navigation
+- `2857355685522e5bbe32b270b8ab969a03ebd6cd` - simplified Subscribe + navigation
+- `f73b909f42c4560c7a8b5e0c6a273cc9f79d216f` - Standards navigation integration
+- `995b098282ca3e38515c93087ab1f6a87efb72df` - Story navigation integration
+- `6b2df694b8858e97d5fa73157ecdfa02d0fd6643` - Series navigation integration
+- `74eeebcee07ed19b90597182cf5c477d0955f09f` - record approved copy/navigation implementation
 
 ## Phase handoff rule
 
