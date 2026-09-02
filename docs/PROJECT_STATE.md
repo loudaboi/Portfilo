@@ -4,18 +4,28 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Published Launch Package + Featured Visual Development - ACTIVE**
+**Portfilo v0 / Share-Readiness QA + Next Story Research - ACTIVE**
 
 The publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
-Two real stories are now published in repository state:
+Two real stories are published:
 
 - C027, `Build things that make the next thing easier`, by Louda Tuppal;
 - C009, `What 'higher-value work' means in Philippine IT-BPM`, by Portfilo.
 
-C027 is the first homepage featured story. C009 appears as the current Latest story. The old homepage story fixtures and preview-status notice have been removed.
+C027 is the first homepage featured story. C009 is the current Latest story.
 
-C027 visual sourcing is now the active design task. No hero image has been selected, generated, licensed, or published yet.
+Recent share-readiness fixes are now committed:
+
+- the three synthetic development story fixtures that were still marked `published` have been changed to `draft`, so they should no longer appear on the homepage or generate public story routes after deployment;
+- the homepage wordmark red variable was restored after `lo` temporarily inherited black;
+- Subscribe CTAs now visually use a CSS-drawn northeast arrow so iOS cannot render the Unicode arrow as an emoji-style glyph.
+
+The user still needs to verify the newest Cloudflare deployment on mobile. Do not claim those live fixes as verified until the user confirms them.
+
+C027 visual sourcing remains planned but is not the immediate editorial priority. No hero image has been selected, generated, licensed, or published yet.
+
+The next editorial exploration is a possible third launch story about the underlying information problem that motivated Portfilo. Do not default to a promotional `Why we built Portfilo` article. Research the reader/problem space first and only draft if a useful, non-redundant story emerges.
 
 ## Current branch
 
@@ -23,9 +33,9 @@ Authoritative branch:
 
 `build/portfilo-v0`
 
-Current homepage/visual-plan head at this state:
+Latest handoff head before this state update:
 
-`cad86b1a230759c460ab5185b58d103a460d7d4d`
+`36982294c5c5cd10810417379978e391a3fcedf5`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
@@ -250,13 +260,11 @@ Priority: `HIGH`
 
 Do not activate C021 while the WIP limit is occupied by current substantial research.
 
-## Homepage state
+## Homepage and fixture state
 
-File:
+Homepage file:
 
 `src/pages/index.astro`
-
-The homepage now reads the published `stories` collection instead of synthetic story fixtures.
 
 Current hierarchy:
 
@@ -268,13 +276,36 @@ Current hierarchy:
 
 Implementation behavior:
 
+- homepage reads the `stories` collection;
+- only `status: published` stories are eligible;
 - published stories are sorted by `publishedAt`;
 - the first `featured: true` story becomes the homepage feature;
 - other published stories populate Latest;
-- story titles and actions link to real story routes;
-- the temporary feature visual is typography-led and contains no fabricated evidence or preview copy.
+- story titles/actions link to real story routes.
+
+The following development fixtures remain in the repository for testing/history but are now `draft`, not public:
+
+- `src/content/stories/portfilo-content-architecture-test.md`;
+- `src/content/stories/portfilo-series-ordering-test-two.md`;
+- `src/content/stories/portfilo-series-ordering-test-three.md`.
 
 No fake stories should be reintroduced simply to fill space. The homepage should grow as real published stories are added.
+
+## Shared UI fixes pending live verification
+
+### Wordmark
+
+The current wordmark is HTML/CSS, not a locked SVG asset. `Port` is ink, `fi` is blue, and `lo` is red. The homepage red custom property regression was fixed. A dedicated SVG/brand-asset refactor can be handled later and is not the current task.
+
+### Subscribe arrows
+
+The homepage Portfilo Brief Subscribe CTA and `/subscribe` form button still contain an accessibility-hidden Unicode arrow in markup, but shared header CSS suppresses the glyph visually and draws the northeast arrow with CSS pseudo-elements. This avoids iOS emoji-style rendering while preserving the current CTA design.
+
+Commit implementing this fix:
+
+`36982294c5c5cd10810417379978e391a3fcedf5`
+
+Live mobile verification is pending.
 
 ## C027 visual implementation plan
 
@@ -303,6 +334,22 @@ heroImage:
 
 Do not add this schema until an actual selected asset requires it.
 
+## Possible third launch story
+
+The user is interested in a story about why Portfilo was built and how it aims to help, but does not want a redundant rewrite of the About page.
+
+Current recommendation:
+
+- do **not** begin with a promotional `Why we built Portfilo` draft;
+- investigate the underlying information problem first;
+- test whether there is a real story about what is missing between business/technology information and people trying to understand how companies, technology, careers, and building actually work;
+- possibilities to investigate include lack of context, jargon, fragmented coverage, insider assumptions, weak explanation of consequences, or another problem discovered through research;
+- do not assume any of those hypotheses are true before research;
+- if a substantive reader problem is verified, make that the story and let Portfilo's purpose emerge naturally rather than making Portfilo itself the subject;
+- if research does not support a substantive story, consider a short 500-800 word founder/launch note separately from the main editorial slate.
+
+This exploration must follow `docs/CONTENT_PLANNING.md`, `docs/RESEARCH_STANDARD.md`, `docs/EDITORIAL_STANDARD.md`, and `docs/COPY_STYLE.md`.
+
 ## Public product state
 
 Validated public surfaces from prior work include:
@@ -316,7 +363,7 @@ Validated public surfaces from prior work include:
 - Confirmation `/confirmed`;
 - Subscribe `/subscribe` and single-purpose Cloudflare Pages subscription proxy.
 
-Homepage source is now real-content based. Deployment/render verification of the newest homepage change is still required before claiming a final live PASS.
+The newest share-readiness fixes are committed but require live deployment verification before a final share-ready PASS.
 
 ## Email system
 
@@ -348,7 +395,7 @@ Production branch:
 
 `build/portfilo-v0`
 
-The branch is updated for the homepage integration, but the active assistant environment has no Cloudflare deployment-status connector and GitHub exposes no CI/status checks for the commit. Do not claim the newest homepage deployment/render as verified until it is actually checked.
+Do not claim a newest deployment/render as verified until it is actually checked.
 
 Still pending before final public launch:
 
@@ -379,9 +426,11 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C027 publication approval | GRANTED |
 | C027 repository content entry | PUBLISHED / `featured: true` / by `Louda Tuppal` |
 | C027 article route | USER-VIEWED / PASS |
-| Homepage fixtures removed | PASS IN REPOSITORY |
-| Homepage C027 feature integration | PASS IN REPOSITORY / LIVE RENDER NOT YET VERIFIED |
-| Homepage C009 Latest integration | PASS IN REPOSITORY / LIVE RENDER NOT YET VERIFIED |
+| Homepage synthetic fixtures hidden | PASS IN REPOSITORY / LIVE RECHECK PENDING |
+| Homepage C027 feature integration | PASS IN REPOSITORY / USER HAS VIEWED PAGE, NEWEST RECHECK PENDING |
+| Homepage C009 Latest integration | PASS IN REPOSITORY / NEWEST RECHECK PENDING |
+| Wordmark red `lo` regression | FIXED IN REPOSITORY / LIVE RECHECK PENDING |
+| Subscribe emoji-arrow issue | FIXED IN REPOSITORY / MOBILE LIVE RECHECK PENDING |
 | C027 final hero image | NOT SELECTED |
 | C027 hero-image schema | NOT IMPLEMENTED YET |
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
@@ -394,15 +443,18 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**C027 visual reference and sourcing pass.**
+**Research and evaluate the possible third launch story around the underlying problem Portfilo is trying to solve.**
 
-Use `research/stories/building-the-foundation/visual-plan.md` as the constraint set.
+Before drafting:
 
-The target direction is:
+1. verify the latest repository head and read this state file plus editorial/research/copy standards;
+2. verify the latest Cloudflare-visible homepage no longer shows synthetic story fixtures and the mobile Subscribe arrow no longer renders as an emoji-style glyph, using user feedback/screenshots if direct deployment access is unavailable;
+3. research the actual information/problem space rather than assuming the answer;
+4. produce several clear story directions with a one-sentence message, evidence basis, Portfilo fit, originality, and risk of redundancy with `/about`;
+5. recommend the strongest direction;
+6. do not draft until the user approves a core direction.
 
-> **Modular carryover:** an original, restrained editorial illustration in which something from one attempt visibly remains usable in the next.
-
-Do not generate the final image until the concrete art direction has been reviewed. After selection, implement the reusable image metadata/rendering path rather than hardcoding C027 into the story template.
+C027 visual sourcing can resume after this editorial exploration or when the user explicitly returns to it.
 
 ## Phase handoff rule
 
