@@ -20,112 +20,53 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
-| C027 | Featured Perspective candidate | How should early builders judge work that may not become the final thing but can improve the next starting point? | Building | PASS | HIGH | DRAFT V3 COMPLETE / DIRECTION PASS FOR USER REVIEW | `research/stories/building-the-foundation/` |
 
-C001, C017, and C027 are `ACTIVE`.
-
-## C027 checkpoint
-
-C027 was added after the first published story because the early-audience review identified a separate need: a more accessible, reader-centered story about building that can carry Louda Tuppal's byline without becoming a founder profile or personal-brand post.
-
-Likely content type: `Perspective`.
-
-Primary reader need: `Interpret`.
-
-### Draft v1 decision
-
-**REJECT / DO NOT POLISH.**
-
-The first internal draft tried to combine too many ideas from the discovery conversation: starting without leverage, bottleneck migration, AI, skills, habits, relationships, trust, reputation, and user understanding. Reader review found the message difficult to identify and the structure unnecessarily complicated.
-
-That diagnosis is accepted. Draft v1 is preserved only as editorial history in:
-
-`research/stories/building-the-foundation/draft-v1-review.md`
-
-### Draft v2 status
-
-Draft v2 demonstrated that a one-thread essay is clearer than Draft v1, but it is **not the selected article**.
-
-Draft v2 explored:
-
-> An early project does not have to become your future. It should teach you something real about what to do next.
-
-It remains preserved as an experiment in:
-
-- `research/stories/building-the-foundation/draft-v2.md`;
-- `research/stories/building-the-foundation/draft-v2-evaluation.md`.
-
-Do not polish or publish Draft v2 unless that topic is deliberately reopened.
-
-### Topic-space research
-
-After user feedback that topic selection should precede structure and drafting, C027 was reset again at the idea level.
-
-Research:
-
-`research/stories/building-the-foundation/topic-space-research.md`
-
-The pass reviewed:
-
-- current Philippine youth-entrepreneurship evidence;
-- current early-builder and side-project community signals;
-- established writing from Paul Graham, Kevin Kelly and other idea-essay traditions;
-- current experimentation / small-bet thinking;
-- crowded 2026 AI-builder angles that Portfilo should not repeat weakly.
-
-Seven possible Perspective directions were evaluated.
-
-The user approved the editorial recommendation:
-
-> **Build things that make the next thing easier.**
-
-Working interpretation:
-
-> When you are early, choose work that improves your next starting point.
-
-The article should not turn this into a checklist of skills, network, money, reputation, habits, or other assets. Those may appear only as examples of reusable value left behind by work.
-
-### Structure research
-
-Dedicated structure research is complete:
-
-`research/stories/building-the-foundation/structure-research.md`
-
-The user explicitly approved the selected structure:
-
-**Contrast-led argumentative funnel.**
-
-The structure opens with two efforts that look similar by immediate outcome but leave different next starting points, reveals the overlooked dimension of what remains reusable, develops the idea through ordinary examples, challenges the `I learned a lot` rationalization, and closes on one practical test rather than a framework.
-
-### Draft v3
-
-Draft v3 is complete and internal:
-
-`research/stories/building-the-foundation/draft-v3.md`
-
-Working title:
-
-> **Build things that make the next thing easier**
-
-The draft is reader-centered and contains no biography, no forced AI section, no methodology block, and no numbered framework. It uses the approved throughline that good early work can improve the position from which the next attempt begins.
-
-Draft v3 evaluation:
-
-`research/stories/building-the-foundation/draft-v3-evaluation.md`
-
-Current self-evaluation:
-
-**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
-
-The main editorial risks for the next pass are abstraction in phrases such as `accumulated leverage` and `residual value`, some list-like rhythm in examples, and an ending that may still need a harder `Say the thing. Then stop.` edit.
-
-No C027 file exists under `src/content/stories/`. Nothing is public and no publication approval has been requested.
+C001 and C017 are `ACTIVE`.
 
 ## Published launch stories
 
-| ID | Role | Published question | Topic | Research outcome | Publication state | Story file |
+| ID | Role | Published question / idea | Topic | Research outcome | Publication state | Story file |
 |---|---|---|---|---|---|---|
-| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PUBLISH | `status: published`; technical live verification pending | `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` |
+| C027 | Perspective / first-feature candidate | Build things that make the next thing easier | Building | PUBLISH | `status: published`; `featured: false`; technical verification pending | `src/content/stories/build-things-that-make-the-next-thing-easier.md` |
+| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PUBLISH | `status: published`; `featured: false`; technical live verification pending | `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md` |
+
+## C027 publication checkpoint
+
+C027 was developed after the first published story because the early-audience review identified a separate need: a more accessible, reader-centered `Building` Perspective that could carry Louda Tuppal's byline without becoming a founder profile or personal-brand post.
+
+Content type: `Perspective`  
+Primary reader need: `Interpret`  
+Byline: `Louda Tuppal`
+
+The development path deliberately rejected two earlier drafts before locking the final direction:
+
+- Draft v1: rejected for forcing bottlenecks, AI, skills, habits, network, trust, reputation and user understanding into one article;
+- Draft v2: preserved as a cleaner one-thread experiment, but its `first project as information` thesis was not selected;
+- fresh topic-space research evaluated seven directions;
+- user approved the core idea: **Build things that make the next thing easier**;
+- dedicated structure research selected a contrast-led argumentative funnel;
+- Draft v3 established the direction and received positive user review;
+- adversarial review, claim audit, editorial/copy pass and headline/dek audit produced Draft v4;
+- user explicitly approved Draft v4 for publication on 2026-09-03.
+
+Research packet:
+
+`research/stories/building-the-foundation/`
+
+Final public metadata:
+
+- title: `Build things that make the next thing easier`;
+- description: `We judge early work by what it becomes. Another question matters too: what does it make easier to do next?`;
+- content type: `perspective`;
+- topic: `building`;
+- author: `Louda Tuppal`;
+- publishedAt: `2026-09-03`;
+- status: `published`;
+- featured: `false`.
+
+`featured: false` is deliberate. Publication authorization did not also authorize homepage featuring, fixture replacement, or Portfilo Brief distribution. Those remain separate decisions.
+
+Technical publication verification is still pending. Do not claim a fresh build, final desktop/mobile render pass, or complete deployed QA until completed.
 
 ## C009 publication checkpoint
 
@@ -188,7 +129,7 @@ The reframed C017 therefore remains `CONTINUE`, with one narrow BSP/PPMI clarifi
 |---|---|---|---|---|---|---|
 | C021 | First reserve | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | OPEN / QUEUED |
 
-C009's publication freed one substantial-research slot. C027 now occupies that slot. Do not activate C021 while all three active slots are occupied.
+C027's publication frees one research slot. Do **not** activate C021 automatically. Activating the next substantial research assignment remains a deliberate editorial decision.
 
 ## Passed but unassigned
 
