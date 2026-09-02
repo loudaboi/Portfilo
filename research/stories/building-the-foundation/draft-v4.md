@@ -4,11 +4,11 @@ _Status: INTERNAL REVISED DRAFT / NOT PUBLIC_
 
 _Working title: Build things that make the next thing easier_
 
-_Working dek: Early work is usually judged by what it becomes. Another question matters too: what does it make easier to do next?_
+_Working dek: We judge early work by what it becomes. Another question matters too: what does it make easier to do next?_
 
 Two projects can end the same way: they stop.
 
-Neither becomes a company. Neither becomes a career. Neither turns into much income.
+Neither becomes a company. Neither becomes a career. Neither makes much money.
 
 From a distance, both can look like dead ends.
 
@@ -70,7 +70,7 @@ If nothing specific became easier, more possible, or more credible because of th
 
 The test should be concrete.
 
-Could you now do something you could not do before? Is there finished work someone else can inspect? Do you understand the problem better enough to make a different decision? Did the work create something that still exists after the project ends?
+Could you now do something you could not do before? Is there finished work someone else can inspect? Do you understand the problem well enough to make a different decision? Did the work create something that still exists after the project ends?
 
 If the answer is no, then `it was valuable anyway` may just be a nicer description of sunk time.
 
