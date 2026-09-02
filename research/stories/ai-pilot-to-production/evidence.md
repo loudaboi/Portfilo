@@ -123,15 +123,72 @@ This is a working claim ledger. `VERIFIED` means verified against the cited sour
 **Caveat:** Seat deployment and employee tool use are not automatically equivalent to an integrated production AI system under C001's working definition.  
 **Status:** VERIFIED / QUALIFY
 
+## E10
+
+**Candidate claim:** First Gen publicly describes a formal AI proof-of-concept stage that precedes broader deployment and is subject to governance review.
+
+**Evidence:** First Gen's 2025 Integrated Report says enterprise GenAI systems require review and approval, accountability remains with designated process owners and management, and an AI Proof of Concept program tested technical viability, use cases, operational alignment, and strategic fit before broader deployment.
+
+**Source:** S014 - https://2025integratedreport.firstgen.com.ph/value-creation/values-generated/intellectual-capital  
+**Tier:** A for company disclosure  
+**Date:** 2026 publication covering 2025  
+**Confidence:** HIGH for the disclosed process  
+**Caveat:** The source does not identify the individual POCs, their outcomes, or whether any later reached production. `Still at POC` is not equivalent to `failed`.  
+**Status:** VERIFIED / QUALIFY
+
+## E11
+
+**Candidate claim:** UnionBank publicly distinguishes AI it describes as embedded in current operations from a voice-AI contact-center system that had not yet launched as of the 2025 report.
+
+**Evidence:** UnionBank's 2025 Annual and Sustainability Report says AI is embedded in customer onboarding, credit underwriting, and fraud detection. The same section says RIA, its voice-AI contact-center system, `will soon be launched`.
+
+**Source:** S015 - https://www.unionbankph.com/sites/default/files/2026-04/UBP2025ASR.pdf  
+**Tier:** A for company disclosure  
+**Date:** 2026 publication covering 2025  
+**Confidence:** HIGH for the company's stated stage distinction  
+**Caveat:** The report's performance and quality claims are self-reported, and `AI` may cover different model types or conventional ML as well as newer generative systems. Current RIA status must be rechecked before publication.  
+**Status:** VERIFIED / QUALIFY
+
+## E12
+
+**Candidate claim:** Ayala's leadership publicly characterized the realization of results from group AI initiatives as a work in progress in April 2026.
+
+**Evidence:** Approved/redacted minutes of Ayala Corporation's 2026 annual stockholders' meeting record president/CEO Cezar Consing saying AI capabilities had been established across operating units while realization of results remained a work in progress.
+
+**Source:** S017 - https://ayala.com/app/uploads/2026/05/AC-2026-ASM-Minutes-24-April-2026-Redacted.pdf  
+**Tier:** A for company statement  
+**Date:** 2026-04-24  
+**Confidence:** HIGH for the statement  
+**Caveat:** Group-level characterization cannot establish the production state or performance of any specific operating-unit system.  
+**Status:** VERIFIED / QUALIFY
+
+## E13
+
+**Candidate claim:** PLDT says it is using an agentic workflow in Procure-to-Pay and seeing reduced manual work and faster cycle times.
+
+**Evidence:** An AWS for SAP article quotes PLDT/Smart IT and Transformation Office head Gilbert Gaw describing current Procure-to-Pay agentic workflows and claiming reduced manual work and accelerated cycle times.
+
+**Source:** S018 - https://aws.amazon.com/blogs/awsforsap/building-agentic-enterprises-on-aws-using-aws-for-sap-mcp-server-on-amazon-bedrock-agentcore/  
+**Tier:** A for the attributed PLDT statement  
+**Date:** 2026  
+**Confidence:** HIGH that the quoted claim was published; LOW-MEDIUM for the underlying performance result  
+**Caveat:** Partner-marketing context, no disclosed baseline, denominator, period, or independent verification. Production scope is unclear.  
+**Status:** QUALIFY
+
 ## Evidence needed next
 
-The central story is not yet established. The next material evidence needs are:
+The central story is not yet established. The extended reconnaissance materially improves source viability but does not meet the drafting threshold.
 
-- case-level process reconstruction from operators;
-- direct confirmation of what changed between pilot and production;
-- stalled or failed implementation evidence;
+The next evidence needs are:
+
+- direct operator/technical interviews for at least two reconstructable production attempts;
+- direct reporting on at least one still-POC, stalled, constrained, or abandoned attempt;
+- confirmation of what changed between pilot and production rather than only current-state descriptions;
 - comparable information on data/integration, governance, human review, operating ownership, and measurement;
 - independent challenge of subject/vendor claims;
-- documentation or metrics sufficient to distinguish observed outcomes from promotional claims.
+- metric definitions and baselines sufficient to distinguish observed outcomes from promotional claims;
+- resolution of the S001 65% vs 40% discrepancy.
 
-Current research outcome remains `CONTINUE`.
+**Source reconnaissance status:** PASS / OUTREACH READY.  
+**Drafting threshold:** NOT YET MET.  
+**Current research outcome:** `CONTINUE`.
