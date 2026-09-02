@@ -4,9 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / C029 Reader-Sensemaking Fieldwork - ACTIVE**
+**Portfilo v0 / C021 Data-Center Capacity Source Reconnaissance - ACTIVE**
 
-The publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
+Portfilo's publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
 Two real stories are published:
 
@@ -15,37 +15,35 @@ Two real stories are published:
 
 C027 is the first homepage featured story. C009 is the current Latest story.
 
-Recent share-readiness fixes are committed:
+The newest share-readiness fixes remain committed but still require fresh live/mobile verification:
 
-- the three synthetic development story fixtures that were still marked `published` have been changed to `draft`, so they should no longer appear on the homepage or generate public story routes after deployment;
-- the homepage wordmark red variable was restored after `lo` temporarily inherited black;
-- Subscribe CTAs now visually use a CSS-drawn northeast arrow so iOS cannot render the Unicode arrow as an emoji-style glyph.
+- synthetic development fixtures are drafts rather than public stories;
+- homepage wordmark is `Port` ink / `fi` blue / `lo` red;
+- Subscribe CTAs use a CSS-drawn northeast arrow to avoid iOS emoji-style rendering.
 
-The user still needs to verify the newest Cloudflare deployment on mobile. Do not claim those live fixes as verified until the user confirms them.
+Do not claim those newest live fixes as verified until the user confirms them or a deployed check is performed.
 
-C027 visual sourcing remains planned but is not the immediate editorial priority. No hero image has been selected, generated, licensed, or published yet.
+C027 visual sourcing remains planned. No final hero image has been selected, generated, licensed, or published.
 
-Louda Tuppal approved the third-launch-story Direction A, `The second question after the headline`, on 2026-09-03. The direction is now assigned as C029 and has a dedicated research packet. Documentary research and structure research are complete enough to begin original Philippine reader fieldwork, but drafting remains blocked until the fieldwork threshold is met.
+### Current editorial decision
 
-Research packet:
+C029, `The second question after the headline`, is now **HOLD / FIELDWORK REQUIRED**. Its original contribution depends on participant diaries and real-time reader walkthroughs, and suitable recruitment is not practical at Portfilo's current stage. The packet is preserved for later rather than weakened into a derivative desk-only story.
 
-`research/stories/second-question-after-headline/`
+C021 has been activated in the freed research slot:
 
-Current C029 research question:
+> **How much Philippine data-center capacity is operating, under construction, committed, and merely announced?**
 
-> **What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?**
+Its first source pass already shows a credible information gap: public capacity figures can mix different project statuses and different power metrics. C021 is therefore proceeding as a bottom-up project-status ledger, with a possible reframe to explaining why national MW totals conflict if a clean national subtotal cannot be supported.
 
-AI is not assumed to be the main answer. It is treated as one possible observed tool alongside opening the full article, search, other outlets, official sources, creators, communities, other people, or no follow-up.
+C021 packet:
+
+`research/stories/data-center-capacity-ledger/`
 
 ## Current branch
 
 Authoritative branch:
 
 `build/portfilo-v0`
-
-Latest head before this state update:
-
-`b1ea88303cf6802a5ea7a11cf920fadf7aadfd3d`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
@@ -116,8 +114,6 @@ No permanent tagline by default. Do not restore previously rejected positioning 
 
 ## Editorial workflow
 
-Canonical pipeline:
-
 ```text
 IDEA
 ↓
@@ -166,41 +162,23 @@ Author: `Louda Tuppal`
 Published: `2026-09-03`  
 Featured: `true`
 
-Story file:
+Story:
 
 `src/content/stories/build-things-that-make-the-next-thing-easier.md`
 
-Research packet:
+Packet:
 
 `research/stories/building-the-foundation/`
 
-Completed editorial stages:
+Editorial pipeline and publication approval: PASS.
 
-- topic-space research: complete;
-- core idea: user approved;
-- structure research: complete;
-- contrast-led argumentative funnel: user approved;
-- Draft v3 direction: user approved;
-- adversarial review: complete;
-- claim audit: pass;
-- editorial/copy pass: pass;
-- headline/dek audit: pass;
-- publication approval: granted 2026-09-03;
-- public content entry: published;
-- homepage feature authorization: granted 2026-09-03;
-- `featured: true`: applied.
+The user has viewed the deployed article. The newest share-readiness/mobile fixes still require re-verification.
 
-The public article is reader-centered and intentionally not autobiographical. It contains no forced AI section, no numbered framework, and no external factual claims requiring reader-facing citations.
+Visual state:
 
-Visual plan:
-
-`research/stories/building-the-foundation/visual-plan.md`
-
-Current visual state:
-
-- no final hero image exists;
-- homepage uses a typography-led dark feature panel as the fallback;
-- recommended visual direction is an original conceptual editorial illustration built around `carryover` / the next starting point;
+- no final hero image;
+- typography-led dark feature fallback remains in use;
+- preferred visual direction is original `carryover` / next-starting-point editorial illustration;
 - do not use generic startup, hustle, laptop, staircase, ladder, mountain, or success imagery.
 
 ### C009 - PUBLISHED / LATEST HOMEPAGE STORY
@@ -215,17 +193,17 @@ Author: `Portfilo`
 Published: `2026-09-03`  
 Featured: `false`
 
-Story file:
+Story:
 
 `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
-Research packet:
+Packet:
 
 `research/stories/it-bpm-higher-value-work/`
 
-C009 remains a supporting story. Do not promote it above C027 on the homepage unless deliberately reopened.
+Editorial pipeline and publication approval: PASS.
 
-The user has viewed the deployed article successfully, but the full technical deployment/render checklist is still not recorded as complete.
+The full fresh application build/live render checklist is not recorded as complete. Do not claim complete live QA.
 
 ## Active research assignments
 
@@ -245,11 +223,13 @@ Current state:
 - drafting threshold: not met;
 - research outcome: `CONTINUE`.
 
-The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page shows proof-of-concept at 40%. Do not use 65% as a clean factual anchor until reconciled.
+Important unresolved contradiction:
+
+The Swarm Philippine AI Report 2025 narrative says 65% remain at proof-of-concept while a chart on the same page shows 40%. Do not use 65% as a clean factual anchor until reconciled.
 
 ### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
 
-Reframed question:
+Question:
 
 > What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
 
@@ -257,235 +237,179 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/zero-fee-merchant-payments/`
 
-Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
+Decisive remaining need:
 
-### C029 - ACTIVE / SUPPORTING / FIELDWORK READY
+A narrow written clarification from BSP and/or PPMI about the final implementation and fee layer. Do not let that clarification block the rest of Portfilo's publishing schedule.
 
-Question:
-
-> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
-
-Topic: `Technology` - provisional  
-Priority: `MEDIUM`  
-Packet: `research/stories/second-question-after-headline/`
-
-Current state:
-
-- core direction: user approved;
-- research brief: complete;
-- source map: complete for pre-fieldwork phase;
-- documentary evidence ledger: established;
-- contradiction search: established;
-- fieldwork plan: complete;
-- provisional behavior-first structure: complete;
-- drafting threshold: not met;
-- research outcome: `CONTINUE / FIELDWORK READY`.
-
-The current documentary evidence supports studying the distinction between first exposure and later sensemaking, but it also creates two important constraints:
-
-1. Philippine AI-chatbot news use remains a minority behavior, so AI must not be presented as the normal way Filipinos understand news;
-2. VERA Files already published 2024 qualitative research with 20 Filipinos aged 18-34 finding demand for news that is easier to understand and more interactive, so C029 must contribute observed follow-up questions and actual information-seeking pathways rather than repeat that preference finding.
-
-Fieldwork target:
-
-- `12-15` completed participants;
-- minimum `10` complete records before a publish decision;
-- natural three-day news-encounter diary plus real-time walkthrough;
-- include AI users and non-users;
-- preserve `no follow-up` and other negative cases;
-- no population-level prevalence claims from the qualitative sample.
-
-Do not draft C029 until the packet reaches a new story decision after fieldwork.
-
-### C021 - FIRST RESERVE
+### C021 - ACTIVE / SUPPORTING / SOURCE RECONNAISSANCE
 
 Question:
 
-> How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
+> **How much Philippine data-center capacity is operating, under construction, committed, and merely announced?**
 
 Topic: `Technology`  
-Priority: `HIGH`
+Priority: `HIGH`  
+Likely content type: `Analysis / Reported`  
+Packet: `research/stories/data-center-capacity-ledger/`
 
-C029 now fills the normal third active-research slot. Do not activate C021 until an active assignment clears or is deliberately stopped.
+Current packet:
 
-## Homepage and fixture state
+- `brief.md`;
+- `sources.md`;
+- `evidence.md`;
+- `contradictions.md`;
+- `capacity-ledger.csv`.
 
-Homepage file:
+Current outcome:
 
-`src/pages/index.astro`
+`CONTINUE / SOURCE RECONNAISSANCE ACTIVE`
 
-Current hierarchy:
+### C021 measurement rules
 
-1. coverage identity block;
-2. C027 as the dominant Featured story;
-3. C009 under Latest;
-4. About;
-5. Portfilo Brief.
+Prefer `IT load MW` whenever available.
 
-Implementation behavior:
+Do not silently equate or add together:
 
-- homepage reads the `stories` collection;
-- only `status: published` stories are eligible;
-- published stories are sorted by `publishedAt`;
-- the first `featured: true` story becomes the homepage feature;
-- other published stories populate Latest;
-- story titles/actions link to real story routes.
+- IT load;
+- utility power;
+- facility electrical capacity;
+- powered-shell / energized capacity;
+- racks or cabinets.
 
-The following development fixtures remain in the repository for testing/history but are now `draft`, not public:
+Keep phases separate. Full-campus design capacity is not current operating supply unless the whole amount is verified live.
 
-- `src/content/stories/portfilo-content-architecture-test.md`;
-- `src/content/stories/portfilo-series-ordering-test-two.md`;
-- `src/content/stories/portfilo-series-ordering-test-three.md`.
+Current status vocabulary:
 
-No fake stories should be reintroduced simply to fill space. The homepage should grow as real published stories are added.
+- `OPERATING`;
+- `UNDER CONSTRUCTION`;
+- `COMMITTED`;
+- `ANNOUNCED`;
+- `STATUS TO RECONCILE`.
 
-## Shared UI fixes pending live verification
+### C021 first-pass evidence
 
-### Wordmark
+The source reconnaissance already identifies a real measurement/status problem:
 
-The current wordmark is HTML/CSS, not a locked SVG asset. `Port` is ink, `fi` is blue, and `lo` is red. The homepage red custom property regression was fixed. A dedicated SVG/brand-asset refactor can be handled later and is not the current task.
+- government-linked 2026 descriptions put current Philippine capacity around or below 200 MW;
+- operator portfolio numbers and identifiable operating sites create apparent tension with that baseline;
+- some operator pages report IT load while others report utility power, energized capacity, or unspecified MW;
+- several campuses disclose full-buildout numbers larger than the currently live phase;
+- facility status labels and dated reporting do not always line up cleanly.
 
-### Subscribe arrows
+Priority contradiction work includes:
 
-The homepage Portfilo Brief Subscribe CTA and `/subscribe` form button still contain an accessibility-hidden Unicode arrow in markup, but shared header CSS suppresses the glyph visually and draws the northeast arrow with CSS pseudo-elements. This avoids iOS emoji-style rendering while preserving the current CTA design.
+1. reconcile STT's portfolio-level >140/nearly 150 MW figures with current facility labels such as `Launching Soon` and `Under Development`;
+2. establish the current live IT-load phase of VITRO Sta. Rosa rather than assuming the full 36 MW is commissioned;
+3. establish YCO Malvar One's current IT load rather than treating 30 MW energized/powered-shell capacity as equivalent;
+4. verify whether any Evolution/Megawide phase actually reached service after its stated Q3 2026 RFS target;
+5. expand the census to significant operators/projects not yet fully mapped, including current VITRO portfolio sites, Converge/Digital Halo and other material facilities;
+6. prevent double counting and identify operating facilities for which comparable public MW is unavailable, such as Equinix.
 
-Commit implementing this fix:
+No national subtotal is publication-ready.
 
-`36982294c5c5cd10810417379978e391a3fcedf5`
+Possible evidence-led reframe if clean subtotals remain impossible:
 
-Live mobile verification is pending.
+> **Why Philippine data-center capacity numbers conflict — and what operating, energized, planned, and announced megawatts actually mean.**
 
-## C027 visual implementation plan
+Do not research article structure or draft C021 until the operator census, evidence ledger and contradiction search support a story decision.
 
-Before attaching a final visual:
+## Held research
 
-1. research a small set of editorial visual references for composition, texture, and restraint without copying another artist's style;
-2. lock one concrete `Modular carryover` art direction;
-3. create 2-3 original concept variants;
-4. evaluate the variants at homepage and article crop sizes;
-5. select one;
-6. add optional hero-image metadata to the story schema;
-7. render that asset on both the homepage feature and story page with a typography fallback;
-8. add meaningful alt text and appropriate credit/caption metadata;
-9. later pass the same image into Open Graph/social metadata when implemented;
-10. run responsive and render QA.
-
-The preferred v0 metadata shape is currently:
-
-```yaml
-heroImage:
-  src: /images/stories/<slug>/hero.webp
-  alt: "..."
-  credit: "Portfilo illustration"
-  caption: "..." # optional
-```
-
-Do not add this schema until an actual selected asset requires it.
-
-## C029 third launch story
-
-### Approved direction
+### C029 - HOLD / FIELDWORK REQUIRED
 
 Working label:
 
 `The second question after the headline`
 
-The first-phase evaluation is recorded in:
+Question:
 
-`research/editorial-launch/third-story-information-problem-evaluation.md`
+> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
 
-The dedicated packet is:
+Packet:
 
 `research/stories/second-question-after-headline/`
 
-The packet deliberately reframes the approved idea into an observable question rather than a brand thesis.
+Why held:
 
-### Current evidence
-
-Current 2026 Philippine Digital News Report coverage provides a strong backdrop:
-
-- social/video news use is highly prevalent while direct publisher-site/app use has weakened;
-- AI-chatbot use for news remains a minority behavior;
-- among weekly Philippine generative-AI news users, summaries and follow-up questions are prominent uses;
-- users also report source assessment and simplification;
-- trust in AI answers remains low.
-
-This means C029 should distinguish:
-
-- `used`;
-- `useful`;
-- `trusted`.
-
-Those are not the same thing.
-
-### Originality threshold
-
-The story is not allowed to reduce to:
-
-- `young people want clearer news`;
-- `Filipinos get news from social media`;
-- `AI can summarize news`;
-- `Portfilo exists to explain things`.
-
-The intended contribution is the observed sequence:
+The current documentary research cannot provide the story's intended original contribution. That contribution requires observing actual reader behavior:
 
 `encounter -> unanswered question -> next action -> stopping point`
 
-for a small, clearly described qualitative sample of younger Filipino business/technology readers.
+The ready fieldwork method targets 12-15 participants, with 10 complete records minimum. Suitable recruitment is not currently practical.
 
-### Fieldwork design
+Do not substitute public comments or desk research while keeping the stronger behavior claim.
 
-Use:
+Revisit trigger:
 
-1. a three-day natural news-encounter diary; and
-2. a semi-structured interview with a real-time walkthrough using a current unfamiliar Philippine business/technology story.
+Resume when Portfilo can recruit at least 10 suitable participants without relying almost entirely on Louda Tuppal's immediate friend/founder/supporter circle.
 
-Do not prompt AI before observing the participant's natural pathway.
+No C029 draft exists or is authorized.
 
-### Structure decision
+## Homepage and fixture state
 
-If the evidence supports publication, use a behavior-first reported structure:
+Homepage:
 
-1. one real first encounter and the next question;
-2. brief DNR context establishing that the behavior is real but not universal;
-3. the recurring second questions from Portfilo fieldwork;
-4. where readers go next;
-5. AI's actual role, only if it appears naturally;
-6. what makes people stop;
-7. conclude on the information behavior, not Portfilo.
+`src/pages/index.astro`
 
-If AI is weak in the fieldwork, keep the story under Technology and reduce AI to a secondary emerging behavior rather than forcing it into the headline or main frame.
+Current hierarchy:
 
-No article draft exists.
+1. coverage identity;
+2. C027 Featured;
+3. C009 Latest;
+4. About;
+5. Portfilo Brief.
 
-## Public product state
+Homepage behavior:
 
-Validated public surfaces from prior work include:
+- reads the `stories` collection;
+- only `status: published` entries are eligible;
+- sorts by `publishedAt`;
+- first `featured: true` story becomes Featured;
+- remaining published stories populate Latest.
 
-- shared `SiteHeader` / `SiteFooter`;
-- Homepage `/`;
-- About `/about`;
-- Research & Standards `/standards`;
-- Story template;
-- Series template;
-- Confirmation `/confirmed`;
-- Subscribe `/subscribe` and single-purpose Cloudflare Pages subscription proxy.
+Development fixtures remain in the repository but are `draft` and should not be public:
 
-The newest share-readiness fixes are committed but require live deployment verification before a final share-ready PASS.
+- `src/content/stories/portfilo-content-architecture-test.md`;
+- `src/content/stories/portfilo-series-ordering-test-two.md`;
+- `src/content/stories/portfilo-series-ordering-test-three.md`.
+
+Do not reintroduce fake stories merely to fill homepage space.
+
+## Shared UI state
+
+### Wordmark
+
+Current HTML/CSS wordmark:
+
+- `Port`: ink;
+- `fi`: blue;
+- `lo`: red.
+
+Newest deployed re-verification remains pending.
+
+### Subscribe arrow
+
+Header/homepage/subscribe visual arrows use CSS drawing rather than relying on the Unicode northeast-arrow glyph, avoiding iOS emoji rendering.
+
+Fix commit from prior work:
+
+`36982294c5c5cd10810417379978e391a3fcedf5`
+
+Mobile live recheck remains pending.
 
 ## Email system
 
-Portfilo Brief reusable template remains `PASS` based on prior desktop/mobile/inbox testing.
+Portfilo Brief reusable template remains `PASS` from prior testing.
 
-Validated state includes:
+Validated state:
 
-- double opt-in flow: PASS;
-- sender name: `Portfilo`;
+- double opt-in: PASS;
+- sender: `Portfilo`;
 - Reply-To: `portfilo.ph@gmail.com`;
 - Welcome Email: OFF;
 - Smart Nudge: OFF for v0.
 
-beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and deliverability infrastructure.
+beehiiv handles subscriber storage, confirmation, delivery, unsubscribe and deliverability infrastructure.
 
 No newsletter distribution has been authorized or sent for C027 or C009.
 
@@ -503,7 +427,7 @@ Production branch:
 
 `build/portfilo-v0`
 
-Do not claim a newest deployment/render as verified until it is actually checked.
+Do not claim the newest deployment/render is fully verified.
 
 Still pending before final public launch:
 
@@ -526,52 +450,33 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
 | Foundation / Content Architecture / Editorial Design | PASS |
-| Public pages / shared chrome | PASS from prior validation |
-| Story and series templates | PASS from prior validation |
-| Subscribe temporary live flow | PASS, user reported |
-| Portfilo Brief reusable template | PASS |
-| C027 editorial pipeline | PASS |
-| C027 publication approval | GRANTED |
-| C027 repository content entry | PUBLISHED / `featured: true` / by `Louda Tuppal` |
-| C027 article route | USER-VIEWED / PASS |
-| Homepage synthetic fixtures hidden | PASS IN REPOSITORY / LIVE RECHECK PENDING |
-| Homepage C027 feature integration | PASS IN REPOSITORY / USER HAS VIEWED PAGE, NEWEST RECHECK PENDING |
-| Homepage C009 Latest integration | PASS IN REPOSITORY / NEWEST RECHECK PENDING |
-| Wordmark red `lo` regression | FIXED IN REPOSITORY / LIVE RECHECK PENDING |
-| Subscribe emoji-arrow issue | FIXED IN REPOSITORY / MOBILE LIVE RECHECK PENDING |
+| C027 editorial pipeline | PASS / PUBLISHED / FEATURED |
+| C009 editorial pipeline | PASS / PUBLISHED |
+| Newest homepage/share-readiness live recheck | PENDING |
+| Subscribe emoji-arrow mobile live recheck | PENDING |
 | C027 final hero image | NOT SELECTED |
-| C027 hero-image schema | NOT IMPLEMENTED YET |
-| C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
-| C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
-| C009 full live deployment/render QA | INCOMPLETE |
-| Third-story problem-space research | COMPLETE / DIRECTION A APPROVED |
-| C029 research packet | CREATED / PRE-FIELDWORK RESEARCH COMPLETE |
-| C029 structure research | COMPLETE / PROVISIONAL / DRAFTING BLOCKED |
-| C029 | ACTIVE / CONTINUE / FIELDWORK READY |
+| C029 | HOLD / FIELDWORK REQUIRED |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
-| C021 | OPEN / QUEUED |
+| C021 | ACTIVE / SOURCE RECONNAISSANCE |
+| C021 national capacity subtotal | NOT READY |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Execute C029 original Philippine reader fieldwork.**
+**Continue C021's comprehensive operator/project census and contradiction reconciliation.**
 
-Use:
+Priority sequence:
 
-`research/stories/second-question-after-headline/fieldwork-plan.md`
+1. reconcile STT facility/portfolio status;
+2. establish current VITRO live-phase IT load;
+3. verify Evolution/Megawide current service status;
+4. map omitted material operators/projects and BOI/PEZA records;
+5. distinguish IT load from utility/energized power for every row;
+6. update `capacity-ledger.csv`, evidence and contradictions;
+7. decide `CONTINUE / REFRAME / PUBLISH-CANDIDATE / KILL` before any article structure or draft.
 
-Sequence:
-
-1. recruit a deliberately varied qualitative sample, targeting 12-15 completed participants and requiring at least 10 complete records before a publish decision;
-2. collect the three-day natural news-encounter diary;
-3. conduct the semi-structured interview and real-time walkthrough;
-4. code follow-up-question types, next actions and stopping rules while preserving negative cases;
-5. update the evidence ledger and contradictions with original reporting;
-6. decide `PUBLISH / REFRAME / CONTINUE / KILL`;
-7. only if the result is `PUBLISH`, revise the provisional structure around the actual findings and begin drafting.
-
-C027 visual sourcing can resume when the user explicitly returns to it or after this editorial fieldwork phase.
+C027 visual sourcing may resume later when deliberately reprioritized.
 
 ## Phase handoff rule
 
