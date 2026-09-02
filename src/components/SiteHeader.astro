@@ -103,6 +103,42 @@ const { current } = Astro.props;
     background: var(--accent);
   }
 
+  :global(.subscribe-form button > span[aria-hidden="true"]),
+  :global(.newsletter__action > span[aria-hidden="true"]) {
+    position: relative;
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    flex: 0 0 0.9rem;
+    font-size: 0 !important;
+    line-height: 0;
+  }
+
+  :global(.subscribe-form button > span[aria-hidden="true"])::before,
+  :global(.newsletter__action > span[aria-hidden="true"])::before {
+    content: "";
+    position: absolute;
+    top: 0.05rem;
+    right: 0.05rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+  }
+
+  :global(.subscribe-form button > span[aria-hidden="true"])::after,
+  :global(.newsletter__action > span[aria-hidden="true"])::after {
+    content: "";
+    position: absolute;
+    left: 0.08rem;
+    bottom: 0.12rem;
+    width: 0.92rem;
+    height: 1.5px;
+    background: currentColor;
+    transform: rotate(-45deg);
+    transform-origin: left center;
+  }
+
   @media (max-width: 50rem) {
     .site-header {
       grid-template-columns: 1fr;
