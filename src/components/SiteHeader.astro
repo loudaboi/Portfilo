@@ -1,0 +1,137 @@
+---
+type CurrentPage = "standards" | "about" | "subscribe";
+
+interface Props {
+  current?: CurrentPage;
+}
+
+const { current } = Astro.props;
+---
+
+<header class="site-header">
+  <a class="wordmark" href="/" aria-label="Portfilo home">
+    <span class="wordmark__inner">
+      <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
+    </span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="/#latest">Latest</a></li>
+      <li><a href="/standards" aria-current={current === "standards" ? "page" : undefined}>Standards</a></li>
+      <li><a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a></li>
+      <li><a href="/subscribe" aria-current={current === "subscribe" ? "page" : undefined}>Subscribe</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    width: min(100%, var(--page-max));
+    margin-inline: auto;
+    padding: 1.05rem var(--gutter) 0.95rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    align-items: center;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .wordmark {
+    width: fit-content;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .wordmark__inner {
+    display: inline-block;
+    white-space: nowrap;
+    font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
+    letter-spacing: -0.085em;
+    transform: skewX(-12deg);
+    transform-origin: left center;
+  }
+
+  .wordmark__port,
+  .wordmark__fi,
+  .wordmark__lo {
+    display: inline-block;
+  }
+
+  .wordmark__port { color: var(--ink); }
+  .wordmark__fi { color: var(--accent); }
+  .wordmark__lo { color: var(--correction); }
+
+  .site-nav { justify-self: end; }
+
+  .site-nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    list-style: none;
+  }
+
+  .site-nav a {
+    position: relative;
+    display: inline-block;
+    padding-block: 0.2rem;
+    font: 500 clamp(0.78rem, 0.9vw, 0.86rem) / 1 var(--sans);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .site-nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.42rem;
+    left: 0;
+    height: 2px;
+    background: transparent;
+  }
+
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    color: var(--accent);
+  }
+
+  .site-nav a[aria-current="page"]::after {
+    background: var(--accent);
+  }
+
+  @media (max-width: 50rem) {
+    .site-header {
+      grid-template-columns: 1fr;
+      align-items: start;
+      padding-top: 0.9rem;
+    }
+
+    .site-nav {
+      width: 100%;
+      padding-top: 0.8rem;
+      justify-self: stretch;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-nav ul {
+      justify-content: flex-start;
+      gap: 0.8rem 1.3rem;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    .site-nav ul { gap: 0.7rem 1rem; }
+    .site-nav a { font-size: 0.72rem; }
+  }
+
+  @media (max-width: 23rem) {
+    .site-header { --gutter: 1rem; }
+    .wordmark__inner { font-size: 1.68rem; }
+    .site-nav ul { gap: 0.65rem 0.85rem; }
+    .site-nav a { font-size: 0.68rem; }
+  }
+</style>
