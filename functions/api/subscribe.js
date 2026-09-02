@@ -1,5 +1,5 @@
-import { buildConfirmationEmail } from "../_lib/confirmation-email.js";
-import { createConfirmationToken } from "../_lib/confirmation-token.js";
+import { buildConfirmationEmail } from "../../server/confirmation-email.js";
+import { createConfirmationToken } from "../../server/confirmation-token.js";
 
 const JSON_HEADERS = {
   "content-type": "application/json; charset=utf-8",
