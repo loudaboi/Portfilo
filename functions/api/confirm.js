@@ -1,4 +1,4 @@
-import { readConfirmationToken } from "../_lib/confirmation-token.js";
+import { readConfirmationToken } from "../../server/confirmation-token.js";
 
 const BEEHIIV_PUBLICATION_ID = "pub_dde8610d-d1a8-4c74-aa13-aeb3838b2d40";
 
