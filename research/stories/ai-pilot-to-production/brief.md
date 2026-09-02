@@ -118,7 +118,7 @@ A deployed software workflow in which AI materially performs, assists, classifie
 
 ## Required reporting threshold
 
-C001 should not move to drafting until source reconnaissance establishes a credible path to:
+C001 should not move to drafting until reporting establishes a credible path to:
 
 - multiple real implementations or attempts;
 - evidence below vendor-marketing and executive-summary level;
@@ -126,11 +126,13 @@ C001 should not move to drafting until source reconnaissance establishes a credi
 - operational detail on process, data, human review, governance, cost, or measurement;
 - independent technical/domain expertise capable of challenging subject claims.
 
-If the packet cannot meet this threshold, record `REFRAME`, `CONTINUE`, or `KILL`.
+Source reconnaissance can establish that these routes plausibly exist. It does not itself satisfy the threshold.
+
+If direct reporting cannot meet this threshold, record `REFRAME`, `CONTINUE`, or `KILL`.
 
 ## Source map
 
-Initial source inventory is in `sources.md`.
+The working source inventory is in `sources.md`. The extended reconnaissance and outreach map are in `notes.md`.
 
 Priority source classes:
 
@@ -143,29 +145,64 @@ Priority source classes:
 7. industry surveys for landscape and lead generation, with methodology caveats;
 8. vendor case studies only as leads and reported claims requiring independent verification.
 
+## Current case leads after extended reconnaissance
+
+### Priority production leads
+
+- **PLDT/Smart - Store Genie:** partner materials describe a live frontline system integrated with existing operating systems. High-value case if PLDT/Smart can provide operator access and metric methodology.
+- **UnionBank - onboarding / underwriting / fraud AI:** the bank's 2025 report describes these as embedded uses while separately describing RIA voice AI as still forthcoming, giving a useful within-company stage distinction.
+- **Globe - AIRA / QualiAI:** named operational/internal use cases remain plausible production leads, but current public evidence is still thin below the company-report layer.
+
+### Priority non-success-only / pre-scaling lead
+
+- **First Gen - AI Proof of Concept program:** the 2025 integrated report explicitly describes POC evaluation for technical viability, operational alignment, and strategic fit before broader deployment, with review/approval and process-owner accountability. Direct reporting must establish the individual POCs and their outcomes before this can function as a real comparison case.
+
+### Smaller-company route
+
+- **DOST AIgnite:** current government programs provide a credible gatekeeper route to participating MSMEs and technical teams. Public program participation alone is not a case.
+
+### Context / secondary leads
+
+- **PLDT Procure-to-Pay:** AWS quotes PLDT describing current agentic workflow activity and claimed operating improvement, but scope/method remain unclear.
+- **Ayala group:** official 2026 meeting minutes say AI capabilities exist across operating units while realization of results remains a work in progress. Useful challenge context, not a case by itself.
+
 ## Initial interview targets
 
 ### Case operators
 
-Potential leads for source outreach or further verification include:
+Prioritize requests for the people who own or operate the workflow rather than only communications or senior executives:
 
-- Globe AI/operations teams responsible for deployed internal use cases;
-- PLDT/Smart frontline or transformation teams involved in Store Genie or related production systems;
-- DOST AIgnite participating MSMEs and their paired technical teams;
-- other companies surfaced during source reconnaissance with verifiable production or stalled deployments.
+- PLDT/Smart frontline, IT, transformation, or process owners responsible for Store Genie and related systems;
+- UnionBank technology/transformation and business-process owners responsible for onboarding, underwriting, fraud systems, and RIA;
+- Globe AI/operations teams responsible for AIRA, QualiAI, or another reconstructable production workflow;
+- First Gen process owners/IT teams responsible for the 2025 AI POC program;
+- DOST AIgnite participating MSMEs and paired technical teams.
 
-Vendor-produced cases involving Cebu Pacific, RCBC, Tonik, or other Philippine companies may be used to identify potential interview subjects, but vendor-reported outcomes must not be accepted as independent evidence.
+Vendor-produced cases involving Cebu Pacific, RCBC, Tonik, or other Philippine companies remain backup leads and may not be treated as independent proof.
 
 ### Independent challenge sources
 
-Seek at least one or more of:
+Seek one or more of:
 
 - AI systems engineer or architect with production deployment experience;
 - data engineer / integration specialist;
 - data protection officer or privacy lawyer familiar with AI deployment;
 - security practitioner;
 - operations leader able to assess process redesign and measurement;
-- researcher familiar with the Philippine AI Report methodology.
+- researcher able to challenge the distinction between broad AI use and institutionalized production capability.
+
+Dominic Vincent Ligot is a current challenge-source candidate on enterprise capability, data/integration, governance, and talent. Because he contributed to the Swarm report, he is not independent for resolving that report's disputed 65% statistic.
+
+## Swarm survey verification issue
+
+The public Swarm page currently contains an unresolved inconsistency:
+
+- narrative text says 65% of organizations remain at proof-of-concept;
+- Exhibit 2 on the same page shows Proof of Concept at 40% for `What is the nature of your AI project(s)?`.
+
+The page says the full methodology/data appendix contains question-by-question results and publicly lists `pia@swarm.work` for research inquiries.
+
+Until the denominator/question logic is reconciled, do not use `65% remain stuck at POC` as a Portfilo factual anchor.
 
 ## Core reporting questions
 
@@ -194,13 +231,36 @@ For each implementation attempt, establish as many of the following as the evide
 - inconsistent definitions of `pilot`, `production`, `automation`, and `agentic AI`;
 - inability to access internal cost, error, or workflow data;
 - comparing very different workflows as if they were equivalent;
+- conventional ML, generative AI, and agentic systems being bundled under one `AI` label;
+- mistaking a deliberate POC/governance stage for project failure;
 - survivorship bias if failed projects cannot be sourced;
-- confidentiality and privacy constraints around internal processes and customer data.
+- confidentiality and privacy constraints around internal processes and customer data;
+- a large-enterprise-heavy source set that cannot support claims about MSMEs.
 
 These risks must be actively tested in `contradictions.md` and the evidence ledger.
+
+## Reconnaissance decision
+
+**Source reconnaissance:** `PASS / OUTREACH READY`  
+**Drafting threshold:** `NOT YET MET`
+
+Reason: the extended reconnaissance now identifies multiple plausible production cases, a credible still-POC/pre-scaling comparison, an MSME gatekeeper route, independent challenge-source candidates, and public organizational contact routes. The main unresolved viability test has shifted from finding cases to obtaining direct operator/technical access and comparable operating evidence.
 
 ## Current research outcome
 
 `CONTINUE`
 
-Reason: the question passed launch selection and initial source reconnaissance identifies plausible production cases, official policy sources, implementation programs, and independent challenge sources. Access below the marketing layer remains the main unresolved viability test.
+Do not draft the story yet.
+
+## Exact next task
+
+Prepare and obtain approval for source outreach. If approved, begin outreach in parallel to:
+
+1. Swarm for the 65% vs 40% methodology clarification;
+2. PLDT/Smart for Store Genie operator access;
+3. UnionBank for production/forthcoming AI workflow access;
+4. First Gen for its POC program and project outcomes;
+5. DOST Caraga for AIgnite MSME/technical-team introductions;
+6. at least one independent challenge source.
+
+After responses begin, reassess whether C001 meets the reporting threshold, needs a narrower reframe, or should be stopped.
