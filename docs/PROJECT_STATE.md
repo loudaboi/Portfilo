@@ -10,7 +10,7 @@ The publishing system, launch-selection system, and first launch research slate 
 
 C009 is published in repository state and remains a supporting story rather than the first homepage feature. Its byline is `Portfilo`, `publishedAt` is `2026-09-03`, and `featured` remains `false`.
 
-C027 remains the active featured-story candidate. Draft v1 was rejected, Draft v2 is preserved only as an experiment, broader topic-space research selected a stronger core idea, the user approved that idea, and dedicated structure research is now complete. No Draft v3 has been written. Nothing for C027 is public.
+C027 remains the active featured-story candidate. Draft v1 was rejected, Draft v2 is preserved only as an experiment, broader topic-space research selected a stronger core idea, the user approved that idea and the contrast-led structure, and Draft v3 is now complete for user review. Nothing for C027 is public.
 
 C009's full technical deployment/render checklist is still not recorded as complete. Do not claim a fresh local build, final desktop/mobile pass, or exhaustive live-link QA until those checks are actually completed.
 
@@ -200,7 +200,7 @@ Established tension:
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / STRUCTURE READY
+### C027 - ACTIVE / FEATURED PERSPECTIVE CANDIDATE / DRAFT V3 REVIEW
 
 Topic: `Building`  
 Likely content type: `Perspective`  
@@ -270,34 +270,46 @@ Research:
 
 The dedicated craft pass reviewed current Longreads essay guidance, Nieman Storyboard structure/theme guidance and relevant Paul Graham idea essays.
 
-Selected structure:
+The user approved the selected structure:
 
 **Contrast-led argumentative funnel.**
 
-Planned progression:
+Progression:
 
 1. begin with two efforts that look similar by immediate outcome but leave different next starting points;
 2. reveal the overlooked dimension: what remains reusable after the work;
-3. make the idea concrete through two or three ordinary examples without turning the article into a framework;
+3. make the idea concrete through a few ordinary examples without turning the article into a framework;
 4. connect the idea to being early, when accumulated leverage is still limited;
-5. challenge the thesis directly: `I learned a lot` cannot become an automatic excuse for wasted effort, unfinished work or endless project-hopping;
+5. challenge the thesis directly so `I learned a lot` cannot become an automatic excuse for wasted effort or endless project-hopping;
 6. give the reader one memorable test rather than a list;
 7. resolve by returning to the fact that the next attempt can begin from a different place.
 
-Recommended length:
+#### Draft v3
 
-`1,100-1,500 words`.
+Draft:
 
-Presentation constraints:
+`research/stories/building-the-foundation/draft-v3.md`
 
-- mostly continuous prose;
-- no numbered list;
-- at most two or three quiet subheads if useful;
-- no methodology box;
-- no forced AI section;
-- no biography inside the body;
-- no invented anecdote presented as fact;
-- factual claims must still be verified if introduced.
+Evaluation:
+
+`research/stories/building-the-foundation/draft-v3-evaluation.md`
+
+Working title:
+
+> **Build things that make the next thing easier**
+
+Draft v3 follows the approved single-thread structure and remains reader-centered. It contains no biography, no forced AI section, no methodology box, and no numbered public framework.
+
+Current self-evaluation:
+
+**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+
+The main editorial risks identified before a later copy pass are:
+
+- abstract wording such as `accumulated leverage`, `residual value`, and `durable advantage`;
+- some list-like rhythm in the examples;
+- a middle section that may be slightly longer than necessary;
+- an ending that may need a harder `Say the thing. Then stop.` edit.
 
 Current state:
 
@@ -307,9 +319,10 @@ Current state:
 - topic-space research: `COMPLETE`;
 - core message: **APPROVED**;
 - structure research: `COMPLETE`;
-- recommended structure: `CONTRAST-LED ARGUMENTATIVE FUNNEL`;
-- Draft v3: `NOT AUTHORIZED / NOT STARTED`;
-- adversarial review: not applicable until a new draft exists;
+- selected structure: **APPROVED**;
+- Draft v3: `COMPLETE / INTERNAL`;
+- Draft v3 self-evaluation: `DIRECTION PASS FOR USER REVIEW`;
+- adversarial review: `PENDING USER DIRECTION PASS`;
 - public story entry: **does not exist**;
 - publication approval: **not requested / not granted**.
 
@@ -470,8 +483,10 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C027 topic-space research | COMPLETE |
 | C027 core message | APPROVED |
 | C027 structure research | COMPLETE |
-| C027 selected structure | AWAITING USER APPROVAL |
-| C027 Draft v3 | NOT STARTED |
+| C027 selected structure | APPROVED |
+| C027 Draft v3 | COMPLETE / INTERNAL |
+| C027 Draft v3 self-evaluation | DIRECTION PASS FOR USER REVIEW |
+| C027 adversarial review | PENDING USER DIRECTION PASS |
 | C027 public content entry | DOES NOT EXIST |
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
 | C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
@@ -481,23 +496,23 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Approve or reject the C027 structure before Draft v3.**
+**Louda reviews C027 Draft v3 for message clarity, shareability, and Portfilo fit.**
 
-Recommended structure:
+The review question is simple:
 
-> **Contrast-led argumentative funnel**
+> After reading it once, is the message clear, worth sharing, and close to the kind of first featured Perspective Portfilo should lead with?
 
-The draft would open with a concrete contrast, reveal the hidden `next starting point` dimension, develop that single idea through a few ordinary examples, test it against the obvious `I learned a lot` rationalization, and end with one useful question rather than a framework.
+If the direction passes:
 
-If approved:
+1. run adversarial review against the editorial, research, and copy standards;
+2. tighten abstract language, list-like rhythm, and any motivational drift;
+3. run factual claim audit if later edits add external claims;
+4. run editorial/copy pass;
+5. audit headline and dek;
+6. present the revised story to Louda for explicit publication approval;
+7. only after publication approval create the public content entry and proceed through technical QA.
 
-1. write one new internal Draft v3 at roughly 1,100-1,500 words;
-2. evaluate only whether the message remains clear and the article feels worth featuring;
-3. if direction passes, run adversarial review, factual claim audit where needed, editorial/copy pass and headline/dek audit;
-4. present the revised story to Louda for explicit publication approval;
-5. only after publication approval create the public content entry and proceed through technical QA.
-
-Do not splice Draft v1 or Draft v2 into Draft v3 by default.
+If the direction does not pass, return to the topic or structure rather than polishing individual sentences.
 
 C009's remaining technical verification can be completed independently and should not block C027 editorial development.
 
