@@ -1,6 +1,6 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-03_
 
 ## Current phase
 
@@ -120,6 +120,38 @@ Default work-in-progress limits remain:
 - generally no more than three substantial stories in active research at once;
 - no mandatory article quota.
 
+### Access-aware source planning
+
+Before making a story depend on interviews, Portfilo evaluates current source reachability using the present relationships, warm introductions, known response history, public routes, publication visibility, reporting window, and alternative evidence paths.
+
+Operational access labels are:
+
+- `DIRECT / LIKELY`;
+- `PLAUSIBLE`;
+- `LOW-PROBABILITY`;
+- `NOT REQUIRED`.
+
+These labels measure reachability, not credibility. They should be reevaluated as Portfilo's relationships, publication history, and influence change.
+
+Interviews remain one form of original reporting, not a mandatory ingredient in every substantial story.
+
+### Verification-disclosure judgment
+
+Generic language such as `Portfilo could not independently verify`, `Portfilo was unable to confirm`, or `Portfilo did not receive a response` is not default credibility copy.
+
+The research packet should record uncertainty aggressively. Public copy should disclose a verification limit only when it materially helps the reader understand the evidence, fairness, or limitation of the story.
+
+Preferred order:
+
+1. verify;
+2. remove an unnecessary unsupported claim;
+3. attribute a reported claim precisely;
+4. state the specific missing/conflicting evidence if materially relevant;
+5. use newsroom-centered verification language only when it is the clearest accurate formulation;
+6. research professional/legal requirements for unusual fairness-sensitive or high-risk cases.
+
+Canonical details are in `docs/EDITORIAL_STANDARD.md` and `docs/RESEARCH_STANDARD.md`.
+
 ## Editorial Launch Research - COMPLETE / APPROVED
 
 Workspace:
@@ -152,7 +184,7 @@ Operational assignment state is recorded in:
 
 `research/editorial-launch/assignments.md`
 
-### C001 - ACTIVE / FLAGSHIP
+### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
 Question:
 
@@ -168,12 +200,17 @@ Current packet includes:
 - `sources.md`
 - `evidence.md`
 - `contradictions.md`
+- `notes.md`
 
 Current story outcome: `CONTINUE`.
 
-The central unresolved viability test is access below the marketing layer, especially direct operator evidence and at least one stalled, abandoned, or materially constrained implementation if possible.
+Source reconnaissance is `PASS / OUTREACH READY`, while the drafting threshold remains unmet. The packet now evaluates source reachability relative to Portfilo's current position rather than assuming large-company interviews will arrive on a launch timetable.
 
-### C009 - ACTIVE / SUPPORTING
+C001 remains active and may pursue realistic outreach, but it must not make Portfilo's publishing schedule depend indefinitely on low-probability corporate replies.
+
+The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page labels proof-of-concept at 40%. Do not use the 65% figure as a Portfilo factual anchor until the denominator/question logic is reconciled.
+
+### C009 - ACTIVE / SUPPORTING / CONTINUE
 
 Question:
 
@@ -183,19 +220,46 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/it-bpm-higher-value-work/`
 
-Current packet stage: research brief created. Detailed source reconnaissance follows while remaining within the active-story limit.
+Current packet stage: research brief created. Detailed public-data/source research remains pending.
 
-### C017 - ACTIVE / SUPPORTING
+### C017 - ACTIVE / SUPPORTING / REFRAME
 
-Question:
+Original planning question:
 
 > Who ultimately pays when qualifying small-merchant digital payments become free to the merchant?
+
+Reframed working question:
+
+> What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
 
 Topic: `Business`  
 Priority: `HIGH`  
 Packet: `research/stories/zero-fee-merchant-payments/`
 
-Current packet stage: research brief created. Detailed source reconnaissance follows while remaining within the active-story limit.
+The first full public-evidence pass is complete and produced a formal research outcome: `REFRAME`.
+
+Current packet includes:
+
+- `brief.md`;
+- `sources.md`;
+- `evidence.md`;
+- `contradictions.md`;
+- `notes.md`.
+
+### Why C017 reframed
+
+The original incidence question assumed a sufficiently defined zero-fee small-merchant regime. Primary documents do not yet support that premise cleanly enough:
+
+- the 2024 BSP exposure draft proposed a `micro-merchant` definition, a PHP250,000 monthly gross-receipts threshold, and an explicit merchant-fee waiver;
+- signed Circular No. 1238 does not reproduce that definition or waiver in the reviewed text and instead says Ops-MAL merchant fees may be charged under cost-based, transparent pricing;
+- same-day BSP Memorandum No. M-2026-025 nevertheless says the lifting of the InstaPay/PESONet fee moratorium is grounded in the `implementation of zero fees for small merchant payments`;
+- current public QR/QRPh merchant pricing from GCash, Maya, and PayMongo remains nonzero, although standard rate cards do not establish the treatment of any qualifying special segment.
+
+This is a documentary mismatch to resolve, not proof that no zero-fee implementation exists. A separate BSP, PPMI, ACH, participant, or program rule may supply the missing mechanics.
+
+The economic-incidence question remains possible only after Portfilo establishes who qualifies, which payment type/rail is covered, which fee is zero, and what instrument implements the condition.
+
+**Drafting status: DO NOT DRAFT YET.**
 
 ### C021 - OPEN / FIRST RESERVE
 
@@ -207,24 +271,6 @@ Topic: `Technology`
 Priority: `HIGH`
 
 Do not activate C021 while C001, C009, and C017 occupy the three substantial active-research slots.
-
-## C001 initial source-reconnaissance status
-
-The first C001 pass identified plausible source paths through:
-
-- the Philippine AI Report 2025 as industry-survey landscape evidence;
-- DOST AIgnite and ACABAI-PH implementation programs;
-- DOST's August 2026 MSME AI capacity-building work;
-- National Privacy Commission AI/privacy guidance;
-- Globe public/company reporting on deployed AI use cases;
-- PLDT/Smart filings and named production initiatives;
-- vendor/partner case studies as leads only.
-
-Important contradiction already recorded:
-
-The public Swarm report page says 65% of surveyed organizations remain at proof-of-concept, while a displayed chart on the same page labels proof-of-concept at 40%. The packet must resolve the denominator/methodology before Portfilo uses the 65% figure as a factual claim.
-
-Vendor/company success metrics remain reported claims until independently verified.
 
 ## Public surfaces - PASS
 
@@ -283,7 +329,7 @@ Task 1A and Task 1B remain validated, including:
 - same-origin, honeypot, validation, safe-error, and beehiiv behavior;
 - prior dependency audit at 0 vulnerabilities on 2026-09-02.
 
-No new application code changed during launch selection or the current research-packet work, so no new build validation is claimed for these documentation/research commits.
+No application code changed during launch research or the current research-packet work, so no new build validation is claimed for these research/documentation commits.
 
 ## Temporary production deployment - PASS / final domain pending
 
@@ -342,9 +388,9 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 | Content Planning System v0 | APPROVED / PASS |
 | Editorial Launch Research | COMPLETE / APPROVED |
 | First real launch package | APPROVED |
-| C001 flagship packet | ACTIVE / CONTINUE |
-| C009 supporting packet | ACTIVE / brief started |
-| C017 supporting packet | ACTIVE / brief started |
+| C001 flagship packet | ACTIVE / CONTINUE / outreach ready, not draft ready |
+| C009 supporting packet | ACTIVE / CONTINUE / brief started |
+| C017 supporting packet | ACTIVE / REFRAME / first public-evidence pass complete |
 | C021 reserve | OPEN / QUEUED |
 | Fixture content replacement | PENDING verified launch stories |
 | Final-domain Cloudflare configuration | PENDING domain |
@@ -358,13 +404,12 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 
 ### Editorial track
 
-- continue C001 source reconnaissance and access testing;
-- secure real case/operator evidence below vendor-marketing level;
-- resolve the Swarm 65% vs 40% discrepancy before using that statistic;
-- develop C001 evidence ledger and contradiction search;
-- run source reconnaissance for C009 and C017;
+- resolve C017's reframed zero-fee implementation question from authoritative sources;
+- establish which merchants, payment types, and fee layers the BSP's `zero fees for small merchant payments` wording actually covers;
+- keep C001 active with access-aware outreach/document research rather than waiting indefinitely for low-probability replies;
+- run detailed public-data/source research for C009;
 - make story decisions separately for each active packet;
-- draft only from verified/qualified packet evidence;
+- draft only from verified/qualified packet evidence after a `PUBLISH` decision;
 - run adversarial review and claim audit;
 - prepare visuals/graphics only where evidence makes them useful;
 - replace fixture content with verified stories;
@@ -388,16 +433,18 @@ Do not treat post-launch enhancements as v0 blockers.
 
 ## Exact next task
 
-**Continue C001 flagship source reconnaissance and test whether the required reporting threshold is achievable.**
+**Resolve the reframed C017 question: what `zero fees for small merchant payments` actually means under the BSP's 2026 payment rules.**
 
 Immediate priorities:
 
-1. identify and verify 3-5 plausible implementation attempts;
-2. seek evidence below executive and vendor marketing layers;
-3. find at least one stalled/failed/mixed case if possible;
-4. establish direct operator and independent challenge-source targets;
-5. reconcile the Swarm report's POC figures;
-6. update the evidence and contradiction ledgers before any drafting decision.
+1. locate an authoritative BSP, PPMI, ACH, participant, or implementation document governing the zero-fee condition;
+2. establish the operative merchant eligibility definition;
+3. identify the covered payment rail/transaction type and exact fee layer;
+4. reconcile the rule with current provider merchant-pricing documentation;
+5. determine whether the reframed C017 question can reach `PUBLISH` from public evidence or requires narrow official clarification;
+6. only then reassess the original economic-incidence question.
+
+Do not draft C017 before this implementation basis is established.
 
 ## Phase handoff rule
 
