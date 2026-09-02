@@ -55,6 +55,41 @@ Define:
 
 Identify likely primary and secondary sources before broad browsing.
 
+For substantial stories, distinguish:
+
+- sources that are **essential** to establish the question;
+- sources that would materially improve the story but are **optional**;
+- documentary, dataset, calculation, or alternative-source routes that can carry the reporting if interviews do not materialize.
+
+### 7. Access and reachability assessment
+
+Before making a story dependent on direct interviews, assess Portfilo's current ability to reach the relevant people.
+
+Consider:
+
+- existing personal or professional relationships;
+- warm introductions;
+- prior response history;
+- identifiable operators or technical owners;
+- public press, investor-relations, institutional, or research contact routes;
+- whether the request is specific enough to route internally;
+- the source's likely reason to respond;
+- Portfilo's current publication history and visibility;
+- the reporting deadline and how long a reply can reasonably be awaited.
+
+Classify the outreach requirement in plain language, for example:
+
+- `DIRECT / LIKELY` - an existing relationship, warm introduction, or established responsive route exists;
+- `PLAUSIBLE` - a relevant person or credible public route exists, but response is uncertain;
+- `LOW-PROBABILITY` - the source is important but there is no meaningful access route or the request is unlikely to be answered within the reporting window;
+- `NOT REQUIRED` - the story can be established rigorously without that interview.
+
+These labels are operational judgments, not measures of source credibility.
+
+Do not avoid an essential high-value source merely because Portfilo is early-stage. Make the attempt when the reporting warrants it. But do not design a time-sensitive story so that publication depends indefinitely on a low-probability reply when public records, datasets, calculations, alternative knowledgeable sources, or a narrower question can answer it properly.
+
+As Portfilo's relationships, visibility, and response history change, reassess reachability. A source class that is unrealistic at launch may become practical later.
+
 ## Source hierarchy
 
 The hierarchy is guidance, not an automatic credibility score. Relevance and methodology still matter.
@@ -200,6 +235,10 @@ Never quote a model-generated calculation without verifying it.
 
 ## Interviews
 
+Interviews are one form of original reporting, not a mandatory ingredient in every substantial story.
+
+Use them when they can establish facts, mechanisms, decisions, experiences, contradictions, or context that documentary evidence cannot adequately provide.
+
 For each interview, retain:
 
 - subject identity and relevance;
@@ -210,6 +249,8 @@ For each interview, retain:
 - disclosure or conflict information.
 
 A compelling interview does not override contradictory documentary evidence.
+
+If an interview is useful but not essential and the source does not respond within the reporting window, proceed only if the remaining evidence can answer the question to the required standard. If it cannot, reframe, continue, hold, or kill the story.
 
 ## Company/person claims
 
