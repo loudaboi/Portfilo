@@ -206,18 +206,28 @@ Stage 5 candidate-story inventory: COMPLETE, first pass.
 
 Stage 6 editorial evaluation: COMPLETE, first pass.
 
+Stage 7 candidate-series check: COMPLETE.
+
+Stage 8 launch-package recommendation: COMPLETE / AWAITING EDITORIAL APPROVAL.
+
 Current findings are recorded in:
 
 - `audience-signals.md`;
 - `competitor-map.md`;
 - `information-gaps.md`;
 - `candidate-stories.md`;
-- `evaluation.md`.
+- `evaluation.md`;
+- `candidate-series.md`;
+- `recommendation.md`.
 
 The Stage 5 inventory contains 28 stable candidate IDs. Stage 6 reduced them to 11 passed candidates, 6 reframes, 7 holds, and 4 killed standalone candidates. Killed and held ideas remain preserved in the research history rather than being deleted.
 
-The current passed pool contains six `HIGH`-priority candidates and five `MEDIUM`-priority candidates. No candidate is `ACTIVE` or assigned yet.
+The series check found no formal launch series justified. The Stage 8 recommendation proposes a small package of independent stories:
 
-No launch topic, story, package, or series is selected yet.
+- C001 as intended flagship;
+- C009 and C017 as supporting research assignments;
+- C021 as first reserve / next-in-line.
 
-Next step: Stage 7 candidate-series evaluation. Test whether any of the passed candidates form a genuinely coherent series or launch package. Do not force a series if the strongest launch is a set of independent stories. Stage 8 will then make the actual launch-package recommendation.
+No candidate is `ACTIVE` yet. The recommendation must be approved before assignments are activated or individual story research packets are created.
+
+Next step: editorial approval, adjustment, or rejection of `recommendation.md`. If approved, activate no more than three substantial research assignments and begin individual story research under the canonical research standard.
