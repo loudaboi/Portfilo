@@ -19,16 +19,16 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 | ID | Role | Current research question | Topic | Planning decision | Priority | Research outcome | Research packet |
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
-| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH / DRAFT READY | `research/stories/it-bpm-higher-value-work/` |
+| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH / PRE-PUBLISH EDITORIAL PASS | `research/stories/it-bpm-higher-value-work/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 
 State for C001, C009, and C017 remains `ACTIVE`.
 
-`PUBLISH / DRAFT READY` for C009 means the research and editorial checks support publication, and a public content entry has been prepared with `status: draft`. It does **not** mean the story is public. Publication remains blocked on Louda Tuppal's explicit approval.
+`PUBLISH / PRE-PUBLISH EDITORIAL PASS` for C009 means the research and editorial gates support publication and a real content entry exists as `status: draft`. It does **not** mean the story is public. The remaining gates are technical render/build QA and Louda Tuppal's explicit publication approval.
 
 ## C009 checkpoint
 
-C009 is the first launch assignment to reach a `PUBLISH` story decision and complete the pre-publication editorial pipeline.
+C009 is the first launch assignment to reach a `PUBLISH` story decision and pass the editorial pre-publication pipeline.
 
 The original planning question asked what `higher-value work` means inside Philippine IT-BPM. The first full public-data/source pass narrowed the publishable question to:
 
@@ -47,7 +47,13 @@ Completed C009 editorial stages:
 - editorial/copy pass: pass;
 - headline/dek audit: pass;
 - methodology: pass;
+- fresh currentness/source recheck: pass;
+- pre-publish editorial gate: pass;
 - public content entry: prepared as `draft`.
+
+Pre-publish review:
+
+`research/stories/it-bpm-higher-value-work/pre-publish-review.md`
 
 Prepared story file:
 
@@ -61,7 +67,7 @@ The current story deliberately does **not** claim:
 - that frontline workers can transition into the roles on a particular timetable;
 - that every specialist role is intrinsically a better job.
 
-Next C009 step: user editorial review and explicit publication approval. Do not change the story to `published` before that approval.
+Next C009 step: user review of the pre-publish revision, followed by explicit publication approval if accepted. The technical build/render gate must pass before a production-visible publication commit.
 
 ## C017 checkpoint
 
