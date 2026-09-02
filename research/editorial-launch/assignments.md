@@ -19,22 +19,39 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 | ID | Role | Current research question | Topic | Planning decision | Priority | Research outcome | Research packet |
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
-| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH | `research/stories/it-bpm-higher-value-work/` |
+| C009 | Supporting | What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`? | Business | PASS | HIGH | PUBLISH / DRAFT READY | `research/stories/it-bpm-higher-value-work/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 
-State for C001, C009, and C017 remains `ACTIVE`. `PUBLISH` for C009 means its evidence packet supports drafting; it does not mean a public story has been published yet.
+State for C001, C009, and C017 remains `ACTIVE`.
+
+`PUBLISH / DRAFT READY` for C009 means the research and editorial checks support publication, and a public content entry has been prepared with `status: draft`. It does **not** mean the story is public. Publication remains blocked on Louda Tuppal's explicit approval.
 
 ## C009 checkpoint
 
-C009 is the first launch assignment to reach a `PUBLISH` story decision.
+C009 is the first launch assignment to reach a `PUBLISH` story decision and complete the pre-publication editorial pipeline.
 
 The original planning question asked what `higher-value work` means inside Philippine IT-BPM. The first full public-data/source pass narrowed the publishable question to:
 
 > What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
 
-The packet now contains official Philippine skills-framework evidence and a 15-role structured illustrative sample of current employer postings.
+The packet contains official Philippine skills-framework evidence and a 15-role structured illustrative sample of current employer postings.
 
 The main supported finding is that `higher-value work` is not a single occupation or a clean synonym for non-voice, technical, or AI work. In the current evidence it is better explained through observable dimensions such as domain expertise, technical/data depth, judgment/control responsibility, process/system ownership, and stakeholder scope.
+
+Completed C009 editorial stages:
+
+- story decision: `PUBLISH`;
+- draft: complete;
+- adversarial review: complete and resolved;
+- claim audit: pass;
+- editorial/copy pass: pass;
+- headline/dek audit: pass;
+- methodology: pass;
+- public content entry: prepared as `draft`.
+
+Prepared story file:
+
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
 The current story deliberately does **not** claim:
 
@@ -44,7 +61,7 @@ The current story deliberately does **not** claim:
 - that frontline workers can transition into the roles on a particular timetable;
 - that every specialist role is intrinsically a better job.
 
-Next C009 step: draft from the verified packet, then adversarial review and claim audit before any public story file is created.
+Next C009 step: user editorial review and explicit publication approval. Do not change the story to `published` before that approval.
 
 ## C017 checkpoint
 
@@ -52,7 +69,7 @@ C017's original planning question asked who ultimately bears the cost when quali
 
 The first public-evidence pass reframed the question because the final 2026 rule set did not define the presumed merchant-side waiver cleanly enough.
 
-The second implementation-basis audit now establishes that:
+The second implementation-basis audit establishes that:
 
 - Circular 1238 permits cost-based merchant fees and does not reproduce the 2024 exposure draft's explicit micro-merchant waiver;
 - M-2026-025 still says zero fees for small merchant payments have been implemented but does not identify the fee layer or implementation instrument;
