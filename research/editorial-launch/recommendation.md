@@ -4,27 +4,29 @@ _Last updated: 2026-09-02_
 
 ## Status
 
-**PROPOSED - AWAITING EDITORIAL APPROVAL**
+**APPROVED**
 
-This recommendation completes the launch-selection research. It does not assign, prove, draft, or publish any story.
+Louda Tuppal approved this launch recommendation on 2026-09-02.
 
-If approved, selected candidates should become individual story research packets under `research/stories/` and remain subject to `RESEARCH_STANDARD.md`, `EDITORIAL_STANDARD.md`, and `PUBLISHING_STANDARD.md`.
+Editorial Launch Research is complete. Approval selects research assignments, not publishable conclusions. Every selected story remains subject to `docs/RESEARCH_STANDARD.md`, `docs/EDITORIAL_STANDARD.md`, and `docs/PUBLISHING_STANDARD.md` and may end in `PUBLISH`, `REFRAME`, `CONTINUE`, or `KILL`.
 
-## Recommendation
+## Approved launch approach
 
 Launch with a **small package of independent stories, not a formal series**.
 
-Recommended first research slate:
+Approved research slate:
 
 1. **C001 - Flagship:** What separates an AI pilot from a production system inside a Philippine company?
 2. **C009 - Supporting:** What does "higher-value work" actually mean inside Philippine IT-BPM?
 3. **C017 - Supporting:** Who ultimately pays when qualifying small-merchant digital payments become free to the merchant?
 
-Recommended next-in-line:
+First reserve:
 
-4. **C021 - Reserve / first follow-on:** How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
+4. **C021 - Reserve:** How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
 
-Do not activate all four simultaneously. The v0 work-in-progress limit remains generally no more than three substantial stories in active research at once.
+C001, C009, and C017 are active research assignments. C021 remains passed/high-priority and queued. Do not activate a fourth substantial story until one of the first three clears research or is stopped.
+
+Current assignment state is recorded in `research/editorial-launch/assignments.md`.
 
 ## Why this package
 
@@ -35,37 +37,22 @@ The package demonstrates Portfilo's intended editorial method without forcing to
 - C017 moves from a payment-rule announcement to the economics underneath it;
 - C021 verifies infrastructure claims by separating operating capacity from pipeline and announcement.
 
-Together they test four useful Portfilo capabilities:
+Together they test reported operational reconstruction, structured labor-market analysis, economic/mechanism explanation, and original verification work. The range also avoids launching Portfilo as a single-topic AI publication.
 
-- reported operational reconstruction;
-- structured labor-market analysis;
-- economic/mechanism explanation;
-- original verification dataset.
+## Flagship - C001
 
-They also span different primary reader needs and avoid making the launch look like a single-topic AI publication.
-
-## Flagship recommendation
-
-### C001 - AI pilot to production
+**Question:** What separates an AI pilot from a production system inside a Philippine company?
 
 **Primary topic:** AI  
 **Primary reader need:** Understand  
 **Likely content type:** Reported / Explained  
-**Stage 6 priority:** HIGH
+**Priority:** HIGH
 
-### Why it should lead
-
-C001 best expresses the gap repeatedly identified through the launch research: public coverage is already strong at announcing AI programs, adoption surveys, products, and executive intent, but there is still room to reconstruct the operating reality between experimentation and reliable production.
-
-The question is current without depending on a one-day news cycle. It also creates room for original contribution through interviews, process evidence, technical detail, governance decisions, failure cases, and before/after operational evidence.
-
-It can help both readers trying to understand AI adoption and readers making implementation decisions without becoming generic AI advice.
+C001 leads because current coverage already documents AI programs, adoption surveys, products, and executive intent, while the operating transition from experiment to reliable production remains less visible.
 
 ### Required reporting threshold
 
-Do not force C001 into publication merely because it is the recommended flagship.
-
-Before the story is considered viable, source reconnaissance should establish a credible path to:
+Before C001 is considered viable, the research packet should establish a credible path to:
 
 - multiple real implementations or implementation attempts;
 - evidence below executive-summary or vendor-marketing level;
@@ -73,179 +60,73 @@ Before the story is considered viable, source reconnaissance should establish a 
 - operational detail about process, data, human review, governance, cost, or measurement;
 - independent technical or domain expertise capable of challenging company claims.
 
-If access produces only vendor success stories, promotional case studies, or unsupported executive claims, the candidate should be reframed, continued, or killed.
+If source access produces only vendor success stories, promotional case studies, or unsupported executive claims, C001 must be reframed, continued, or killed rather than weakened to preserve the launch plan.
 
-### Natural follow-ons
+C001 research may later unlock C002, C007, or stronger versions of the C005/C006/C008 reporting dimensions. These are not pre-committed follow-ons.
 
-C001 research may unlock:
+## Supporting - C009
 
-- C002 - all-in cost of one AI workflow;
-- C007 - buy vs integrate vs build;
-- C005 - data-readiness reporting dimension;
-- C006 - failure-side reporting dimension;
-- C008 - security/governance reporting dimension.
-
-Do not pre-commit to those stories. Let the evidence determine whether they deserve standalone treatment.
-
-## Supporting recommendation 1
-
-### C009 - What "higher-value work" means in IT-BPM
+**Question:** What does "higher-value work" actually mean inside Philippine IT-BPM?
 
 **Primary topic:** Business  
 **Primary reader need:** Understand  
 **Likely content type:** Explained / Reported  
-**Stage 6 priority:** HIGH
+**Priority:** HIGH
 
-### Why it belongs
+C009 converts a recurring industry phrase into testable evidence about roles, tasks, skills, compensation, and access. Its source path can combine job postings, employers, recruiters, workers, and official/industry material.
 
-The Philippine IT-BPM sector is economically and socially consequential, and "higher-value work" is repeatedly used to describe its transition. The phrase remains too abstract to be useful without defining actual roles, tasks, skill requirements, compensation, and accessibility.
+Before collecting a dataset, define the role universe, inclusion criteria, duplicate handling, collection window, location treatment, and the limits of advertised compensation. C010, C011, and C016 remain possible dimensions or derivatives rather than required standalone stories.
 
-C009 has a comparatively strong evidence path because Portfilo can combine public job postings, employer material, recruiters, workers, official/industry sources, and transparent classification rules.
+If C001 fails its reporting threshold, C009 is the preferred fallback flagship.
 
-This makes C009 a useful counterweight to the access risk of C001. It is capable of producing a credible story even if private companies disclose less than hoped, provided the role sample and definitions are rigorous.
+## Supporting - C017
 
-### Reporting requirements
-
-Before collecting a dataset, define:
-
-- which job families are included;
-- what qualifies as "higher-value" for the analysis;
-- how duplicate listings are handled;
-- what advertised compensation can and cannot establish;
-- how location and remote/hybrid roles are classified;
-- the collection window.
-
-C010, C011, and C016 should initially be treated as dimensions or possible derivatives rather than separate required launch stories.
-
-## Supporting recommendation 2
-
-### C017 - Who pays for zero-fee small-merchant digital payments
+**Question:** Who ultimately pays when qualifying small-merchant digital payments become free to the merchant?
 
 **Primary topic:** Business  
 **Primary reader need:** Understand  
 **Likely content type:** Analysis / Explained  
-**Stage 6 priority:** HIGH
+**Priority:** HIGH
 
-### Why it belongs
+The underlying rule change is already covered at announcement level. Portfilo's contribution is to trace the economic incidence underneath the rule using BSP requirements, provider pricing, merchant economics, interviews, and explicit calculations.
 
-The underlying regulatory change is already covered at the announcement and basic-explainer level. Portfilo's contribution would be to explain the economic incidence beneath the rule rather than reproduce what the rule says.
+The story must distinguish regulated fees from other charges, explicit fees from indirect recovery, observed provider behavior from hypothetical incentives, and merchant-facing price from underlying processing cost. C019 remains a mechanism inside this story. C018 and C020 remain possible follow-ons if evidence warrants them.
 
-The question is concrete, timely, and comparatively feasible because the evidence can include BSP rules, provider fee schedules, public pricing, interviews, merchant economics, and explicit calculations.
+## Reserve - C021
 
-It also demonstrates that Portfilo's decision journalism is not limited to AI or startups.
-
-### Reporting requirements
-
-The story must distinguish:
-
-- regulated transfer or merchant fees from other provider charges;
-- explicit charges from indirect recovery mechanisms;
-- observed provider behavior from hypothetical incentives;
-- merchant-facing price from underlying processing cost.
-
-C019 should remain a mechanism inside C017 rather than a standalone story.
-
-C018 and C020 remain strong follow-ons if the research produces a real recurring-payment use case and sufficiently mature operational evidence.
-
-## Reserve / first follow-on
-
-### C021 - Verified Philippine data-center capacity status
+**Question:** How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
 
 **Primary topic:** Technology  
 **Primary reader need:** Update  
 **Likely content type:** Reported / Analysis  
-**Stage 6 priority:** HIGH
+**Priority:** HIGH
 
-### Why it is not in the first three active assignments
+C021 remains first reserve because it is strong and differentiated but likely requires a project-by-project dataset and careful status verification. The core contribution is a verified capacity map, not another data-center-boom article. C022 is a verification dimension; C023 may become a separate explainer only if independent criteria for "AI-ready" can be established.
 
-C021 is strong, differentiated, and potentially durable, but it is likely to require a project-by-project dataset and careful status verification. Starting it simultaneously with three other substantial assignments would violate the intended v0 work-in-progress discipline.
+## Series decision
 
-It should be the first candidate activated when one of the initial three clears research or is stopped.
+`candidate-series.md` found useful clusters around AI implementation, payments, IT-BPM, and data centers, but no formal launch series is justified.
 
-### Contribution
+A formal series would narrow Portfilo's identity too early, convert several reporting dimensions into unnecessary installments, and create pressure to complete a package even if later evidence is weak. The approved slate should feel coherent because of editorial method, not because every story shares one subject.
 
-The core value is not another "data-center boom" article. It is a verified status map that distinguishes, at minimum:
+## Production logic
 
-- operating;
-- under construction;
-- financed/committed where independently supportable;
-- approved/planned;
-- announced.
+The v0 work-in-progress rule remains:
 
-C022 should be treated as a verification dimension inside C021. C023 may become an explainer or sidebar if independent technical criteria for "AI-ready" can be established.
+- maximum one flagship investigation in active production at once;
+- generally no more than three substantial stories in active research at once.
 
-## Why not launch with a formal series
+Operating order:
 
-The series check in `candidate-series.md` found useful clusters around AI implementation, payments, IT-BPM, and data centers, but not enough independent story depth to justify a branded launch series.
+1. C001 - active flagship research;
+2. C009 - active supporting research;
+3. C017 - active supporting research;
+4. C021 - queued first reserve.
 
-A formal series would create three risks:
+Begin with source reconnaissance and evidence-path testing. A supporting story may publish before the intended flagship if its evidence stabilizes earlier. Do not delay verified journalism merely to preserve a predetermined publication order.
 
-1. it would narrow Portfilo's launch identity before the publication has demonstrated range;
-2. several candidate pairs are currently better understood as one story plus reporting dimensions or evidence-triggered follow-ons;
-3. it would encourage publishing additional installments to complete a package even if the evidence does not justify them.
+## Approval does not mean
 
-The recommended package should feel coherent because of **editorial method**, not because every story shares the same subject.
+Approval does not mean any premise is proven, any working title is final, any company claim is accepted, any candidate must ultimately publish, or the three stories must publish together.
 
-## Production order
-
-If approved, activate a maximum of three substantial research packets:
-
-1. C001;
-2. C009;
-3. C017.
-
-C021 remains queued.
-
-Recommended operating logic:
-
-- begin source reconnaissance for all three;
-- keep C001 as the intended flagship while testing whether the access threshold is achievable;
-- allow C009 or C017 to publish first if their evidence stabilizes earlier;
-- do not delay a verified supporting story solely to preserve a predetermined publication order;
-- if C001 fails its evidence/access threshold, do not weaken the standard to preserve the launch plan.
-
-If C001 cannot be reported properly, **C009 is the preferred fallback flagship** because it combines consequence, strong evidence availability, original analysis potential, and a clearly underexplained industry phrase.
-
-## Candidate disposition after approval
-
-If this recommendation is approved:
-
-- C001 -> `ACTIVE`;
-- C009 -> `ACTIVE`;
-- C017 -> `ACTIVE`;
-- C021 -> remain `OPEN / PASS / HIGH`, queued as first reserve;
-- C002, C007, C011, C018, C020, C023, C026 -> remain passed candidates, not assignments;
-- reframed, held, and killed candidates remain preserved in the planning record with their reasons.
-
-Do not delete unused candidates.
-
-## What approval does not mean
-
-Approval of this launch package does not mean:
-
-- the premise of any story is proven;
-- any working title is final;
-- any company claim is accepted;
-- any candidate must ultimately publish;
-- the three stories must publish on the same day;
-- Portfilo is committing to a permanent AI, BPO, or payments focus.
-
-Each story remains subject to the full research outcome:
-
-- `PUBLISH`;
-- `REFRAME`;
-- `CONTINUE`;
-- `KILL`.
-
-## Editorial Launch Research conclusion
-
-The launch research supports a first package built around **operating reality, measurable definitions, and underlying economics**, rather than announcement volume.
-
-The recommended launch slate is:
-
-- **Flagship:** C001 - AI pilot to production;
-- **Supporting:** C009 - concrete meaning of higher-value IT-BPM work;
-- **Supporting:** C017 - economic incidence of zero-fee small-merchant payments;
-- **First reserve:** C021 - verified Philippine data-center capacity status.
-
-**Recommendation status: awaiting editorial approval before assignments are activated.**
+Each active story gets its own research packet under `research/stories/`. The research packet, not this planning recommendation, becomes the source of truth for factual claims.
