@@ -1,11 +1,10 @@
-import { buildConfirmationEmail } from "../../server/confirmation-email.js";
-import { createConfirmationToken } from "../../server/confirmation-token.js";
-
 const JSON_HEADERS = {
   "content-type": "application/json; charset=utf-8",
   "cache-control": "no-store",
   "x-content-type-options": "nosniff",
 };
+
+const BEEHIIV_PUBLICATION_ID = "pub_dde8610d-d1a8-4c74-aa13-aeb3838b2d40";
 
 function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
@@ -46,78 +45,14 @@ async function readPayload(request) {
   throw new Error("unsupported_content_type");
 }
 
-async function verifyTurnstile(token, secret, remoteIp) {
-  if (typeof token !== "string" || !token || token.length > 2048) return false;
-
-  const body = {
-    secret,
-    response: token,
-  };
-
-  if (remoteIp) body.remoteip = remoteIp;
-
-  try {
-    const response = await fetch(
-      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      },
-    );
-
-    if (!response.ok) return false;
-    const result = await response.json();
-    return result?.success === true;
-  } catch (error) {
-    console.error("Turnstile verification request failed.", error);
-    return false;
-  }
-}
-
-async function sendConfirmationEmail({ apiKey, from, to, confirmationUrl }) {
-  const email = buildConfirmationEmail(confirmationUrl);
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      subject: email.subject,
-      html: email.html,
-      text: email.text,
-    }),
-  });
-
-  return response;
-}
-
 export async function onRequest(context) {
   const { request, env } = context;
-
-  if (request.method === "GET") {
-    if (!env.TURNSTILE_SITE_KEY) {
-      return json(
-        {
-          ok: false,
-          message: "Email signup is temporarily unavailable. Please try again later.",
-        },
-        503,
-      );
-    }
-
-    return json({ ok: true, turnstileSiteKey: env.TURNSTILE_SITE_KEY });
-  }
 
   if (request.method !== "POST") {
     return json(
       { ok: false, message: "Method not allowed." },
       405,
-      { allow: "GET, POST" },
+      { allow: "POST" },
     );
   }
 
@@ -146,31 +81,20 @@ export async function onRequest(context) {
 
   const email = typeof payload?.email === "string" ? payload.email.trim() : "";
   const honeypot = typeof payload?.company === "string" ? payload.company.trim() : "";
-  const turnstileToken =
-    typeof payload?.turnstileToken === "string" ? payload.turnstileToken : "";
 
-  // Quietly accept obvious bot submissions without forwarding or sending email.
+  // Quietly accept obvious bot submissions without forwarding them to beehiiv.
   if (honeypot) {
-    return json({ ok: true, status: "confirmation_sent" });
+    return json({ ok: true, status: "pending_confirmation" });
   }
 
   if (!isValidEmail(email)) {
     return json({ ok: false, message: "Enter a valid email address." }, 400);
   }
 
-  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
-  const resendApiKey = env.RESEND_API_KEY;
-  const resendFrom = env.RESEND_FROM;
-  const confirmationSecret = env.CONFIRMATION_TOKEN_SECRET;
+  const apiKey = env.BEEHIIV_API_KEY;
 
-  if (
-    !turnstileSecret ||
-    !resendApiKey ||
-    !resendFrom ||
-    !confirmationSecret ||
-    confirmationSecret.length < 32
-  ) {
-    console.error("Portfilo subscribe endpoint is missing confirmation-email configuration.");
+  if (!apiKey) {
+    console.error("Portfilo subscribe endpoint is missing the beehiiv API key.");
     return json(
       {
         ok: false,
@@ -180,67 +104,42 @@ export async function onRequest(context) {
     );
   }
 
-  const remoteIp = request.headers.get("CF-Connecting-IP") || "";
-  const turnstileValid = await verifyTurnstile(
-    turnstileToken,
-    turnstileSecret,
-    remoteIp,
-  );
-
-  if (!turnstileValid) {
-    return json(
-      {
-        ok: false,
-        message: "We could not verify this signup. Please try again.",
-      },
-      403,
-    );
-  }
-
-  let confirmationToken;
+  let beehiivResponse;
   try {
-    confirmationToken = await createConfirmationToken(
-      email,
-      confirmationSecret,
-      86400,
+    beehiivResponse = await fetch(
+      `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          reactivate_existing: true,
+          send_welcome_email: false,
+          double_opt_override: "on",
+          utm_source: "portfilo",
+          utm_medium: "website",
+          utm_campaign: "portfilo_brief_signup",
+        }),
+      },
     );
   } catch (error) {
-    console.error("Portfilo confirmation token creation failed.", error);
+    console.error("beehiiv subscription request failed to reach the API.", error);
     return json(
       {
         ok: false,
         message: "We could not submit your email. Please try again.",
       },
-      500,
-    );
-  }
-
-  const confirmationUrl = new URL("/api/confirm", request.url);
-  confirmationUrl.searchParams.set("token", confirmationToken);
-
-  let resendResponse;
-  try {
-    resendResponse = await sendConfirmationEmail({
-      apiKey: resendApiKey,
-      from: resendFrom,
-      to: email,
-      confirmationUrl: confirmationUrl.toString(),
-    });
-  } catch (error) {
-    console.error("Resend confirmation request failed to reach the API.", error);
-    return json(
-      {
-        ok: false,
-        message: "We could not send the confirmation email. Please try again.",
-      },
       502,
     );
   }
 
-  if (!resendResponse.ok) {
-    console.error(`Resend confirmation request failed with ${resendResponse.status}.`);
+  if (!beehiivResponse.ok) {
+    console.error(`beehiiv subscription request failed with ${beehiivResponse.status}.`);
 
-    if (resendResponse.status === 429) {
+    if (beehiivResponse.status === 429) {
       return json(
         {
           ok: false,
@@ -253,11 +152,11 @@ export async function onRequest(context) {
     return json(
       {
         ok: false,
-        message: "We could not send the confirmation email. Please try again.",
+        message: "We could not submit your email. Please try again.",
       },
       502,
     );
   }
 
-  return json({ ok: true, status: "confirmation_sent" });
+  return json({ ok: true, status: "pending_confirmation" });
 }
