@@ -194,6 +194,12 @@ Create files when their stage begins. Do not fill later-stage files with invente
 
 ## Current status
 
-Stage 1 broad signal scan: ACTIVE.
+Stage 1 broad signal scan: COMPLETE, first pass.
+
+Stage 2 audience signals: COMPLETE, first pass.
+
+The current findings are recorded in `audience-signals.md`.
 
 No launch topic, story, package, or series is selected yet.
+
+Next step: Stage 3 competitor map focused first on the strongest themes from the signal scan, followed by explicit information-gap analysis before `candidate-stories.md` is created.
