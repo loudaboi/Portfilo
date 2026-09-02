@@ -4,7 +4,8 @@ description: "Official skills frameworks and a structured sample of 15 current j
 contentType: explained
 topic: business
 author: "Louda Tuppal"
-status: draft
+publishedAt: 2026-09-03
+status: published
 featured: false
 methodology: "Reviewed official Philippine Skills Frameworks and a purposefully selected sample of 15 employer-owned job postings from six employers, current or posted from May through September 2026 and checked on September 3, 2026, to compare advertised role characteristics. The sample is illustrative, not random or weighted, and cannot estimate job shares, growth, realized compensation or worker-transition rates."
 ---
