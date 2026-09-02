@@ -4,23 +4,28 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / C027 Publication Verification + First Feature Decision - ACTIVE**
+**Portfilo v0 / Published Launch Package + Featured Visual Development - ACTIVE**
 
-The publishing system, launch-selection system, first launch research slate, and first two published stories are now in repository publication state.
+The publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
-C009 remains a published supporting story by `Portfilo` and is intentionally not the first homepage feature.
+Two real stories are now published in repository state:
 
-C027, **Build things that make the next thing easier**, has completed topic research, structure research, drafting, adversarial review, claim audit, editorial/copy review, headline/dek review, and explicit user publication approval. Its public story entry now exists with `status: published`, `publishedAt: 2026-09-03`, author `Louda Tuppal`, topic `building`, content type `perspective`, and `featured: false`.
+- C027, `Build things that make the next thing easier`, by Louda Tuppal;
+- C009, `What 'higher-value work' means in Philippine IT-BPM`, by Portfilo.
 
-`featured: false` is deliberate. The user approved publication, not homepage featuring or fixture replacement. The next product/editorial decision is whether C027 becomes Portfilo's first featured homepage story after technical publication verification.
+C027 is the first homepage featured story. C009 appears as the current Latest story. The old homepage story fixtures and preview-status notice have been removed.
 
-C027's fresh build/deployed render QA is not yet recorded as complete. Do not claim a fresh build, desktop/mobile pass, or final live deployment QA until those checks are actually completed.
+C027 visual sourcing is now the active design task. No hero image has been selected, generated, licensed, or published yet.
 
 ## Current branch
 
 Authoritative branch:
 
 `build/portfilo-v0`
+
+Current homepage/visual-plan head at this state:
+
+`cad86b1a230759c460ab5185b58d103a460d7d4d`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
@@ -125,29 +130,84 @@ DISTRIBUTE
 CORRECT / UPDATE WHEN NEEDED
 ```
 
-AI output has zero evidentiary weight. Factual claims must be supported by verified/qualified evidence from the reporting process.
+AI output has zero evidentiary weight. Drafts must be built from verified/qualified packet evidence.
 
-## Editorial Launch Research - COMPLETE / APPROVED
+## Published stories
 
-Workspace:
+### C027 - PUBLISHED / FEATURED HOMEPAGE STORY
 
-`research/editorial-launch/`
+Title:
 
-Approved approach:
+> **Build things that make the next thing easier**
 
-**Launch with a small package of independent stories, not a formal series.**
+Topic: `Building`  
+Content type: `Perspective`  
+Author: `Louda Tuppal`  
+Published: `2026-09-03`  
+Featured: `true`
 
-Operational assignment state:
+Story file:
 
-`research/editorial-launch/assignments.md`
+`src/content/stories/build-things-that-make-the-next-thing-easier.md`
 
-Default WIP limits remain:
+Research packet:
 
-- maximum one flagship investigation in active production;
-- generally no more than three substantial stories in active research;
-- no mandatory article quota.
+`research/stories/building-the-foundation/`
 
-## Active assignments
+Completed editorial stages:
+
+- topic-space research: complete;
+- core idea: user approved;
+- structure research: complete;
+- contrast-led argumentative funnel: user approved;
+- Draft v3 direction: user approved;
+- adversarial review: complete;
+- claim audit: pass;
+- editorial/copy pass: pass;
+- headline/dek audit: pass;
+- publication approval: granted 2026-09-03;
+- public content entry: published;
+- homepage feature authorization: granted 2026-09-03;
+- `featured: true`: applied.
+
+The public article is reader-centered and intentionally not autobiographical. It contains no forced AI section, no numbered framework, and no external factual claims requiring reader-facing citations.
+
+Visual plan:
+
+`research/stories/building-the-foundation/visual-plan.md`
+
+Current visual state:
+
+- no final hero image exists;
+- homepage uses a typography-led dark feature panel as the fallback;
+- recommended visual direction is an original conceptual editorial illustration built around `carryover` / the next starting point;
+- do not use generic startup, hustle, laptop, staircase, ladder, mountain, or success imagery.
+
+### C009 - PUBLISHED / LATEST HOMEPAGE STORY
+
+Title:
+
+> **What 'higher-value work' means in Philippine IT-BPM**
+
+Topic: `Business`  
+Content type: `Explained`  
+Author: `Portfilo`  
+Published: `2026-09-03`  
+Featured: `false`
+
+Story file:
+
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
+
+Research packet:
+
+`research/stories/it-bpm-higher-value-work/`
+
+C009 remains a supporting story. Do not promote it above C027 on the homepage unless deliberately reopened.
+
+The user has viewed the deployed article successfully, but the full technical deployment/render checklist is still not recorded as complete.
+
+## Active research assignments
 
 ### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
@@ -177,123 +237,9 @@ Topic: `Business`
 Priority: `HIGH`  
 Packet: `research/stories/zero-fee-merchant-payments/`
 
-Current state:
+Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
-- Circular 1238 permits cost-based merchant fees and does not reproduce the 2024 exposure draft's explicit micro-merchant waiver;
-- M-2026-025 still says `zero fees for small merchant payments` have been implemented but does not identify the fee layer or implementation instrument;
-- current PPMI/BSP material distinguishes consumer-side QR Ph fee treatment from merchant-side transaction fees;
-- decisive remaining need is narrow written clarification from BSP and/or PPMI.
-
-Do not let that clarification block the publishing schedule.
-
-## C027 - PUBLISHED PERSPECTIVE / FIRST-FEATURE CANDIDATE
-
-Published title:
-
-> **Build things that make the next thing easier**
-
-Description:
-
-> We judge early work by what it becomes. Another question matters too: what does it make easier to do next?
-
-Topic: `Building`  
-Content type: `Perspective`  
-Primary reader need: `Interpret`  
-Author: `Louda Tuppal`  
-Packet: `research/stories/building-the-foundation/`
-
-Public story file:
-
-`src/content/stories/build-things-that-make-the-next-thing-easier.md`
-
-Current metadata:
-
-- `status: published`;
-- `publishedAt: 2026-09-03`;
-- `featured: false`;
-- author: `Louda Tuppal`;
-- content type: `perspective`;
-- topic: `building`.
-
-Development history:
-
-- Draft v1: rejected for forcing too many discovery inputs into one article;
-- Draft v2: preserved as a one-thread experiment but not selected;
-- topic-space research: complete;
-- approved core idea: `Build things that make the next thing easier`;
-- structure research: complete;
-- approved structure: contrast-led argumentative funnel;
-- Draft v3: direction pass from user;
-- adversarial review: complete;
-- claim audit: `PASS`;
-- editorial/copy pass: `PASS`;
-- headline/dek audit: `PASS`;
-- Draft v4: final approved public prose;
-- user publication approval: **GRANTED 2026-09-03**;
-- repository publication state: applied.
-
-Claim profile:
-
-- central thesis is Perspective/opinion, not an empirical population claim;
-- examples are hypothetical/general rather than reported case studies;
-- no consequential external numbers, quotations, company claims, legal claims, historical claims, or current-event assertions appear in the article;
-- no reader-facing methodology section is required.
-
-### Remaining C027 technical verification
-
-Still verify when practical:
-
-1. Cloudflare Pages deployed the publication commit from `build/portfilo-v0`;
-2. `npm run build` passes in a usable checkout/dependency environment;
-3. the story route renders correctly;
-4. desktop and mobile layouts are clean;
-5. title, description, byline, publication date, topic/content-type labels, and body formatting are correct;
-6. there are no obvious console/rendering errors.
-
-Do not mark this technical gate `PASS` until checked.
-
-### C027 homepage-feature decision
-
-C027 is the preferred editorial candidate for the first highlighted story, but homepage integration is **not yet authorized or implemented**.
-
-After technical verification, deliberately decide whether to:
-
-- set `featured: true` for C027 if the homepage/content system uses that field;
-- replace current homepage fixture/preview content with real published stories;
-- use C027 as the lead story;
-- keep C009 as a supporting/latest story;
-- update any preview labels that no longer reflect the real content state.
-
-Do not make these changes solely because C027 is published.
-
-## C009 - PUBLISHED SUPPORTING STORY / LIVE QA INCOMPLETE
-
-Published title:
-
-> What 'higher-value work' means in Philippine IT-BPM
-
-Topic: `Business`  
-Author: `Portfilo`  
-Packet: `research/stories/it-bpm-higher-value-work/`
-
-Story file:
-
-`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
-
-Current metadata:
-
-- `status: published`;
-- `publishedAt: 2026-09-03`;
-- `featured: false`;
-- author: `Portfilo`;
-- content type: `explained`;
-- topic: `business`.
-
-The user has viewed the deployed C009 article, confirming the route was reachable in their environment. Full build/desktop/mobile/link/console QA is still not recorded as complete.
-
-C009 should remain a supporting story and unfeatured unless deliberately reopened.
-
-## C021 - OPEN / FIRST RESERVE
+### C021 - FIRST RESERVE
 
 Question:
 
@@ -302,11 +248,64 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-C027 publication frees one substantial-research slot. Do **not** activate C021 automatically. The next assignment remains a deliberate editorial decision.
+Do not activate C021 while the WIP limit is occupied by current substantial research.
+
+## Homepage state
+
+File:
+
+`src/pages/index.astro`
+
+The homepage now reads the published `stories` collection instead of synthetic story fixtures.
+
+Current hierarchy:
+
+1. coverage identity block;
+2. C027 as the dominant Featured story;
+3. C009 under Latest;
+4. About;
+5. Portfilo Brief.
+
+Implementation behavior:
+
+- published stories are sorted by `publishedAt`;
+- the first `featured: true` story becomes the homepage feature;
+- other published stories populate Latest;
+- story titles and actions link to real story routes;
+- the temporary feature visual is typography-led and contains no fabricated evidence or preview copy.
+
+No fake stories should be reintroduced simply to fill space. The homepage should grow as real published stories are added.
+
+## C027 visual implementation plan
+
+Before attaching a final visual:
+
+1. research a small set of editorial visual references for composition, texture, and restraint without copying another artist's style;
+2. lock one concrete `Modular carryover` art direction;
+3. create 2-3 original concept variants;
+4. evaluate the variants at homepage and article crop sizes;
+5. select one;
+6. add optional hero-image metadata to the story schema;
+7. render that asset on both the homepage feature and story page with a typography fallback;
+8. add meaningful alt text and appropriate credit/caption metadata;
+9. later pass the same image into Open Graph/social metadata when implemented;
+10. run responsive and render QA.
+
+The preferred v0 metadata shape is currently:
+
+```yaml
+heroImage:
+  src: /images/stories/<slug>/hero.webp
+  alt: "..."
+  credit: "Portfilo illustration"
+  caption: "..." # optional
+```
+
+Do not add this schema until an actual selected asset requires it.
 
 ## Public product state
 
-Validated public surfaces from prior work remain:
+Validated public surfaces from prior work include:
 
 - shared `SiteHeader` / `SiteFooter`;
 - Homepage `/`;
@@ -317,7 +316,7 @@ Validated public surfaces from prior work remain:
 - Confirmation `/confirmed`;
 - Subscribe `/subscribe` and single-purpose Cloudflare Pages subscription proxy.
 
-The Homepage still contains fixture/preview content. Publishing C009 and C027 does not automatically replace that presentation.
+Homepage source is now real-content based. Deployment/render verification of the newest homepage change is still required before claiming a final live PASS.
 
 ## Email system
 
@@ -333,7 +332,7 @@ Validated state includes:
 
 beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and deliverability infrastructure.
 
-No C009 or C027 newsletter distribution has been authorized or sent.
+No newsletter distribution has been authorized or sent for C027 or C009.
 
 ## Deployment state
 
@@ -349,7 +348,7 @@ Production branch:
 
 `build/portfilo-v0`
 
-Previously user-validated temporary deployment state remains PASS.
+The branch is updated for the homepage integration, but the active assistant environment has no Cloudflare deployment-status connector and GitHub exposes no CI/status checks for the commit. Do not claim the newest homepage deployment/render as verified until it is actually checked.
 
 Still pending before final public launch:
 
@@ -376,27 +375,34 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | Story and series templates | PASS from prior validation |
 | Subscribe temporary live flow | PASS, user reported |
 | Portfilo Brief reusable template | PASS |
-| Editorial Launch Research | COMPLETE / APPROVED |
+| C027 editorial pipeline | PASS |
+| C027 publication approval | GRANTED |
+| C027 repository content entry | PUBLISHED / `featured: true` / by `Louda Tuppal` |
+| C027 article route | USER-VIEWED / PASS |
+| Homepage fixtures removed | PASS IN REPOSITORY |
+| Homepage C027 feature integration | PASS IN REPOSITORY / LIVE RENDER NOT YET VERIFIED |
+| Homepage C009 Latest integration | PASS IN REPOSITORY / LIVE RENDER NOT YET VERIFIED |
+| C027 final hero image | NOT SELECTED |
+| C027 hero-image schema | NOT IMPLEMENTED YET |
+| C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
+| C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
+| C009 full live deployment/render QA | INCOMPLETE |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
-| C027 editorial pipeline | PASS |
-| C027 publication approval | GRANTED 2026-09-03 |
-| C027 repository content entry | PUBLISHED / `featured: false` / by `Louda Tuppal` |
-| C027 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
-| C027 live deployment/render QA | PENDING |
-| C027 homepage feature | NOT YET AUTHORIZED / NOT IMPLEMENTED |
-| C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
-| C009 full live deployment/render QA | INCOMPLETE |
-| C021 | OPEN / QUEUED; one research slot available but not activated |
+| C021 | OPEN / QUEUED |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Complete C027 technical publication verification.**
+**C027 visual reference and sourcing pass.**
 
-Then, if the story renders correctly, make a separate explicit decision on whether C027 becomes Portfilo's first homepage featured story and whether the homepage fixtures should be replaced with C027 + C009 real content.
+Use `research/stories/building-the-foundation/visual-plan.md` as the constraint set.
 
-C009's remaining technical verification can be completed alongside C027 where practical.
+The target direction is:
+
+> **Modular carryover:** an original, restrained editorial illustration in which something from one attempt visibly remains usable in the next.
+
+Do not generate the final image until the concrete art direction has been reviewed. After selection, implement the reusable image metadata/rendering path rather than hardcoding C027 into the story template.
 
 ## Phase handoff rule
 
