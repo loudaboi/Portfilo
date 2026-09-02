@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Share-Readiness QA + Next Story Research - ACTIVE**
+**Portfilo v0 / Third Launch Story Direction Research - AWAITING APPROVAL**
 
 The publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
@@ -15,7 +15,7 @@ Two real stories are published:
 
 C027 is the first homepage featured story. C009 is the current Latest story.
 
-Recent share-readiness fixes are now committed:
+Recent share-readiness fixes are committed:
 
 - the three synthetic development story fixtures that were still marked `published` have been changed to `draft`, so they should no longer appear on the homepage or generate public story routes after deployment;
 - the homepage wordmark red variable was restored after `lo` temporarily inherited black;
@@ -25,7 +25,13 @@ The user still needs to verify the newest Cloudflare deployment on mobile. Do no
 
 C027 visual sourcing remains planned but is not the immediate editorial priority. No hero image has been selected, generated, licensed, or published yet.
 
-The next editorial exploration is a possible third launch story about the underlying information problem that motivated Portfilo. Do not default to a promotional `Why we built Portfilo` article. Research the reader/problem space first and only draft if a useful, non-redundant story emerges.
+First-phase research on the possible third launch story is complete. The research does **not** support a generic `Why we built Portfilo`, `news needs more context`, or jargon-focused launch story. The strongest surviving direction is an independent AI/Technology story about the second information step after first exposure to news: some users increasingly ask follow-up questions, simplify complicated stories, combine sources, and evaluate what they first encountered. A Philippine-specific original evidence layer is required before this can proceed to structure or drafting.
+
+Research note:
+
+`research/editorial-launch/third-story-information-problem-evaluation.md`
+
+The core direction now awaits Louda Tuppal's approval. Do not design the detailed reporting structure or draft the article until that approval is granted.
 
 ## Current branch
 
@@ -35,7 +41,7 @@ Authoritative branch:
 
 Latest handoff head before this state update:
 
-`36982294c5c5cd10810417379978e391a3fcedf5`
+`cd9b95b9449ad0a54d7a0739b5d05ed1e793c056`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
@@ -336,19 +342,69 @@ Do not add this schema until an actual selected asset requires it.
 
 ## Possible third launch story
 
-The user is interested in a story about why Portfilo was built and how it aims to help, but does not want a redundant rewrite of the About page.
+First-phase research is complete and recorded in:
 
-Current recommendation:
+`research/editorial-launch/third-story-information-problem-evaluation.md`
 
-- do **not** begin with a promotional `Why we built Portfilo` draft;
-- investigate the underlying information problem first;
-- test whether there is a real story about what is missing between business/technology information and people trying to understand how companies, technology, careers, and building actually work;
-- possibilities to investigate include lack of context, jargon, fragmented coverage, insider assumptions, weak explanation of consequences, or another problem discovered through research;
-- do not assume any of those hypotheses are true before research;
-- if a substantive reader problem is verified, make that the story and let Portfilo's purpose emerge naturally rather than making Portfilo itself the subject;
-- if research does not support a substantive story, consider a short 500-800 word founder/launch note separately from the main editorial slate.
+### What the research supports
 
-This exploration must follow `docs/CONTENT_PLANNING.md`, `docs/RESEARCH_STANDARD.md`, `docs/EDITORIAL_STANDARD.md`, and `docs/COPY_STYLE.md`.
+- audiences broadly value explanation and perspective in addition to timely updates;
+- younger news avoiders are more likely than older news avoiders to report that news is difficult to understand;
+- weekly AI-chatbot use for news remains a minority behaviour, but users increasingly employ chatbots for follow-up questions, summarisation, source evaluation, easier understanding, and combining information from multiple outlets;
+- Philippine news discovery is heavily platform-mediated, making first exposure increasingly likely to happen through a feed, creator, clip, headline, or other intermediary.
+
+### What the research does not support
+
+- a general claim that Philippine business/technology journalism lacks context;
+- a general claim that jargon is the primary problem;
+- a claim that most young people cannot understand news;
+- a claim that platformisation causes misunderstanding;
+- a claim that AI is a trustworthy replacement for original journalism;
+- a claim that Portfilo solves the problem.
+
+### Direction evaluation
+
+**Recommended: Direction A - The second question after the headline**
+
+Core:
+
+> For a small but growing group of news users, getting informed increasingly includes a second step after first exposure: asking follow-up questions, simplifying complicated stories, combining sources, and checking what the original update did not answer.
+
+Why it survives:
+
+- clear 2026 timing trigger;
+- independently fits AI/Technology even if Portfilo is never mentioned;
+- more specific and falsifiable than `news needs context`;
+- can connect to the reader problem without making Portfilo the hero.
+
+Critical condition:
+
+Reuters Institute has already established the global AI-news behaviour. A Portfilo story must add a material Philippine-specific original evidence layer. If the next reporting phase cannot produce that contribution, reframe or kill rather than publish a derivative summary.
+
+**Strong alternative: Direction B - Context debt**
+
+Core:
+
+> Long-running business and technology stories often assume background knowledge that a new reader has never accumulated, so the cost of understanding rises before the reader reaches the actual new development.
+
+This framing is potentially more durable and less AI-centric, but it requires original evidence before `context debt` can be treated as more than a useful hypothesis.
+
+Killed as current third-story directions:
+
+- jargon / insider-language story: too generic and redundant with `/about` plus C009;
+- `updates are abundant; understanding is scarce`: too close to a Portfilo manifesto and insufficiently original;
+- generic `Why we built Portfilo`: institutional/promotional rather than independent journalism.
+
+Held:
+
+- fragmented/assembly problem: plausible, but the current evidence does not establish the causal mechanism strongly enough.
+
+Founder/launch note:
+
+- not needed yet because a substantive editorial direction survives;
+- retain a 500-800 word institutional founder note only as a fallback if the approved direction fails its original-reporting threshold.
+
+No headline, article structure, final candidate ID, content type, or draft is approved yet.
 
 ## Public product state
 
@@ -436,6 +492,7 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
 | C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
 | C009 full live deployment/render QA | INCOMPLETE |
+| Third-story problem-space research | COMPLETE / DIRECTION A RECOMMENDED / AWAITING USER APPROVAL |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C021 | OPEN / QUEUED |
@@ -443,16 +500,24 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Research and evaluate the possible third launch story around the underlying problem Portfilo is trying to solve.**
+**Wait for Louda Tuppal's approval of the third-story core direction.**
 
-Before drafting:
+Recommended choice:
 
-1. verify the latest repository head and read this state file plus editorial/research/copy standards;
-2. verify the latest Cloudflare-visible homepage no longer shows synthetic story fixtures and the mobile Subscribe arrow no longer renders as an emoji-style glyph, using user feedback/screenshots if direct deployment access is unavailable;
-3. research the actual information/problem space rather than assuming the answer;
-4. produce several clear story directions with a one-sentence message, evidence basis, Portfilo fit, originality, and risk of redundancy with `/about`;
-5. recommend the strongest direction;
-6. do not draft until the user approves a core direction.
+- **Direction A - The second question after the headline**.
+
+Strong alternative:
+
+- **Direction B - Context debt: why some stories are hard to enter midway**.
+
+After approval, and only after approval:
+
+1. assign a final candidate ID if appropriate;
+2. create a dedicated story research packet;
+3. design a Philippine-specific original evidence plan;
+4. execute source mapping / primary-secondary research / contradiction search;
+5. decide `PUBLISH / REFRAME / CONTINUE / KILL`;
+6. only then research article structure and draft if the evidence supports publication.
 
 C027 visual sourcing can resume after this editorial exploration or when the user explicitly returns to it.
 
