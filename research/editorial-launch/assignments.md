@@ -20,7 +20,7 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
-| C027 | Featured Perspective candidate | What is a first project actually for when you are still figuring out what you can build and where you want to go? | Building | PASS | HIGH | REFRAME / DRAFT V2 FOR USER REVIEW | `research/stories/building-the-foundation/` |
+| C027 | Featured Perspective candidate | Which single Building idea should become Portfilo's first featured Perspective? | Building | PASS | HIGH | TOPIC RESEARCH COMPLETE / SHORTLIST FOR APPROVAL | `research/stories/building-the-foundation/` |
 
 C001, C017, and C027 are `ACTIVE`.
 
@@ -42,45 +42,61 @@ That diagnosis is accepted. Draft v1 is preserved only as editorial history in:
 
 `research/stories/building-the-foundation/draft-v1-review.md`
 
-### Topic + structure reset
+### Draft v2 status
 
-A fresh craft/topic review was completed before redrafting.
+Draft v2 demonstrated that a one-thread essay is clearer than Draft v1, but it is **not locked as the final topic**.
 
-Research file:
-
-`research/stories/building-the-foundation/topic-structure-research.md`
-
-The reset reviewed essay guidance and examples from Longreads, Nieman Storyboard, Paul Graham, Morgan Housel, current 2026 builder coverage, and community signals from early builders.
-
-Key decision:
-
-- use one clear thread rather than forcing every relevant idea into the article;
-- use a single-thread funnel: tension -> reframe -> concrete development -> implication -> counterargument -> resolution;
-- keep the reader, not the author, at the center;
-- do not make AI central because that angle is already crowded and it weakened the original message;
-- do not turn the piece into a checklist about skills, habits, networking, or hustle.
-
-### Selected C027 idea
+Draft v2 explored:
 
 > An early project does not have to become your future. It should teach you something real about what to do next.
 
-Current reader question:
+It remains preserved as an experiment in:
 
-> What is a first project actually for when you are still figuring out what you can build and where you want to go?
+- `research/stories/building-the-foundation/draft-v2.md`;
+- `research/stories/building-the-foundation/draft-v2-evaluation.md`.
 
-Draft v2:
+Do not polish or publish Draft v2 unless that topic is deliberately reopened.
 
-`research/stories/building-the-foundation/draft-v2.md`
+### Fresh topic-space research
 
-Draft v2 evaluation:
+After user feedback that topic selection should precede structure and drafting, C027 was reset again at the idea level.
 
-`research/stories/building-the-foundation/draft-v2-evaluation.md`
+Research:
 
-Current result:
+`research/stories/building-the-foundation/topic-space-research.md`
 
-**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+The pass reviewed:
 
-Draft v2 deliberately excludes AI, `starting from nothing`, a universal bottleneck model, biography, grind framing, and a catalogue of skills/habits/network/reputation. Those ideas may be valid elsewhere but are not required for this thread.
+- current Philippine youth-entrepreneurship evidence;
+- current early-builder and side-project community signals;
+- established writing from Paul Graham, Kevin Kelly and other idea-essay traditions;
+- current experimentation / small-bet thinking;
+- crowded 2026 AI-builder angles that Portfilo should not repeat weakly.
+
+Seven possible Perspective directions were evaluated.
+
+Current shortlist:
+
+1. **Build things that make the next thing easier.**
+   - working message: when you are early, choose work that improves your next starting point;
+   - strongest fit with the original foundation instinct without turning it into biography or a checklist;
+   - current editorial recommendation.
+
+2. **Make yourself useful before you make yourself impressive.**
+   - working message: usefulness can create some of the trust, relationships and opportunities that status cannot provide at the beginning;
+   - clearer and punchier, but easier to make moralizing or advice-heavy.
+
+The previous `first project as information` idea now ranks behind these two.
+
+No new draft has been authorized or written from the shortlist.
+
+### Next C027 decision
+
+Choose/approve one shortlisted message first. The current recommendation is:
+
+> **Build things that make the next thing easier.**
+
+Only after the topic is approved should C027 run a dedicated structure-research pass for that exact idea and then create a new draft.
 
 No C027 file exists under `src/content/stories/`. Nothing is public and no publication approval has been requested.
 
