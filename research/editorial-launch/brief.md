@@ -2,19 +2,23 @@
 
 _Last updated: 2026-09-02_
 
-## Question
+## Status
+
+**COMPLETE / APPROVED**
+
+Editorial Launch Research answered:
 
 > What should Portfilo investigate and publish first?
 
-This is editorial strategy research. It is not a public story and it does not establish publishable factual claims for any future article.
+The research selected assignments for full story research. It did not establish publishable conclusions for those stories.
 
 ## Objective
 
-Identify a small first launch package of real Portfilo journalism by scanning the full approved coverage area, finding questions with meaningful reader value and evidence paths, testing whether existing coverage already answers them well, and selecting only the strongest work for individual story research.
+Select a small first slate of real Portfilo journalism by scanning the full approved coverage area, identifying consequential questions and information gaps, testing existing coverage, evaluating evidence paths and feasibility, and applying `docs/CONTENT_PLANNING.md` before committing reporting time.
 
-Do not choose a topic first and then search for reasons to publish it.
+The process did not choose a topic first and search for reasons to publish it.
 
-The research should allow the strongest questions to emerge across:
+Coverage scanned:
 
 - Business;
 - Technology;
@@ -22,161 +26,18 @@ The research should allow the strongest questions to emerge across:
 - AI;
 - Building.
 
-The final package does not need one story from every topic and does not need to be a series.
+## Completed research sequence
 
-## Canonical decision framework
+1. Broad signal scan - COMPLETE
+2. Audience signals - COMPLETE
+3. Competitor map - COMPLETE
+4. Information-gap analysis - COMPLETE
+5. Candidate-story inventory - COMPLETE
+6. Editorial-gate evaluation - COMPLETE
+7. Candidate-series evaluation - COMPLETE
+8. Launch-package recommendation - APPROVED
 
-Use `docs/CONTENT_PLANNING.md`.
-
-A substantial candidate must survive the six editorial gates:
-
-1. Question;
-2. Importance;
-3. Timing;
-4. Contribution;
-5. Evidence;
-6. Feasibility.
-
-Planning decisions are:
-
-- `PASS`;
-- `REFRAME`;
-- `HOLD`;
-- `KILL`.
-
-Priority bands are:
-
-- `HIGH`;
-- `MEDIUM`;
-- `LOW`.
-
-No numerical story score is used.
-
-## Research sequence
-
-### Stage 1 - Broad signal scan
-
-Scan the five approved coverage areas without preselecting a winner.
-
-Look for:
-
-- material developments;
-- new official data;
-- regulatory changes;
-- changing business models;
-- shifts in capital, pricing, distribution, infrastructure, or work;
-- repeated questions whose answers remain unclear;
-- claims receiving attention without enough evidence;
-- important mechanisms that existing coverage reports but does not explain well.
-
-The output is a set of themes and leads, not approved stories.
-
-### Stage 2 - Audience signals
-
-Record what current audience research suggests about how readers discover, avoid, trust, and use news.
-
-Audience research may inform format, framing, and distribution decisions. It must not be treated as proof that a particular Portfilo story will succeed.
-
-### Stage 3 - Competitor map
-
-Review relevant Philippine, regional, and international coverage.
-
-The purpose is not to imitate competitors or count headlines. It is to determine:
-
-- what is already covered heavily;
-- where coverage is primarily announcement-driven;
-- which questions already have strong reporting;
-- which important mechanisms, tradeoffs, or consequences remain underexplained;
-- where Portfilo could add a real contribution.
-
-### Stage 4 - Information gaps
-
-Convert the scan and competitor map into explicit information gaps.
-
-Do not call something a gap merely because Portfilo has not covered it.
-
-### Stage 5 - Candidate stories
-
-Only after the earlier research, create `candidate-stories.md`.
-
-Each serious candidate should be framed as an investigable question rather than a predetermined headline.
-
-A broad pool of roughly 20-30 credible candidates may be useful, but there is no quota.
-
-### Stage 6 - Evaluation
-
-Apply the six editorial gates and priority bands.
-
-A candidate may be killed even if it is timely or commercially attractive.
-
-### Stage 7 - Candidate series
-
-Evaluate a series only when multiple independently strong stories form a coherent investigation.
-
-Do not create a series to make the launch feel larger.
-
-### Stage 8 - Recommendation
-
-Select the first launch package and explain:
-
-- why each story belongs;
-- why now;
-- the expected Portfilo contribution;
-- the evidence path;
-- reporting difficulty and dependencies;
-- whether any stories should be held rather than launched together.
-
-A plausible package may be one flagship plus two to four supporting stories, but the evidence determines the actual number.
-
-## Source policy for launch research
-
-Prefer current primary and high-quality independent sources.
-
-Examples:
-
-- Philippine government agencies and official statistical releases;
-- laws, regulations, legislative records, and official circulars;
-- company filings and official product documentation;
-- credible research institutions;
-- established independent reporting;
-- transparent industry datasets and reports.
-
-Industry and investor reports can be useful market evidence, but their incentives and methodology must be recorded. They are not automatically neutral evidence.
-
-Community and social sources can surface questions and language but should not establish prevalence or factual conclusions by themselves.
-
-## Time window
-
-The first scan should emphasize developments current as of September 2026 while retaining important slower-moving structural questions.
-
-Recency is not the only form of timing. Evergreen questions may qualify when new data, technology, regulation, or market maturity makes them newly answerable or newly consequential.
-
-## Reader needs
-
-Use one primary reader need for future candidates:
-
-- `Update` - What changed?
-- `Understand` - How does this work?
-- `Interpret` - What does this mean?
-- `Decide` - What should I know before making this decision?
-
-Reader need is separate from topic and content type.
-
-## Copy boundary
-
-`docs/COPY_STYLE.md` applies to pitch framing and later public copy.
-
-During launch research:
-
-- use concrete language;
-- do not force a Philippine angle where it adds no value;
-- do not turn hypotheses into conclusions;
-- avoid hype and generic trend language;
-- do not treat a working question as a publishable headline.
-
-## Output files
-
-Expected workspace:
+## Research outputs
 
 ```text
 research/editorial-launch/
@@ -187,47 +48,60 @@ research/editorial-launch/
 ├── candidate-stories.md
 ├── candidate-series.md
 ├── evaluation.md
-└── recommendation.md
+├── recommendation.md
+└── assignments.md
 ```
 
-Create files when their stage begins. Do not fill later-stage files with invented placeholders.
+File roles:
 
-## Current status
+- `audience-signals.md` - audience environment and broad market/editorial signals;
+- `competitor-map.md` - what relevant publications already cover and where Portfilo should not produce weaker rewrites;
+- `information-gaps.md` - mechanism, verification, and decision gaps that survived initial testing;
+- `candidate-stories.md` - durable Stage 5 inventory of 28 candidate questions;
+- `evaluation.md` - Stage 6 gate decisions, priorities, reframes, holds, and kills;
+- `candidate-series.md` - series test, concluding that no formal launch series is justified;
+- `recommendation.md` - approved launch slate and reporting thresholds;
+- `assignments.md` - current operational state of active and queued candidates.
 
-Stage 1 broad signal scan: COMPLETE, first pass.
+## Approved launch slate
 
-Stage 2 audience signals: COMPLETE, first pass.
+Active:
 
-Stage 3 competitor map: COMPLETE, first pass.
+1. C001 - flagship - AI pilot to production;
+2. C009 - supporting - concrete meaning of higher-value IT-BPM work;
+3. C017 - supporting - economic incidence of zero-fee small-merchant payments.
 
-Stage 4 information-gap analysis: COMPLETE, first pass.
+Queued first reserve:
 
-Stage 5 candidate-story inventory: COMPLETE, first pass.
+4. C021 - verified Philippine data-center capacity status.
 
-Stage 6 editorial evaluation: COMPLETE, first pass.
+No formal launch series is approved.
 
-Stage 7 candidate-series check: COMPLETE.
+## Planning result
 
-Stage 8 launch-package recommendation: COMPLETE / AWAITING EDITORIAL APPROVAL.
+The launch research found a consistent editorial opportunity in moving beyond announcement-level coverage toward:
 
-Current findings are recorded in:
+- operating reality;
+- measurable definitions;
+- underlying economics;
+- explicit tradeoffs;
+- verified status;
+- research-backed decision support.
 
-- `audience-signals.md`;
-- `competitor-map.md`;
-- `information-gaps.md`;
-- `candidate-stories.md`;
-- `evaluation.md`;
-- `candidate-series.md`;
-- `recommendation.md`.
+This is an internal editorial pattern, not a public tagline or permanent topical commitment.
 
-The Stage 5 inventory contains 28 stable candidate IDs. Stage 6 reduced them to 11 passed candidates, 6 reframes, 7 holds, and 4 killed standalone candidates. Killed and held ideas remain preserved in the research history rather than being deleted.
+## Source boundary
 
-The series check found no formal launch series justified. The Stage 8 recommendation proposes a small package of independent stories:
+Launch-research sources informed story selection only. They do not automatically become evidence for a published story.
 
-- C001 as intended flagship;
-- C009 and C017 as supporting research assignments;
-- C021 as first reserve / next-in-line.
+Each active assignment now gets its own packet under `research/stories/` and follows the full source hierarchy, evidence ledger, contradiction search, story decision, drafting, verification, and claim-audit requirements in the canonical research and publishing standards.
 
-No candidate is `ACTIVE` yet. The recommendation must be approved before assignments are activated or individual story research packets are created.
+## Work-in-progress rule
 
-Next step: editorial approval, adjustment, or rejection of `recommendation.md`. If approved, activate no more than three substantial research assignments and begin individual story research under the canonical research standard.
+The approved slate occupies the normal v0 limit of three substantial active research assignments. Do not activate C021 until one active slot clears.
+
+## Next phase
+
+**Launch Story Research - ACTIVE.**
+
+Immediate focus: test C001's flagship viability through source reconnaissance and case access, while C009 and C017 remain active supporting assignments with their own research briefs.
