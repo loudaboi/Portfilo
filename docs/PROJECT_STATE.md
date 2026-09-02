@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Third Launch Story Direction Research - AWAITING APPROVAL**
+**Portfilo v0 / C029 Reader-Sensemaking Fieldwork - ACTIVE**
 
 The publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
@@ -25,13 +25,17 @@ The user still needs to verify the newest Cloudflare deployment on mobile. Do no
 
 C027 visual sourcing remains planned but is not the immediate editorial priority. No hero image has been selected, generated, licensed, or published yet.
 
-First-phase research on the possible third launch story is complete. The research does **not** support a generic `Why we built Portfilo`, `news needs more context`, or jargon-focused launch story. The strongest surviving direction is an independent AI/Technology story about the second information step after first exposure to news: some users increasingly ask follow-up questions, simplify complicated stories, combine sources, and evaluate what they first encountered. A Philippine-specific original evidence layer is required before this can proceed to structure or drafting.
+Louda Tuppal approved the third-launch-story Direction A, `The second question after the headline`, on 2026-09-03. The direction is now assigned as C029 and has a dedicated research packet. Documentary research and structure research are complete enough to begin original Philippine reader fieldwork, but drafting remains blocked until the fieldwork threshold is met.
 
-Research note:
+Research packet:
 
-`research/editorial-launch/third-story-information-problem-evaluation.md`
+`research/stories/second-question-after-headline/`
 
-The core direction now awaits Louda Tuppal's approval. Do not design the detailed reporting structure or draft the article until that approval is granted.
+Current C029 research question:
+
+> **What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?**
+
+AI is not assumed to be the main answer. It is treated as one possible observed tool alongside opening the full article, search, other outlets, official sources, creators, communities, other people, or no follow-up.
 
 ## Current branch
 
@@ -39,9 +43,9 @@ Authoritative branch:
 
 `build/portfilo-v0`
 
-Latest handoff head before this state update:
+Latest head before this state update:
 
-`cd9b95b9449ad0a54d7a0739b5d05ed1e793c056`
+`b1ea88303cf6802a5ea7a11cf920fadf7aadfd3d`
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
@@ -255,6 +259,44 @@ Packet: `research/stories/zero-fee-merchant-payments/`
 
 Decisive remaining need: narrow written clarification from BSP and/or PPMI. Do not let that clarification block the publishing schedule.
 
+### C029 - ACTIVE / SUPPORTING / FIELDWORK READY
+
+Question:
+
+> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
+
+Topic: `Technology` - provisional  
+Priority: `MEDIUM`  
+Packet: `research/stories/second-question-after-headline/`
+
+Current state:
+
+- core direction: user approved;
+- research brief: complete;
+- source map: complete for pre-fieldwork phase;
+- documentary evidence ledger: established;
+- contradiction search: established;
+- fieldwork plan: complete;
+- provisional behavior-first structure: complete;
+- drafting threshold: not met;
+- research outcome: `CONTINUE / FIELDWORK READY`.
+
+The current documentary evidence supports studying the distinction between first exposure and later sensemaking, but it also creates two important constraints:
+
+1. Philippine AI-chatbot news use remains a minority behavior, so AI must not be presented as the normal way Filipinos understand news;
+2. VERA Files already published 2024 qualitative research with 20 Filipinos aged 18-34 finding demand for news that is easier to understand and more interactive, so C029 must contribute observed follow-up questions and actual information-seeking pathways rather than repeat that preference finding.
+
+Fieldwork target:
+
+- `12-15` completed participants;
+- minimum `10` complete records before a publish decision;
+- natural three-day news-encounter diary plus real-time walkthrough;
+- include AI users and non-users;
+- preserve `no follow-up` and other negative cases;
+- no population-level prevalence claims from the qualitative sample.
+
+Do not draft C029 until the packet reaches a new story decision after fieldwork.
+
 ### C021 - FIRST RESERVE
 
 Question:
@@ -264,7 +306,7 @@ Question:
 Topic: `Technology`  
 Priority: `HIGH`
 
-Do not activate C021 while the WIP limit is occupied by current substantial research.
+C029 now fills the normal third active-research slot. Do not activate C021 until an active assignment clears or is deliberately stopped.
 
 ## Homepage and fixture state
 
@@ -340,71 +382,81 @@ heroImage:
 
 Do not add this schema until an actual selected asset requires it.
 
-## Possible third launch story
+## C029 third launch story
 
-First-phase research is complete and recorded in:
+### Approved direction
+
+Working label:
+
+`The second question after the headline`
+
+The first-phase evaluation is recorded in:
 
 `research/editorial-launch/third-story-information-problem-evaluation.md`
 
-### What the research supports
+The dedicated packet is:
 
-- audiences broadly value explanation and perspective in addition to timely updates;
-- younger news avoiders are more likely than older news avoiders to report that news is difficult to understand;
-- weekly AI-chatbot use for news remains a minority behaviour, but users increasingly employ chatbots for follow-up questions, summarisation, source evaluation, easier understanding, and combining information from multiple outlets;
-- Philippine news discovery is heavily platform-mediated, making first exposure increasingly likely to happen through a feed, creator, clip, headline, or other intermediary.
+`research/stories/second-question-after-headline/`
 
-### What the research does not support
+The packet deliberately reframes the approved idea into an observable question rather than a brand thesis.
 
-- a general claim that Philippine business/technology journalism lacks context;
-- a general claim that jargon is the primary problem;
-- a claim that most young people cannot understand news;
-- a claim that platformisation causes misunderstanding;
-- a claim that AI is a trustworthy replacement for original journalism;
-- a claim that Portfilo solves the problem.
+### Current evidence
 
-### Direction evaluation
+Current 2026 Philippine Digital News Report coverage provides a strong backdrop:
 
-**Recommended: Direction A - The second question after the headline**
+- social/video news use is highly prevalent while direct publisher-site/app use has weakened;
+- AI-chatbot use for news remains a minority behavior;
+- among weekly Philippine generative-AI news users, summaries and follow-up questions are prominent uses;
+- users also report source assessment and simplification;
+- trust in AI answers remains low.
 
-Core:
+This means C029 should distinguish:
 
-> For a small but growing group of news users, getting informed increasingly includes a second step after first exposure: asking follow-up questions, simplifying complicated stories, combining sources, and checking what the original update did not answer.
+- `used`;
+- `useful`;
+- `trusted`.
 
-Why it survives:
+Those are not the same thing.
 
-- clear 2026 timing trigger;
-- independently fits AI/Technology even if Portfilo is never mentioned;
-- more specific and falsifiable than `news needs context`;
-- can connect to the reader problem without making Portfilo the hero.
+### Originality threshold
 
-Critical condition:
+The story is not allowed to reduce to:
 
-Reuters Institute has already established the global AI-news behaviour. A Portfilo story must add a material Philippine-specific original evidence layer. If the next reporting phase cannot produce that contribution, reframe or kill rather than publish a derivative summary.
+- `young people want clearer news`;
+- `Filipinos get news from social media`;
+- `AI can summarize news`;
+- `Portfilo exists to explain things`.
 
-**Strong alternative: Direction B - Context debt**
+The intended contribution is the observed sequence:
 
-Core:
+`encounter -> unanswered question -> next action -> stopping point`
 
-> Long-running business and technology stories often assume background knowledge that a new reader has never accumulated, so the cost of understanding rises before the reader reaches the actual new development.
+for a small, clearly described qualitative sample of younger Filipino business/technology readers.
 
-This framing is potentially more durable and less AI-centric, but it requires original evidence before `context debt` can be treated as more than a useful hypothesis.
+### Fieldwork design
 
-Killed as current third-story directions:
+Use:
 
-- jargon / insider-language story: too generic and redundant with `/about` plus C009;
-- `updates are abundant; understanding is scarce`: too close to a Portfilo manifesto and insufficiently original;
-- generic `Why we built Portfilo`: institutional/promotional rather than independent journalism.
+1. a three-day natural news-encounter diary; and
+2. a semi-structured interview with a real-time walkthrough using a current unfamiliar Philippine business/technology story.
 
-Held:
+Do not prompt AI before observing the participant's natural pathway.
 
-- fragmented/assembly problem: plausible, but the current evidence does not establish the causal mechanism strongly enough.
+### Structure decision
 
-Founder/launch note:
+If the evidence supports publication, use a behavior-first reported structure:
 
-- not needed yet because a substantive editorial direction survives;
-- retain a 500-800 word institutional founder note only as a fallback if the approved direction fails its original-reporting threshold.
+1. one real first encounter and the next question;
+2. brief DNR context establishing that the behavior is real but not universal;
+3. the recurring second questions from Portfilo fieldwork;
+4. where readers go next;
+5. AI's actual role, only if it appears naturally;
+6. what makes people stop;
+7. conclude on the information behavior, not Portfilo.
 
-No headline, article structure, final candidate ID, content type, or draft is approved yet.
+If AI is weak in the fieldwork, keep the story under Technology and reduce AI to a secondary emerging behavior rather than forcing it into the headline or main frame.
+
+No article draft exists.
 
 ## Public product state
 
@@ -492,7 +544,10 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | C009 repository content entry | PUBLISHED / `featured: false` / by `Portfilo` |
 | C009 fresh application build | NOT VERIFIED / DO NOT CLAIM PASS |
 | C009 full live deployment/render QA | INCOMPLETE |
-| Third-story problem-space research | COMPLETE / DIRECTION A RECOMMENDED / AWAITING USER APPROVAL |
+| Third-story problem-space research | COMPLETE / DIRECTION A APPROVED |
+| C029 research packet | CREATED / PRE-FIELDWORK RESEARCH COMPLETE |
+| C029 structure research | COMPLETE / PROVISIONAL / DRAFTING BLOCKED |
+| C029 | ACTIVE / CONTINUE / FIELDWORK READY |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C021 | OPEN / QUEUED |
@@ -500,26 +555,23 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 
 ## Exact next task
 
-**Wait for Louda Tuppal's approval of the third-story core direction.**
+**Execute C029 original Philippine reader fieldwork.**
 
-Recommended choice:
+Use:
 
-- **Direction A - The second question after the headline**.
+`research/stories/second-question-after-headline/fieldwork-plan.md`
 
-Strong alternative:
+Sequence:
 
-- **Direction B - Context debt: why some stories are hard to enter midway**.
+1. recruit a deliberately varied qualitative sample, targeting 12-15 completed participants and requiring at least 10 complete records before a publish decision;
+2. collect the three-day natural news-encounter diary;
+3. conduct the semi-structured interview and real-time walkthrough;
+4. code follow-up-question types, next actions and stopping rules while preserving negative cases;
+5. update the evidence ledger and contradictions with original reporting;
+6. decide `PUBLISH / REFRAME / CONTINUE / KILL`;
+7. only if the result is `PUBLISH`, revise the provisional structure around the actual findings and begin drafting.
 
-After approval, and only after approval:
-
-1. assign a final candidate ID if appropriate;
-2. create a dedicated story research packet;
-3. design a Philippine-specific original evidence plan;
-4. execute source mapping / primary-secondary research / contradiction search;
-5. decide `PUBLISH / REFRAME / CONTINUE / KILL`;
-6. only then research article structure and draft if the evidence supports publication.
-
-C027 visual sourcing can resume after this editorial exploration or when the user explicitly returns to it.
+C027 visual sourcing can resume when the user explicitly returns to it or after this editorial fieldwork phase.
 
 ## Phase handoff rule
 
