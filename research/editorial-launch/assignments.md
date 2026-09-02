@@ -20,11 +20,24 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C009 | Supporting | What does "higher-value work" actually mean inside Philippine IT-BPM? | Business | PASS | HIGH | CONTINUE | `research/stories/it-bpm-higher-value-work/` |
-| C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME | `research/stories/zero-fee-merchant-payments/` |
+| C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 
 State for C001, C009, and C017 remains `ACTIVE`.
 
-C017's original planning question asked who ultimately bears the cost when qualifying small-merchant payments become free to the merchant. The first full public-evidence pass found that the zero-fee implementation itself must be defined before economic incidence can be reported. The original question remains preserved in the C017 packet.
+### C017 checkpoint
+
+C017's original planning question asked who ultimately bears the cost when qualifying small-merchant payments become free to the merchant.
+
+The first public-evidence pass reframed the question because the final 2026 rule set did not define the presumed merchant-side waiver cleanly enough.
+
+The second implementation-basis audit now establishes that:
+
+- Circular 1238 permits cost-based merchant fees and does not reproduce the 2024 exposure draft's explicit micro-merchant waiver;
+- M-2026-025 still says zero fees for small merchant payments have been implemented but does not identify the fee layer or implementation instrument;
+- current PPMI/BSP QR Ph material says QR Ph P2M is free to consumers while BSP's July 2026 launch material says merchants shoulder QR Ph transaction fees;
+- no indexed public BSP/PPMI rule located in the audit resolves those statements into a final micro-merchant fee-waiver mechanism.
+
+The reframed C017 therefore remains `CONTINUE`, with one narrow BSP/PPMI clarification now the decisive remaining source need. No broad interview campaign is required and Portfilo's publishing schedule should not wait on that response.
 
 ## First reserve
 
