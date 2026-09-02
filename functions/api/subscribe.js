@@ -5,6 +5,9 @@ const JSON_HEADERS = {
 };
 
 const BEEHIIV_PUBLICATION_ID = "pub_dde8610d-d1a8-4c74-aa13-aeb3838b2d40";
+const MAX_REQUEST_BYTES = 4096;
+
+class RequestTooLargeError extends Error {}
 
 function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
@@ -28,17 +31,31 @@ function isValidEmail(value) {
 }
 
 async function readPayload(request) {
+  const body = await request.arrayBuffer();
+
+  if (body.byteLength > MAX_REQUEST_BYTES) {
+    throw new RequestTooLargeError();
+  }
+
   const contentType = request.headers.get("content-type") || "";
 
   if (contentType.includes("application/json")) {
-    return request.json();
+    return JSON.parse(new TextDecoder().decode(body));
   }
 
-  if (
-    contentType.includes("application/x-www-form-urlencoded") ||
-    contentType.includes("multipart/form-data")
-  ) {
-    const formData = await request.formData();
+  if (contentType.includes("application/x-www-form-urlencoded")) {
+    return Object.fromEntries(
+      new URLSearchParams(new TextDecoder().decode(body)).entries(),
+    );
+  }
+
+  if (contentType.includes("multipart/form-data")) {
+    const boundedRequest = new Request(request.url, {
+      method: request.method,
+      headers: request.headers,
+      body,
+    });
+    const formData = await boundedRequest.formData();
     return Object.fromEntries(formData.entries());
   }
 
@@ -68,14 +85,18 @@ export async function onRequest(context) {
   }
 
   const contentLength = Number(request.headers.get("content-length") || 0);
-  if (contentLength > 4096) {
+  if (contentLength > MAX_REQUEST_BYTES) {
     return json({ ok: false, message: "Request is too large." }, 413);
   }
 
   let payload;
   try {
     payload = await readPayload(request);
-  } catch {
+  } catch (error) {
+    if (error instanceof RequestTooLargeError) {
+      return json({ ok: false, message: "Request is too large." }, 413);
+    }
+
     return json({ ok: false, message: "Invalid signup request." }, 400);
   }
 
