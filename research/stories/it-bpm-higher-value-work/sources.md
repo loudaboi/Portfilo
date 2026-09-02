@@ -19,9 +19,9 @@ Access date for current webpages below: 2026-09-03 unless otherwise stated.
 **Type / tier:** Multilateral economic analysis using IBPAP and other data / Tier B  
 **Publication:** 2026
 
-**Why it matters:** Describes the Philippine IT-BPM sector at roughly 1.8 million workers and says employment remains concentrated in contact centres and back-office operations while the sector has diversified into higher-value segments including global capability centres, healthcare information management, and IT/software.
+**Why it matters:** Says employment remains concentrated in contact centres and back-office operations while the sector has diversified into higher-value segments including global capability centres, healthcare information management, and IT/software. The page also reports approximately 1.8 million workers using IBPAP 2025 data.
 
-**Limitations:** The `higher-value` label is descriptive, not a standardized occupational classification. The sector composition cited by OECD relies partly on IBPAP data.
+**Limitations:** The `higher-value` label is descriptive, not a standardized occupational classification. The sector composition and headcount cited by OECD rely partly on IBPAP data. A separate July 2026 report of IBPAP's updated outlook refers to 1.9 million employees as of 2025, so C009 does not need or use an exact sector headcount in the final draft.
 
 ## S002 - IBPAP Investors page
 
@@ -139,7 +139,7 @@ Access date for current webpages below: 2026-09-03 unless otherwise stated.
 ### S013 - Wells Fargo Senior Data Analytics Consultant - Banking & Risk Analytics
 
 **Source:** Wells Fargo Careers  
-**URL:** https://www.wellsfargojobs.com/fr-ca/jobs/r-569067/senior-data-analytics-consultant-banking-risk-analytics/  
+**URL:** https://www.wellsfargojobs.com/en/jobs/r-569067/senior-data-analytics-consultant-banking-risk-analytics/  
 **Type / tier:** Employer job posting / Tier A  
 **Posted:** 2026-09-02  
 **Location:** Taguig
@@ -225,7 +225,9 @@ Access date for current webpages below: 2026-09-03 unless otherwise stated.
 **Type / tier:** Employer job posting / Tier A  
 **Location:** Makati
 
-**Why it matters:** Specialized work inside contact-center operations: forecasting, staffing models, resource planning, scheduling systems, efficiency/performance reviews, and new-program planning. The posting prefers more than seven years of relevant experience and progressive management experience.
+**Why it matters:** Specialized work inside contact-center operations: forecasting, staffing models, resource planning, scheduling systems, efficiency/performance reviews, and new-program planning.
+
+**Limitation:** The page contains two different experience statements: one line says more than seven years of relevant experience with at least two years of progressive management experience is preferred, while a separate Qualifications block says 3+ years in a similar role. Because the posting is internally inconsistent on this point, C009 does not use an experience threshold from this role in the public article.
 
 ### S022 - Optum Senior Business Process Analyst - Multiple Sites
 
@@ -256,6 +258,28 @@ Access date for current webpages below: 2026-09-03 unless otherwise stated.
 **Location:** Taguig / Bangalore
 
 **Why it matters:** Senior GCC capability-ownership example covering global finance master-data strategy, governance, data quality, enterprise platforms, controls, transformation, KPIs, and cross-functional leadership.
+
+## S025 - IBPAP official 2028 outlook: capacity to capability
+
+**Source:** IT & Business Process Association of the Philippines, official LinkedIn article  
+**URL:** https://www.linkedin.com/pulse/ibpap-unveils-2028-outlook-industry-shifts-from-capacity-capability-9fipc  
+**Type / tier:** Industry association primary statement / Tier A for IBPAP's strategy and claims  
+**Publication:** 2026-07-17
+
+**Why it matters:** Primary-source confirmation that IBPAP's 2028 outlook explicitly frames the industry's next phase as moving from workforce scale toward higher-value capabilities and AI-enabled talent. It says revenue per worker will become a more important competitiveness measure and names GCCs, healthcare, banking/financial services, analytics, engineering, finance, healthcare information management, and digital services as higher-value areas.
+
+**Limitations:** This is IBPAP's strategy and forecast, not independent evidence that the projected role mix, productivity or worker outcomes have already occurred.
+
+## S026 - DepEd Philippine Skills Framework landing page
+
+**Source:** Department of Education  
+**URL:** https://www.deped.gov.ph/philippine-qualifications-framework-psf/  
+**Type / tier:** Government reference page / Tier A  
+**Current page:** accessed 2026-09-03
+
+**Why it matters:** Confirms that the Philippine Skills Frameworks are industry-led reference tools developed through multi-agency collaboration and lists the Contact Center/BPM, Global In-House Center, Health Information Management, Software Development and Security, and Analytics/AI frameworks used in C009.
+
+**Limitations:** Establishes the official framework program and document inventory, not labor-market prevalence or employer adoption.
 
 ## Immediate evidence gaps
 
