@@ -1,352 +1,318 @@
 # Portfilo Email System & Confirmation Experience
 
-_Status: research complete / candidate pending user approval_
+_Status: APPROVED / implementation active_
 
 _Last updated: 2026-09-02_
 
 ## Goal
 
-Make the email experience feel like Portfilo without turning beehiiv into a second website or recreating the web design inside an inbox.
+Portfilo owns the signup and confirmation experience. beehiiv remains the newsletter/subscriber platform after the reader has verified the email address.
 
-The system covers:
+The confirmation flow must not require Portfilo to operate a database, SMTP server, or custom newsletter platform.
 
-1. double-opt-in confirmation email;
-2. post-confirmation destination;
-3. welcome-email policy;
-4. Portfilo Brief newsletter template;
-5. sender/reply identity;
-6. required footer/address treatment;
-7. QA before public sending.
+## Approved architecture
 
-The subscription plumbing itself is already validated and closed.
+```text
+Portfilo /subscribe
+        ↓
+Cloudflare Turnstile
+        ↓
+POST /api/subscribe
+        ↓
+24-hour encrypted stateless token
+        ↓
+Resend sends Portfilo HTML confirmation email
+        ↓
+GET /api/confirm?token=...
+        ↓
+Portfilo decrypts + validates token
+        ↓
+beehiiv creates verified Active subscriber
+        ↓
+Portfilo /confirmed
+```
 
-## Constraints confirmed by research
+### Ownership boundaries
 
-### beehiiv can customize the important email surfaces
+Portfilo owns:
 
-The Double Opt-in Email can customize subject line, preview text, author, body content, button text, button position, and Style settings. The confirmation button cannot be removed because it performs the opt-in action.
+- signup UI;
+- abuse protection;
+- confirmation-email HTML and plain text;
+- confirmation token creation/validation;
+- confirmation endpoint;
+- post-confirmation page.
 
-beehiiv also supports an Opt-in Redirect URL after confirmation. Without one, the reader is sent to the beehiiv publication homepage.
+Resend owns:
 
-Newsletter templates can be saved and reused. The Post Builder supports colors, typography, spacing, borders, headers, body styles, widgets, and footer styling.
+- transactional confirmation-email delivery only.
 
-References:
+beehiiv owns:
 
-- https://www.beehiiv.com/support/article/13081072798743
-- https://www.beehiiv.com/support/article/30974963947031-creating-and-using-newsletter-templates
-- https://www.beehiiv.com/support/article/31258673154455
+- confirmed subscriber storage;
+- Portfilo Brief newsletter delivery;
+- unsubscribe handling;
+- newsletter operations.
 
-### Exact web fonts should not be a requirement
+There is no Portfilo subscriber database and no pending-subscriber store.
 
-beehiiv's Post Builder uses a curated set of email-safe fonts because inbox clients have limited font support. Website custom fonts do not carry into newsletters.
+## Why no Workers KV
 
-Portfilo should match the website through hierarchy, spacing, rules, color, and restraint rather than forcing Instrument Sans or Source Serif 4 into email clients.
+Workers KV was evaluated for temporary confirmation tokens but rejected for this flow because it is eventually consistent; writes may take time to become visible in another Cloudflare location.
+
+Portfilo instead uses a stateless encrypted token. The token contains the email and expiry inside AES-GCM authenticated encryption, so the email address is not readable from the URL and no pending state needs to be stored.
 
 Reference:
 
-- https://www.beehiiv.com/support/article/39642263350935
+- https://developers.cloudflare.com/kv/concepts/how-kv-works/
 
-### Welcome email behavior is explicit
+## Confirmation token
 
-The Portfilo API currently sends:
+Implementation:
 
-`send_welcome_email: false`
+`functions/_lib/confirmation-token.js`
 
-beehiiv documents that API-created subscribers need `send_welcome_email: true` for a welcome email to send. With double opt-in, an enabled welcome email would send only after confirmation.
+Properties:
+
+- AES-GCM authenticated encryption using Web Crypto;
+- key derived from private `CONFIRMATION_TOKEN_SECRET`;
+- random 12-byte IV per token;
+- 24-hour expiry;
+- opaque URL-safe token;
+- no email address exposed in plaintext in the link;
+- no database/KV write;
+- invalid/expired tokens return to `/subscribe` with a safe status message.
+
+A replay of a still-valid link can call the confirmation endpoint again, but it cannot change the encoded email or create a different subscriber. beehiiv receives the same verified address with `reactivate_existing: true`.
+
+## Signup abuse protection
+
+Portfilo uses Cloudflare Turnstile.
+
+Implementation:
+
+- the public site key is returned at runtime by `GET /api/subscribe`;
+- the browser explicitly renders Turnstile;
+- appearance is `interaction-only`, so most readers do not see a CAPTCHA-style UI;
+- the token is validated server-side through Cloudflare Siteverify before any email is sent;
+- the existing honeypot remains as a cheap first filter.
+
+Server-side validation is mandatory.
 
 References:
 
-- https://developers.beehiiv.com/api-reference/subscriptions/create
-- https://www.beehiiv.com/support/article/12314708619159-why-are-my-welcome-emails-not-being-sent
+- https://developers.cloudflare.com/turnstile/get-started/
+- https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/
 
-### Footer/address is mandatory
+## Transactional confirmation email
 
-beehiiv requires a physical mailing address in the email footer. If Portfilo does not provide one, beehiiv uses its own business address as a fallback. Do not replace that fallback with a fake address.
+Implementation:
 
-The footer can still be styled around the required address and unsubscribe controls.
+`functions/_lib/confirmation-email.js`
 
-References:
+Sender service:
 
-- https://www.beehiiv.com/support/article/12293012097175-how-to-update-the-address-and-copyright-text-in-your-email-footer
-- https://www.beehiiv.com/support/article/6049111808279-how-to-customize-your-beehiiv-publication-footer
+Resend REST API.
 
-## Recommended journey
+The email is source-controlled Portfilo HTML rather than a beehiiv template.
 
-### 1. Signup
-
-Reader submits the native form on `/subscribe`.
-
-Portfilo responds:
-
-> Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.
-
-No change required.
-
-### 2. Double-opt-in email
-
-This becomes the only immediate email.
-
-Recommended sender name:
-
-`Portfilo`
-
-Recommended subject:
+Subject:
 
 `Confirm your Portfilo Brief subscription`
 
-Recommended preview text:
+Preview:
 
 `One click to finish signing up.`
 
-Recommended body:
+Core content:
 
-**PORTFILO BRIEF / CONFIRMATION**
+> PORTFILO BRIEF / CONFIRMATION
+>
+> Confirm your subscription.
+>
+> Click below to finish signing up for Portfilo Brief.
+>
+> Confirm subscription ↗
+>
+> If you did not sign up, you can ignore this email.
 
-# Confirm your subscription.
+Visual direction:
 
-Click below to finish signing up for Portfilo Brief.
-
-**Confirm subscription**
-
-If you did not sign up, you can ignore this email.
-
-Rules:
-
-- no mission statement;
-- no coverage manifesto;
-- no geographic positioning;
-- no decorative intro paragraph;
-- one required action only;
-- the button label should describe the action literally;
-- keep legal/footer material visually separate from the action.
-
-### 3. Post-confirmation redirect
-
-Create a Portfilo-owned static route:
-
-`/confirmed`
-
-Candidate page copy:
-
-# Subscription confirmed.
-
-You're subscribed to Portfilo Brief. New stories will arrive by email.
-
-**Read the latest →**
-
-The page should use the existing `SiteHeader` and `SiteFooter` and remain visually minimal. It does not need another signup form, newsletter explanation, or brand manifesto.
-
-After the production domain is stable, configure beehiiv's Opt-in Redirect URL to the public `/confirmed` route.
-
-Do not point beehiiv to localhost.
-
-Do not invest in redesigning the beehiiv-hosted publication homepage for v0. The Astro/Cloudflare site remains Portfilo's primary website.
-
-### 4. Welcome email
-
-Recommendation for v0: **keep disabled**.
-
-Reasoning:
-
-- double opt-in already creates an immediate transactional email;
-- a second email immediately after confirmation is only worthwhile if it has useful onboarding content;
-- Portfilo does not yet have the final launch story set or a fixed newsletter cadence;
-- sending a generic welcome note would recreate the over-explaining problem the public copy architecture just removed.
-
-Keep `send_welcome_email: false` in `functions/api/subscribe.js` for now.
-
-Revisit only when real launch content exists. A future welcome email should earn its send by doing something concrete, such as linking to a small set of strong starting stories and explaining how often Portfilo Brief actually sends.
-
-When that decision changes, both conditions must be handled deliberately:
-
-1. configure/enable the Welcome Email in beehiiv;
-2. change API `send_welcome_email` to `true` and re-run subscription QA.
-
-### 5. Smart Nudge
-
-beehiiv can send a follow-up confirmation reminder to subscribers still Pending after 48 hours.
-
-Recommendation: **optional but useful after the main confirmation email is branded**.
-
-It is not required to launch the v0 subscription flow. Do not let it block the core email system.
+- Portfilo text wordmark with approved ink/blue/red split;
+- paper `#f4f0e8` background;
+- ink `#171614`;
+- signal blue `#0050a4` rule and CTA;
+- correction red only in the wordmark;
+- square CTA;
+- email-safe Arial/Helvetica and Georgia/Courier fallbacks;
+- single-column layout;
+- mobile adjustment below 640px;
+- plain-text fallback sent explicitly;
+- no decorative hero image, cards, gradients, or beehiiv chrome.
 
 Reference:
 
-- https://www.beehiiv.com/support/article/13081072798743
+- https://resend.com/features/email-api
 
-## Portfilo Brief newsletter design
+## `/api/subscribe`
 
-### Product role
+Implementation:
 
-Portfilo Brief should distribute Portfilo journalism, not become a second publication with a separate brand voice.
+`functions/api/subscribe.js`
 
-The email should feel like a compact issue of Portfilo that happens to arrive in an inbox.
+GET:
 
-BackScoop is useful here because its newsletter promise stays concrete: startup deals, what the company does, and why it matters. Its product copy does not require a long brand explanation before the reader gets to the stories.
+- returns only the public Turnstile site key;
+- returns no secrets.
 
-References:
+POST:
 
-- https://backscoop.com/
-- https://backscoop.com/search?sector=Agritech
+1. enforce same-origin browser request;
+2. enforce request-size limit;
+3. parse JSON/form payload;
+4. quietly accept honeypot submissions;
+5. validate email;
+6. validate Turnstile server-side;
+7. create encrypted 24-hour token;
+8. construct same-origin `/api/confirm` URL;
+9. send Portfilo confirmation email through Resend;
+10. return the existing `Check your inbox` success state.
 
-### V0 template structure
+The POST does **not** create a beehiiv subscriber.
 
-Use one reusable default template rather than multiple newsletter formats at launch.
+## `/api/confirm`
+
+Implementation:
+
+`functions/api/confirm.js`
+
+Flow:
+
+1. accept GET from the email link;
+2. decrypt and authenticate the token;
+3. enforce token expiry;
+4. validate the recovered email address;
+5. call beehiiv subscription creation;
+6. redirect to `/confirmed` on success.
+
+beehiiv request policy:
+
+```json
+{
+  "reactivate_existing": true,
+  "send_welcome_email": false,
+  "double_opt_override": "off",
+  "utm_source": "portfilo",
+  "utm_medium": "website",
+  "utm_campaign": "portfilo_brief_signup"
+}
+```
+
+`double_opt_override` is intentionally `off` at this stage because Portfilo has already performed the confirmation step. beehiiv must not send another opt-in email.
+
+## Post-confirmation page
+
+Implementation:
+
+`src/pages/confirmed.astro`
+
+Current copy:
+
+> Subscription confirmed.
+>
+> You’re subscribed to Portfilo Brief. New stories will arrive by email.
+>
+> Read the latest ↗
+
+The page uses shared site chrome and is `noindex`.
+
+There is no beehiiv Opt-in Redirect URL in this architecture because the reader never uses beehiiv's confirmation page.
+
+## Welcome email
+
+V0 policy: **disabled**.
+
+The confirmation endpoint sends:
+
+`send_welcome_email: false`
+
+Do not enable a generic welcome email. Revisit only when real launch stories make a useful onboarding email possible.
+
+## Portfilo Brief newsletter template
+
+The regular newsletter is still sent through beehiiv. It should use one reusable template at launch.
 
 Recommended structure:
 
-1. `PORTFILO BRIEF / [DATE]` small label;
-2. Portfilo/Portfilo Brief identity;
-3. lead story headline;
-4. short dek or two-sentence explanation;
-5. `Read →` link;
-6. `Also in Portfilo` with 2-4 additional story links when available;
-7. short sign-off or no sign-off;
-8. compliant footer.
+1. `PORTFILO BRIEF / [DATE]`;
+2. lead story headline;
+3. short dek/explanation;
+4. `Read →`;
+5. `Also in Portfilo` with only as many links as are genuinely useful;
+6. compliant footer.
 
-The content count should be allowed to vary. Do not create empty sections just to preserve a template.
+Subject lines should lead with the strongest concrete story rather than issue numbering or generic newsletter language.
 
-### Subject-line rule
+The confirmation email and the regular newsletter do not need to share the same implementation. Confirmation is source-controlled transactional HTML; Portfilo Brief remains a beehiiv newsletter product.
 
-Subject lines should usually lead with the strongest concrete story or development rather than issue numbering.
+## Mailing address
 
-Avoid default patterns such as:
+A real authorized physical mailing address remains a blocker before the first public **newsletter** send.
 
-- `Portfilo Brief #001`;
-- `Your weekly dose of...`;
-- `What you need to know today`;
-- clickbait curiosity gaps;
-- emoji as a permanent subject-line device.
+Do not invent an address or casually publish a private/home address. The exact address choice must be verified before launch.
 
-Preview text should add information rather than repeat the subject.
+The custom transactional confirmation email does not use beehiiv's fallback New York footer.
 
-### Visual direction
+## Environment variables
 
-Translate the site system instead of duplicating it.
+Local template:
 
-Use:
+`.dev.vars.example`
 
-- paper-like or white/light background;
-- ink/dark text;
-- signal blue for primary links and rules;
-- restrained red only where it has a real semantic role, such as a correction;
-- sharp corners;
-- thin rules;
-- generous whitespace;
-- strong type hierarchy;
-- mostly single-column content.
+Required runtime values:
 
-Do not use:
+- `BEEHIIV_API_KEY` — private;
+- `RESEND_API_KEY` — private;
+- `RESEND_FROM` — sender identity;
+- `TURNSTILE_SITE_KEY` — public but environment-specific;
+- `TURNSTILE_SECRET_KEY` — private;
+- `CONFIRMATION_TOKEN_SECRET` — private, random, at least 32 characters.
 
-- rounded card stacks;
-- gradients;
-- glass effects;
-- heavy illustration as decoration;
-- multiple competing button styles;
-- large hero graphics just to make the email feel designed.
+For localhost, Cloudflare's official always-pass Turnstile test keys may be used. Never deploy those test keys to production.
 
-### Typography
+Reference:
 
-Use the closest available email-safe sans for headings/interface text and the closest available readable serif for editorial body copy if beehiiv's curated options support a good pair.
-
-If the serif pairing renders poorly across clients, prefer one strong email-safe sans throughout rather than a forced mismatch.
-
-The Portfilo wordmark may be used as a small image asset if needed, but critical information must remain readable when images are blocked.
-
-## Sender and reply identity
-
-Recommended sender name:
-
-`Portfilo`
-
-Reason: the publication is the durable identity; `Portfilo Brief` is the email product.
-
-Before public launch, set a deliberate reply-to address. Prefer a verified address on Portfilo's eventual domain when available rather than relying indefinitely on the beehiiv/account default.
-
-Do not require a custom-domain sender to complete the design phase, but include sender-domain/reply-to verification in deployment QA.
-
-References:
-
-- https://www.beehiiv.com/support/article/12293357892503
-- https://www.beehiiv.com/support/article/12283814343831-how-to-set-or-change-your-publications-reply-to-address
-
-## Mailing address policy
-
-Before the first public newsletter send, choose a real physical mailing address Portfilo is authorized to publish and that satisfies beehiiv's requirements and applicable law.
-
-Do not:
-
-- invent an address;
-- use a random office;
-- publish a private/home address casually without considering privacy;
-- remove the required unsubscribe/address controls.
-
-A business address, registered office, PO box, or mailbox service may be options depending on the service and applicable rules, but the exact choice should be verified before launch rather than assumed.
-
-Until then, beehiiv's fallback address is acceptable only as a temporary test-state artifact.
-
-## Email footer direction
-
-Keep the footer visually quiet.
-
-Recommended hierarchy:
-
-1. thin divider;
-2. `Portfilo Brief` or Portfilo identity;
-3. required address;
-4. unsubscribe link;
-5. optional contact/reply instruction only if useful;
-6. beehiiv branding if the active plan requires it.
-
-Do not pack the footer with social icons or generic promotional links before those destinations matter.
+- https://developers.cloudflare.com/turnstile/troubleshooting/testing/
 
 ## QA standard
 
-No email surface is approved from beehiiv Preview alone.
+Before declaring the custom confirmation flow complete:
 
-Before public sending, test:
-
-- confirmation email on desktop and mobile;
-- actual confirmation button behavior;
-- `/confirmed` redirect on production URL;
-- Gmail rendering;
-- at least one additional client if available, preferably Outlook or Apple Mail;
-- dark mode where available;
-- images blocked/off;
-- all links;
-- unsubscribe link;
-- physical address;
-- sender name;
-- reply-to behavior;
-- subject and preview text together in the inbox;
-- no horizontal overflow or clipped text;
-- body text readable without zoom;
-- buttons/links easy to tap on mobile;
-- no essential information encoded only in an image;
-- footer remains readable and compliant.
-
-For every real Portfilo Brief issue, send a test email before the public send.
-
-## Recommended implementation order
-
-After user approval:
-
-1. build `/confirmed` in Astro using shared site chrome;
-2. customize the beehiiv Double Opt-in Email to the approved copy/style;
-3. preview and send a test confirmation email;
-4. keep the Welcome Email disabled and leave API `send_welcome_email: false`;
-5. optionally enable Smart Nudge after confirmation-email QA;
-6. build and save one Portfilo Brief newsletter template in beehiiv;
-7. choose a legitimate mailing address before public newsletter launch;
-8. once the production Portfilo domain exists, set Opt-in Redirect URL to `/confirmed` and run one production confirmation test;
-9. revisit welcome email only when real launch stories make it useful.
+- production Astro build passes;
+- Wrangler compiles both Pages Functions;
+- Turnstile public config loads;
+- invalid email is rejected;
+- Turnstile failure path is safe;
+- one real confirmation email is delivered through Resend;
+- Gmail desktop rendering is reviewed;
+- mobile inbox rendering is reviewed;
+- plain-text content is sensible;
+- confirmation CTA points to Portfilo, not beehiiv;
+- confirmation creates an Active beehiiv subscriber;
+- acquisition source remains `api: portfilo / website` or the equivalent beehiiv display;
+- confirmation redirects to `/confirmed`;
+- expired/invalid token returns safely to `/subscribe`;
+- no secret is present in Git, browser HTML, screenshots, or logs.
 
 ## Recommendation
 
-Approve this as the v0 email architecture.
+This is the v0 confirmation architecture.
 
-The core principle is the same as the website copy reset:
+It deliberately adds only what is needed to own the confirmation experience while preserving the larger zero-budget posture:
 
-> **Say the thing. Then stop.**
-
-Email should add utility, not another layer of brand explanation.
+- no database;
+- no KV;
+- no custom SMTP server;
+- no custom newsletter platform;
+- no subscriber accounts;
+- beehiiv remains the durable newsletter system.
