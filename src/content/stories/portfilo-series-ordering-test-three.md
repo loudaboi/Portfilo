@@ -5,7 +5,7 @@ contentType: guide
 topic: building
 author: Portfilo
 publishedAt: 2026-09-02
-status: published
+status: draft
 featured: false
 series: content-architecture-fixtures
 seriesOrder: 3
