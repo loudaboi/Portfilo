@@ -1,0 +1,80 @@
+<footer class="site-footer">
+  <a class="site-footer__brand" href="/" aria-label="Portfilo home">
+    <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
+  </a>
+
+  <nav class="site-footer__nav" aria-label="Footer">
+    <a href="/#latest">Latest</a>
+    <a href="/standards">Standards</a>
+    <a href="/about">About</a>
+    <a href="/subscribe">Subscribe</a>
+  </nav>
+</footer>
+
+<style>
+  .site-footer {
+    width: min(100%, var(--page-max));
+    margin-inline: auto;
+    padding: 1.2rem var(--gutter) 1.4rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    align-items: end;
+    border-top: 1px solid var(--ink);
+  }
+
+  .site-footer__brand {
+    width: fit-content;
+    display: inline-block;
+    white-space: nowrap;
+    font: 700 1.55rem/0.9 var(--sans);
+    letter-spacing: -0.085em;
+    text-decoration: none;
+    transform: skewX(-12deg);
+    transform-origin: left center;
+  }
+
+  .site-footer__port,
+  .site-footer__fi,
+  .site-footer__lo {
+    display: inline-block;
+  }
+
+  .site-footer__port { color: var(--ink); }
+  .site-footer__fi { color: var(--accent); }
+  .site-footer__lo { color: var(--correction); }
+
+  .site-footer__nav {
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem 1.4rem;
+    font: 500 0.72rem/1.2 var(--sans);
+  }
+
+  .site-footer__nav a {
+    text-decoration: none;
+  }
+
+  .site-footer__nav a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 50rem) {
+    .site-footer {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .site-footer__nav {
+      justify-self: start;
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 23rem) {
+    .site-footer { --gutter: 1rem; }
+    .site-footer__nav { gap: 0.65rem 1rem; }
+  }
+</style>
