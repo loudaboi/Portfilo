@@ -1,4 +1,6 @@
 ---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
 
 <!doctype html>
@@ -16,22 +18,7 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-      <a class="wordmark" href="/" aria-label="Portfilo home">
-        <span class="wordmark__inner">
-          <span class="wordmark__port">Port</span><span class="wordmark__fi">fi</span><span class="wordmark__lo">lo</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a href="/#latest">Latest</a></li>
-          <li><a href="/standards">Standards</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a class="site-nav__subscribe" href="/subscribe" aria-current="page">Subscribe</a></li>
-        </ul>
-      </nav>
-    </header>
+    <SiteHeader current="subscribe" />
 
     <main id="main-content" tabindex="-1">
       <section class="subscribe-hero" aria-labelledby="subscribe-title">
@@ -140,12 +127,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="site-footer__brand" aria-label="Portfilo">
-        <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
-      </div>
-      <a href="/">Back to home</a>
-    </footer>
+    <SiteFooter />
 
     <script is:inline>
       const subscribeForm = document.querySelector("#subscribe-form");
@@ -288,72 +270,13 @@
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .site-header,
       .subscribe-hero,
       .signup-section,
       .brief-section__inner,
-      .privacy-note,
-      .site-footer {
+      .privacy-note {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
-
-      .site-header {
-        padding: 1.05rem var(--gutter) 0.95rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: clamp(1.5rem, 3vw, 3.5rem);
-        align-items: center;
-        border-bottom: 1px solid var(--ink);
-      }
-      .wordmark { width: fit-content; display: inline-block; text-decoration: none; }
-      .wordmark__inner {
-        display: inline-block;
-        white-space: nowrap;
-        font: 700 clamp(1.75rem, 2.2vw, 2.3rem) / 0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-      .wordmark__port,
-      .wordmark__fi,
-      .wordmark__lo,
-      .site-footer__port,
-      .site-footer__fi,
-      .site-footer__lo { display: inline-block; }
-      .wordmark__port, .site-footer__port { color: var(--ink); }
-      .wordmark__fi, .site-footer__fi { color: var(--accent); }
-      .wordmark__lo, .site-footer__lo { color: var(--correction); }
-
-      .site-nav { justify-self: end; }
-      .site-nav ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        gap: clamp(1rem, 2vw, 2rem);
-        list-style: none;
-      }
-      .site-nav a {
-        position: relative;
-        font: 500 0.76rem/1 var(--sans);
-        text-decoration: none;
-      }
-      .site-nav a::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: -0.45rem;
-        left: 0;
-        height: 2px;
-        background: transparent;
-      }
-      .site-nav a:hover,
-      .site-nav a[aria-current="page"] { color: var(--accent); }
-      .site-nav a[aria-current="page"]::after { background: var(--accent); }
-      .site-nav__subscribe { color: var(--accent); }
 
       .subscribe-hero {
         padding: clamp(4rem, 7vw, 7.5rem) var(--gutter) clamp(4.5rem, 8vw, 8rem);
@@ -548,30 +471,6 @@
         font: 400 clamp(1.05rem, 1.25vw, 1.2rem) / 1.62 var(--serif);
       }
 
-      .site-footer {
-        padding: 1.2rem var(--gutter) 1.4rem;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: var(--grid-gap);
-        align-items: end;
-        font: 400 0.64rem/1.45 var(--mono);
-      }
-      .site-footer__brand {
-        width: fit-content;
-        white-space: nowrap;
-        font: 700 1.55rem/0.9 var(--sans);
-        letter-spacing: -0.085em;
-        transform: skewX(-12deg);
-        transform-origin: left center;
-      }
-      .site-footer a {
-        justify-self: end;
-        text-decoration-color: var(--accent);
-        text-decoration-thickness: 0.1em;
-        text-underline-offset: 0.18em;
-      }
-      .site-footer a:hover { color: var(--accent); }
-
       @media (max-width: 64rem) {
         .subscribe-hero h1 { grid-column: 2 / 13; }
         .subscribe-intro { grid-column: 4 / 11; }
@@ -581,15 +480,6 @@
       }
 
       @media (max-width: 50rem) {
-        .site-header { grid-template-columns: 1fr; align-items: start; padding-top: 0.9rem; }
-        .site-nav {
-          width: 100%;
-          padding-top: 0.8rem;
-          justify-self: stretch;
-          border-top: 1px solid var(--line);
-        }
-        .site-nav ul { justify-content: flex-start; gap: 0.8rem 1.3rem; }
-
         .subscribe-hero { display: block; padding-top: 3.6rem; padding-bottom: 4.5rem; }
         .subscribe-kicker { margin: 0 0 1.35rem; }
         .subscribe-hero h1 { max-width: none; font-size: clamp(3.35rem, 14vw, 5.3rem); line-height: 0.91; text-wrap: pretty; }
@@ -621,12 +511,8 @@
       }
 
       @media (max-width: 28rem) {
-        .site-nav ul { gap: 0.7rem 1rem; }
-        .site-nav a { font-size: 0.7rem; }
         .subscribe-hero h1 { font-size: clamp(3rem, 15vw, 4.15rem); }
         .subscribe-form input[type="email"] { font-size: 1.3rem; }
-        .site-footer { display: block; }
-        .site-footer a { display: inline-block; margin-top: 1rem; }
       }
 
       @media (prefers-reduced-motion: reduce) {
