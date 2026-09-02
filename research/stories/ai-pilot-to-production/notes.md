@@ -1,6 +1,6 @@
 # C001 Working Notes - AI Pilot to Production
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-03_
 
 ## Purpose
 
@@ -19,6 +19,35 @@ It is not an evidence ledger and does not establish publishable facts. Material 
 The first extended reconnaissance pass found enough distinct case leads and independent challenge routes to justify direct source outreach. It did not produce enough below-marketing operating evidence to begin drafting.
 
 The main unresolved viability test is now source access rather than absence of plausible cases.
+
+## Access and reachability assessment - 2026-09-03
+
+Portfilo is at launch stage with limited publication history, limited established source relationships, and no assumption that large-company or senior-source outreach will receive a fast reply.
+
+That constraint changes **how C001 is reported**, not whether direct sourcing remains available as part of the system.
+
+Current operational rule for C001:
+
+- pursue direct interviews where a credible route exists;
+- prioritize people or organizations with a realistic public route, warm connection, or clear reason to engage;
+- do not make the publication schedule depend indefinitely on replies from low-probability corporate sources;
+- continue public-record, filing, dataset, technical-documentation, and independent-source research while outreach is pending;
+- reassess the source-access assumption as Portfilo develops publication history, relationships, response history, and audience reach.
+
+### Current reachability classification
+
+| Source / route | Reachability | Role in story | Dependency |
+|---|---|---|---|
+| Swarm research inquiry | PLAUSIBLE | Resolve methodology discrepancy and understand survey design | Important for using the disputed statistic, not essential to the entire story |
+| DOST Caraga / AIgnite | PLAUSIBLE | Gatekeeper to MSME and technical-team cases | Valuable for smaller-company coverage; not the sole path to C001 |
+| DOST-ASTI | PLAUSIBLE | Technical/program source and prototype-to-pilot leads | Optional-to-important depending on cases surfaced |
+| Independent practitioner / researcher | PLAUSIBLE | Challenge definitions, comparability, and working hypothesis | At least one independent challenge source is strongly preferred |
+| First Gen corporate / IR route | LOW-PROBABILITY to PLAUSIBLE | Identify POC projects and outcomes | Useful but should not block the story indefinitely |
+| UnionBank corporate / IR route | LOW-PROBABILITY to PLAUSIBLE | Operator access for production/forthcoming AI workflows | Useful but not guaranteed within a launch timetable |
+| PLDT/Smart operator access | LOW-PROBABILITY through generic corporate routes | Deep production reconstruction | High-value, but public/vendor evidence cannot substitute for operator confirmation of consequential claims |
+| Globe operator access | LOW-PROBABILITY through generic corporate routes | Alternative production case | High-value but optional if other reconstructable cases emerge |
+
+These labels concern practical access only. They do not rank credibility or editorial importance.
 
 ## Case viability matrix
 
@@ -45,6 +74,8 @@ An ideal reported set would contain:
 5. independent technical challenge sources who are not vendors to the selected cases.
 
 The final set may be smaller if access is unusually deep. More shallow cases do not improve the story.
+
+If Portfilo's current access cannot support that set, do not manufacture parity between cases. Narrow the scope, rely more heavily on verifiable documentary evidence, or continue the story until stronger access exists.
 
 ## Public outreach routes identified
 
@@ -119,26 +150,32 @@ For each case, prioritize:
 - what did stop or delay any related pilot;
 - ongoing maintenance and model/process monitoring.
 
-## Go / no-go rule after outreach
+## Go / no-go rule after access-aware research
 
 ### Continue toward reporting
 
-Continue C001 if outreach produces a credible path to:
+Continue C001 if the combined documentary and direct-source work produces a credible path to:
 
 - at least two genuinely reconstructable production attempts;
 - at least one non-success-only attempt or a clearly constrained/still-pilot comparison;
-- operator/technical sources below the executive or vendor layer;
+- enough evidence below the executive/vendor marketing layer to support the central analysis;
 - enough common dimensions to compare cases without pretending unlike workflows are equivalent;
-- at least one independent challenge source.
+- at least one independent challenge source where feasible.
 
 ### Reframe
 
-Reframe if useful operating evidence exists but the cases are too heterogeneous for the broad `what separates pilot from production` comparison. Possible narrower reframes include one workflow class, one industry, or a single deeply reported case with explicit limits.
+Reframe if useful operating evidence exists but the cases are too heterogeneous for the broad `what separates pilot from production` comparison, or if direct access remains weak while one documentary case becomes unusually strong. Possible narrower reframes include one workflow class, one industry, or a single deeply evidenced case with explicit limits.
 
 ### Kill or hold
 
-Kill or hold the flagship framing if outreach yields only promotional cases, unverifiable performance claims, or no credible non-success-side evidence.
+Kill or hold the flagship framing if the available evidence remains promotional, consequential performance claims cannot be verified or fairly qualified, and no credible non-success-side evidence can be established.
 
 ## Next task
 
-Prepare and obtain approval for source outreach. Do not send outreach automatically. After approval, contact the highest-value routes in parallel, beginning with Swarm clarification plus PLDT/Smart, UnionBank, First Gen, DOST Caraga, and one independent challenge source.
+Continue C001 through an **access-aware parallel path**:
+
+1. prepare targeted outreach for the most plausible/high-value sources, without assuming a fast response;
+2. continue public-document and technical-source research in parallel;
+3. use interviews where they are realistically obtainable and materially improve the evidence;
+4. do not let low-probability corporate replies indefinitely block the publication schedule;
+5. reassess the framing when enough evidence exists to decide `PUBLISH`, `REFRAME`, `CONTINUE`, or `KILL`.
