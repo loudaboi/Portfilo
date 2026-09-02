@@ -4,43 +4,23 @@ _Last updated: 2026-09-02_
 
 ## Current phase
 
-**Portfilo v0 / Editorial Launch Research - ACTIVE**
+**Portfilo v0 / Launch Story Research - ACTIVE**
 
-The publishing machine is ready for real editorial selection.
+The publishing machine and launch-selection system are ready. Editorial Launch Research is complete and the first research slate is approved.
 
-The publication foundation, content architecture, editorial design, core public pages, subscription and confirmation flow, Portfilo Brief email system, launch foundation, repository-side production hardening, temporary live Cloudflare deployment, and Content Planning System v0 have passed their current validation.
+The active editorial question is now:
 
-The active task is now to use the approved planning system to answer:
+> Can the approved launch assignments produce evidence strong enough to publish?
 
-> What should Portfilo investigate and publish first?
-
-Canonical content-planning guide:
-
-`docs/CONTENT_PLANNING.md`
-
-Editorial launch research workspace:
-
-`research/editorial-launch/`
-
-The final public domain is still intentionally unset. `SITE_URL` must remain unset until the canonical domain is connected. Final-domain Cloudflare configuration, final beehiiv redirect configuration, edge rate limiting, Web Analytics verification, unsubscribe QA, and mailing-address/compliance clearance remain deployment-readiness work. They do not block editorial launch research.
+Do not draft a launch article before its individual research packet supports a story decision.
 
 ## Current branch
 
-Use `build/portfilo-v0` for the v0 application build.
+Use `build/portfilo-v0` for the authoritative v0 application and editorial state.
 
 Do not merge to `main` unless intentionally reviewed as part of a later release decision.
 
-Recent stable checkpoints include:
-
-- Content Planning System v0 - current checkpoint;
-- `91b2c2e` - record live deployment checkpoint;
-- `4461647` - render link arrows consistently across platforms, user production/mobile QA PASS;
-- `84c0da9` - trigger Cloudflare production deployment used for live Pages testing;
-- `8ce33ec` - record Task 1B repository hardening;
-- `e8b53ad` - lock Portfilo Brief v0 email system;
-- `6fc6638` - remove reader-facing series id.
-
-Historical implementation and validation detail remains available in git history and in the canonical documents referenced below.
+Historical implementation and validation detail remains in git history and the canonical documents referenced below.
 
 ## Canonical documents
 
@@ -116,292 +96,150 @@ Rules:
 
 ## Content Planning System v0 - APPROVED / PASS
 
-Implementation:
+Canonical guide:
 
 `docs/CONTENT_PLANNING.md`
 
-Purpose:
-
-Select which questions deserve Portfilo reporting time before the existing research and publishing pipeline begins.
-
-The planning boundary is:
+Planning boundary:
 
 ```text
 Signal -> Story question -> Editorial gate -> Priority -> Research assignment
 ```
 
-The existing research/publishing system then remains:
+Research/publishing boundary:
 
 ```text
 Research brief -> Sources -> Evidence -> Contradictions -> Story decision -> Draft -> Verification -> Publish
 ```
 
-### Primary planning unit
+Substantial candidates are checked for question, importance, timing, contribution, evidence, and feasibility. Gate outcomes remain `PASS`, `REFRAME`, `HOLD`, or `KILL`. Passed candidates receive `HIGH`, `MEDIUM`, or `LOW` priority.
 
-The unit of planning is a specific, answerable **story question**, not a broad topic and not a pre-written headline.
-
-### Reader needs
-
-Each candidate identifies one primary reader need:
-
-- `Update` - What changed?
-- `Understand` - How does this work?
-- `Interpret` - What does this mean?
-- `Decide` - What should I know before making this decision?
-
-Reader need is separate from content type.
-
-### Editorial gate
-
-Substantial candidates are checked for:
-
-1. question;
-2. importance;
-3. timing / why now;
-4. potential Portfilo contribution;
-5. credible evidence path;
-6. reporting feasibility.
-
-Possible gate outcomes:
-
-- `PASS`
-- `REFRAME`
-- `HOLD`
-- `KILL`
-
-Killing a weak candidate is a valid editorial outcome.
-
-### Existing-coverage check
-
-Before substantial assignment, Portfilo checks whether the question has already been answered well.
-
-Coverage by another publication is not itself disqualifying. The candidate must show a meaningful information gap, changed circumstances, or a materially different contribution.
-
-Commodity rewrites are not enough.
-
-### Priority
-
-Candidates that pass receive:
-
-- `HIGH`
-- `MEDIUM`
-- `LOW`
-
-No 100-point editorial score is used. Priority remains judgment informed by consequence, information gap, timeliness, originality, evidence, fit, lifespan, and effort.
-
-### Copy Style integration
-
-`docs/COPY_STYLE.md` applies at two points:
-
-- pitch framing before assignment;
-- headline/dek approval after evidence stabilizes.
-
-Copy style does not determine whether a subject is worthy of coverage.
-
-### Distribution
-
-Derivative potential may be recorded, but social/video/shareability cannot make a weak story worthy of reporting.
-
-The publishing rule remains:
-
-> Research once, publish many.
-
-### Work-in-progress limits
-
-Default v0 limits:
+Default work-in-progress limits remain:
 
 - maximum one flagship investigation in active production at once;
 - generally no more than three substantial stories in active research at once;
 - no mandatory article quota.
 
-### Fast-moving updates
+## Editorial Launch Research - COMPLETE / APPROVED
 
-A narrow verified factual development can use a faster path when attribution and scope are clear. Larger implications become separate planning candidates and follow the normal gate.
+Workspace:
 
-### Planning-system evaluation
+`research/editorial-launch/`
 
-Before approval, the system was challenged for likely failure modes including bureaucracy, slow news response, forced Philippine framing, social-engagement incentives, fake scoring precision, confirmation bias, sunk-cost publishing, excessive simultaneous work, and generic AI-shaped framing.
+Completed outputs:
 
-No unresolved structural blocker was identified for v0.
+- `brief.md`
+- `audience-signals.md`
+- `competitor-map.md`
+- `information-gaps.md`
+- `candidate-stories.md`
+- `evaluation.md`
+- `candidate-series.md`
+- `recommendation.md`
+- `assignments.md`
 
-No database, CMS, planning SaaS, admin dashboard, or workflow dependency was added.
+Stage 5 produced 28 stable candidate IDs. Stage 6 produced 11 passes, 6 reframes, 7 holds, and 4 killed standalone candidates. The series check found no formal launch series justified.
 
-## Editorial Launch Research - ACTIVE
+Louda Tuppal approved the final launch recommendation on 2026-09-02.
 
-The first real use of the planning system is the Editorial Launch Research project described in `research/README.md`.
+Approved approach:
 
-Expected workspace:
+**Launch with a small package of independent stories, not a formal series.**
 
-```text
-research/
-└── editorial-launch/
-    ├── brief.md
-    ├── audience-signals.md
-    ├── competitor-map.md
-    ├── information-gaps.md
-    ├── candidate-stories.md
-    ├── candidate-series.md
-    ├── evaluation.md
-    └── recommendation.md
-```
+## Active launch assignments
 
-`candidate-stories.md` is required so the research does not assume a series before evidence supports one.
+Operational assignment state is recorded in:
 
-The launch research may recommend:
+`research/editorial-launch/assignments.md`
 
-- one standalone flagship;
-- several unrelated strong stories;
-- one coherent launch package;
-- a real series.
+### C001 - ACTIVE / FLAGSHIP
 
-A broad candidate pool may be developed, but there is no story-count quota. A plausible final package is one flagship plus two to four supporting stories only if the research justifies them.
+Question:
 
-Do not manufacture stories to fill the homepage.
+> What separates an AI pilot from a production system inside a Philippine company?
 
-No launch story is approved yet.
+Topic: `AI`  
+Priority: `HIGH`  
+Packet: `research/stories/ai-pilot-to-production/`
 
-## Shared site chrome - PASS
+Current packet includes:
 
-Runtime components:
+- `brief.md`
+- `sources.md`
+- `evidence.md`
+- `contradictions.md`
 
-- `src/components/SiteHeader.astro`
-- `src/components/SiteFooter.astro`
+Current story outcome: `CONTINUE`.
 
-Primary navigation:
+The central unresolved viability test is access below the marketing layer, especially direct operator evidence and at least one stalled, abandoned, or materially constrained implementation if possible.
 
-- `Latest` -> `/#latest`
-- `Standards` -> `/standards`
-- `About` -> `/about`
-- `Subscribe` -> `/subscribe`
+### C009 - ACTIVE / SUPPORTING
 
-The Portfilo wordmark links Home. Shared navigation remains visible on mobile.
+Question:
 
-User visual QA includes stable route navigation, About topic-card alignment, compact `Founder / Louda Tuppal` attribution, removal of legacy `Back to home` links, and consistent non-emoji up-right link arrows on iOS.
+> What does "higher-value work" actually mean inside Philippine IT-BPM?
 
-## Public surfaces
+Topic: `Business`  
+Priority: `HIGH`  
+Packet: `research/stories/it-bpm-higher-value-work/`
 
-### Homepage `/` - PASS
+Current packet stage: research brief created. Detailed source reconnaissance follows while remaining within the active-story limit.
 
-Implementation:
+### C017 - ACTIVE / SUPPORTING
 
-`src/pages/index.astro`
+Question:
 
-Approved direction:
+> Who ultimately pays when qualifying small-merchant digital payments become free to the merchant?
 
-- page title `Portfilo`;
-- compact topic/coverage strip;
-- feature story is the primary `h1` and visual hero;
-- `Latest` section has `id="latest"`;
-- factual About bridge;
-- Portfilo Brief copy reduced to the email product itself;
-- no geographic/tagline positioning.
+Topic: `Business`  
+Priority: `HIGH`  
+Packet: `research/stories/zero-fee-merchant-payments/`
 
-Fixture story language remains clearly marked as preview material until real launch stories are selected.
+Current packet stage: research brief created. Detailed source reconnaissance follows while remaining within the active-story limit.
 
-### About `/about` - PASS
+### C021 - OPEN / FIRST RESERVE
 
-Implementation:
+Question:
 
-`src/pages/about.astro`
+> How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
 
-Current framing:
+Topic: `Technology`  
+Priority: `HIGH`
 
-> Portfilo is a business and technology publication.
+Do not activate C021 while C001, C009, and C017 occupy the three substantial active-research slots.
 
-> We cover companies, startups, AI, markets, products, and the work of building them.
+## C001 initial source-reconnaissance status
 
-Founder treatment remains minimal.
+The first C001 pass identified plausible source paths through:
 
-### Research & Standards `/standards` - PASS
+- the Philippine AI Report 2025 as industry-survey landscape evidence;
+- DOST AIgnite and ACABAI-PH implementation programs;
+- DOST's August 2026 MSME AI capacity-building work;
+- National Privacy Commission AI/privacy guidance;
+- Globe public/company reporting on deployed AI use cases;
+- PLDT/Smart filings and named production initiatives;
+- vendor/partner case studies as leads only.
 
-Implementation:
+Important contradiction already recorded:
 
-`src/pages/standards.astro`
+The public Swarm report page says 65% of surveyed organizations remain at proof-of-concept, while a displayed chart on the same page labels proof-of-concept at 40%. The packet must resolve the denominator/methodology before Portfilo uses the 65% figure as a factual claim.
 
-Standards cover:
+Vendor/company success metrics remain reported claims until independently verified.
 
-- Sources
-- Verification
-- AI use
-- Corrections
-- Commercial independence
+## Public surfaces - PASS
 
-### Story template - PASS
+Current validated surfaces remain:
 
-Implementation:
+- shared `SiteHeader` / `SiteFooter`;
+- Homepage `/`;
+- About `/about`;
+- Research & Standards `/standards`;
+- Story template;
+- Series template;
+- Confirmation `/confirmed`;
+- Subscribe `/subscribe` plus the approved single-purpose Cloudflare Pages Function.
 
-`src/pages/stories/[slug].astro`
-
-Story content, metadata, methodology, corrections, figures, and Content Collection behavior remain intact.
-
-### Series template - PASS
-
-Implementation:
-
-`src/pages/series/[slug].astro`
-
-Series ordering and fixture behavior remain intact. Reader-facing Series ID cleanup is complete.
-
-### Confirmation `/confirmed` - PASS
-
-Implementation:
-
-`src/pages/confirmed.astro`
-
-Purpose:
-
-- Portfilo-owned post-double-opt-in destination;
-- transactional, not a marketing surface;
-- shared SiteHeader/SiteFooter;
-- `noindex`;
-- one confirmation statement and CTA back to `/#latest`.
-
-Temporary Pages route:
-
-`https://portfilo-app.pages.dev/confirmed`
-
-The final beehiiv Opt-in Redirect must point to the canonical production `/confirmed` route after the public domain is connected. The temporary redirect target was identified during testing but its saved Beehiiv configuration was not separately re-verified in the repository checkpoint.
-
-### Subscribe `/subscribe` - LOCAL + LIVE FLOW PASS
-
-Visible page:
-
-`src/pages/subscribe.astro`
-
-Server endpoint:
-
-`functions/api/subscribe.js`
-
-Architecture:
-
-Portfilo renders its own signup form and forwards requests through one narrow Cloudflare Pages Function to beehiiv.
-
-The function:
-
-- accepts POST only;
-- performs same-origin browser checking;
-- enforces request-size limits including actual body bytes;
-- validates email server-side;
-- uses a honeypot;
-- reads `BEEHIIV_API_KEY` only server-side;
-- calls beehiiv API V2;
-- uses `reactivate_existing: true`;
-- uses `send_welcome_email: false`;
-- uses `double_opt_override: "on"`;
-- stores no subscriber database in Portfilo;
-- returns safe errors.
-
-beehiiv owns confirmation-token handling, subscriber state, delivery, unsubscribe handling, and deliverability infrastructure.
-
-Validated locally and on the temporary live Pages deployment:
-
-- native signup: PASS;
-- Pages Function -> beehiiv: PASS;
-- double-opt-in email delivery: PASS;
-- confirmation: PASS;
-- Pending -> Active subscriber transition: PASS.
-
-The custom Resend/Turnstile/token confirmation experiment remains rejected and removed.
+Fixture story language remains preview material until real launch stories are researched, approved, and published.
 
 ## Email system - PASS
 
@@ -409,23 +247,11 @@ Reusable template:
 
 `Portfilo Brief v0`
 
-Canonical implementation and per-issue operating instructions:
+Canonical instructions:
 
 `docs/BEEHIIV_EMAIL_SETUP.md`
 
-Architecture remains:
-
-- beehiiv Visual Editor;
-- one column;
-- paper background;
-- restrained editorial hierarchy;
-- no custom HTML dependency;
-- optional 16:9 lead image;
-- variable one-story or multi-story issue structure;
-- optional restrained correction module;
-- beehiiv-managed footer and unsubscribe behavior.
-
-QA completed:
+Validated state remains:
 
 - desktop preview: PASS;
 - mobile preview: PASS;
@@ -434,61 +260,30 @@ QA completed:
 - optional correction treatment: PASS;
 - optional lead-image treatment: PASS;
 - real inbox test: PASS, user reported;
-- double-opt-in confirmation email revision: published / PASS.
+- double-opt-in confirmation flow: PASS;
+- Welcome Email: OFF;
+- Smart Nudge: OFF for v0;
+- sender name: `Portfilo`;
+- Reply-To: `portfilo.ph@gmail.com`.
 
-Welcome Email: OFF.
+beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and deliverability infrastructure.
 
-Smart Nudge: OFF for v0.
+## Site launch foundation / repository hardening - PASS
 
-Sender name: `Portfilo`.
-
-Reply-To: `portfilo.ph@gmail.com`.
-
-The provider-managed unsubscribe/preferences link remains required and may open a beehiiv-hosted subscriber profile. Do not replace beehiiv's unsubscribe state handling in v0.
-
-## Site launch foundation - PASS
-
-Task 1A implementation includes:
+Task 1A and Task 1B remain validated, including:
 
 - optional production `SITE_URL` contract;
-- canonical URLs;
-- Open Graph/social metadata;
-- conditional sitemap;
-- robots.txt;
+- canonical/social metadata when `SITE_URL` is set;
+- sitemap/robots behavior when `SITE_URL` is set;
 - Article structured data;
-- custom 404;
-- Privacy page;
-- default social image;
-- static security-header baseline;
-- `astro check` in the production build;
-- cross-platform vector treatment for small up-right link arrows.
+- custom 404 and Privacy page;
+- static security headers;
+- `astro check` in production build;
+- 4 KB subscribe request cap;
+- same-origin, honeypot, validation, safe-error, and beehiiv behavior;
+- prior dependency audit at 0 vulnerabilities on 2026-09-02.
 
-`SITE_URL` is intentionally unset until the real canonical domain exists.
-
-No preview or `pages.dev` URL should become the canonical site origin.
-
-## Task 1B repository hardening - PASS
-
-Repository-side hardening includes:
-
-- 4 KB request cap enforced against actual request body bytes;
-- early `Content-Length` rejection retained;
-- JSON, URL-encoded, and multipart input support retained;
-- same-origin, honeypot, validation, safe-error, and beehiiv behavior retained;
-- production setup contract in `docs/CLOUDFLARE_PRODUCTION_SETUP.md`.
-
-Validated through the prior isolated GitHub Actions run:
-
-- `npm ci`: PASS;
-- dependency audit: 0 vulnerabilities on 2026-09-02;
-- mocked valid signup: PASS;
-- cross-origin rejection: PASS;
-- oversized body -> `413`: PASS;
-- URL-encoded path: PASS;
-- multipart path: PASS;
-- honeypot behavior: PASS;
-- `npm run build`: PASS;
-- build with validation-only `SITE_URL`: PASS.
+No new application code changed during launch selection or the current research-packet work, so no new build validation is claimed for these documentation/research commits.
 
 ## Temporary production deployment - PASS / final domain pending
 
@@ -504,15 +299,14 @@ Production branch:
 
 `build/portfilo-v0`
 
-Validated, user reported:
+Previously validated, user reported:
 
 - Pages deployment: PASS;
-- production `BEEHIIV_API_KEY` secret available to deployed function: PASS;
+- production `BEEHIIV_API_KEY` secret: PASS;
 - live signup: PASS;
 - beehiiv confirmation email: PASS;
-- confirmation: PASS;
-- Active subscriber state: PASS;
-- cross-platform arrow fix after deployment: PASS on iOS.
+- Pending -> Active subscriber state: PASS;
+- cross-platform link-arrow rendering: PASS on iOS.
 
 Still pending:
 
@@ -524,6 +318,8 @@ Still pending:
 - final-domain subscribe -> confirm -> `/confirmed` -> Active -> unsubscribe QA;
 - mailing-address/compliance clearance before the first public newsletter send.
 
+The temporary beehiiv redirect target was identified during testing but its saved configuration was not separately re-verified. Do not claim it is configured unless explicitly tested/confirmed.
+
 Do not add Turnstile unless deployed traffic shows a real abuse problem after the existing honeypot and edge rate limit are active.
 
 ## Validation status
@@ -532,42 +328,25 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 |---|---|
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
-| Foundation | PASS |
-| Content Architecture | PASS |
-| Editorial Design | PASS |
-| Wordmark | PASS |
-| Editorial Taxonomy | PASS |
-| Shared SiteHeader/SiteFooter | PASS |
-| Homepage | PASS |
-| About | PASS |
-| Standards | PASS |
-| Story template | PASS |
-| Series template | PASS |
-| `/confirmed` route | PASS, local browser QA |
-| Subscribe end-to-end | PASS, local + temporary live Cloudflare flow through Active |
+| Foundation / Content Architecture / Editorial Design | PASS |
+| Shared chrome and public pages | PASS |
+| Story and series templates | PASS |
+| Subscribe end-to-end | PASS, local + temporary live flow through Active |
 | beehiiv double opt in | PASS |
 | Portfilo Brief reusable template | PASS |
-| Portfilo Brief desktop/mobile QA | PASS |
-| Portfilo Brief real inbox test | PASS, user reported |
+| Portfilo Brief inbox test | PASS, user reported |
 | Task 1A site launch foundation | PASS |
-| `astro check` | PASS |
-| Production build | PASS |
-| Canonical/social metadata | PASS when `SITE_URL` is set |
-| Sitemap/robots | PASS when `SITE_URL` is set |
-| Custom 404 | PASS |
-| Privacy surface | PASS |
-| Article structured data | PASS when `SITE_URL` is set |
-| Static security headers | PASS |
 | Task 1B request-body hardening | PASS |
 | Dependency audit | PASS, 0 vulnerabilities on 2026-09-02 |
 | Cloudflare temporary production deployment | PASS, user reported |
-| Production `BEEHIIV_API_KEY` secret | PASS, live function verified |
-| Live subscribe -> confirm -> Active | PASS, user reported |
-| Cross-platform link-arrow rendering | PASS, user iOS QA |
 | Content Planning System v0 | APPROVED / PASS |
-| Editorial Launch Research | ACTIVE |
-| First real launch package | PENDING research |
-| Fixture content replacement | PENDING launch stories |
+| Editorial Launch Research | COMPLETE / APPROVED |
+| First real launch package | APPROVED |
+| C001 flagship packet | ACTIVE / CONTINUE |
+| C009 supporting packet | ACTIVE / brief started |
+| C017 supporting packet | ACTIVE / brief started |
+| C021 reserve | OPEN / QUEUED |
+| Fixture content replacement | PENDING verified launch stories |
 | Final-domain Cloudflare configuration | PENDING domain |
 | Production Opt-in Redirect | PENDING final canonical domain; temporary target not separately re-verified |
 | Cloudflare edge rate limiting | PENDING |
@@ -577,23 +356,19 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 
 ## Remaining launch scope
 
-The publishing and planning systems are ready. Remaining work is now split into two tracks.
-
 ### Editorial track
 
-- run Editorial Launch Research;
-- identify audience and market signals without treating them as evidence for an individual story;
-- map competitors and existing coverage;
-- identify information gaps;
-- build a credible candidate-story pool;
-- evaluate candidates through `docs/CONTENT_PLANNING.md`;
-- decide whether a series is actually justified;
-- select the first real launch package;
-- create research packets for approved substantial stories;
-- research, draft, verify, and publish under the canonical editorial standards;
-- prepare imagery/graphics only where editorially justified;
-- replace/remove fixture content;
-- populate the homepage with real stories.
+- continue C001 source reconnaissance and access testing;
+- secure real case/operator evidence below vendor-marketing level;
+- resolve the Swarm 65% vs 40% discrepancy before using that statistic;
+- develop C001 evidence ledger and contradiction search;
+- run source reconnaissance for C009 and C017;
+- make story decisions separately for each active packet;
+- draft only from verified/qualified packet evidence;
+- run adversarial review and claim audit;
+- prepare visuals/graphics only where evidence makes them useful;
+- replace fixture content with verified stories;
+- populate the homepage and Portfilo Brief from published work.
 
 ### Deployment track
 
@@ -603,7 +378,7 @@ When the canonical domain is available:
 - set `SITE_URL`;
 - configure edge rate limiting;
 - enable/verify Web Analytics;
-- update beehiiv Opt-in Redirect to the canonical `/confirmed` route;
+- update beehiiv Opt-in Redirect to canonical `/confirmed`;
 - complete final subscribe/confirm/unsubscribe QA;
 - verify canonical/social/sitemap/robots behavior;
 - complete mailing-address/compliance clearance;
@@ -613,21 +388,16 @@ Do not treat post-launch enhancements as v0 blockers.
 
 ## Exact next task
 
-**Run Editorial Launch Research using `docs/CONTENT_PLANNING.md`.**
+**Continue C001 flagship source reconnaissance and test whether the required reporting threshold is achievable.**
 
-Immediate sequence:
+Immediate priorities:
 
-1. create the `research/editorial-launch/` workspace;
-2. define the launch-research brief and decision criteria;
-3. research audience signals relevant to Portfilo's initial editorial focus;
-4. map current Philippine/regional/international coverage relevant to Business, Technology, Startups, AI, and Building;
-5. identify information gaps and recurring unanswered questions;
-6. build `candidate-stories.md` without assuming a series;
-7. evaluate candidates using the approved editorial gates and priority bands;
-8. evaluate `candidate-series.md` only where multiple strong stories form a real coherent investigation;
-9. write `recommendation.md` selecting the first launch package and explaining why.
-
-Do not begin writing a launch article merely to fill the site before this selection research is complete.
+1. identify and verify 3-5 plausible implementation attempts;
+2. seek evidence below executive and vendor marketing layers;
+3. find at least one stalled/failed/mixed case if possible;
+4. establish direct operator and independent challenge-source targets;
+5. reconcile the Swarm report's POC figures;
+6. update the evidence and contradiction ledgers before any drafting decision.
 
 ## Phase handoff rule
 
