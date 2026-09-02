@@ -56,7 +56,10 @@ The first real editorial series will be chosen through a separate research proje
 6. **Subscribe**
    - Portfilo Brief;
    - native Portfilo newsletter signup UI;
-   - one narrow Cloudflare Pages Function that forwards confirmed-opt-in subscription requests to beehiiv.
+   - Turnstile-protected signup submission;
+   - Portfilo-owned transactional confirmation email through Resend;
+   - Portfilo-owned `/confirmed` destination;
+   - verified subscriber creation in beehiiv only after confirmation.
 
 ### Content system
 
@@ -86,15 +89,19 @@ The first real editorial series will be chosen through a separate research proje
 - Article structured data where appropriate
 - custom 404
 - reduced-motion support
-- one single-purpose Cloudflare Pages Function for newsletter subscription forwarding
+- Cloudflare Pages Functions only for the narrow newsletter confirmation bridge
+- stateless encrypted confirmation tokens with a short expiry
+- no pending-subscriber database or KV store
 
 ### External infrastructure
 
 - GitHub repository
 - Cloudflare Pages
-- Cloudflare Pages Functions for the single newsletter subscription endpoint
+- Cloudflare Pages Functions for newsletter confirmation endpoints
+- Cloudflare Turnstile for signup abuse protection
 - Cloudflare Web Analytics
-- beehiiv for subscriber storage, confirmation, delivery, and unsubscribe handling
+- Resend for transactional confirmation-email delivery only
+- beehiiv for confirmed subscriber storage, newsletter delivery, and unsubscribe handling
 
 ## Explicitly out of scope
 
@@ -114,7 +121,9 @@ Do not build in v0:
 - AI assistant
 - custom CMS
 - admin dashboard
-- custom newsletter platform or backend beyond the single approved beehiiv subscription proxy
+- custom newsletter platform or backend beyond the approved stateless confirmation bridge
+- permanent Portfilo subscriber store
+- pending-subscriber database
 - custom analytics backend
 - advanced site search
 - paywall
@@ -173,15 +182,27 @@ Rationale:
 - custom domains;
 - simple build command and output;
 - integrates cleanly with Cloudflare Web Analytics;
-- Pages Functions allow the approved newsletter subscription proxy without converting the publication to a dynamic application.
+- Pages Functions allow the narrow confirmation bridge without converting the publication to a dynamic application.
+
+### Cloudflare Turnstile
+
+Rationale:
+
+The public signup endpoint can trigger transactional email, so abuse protection is required. Turnstile provides server-verified bot protection while its `interaction-only` appearance keeps the normal reader experience visually unobtrusive.
+
+### Resend
+
+Rationale:
+
+Portfilo needs full control over the transactional confirmation email without operating an SMTP server or rebuilding newsletter delivery. Resend is limited to confirmation-email delivery; it is not Portfilo's newsletter platform or subscriber database.
 
 ### beehiiv
 
 Rationale:
 
-Newsletter sending, subscriber management, confirmation, deliverability, and unsubscribe handling are commodity infrastructure and should not be rebuilt.
+Newsletter sending, confirmed subscriber management, deliverability, and unsubscribe handling remain commodity infrastructure and should not be rebuilt.
 
-The current free Launch tier is sufficient for v0 audience validation. Portfilo renders the signup form itself because the third-party embed did not meet the approved visual and responsive standard; the server-side proxy only forwards subscription requests to beehiiv's official API.
+Portfilo verifies the email address before creating the beehiiv subscriber. The confirmation endpoint therefore creates the verified subscriber with beehiiv double opt-in disabled, while the beehiiv welcome email remains disabled under the current v0 policy.
 
 ## Scale philosophy
 
@@ -195,7 +216,7 @@ Structured content collections mean story #500 follows the same authoring model 
 
 ### Traffic scale
 
-Static delivery minimizes application-server load. The newsletter endpoint is isolated to subscription requests rather than moving the site onto an application server.
+Static delivery minimizes application-server load. The newsletter confirmation endpoints are isolated to signup/confirmation requests rather than moving the site onto an application server.
 
 ### Editorial scale
 
@@ -213,7 +234,7 @@ A frozen v0 choice may be reconsidered when:
 - a validated product feature requires dynamic state;
 - publishing volume makes repository-based authoring operationally inefficient;
 - multiple editors need a safer authoring interface;
-- newsletter needs exceed the current provider;
+- newsletter needs exceed the current providers;
 - analytics questions cannot be answered by the lightweight stack;
 - performance measurements identify a real bottleneck.
 
@@ -230,7 +251,7 @@ v0 is complete when:
 - desktop/mobile layouts are manually inspected;
 - keyboard navigation works;
 - reduced motion is respected;
-- newsletter capture is functional;
+- newsletter capture and confirmation are functional;
 - sitemap/robots/canonical/social metadata are present;
 - 404 works;
 - no obvious broken links or console errors remain;
