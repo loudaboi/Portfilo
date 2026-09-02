@@ -6,7 +6,7 @@ topic: building
 author: "Louda Tuppal"
 publishedAt: 2026-09-03
 status: published
-featured: false
+featured: true
 ---
 
 Two projects can end the same way: they stop.
