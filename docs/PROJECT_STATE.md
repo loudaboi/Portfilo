@@ -8,11 +8,9 @@ _Last updated: 2026-09-03_
 
 The publishing machine and launch-selection system are ready. Editorial Launch Research is complete and the first research slate is approved.
 
-The active editorial question is now:
+C009 is now the first launch assignment whose research packet has reached a `PUBLISH` story decision. `PUBLISH` means evidence supports drafting; it does not mean the story is publicly published yet.
 
-> Can the approved launch assignments produce evidence strong enough to publish?
-
-Do not draft a launch article before its individual research packet supports a story decision.
+Do not create public story content before drafting, adversarial review, claim audit, and headline/methodology review are complete.
 
 ## Current branch
 
@@ -210,17 +208,48 @@ C001 remains active and may pursue realistic outreach, but it must not make Port
 
 The Swarm Philippine AI Report 2025 discrepancy remains unresolved: narrative text says 65% remain at proof-of-concept while a chart on the same page labels proof-of-concept at 40%. Do not use the 65% figure as a Portfilo factual anchor until the denominator/question logic is reconciled.
 
-### C009 - ACTIVE / SUPPORTING / CONTINUE
+### C009 - ACTIVE / SUPPORTING / PUBLISH
 
-Question:
+Original planning question:
 
 > What does "higher-value work" actually mean inside Philippine IT-BPM?
+
+Current publishable question:
+
+> What jobs are Philippine IT-BPM employers actually talking about when they say `higher-value work`?
 
 Topic: `Business`  
 Priority: `HIGH`  
 Packet: `research/stories/it-bpm-higher-value-work/`
 
-Current packet stage: research brief created. Detailed public-data/source research is the next active reporting task.
+Current packet includes:
+
+- `brief.md`;
+- `sources.md`;
+- `sample.md`;
+- `evidence.md`;
+- `contradictions.md`;
+- `notes.md`.
+
+The first full public-data/source pass is complete and produced the first `PUBLISH` decision in the launch slate.
+
+### C009 findings now established
+
+- `higher-value work` is not a standardized occupation category;
+- official Philippine skills frameworks show specialized work across contact-center/BPM, GCC/shared services, healthcare information management, software/security and related capability areas;
+- specialized roles can exist inside traditional contact-center/BPM operations, including workforce management, quality, transformation and security;
+- a 15-role structured illustrative sample of current employer postings shows domain-intensive finance/healthcare work, data/technology work, process/control work and GCC/capability-ownership work;
+- the most defensible explanatory dimensions are domain depth, technical/data depth, judgment/control responsibility, process/system ownership and stakeholder scope;
+- `voice vs non-voice`, `AI vs non-AI`, job title and `technical vs non-technical` are inadequate shortcuts by themselves;
+- some specialist work is accessible earlier in a career while other roles require professional credentials or substantial experience.
+
+The packet does **not** establish representative sector-wide job shares, wage premiums, displacement/absorption, worker-transition probabilities, or that every specialist role is a better job.
+
+Compensation was removed from the central C009 conclusion because the current employer-primary sample lacks sufficiently comparable salary disclosure and broad official wage data do not map cleanly onto the role taxonomy.
+
+Interviews are `NOT REQUIRED` for this documentary Explained/Analysis version. They may become important for later worker-transition, realized-pay, job-quality, or employer-strategy questions.
+
+**Drafting status: READY TO DRAFT FROM VERIFIED PACKET.**
 
 ### C017 - ACTIVE / SUPPORTING / REFRAME / CONTINUE
 
@@ -245,7 +274,7 @@ Current packet includes:
 - `notes.md`;
 - `implementation-basis.md`.
 
-The first public-evidence pass reframed the story. A second implementation-basis audit has now substantially exhausted the currently indexed BSP/PPMI documentary route.
+The first public-evidence pass reframed the story. A second implementation-basis audit substantially exhausted the currently indexed BSP/PPMI documentary route.
 
 ### C017 findings now established
 
@@ -393,7 +422,7 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 | Editorial Launch Research | COMPLETE / APPROVED |
 | First real launch package | APPROVED |
 | C001 flagship packet | ACTIVE / CONTINUE / outreach ready, not draft ready |
-| C009 supporting packet | ACTIVE / CONTINUE / brief started |
+| C009 supporting packet | ACTIVE / PUBLISH / ready to draft from packet |
 | C017 supporting packet | ACTIVE / REFRAME / CONTINUE / public-document route substantially exhausted |
 | C021 reserve | OPEN / QUEUED |
 | Fixture content replacement | PENDING verified launch stories |
@@ -408,14 +437,12 @@ Do not add Turnstile unless deployed traffic shows a real abuse problem after th
 
 ### Editorial track
 
-- pursue a narrow BSP/PPMI clarification for C017 when approved, without blocking the publishing schedule;
+- draft C009 from its verified/qualified research packet;
+- run C009 adversarial review, claim audit, headline/dek audit and methodology/source presentation decision;
+- only then create the public C009 story file and replace the relevant fixture content;
+- pursue a narrow BSP/PPMI clarification for C017 when appropriate, without blocking the publishing schedule;
 - keep C001 active with access-aware outreach/document research rather than waiting indefinitely for low-probability replies;
-- run detailed public-data/source research for C009;
-- make story decisions separately for each active packet;
-- draft only from verified/qualified packet evidence after a `PUBLISH` decision;
-- run adversarial review and claim audit;
 - prepare visuals/graphics only where evidence makes them useful;
-- replace fixture content with verified stories;
 - populate the homepage and Portfilo Brief from published work.
 
 ### Deployment track
@@ -436,19 +463,18 @@ Do not treat post-launch enhancements as v0 blockers.
 
 ## Exact next task
 
-**Run the first full public-data/source research pass for C009: what `higher-value work` actually means inside Philippine IT-BPM.**
+**Draft C009 from the verified research packet.**
 
-Immediate priorities:
+Drafting requirements:
 
-1. define a defensible working taxonomy for the roles described as higher-value or AI-enabled;
-2. identify current employer career pages and job postings suitable for a structured sample;
-3. establish the skills, experience, education, and compensation fields that can be compared reliably;
-4. collect current IBPAP, official, employer, and high-quality industry evidence on the sector's stated transition;
-5. distinguish advertised roles and compensation from actual employment outcomes;
-6. build `sources.md`, `evidence.md`, `contradictions.md`, and working notes before any drafting decision;
-7. make a C009 story decision after the first public-data pass.
+1. use the narrowed question and supported finding recorded in `research/stories/it-bpm-higher-value-work/brief.md`;
+2. use official skills frameworks as the structural backbone and the 15-role sample as concrete evidence;
+3. do not introduce unsupported salary, prevalence, displacement, growth or worker-transition claims;
+4. distinguish industry claims from Portfilo's analytical synthesis;
+5. keep the structured sample's non-prevalence limitation visible where it materially affects interpretation;
+6. after drafting, run adversarial review and a claim-by-claim audit before creating public story content.
 
-C017 remains active for targeted clarification and C001 remains active for access-aware reporting, but neither should block this public-data assignment.
+C001 and C017 remain active in parallel, but C009 is now the first story ready to move from research into drafting.
 
 ## Phase handoff rule
 
