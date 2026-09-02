@@ -20,7 +20,7 @@ Assignment state here supersedes the pre-evaluation `OPEN / PENDING` snapshot re
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE | `research/stories/ai-pilot-to-production/` |
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
-| C027 | Featured Perspective candidate | What do you build first when you want to make something meaningful but do not yet have much leverage? | Building | PASS | HIGH | PUBLISH / DRAFT READY | `research/stories/building-the-foundation/` |
+| C027 | Featured Perspective candidate | What is a first project actually for when you are still figuring out what you can build and where you want to go? | Building | PASS | HIGH | REFRAME / DRAFT V2 FOR USER REVIEW | `research/stories/building-the-foundation/` |
 
 C001, C017, and C027 are `ACTIVE`.
 
@@ -32,34 +32,57 @@ Likely content type: `Perspective`.
 
 Primary reader need: `Interpret`.
 
-The research/evaluation pass rejected a generic `grind harder` framing and also rejected making `taste is the new bottleneck` the main thesis because that framing is already crowded in 2026 builder commentary.
+### Draft v1 decision
 
-Current thesis:
+**REJECT / DO NOT POLISH.**
 
-> An early weak starting position is better understood as a changing sequence of bottlenecks. AI can compress some knowledge and execution barriers, but it does not eliminate the need to build judgment, skills, habits, relationships, trust, user understanding, and other forms of durable capability.
+The first internal draft tried to combine too many ideas from the discovery conversation: starting without leverage, bottleneck migration, AI, skills, habits, relationships, trust, reputation, and user understanding. Reader review found the message difficult to identify and the structure unnecessarily complicated.
 
-The research packet contains:
+That diagnosis is accepted. Draft v1 is preserved only as editorial history in:
 
-- `brief.md`;
-- `sources.md`;
-- `evidence.md`;
-- `contradictions.md`;
-- `notes.md`;
-- `draft.md`.
+`research/stories/building-the-foundation/draft-v1-review.md`
 
-The first internal draft is **not public** and has no entry under `src/content/stories/`.
+### Topic + structure reset
 
-Research support includes randomized and workplace evidence that generative AI can disproportionately improve performance for less-experienced or lower-education participants in specific tasks, plus counterevidence showing productivity gains are context-dependent and do not automatically translate into durable learning.
+A fresh craft/topic review was completed before redrafting.
 
-The draft must not claim:
+Research file:
 
-- that anyone can succeed if they work hard enough;
-- that AI erases differences in expertise, opportunity, capital, or network;
-- that software or building is `free`;
-- that the bottleneck sequence is universal;
-- that the author's personal path is proof of a general rule.
+`research/stories/building-the-foundation/topic-structure-research.md`
 
-Next C027 step: Louda reviews the internal draft for voice, relatability, and whether the idea feels like Portfilo rather than motivational content. If the direction passes, continue with adversarial review, factual claim audit, editorial pass, and headline/dek audit before creating any public content entry.
+The reset reviewed essay guidance and examples from Longreads, Nieman Storyboard, Paul Graham, Morgan Housel, current 2026 builder coverage, and community signals from early builders.
+
+Key decision:
+
+- use one clear thread rather than forcing every relevant idea into the article;
+- use a single-thread funnel: tension -> reframe -> concrete development -> implication -> counterargument -> resolution;
+- keep the reader, not the author, at the center;
+- do not make AI central because that angle is already crowded and it weakened the original message;
+- do not turn the piece into a checklist about skills, habits, networking, or hustle.
+
+### Selected C027 idea
+
+> An early project does not have to become your future. It should teach you something real about what to do next.
+
+Current reader question:
+
+> What is a first project actually for when you are still figuring out what you can build and where you want to go?
+
+Draft v2:
+
+`research/stories/building-the-foundation/draft-v2.md`
+
+Draft v2 evaluation:
+
+`research/stories/building-the-foundation/draft-v2-evaluation.md`
+
+Current result:
+
+**DIRECTION PASS FOR USER REVIEW / NOT A PUBLICATION DECISION.**
+
+Draft v2 deliberately excludes AI, `starting from nothing`, a universal bottleneck model, biography, grind framing, and a catalogue of skills/habits/network/reputation. Those ideas may be valid elsewhere but are not required for this thread.
+
+No C027 file exists under `src/content/stories/`. Nothing is public and no publication approval has been requested.
 
 ## Published launch stories
 
