@@ -22,7 +22,9 @@ Individual story packets supersede those planning snapshots for current research
 | C017 | Supporting | What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules? | Business | PASS | HIGH | REFRAME / CONTINUE | `research/stories/zero-fee-merchant-payments/` |
 | C021 | Supporting / next launch research | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | CONTINUE / SOURCE RECONNAISSANCE | `research/stories/data-center-capacity-ledger/` |
 
-C001, C017, and C021 are `ACTIVE`. This fills the normal v0 three-story active-research limit.
+C001, C017, and C021 remain `ACTIVE`. This fills the normal v0 three-story active-research limit.
+
+C029 is not active. Its approved desk-research pilot has now passed feasibility and produced a reframe, but the full corpus has not been authorized as an active assignment and C021 has not been displaced.
 
 ## Published launch stories
 
@@ -93,7 +95,7 @@ Do not let that clarification block the rest of the publishing schedule.
 
 ## C021 checkpoint
 
-C021 was activated on 2026-09-03 after Louda Tuppal approved putting C029 on hold because its original reader fieldwork is not currently feasible.
+C021 was activated on 2026-09-03 when the original fieldwork-dependent version of C029 was paused.
 
 Question:
 
@@ -147,14 +149,6 @@ The first source pass already shows that public Philippine data-center numbers a
 
 This is a promising information gap, not yet a publishable conclusion.
 
-Examples requiring reconciliation include:
-
-- DICT-linked current-capacity estimates around/below 200 MW versus operator-level portfolio numbers;
-- STT portfolio totals versus current facility-page labels such as `Launching Soon` and `Under Development`;
-- VITRO Sta. Rosa's 36 MW current facility figure versus older initial-phase language;
-- YCO Malvar One's utility/energized-power figures versus older critical-IT-load figures;
-- Evolution/Megawide's stated Q3 2026 RFS versus lack of a verified current launch in the first pass.
-
 No national subtotal is authorized yet.
 
 If a clean bottom-up subtotal cannot be built, C021 may validly reframe to:
@@ -163,27 +157,83 @@ If a clean bottom-up subtotal cannot be built, C021 may validly reframe to:
 
 Do not draft until the major operator census and contradiction search are substantially complete.
 
-## Held assignments
+## Reframed / decision-pending research
 
-### C029 - HOLD / FIELDWORK REQUIRED
+### C029 - REFRAME / DESK PILOT PASS / FULL CORPUS REQUIRED / NOT ACTIVE
 
-Question:
+Working label:
 
-> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
+`The second question after the headline`
+
+Current desk-research question:
+
+> What questions surface in public Reddit discussion around preselected Philippine business and technology news events after the initial update?
 
 Packet:
 
 `research/stories/second-question-after-headline/`
 
-C029 remains editorially promising, but its intended original contribution requires observing actual reader behavior through diaries and walkthroughs. That participant recruitment is not practical at Portfilo's current stage.
+Planning history:
 
-Public comments, Reddit, search data, and desk research may supply community signals, but they are not valid substitutes for the planned behavior fieldwork while keeping the same claim.
+`PASS TO RESEARCH -> HOLD FOR ACCESS -> REFRAME / DESK PILOT PASS`
 
-Revisit trigger:
+The original fieldwork version remains preserved, but fieldwork is no longer a prerequisite for the narrower desk version because the research question itself has changed.
 
-Resume when Portfilo can recruit at least 10 suitable participants without relying almost entirely on Louda Tuppal's immediate friend/founder/supporter circle.
+Pilot files:
 
-Do not draft C029 while held.
+- `desk-pilot.md` - six events locked before discussion search;
+- `desk-pilot-questions.csv` - question-level coding ledger;
+- `desk-pilot-results.md` - pilot evaluation and full-corpus design.
+
+Pilot sample counts:
+
+- 6 preselected events;
+- 4 with eligible related public discussion traces;
+- 3 with at least one usable information-seeking question;
+- 14 usable questions coded;
+- 3 zero-question / no-clean-discussion cases preserved.
+
+Question-to-source-story relation in the pilot:
+
+- `ANSWERED`: 2;
+- `PARTIAL`: 4;
+- `UNANSWERED`: 5;
+- `EXPANDS_FRAME`: 3.
+
+These are corpus counts only. They are not estimates of Filipino reader behavior or prevalence.
+
+The pilot's strongest methodological finding is that public follow-up questions do not all indicate missing reporting. Some are already answered by the source story, some are partly answered, some ask for information the update did not establish, and some expand into a different but relevant frame.
+
+That comparison is the desk version's potential original contribution:
+
+`selected news event -> visible public question -> what the source story already established`
+
+### Full-corpus threshold
+
+Before a new C029 story decision, the recommended method is a 24-event Reddit-only corpus with four clusters of six preselected events:
+
+1. AI / work / enterprise adoption;
+2. companies / startups / markets;
+3. fintech / platforms / regulation;
+4. infrastructure / data centers / semiconductors.
+
+All events must be selected before discussion search. Use a fixed 0-7 day primary discussion window, preserve zero-result cases, require a clear event match, and code each genuine information-seeking question as both a question type and `ANSWERED / PARTIAL / UNANSWERED / EXPANDS_FRAME / UNCLEAR` relative to the selected source story.
+
+Do not claim:
+
+- that the sample represents Filipino readers;
+- that commenters are young;
+- what commenters read first;
+- what private search/AI path they used;
+- why they missed information already in an article;
+- that every unanswered question is a reporting failure;
+- that Portfilo is the solution.
+
+Current outcome:
+
+`REFRAME / PILOT PASS / FULL CORPUS REQUIRED`.
+
+No article draft is authorized. C021 remains active until Louda Tuppal deliberately chooses whether C029 should receive an active slot for the full corpus.
 
 ## Passed but unassigned
 
@@ -203,8 +253,10 @@ Reframed, held, and killed candidates remain preserved in `evaluation.md` and `c
 
 Portfilo v0 should generally keep no more than three substantial stories in active research and no more than one flagship investigation in active production at once.
 
-Current WIP:
+Current active WIP:
 
 - C001;
 - C017;
 - C021.
+
+C029 is decision-pending research and does not currently occupy an active slot.
