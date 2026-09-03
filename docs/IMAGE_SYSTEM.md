@@ -241,6 +241,30 @@ If real HTML, captions or adjacent editorial material already supply context, th
 
 A more complex scene is allowed only when the approved brief explicitly establishes why the extra elements are necessary.
 
+### Physical and logical plausibility gate
+
+Every generated image must make immediate physical and spatial sense before aesthetic quality is considered.
+
+Generator instructions should minimize opportunities for invented geometry or mechanical hallucination. Prefer simple, familiar, understandable relationships over elaborate structures, machinery, joints, assemblies or environments unless the approved image job genuinely requires that complexity.
+
+Before generation, ask whether the proposed subject requires the model to invent structural or mechanical logic it may not reliably preserve. If so, simplify the subject, reduce the number of interacting parts, or use a more generic relationship whose function is visually obvious.
+
+After generation, reject any candidate when a reasonable viewer cannot quickly understand how the depicted space, object or action could physically work. Check especially:
+
+- structural supports and load-bearing relationships;
+- joints, connections and attachment points;
+- object intersections and impossible overlaps;
+- doors, stairs, rails, walls, floors and architectural circulation;
+- machinery, moving parts, tools and process flow;
+- gravity, balance, scale and perspective;
+- human anatomy, posture and contact with objects;
+- repeated elements whose geometry changes without reason;
+- shadows, reflections or lighting that imply impossible spatial relationships.
+
+A visually attractive image does **not** pass if its physical logic is ambiguous, awkward or impossible.
+
+When uncertain, prefer a simpler composition with fewer interacting elements rather than asking the generator to improvise hidden engineering or spatial logic.
+
 ### One asset per execution
 
 Generate one independent topic, story asset or visual concept per execution by default.
@@ -594,6 +618,8 @@ Check:
 
 Check:
 
+- physical/spatial logic is immediately understandable;
+- structural supports, joints and object connections make sense;
 - anatomy/physical plausibility;
 - impossible object geometry;
 - duplicated/repeated objects;
