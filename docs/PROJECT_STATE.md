@@ -4,11 +4,11 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 2A DEPLOYED REVIEW PASS / PHASE 2B AWAITING APPROVAL**
+**Portfilo v0 / Writing System Upgrade - PHASE 2B IMPLEMENTED / DEPLOYED VISUAL REVIEW REQUIRED**
 
-Portfilo's publishing system, research standards, first published stories, homepage integration, and Portfilo Brief foundation remain in place.
+Portfilo's publishing system, research standards, first published stories, `/stories` archive, and Portfilo Brief foundation remain in place.
 
-A system-level writing correction is underway. Portfilo now separates factual authority from stylistic authority and requires writing-form decisions before drafting.
+The current system-level correction addresses a specific failure mode: verified ideas and product decisions being presented through generic, invented, or AI-shaped prose.
 
 Core rules:
 
@@ -19,14 +19,6 @@ Core rules:
 > **AI output has zero stylistic authority.**
 
 No permanent tagline by default.
-
-Phase 1 writing-system work is complete.
-
-Phase 2 site-copy/information-architecture audit is complete and approved.
-
-Phase 2A structural implementation is complete and has passed user review on the deployed Cloudflare Pages site. The user confirmed on 2026-09-03 that `/stories` is visible and usable on the deployed site and that normal article pages do not display synthetic series treatment.
-
-A local `npm run build` was not run or reported for Phase 2A. Do not convert the deployed visual review into a claim that local build validation passed.
 
 ## Current branch
 
@@ -44,6 +36,7 @@ Project/product:
 - `docs/PROJECT_STATE.md`
 - `docs/CONTENT_PLANNING.md`
 - `docs/SITE_COPY_AND_IA_AUDIT.md`
+- `docs/SITE_COPY_IMPLEMENTATION.md`
 
 Editorial/research/writing:
 
@@ -65,9 +58,93 @@ Email/deployment:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-## Editorial model
+## Writing-system state
 
-Portfilo is the publication. Articles are the journalism. Portfilo Brief distributes published work by email.
+Phase 1 is complete.
+
+`docs/WRITING_SYSTEM.md` is canonical for writing-form selection and stylistic authority.
+
+Every substantial story requires a pre-draft `style-brief.md` using `research/STYLE_BRIEF_TEMPLATE.md`.
+
+AI may assist with drafting and editing after the writing form is selected. It does not establish facts, silently choose the authoritative structure or voice, or invent Portfilo's institutional position.
+
+Existing published Portfilo prose is not automatically an approved style exemplar.
+
+## Phase 2A - metadata and information architecture
+
+Status:
+
+**IMPLEMENTED / DEPLOYED USER REVIEW PASS**
+
+Implemented:
+
+- story schema split into `title`, `dek`, and `description`;
+- story pages render `dek`;
+- cards/archive/search/social metadata use `description`;
+- `/stories` archive exists and lists published stories newest first;
+- global navigation uses `Stories` -> `/stories`;
+- homepage retains `Latest` as a section label;
+- confirmation and 404 actions use `Browse stories` -> `/stories`;
+- synthetic `fixture: true` series are excluded from production static paths while remaining available in development;
+- retired package positioning was replaced with the literal package description `Portfilo is a business and technology publication.`
+
+User deployed review on Cloudflare Pages confirmed `/stories` was visible and usable and normal article pages did not show synthetic series treatment.
+
+A local `npm run build` was not run or reported for Phase 2A. Do not convert deployed visual review into a claim that local build validation passed.
+
+One narrow final-release check remains: directly confirm that `/series/content-architecture-fixtures` and any corresponding sitemap entry are absent from production.
+
+## Phase 2B - site copy
+
+Status:
+
+**IMPLEMENTED / DEPLOYED VISUAL REVIEW REQUIRED**
+
+Implementation record:
+
+`docs/SITE_COPY_IMPLEMENTATION.md`
+
+### Homepage
+
+- removed the temporary fixture-era descriptor;
+- removed repeated `Featured story` labeling;
+- removed repeated `Published stories` labeling while retaining the Latest story count;
+- kept the approved topic taxonomy, literal About statement, story metadata, and operational Portfilo Brief copy;
+- introduced no replacement tagline or marketing slogan.
+
+### About
+
+- replaced `Stories take different forms.` with the literal `Editorial types`;
+- aligned format copy with the editorial standard;
+- normal editorial formats are Reported, Explained, Guide, Profile, Analysis, Perspective, and Field Notes;
+- commercial Partner content is described separately because it is classified as commercial content.
+
+### Research & Standards
+
+- removed the slogan-like closing `The evidence sets the limit.` rather than replacing it;
+- preserved substantive sourcing, verification, correction, and commercial-independence procedures;
+- aligned the public AI section with the Writing System;
+- public copy now states that AI is not editorial authority for structure, voice, or institutional claims.
+
+### Subscribe
+
+- retained the literal product promise, form instructions, status/error copy, schedule status, confirmation requirement, and unsubscribe statement;
+- replaced repeated `New stories by email.` section copy with `Subscription details`;
+- removed the duplicate beehiiv/provider explanation from Subscribe because provider handling already belongs on Privacy.
+
+### Confirmation / 404
+
+No additional Phase 2B copy change was required after Phase 2A changed their archive action to `Browse stories`.
+
+### Privacy
+
+Privacy was checked against `functions/api/subscribe.js` and remains consistent with the current Cloudflare -> beehiiv signup flow.
+
+No personality rewrite was made.
+
+Re-verify Privacy before final launch if Cloudflare Web Analytics or another data-processing feature is enabled.
+
+## Current editorial model
 
 Top-level topics:
 
@@ -77,7 +154,7 @@ Top-level topics:
 - AI
 - Building
 
-Content types:
+Normal editorial types:
 
 - Reported
 - Explained
@@ -87,6 +164,8 @@ Content types:
 - Perspective
 - Field Notes
 
+Partner is commercial content and must be unmistakably labeled.
+
 Primary reader needs:
 
 - Update
@@ -94,162 +173,29 @@ Primary reader needs:
 - Interpret
 - Decide
 
-Current editorial workflow:
-
-```text
-IDEA
-↓
-RESEARCH BRIEF
-↓
-SOURCE MAP / APPROPRIATE EVIDENCE PLAN
-↓
-RESEARCH / EVIDENCE LEDGER / CONTRADICTION SEARCH
-↓
-STORY DECISION
-↓
-WRITING JOB / FORM SELECTION / STYLE BRIEF
-↓
-DRAFT
-↓
-ADVERSARIAL REVIEW
-↓
-CLAIM AUDIT
-↓
-STRUCTURE / EDITORIAL PASS
-↓
-AI-SLOP / HUMAN-LANGUAGE PASS
-↓
-HEADLINE / DEK / DESCRIPTION AUDIT
-↓
-VISUAL REVIEW
-↓
-PUBLISH
-↓
-DISTRIBUTE
-↓
-CORRECT / UPDATE WHEN NEEDED
-```
-
-Every substantial story requires a pre-draft `style-brief.md`. `AI suggested it` is not sufficient structural or stylistic justification.
-
-## Phase 2A - implemented
-
-### Story metadata split
-
-The Astro story schema now requires:
-
-```yaml
-title:
-dek:
-description:
-```
-
-- `dek` is visible story-header copy.
-- `description` is the compact card/archive/SEO/social/structured-data summary.
-
-The story route renders `dek`; homepage/archive/series cards and metadata use `description`.
-
-There is no permanent `dek ?? description` fallback.
-
-Migration note: C027, C009, C030, and the synthetic fixtures temporarily preserve their old description text in both fields. This was done to avoid inventing new prose during a structural migration. It is not final editorial approval. Each real story must separately author its final dek and description during its writing-system re-audit.
-
-### Stories index
-
-`src/pages/stories/index.astro` exists.
-
-It lists published stories only, newest first, with date, content type, topic, headline, description, author, and story link.
-
-No filters, search, pagination, popularity ranking, or recommendation system were added.
-
-User deployed review: **PASS**.
-
-### Navigation
-
-Header/footer navigation is:
-
-- Stories -> `/stories`
-- Standards
-- About
-- Subscribe
-- Privacy remains footer-only
-
-Homepage `Latest` remains a homepage section label.
-
-User deployed review: **PASS**.
-
-### Confirmation / 404 utility links
-
-`/confirmed` and the custom 404 now point to `/stories` using the functional action `Browse stories`.
-
-### Synthetic series fixture exclusion
-
-`src/pages/series/[slug].astro` filters `fixture: true` entries out of production static paths while allowing them in development mode.
-
-The user confirmed that normal deployed article pages do not display series treatment, which passes the visible article-route review.
-
-The direct production fixture URL and generated sitemap entry have not been independently checked in this session, and no local production build was reported. Keep this narrower verification gap recorded for final release QA.
-
-### Package metadata
-
-Retired positioning copy was removed from `package.json`.
-
-Current literal package description:
-
-`Portfilo is a business and technology publication.`
-
-## Phase 2B - site-copy remediation
-
-Status:
-
-**NOT STARTED / AWAITING USER APPROVAL**
-
-Detailed decisions are in:
-
-`docs/SITE_COPY_AND_IA_AUDIT.md`
-
-Phase 2B must be implemented surface by surface under `docs/WRITING_SYSTEM.md`, not as a free-form site-wide rewrite.
-
-Highest-priority changes:
-
-- homepage: remove or rejustify the temporary descriptor and repeated labels;
-- About: replace generic section copy and make the published-format description match the actual taxonomy;
-- Standards: preserve procedural authority and reconsider the slogan-like closing;
-- Subscribe: remove duplicated product explanation and keep provider handling on Privacy;
-- confirmation/404: keep functional wording unless visual review exposes a real issue;
-- Privacy: verify against the actual deployed data flow, not rewrite for personality;
-- keep functional controls and status/error copy literal unless a usability problem exists.
-
-For every institutional line changed in Phase 2B, record authority from actual behavior, a canonical document, or explicit editor/founder approval.
-
-## Existing stories under the writing system
-
-Existing prose is not automatically a style exemplar merely because it was previously published or approved.
+## Existing story state
 
 ### C027 - PUBLISHED / FEATURED / WRITING RE-AUDIT REQUIRED
 
 **Build things that make the next thing easier**
 
-- topic: Building
-- content type: Perspective
-- author: Louda Tuppal
-- published: 2026-09-03
-- story: `src/content/stories/build-things-that-make-the-next-thing-easier.md`
-- packet: `research/stories/building-the-foundation/`
+Packet:
 
-The premise remains available. Structure, rhythm, examples, headline, dek, description, and prose require a Perspective style brief and writing-system audit. Do not unpublish automatically.
+`research/stories/building-the-foundation/`
+
+The premise remains available. Structure, rhythm, examples, headline, dek, description, and prose must receive a Perspective style brief and writing-system re-audit before launch copy is considered final.
+
+Do not automatically unpublish it.
 
 ### C009 - PUBLISHED / WRITING RE-AUDIT REQUIRED
 
 **What 'higher-value work' means in Philippine IT-BPM**
 
-- topic: Business
-- content type: Explained
-- author: Portfilo
-- published: 2026-09-03
-- story: `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
-- packet: `research/stories/it-bpm-higher-value-work/`
+Packet:
 
-Its evidence base remains valuable. Future work requires an Explained style brief, reader-question structure review, and deliberate final dek/description separation.
+`research/stories/it-bpm-higher-value-work/`
+
+Its evidence base remains valuable. The next writing task is an Explained style brief, reader-question structure review, and deliberate separation of final `dek` from compact `description`.
 
 ### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
 
@@ -257,85 +203,85 @@ Working title:
 
 **What actually changed?**
 
-- content type: Perspective
-- topic: Building - provisional
-- author: Louda Tuppal
-- story: `src/content/stories/what-actually-changed.md`
-- packet: `research/stories/what-actually-changed/`
-- status: draft
-- featured: false
-- no `publishedAt`
+Packet:
 
-The core editorial idea remains available, but the prose is reopened under the new writing system.
+`research/stories/what-actually-changed/`
 
-The migration-preserved old dek is not final:
+The core editorial idea remains available, but the previous prose is reopened under the new writing system.
 
-`An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
+The old migration-preserved dek is not final.
 
-C030 publication remains paused until a new style brief is created and the story passes the new writing gates.
+C030 remains `status: draft`, `featured: false`, with no `publishedAt`. Production must continue to exclude it.
 
-## Active research/editorial assignments
+## Active research assignments
 
-### C001 - ACTIVE / CONTINUE / OUTREACH READY
+### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
 Question:
 
-What separates an AI pilot from a production system inside a Philippine company?
+> What separates an AI pilot from a production system inside a Philippine company?
 
-Important unresolved contradiction: the Swarm Philippine AI Report 2025 narrative says 65% remain at proof-of-concept while a chart on the same page shows 40%. Do not use 65% as a clean factual anchor until reconciled.
+Packet:
 
-No draft until the reporting threshold and writing-style gate are both met.
+`research/stories/ai-pilot-to-production/`
+
+Current state:
+
+`CONTINUE / OUTREACH READY`.
+
+Important unresolved contradiction:
+
+The Swarm Philippine AI Report 2025 narrative says 65% remain at proof-of-concept while a chart on the same page shows 40%. Do not use 65% as a clean factual anchor until reconciled.
+
+No draft is authorized until the reporting threshold is met and a writing style brief is approved.
 
 ### C021 - ACTIVE / SOURCE RECONNAISSANCE
 
 Question:
 
-How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
+> How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
 
-Measurement rules:
+Packet:
 
-- prefer IT-load MW;
-- keep current and future phases separate;
-- never silently equate IT load with utility/energized/facility power;
-- exclude unresolved metrics/statuses from clean subtotals.
+`research/stories/data-center-capacity-ledger/`
 
-No national subtotal is publication-ready. No draft until evidence and writing-style gates are met.
+Keep operating, under-construction, committed, and announced capacity separate. Prefer IT-load MW and do not silently equate it with utility, energized, or facility power.
+
+No national subtotal is publication-ready.
 
 ### C017 - WAITING / EXTERNAL CLARIFICATION
 
-Zero-fee merchant-payment story remains `REFRAME / CONTINUE`; decisive remaining need is narrow written BSP/PPMI clarification. It should not block launch work.
+Question:
+
+> What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
+
+Packet:
+
+`research/stories/zero-fee-merchant-payments/`
+
+Needs narrow written BSP/PPMI clarification. It should not block launch work.
 
 ### C029 - HOLD / FUTURE AUDIENCE RESEARCH
 
-The original audience-behavior study remains potentially valuable. The Reddit-led corpus is rejected as the evidentiary backbone for a launch article. Revisit when professional primary-data collection is feasible.
+Packet:
 
-## Homepage / email / deployment
+`research/stories/second-question-after-headline/`
 
-Homepage hierarchy remains:
+The original behavior question remains potentially valuable. The Reddit-led launch corpus is rejected as the evidentiary backbone. Revisit when professional primary-data collection is feasible.
 
-1. coverage identity;
-2. C027 Featured;
-3. C009 Latest;
-4. About;
-5. Portfilo Brief.
+## Deployment state
 
-Only `status: published` stories are eligible for public homepage placement.
+Cloudflare Pages project:
 
-Portfilo Brief remains operationally validated from prior testing:
+`portfilo-app`
 
-- double opt-in: PASS;
-- sender: `Portfilo`;
-- Reply-To: `portfilo.ph@gmail.com`;
-- Welcome Email: OFF;
-- Smart Nudge: OFF.
+Temporary production URL:
 
-No newsletter distribution has been authorized or sent for C027 or C009.
+`https://portfilo-app.pages.dev`
 
-Cloudflare Pages:
+Production branch:
 
-- project: `portfilo-app`;
-- temporary production URL: `https://portfilo-app.pages.dev`;
-- production branch: `build/portfilo-v0`.
+`build/portfilo-v0`
 
 Still pending before final public launch:
 
@@ -347,10 +293,7 @@ Still pending before final public launch:
 - final-domain subscribe/confirm/unsubscribe QA;
 - mailing-address/compliance clearance before first public newsletter send;
 - final browser/responsive/link/console QA;
-- MFA/passkeys where applicable;
-- direct verification that the synthetic series fixture route/sitemap entry is absent from production.
-
-Do not add Turnstile unless real traffic demonstrates abuse after honeypot and edge rate limiting are active.
+- MFA/passkeys where applicable.
 
 ## Validation status
 
@@ -360,39 +303,39 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | `build/portfilo-v0` branch | PASS |
 | Writing system | PASS / CANONICAL |
 | Site copy + IA audit | PASS / APPROVED |
-| `dek` + `description` schema split | IMPLEMENTED |
-| Story route uses `dek` visibly | IMPLEMENTED |
-| `/stories` index | DEPLOYED / USER REVIEW PASS |
-| Global nav `Stories` | DEPLOYED / USER REVIEW PASS |
-| Normal article route without series treatment | DEPLOYED / USER REVIEW PASS |
-| Confirmation/404 archive links | IMPLEMENTED / FINAL RELEASE QA LATER |
-| Synthetic series fixture direct production exclusion | IMPLEMENTED / DIRECT URL + SITEMAP QA STILL PENDING |
-| Stale `package.json` positioning | FIXED |
-| Local Phase 2A `npm run build` | NOT RECORDED |
-| Public site copy Phase 2B | NOT STARTED |
+| Phase 2A deployed user review | PASS |
+| Phase 2A local `npm run build` | NOT RECORDED |
+| Phase 2B repository/source review | PASS |
+| Phase 2B Cloudflare visual review | PENDING |
+| Privacy vs current signup code | PASS |
+| Synthetic fixture direct production/sitemap check | PENDING FINAL RELEASE QA |
 | C027 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
-| C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C001 | ACTIVE / CONTINUE |
+| C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
 | C029 | HOLD / FUTURE STUDY |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval to start Phase 2B: public site-copy remediation.**
+**Review Phase 2B on the deployed Cloudflare Pages site.**
 
-When approved, implement the audit decisions surface by surface under `docs/SITE_COPY_AND_IA_AUDIT.md` and `docs/WRITING_SYSTEM.md`.
+Check:
 
-Do not rewrite C027, C009, or C030 during Phase 2B. Their prose repair remains a separate Phase 3 with individual style briefs.
+1. homepage spacing after removal of the temporary descriptor and repeated labels;
+2. About's `Editorial types` section on desktop and mobile;
+3. Standards AI section and the transition from Commercial independence directly to the footer;
+4. Subscribe's `Subscription details` section and removal of the duplicate provider section;
+5. header/footer and `/stories` for regressions.
 
-## Phase handoff rule
+If Phase 2B passes deployed review, begin **Phase 3: three-story writing repair**, one story at a time under a new style brief.
 
-Before moving to a new phase or fresh chat:
+Recommended order:
 
-- update this file;
-- commit stable work;
-- record validation results;
-- record unresolved issues;
-- state one concrete next task.
+1. C027 Perspective;
+2. C009 Explained;
+3. C030 founding Perspective.
+
+Do not rewrite all three in one undifferentiated pass.
