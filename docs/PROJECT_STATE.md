@@ -4,7 +4,7 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / C030 PILOT BRIEF APPROVED / GENERATION APPROVAL REQUIRED**
+**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / CONCEPT SELECTION REQUIRED**
 
 Portfilo's publishing system, research standards, writing system, published launch stories, and Portfilo Brief foundation are in place. Phase 4 finalizes the visual/brand system and then performs the full engineering, security, SEO, accessibility, performance, and release audit before v0 is declared a working product.
 
@@ -63,6 +63,7 @@ Design / imagery:
 - `docs/DESIGN_DIRECTION.md`
 - `docs/IMAGE_SYSTEM.md`
 - `research/image-system/research.md`
+- `research/image-system/homepage-featured-cover-research.md`
 - `research/IMAGE_BRIEF_TEMPLATE.md`
 
 Email/deployment:
@@ -312,7 +313,7 @@ The title is story-specific. `What actually changed?` is not a permanent Portfil
 
 Status:
 
-**ACTIVE / IMAGE SYSTEM APPROVED / C030 PILOT BRIEF APPROVED / GENERATION APPROVAL REQUIRED**
+**ACTIVE / IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / CONCEPT SELECTION REQUIRED**
 
 The remaining v0 product-finalization work is intentionally kept on `build/portfilo-v0`.
 
@@ -326,6 +327,10 @@ Research basis:
 
 `research/image-system/research.md`
 
+Homepage featured-cover research:
+
+`research/image-system/homepage-featured-cover-research.md`
+
 Reusable per-story brief:
 
 `research/IMAGE_BRIEF_TEMPLATE.md`
@@ -336,18 +341,17 @@ Non-negotiable rules:
 
 - AI output has zero visual authority;
 - do not begin with an image prompt;
-- story/evidence extraction and an image-necessity decision come first;
-- develop 2-3 genuinely different concepts;
-- a human selects the concept;
-- `image-brief.md` must be approved before generator instructions are finalized;
+- story/evidence extraction and an image-necessity decision come first for story imagery;
+- develop materially different concepts before visual execution;
+- a human selects the concept/system direction;
 - brief approval and generation authorization are separate human-controlled gates;
 - the derived generator instruction must be presented before generation authorization;
 - no image-generation call may occur unless the current human message explicitly authorizes generation or directly answers yes to the immediately preceding question asking whether to generate;
 - generated images are editorial illustration, never documentary evidence;
-- a human selects the final image after factual-implication, artifact, crop, color, accessibility, and disclosure review;
+- a human selects final generated imagery after factual-implication, artifact, crop, color, accessibility, and disclosure review;
 - the first generated image does not become visual precedent merely because it was first.
 
-Approved pilot baseline:
+Approved image-system baseline:
 
 - monochrome / grayscale editorial treatment;
 - strong geometry, directional/low-key light, visible texture/grain;
@@ -355,41 +359,72 @@ Approved pilot baseline:
 - approved accents only: Portfilo blue `#0050a4` or Portfilo red `#b42318`;
 - no unrelated hue;
 - no generated typography;
-- 16:9 canonical pilot cut, with 1200x630 social derivative and crop-safe 4:3 / 1:1 derivatives from the same approved concept;
 - generated imagery requires visible synthetic/AI disclosure when published.
 
-Current implementation facts:
+Current homepage implementation facts:
 
-- `src/components/SiteHead.astro` already emits Open Graph/X image metadata;
-- all pages currently use the same `/social/portfilo-default.png`;
-- `src/content.config.ts` does not yet contain story image fields;
-- story-specific image/schema/component/social implementation is intentionally deferred until the pilot proves the system.
+- `src/pages/index.astro` selects the featured story from `featured: true`, otherwise the newest published story;
+- the black `feature-panel` currently renders the featured story's editorial type, topic, and author;
+- the large central word is the story `topic`;
+- canonical topics in `src/content.config.ts` are Business, Technology, Startups, AI, and Building;
+- therefore a deterministic topic-cover pilot has five v0 contexts;
+- no image asset is currently used inside the black feature panel.
 
-Current C030 pilot state:
+### Active pilot - homepage featured cover system
+
+Louda Tuppal approved the pivot to start with the homepage black featured cover before continuing C030 story-image generation on 2026-09-04.
+
+Research status:
+
+- current panel behavior inspected: **YES**;
+- professional/editorial visual-system research: **COMPLETE**;
+- research packet: `research/image-system/homepage-featured-cover-research.md`;
+- proposed v0 asset count: **5 canonical topic assets**;
+- system logic to evaluate: `featured story -> topic -> topic cover asset`;
+- shared grammar: realistic editorial illustration, grayscale, strong geometry, directional/low-key light, restrained grain, no generated typography, no fake logos/screens/documents;
+- topic should change subject/context, not create five unrelated art styles;
+- image generation authorization: **NO**;
+- implementation authorization: **NO**.
+
+System-level concepts awaiting human selection:
+
+- **A — Working Worlds:** realistic generic environments, environment-led, anonymous people secondary;
+- **B — Material Evidence of Work:** realistic tools/materials/components/process traces, close/medium views;
+- **C — Human Work, Environment Secondary:** anonymous partial people/hands performing topic-relevant work.
+
+Exact gate:
+
+**Select or revise homepage featured-cover Direction A, B, or C.**
+
+After direction selection:
+
+1. define the five topic expressions inside the selected shared grammar;
+2. create a concise homepage featured-cover visual brief;
+3. obtain human brief approval;
+4. derive and present generation instructions;
+5. obtain separate explicit generation authorization;
+6. generate only a small representative set before producing all five if that reduces rework;
+7. audit the assets together in the actual homepage context before implementation is locked.
+
+### Paused C030 story-image pilot
+
+C030 remains valid but intentionally paused while the homepage featured-cover pilot establishes the broader visual direction.
+
+Current C030 state:
 
 - pilot story: `C030 — What actually changed?`;
 - image-necessity gate: `GENERATED ILLUSTRATION`;
 - human-selected concept: `Concept B — The Reconfigured Path`;
 - selected treatment: realistic grayscale editorial illustration, not cartoon/anime or overtly symbolic art;
 - `research/stories/what-actually-changed/image-brief.md`: **APPROVED**;
-- generator instruction `v1`: **READY / NOT YET INTENTIONALLY PRESENTED FOR GENERATION REVIEW**;
+- generator instruction `v1`: **PRESENTED**;
 - image generation authorization: **NO**;
-- valid candidate set: **NONE**.
+- valid candidate set: **NONE**;
+- resume only after the homepage cover pilot or a later explicit human decision.
 
 Workflow correction recorded on 2026-09-04:
 
-Two accidental image-generation calls occurred in chat immediately after image-brief approval. They produced document-style mockups rather than valid C030 editorial candidates. Those outputs have **zero project authority**, were not committed, are not candidates, and must not be used as visual precedent. The canonical image workflow was corrected so image-brief approval cannot silently authorize generation.
-
-Exact gate:
-
-**Present the derived C030 generator instruction, then obtain separate explicit human generation authorization.**
-
-Only after that authorization:
-
-1. generate a small candidate set from the approved instruction;
-2. audit each candidate for brief compliance, factual implication, artifacts, crop family, color, accessibility, and disclosure;
-3. present valid candidates for human final image selection;
-4. do not implement any image until a human selects the final asset.
+Two accidental image-generation calls occurred in chat immediately after C030 image-brief approval. They produced document-style mockups rather than valid C030 editorial candidates. Those outputs have **zero project authority**, were not committed, are not candidates, and must not be used as visual precedent. The canonical image workflow was corrected so image-brief approval cannot silently authorize generation.
 
 ### 4B - brand asset system
 
@@ -576,7 +611,8 @@ Newsletter state:
 | C030 deployed review | PASS / USER APPROVED |
 | Phase 3 story writing repair | COMPLETE |
 | Editorial image system | APPROVED / CANONICAL / SEPARATE GENERATION AUTHORIZATION REQUIRED |
-| Image-system pilot | C030 BRIEF APPROVED / GENERATION APPROVAL REQUIRED |
+| Homepage featured-cover pilot | RESEARCH COMPLETE / DIRECTION SELECTION REQUIRED |
+| C030 story-image pilot | PAUSED / BRIEF APPROVED / GENERATION NOT AUTHORIZED |
 | Brand asset system | PENDING |
 | Full engineering/security/SEO audit | PENDING |
 | C001 | ACTIVE / CONTINUE |
@@ -588,22 +624,24 @@ Newsletter state:
 
 ## Exact next task
 
-**Present C030 generator instruction `v1` for human inspection, then obtain separate explicit authorization before any image-generation call.**
+**Select or revise one shared visual direction for the homepage featured-cover system.**
+
+Candidates:
+
+- `A — Working Worlds`;
+- `B — Material Evidence of Work`;
+- `C — Human Work, Environment Secondary`.
 
 Current gate state:
 
-- concept selection: **APPROVED**;
-- image brief: **APPROVED**;
-- generator instruction: **READY / NOT YET PRESENTED FOR GENERATION REVIEW**;
-- generation authorization: **NO**;
-- valid candidates: **NONE**.
+- homepage panel behavior: **INSPECTED**;
+- five topic contexts: **CONFIRMED**;
+- professional/editorial visual-system research: **COMPLETE**;
+- system concepts: **READY FOR HUMAN SELECTION**;
+- image generation authorization: **NO**;
+- implementation authorization: **NO**;
+- C030 generation authorization: **NO / PAUSED**.
 
-After explicit generation authorization:
-
-1. generate a small C030 candidate set;
-2. audit each candidate against the approved brief and factual boundaries;
-3. reject artifacts or documentary-looking failures before presenting options;
-4. obtain Louda Tuppal's final image selection;
-5. only then proceed to controlled crops/color/export and later implementation.
+After human direction selection, create the five-topic visual brief and stop for approval before any image-generation instruction is authorized.
 
 Fresh local production-build validation and final-release QA remain required later in Phase 4; they have not been waived or converted into a pass.
