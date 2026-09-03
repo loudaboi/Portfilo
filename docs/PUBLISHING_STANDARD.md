@@ -4,7 +4,7 @@
 
 The website publishes journalism. It does not generate journalism.
 
-Publishing is the final part of a research and verification process.
+Publishing is the final part of a research, writing-form, verification, and editorial process.
 
 ## Pipeline
 
@@ -23,15 +23,19 @@ CONTRADICTION SEARCH
   ↓
 STORY DECISION
   ↓
+WRITING FORM / STYLE BRIEF
+  ↓
 DRAFT
   ↓
 ADVERSARIAL REVIEW
   ↓
 CLAIM AUDIT
   ↓
-EDITORIAL PASS
+STRUCTURE / EDITORIAL PASS
   ↓
-HEADLINE AUDIT
+AI-SLOP / HUMAN-LANGUAGE PASS
+  ↓
+HEADLINE / DEK / DESCRIPTION AUDIT
   ↓
 PUBLISH
   ↓
@@ -39,6 +43,8 @@ DISTRIBUTE
   ↓
 CORRECT / UPDATE WHEN NEEDED
 ```
+
+`docs/WRITING_SYSTEM.md` governs the writing-form and language gates.
 
 ## Stage 1 - Idea
 
@@ -75,13 +81,47 @@ Select one:
 
 Record the decision and reasoning in the research packet.
 
-## Stage 5 - Draft
+## Stage 5 - Writing form and style brief
 
-The draft may only rely on verified/qualified claims from the research packet.
+Before Draft 1, follow `WRITING_SYSTEM.md`.
+
+For substantial stories, create:
+
+`style-brief.md`
+
+using:
+
+`research/STYLE_BRIEF_TEMPLATE.md`
+
+The brief must establish:
+
+- content type;
+- primary reader need;
+- writing job;
+- evidence shape;
+- selected Portfilo recipe;
+- why that form fits;
+- deviations;
+- any professional form research or human-edited exemplars used;
+- lead, middle, limitation/counterevidence, and ending jobs;
+- headline, dek, and description jobs;
+- assignment-specific AI-slop risks.
+
+The form is selected from the material. AI may assist with alternatives but has zero automatic structural or stylistic authority.
+
+Do not copy another writer's distinctive wording, cadence, metaphors, jokes, or house voice.
+
+## Stage 6 - Draft
+
+The draft may only rely on verified/qualified claims from the research packet or, for a Perspective, the approved premise plus supported factual material.
 
 If a new factual assertion is needed, return to research.
 
-## Stage 6 - Adversarial review
+If a new institutional position about Portfilo is needed, return to the canonical institutional source or explicit editor/founder approval.
+
+Do not let Draft 1 silently redefine the approved structure merely because generated prose flows differently.
+
+## Stage 7 - Adversarial review
 
 Challenge:
 
@@ -91,11 +131,13 @@ Challenge:
 - representativeness;
 - missing context;
 - stale data;
-- headline strength.
+- headline strength;
+- whether the selected form distorts the evidence;
+- whether generated rhetoric creates claims or implications the evidence/brief did not authorize.
 
 Resolve material findings before publication.
 
-## Stage 7 - Claim audit
+## Stage 8 - Claim audit
 
 Trace consequential factual assertions back to evidence.
 
@@ -104,21 +146,42 @@ No source or evidence:
 - qualify it;
 - remove it.
 
-## Stage 8 - Editorial pass
+Also trace consequential institutional statements about Portfilo back to approved institutional authority.
+
+## Stage 9 - Structure and editorial pass
 
 After facts are stable:
 
-- improve structure;
+- verify the selected form still fits the material;
+- ensure each section has a distinct job;
+- move caveats/counterevidence to the position where readers need them;
 - remove repetition;
 - remove generic AI language;
 - sharpen explanations;
 - preserve caveats;
-- improve transitions;
+- improve transitions only when the reader actually needs one;
 - ensure Philippine context is relevant rather than decorative.
 
 Do not trade accuracy for style.
 
-## Stage 9 - Headline audit
+Do not line-edit around a structural failure. Fix the architecture first.
+
+## Stage 10 - AI-slop and human-language pass
+
+Follow the audit in `WRITING_SYSTEM.md`.
+
+At minimum:
+
+- read only headings/subheads;
+- read only the first sentence of each paragraph;
+- read the piece aloud;
+- delete sentences that only explain the strategy behind the previous sentence;
+- scan for repeated rhetorical patterns and institutional self-description;
+- test whether a generic AI publication could publish the line unchanged.
+
+AI-shaped prose is not fixed merely by replacing a few adjectives. Rewrite or delete the underlying pattern.
+
+## Stage 11 - Headline, dek, and description audit
 
 The headline must:
 
@@ -128,9 +191,15 @@ The headline must:
 - avoid fake certainty;
 - avoid causal claims the evidence cannot establish.
 
-## Stage 10 - Prepare content entry
+The dek must add editorial information rather than simply restate the headline.
 
-The v0 content schema will be implemented in Astro. At minimum a publishable story should support:
+The compact description/summary must serve cards, indexes, SEO, and social metadata without being forced to carry the rhetorical job of the dek.
+
+The current content schema still uses one `description` field for multiple jobs. Splitting `dek` and `description` is a planned content-schema change and should be implemented deliberately in the site-copy phase.
+
+## Stage 12 - Prepare content entry
+
+The v0 content schema is implemented in Astro. At minimum a publishable story supports:
 
 ```yaml
 title:
@@ -148,7 +217,9 @@ methodology:
 correction:
 ```
 
-The exact schema is defined during the Content Architecture phase.
+The exact current schema is defined in `src/content.config.ts`.
+
+When the planned dek/description split is implemented, update this standard and the schema together.
 
 ## Status rules
 
@@ -162,7 +233,7 @@ May contain unfinished prose but should not contain fabricated placeholder repor
 
 Eligible for production routes and indexes.
 
-Must have passed the required editorial/research checks for its content type.
+Must have passed the required editorial/research/writing checks for its content type.
 
 ### archived
 
@@ -189,11 +260,12 @@ Initial authoring is repository-based.
 
 Expected workflow:
 
-1. create/edit Markdown content;
-2. validate locally;
-3. commit;
-4. push;
-5. Cloudflare Pages builds/deploys.
+1. create/edit research and style packet;
+2. create/edit Markdown content;
+3. validate locally;
+4. commit;
+5. push;
+6. Cloudflare Pages builds/deploys.
 
 No admin dashboard or CMS is required for v0.
 
@@ -201,9 +273,9 @@ No admin dashboard or CMS is required for v0.
 
 Research once, publish many.
 
-Derivative formats such as newsletter, social posts, video scripts, carousels, and excerpts must derive from the same verified research packet.
+Derivative formats such as newsletter, social posts, video scripts, carousels, and excerpts must derive from the same verified research packet and approved writing position.
 
-Do not allow downstream social content to introduce unsupported factual claims simply because it is shorter or more promotional.
+Do not allow downstream social content to introduce unsupported factual claims or new institutional promises simply because it is shorter or more promotional.
 
 ## Corrections and updates
 
@@ -220,6 +292,8 @@ Meaningful factual update:
 
 Do not silently erase the history of a consequential error.
 
+A later style rewrite that does not change factual meaning does not require a correction note, but it must not silently alter material claims or conclusions.
+
 ## Publication checklist
 
 Before changing a story to `published`:
@@ -231,11 +305,19 @@ Before changing a story to `published`:
 - [ ] contradictions considered;
 - [ ] quotations checked;
 - [ ] numbers checked;
+- [ ] `style-brief.md` exists and is approved when required;
+- [ ] selected writing form still fits the material;
+- [ ] structure pass completed;
+- [ ] AI-slop/human-language pass completed;
+- [ ] institutional claims have provenance;
 - [ ] headline audited;
+- [ ] dek audited;
+- [ ] description/summary audited for its actual job;
 - [ ] content type is accurate;
 - [ ] methodology included when useful;
 - [ ] commercial disclosure included when relevant;
 - [ ] article renders correctly;
 - [ ] links work;
 - [ ] mobile layout checked;
-- [ ] metadata/description set.
+- [ ] metadata/description set;
+- [ ] explicit publication approval obtained when the workflow requires it.
