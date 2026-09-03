@@ -5,7 +5,8 @@ description: "The meaning of a development often becomes clearer when it is foll
 contentType: perspective
 topic: building
 author: "Louda Tuppal"
-status: draft
+publishedAt: 2026-09-04
+status: published
 featured: false
 ---
 
