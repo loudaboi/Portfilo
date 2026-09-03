@@ -47,9 +47,6 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
     <main id="main-content" tabindex="-1">
       <section class="identity" aria-label="Portfilo coverage">
         <p class="identity__eyebrow">Business / Technology / Startups / AI / Building</p>
-        <p class="identity__descriptor">
-          Stories about companies, products, markets, and the people building them.
-        </p>
       </section>
 
       {
@@ -65,7 +62,6 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
 
             <article class="feature">
               <div class="feature__copy">
-                <p class="story-label">Featured story</p>
                 <h1 id="feature-title">
                   <a href={`/stories/${featuredStory.id}`}>{featuredStory.data.title}</a>
                 </h1>
@@ -114,8 +110,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
           <section class="latest" id="latest" aria-labelledby="latest-title">
             <header class="section-head section-head--latest">
               <p id="latest-title">02 / Latest</p>
-              <p>Published stories</p>
-              <p>{latestStories.length === 1 ? "1 story" : `${latestStories.length} stories`}</p>
+              <p class="section-count">{latestStories.length === 1 ? "1 story" : `${latestStories.length} stories`}</p>
             </header>
 
             <div class="latest__list">
@@ -217,7 +212,6 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         --serif: "Source Serif 4", Georgia, serif;
         --mono: "IBM Plex Mono", "Courier New", monospace;
       }
-
       :global(*) { box-sizing: border-box; }
       :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; scroll-behavior: smooth; }
       :global(body) { margin: 0; min-width: 0; background: var(--paper); }
@@ -555,7 +549,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         .section-head p:first-child,
         .section-head p:nth-child(2),
         .section-head p:last-child { grid-column: auto; }
-        .section-head p:nth-child(2) { display: none; }
+        .section-head p:nth-child(2):not(.section-count) { display: none; }
         .section-head p:last-child { text-align: right; }
 
         .feature { display: block; padding-top: 2.7rem; padding-bottom: 4.25rem; }
