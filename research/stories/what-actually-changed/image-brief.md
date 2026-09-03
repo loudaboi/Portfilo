@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: APPROVED / CONCEPT SELECTED / IMAGE GENERATION AUTHORIZED_
+_Status: APPROVED / CONCEPT SELECTED / GENERATOR INSTRUCTION READY / GENERATION APPROVAL REQUIRED_
 
 ## Story
 
@@ -483,6 +483,10 @@ Prompt review:
 - [x] crop/composition requirement present
 - [x] must-not-show constraints present
 
+Generator instruction presented to human:
+
+`NO`
+
 ## Brief approval gate
 
 Image brief approved:
@@ -497,13 +501,47 @@ Approval date:
 
 `2026-09-04`
 
-Image generation is authorized under this approved brief. Generated candidates still require factual-implication, brief-compliance, artifact, crop, color, accessibility, disclosure, and human final-selection review before implementation or publication.
+Brief approval authorizes this brief as the visual source of truth and permits preparation/review of the derived generator instruction. It does **not** authorize image generation.
+
+## Generation authorization gate
+
+Generator instruction ready:
+
+`YES`
+
+Generator instruction presented to human:
+
+`NO`
+
+Image generation authorized:
+
+`NO`
+
+Authorized by:
+
+Authorization date:
+
+Authorization evidence:
+
+`PENDING`
+
+No candidate generation is authorized until the generator instruction has been intentionally presented to Louda Tuppal and a separate explicit generation authorization is received.
+
+## Workflow correction record
+
+On 2026-09-04, two image-generation calls were accidentally made in chat immediately after image-brief approval. They produced document-style mockups rather than a valid C030 editorial candidate.
+
+Those outputs are **INVALID / NOT CANDIDATES / ZERO PROJECT AUTHORITY**.
+
+They were not committed to the repository and must not be used as visual precedent, candidate evidence, implementation assets, or proof that generation has been authorized.
+
+The canonical image system was corrected after this incident to separate image-brief approval from generation authorization.
 
 ---
 
 # Post-generation review
 
-Complete only after candidate generation.
+Complete only after separate generation authorization and valid candidate generation.
 
 ## Candidate record
 
