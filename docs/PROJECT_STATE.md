@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 BODY APPROVED / DEEPER FRAMING RESEARCH COMPLETE / FRAMING PACKAGE AWAITING USER APPROVAL**
+**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 BODY + HEADLINE APPROVED / DEK RESEARCH COMPLETE / DEK AWAITING USER APPROVAL**
 
 Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, first published stories, and Portfilo Brief foundation remain in place.
 
@@ -138,7 +138,7 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 BODY APPROVED / FRAMING V2 AWAITING USER APPROVAL**
+**ACTIVE / C027 BODY + HEADLINE APPROVED / DEK RESEARCH COMPLETE / DEK USER REVIEW REQUIRED**
 
 Repair order:
 
@@ -174,13 +174,18 @@ Deeper framing research:
 
 `research/stories/building-the-foundation/headline-dek-description-research-v2.md`
 
+Dek-specific research:
+
+`research/stories/building-the-foundation/dek-research.md`
+
 #### C027 approvals already granted
 
 - mandatory per-story style research: COMPLETE;
 - revised style brief: APPROVED by Louda Tuppal on 2026-09-03;
-- researched body V5: APPROVED by Louda Tuppal on 2026-09-03.
+- researched body V5: APPROVED by Louda Tuppal on 2026-09-03;
+- headline `Build things that make the next thing easier`: APPROVED by Louda Tuppal on 2026-09-03.
 
-The currently published C027 has **not** yet been replaced. Its older prose remains live until the complete framing package is approved.
+The currently published C027 has **not** yet been replaced. Its older prose remains live until the remaining framing and final package are approved.
 
 #### C027 body direction
 
@@ -229,33 +234,41 @@ Key finding:
 
 **imperative headlines are not automatically Guide headlines.** Edited Perspectives/advice-analysis pieces use imperatives when the imperative itself is the argument.
 
-Other findings:
-
-- a headline normally carries one proposition rather than every caveat;
-- the dek can carry scope and qualification;
-- failure should not become the subject when the approved body is broader than failure;
-- question headlines are unnecessary because C027 already has a position;
-- no coined/clever framework is needed.
-
-Current V2 recommendation:
-
-Headline:
+Louda approved retaining:
 
 `Build things that make the next thing easier`
 
-Dek:
+The V2 dek was then rejected by Louda as weak, overly structured AI-shaped prose:
 
 `The result still comes first. Beyond that, the work should only count if it changes how the next attempt begins in a concrete way.`
 
-Description:
+Status:
 
-`A Perspective on judging early projects by their result and by whether the work changes how a later attempt begins.`
+**HEADLINE APPROVED / V2 DEK REJECTED / DESCRIPTION NOT YET APPROVED.**
+
+#### C027 dek-specific research
+
+The dek pass reviewed the actual second-line behavior of human-edited argumentative pieces from The Atlantic and WIRED rather than relying on general headline guidance.
+
+Key findings:
+
+- a strong dek normally does one additional job beneath the headline: scope, consequence, mechanism, tension, or concrete entry point;
+- it does not need to summarize every caveat or reproduce the style brief;
+- the rejected V2 dek failed because it exposed the internal proposition -> transition -> proposition scaffold;
+- C027's most useful missing layer under the optimistic headline is the anti-rationalization tension around `I learned a lot`;
+- one sentence is sufficient; no two-sentence structure is required.
+
+Proposed dek:
+
+`An early project should leave you with more than a story about what you learned.`
 
 Status:
 
 **USER APPROVAL REQUIRED.**
 
-No live-story change is authorized until this package is approved or revised.
+Description remains pending until headline + dek are locked.
+
+No live-story change is authorized until the complete C027 package is approved.
 
 ### C009 - PUBLISHED / WRITING RE-AUDIT REQUIRED
 
@@ -413,8 +426,11 @@ Still pending before final public launch:
 | C027 style research | COMPLETE |
 | C027 revised style brief | APPROVED |
 | C027 researched body V5 | APPROVED |
+| C027 headline | APPROVED |
 | C027 first framing package | REJECTED / SUPERSEDED |
-| C027 deeper framing research V2 | COMPLETE / USER REVIEW REQUIRED |
+| C027 V2 dek | REJECTED |
+| C027 dek-specific research | COMPLETE / USER REVIEW REQUIRED |
+| C027 description | PENDING |
 | C027 public story | PUBLISHED / OLD PROSE STILL LIVE |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
@@ -426,13 +442,13 @@ Still pending before final public launch:
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of the C027 V2 headline/dek/description package.**
+**Obtain Louda Tuppal's approval or revision of the C027 dek candidate.**
 
 If approved:
 
-1. replace the live C027 body with `rewrite-v5-researched.md`;
-2. retain the approved headline and apply approved dek/description;
-3. preserve current content type/topic/author/publication metadata unless separately changed;
-4. create/update the final C027 review record;
+1. lock headline + dek;
+2. research/audit the compact description as its own metadata/card job;
+3. assemble the complete candidate with the already approved researched body;
+4. obtain final package approval before replacing the live public story;
 5. verify the deployed story before calling C027 repair complete;
 6. only then begin C009.
