@@ -132,6 +132,30 @@ For public copy:
 - for significant About, Standards, Subscribe, newsletter, or other discretionary copy rewrites, research comparable professional examples and content-design guidance before drafting;
 - small literal maintenance copy whose wording is dictated by actual behavior does not require an artificial multi-exemplar exercise.
 
+### Editorial image generation
+
+Generated editorial imagery must follow `docs/IMAGE_SYSTEM.md`.
+
+> **Research the visual problem before asking AI to generate the image.**
+
+> **AI output has zero visual authority.**
+
+For substantial story imagery:
+
+- do not begin with an image prompt;
+- perform the image-necessity gate and story/evidence extraction first;
+- develop 2-3 concept candidates from approved editorial material;
+- require human concept selection;
+- create `research/stories/<story-slug>/image-brief.md` using `research/IMAGE_BRIEF_TEMPLATE.md`;
+- obtain explicit human approval of the image brief before any generation;
+- derive generator instructions from the approved brief rather than letting the model invent scene, symbolism, subject, palette, or factual implications;
+- treat generated imagery as editorial illustration, never documentary evidence;
+- do not generate real-person likenesses, fake screenshots, fake source documents, fake logos, or invented documentary scenes for v0 editorial heroes;
+- audit candidates for factual implication, brief compliance, visual artifacts, crop behavior, accessibility role, disclosure, and color compliance;
+- require human final image selection before implementation.
+
+A generated image is not approved merely because it looks good. The first generated Portfilo image also does not become visual precedent merely because it was first.
+
 ## 7. Implementation discipline
 
 Before editing:
