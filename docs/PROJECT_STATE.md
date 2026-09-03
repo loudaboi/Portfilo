@@ -4,9 +4,9 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 + C009 COMPLETE / C030 PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING**
+**Portfilo v0 / Final Release Readiness - PHASE 3 STORY WRITING REPAIR COMPLETE**
 
-Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, published launch stories, and Portfilo Brief foundation remain in place.
+Portfilo's publishing system, research standards, writing system, `/stories` archive, site-copy correction, published launch stories, and Portfilo Brief foundation are in place.
 
 Core rules:
 
@@ -132,15 +132,15 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 COMPLETE / C009 COMPLETE / C030 SOURCE PUBLISHED / C030 DEPLOYED VERIFICATION PENDING**
+**COMPLETE / C027 + C009 + C030 DEPLOYED USER REVIEW PASS**
 
-Repair order:
+Repair order completed:
 
 1. C027 Perspective — COMPLETE;
 2. C009 Explained — COMPLETE;
-3. C030 founding Perspective — SOURCE PUBLISHED / DEPLOYED VERIFICATION PENDING.
+3. C030 founding Perspective — COMPLETE.
 
-Phase 3 becomes complete only after C030's deployed story route and `/stories` listing pass review.
+All three stories went through assignment-specific style/form research rather than inheriting one another's mechanics.
 
 ### C027 - COMPLETE
 
@@ -225,7 +225,7 @@ Validation:
 
 C009's Explained mechanics are not precedent for later stories.
 
-### C030 - PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING
+### C030 - COMPLETE
 
 Story:
 
@@ -294,8 +294,7 @@ Publication commit:
 Validation:
 
 - repository/source publication: **PASS**;
-- Cloudflare deployed story route: **PENDING**;
-- Cloudflare `/stories` listing: **PENDING**;
+- Cloudflare deployed user review: **PASS** — Louda Tuppal confirmed C030 passed on 2026-09-04;
 - local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
 The title is story-specific. `What actually changed?` is not a permanent Portfilo tagline, recurring framework, or mandatory question for every story.
@@ -431,7 +430,7 @@ Newsletter state:
 - Reply-To: `portfilo.ph@gmail.com`;
 - Welcome Email OFF;
 - Smart Nudge OFF;
-- no C027/C009/C030 distribution authorized or sent as part of this repair phase.
+- no C027/C009/C030 distribution authorized or sent as part of the story-repair phase.
 
 ## Validation status
 
@@ -449,22 +448,24 @@ Newsletter state:
 | C027 deployed review | PASS / USER APPROVED |
 | C009 editorial repair | COMPLETE |
 | C009 deployed review | PASS / USER APPROVED |
-| C030 editorial package | COMPLETE / APPROVED |
-| C030 source publication | PASS |
-| C030 deployed review | PENDING |
+| C030 editorial repair | COMPLETE |
+| C030 deployed review | PASS / USER APPROVED |
+| Phase 3 story writing repair | COMPLETE |
 | C001 | ACTIVE / CONTINUE |
 | C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
 | C029 | HOLD / FUTURE STUDY |
+| Production build for final release | PENDING FRESH VALIDATION |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Verify C030 on the deployed Cloudflare site:**
+**Begin final-release readiness QA.**
 
-1. story route renders the approved headline, dek and body;
-2. `/stories` includes C030 with the approved description and publication date;
-3. internal C009 link works;
-4. mobile/desktop rendering is normal.
+First gate:
 
-Do not mark Phase 3 complete until that deployed verification passes.
+1. obtain and record a fresh successful local `npm run build` on `build/portfilo-v0`;
+2. directly verify the synthetic fixture route and any sitemap entry are absent from production;
+3. then proceed through final browser/responsive/link/console and deployment-configuration checks from `docs/V0_SCOPE.md` and `docs/CLOUDFLARE_PRODUCTION_SETUP.md`.
+
+Do not declare Portfilo v0 complete until the remaining Definition-of-v0-complete checks and final-domain/deployment requirements are explicitly resolved or deliberately deferred for launch.
