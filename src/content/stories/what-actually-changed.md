@@ -1,5 +1,6 @@
 ---
 title: "What actually changed?"
+dek: "An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality."
 description: "An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality."
 contentType: perspective
 topic: building
