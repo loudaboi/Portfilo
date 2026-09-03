@@ -4,9 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**ACTIVE / DRAFT V1 COMPLETE / USER REVIEW REQUIRED**
+**ACTIVE / DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED**
 
-Louda Tuppal approved this direction on 2026-09-03 after evaluating the earlier C029 audience-research approaches, and approved the six-part structure before Draft 1 began.
+Louda Tuppal approved this direction, the six-part structure, and the substance of Draft 1 on 2026-09-03.
 
 C030 is a separate story. It does not replace or rewrite C029's research history.
 
@@ -26,7 +26,7 @@ Primary reader need: `Interpret`
 
 Role: `Third launch story / founding editorial Perspective`
 
-Target length: approximately `800-1,200` words.
+Target length: approximately `800-1,200` words, with concision preferred over padding.
 
 ## Purpose
 
@@ -40,7 +40,7 @@ The About page already establishes the product facts:
 - it is for people curious about business and technology;
 - important terms should be explained when they matter.
 
-C030 should answer a different question:
+C030 answers a different question:
 
 > **Why do those subjects belong together, and what does Portfilo keep looking for across them?**
 
@@ -48,29 +48,17 @@ C030 should answer a different question:
 
 An update can establish that something happened without exhausting the interesting questions created by it.
 
-Examples of the pattern:
-
-- a company announces an AI initiative -> what changed in the actual workflow or operation?;
-- a startup raises money -> what can it now do that it could not do before?;
-- a data center is announced -> what capacity is actually live, being built, or still planned?;
-- a rule changes -> what changes for the business or person affected?;
-- an industry uses a broad phrase -> what concrete jobs, economics, mechanisms, or consequences sit underneath it?
-
-The public article should not present these as proof that ordinary news updates are deficient. Different story forms answer different questions.
-
-The editorial instinct is simply to notice when the update is the beginning of the useful question rather than the end of it.
+The editorial instinct is to notice when the announcement is the beginning of the useful question rather than the end of it.
 
 Internal formulation:
 
 > **Portfilo follows business and technology past the update and into what actually changes.**
 
-This is not approved as a tagline and should not be promoted into permanent brand copy automatically.
+This is not approved as a tagline and must not be promoted into permanent brand copy automatically.
 
 ## The connection between Portfilo's subjects
 
-Business, Technology, Startups, AI, and Building are not separate editorial islands.
-
-They meet in operating reality:
+Business, Technology, Startups, AI, and Building meet in operating reality:
 
 - software changes how companies work;
 - companies shape jobs, prices, markets, and products;
@@ -80,15 +68,13 @@ They meet in operating reality:
 - infrastructure determines what technology can actually run;
 - building a product or company exposes how customers, distribution, pricing, hiring, technology, and capital interact.
 
-C030 should make that connection legible without turning it into a five-part framework.
+The article should make that connection legible without turning it into a five-part framework.
 
 ## Reader payoff
 
 Give a new reader a clearer sense of what kind of publication Portfilo intends to become and why apparently different subjects appear next to one another.
 
 The payoff is orientation, not instruction.
-
-A reader should finish with a better sense of the questions Portfilo is likely to ask when covering a company, product, market, technology, policy, or piece of infrastructure.
 
 ## Evidence and research burden
 
@@ -100,9 +86,8 @@ Rules:
 
 - every specific factual example still requires verification;
 - generic hypothetical patterns may be used without pretending they describe a measured population;
-- published Portfilo work may be referenced internally when shaping the argument, but the public article should not become a self-congratulatory catalogue of Portfilo stories;
-- do not use unresolved C001 or C021 research findings as published facts;
-- no external research is needed merely to validate Portfilo's right to hold an editorial point of view.
+- do not use unresolved C001 or C021 findings as published facts;
+- no external research is needed merely to validate Portfilo's editorial point of view.
 
 ## Non-goals
 
@@ -133,39 +118,65 @@ C030 explains the editorial connection underneath those choices.
 
 `/standards` explains sourcing, verification, AI use, corrections, and independence.
 
-C030 should not repeat those procedures.
+C030 does not repeat those procedures.
 
 ### C027
 
 `Build things that make the next thing easier` is a reader-facing argument about how to judge early work.
 
-C030 is an institutional/editorial Perspective about how Portfilo looks at the subjects it covers.
+C030 is an editorial Perspective about how Portfilo looks at the subjects it covers.
 
-They do different jobs even if both carry Louda Tuppal's byline.
+## Draft history
 
-## Headline status
-
-`What actually changed?` remains the working headline for Draft 1, not a locked final headline.
-
-The final headline should be decided after the draft earns its strongest formulation.
-
-## Draft 1
-
-Draft file:
+### Draft 1
 
 `research/stories/what-actually-changed/draft-v1.md`
 
-Draft 1 uses only generic hypothetical examples and therefore does not publish unresolved C001 or C021 findings as facts.
+User approved the substance on 2026-09-03.
 
-Editorial pre-check:
+### Adversarial review
 
-1. still useful beside the existing About page: `PASS`;
-2. explains why the coverage areas belong together: `PASS`;
-3. avoids claiming other journalism is broken: `PASS`;
-4. useful without a subscription conversion: `PASS`.
+`research/stories/what-actually-changed/adversarial-review.md`
+
+Outcome:
+
+`PASS WITH REVISION`.
+
+Main findings:
+
+- the middle repeated the same editorial motion too many times;
+- the Building section could be shorter;
+- the closing drifted toward brand-promise language;
+- `What actually changed?` works best if treated as the story concept rather than a repeated branded framework.
+
+### Draft 2
+
+`research/stories/what-actually-changed/draft-v2.md`
+
+Draft 2 compresses the repeated middle sections, keeps the limiting principle that updates can be enough, and ends with a restrained statement of the kind of story Portfilo intends to follow.
+
+Claim audit:
+
+- no unresolved C001/C021 finding is presented as fact;
+- no population claim about readers or journalism quality appears;
+- examples remain generic/hypothetical;
+- no external evidence is required for the central Perspective argument.
+
+## Headline and dek
+
+Review file:
+
+`research/stories/what-actually-changed/headline-dek.md`
+
+Recommended pair:
+
+- title: `What actually changed?`
+- dek: `An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
+
+The title remains article-specific. It is not approved as a permanent Portfilo tagline.
 
 ## Current outcome
 
-**DRAFT V1 COMPLETE / USER REVIEW REQUIRED**
+**DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED**
 
-Next gate: Louda Tuppal reviews Draft 1 before revision, headline/dek work, or creation of a public story file.
+Next gate: Louda Tuppal reviews Draft 2 and the recommended headline/dek. Do not create the public story file until that editorial version is approved.
