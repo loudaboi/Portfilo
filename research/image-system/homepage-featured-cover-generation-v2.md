@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PREPARED / PRESENTED / V2 IMAGE GENERATION AUTHORIZED_
+_Status: AUTHORIZED / EXECUTED / EXECUTION FAILED / NO VALID V2 CANDIDATES_
 
 ## Authority
 
@@ -123,3 +123,31 @@ Authorization date:
 Authorization evidence:
 
 Louda explicitly replied `i approve` to the immediately preceding request to authorize generation of the two v2 tests from these exact instructions.
+
+## V2 execution record
+
+Execution attempted:
+
+`YES`
+
+Valid Building v2 candidate produced:
+
+`NO`
+
+Valid AI v2 candidate produced:
+
+`NO`
+
+Execution failure:
+
+The generation layer repeatedly merged Building and AI into a single diptych/comparison layout and added generated typography/brand copy despite explicit topic isolation and no-text constraints. A corrective retry again produced the same class of failure.
+
+Candidate authority:
+
+`ZERO`
+
+Detailed audit:
+
+`research/image-system/homepage-featured-cover-candidate-audit-v2.md`
+
+The v2 authorization is exhausted by this failed execution. No further generation is authorized until a revised execution method or instruction is presented and separately approved.
