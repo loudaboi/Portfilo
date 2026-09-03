@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PROPOSED / STYLE RESEARCH COMPLETE / USER APPROVAL REQUIRED / NO NEW DRAFT AUTHORIZED_
+_Status: APPROVED / STYLE RESEARCH COMPLETE / NEW DRAFT AUTHORIZED_
 
 Follow:
 
@@ -528,17 +528,17 @@ Authority: `src/pages/about.astro`.
 
 Authority: `src/pages/about.astro`.
 
-### Proposed editorial judgment requiring this brief's approval
+### Approved editorial judgment
 
 **Idea:** One connective editorial question is whether an update changes meaning when followed into actual choices, operations, economics, constraints, responsibilities, or implementation.
 
-Authority if approved: explicit Louda Tuppal approval of this C030 style brief.
+Authority: explicit Louda Tuppal approval of this C030 style brief on 2026-09-04.
 
 This is **not** a permanent tagline, universal story formula, or claim that every Portfilo story must use the question.
 
 **Idea:** Sometimes the update itself is sufficient; additional depth is warranted only when it materially changes understanding.
 
-Authority if approved: explicit Louda Tuppal approval of this C030 style brief, consistent with the earlier approved C030 structure/history.
+Authority: explicit Louda Tuppal approval of this C030 style brief on 2026-09-04, consistent with the earlier approved C030 structure/history.
 
 ### Actual behavior example
 
@@ -612,10 +612,10 @@ Style research complete:
 
 Structure/form decision:
 
-`PROPOSED`
+`APPROVED`
 
 Approved by/date:
 
-`PENDING LOUDA TUPPAL REVIEW`
+`LOUDA TUPPAL / 2026-09-04`
 
-No new C030 body draft may begin until this brief is approved.
+A fresh C030 body draft is authorized. Earlier C030 drafts remain historical material and are not style precedent.
