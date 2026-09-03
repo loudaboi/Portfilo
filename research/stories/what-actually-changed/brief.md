@@ -4,9 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**ACTIVE / DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED**
+**ACTIVE / DRAFT V2 APPROVED / CLAIM-COPY AUDIT PASS / SITE DRAFT READY FOR VISUAL REVIEW**
 
-Louda Tuppal approved this direction, the six-part structure, and the substance of Draft 1 on 2026-09-03.
+Louda Tuppal approved the direction, six-part structure, Draft 1 substance, Draft 2, and the recommended headline/dek on 2026-09-03.
 
 C030 is a separate story. It does not replace or rewrite C029's research history.
 
@@ -14,9 +14,9 @@ C030 is a separate story. It does not replace or rewrite C029's research history
 
 ID: `C030`
 
-Working label: `What actually changed?`
+Title: `What actually changed?`
 
-Primary topic: `Building` - provisional
+Primary topic: `Building` - provisional until final publication approval
 
 Content type: `Perspective`
 
@@ -153,30 +153,50 @@ Main findings:
 
 `research/stories/what-actually-changed/draft-v2.md`
 
+Louda Tuppal approved Draft 2 on 2026-09-03.
+
 Draft 2 compresses the repeated middle sections, keeps the limiting principle that updates can be enough, and ends with a restrained statement of the kind of story Portfilo intends to follow.
 
-Claim audit:
+## Claim and copy audit
 
-- no unresolved C001/C021 finding is presented as fact;
-- no population claim about readers or journalism quality appears;
-- examples remain generic/hypothetical;
-- no external evidence is required for the central Perspective argument.
+`research/stories/what-actually-changed/claim-audit.md`
+
+Outcome:
+
+`PASS / READY FOR DRAFT CONTENT ENTRY`.
+
+The approved text contains no statistics, quotations, named-company claims, named policies, population claims, or unresolved C001/C021 findings presented as fact. Its concrete examples remain generic and hypothetical.
 
 ## Headline and dek
 
-Review file:
-
-`research/stories/what-actually-changed/headline-dek.md`
-
-Recommended pair:
+Approved pair:
 
 - title: `What actually changed?`
 - dek: `An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
 
 The title remains article-specific. It is not approved as a permanent Portfilo tagline.
 
+## Site draft
+
+Draft content entry:
+
+`src/content/stories/what-actually-changed.md`
+
+Metadata:
+
+- `contentType: perspective`;
+- `topic: building` - provisional;
+- `author: Louda Tuppal`;
+- `status: draft`;
+- `featured: false`;
+- no `publishedAt` while draft.
+
+The story must remain absent from production routes and indexes until a separate publication approval.
+
+For local visual review, the shared story route now includes drafts only when `import.meta.env.DEV` is true. Production builds continue to include only `status: published` stories.
+
 ## Current outcome
 
-**DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED**
+**DRAFT V2 APPROVED / CLAIM-COPY AUDIT PASS / SITE DRAFT READY FOR VISUAL REVIEW**
 
-Next gate: Louda Tuppal reviews Draft 2 and the recommended headline/dek. Do not create the public story file until that editorial version is approved.
+Next gate: local visual review of `/stories/what-actually-changed` in `npm run dev`, followed by any typography/copy adjustments and explicit publication approval. Do not change the story to `published` without that approval.
