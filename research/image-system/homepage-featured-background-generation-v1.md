@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PREPARED / PRESENTED FOR HUMAN REVIEW / NO IMAGE GENERATION AUTHORIZED_
+_Status: PREPARED / PRESENTED / IMAGE GENERATION AUTHORIZED_
 
 ## Authority
 
@@ -50,10 +50,16 @@ Generator instruction prepared: `YES`
 
 Generator instruction presented to human: `YES`
 
-Image generation authorized: `NO`
+Image generation authorized: `YES`
 
 Authorized by:
 
+`Louda Tuppal`
+
 Authorization date:
 
-Authorization evidence: `PENDING`
+`2026-09-04`
+
+Authorization evidence:
+
+Louda explicitly replied `i approve` to the immediately preceding question asking whether to generate this one Observed Spaces test image from the presented Variant A instruction.
