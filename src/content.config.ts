@@ -23,6 +23,7 @@ const stories = defineCollection({
   schema: z
     .object({
       title: z.string().min(1),
+      dek: z.string().min(1),
       description: z.string().min(1),
       contentType: z.enum(contentTypes),
       topic: z.enum(topics),
