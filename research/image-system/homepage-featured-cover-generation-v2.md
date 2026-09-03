@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PREPARED / PRESENTED FOR HUMAN REVIEW / NO V2 IMAGE GENERATION AUTHORIZED_
+_Status: PREPARED / PRESENTED / V2 IMAGE GENERATION AUTHORIZED_
 
 ## Authority
 
@@ -59,7 +59,7 @@ Use large grayscale tonal shapes, simplified but believable edges, geometric rep
 
 ## Candidate plan
 
-After separate explicit v2 generation authorization, generate only:
+Authorized generation set:
 
 - `1` Building v2 candidate;
 - `1` AI v2 candidate.
@@ -110,14 +110,16 @@ V2 generator instructions presented to human:
 
 V2 image generation authorized:
 
-`NO`
+`YES`
 
 Authorized by:
 
+`Louda Tuppal`
+
 Authorization date:
+
+`2026-09-04`
 
 Authorization evidence:
 
-`PENDING`
-
-The prior v1 generation authorization does not carry forward to v2. A new explicit authorization is required because the generation instructions materially changed.
+Louda explicitly replied `i approve` to the immediately preceding request to authorize generation of the two v2 tests from these exact instructions.
