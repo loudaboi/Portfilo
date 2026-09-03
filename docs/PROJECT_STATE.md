@@ -4,7 +4,7 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / VISUAL PILOT SELECTION REQUIRED**
+**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / C030 PILOT BRIEF APPROVED / GENERATION APPROVAL REQUIRED**
 
 Portfilo's publishing system, research standards, writing system, published launch stories, and Portfilo Brief foundation are in place. Phase 4 finalizes the visual/brand system and then performs the full engineering, security, SEO, accessibility, performance, and release audit before v0 is declared a working product.
 
@@ -23,6 +23,8 @@ Core rules:
 > **Research the visual problem before asking AI to generate the image.**
 
 > **AI output has zero visual authority.**
+
+> **Human approval is scoped to the gate explicitly awaiting approval.**
 
 No permanent tagline by default.
 
@@ -310,7 +312,7 @@ The title is story-specific. `What actually changed?` is not a permanent Portfil
 
 Status:
 
-**ACTIVE / IMAGE SYSTEM APPROVED / PILOT SELECTION REQUIRED**
+**ACTIVE / IMAGE SYSTEM APPROVED / C030 PILOT BRIEF APPROVED / GENERATION APPROVAL REQUIRED**
 
 The remaining v0 product-finalization work is intentionally kept on `build/portfilo-v0`.
 
@@ -337,7 +339,10 @@ Non-negotiable rules:
 - story/evidence extraction and an image-necessity decision come first;
 - develop 2-3 genuinely different concepts;
 - a human selects the concept;
-- `image-brief.md` must be approved before generation;
+- `image-brief.md` must be approved before generator instructions are finalized;
+- brief approval and generation authorization are separate human-controlled gates;
+- the derived generator instruction must be presented before generation authorization;
+- no image-generation call may occur unless the current human message explicitly authorizes generation or directly answers yes to the immediately preceding question asking whether to generate;
 - generated images are editorial illustration, never documentary evidence;
 - a human selects the final image after factual-implication, artifact, crop, color, accessibility, and disclosure review;
 - the first generated image does not become visual precedent merely because it was first.
@@ -360,18 +365,31 @@ Current implementation facts:
 - `src/content.config.ts` does not yet contain story image fields;
 - story-specific image/schema/component/social implementation is intentionally deferred until the pilot proves the system.
 
+Current C030 pilot state:
+
+- pilot story: `C030 — What actually changed?`;
+- image-necessity gate: `GENERATED ILLUSTRATION`;
+- human-selected concept: `Concept B — The Reconfigured Path`;
+- selected treatment: realistic grayscale editorial illustration, not cartoon/anime or overtly symbolic art;
+- `research/stories/what-actually-changed/image-brief.md`: **APPROVED**;
+- generator instruction `v1`: **READY / NOT YET INTENTIONALLY PRESENTED FOR GENERATION REVIEW**;
+- image generation authorization: **NO**;
+- valid candidate set: **NONE**.
+
+Workflow correction recorded on 2026-09-04:
+
+Two accidental image-generation calls occurred in chat immediately after image-brief approval. They produced document-style mockups rather than valid C030 editorial candidates. Those outputs have **zero project authority**, were not committed, are not candidates, and must not be used as visual precedent. The canonical image workflow was corrected so image-brief approval cannot silently authorize generation.
+
 Exact gate:
 
-**Choose one published story for the image-system pilot.**
+**Present the derived C030 generator instruction, then obtain separate explicit human generation authorization.**
 
-After pilot selection:
+Only after that authorization:
 
-1. inspect the approved story and its research packet;
-2. perform the image-necessity gate and visual story extraction;
-3. present 2-3 researched concept candidates with factual/misreading risks;
-4. obtain human concept selection;
-5. create and obtain approval of the story's `image-brief.md`;
-6. only then generate a small candidate set.
+1. generate a small candidate set from the approved instruction;
+2. audit each candidate for brief compliance, factual implication, artifacts, crop family, color, accessibility, and disclosure;
+3. present valid candidates for human final image selection;
+4. do not implement any image until a human selects the final asset.
 
 ### 4B - brand asset system
 
@@ -557,8 +575,8 @@ Newsletter state:
 | C030 editorial repair | COMPLETE |
 | C030 deployed review | PASS / USER APPROVED |
 | Phase 3 story writing repair | COMPLETE |
-| Editorial image system | APPROVED / CANONICAL |
-| Image-system pilot | SELECTION REQUIRED |
+| Editorial image system | APPROVED / CANONICAL / SEPARATE GENERATION AUTHORIZATION REQUIRED |
+| Image-system pilot | C030 BRIEF APPROVED / GENERATION APPROVAL REQUIRED |
 | Brand asset system | PENDING |
 | Full engineering/security/SEO audit | PENDING |
 | C001 | ACTIVE / CONTINUE |
@@ -570,18 +588,22 @@ Newsletter state:
 
 ## Exact next task
 
-**Select one published story for the Portfilo image-system pilot.**
+**Present C030 generator instruction `v1` for human inspection, then obtain separate explicit authorization before any image-generation call.**
 
-Do not generate an image yet.
+Current gate state:
 
-After the pilot story is selected:
+- concept selection: **APPROVED**;
+- image brief: **APPROVED**;
+- generator instruction: **READY / NOT YET PRESENTED FOR GENERATION REVIEW**;
+- generation authorization: **NO**;
+- valid candidates: **NONE**.
 
-1. inspect its approved body and research/evidence boundaries;
-2. perform the image-necessity gate;
-3. extract the visual problem from the approved editorial material;
-4. present 2-3 concept candidates with explicit factual/misreading and crop risks;
-5. obtain Louda Tuppal's concept selection;
-6. create `image-brief.md` from the selected concept;
-7. obtain explicit image-brief approval before any image-generation call.
+After explicit generation authorization:
+
+1. generate a small C030 candidate set;
+2. audit each candidate against the approved brief and factual boundaries;
+3. reject artifacts or documentary-looking failures before presenting options;
+4. obtain Louda Tuppal's final image selection;
+5. only then proceed to controlled crops/color/export and later implementation.
 
 Fresh local production-build validation and final-release QA remain required later in Phase 4; they have not been waived or converted into a pass.
