@@ -4,9 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / C030 Founding Perspective - DRAFT V2 COMPLETE / HEADLINE-DEK REVIEW**
+**Portfilo v0 / C030 Founding Perspective - SITE DRAFT READY FOR VISUAL REVIEW**
 
-Portfilo's publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
+Portfilo's publishing system, editorial standards, homepage real-content integration, and Portfilo Brief foundation are in place.
 
 Two real stories are published:
 
@@ -17,27 +17,30 @@ C027 is the homepage Featured story. C009 is the current Latest story.
 
 C030 is the approved third launch article. It is a concise founding/editorial Perspective rather than a research-heavy audience study.
 
-Working headline:
+Approved C030 title:
 
 > **What actually changed?**
 
-Recommended dek:
+Approved dek:
 
 > **An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.**
 
-C030 explains why Portfilo's Business, Technology, Startups, AI, and Building coverage belongs together through one editorial instinct: after an update establishes that something happened, ask whether implementation, economics, consequence, or operating reality materially changes what the update means.
+The final claim/copy audit passed. C030 now exists as a draft Astro content entry for local visual review:
 
-This does **not** claim that ordinary news updates are deficient. Updates can be useful precisely because they are fast and narrow.
+`src/content/stories/what-actually-changed.md`
 
-C030 packet:
+Current metadata:
 
-`research/stories/what-actually-changed/`
+- `contentType: perspective`;
+- `topic: building` - provisional until publication approval;
+- `author: Louda Tuppal`;
+- `status: draft`;
+- `featured: false`;
+- no `publishedAt` while draft.
 
-Current C030 state:
+Production safety remains intact: the story route includes drafts only when `import.meta.env.DEV` is true. Production builds still generate story routes only for `status: published` entries.
 
-`DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED`
-
-No public C030 story file exists yet.
+No publication approval has been given yet.
 
 ## Current branch
 
@@ -170,7 +173,7 @@ Packet:
 
 Editorial pipeline and publication approval: PASS.
 
-No final hero image has been selected. The newest share-readiness/mobile deployment fixes still require re-verification.
+No final hero image has been selected. The newest share-readiness/mobile deployment fixes still require fresh live verification.
 
 ### C009 - PUBLISHED / LATEST
 
@@ -216,6 +219,8 @@ Important unresolved contradiction:
 
 The Swarm Philippine AI Report 2025 narrative says 65% remain at proof-of-concept while a chart on the same page shows 40%. Do not use 65% as a clean factual anchor until reconciled.
 
+No draft is authorized until the reporting threshold is met.
+
 ### C021 - ACTIVE / SOURCE RECONNAISSANCE
 
 Question:
@@ -239,18 +244,13 @@ Measurement rules:
 
 No national subtotal is publication-ready.
 
-C021 remains valuable active research but is no longer the designated third launch article.
+If a defensible bottom-up total cannot be established, the evidence-led reframe remains:
 
-### C030 - ACTIVE / THIRD LAUNCH PERSPECTIVE
+> **Why Philippine data-center capacity numbers conflict — and what operating, energized, planned, and announced megawatts actually mean.**
 
-Working headline:
+C021 remains valuable active research but is not the designated third launch article while C030 occupies that role.
 
-> **What actually changed?**
-
-Topic: `Building` - provisional  
-Content type: `Perspective`  
-Author: `Louda Tuppal`  
-Primary reader need: `Interpret`.
+### C030 - ACTIVE / THIRD LAUNCH PERSPECTIVE / VISUAL REVIEW
 
 Packet:
 
@@ -258,65 +258,37 @@ Packet:
 
 Purpose:
 
-Explain the connective editorial lens behind Portfilo without duplicating `/about`, restating the Standards page, or becoming a promotional `Why we built Portfilo` essay.
+Explain why Portfilo's Business, Technology, Startups, AI, and Building coverage belongs together without duplicating `/about`, restating Standards, or becoming a promotional founder manifesto.
 
-The approved distinction is:
+Approved editorial state:
 
-- About explains what Portfilo is and what it covers;
-- C030 explains why those subjects belong together and what Portfilo keeps looking for across them.
-
-The article must not claim:
-
-- that journalism is broken;
-- that readers are confused;
-- that young Filipinos behave a particular way;
-- that every update requires deeper explanation;
-- that Portfilo is uniquely trustworthy or superior.
-
-No heavy research package is required. Any concrete factual example must still be verified.
-
-#### C030 editorial history
-
-Approved:
-
-- core idea;
-- six-part structure;
-- substance of Draft 1.
+- core direction: PASS / APPROVED;
+- structure: APPROVED;
+- Draft 1 substance: APPROVED;
+- adversarial review: PASS WITH REVISION;
+- Draft 2: APPROVED;
+- headline/dek: APPROVED;
+- claim/copy audit: PASS;
+- draft content entry: CREATED;
+- publication: NOT APPROVED YET.
 
 Files:
 
-- `brief.md`;
-- `structure.md`;
-- `draft-v1.md`;
-- `adversarial-review.md`;
-- `draft-v2.md`;
-- `headline-dek.md`.
+- `research/stories/what-actually-changed/brief.md`;
+- `research/stories/what-actually-changed/draft-v1.md`;
+- `research/stories/what-actually-changed/adversarial-review.md`;
+- `research/stories/what-actually-changed/draft-v2.md`;
+- `research/stories/what-actually-changed/headline-dek.md`;
+- `research/stories/what-actually-changed/claim-audit.md`;
+- `src/content/stories/what-actually-changed.md`.
 
-Adversarial review outcome:
+Visual-review behavior:
 
-`PASS WITH REVISION`.
+- `npm run dev` may render draft story routes;
+- production builds still render only `status: published` story routes;
+- C030 remains absent from homepage Latest/Featured eligibility because it is a draft.
 
-Main Draft 1 issues:
-
-- repeated the same editorial motion too many times;
-- Building section was longer than necessary;
-- ending drifted toward brand-promise language;
-- working question risked becoming slogan-like if repeated as a branded framework.
-
-Draft 2 addresses those issues by compressing the middle and keeping the closing focused on the editorial distinction rather than a grand mission promise.
-
-Recommended metadata for the current gate:
-
-- title: `What actually changed?`;
-- dek/description: `An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
-
-`What actually changed?` remains article-specific and is not a permanent tagline.
-
-Current state:
-
-`DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED`.
-
-Do not create a public story file until Louda Tuppal approves this version.
+Topic `building` remains provisional. Revisit only if the visual/editorial review makes the classification feel misleading.
 
 ## Waiting external evidence
 
@@ -348,7 +320,7 @@ Packet:
 
 The original behavior question remains potentially valuable as a future reported study, but it is no longer responsible for explaining Portfilo's mission.
 
-The six-event Reddit desk pilot is preserved as research history. Its proposed Reddit-led full corpus is rejected as the evidentiary backbone for the launch article.
+The six-event Reddit desk pilot is preserved as research history. Its proposed Reddit-led full corpus is rejected as the evidentiary backbone for a Portfilo launch article.
 
 Revisit when Portfilo can recruit at least 10 suitable participants without relying almost entirely on the founder's immediate circle, or another professional primary-data route becomes available.
 
@@ -368,7 +340,7 @@ Current hierarchy:
 4. About;
 5. Portfilo Brief.
 
-Only `status: published` story entries should render publicly.
+Only `status: published` entries are eligible for public homepage story placement.
 
 Synthetic development fixtures remain drafts.
 
@@ -380,7 +352,7 @@ Wordmark remains HTML/CSS:
 
 Subscribe CTAs use a CSS-drawn northeast arrow to avoid iOS emoji rendering.
 
-Newest live/mobile re-verification is pending.
+Newest live/mobile re-verification remains pending.
 
 ## Email system
 
@@ -449,12 +421,12 @@ Held/future:
 | C027 | PUBLISHED / FEATURED |
 | C009 | PUBLISHED |
 | C030 core direction | APPROVED |
-| C030 structure | APPROVED |
-| C030 Draft 1 substance | APPROVED |
-| C030 adversarial review | PASS WITH REVISION |
-| C030 Draft 2 | COMPLETE / USER REVIEW REQUIRED |
-| C030 headline/dek | RECOMMENDATION READY / USER REVIEW REQUIRED |
-| C030 public story file | NOT CREATED |
+| C030 Draft 2 | APPROVED |
+| C030 headline/dek | APPROVED |
+| C030 claim/copy audit | PASS |
+| C030 content entry | DRAFT / CREATED |
+| C030 production exposure | MUST REMAIN EXCLUDED |
+| C030 local visual review | PENDING USER CHECK |
 | C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C001 | ACTIVE / CONTINUE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
@@ -462,19 +434,22 @@ Held/future:
 | Newest mobile/share-readiness deployment verification | PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
-No code or public story file changed during the C030 Draft 2 task, so no application build was required for this phase boundary.
+A local `npm run build` has not been executed from this connected-repository session. The next local check must include `npm run build` after pulling the latest branch changes.
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of C030 Draft 2 and the recommended headline/dek.**
+**Local C030 visual review and build validation.**
 
-If approved:
+After pulling `build/portfilo-v0`:
 
-1. perform a final claim/copy audit on the approved text;
-2. create the public Markdown story entry with `status: draft` first;
-3. confirm final topic/metadata and article ordering implications;
-4. run the Astro build and inspect the generated story route before any publication approval;
-5. do not set `status: published` until Louda Tuppal explicitly approves publication.
+1. run `npm run build`;
+2. run `npm run dev`;
+3. open `/stories/what-actually-changed`;
+4. inspect desktop and mobile typography, headline/dek balance, paragraph rhythm, metadata, and topic label;
+5. report any visual/copy issue;
+6. if visual review passes, obtain explicit publication approval before changing `status` to `published` or adding `publishedAt`.
+
+Do not publish C030 merely because the draft renders successfully.
 
 ## Phase handoff rule
 
