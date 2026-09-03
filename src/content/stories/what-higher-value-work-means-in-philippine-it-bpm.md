@@ -1,7 +1,7 @@
 ---
 title: "What 'higher-value work' means in Philippine IT-BPM"
-dek: "Official skills frameworks and a structured sample of 15 current job postings point to specialized work in finance, healthcare, data, operations, risk and global capability centers. The phrase does not tell us how common those jobs are or whether they pay more."
-description: "Official skills frameworks and a structured sample of 15 current job postings point to specialized work in finance, healthcare, data, operations, risk and global capability centers. The phrase does not tell us how common those jobs are or whether they pay more."
+dek: "The same industry phrase can point to credit analysis, clinical informatics or workforce planning."
+description: "Portfilo reviewed official Philippine skills frameworks and 15 current employer postings to see what `higher-value work` looks like in actual jobs."
 contentType: explained
 topic: business
 author: "Portfilo"
@@ -11,96 +11,68 @@ featured: false
 methodology: "Reviewed official Philippine Skills Frameworks and a purposefully selected sample of 15 employer-owned job postings from six employers, current or posted from May through September 2026 and checked on September 3, 2026, to compare advertised role characteristics. The sample is illustrative, not random or weighted, and cannot estimate job shares, growth, realized compensation or worker-transition rates."
 ---
 
-[IBPAP's 2028 outlook](https://www.linkedin.com/pulse/ibpap-unveils-2028-outlook-industry-shifts-from-capacity-capability-9fipc) puts `higher-value work` at the center of the Philippine IT-BPM industry's next phase. In July, the association said future growth would depend less on workforce scale and increasingly on higher-value capabilities and AI-enabled talent. It described the change as a shift from `capacity to capability`.
+The IT & Business Process Association of the Philippines has put `higher-value work` at the center of its 2028 outlook. In July, [IBPAP said](https://www.linkedin.com/pulse/ibpap-unveils-2028-outlook-industry-shifts-from-capacity-capability-9fipc) the industry's next phase should depend less on workforce scale and more on higher-value capabilities and AI-enabled talent, describing the shift as one from `capacity to capability`.
 
-But `higher-value work` is not a job title. It is not an official occupation class. And it does not automatically mean AI, non-voice work or a higher salary.
+IT-BPM means information technology and business process management. In this sector, `higher-value work` sounds more precise than it is. The official Philippine Skills Frameworks reviewed for this story map tracks, functions, roles and competencies; they do not define one occupation or formal tier called `higher-value work`.
 
-The [OECD's 2026 survey of the Philippines](https://www.oecd.org/en/publications/oecd-economic-surveys-philippines-2026_f0e0c581-en/full-report/sustaining-growth-and-stability-amid-headwinds_a8f57a2c.html) describes employment in the sector as still concentrated in contact centers and back-office operations, while also diversifying into global capability centers, healthcare information management, and IT and software. Global capability centers are in-house service hubs, not the same operating model as outsourced BPO providers, although both sit inside the broader IT-BPM sector.
+Across those frameworks and current employer postings, the useful differences are in the responsibilities themselves. Some roles require specialized subject knowledge or technical work; others carry more judgment, control, planning or responsibility for how a process operates. Whether a job is voice or non-voice, or whether it carries an AI label, does not settle that question.
 
-[IBPAP's current industry material](https://www.ibpap.org/investors) similarly spans contact-center services, GCCs and shared services, healthcare IT, and software, with work ranging from customer support to analytics, finance, cybersecurity and life-sciences support.
+Portfilo reviewed official Philippine Skills Frameworks and a purposefully selected sample of 15 current employer-owned job postings from six employers. The sample was built to compare different kinds of work, not to estimate how common they are. It is illustrative, not random or weighted, and cannot establish job shares, growth rates or pay premiums.
 
-That explains the direction of the industry. It still leaves a more practical question: **what kinds of jobs sit underneath the phrase?**
+## What does `higher-value work` mean here?
 
-To answer that, Portfilo reviewed official Philippine Skills Frameworks and a purposefully selected sample of 15 current employer postings from Wells Fargo, Citi, Cognizant, Optum, Concentrix and Johnson & Johnson. The sample included frontline customer-service baselines alongside finance, healthcare, data, technology, workforce-management and shared-services roles. It was designed to compare kinds of work, not estimate their share of Philippine hiring.
+The [Philippine Skills Framework for Contact Center and Business Process Management](https://www.deped.gov.ph/wp-content/uploads/Philippine-Skills-Framework-for-Contact-Center-and-Business-Process-Management.pdf) shows why the phrase cannot be reduced to voice versus non-voice work. The framework maps six tracks inside contact center and BPM: Customer Service and Support, Quality Assurance, Workforce Management, Business Transition and Transformation, Security, and Learning and Development.
 
-The clearest answer is that `higher-value work` is an umbrella for several kinds of specialized work. What separates those roles from highly standardized, high-volume work is usually some combination of deeper domain expertise, technical or data depth, judgment and control responsibility, ownership of processes or systems, and wider stakeholder scope.
+Specialized work therefore exists inside contact-center operations themselves. A workforce-planning or security role does not stop being part of BPM simply because its responsibilities differ from frontline customer service.
 
-## There is no single `higher-value` job
+The [Global In-House Center skills framework](https://www.deped.gov.ph/wp-content/uploads/Philippine-Skills-Framework-for-Global-In-House-Center.pdf) covers a different operating model. Global capability centers, or GCCs, are in-house service hubs rather than outsourced BPO providers. The framework spans IT, human resources, supply chain, service-center governance and financial shared services, with competencies including finance, analytics, regulatory compliance and risk.
 
-The official skills frameworks are useful precisely because they do not reduce the sector to voice and non-voice work.
+There is no official line in these frameworks separating `higher-value` jobs from everything else. For this story, the phrase is useful only as industry shorthand that has to be translated into actual responsibilities.
 
-The [Philippine Skills Framework for Contact Center and Business Process Management](https://www.deped.gov.ph/wp-content/uploads/Philippine-Skills-Framework-for-Contact-Center-and-Business-Process-Management.pdf), for example, maps six tracks: Customer Service and Support, Quality Assurance, Workforce Management, Business Transition and Transformation, Security, and Learning and Development.
+## Is it basically AI or non-voice work?
 
-That matters. It means specialized work can exist inside a contact-center or BPM operation itself. A worker does not have to become a software engineer or leave the industry for a role to involve more analysis, domain knowledge or operational responsibility.
+AI is part of the industry's current strategy, but it does not define the category. The official frameworks include specialized work in finance, healthcare, workforce management, security and other functions that do not depend on an AI label.
 
-The [Global In-House Center skills framework](https://www.deped.gov.ph/wp-content/uploads/Philippine-Skills-Framework-for-Global-In-House-Center.pdf) widens the picture further. It maps functions across IT, human resources, supply chain, service-center governance and financial shared services, with competencies including business intelligence, financial analysis, regulatory compliance, risk management and stakeholder management.
+A [Concentrix workforce-management posting in Makati](https://jobs.concentrix.com/job/?id=R1672510) illustrates the point inside contact-center operations. It describes forecasting, staffing models, schedules, resource planning and planning for new programs. The role is part of the same broad service industry as frontline customer support, but its advertised work is centered on planning the operation rather than handling individual customer interactions.
 
-For this story, five characteristics are more useful than the label itself:
+Technical branding is not enough either. A [Cognizant Systems Engineer posting in Manila](https://careers.cognizant.com/emea-en/jobs/000701475210/systems-engineer/) describes troubleshooting and technical support alongside standardized changes, monitoring and escalation. The posting is useful as a boundary case: technical work can still contain substantial procedural execution.
 
-- **Domain depth:** specialized knowledge in areas such as finance, healthcare, regulation or a particular industry.
-- **Technical or data depth:** analytics, software, systems, security, data or specialized tools.
-- **Judgment and control responsibility:** decision-making, exceptions, risk, compliance or consequential review.
-- **Process or system ownership:** forecasting, design, governance, transformation, improvement or responsibility for how work operates.
-- **Stakeholder scope:** coordination across clients, product teams, business units, regions or global functions.
+The same problem applies to `non-voice`. A channel tells us how an interaction happens; it does not by itself tell us how much specialized knowledge, discretion or responsibility a role carries.
 
-These are Portfilo's analytical dimensions, not an official scoring system. A job can be strong on one and ordinary on another.
+## What jobs actually fit the phrase?
 
-## Domain expertise changes the work
+The current postings point to materially different kinds of specialized work rather than one job family.
 
-Some of the clearest examples come from finance and healthcare.
+A [Citi Senior Credit Risk Analyst posting in Taguig](https://jobs.citi.com/job/city-of-taguig/senior-credit-risk-analyst/287/99709932384) describes end-to-end credit analysis, financial underwriting and credit memos used in lending decisions. The work is specialized because of the finance knowledge and judgment attached to those decisions.
 
-A [Senior Credit Risk Analyst role at Citi in Taguig](https://jobs.citi.com/job/city-of-taguig/senior-credit-risk-analyst/287/99709932384) is advertised around end-to-end credit analysis, financial underwriting and credit memos used in lending decisions. Compared with the frontline baseline roles in the sample, the posting places more weight on finance knowledge, analysis and judgment tied to credit quality.
+An [Optum Senior Clinical Informatics Analyst posting in Makati](https://careers.unitedhealthgroup.com/job/makati-city/senior-clinical-informatics-analyst/34088/98192260032) sits in a different part of the sector. The posting describes translating clinical guidelines into decision-support workflows and rule logic for electronic medical records, combining clinical background with healthcare-technology work.
 
-Job titles can also hide the underlying work. Cognizant currently advertises a Manila role called [`PE-CX-Multi Channel Helpdesk`](https://careers.cognizant.com/ca-en/jobs/00069920775/pe-cx-multi-channel-helpdesk/). The title sounds like generic support. The posting describes capital-markets operations including trade booking, clearing, settlement, collateral, reconciliations and investigation of financial breaks and claims.
+Job titles can obscure the work as well. Cognizant advertises a Manila role called [`PE-CX-Multi Channel Helpdesk`](https://careers.cognizant.com/ca-en/jobs/00069920775/pe-cx-multi-channel-helpdesk/). Despite the title, the posting describes capital-markets operations including trade booking, clearing, settlement, collateral, reconciliations and investigation of financial breaks and claims.
 
-Healthcare shows the same pattern from another direction. An [Optum Senior Clinical Informatics Analyst role in Makati](https://careers.unitedhealthgroup.com/job/makati-city/senior-clinical-informatics-analyst/34088/98192260032) is advertised as translating clinical guidelines into decision-support workflows and rule logic used in electronic medical records. The posting asks for clinical background, understanding of patient-care workflows and experience turning clinical practice into structured healthcare-technology logic.
+These roles are too different to support a single occupational definition. They are useful because they make the industry's broad label concrete through advertised tasks and requirements.
 
-These jobs are very different from one another. What connects them is not a shared title or technology. Their postings require more specialized knowledge, judgment or responsibility than the highly standardized frontline roles used as a baseline in this sample.
+## Does specialized work have to be senior?
 
-## Data is one path, not the definition
+Some specialized roles have steep barriers. Clinical positions can require professional credentials, while senior risk or analytics jobs can require years of domain experience. The existence of those roles does not make them realistic next steps for every worker.
 
-Technical and analytical work is another visible part of the picture.
+But specialization is not identical to seniority. Johnson & Johnson's [Global Finance Masterdata Analyst posting in Taguig](https://www.careers.jnj.com/fr-fr/jobs/r-092599/analyst-global-finance-masterdata/) accepts zero to two years of relevant experience while describing finance master-data work, complex issue resolution, internal controls, audit support, risk mitigation and process improvement.
 
-A [Wells Fargo Senior Data Analytics Consultant role in Taguig](https://www.wellsfargojobs.com/en/jobs/r-569067/senior-data-analytics-consultant-banking-risk-analytics/) is advertised around large banking and transaction datasets, risk and fraud analysis, tools including SAS, SQL, Tableau, Power BI and Python, and communication of findings to business partners.
+That is one current posting, not evidence that specialized jobs are generally entry-level. It is enough to show that seniority alone cannot define the category.
 
-But a job should not qualify as `higher-value` merely because its title contains `data`, `digital`, `IT` or `AI`. Technical work can still be highly procedural. Conversely, jobs with little AI branding can involve substantial domain expertise, risk or process ownership.
+## Does `higher value` mean higher pay or a better job?
 
-So AI versus non-AI is not a useful dividing line. The industry may use AI to change how work is performed, but credit analysis, clinical work, workforce planning, controls and governance can all be specialized without AI being the defining feature.
+The current evidence cannot establish either claim.
 
-## Higher-complexity work also sits inside contact centers
+Industry strategy can use `value` to refer to what a service produces for clients or employers, including revenue per worker or more complex capabilities. That does not reveal a worker's salary, autonomy, workload or overall job quality.
 
-One of the more important findings from the official frameworks and current postings is that the shift is not simply from `BPO work` to `tech work`.
+Most employer-owned postings in the 15-role sample do not publish salary information that can be compared consistently across the roles. Broad wage data available in this research do not map cleanly onto the job families either. This story therefore cannot support a general wage-premium claim.
 
-Concentrix currently advertises a [workforce-management role in Makati](https://jobs.concentrix.com/job/?id=R1672510) that reviews forecasts and schedules, develops staffing models, plans resources for new programs, configures workforce-planning tools and evaluates call-center efficiency.
+The word `higher` should not become a judgment about workers in more standardized roles. Frontline customer service can still require communication, empathy, regulatory knowledge and situational judgment even when the advertised workflow is more tightly structured.
 
-The posting is about planning and coordinating the operation behind frontline service rather than handling one customer interaction at a time.
+## Can workers move into these roles, and how common are they?
 
-This distinction is more useful than voice versus non-voice. Non-voice work can still be repetitive and rules-based. Customer-facing work, meanwhile, can require empathy, compliance knowledge and situational judgment even when it remains tightly structured.
+The 15-role sample cannot answer either question. It can show that different kinds of specialized work are being advertised; it cannot tell us what share of Philippine IT-BPM jobs they represent or whether that share is growing.
 
-Calling standardized frontline service `low-value work` would create another problem: it would turn a commercial value-chain term into a judgment about the worth of the work or the worker. The current evidence supports narrower descriptions such as high-volume, routine, standardized or procedure-constrained when those are the actual characteristics.
+Role existence is also not evidence of worker mobility. A clinical-informatics job, a credit-risk role and a workforce-planning position require different backgrounds. Showing that those roles exist does not tell us how many workers in standardized frontline jobs can move into them, how long that transition would take, or what training would make it realistic.
 
-## Specialized does not always mean senior
-
-Some of the sampled roles have steep barriers. Clinical roles can require professional credentials. Senior risk, analytics and governance positions can require years of experience.
-
-But the category is not limited to executives or senior specialists.
-
-Johnson & Johnson's [Global Finance Masterdata Analyst role in Taguig](https://www.careers.jnj.com/fr-fr/jobs/r-092599/analyst-global-finance-masterdata/) accepts zero to two years of relevant experience. The posting also includes finance master-data knowledge, complex issue resolution, internal controls, audit support, risk mitigation and process improvement.
-
-That does not make every specialized role accessible to an entry-level applicant. It does show why seniority alone is a poor definition of `higher value`.
-
-## The phrase still leaves the hardest questions unanswered
-
-The 15-job sample used for this analysis is illustrative. It was built to compare role types and responsibilities, not to measure the Philippine IT-BPM labor market.
-
-It therefore cannot tell us what percentage of IT-BPM jobs fall into these categories, whether they are growing fast enough to change the sector's employment mix, or whether they can absorb workers whose more routine tasks are automated.
-
-It also does not establish a wage premium. Most employer-owned postings in the sample do not publish directly comparable salary ranges, and broad wage data do not map cleanly onto these role families. `Higher value` to a client or employer is not automatically higher pay or better job quality for the worker.
-
-And role existence is not a reskilling outcome. A clinical informatics job requiring healthcare experience, a credit-risk role and a workforce-planning position imply very different transition paths. Showing that those jobs exist does not show how many frontline workers can move into them, how long that takes or who pays for the training.
-
-Those remain separate empirical questions.
-
-Taken literally, `higher-value work` is too vague to tell a worker what the shift means. Translated into actual roles, the pattern is clearer: specialization can come from domain knowledge, technical or data depth, judgment and control responsibility, process ownership or wider organizational scope.
-
-What this article cannot answer is equally important: how many of these jobs exist, how their pay compares, and whether workers in more standardized roles have realistic paths into them. Those questions need separate data and reporting.
+The evidence in this story can make `higher-value work` more concrete by tying the phrase to actual responsibilities in current frameworks and job postings. It cannot show how large the category is, whether it pays more, or whether workers can move into it at scale. Those require separate data and reporting.
