@@ -4,7 +4,7 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / CONCEPT SELECTION REQUIRED**
+**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / BRIEF APPROVED / GENERATION INSTRUCTIONS REQUIRED**
 
 Portfilo's publishing system, research standards, writing system, published launch stories, and Portfilo Brief foundation are in place. Phase 4 finalizes the visual/brand system and then performs the full engineering, security, SEO, accessibility, performance, and release audit before v0 is declared a working product.
 
@@ -64,6 +64,7 @@ Design / imagery:
 - `docs/IMAGE_SYSTEM.md`
 - `research/image-system/research.md`
 - `research/image-system/homepage-featured-cover-research.md`
+- `research/image-system/homepage-featured-cover-brief.md`
 - `research/IMAGE_BRIEF_TEMPLATE.md`
 
 Email/deployment:
@@ -313,7 +314,7 @@ The title is story-specific. `What actually changed?` is not a permanent Portfil
 
 Status:
 
-**ACTIVE / IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / CONCEPT SELECTION REQUIRED**
+**ACTIVE / IMAGE SYSTEM APPROVED / HOMEPAGE FEATURED COVER PILOT / BRIEF APPROVED / GENERATION INSTRUCTIONS REQUIRED**
 
 The remaining v0 product-finalization work is intentionally kept on `build/portfilo-v0`.
 
@@ -330,6 +331,10 @@ Research basis:
 Homepage featured-cover research:
 
 `research/image-system/homepage-featured-cover-research.md`
+
+Approved homepage featured-cover brief:
+
+`research/image-system/homepage-featured-cover-brief.md`
 
 Reusable per-story brief:
 
@@ -374,37 +379,36 @@ Current homepage implementation facts:
 
 Louda Tuppal approved the pivot to start with the homepage black featured cover before continuing C030 story-image generation on 2026-09-04.
 
-Research status:
+Research and decision state:
 
 - current panel behavior inspected: **YES**;
 - professional/editorial visual-system research: **COMPLETE**;
 - research packet: `research/image-system/homepage-featured-cover-research.md`;
-- proposed v0 asset count: **5 canonical topic assets**;
-- system logic to evaluate: `featured story -> topic -> topic cover asset`;
+- selected direction: **Working Worlds / Material Anchors**;
+- approved visual brief: `research/image-system/homepage-featured-cover-brief.md`;
+- visual brief approval: **YES / LOUDA TUPPAL / 2026-09-04**;
+- v0 asset count after pilot validation: **5 canonical topic assets**;
+- system logic: `featured story -> topic -> canonical topic cover asset`;
 - shared grammar: realistic editorial illustration, grayscale, strong geometry, directional/low-key light, restrained grain, no generated typography, no fake logos/screens/documents;
-- topic should change subject/context, not create five unrelated art styles;
+- topic determines environment; one dominant material/process anchor gives focus; humans optional and secondary;
+- representative test pair: **Building + AI**;
 - image generation authorization: **NO**;
 - implementation authorization: **NO**.
 
-System-level concepts awaiting human selection:
-
-- **A — Working Worlds:** realistic generic environments, environment-led, anonymous people secondary;
-- **B — Material Evidence of Work:** realistic tools/materials/components/process traces, close/medium views;
-- **C — Human Work, Environment Secondary:** anonymous partial people/hands performing topic-relevant work.
+Research basis includes established editorial-design practice from Fast Company, Rest of World, The Washington Post's documented illustration workflow, and Society of Publication Designers award-recognized publications. This supports transferable system decisions, not imitation. `Proven` here means established professional practice, not a guarantee that one aesthetic will maximize Portfilo audience performance.
 
 Exact gate:
 
-**Select or revise homepage featured-cover Direction A, B, or C.**
+**Derive and present the Building + AI representative-test generator instructions from the approved featured-cover brief.**
 
-After direction selection:
+After the instructions are presented:
 
-1. define the five topic expressions inside the selected shared grammar;
-2. create a concise homepage featured-cover visual brief;
-3. obtain human brief approval;
-4. derive and present generation instructions;
-5. obtain separate explicit generation authorization;
-6. generate only a small representative set before producing all five if that reduces rework;
-7. audit the assets together in the actual homepage context before implementation is locked.
+1. obtain separate explicit human generation authorization;
+2. generate only the Building + AI representative pair/small candidate set;
+3. audit for shared-grammar consistency, topic differentiation, stock/documentary risk, artifacts, grayscale/color compliance, and actual homepage-panel readability;
+4. obtain human selection/approval of the representative direction;
+5. only then generate Technology, Startups, and Business if the system passes;
+6. do not implement the topic-to-asset mapping until the representative imagery is approved in homepage context.
 
 ### Paused C030 story-image pilot
 
@@ -611,7 +615,7 @@ Newsletter state:
 | C030 deployed review | PASS / USER APPROVED |
 | Phase 3 story writing repair | COMPLETE |
 | Editorial image system | APPROVED / CANONICAL / SEPARATE GENERATION AUTHORIZATION REQUIRED |
-| Homepage featured-cover pilot | RESEARCH COMPLETE / DIRECTION SELECTION REQUIRED |
+| Homepage featured-cover pilot | DIRECTION SELECTED / BRIEF APPROVED / GENERATION INSTRUCTIONS REQUIRED |
 | C030 story-image pilot | PAUSED / BRIEF APPROVED / GENERATION NOT AUTHORIZED |
 | Brand asset system | PENDING |
 | Full engineering/security/SEO audit | PENDING |
@@ -624,24 +628,21 @@ Newsletter state:
 
 ## Exact next task
 
-**Select or revise one shared visual direction for the homepage featured-cover system.**
-
-Candidates:
-
-- `A — Working Worlds`;
-- `B — Material Evidence of Work`;
-- `C — Human Work, Environment Secondary`.
+**Derive and present the Building + AI homepage featured-cover generator instructions from the approved `Working Worlds / Material Anchors` brief.**
 
 Current gate state:
 
 - homepage panel behavior: **INSPECTED**;
 - five topic contexts: **CONFIRMED**;
 - professional/editorial visual-system research: **COMPLETE**;
-- system concepts: **READY FOR HUMAN SELECTION**;
+- selected direction: **WORKING WORLDS / MATERIAL ANCHORS**;
+- visual brief: **APPROVED**;
+- representative test pair: **BUILDING + AI**;
+- generator instructions: **NOT YET PRESENTED**;
 - image generation authorization: **NO**;
 - implementation authorization: **NO**;
 - C030 generation authorization: **NO / PAUSED**.
 
-After human direction selection, create the five-topic visual brief and stop for approval before any image-generation instruction is authorized.
+After the exact generator instructions are presented, obtain separate explicit human generation authorization before any image-generation call.
 
 Fresh local production-build validation and final-release QA remain required later in Phase 4; they have not been waived or converted into a pass.
