@@ -86,22 +86,21 @@ On mobile:
 
 ## Color
 
-Starting direction:
+The implemented v0 palette is:
 
-- near-black;
-- off-white;
-- restrained neutral scale;
-- one sparse violet accent.
+- paper / off-white: `#f4f0e8`;
+- ink / near-black: `#171614`;
+- muted neutral: `#69655e`;
+- line neutral: `#cbc5bb`;
+- Portfilo blue: `#0050a4`;
+- light blue for dark surfaces: `#8fc7ff`;
+- Portfilo red: `#b42318`.
 
-Violet should have semantic value, for example:
+Blue is the primary functional accent for links, focus, active states, and other interface emphasis where the implementation uses an accent.
 
-- active state;
-- links/focus;
-- series marker;
-- selected data point;
-- research/source signal.
+Red is a secondary brand/editorial accent. It should be sparse and intentional rather than used to balance a page mechanically.
 
-Do not use violet as arbitrary decoration.
+For generated editorial imagery, follow `docs/IMAGE_SYSTEM.md`: default to grayscale/neutral imagery with zero or one approved Portfilo accent. Do not introduce unrelated hues.
 
 No gradient-first identity.
 
@@ -175,20 +174,26 @@ Requirements:
 
 ## Images and data
 
+Editorial imagery must follow `docs/IMAGE_SYSTEM.md`.
+
 Prefer:
 
-- strong original/relevant photography;
-- documentary imagery;
+- strong owned/licensed/verified photography when documentary truth is part of the image's value;
+- approved generated editorial illustration when a conceptual or situational visual job is justified;
 - clean diagrams;
 - charts;
 - source documents/details where legally appropriate;
 - typography-led compositions.
 
+Generated imagery is illustration, not evidence. It requires a researched visual decision, an approved story image brief before generation, visible synthetic/AI disclosure when published, and human final selection.
+
 Avoid:
 
 - generic stock-photo mood boards;
 - AI-generated imagery presented as documentary evidence;
-- decorative visuals that imply facts not supported by reporting.
+- image-model-led concept selection without an approved brief;
+- decorative visuals that imply facts not supported by reporting;
+- generic business/AI visual clichés.
 
 ## Anti-patterns
 
