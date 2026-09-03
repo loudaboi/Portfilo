@@ -4,9 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**ACTIVE / CORE IDEA APPROVED / STRUCTURE READY / DRAFT NOT YET AUTHORIZED**
+**ACTIVE / DRAFT V1 COMPLETE / USER REVIEW REQUIRED**
 
-Louda Tuppal approved this direction on 2026-09-03 after evaluating the earlier C029 audience-research approaches.
+Louda Tuppal approved this direction on 2026-09-03 after evaluating the earlier C029 audience-research approaches, and approved the six-part structure before Draft 1 began.
 
 C030 is a separate story. It does not replace or rewrite C029's research history.
 
@@ -145,12 +145,27 @@ They do different jobs even if both carry Louda Tuppal's byline.
 
 ## Headline status
 
-`What actually changed?` is the approved working concept, not a locked final headline.
+`What actually changed?` remains the working headline for Draft 1, not a locked final headline.
 
 The final headline should be decided after the draft earns its strongest formulation.
 
+## Draft 1
+
+Draft file:
+
+`research/stories/what-actually-changed/draft-v1.md`
+
+Draft 1 uses only generic hypothetical examples and therefore does not publish unresolved C001 or C021 findings as facts.
+
+Editorial pre-check:
+
+1. still useful beside the existing About page: `PASS`;
+2. explains why the coverage areas belong together: `PASS`;
+3. avoids claiming other journalism is broken: `PASS`;
+4. useful without a subscription conversion: `PASS`.
+
 ## Current outcome
 
-**CORE IDEA APPROVED / STRUCTURE READY**
+**DRAFT V1 COMPLETE / USER REVIEW REQUIRED**
 
-Next gate: Louda Tuppal reviews the proposed structure in `structure.md` before Draft 1 begins.
+Next gate: Louda Tuppal reviews Draft 1 before revision, headline/dek work, or creation of a public story file.
