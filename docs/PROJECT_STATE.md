@@ -4,15 +4,15 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 1 COMPLETE / SITE COPY AUDIT NEXT**
+**Portfilo v0 / Writing System Upgrade - SITE COPY + IA AUDIT COMPLETE / PHASE 2A IMPLEMENTATION AWAITING APPROVAL**
 
 Portfilo's publishing system, research standards, first published stories, homepage integration, and Portfilo Brief foundation remain in place.
 
 A system-level writing problem was identified on 2026-09-03: Portfilo had strong rules preventing AI from becoming factual evidence, but the workflow still allowed AI to invent structure, institutional phrasing, and polished prose before an explicit writing-form decision existed.
 
-The corrective writing system is now established.
+The corrective writing system is established.
 
-New canonical document:
+Canonical writing document:
 
 `docs/WRITING_SYSTEM.md`
 
@@ -24,13 +24,19 @@ Reusable pre-draft template:
 
 `research/STYLE_BRIEF_TEMPLATE.md`
 
-Core new rule:
+Site copy/information-architecture audit:
+
+`docs/SITE_COPY_AND_IA_AUDIT.md`
+
+Core writing rule:
 
 > **AI output has zero stylistic authority.**
 
 This does not ban AI-assisted drafting. It means a model cannot silently decide the story form, house voice, institutional position, rhetorical pattern, or sentence style and then treat its own output as precedent.
 
 Professional examples and guidance may be used to study structural decisions. They must not be used to imitate distinctive wording, cadence, metaphors, jokes, or another publication's voice.
+
+The site-copy/IA audit is complete. No public copy, article prose, or application implementation was changed during the audit.
 
 ## Current branch
 
@@ -47,6 +53,7 @@ Project/product:
 - `docs/V0_SCOPE.md`
 - `docs/PROJECT_STATE.md`
 - `docs/CONTENT_PLANNING.md`
+- `docs/SITE_COPY_AND_IA_AUDIT.md`
 
 Editorial/research/writing:
 
@@ -105,7 +112,7 @@ Core copy rule:
 
 > **Say the thing. Then stop.**
 
-New writing rule:
+Writing rule:
 
 > **AI output has zero stylistic authority.**
 
@@ -208,18 +215,57 @@ Generated wording such as `Portfilo believes`, `Portfilo wants`, `Portfilo cares
 
 Promotional quality claims are rejected by default unless specifically approved and supported.
 
-## Headline / dek / description finding
+## Site copy + information-architecture audit outcome
 
-The current Astro content schema uses one `description` field for multiple writing jobs:
+Audit outcome:
+
+**PASS / IMPLEMENTATION PLAN READY / USER APPROVAL REQUIRED**
+
+Canonical audit:
+
+`docs/SITE_COPY_AND_IA_AUDIT.md`
+
+The audit reviewed:
+
+- global header/footer;
+- homepage;
+- About;
+- Research & Standards;
+- Subscribe;
+- confirmation;
+- 404;
+- Privacy;
+- story-page UI;
+- series-page UI;
+- signup API/error copy;
+- story metadata architecture;
+- repository/package positioning metadata;
+- story and series routing relationships.
+
+Main findings:
+
+1. functional/operational copy is generally stronger than institutional copy because its job and authority are concrete;
+2. homepage temporary descriptor should not survive simply because the layout has space for it;
+3. About contains generic and taxonomy-stale copy that needs a literal rewrite;
+4. Standards is mostly grounded and should receive only restrained tightening rather than a personality rewrite;
+5. Subscribe repeats the same promise and includes beehiiv/provider detail better kept on Privacy;
+6. `package.json` still contains retired positioning language and must be replaced with a literal repository description;
+7. existing story prose remains outside this site-copy audit and will be handled individually under style briefs.
+
+No public copy was rewritten during the audit.
+
+## Headline / dek / description architecture
+
+The current Astro story schema uses one `description` field for multiple writing jobs:
 
 - visible story dek;
 - homepage/story-card summary;
+- series story summary;
 - SEO description;
-- social description.
+- social description;
+- structured-data description.
 
-The new writing system treats these as separate jobs.
-
-Planned next-phase schema direction:
+The audit confirms the approved migration to:
 
 ```yaml
 title:
@@ -227,10 +273,66 @@ dek:
 description:
 ```
 
-`dek` = visible editorial header copy.  
-`description` = compact literal summary for cards/indexes/SEO/social.
+`dek` = visible editorial story-header copy.  
+`description` = compact, page-specific summary for cards/indexes/SEO/social/structured data.
 
-This schema change is **approved for planning but not implemented yet**. It belongs to the site-copy/content-schema phase.
+Rules:
+
+- do not encode a hard SEO character maximum solely because snippets are commonly truncated; Google documents no fixed required maximum;
+- do not add a permanent runtime `dek ?? description` fallback after migration;
+- deliberately author both fields for all current story entries;
+- story page uses `dek`;
+- cards, `/stories`, series listings, search/social metadata, and structured data use `description`.
+
+This migration is approved in scope but **not implemented yet**.
+
+## `/stories` index decision
+
+The audit confirms the information-architecture gap:
+
+Story URLs live under `/stories/<slug>` but no `/stories` parent index exists.
+
+`docs/V0_SCOPE.md` now explicitly includes a Stories index in v0 scope.
+
+Approved implementation direction:
+
+- create `/stories`;
+- list all `status: published` stories newest first;
+- show date, content type, topic, headline, short `description`, author, and link;
+- no search, filters, pagination, popularity ranking, or recommendation logic in v0;
+- change global header/footer navigation `Latest` -> `Stories`;
+- keep `Latest` as a homepage section label;
+- update relevant utility actions currently linking to `/#latest` when their real job is to browse published work.
+
+Implementation has not started.
+
+## Synthetic series fixture routing issue
+
+A release-blocking implementation inconsistency was found during the audit.
+
+Current route:
+
+`src/pages/series/[slug].astro`
+
+generates static paths for every series entry, including:
+
+`src/content/series/content-architecture-fixtures.md`
+
+which is marked:
+
+`fixture: true`.
+
+Because the route does not exclude fixtures in production, `/series/content-architecture-fixtures` can be generated publicly. If `SITE_URL` enables sitemap generation, the current sitemap filter also does not exclude that route.
+
+Required fix during Phase 2A:
+
+- fixture series may remain available in local development if useful;
+- `fixture: true` series entries must be excluded from production routes;
+- fixture routes must not enter production sitemap output.
+
+Do not claim production fixture exclusion is currently correct until this is fixed and built.
+
+No `/series` index is required in v0 until a real reader need exists.
 
 ## Existing stories under the new system
 
@@ -282,7 +384,7 @@ Packet:
 
 `research/stories/it-bpm-higher-value-work/`
 
-Its research/evidence base remains valuable. The main future writing task is to build an Explained style brief, reassess reader-question structure, and separate the visible dek from compact summary metadata.
+Its research/evidence base remains valuable. The main future writing task is to build an Explained style brief, reassess reader-question structure, and separately author the visible `dek` and compact `description`.
 
 Fresh full build/live render QA remains incomplete.
 
@@ -434,17 +536,14 @@ Current global navigation still uses:
 - About;
 - Subscribe.
 
-Information-architecture gap identified:
+Approved but not implemented navigation direction:
 
-Story URLs live under `/stories/<slug>` but no `/stories` index exists.
+- Stories -> `/stories`;
+- Standards;
+- About;
+- Subscribe.
 
-Approved next-phase direction:
-
-- design/build a simple `/stories` archive/index;
-- change global navigation from `Latest` to `Stories` if the site-copy/IA audit confirms the final implementation;
-- keep `Latest` as a homepage section label if useful.
-
-Do not implement this until the Phase 2 audit is complete.
+Homepage `Latest` remains a section label.
 
 Wordmark remains HTML/CSS:
 
@@ -456,40 +555,25 @@ Subscribe CTAs use a CSS-drawn northeast arrow to avoid iOS emoji rendering.
 
 Newest live/mobile re-verification remains pending.
 
-## Site-copy remediation scope
+## Site-copy remediation decisions
 
-The next phase must inventory **all human-readable public strings**, not only homepage marketing copy.
+Detailed audit:
 
-Surfaces include:
+`docs/SITE_COPY_AND_IA_AUDIT.md`
 
-- header/nav;
-- footer;
-- homepage;
-- `/about`;
-- `/standards`;
-- `/subscribe`;
-- `/confirmed`;
-- `/privacy`;
-- 404;
-- story page UI labels;
-- metadata titles/descriptions;
-- newsletter signup status/error messages;
-- API-returned user-facing signup errors;
-- story card/dek/summary behavior;
-- planned `/stories` page.
+Highest-priority public-copy changes after Phase 2A:
 
-For every nontrivial line, record:
+- remove or rejustify the homepage temporary descriptor;
+- remove repeated Featured/Latest labeling where it adds no information;
+- replace About's generic `Stories take different forms` treatment with literal section copy;
+- make About's content-type description match the actual configured taxonomy;
+- avoid turning Standards into a slogan page; reconsider the stylized closing while preserving procedures;
+- reduce Subscribe duplication and keep provider-specific handling on Privacy where it belongs;
+- verify Privacy against final deployed data flow rather than rewriting it for personality.
 
-- exact copy;
-- surface/location;
-- job;
-- provenance class;
-- source of authority;
-- `KEEP / REWRITE / DELETE`;
-- reason;
-- dependency on schema/navigation changes.
+Functional controls and operational status/error copy are generally KEEP.
 
-Do **not** rewrite from intuition before the inventory is approved.
+Do not rewrite these surfaces from intuition. Implementation must follow the audit and institutional-copy provenance rules.
 
 ## Known stale/internal copy issue
 
@@ -497,9 +581,11 @@ Do **not** rewrite from intuition before the inventory is approved.
 
 > `Portfilo is a Filipino-first media and community company built around practical intelligence for ambitious Filipinos.`
 
-That language conflicts with the current no-tagline/content-first architecture and must be removed or replaced during the site/internal-copy remediation phase.
+That language conflicts with the current no-tagline/content-first architecture.
 
-It is not treated as approved Portfilo positioning.
+Required Phase 2A fix:
+
+Replace it with a literal repository/package description consistent with the current product definition. Do not introduce a new marketing sentence.
 
 ## Email system
 
@@ -559,7 +645,7 @@ Held/future:
 
 - C029.
 
-The writing-system remediation is a project/system phase and does not create a fourth substantial story assignment.
+The writing/site-copy remediation is a project/system phase and does not create a fourth substantial story assignment.
 
 ## Validation status
 
@@ -572,7 +658,13 @@ The writing-system remediation is a project/system phase and does not create a f
 | Story style-brief template | CREATED |
 | Publishing workflow integration | UPDATED |
 | Copy provenance rules | UPDATED |
-| Research workspace integration | UPDATED |
+| Site-wide copy + IA audit | PASS / RECORDED |
+| `docs/SITE_COPY_AND_IA_AUDIT.md` | CREATED |
+| `/stories` index | APPROVED IN SCOPE / NOT IMPLEMENTED |
+| `dek` + `description` schema split | APPROVED / NOT IMPLEMENTED |
+| Synthetic series fixture production exclusion | FAIL / FIX REQUIRED |
+| Stale `package.json` positioning copy | FIX REQUIRED |
+| Public site copy rewrite | NOT STARTED |
 | C027 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
@@ -580,34 +672,30 @@ The writing-system remediation is a project/system phase and does not create a f
 | C001 | ACTIVE / CONTINUE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
 | C029 | HOLD / FUTURE STUDY |
-| `/stories` index | PLANNED / NOT IMPLEMENTED |
-| `dek` + `description` schema split | PLANNED / NOT IMPLEMENTED |
-| Site-wide copy inventory | NEXT TASK / NOT STARTED |
 | Newest mobile/share-readiness deployment verification | PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
-No application code or public copy was changed during the writing-system phase, so a new local Astro build is not required solely to validate this documentation phase.
+No application code or public copy was changed during the site-copy/IA audit, so a new local Astro build is not required solely to validate this documentation phase.
 
 The prior local dependency/build check remains unresolved from the previous phase; when code changes resume, run `npm install` if dependencies are missing and then `npm run build`.
 
 ## Exact next task
 
-**Phase 2: complete the site-wide copy + information-architecture inventory before rewriting anything.**
+**Obtain Louda Tuppal's approval or revision of `docs/SITE_COPY_AND_IA_AUDIT.md`.**
 
-Do not implement copy changes yet.
+If approved, implement **Phase 2A — metadata and information architecture**, before rewriting public prose:
 
-Required Phase 2 work:
+1. add required `dek` field to the story schema;
+2. deliberately author `dek` and `description` for all current story entries without treating old prose as style authority;
+3. update the story route to render `dek` and keep cards/meta on `description`;
+4. add the simple `/stories` index;
+5. change global navigation `Latest` -> `Stories` while keeping homepage `Latest`;
+6. update relevant confirmation/404 actions to the stable story index;
+7. exclude `fixture: true` series entries from production routes and sitemap;
+8. replace stale `package.json` positioning description with literal repository metadata;
+9. run `npm run build` and inspect the affected routes before starting Phase 2B copy rewrites.
 
-1. inventory every human-readable public string across the current app;
-2. classify each nontrivial line by provenance and `KEEP / REWRITE / DELETE`;
-3. identify duplicated or AI-shaped institutional language;
-4. identify functional/operational/legal copy that should remain literal;
-5. design the `dek` vs `description` schema migration;
-6. define the minimal `/stories` index and global-nav change;
-7. record the proposed changes as a reviewable plan;
-8. obtain Louda Tuppal's approval before implementing the copy/schema/navigation rewrite.
-
-After the site-copy/IA phase is approved and implemented, create separate style briefs and re-audit C027, C009, and C030 one at a time.
+After Phase 2A passes, implement Phase 2B site-copy changes surface by surface under the Writing System. After that, create separate style briefs and re-audit C027, C009, and C030 one at a time.
 
 ## Phase handoff rule
 
