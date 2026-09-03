@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: PROPOSED / STYLE RESEARCH COMPLETE / USER APPROVAL REQUIRED / NO NEW DRAFT AUTHORIZED_
+_Status: APPROVED / STYLE RESEARCH COMPLETE / NEW DRAFT AUTHORIZED_
 
 Follow:
 
@@ -383,12 +383,12 @@ Style research complete:
 
 Structure/form decision:
 
-`PROPOSED`
+`APPROVED`
 
 Approved by/date:
 
-`PENDING LOUDA TUPPAL REVIEW`
+`Louda Tuppal / 2026-09-03`
 
-The user's earlier C027 form approval preceded the mandatory `style-research.md` gate and is therefore superseded for drafting purposes.
+The user's approval on 2026-09-03 applies to this revised brief after the mandatory `style-research.md` gate.
 
-No new C027 rewrite may begin until this revised brief is approved.
+A new C027 rewrite may now begin. Approval does not authorize replacement of the currently published story, and it does not approve any future body wording, headline, dek, or description.
