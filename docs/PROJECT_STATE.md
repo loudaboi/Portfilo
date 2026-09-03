@@ -1,18 +1,20 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-03_
+_Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 COMPLETE / C009 STYLE BRIEF APPROVED / C009 V3 BODY AWAITING USER REVIEW**
+**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 + C009 COMPLETE / C030 PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING**
 
-Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, first published stories, and Portfilo Brief foundation remain in place.
+Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, published launch stories, and Portfilo Brief foundation remain in place.
 
 Core rules:
 
 > **Help through reporting and evidence, not generic advice.**
 
 > **Say the thing. Then stop.**
+
+> **AI output has zero evidentiary authority.**
 
 > **AI output has zero stylistic authority.**
 
@@ -92,11 +94,9 @@ More examples may be used for a narrow sub-problem such as headline/dek framing 
 
 Exemplars authorize transferable editorial decisions only. They do not authorize copying wording, cadence, metaphors, jokes, branded terminology, rhetorical quirks, or house voice.
 
-A model may execute approved editorial decisions. It may not supply missing style decisions from bare statistical intuition.
-
 Existing Portfilo prose is not automatically a style exemplar merely because it was previously published.
 
-If the assignment materially changes, re-research the writing approach.
+If an assignment materially changes, re-research the writing approach.
 
 ## Phase 2 - site structure and copy
 
@@ -132,15 +132,15 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 COMPLETE / C009 V3 BODY USER REVIEW REQUIRED**
+**ACTIVE / C027 COMPLETE / C009 COMPLETE / C030 SOURCE PUBLISHED / C030 DEPLOYED VERIFICATION PENDING**
 
 Repair order:
 
 1. C027 Perspective — COMPLETE;
-2. C009 Explained — ACTIVE;
-3. C030 founding Perspective — PENDING.
+2. C009 Explained — COMPLETE;
+3. C030 founding Perspective — SOURCE PUBLISHED / DEPLOYED VERIFICATION PENDING.
 
-Do not rewrite all three in one undifferentiated pass.
+Phase 3 becomes complete only after C030's deployed story route and `/stories` listing pass review.
 
 ### C027 - COMPLETE
 
@@ -159,17 +159,6 @@ Final review:
 Published source:
 
 `src/content/stories/build-things-that-make-the-next-thing-easier.md`
-
-Louda Tuppal approved:
-
-- per-story style research;
-- research-derived Perspective brief;
-- researched V5 body;
-- headline;
-- dedicated dek result;
-- dedicated description/card/metadata result;
-- final source package;
-- deployed review.
 
 Approved headline:
 
@@ -191,171 +180,54 @@ Validation:
 
 C027's Perspective mechanics are not precedent for later stories.
 
-### C009 - ACTIVE / BODY REVIEW
+### C009 - COMPLETE
 
-Published story:
+Story:
 
 **What 'higher-value work' means in Philippine IT-BPM**
-
-Published source:
-
-`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
 Packet:
 
 `research/stories/it-bpm-higher-value-work/`
 
-Writing-system records:
+Final review:
 
-- `style-research.md`
-- `style-brief.md`
-- `rewrite-v1-researched.md`
-- `rewrite-v2-researched.md`
-- `rewrite-v3-researched.md`
-- `rewrite-review.md`
+`research/stories/it-bpm-higher-value-work/final-review.md`
 
-Current state:
+Published source:
 
-**STYLE RESEARCH COMPLETE / STYLE BRIEF APPROVED / V3 BODY CANDIDATE AWAITING USER REVIEW / LIVE STORY UNCHANGED.**
+`src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 
-The current published prose remains live until a complete replacement body and later framing package are separately approved.
-
-#### C009 subject direction
-
-Reader need:
-
-`Understand`
-
-Content type:
-
-`Explained`
-
-Publishable question:
-
-> What does `higher-value work` actually mean when translated into Philippine IT-BPM roles and responsibilities?
-
-Fresh 2026 source verification retained the story direction:
-
-- IBPAP's July 2026 outlook says the industry's next phase should depend less on workforce scale and more on higher-value capabilities and AI-enabled talent;
-- OECD's 2026 Philippines survey describes a sector still concentrated in contact centers/back-office operations while diversifying into GCCs, healthcare information management, IT and software.
-
-These sources support explaining the phrase. They do not prove prevalence, wage premiums or worker-transition outcomes.
-
-Existing packet files remain factual authority for the rewrite, especially `sources.md`, `sample.md`, `evidence.md`, `contradictions.md`, and `fact-check.md`.
-
-Any new factual claim must return to research.
-
-#### C009 style research and approved brief
-
-Professional guidance used:
-
-- Poynter civic-clarity guidance;
-- Poynter reader-question/focus guidance;
-- Poynter alternative-story-form research;
-- Poynter structure guidance.
-
-Human-edited explainer examples reviewed:
-
-1. Reuters — `U.S. vaccine rollout's next challenge: Verifying who is 'essential'`;
-2. Reuters — `Why is mpox an emergency again, and how worried should I be?`;
-3. The Guardian — `What is neijuan, and why is China worried about it?`.
-
-Approved transferable decisions:
-
-- answer the literal definition near the top;
-- organize around actual reader questions rather than the research taxonomy;
-- make ambiguity part of the answer because the phrase is not a formal occupation class;
-- use a small number of role examples to prove distinctions rather than catalogue all 15 postings;
-- put caveats where they constrain the relevant answer;
-- do not publish the five analytical dimensions as a branded Portfilo framework;
-- use normal multi-sentence explanatory paragraphs;
-- end on the evidence boundary rather than an upskilling or AI-opportunity slogan.
-
-Louda Tuppal approved `style-brief.md` on 2026-09-03.
-
-Anti-imitation boundary:
-
-Do not copy Reuters wire cadence/all-caps Q&A styling, Guardian phrasing, or sentence-level language from any comparator.
-
-#### C009 approved structure
-
-1. What does `higher-value work` mean here?
-2. Is it basically AI or non-voice work?
-3. What jobs actually fit the phrase?
-4. Does specialized work have to be senior?
-5. Does `higher value` mean higher pay or a better job?
-6. Can workers move into these roles, and how common are they?
-
-These are functional reader-question section jobs.
-
-#### C009 rewrite history
-
-`rewrite-v1-researched.md` was rejected internally as a user-review candidate because:
-
-- `IT-BPM` was not expanded on first use;
-- the opening IBPAP strategy claim lacked its primary-source link in the body;
-- the ending partially restated the internal analytical dimensions.
-
-`rewrite-v2-researched.md` was rejected internally because it reused the same Citi, Optum and Concentrix examples across consecutive question sections, creating repetition beneath an otherwise clean structure.
-
-`rewrite-v3-researched.md` is the current body candidate.
-
-V3 changes:
-
-- links IBPAP's verified primary strategy source in the opening;
-- expands IT-BPM on first use;
-- gives the core answer in the opening four paragraphs;
-- separates framework evidence from employer examples;
-- uses Concentrix workforce management and Cognizant Systems Engineer as AI/non-voice/technical boundary cases;
-- uses Citi credit risk, Optum clinical informatics and Cognizant capital-markets operations as distinct role examples;
-- uses Johnson & Johnson finance masterdata only for the seniority question;
-- places pay/job-quality limits only where they are relevant;
-- closes on prevalence/pay/transition evidence limits.
-
-`rewrite-review.md` records the claim, structure, imitation and AI-slop audit.
-
-Internal result:
-
-**V3 BODY CANDIDATE / USER REVIEW REQUIRED.**
-
-#### C009 evidence boundaries retained in V3
-
-- `higher-value work` is not presented as an official occupation class;
-- 15-role sample is purposefully selected and illustrative, not random or weighted;
-- no percentages or market-share estimates are derived from the sample;
-- employer postings are described as advertised responsibilities, not direct observation of lived work;
-- technical/non-voice/AI labels are not treated as automatic definitions;
-- no wage-premium or better-job conclusion;
-- no claim that specialist roles are growing fast enough to absorb displacement;
-- no claim that frontline workers can transition into these roles at a measured rate;
-- no Concentrix experience threshold is used because the source is internally inconsistent on that point.
-
-#### C009 framing state
-
-Current published headline remains a **strong candidate**, not yet locked:
+Approved headline:
 
 `What 'higher-value work' means in Philippine IT-BPM`
 
-Current mechanically duplicated `dek` and `description` are **not protected**.
+Approved dek:
 
-Headline/dek/description research begins only after the replacement body is approved.
+`The same industry phrase can point to credit analysis, clinical informatics or workforce planning.`
 
-#### C009 exact gate
+Approved description:
 
-**Obtain Louda Tuppal's approval or revision of `rewrite-v3-researched.md`.**
+`Portfilo reviewed official Philippine skills frameworks and 15 current employer postings to see what higher-value work looks like in actual jobs.`
 
-If approved:
+Evidence boundaries remain:
 
-1. lock the body direction;
-2. conduct dedicated headline research/audit;
-3. conduct dek-specific research;
-4. conduct description/card/metadata research;
-5. obtain complete package approval before replacing the live story;
-6. verify the deployed result before marking C009 complete.
+- `higher-value work` is not an official occupation class;
+- the 15-role sample is purposefully selected and illustrative, not representative;
+- postings show advertised responsibilities rather than observed day-to-day work;
+- no general wage-premium, prevalence, growth-rate, or worker-transition claim is supported.
 
-### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
+Validation:
 
-Working title:
+- repository/source: **PASS**;
+- Cloudflare deployed user review: **PASS**;
+- local `npm run build`: **NOT RUN / NOT CLAIMED**.
+
+C009's Explained mechanics are not precedent for later stories.
+
+### C030 - PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING
+
+Story:
 
 **What actually changed?**
 
@@ -363,13 +235,70 @@ Packet:
 
 `research/stories/what-actually-changed/`
 
-The core editorial idea remains available, but previous prose is reopened under the upgraded writing system.
+Final review:
 
-C030 must receive its own founding/editorial-Perspective style research before another draft.
+`research/stories/what-actually-changed/final-review.md`
 
-The migration-preserved dek is not final.
+Published source:
 
-C030 remains `status: draft`, `featured: false`, with no `publishedAt`. Production must continue to exclude it.
+`src/content/stories/what-actually-changed.md`
+
+Content type:
+
+`Perspective`
+
+Topic:
+
+`Building`
+
+Author:
+
+`Louda Tuppal`
+
+Approved headline:
+
+`What actually changed?`
+
+Approved dek:
+
+`A business or technology development can mean something different once it changes what someone has to do or decide.`
+
+Approved description:
+
+`The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.`
+
+Writing-system gates completed:
+
+- C030-specific professional form research;
+- human-edited founding/editorial exemplar research;
+- `style-research.md`;
+- approved `style-brief.md`;
+- fresh body rewrite;
+- structural, claim, institutional-provenance, imitation, and AI-slop review;
+- body approval;
+- dedicated headline research and approval;
+- dedicated dek research and approval;
+- dedicated description/card/metadata research and approval;
+- explicit publication authorization from Louda Tuppal on 2026-09-04.
+
+Publication state:
+
+- `status: published`;
+- `publishedAt: 2026-09-04`;
+- `featured: false`.
+
+Publication commit:
+
+`9fa4eba2f55239d5560e4d3804db5f099fae2422`
+
+Validation:
+
+- repository/source publication: **PASS**;
+- Cloudflare deployed story route: **PENDING**;
+- Cloudflare `/stories` listing: **PENDING**;
+- local `npm run build`: **NOT RUN / NOT CLAIMED**.
+
+The title is story-specific. `What actually changed?` is not a permanent Portfilo tagline, recurring framework, or mandatory question for every story.
 
 ## Current editorial model
 
@@ -406,7 +335,7 @@ Core editorial rule:
 
 Research rule:
 
-**AI output has zero evidentiary weight.**
+**AI output has zero evidentiary authority.**
 
 Writing rule:
 
@@ -502,7 +431,7 @@ Newsletter state:
 - Reply-To: `portfilo.ph@gmail.com`;
 - Welcome Email OFF;
 - Smart Nudge OFF;
-- no C027/C009 distribution authorized or sent as part of this repair phase.
+- no C027/C009/C030 distribution authorized or sent as part of this repair phase.
 
 ## Validation status
 
@@ -518,14 +447,11 @@ Newsletter state:
 | Synthetic fixture direct production/sitemap check | PENDING FINAL RELEASE QA |
 | C027 editorial repair | COMPLETE |
 | C027 deployed review | PASS / USER APPROVED |
-| C009 subject-direction recheck | PASS |
-| C009 style research | COMPLETE |
-| C009 style brief | APPROVED |
-| C009 V1 | REJECTED INTERNALLY |
-| C009 V2 | REJECTED INTERNALLY |
-| C009 V3 body | USER REVIEW REQUIRED |
-| C009 current public story | PUBLISHED / OLD PROSE STILL LIVE |
-| C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
+| C009 editorial repair | COMPLETE |
+| C009 deployed review | PASS / USER APPROVED |
+| C030 editorial package | COMPLETE / APPROVED |
+| C030 source publication | PASS |
+| C030 deployed review | PENDING |
 | C001 | ACTIVE / CONTINUE |
 | C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
@@ -534,6 +460,11 @@ Newsletter state:
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of the researched C009 V3 body.**
+**Verify C030 on the deployed Cloudflare site:**
 
-Do not change the live C009 story or begin framing work until that body decision.
+1. story route renders the approved headline, dek and body;
+2. `/stories` includes C030 with the approved description and publication date;
+3. internal C009 link works;
+4. mobile/desktop rendering is normal.
+
+Do not mark Phase 3 complete until that deployed verification passes.
