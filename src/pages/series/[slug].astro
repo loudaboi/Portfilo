@@ -6,7 +6,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
 export async function getStaticPaths() {
   const [seriesEntries, publishedStories] = await Promise.all([
-    getCollection("series"),
+    getCollection("series", ({ data }) => !data.fixture || import.meta.env.DEV),
     getCollection("stories", ({ data }) => data.status === "published"),
   ]);
 
