@@ -1,5 +1,6 @@
 ---
 title: "Portfilo Draft Filtering Test"
+dek: "A synthetic draft fixture used only to verify that draft stories do not receive public production routes."
 description: "A synthetic draft fixture used only to verify that draft stories do not receive public production routes."
 contentType: explained
 topic: startups
