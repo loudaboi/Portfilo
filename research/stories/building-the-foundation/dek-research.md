@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: COMPLETE / HEADLINE LOCKED / DEK CANDIDATE PROPOSED / USER APPROVAL REQUIRED_
+_Status: COMPLETE / HEADLINE LOCKED / DEK APPROVED_
 
 ## Purpose
 
@@ -201,7 +201,7 @@ The dek should sound like a sentence from the same intellectual problem as the a
 
 ## Candidate development
 
-### Candidate A — recommended
+### Candidate A — approved
 
 > **An early project should leave you with more than a story about what you learned.**
 
@@ -264,25 +264,27 @@ Decision:
 
 `REJECT`.
 
-## Recommended package at this gate
+## Approved package at this gate
 
-Headline — already approved:
+Headline:
 
 > **Build things that make the next thing easier**
 
-Dek — proposed:
+Dek:
 
 > **An early project should leave you with more than a story about what you learned.**
 
+Approved by:
+
+`Louda Tuppal / 2026-09-03`
+
 Description:
 
-`PENDING / DO NOT APPROVE IN THIS PASS.`
-
-The description should be revisited after the headline/dek pairing is approved. Its job remains literal metadata/card summary, not editorial framing.
+`PENDING / SEPARATE DESCRIPTION PASS REQUIRED.`
 
 ## Anti-imitation boundary
 
-The candidate is not adapted from the wording of any comparator.
+The approved dek is not adapted from the wording of any comparator.
 
 The research authorizes only the observed function:
 
@@ -293,11 +295,10 @@ The research authorizes only the observed function:
 
 ## Gate
 
-`USER DEK APPROVAL REQUIRED`.
+`PASS / HEADLINE + DEK LOCKED.`
 
-If approved:
+Next:
 
-1. lock headline + dek;
-2. conduct the final description/metadata pass separately;
-3. then assemble the complete C027 publication candidate with the already approved V5 body;
-4. do not replace the live story until the complete package is approved.
+1. conduct the final description/card/metadata pass separately;
+2. assemble the complete C027 publication candidate with the already approved V5 body;
+3. do not replace the live story until the description and complete package are approved.
