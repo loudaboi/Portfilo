@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: COMPLETE EDITORIAL PACKAGE APPROVED / DRAFT SOURCE UPDATED / PUBLICATION AUTHORIZATION REQUIRED_
+_Status: PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING_
 
 ## Story
 
@@ -20,9 +20,9 @@ Author: `Louda Tuppal`
 
 Current publication state:
 
-- `status: draft`;
-- `featured: false`;
-- no `publishedAt`.
+- `status: published`;
+- `publishedAt: 2026-09-04`;
+- `featured: false`.
 
 ## Approved package
 
@@ -71,7 +71,8 @@ The description is an exact sentence from the already approved body rather than 
 - V3 body approved by Louda;
 - headline researched separately and approved;
 - dek researched separately and approved;
-- description/card/metadata function researched separately and approved.
+- description/card/metadata function researched separately and approved;
+- explicit publication authorization received from Louda Tuppal on 2026-09-04.
 
 ## Institutional-provenance boundary
 
@@ -119,7 +120,7 @@ The approved body avoids:
 - elevated launch ending;
 - copying WIRED, Rest of World, 404 Media or Semafor voice/cadence.
 
-## Draft-source implementation
+## Source implementation
 
 Content entry:
 
@@ -129,7 +130,11 @@ Approved package assembled in draft source at commit:
 
 `cc76f9948f0231cd37c67fec2d00e5844204e4c3`
 
-Repository re-fetch confirmed:
+Publication commit:
+
+`9fa4eba2f55239d5560e4d3804db5f099fae2422`
+
+Repository re-fetch after publication confirmed:
 
 - approved headline present;
 - approved dek present;
@@ -138,28 +143,18 @@ Repository re-fetch confirmed:
 - `contentType: perspective` preserved;
 - `topic: building` preserved;
 - author `Louda Tuppal` preserved;
-- `status: draft` preserved;
-- `featured: false` preserved;
-- no `publishedAt` present.
+- `status: published` present;
+- `publishedAt: 2026-09-04` present;
+- `featured: false` preserved.
 
 ## Validation boundary
 
-Repository/source assembly: **PASS**.
+Repository/source publication: **PASS**.
 
-Publication: **NOT AUTHORIZED / NOT PERFORMED**.
+Explicit publication approval: **PASS**.
 
-Cloudflare deployed-page verification: **NOT APPLICABLE YET** because C030 remains draft and production routes should exclude it.
+Cloudflare deployed-page verification: **PENDING**.
 
 Local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
-## Publication gate
-
-C030 must not be published until Louda Tuppal gives explicit publication authorization.
-
-Publication requires a deliberate decision on:
-
-- changing `status` from `draft` to `published`;
-- adding `publishedAt`;
-- whether `featured` remains `false` or changes separately.
-
-After publication, verify the deployed story page and `/stories` listing before marking C030 fully complete.
+Do not mark C030 fully complete until the deployed story route and `/stories` listing are verified.
