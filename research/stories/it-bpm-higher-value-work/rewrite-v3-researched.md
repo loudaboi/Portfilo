@@ -1,8 +1,8 @@
 # C009 Rewrite V3 — Researched Body Candidate
 
-_Status: BODY CANDIDATE / USER REVIEW REQUIRED / NOT APPROVED FOR PUBLICATION_
+_Status: BODY APPROVED BY LOUDA TUPPAL / 2026-09-03 / FRAMING RESEARCH NEXT / NOT YET LIVE_
 
-Working headline remains open.
+Working headline remains open pending dedicated framing research.
 
 ---
 
