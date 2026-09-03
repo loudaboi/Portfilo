@@ -1,5 +1,6 @@
 ---
 title: "Build things that make the next thing easier"
+dek: "We judge early work by what it becomes. Another question matters too: what does it make easier to do next?"
 description: "We judge early work by what it becomes. Another question matters too: what does it make easier to do next?"
 contentType: perspective
 topic: building
