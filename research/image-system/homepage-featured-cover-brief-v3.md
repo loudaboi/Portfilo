@@ -2,13 +2,21 @@
 
 _Last updated: 2026-09-04_
 
-_Status: DRAFT REVISION / HUMAN APPROVAL REQUIRED / NO V3 IMAGE GENERATION AUTHORIZED_
+_Status: APPROVED REVISION / BUILDING V3 INSTRUCTION REQUIRED / NO V3 IMAGE GENERATION AUTHORIZED_
 
 ## Why v3 exists
 
 V2 failed at execution because the generator repeatedly combined topics, added forbidden typography and retired Portfilo copy, inserted people/screens, and produced self-contained publication layouts rather than isolated background artwork.
 
 The homepage feature panel already supplies its own real HTML topic, editorial type, author, and link. The generated image does not need to restate any of that.
+
+## Human approval
+
+Approved by: `Louda Tuppal`
+
+Approval date: `2026-09-04`
+
+Approval basis: Louda explicitly requested one final simplification: keep the image simple, remove human presence and excess detail, keep the asset dark because real light-blue HTML content sits above it, and avoid turning the image pilot into a blockage.
 
 ## V3 principle
 
@@ -102,7 +110,7 @@ Building passes only if:
 
 ## Gate
 
-V3 brief approval: `NO`
+V3 brief approval: `YES`
 
 V3 Building generator instruction prepared: `NO`
 
