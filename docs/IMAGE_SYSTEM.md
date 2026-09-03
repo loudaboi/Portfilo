@@ -8,6 +8,10 @@ Research basis:
 
 `research/image-system/research.md`
 
+Generation-prompt research:
+
+`research/image-system/image-generation-prompt-research.md`
+
 ## Principle
 
 Portfilo does not ask an image model to decide what a story should look like.
@@ -218,6 +222,70 @@ A prompt is only a derived execution artifact.
 If a generated prompt adds an object, claim, person, location, brand, interface, mood or symbolism that the approved brief did not authorize, revise the prompt rather than treating the model's addition as creative precedent.
 
 Brief approval completes the brief gate only. It does not authorize candidate generation.
+
+## Generation discipline
+
+These controls apply to generated Portfilo imagery regardless of surface or topic. A surface-specific brief may be stricter.
+
+### Simplicity and complexity ceiling
+
+Default to the smallest scene that can perform the approved image job:
+
+- one primary subject or material/process anchor;
+- one core visual relationship or action;
+- only supporting detail that is necessary to understand that relationship.
+
+Do not add people, props, tools, cables, screens, objects, scenery or narrative actions merely to make an image feel richer, more realistic, more technical or more cinematic.
+
+If real HTML, captions or adjacent editorial material already supply context, the generated image does not need to repeat or summarize that context.
+
+A more complex scene is allowed only when the approved brief explicitly establishes why the extra elements are necessary.
+
+### One asset per execution
+
+Generate one independent topic, story asset or visual concept per execution by default.
+
+Do not bundle separate topic covers, story images or unrelated candidates into a diptych, comparison, contact sheet, poster or multi-panel composition unless the approved artifact itself is explicitly multi-panel.
+
+### Context-contamination rule
+
+Only the approved image brief and the exact presented generator instruction have visual authority during execution.
+
+Prior conversation copy, retired taglines, unrelated headlines, sibling topics, old layouts, rejected concepts and previous generated compositions have **zero authority** unless the current approved brief explicitly includes them.
+
+If generated output introduces prior Portfilo wording, an unrelated topic, publication mockup, UI, slogan, label or other inherited context that was not authorized, reject the output as a hard failure. Do not treat the contamination as creative precedent.
+
+Where execution tooling permits, prefer the cleanest practical generation context containing only the approved brief, exact generator instruction and necessary approved reference material.
+
+### Failure stopping rule
+
+A hard-invariant failure such as forbidden text, an unauthorized person, an extra topic, a fake logo/UI, an unapproved color or a prohibited multi-panel layout invalidates the candidate.
+
+Do not respond to repeated hard-invariant failures by continually lengthening the prompt or stacking contradictory corrections.
+
+Instead:
+
+1. stop the failed execution path;
+2. simplify or isolate the task;
+3. change one material variable at a time;
+4. present materially revised instructions again if the generation contract changed;
+5. obtain a new explicit generation authorization when required by the approval rules.
+
+### Prompt discipline
+
+Favor lean, inspectable generator instructions over long descriptive prompts.
+
+State each requirement once. A useful default order is:
+
+1. purpose / visual medium;
+2. subject / scene;
+3. composition;
+4. treatment;
+5. hard constraints.
+
+Use concrete spatial and material language when it matters. Avoid photographic camera/lens/bokeh vocabulary when the required output is editorial illustration rather than photography.
+
+Refine through small targeted changes after audit rather than rewriting every variable at once.
 
 ## Portfilo visual language
 
