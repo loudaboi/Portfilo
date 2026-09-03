@@ -134,7 +134,7 @@ Selected concept:
 
 Reason:
 
-No generation begins until this selection is explicit.
+Concept selection authorizes brief drafting only. It does not authorize image generation.
 
 ## Scene / subject specification
 
@@ -302,6 +302,10 @@ Prompt review:
 - [ ] crop/composition requirement present
 - [ ] must-not-show constraints present
 
+Generator instruction presented to human:
+
+`NO`
+
 ## Brief approval gate
 
 Image brief approved:
@@ -312,13 +316,39 @@ Approved by:
 
 Approval date:
 
-No image generation is authorized until this changes to `YES`.
+Brief approval authorizes this brief as the visual source of truth and permits generator-instruction preparation. It does **not** authorize image generation.
+
+## Generation authorization gate
+
+Generator instruction ready:
+
+`NO`
+
+Generator instruction presented to human:
+
+`NO`
+
+Image generation authorized:
+
+`NO`
+
+Authorized by:
+
+Authorization date:
+
+Authorization evidence:
+
+Record the explicit human instruction authorizing generation, or note that the human directly answered yes to the immediately preceding question asking whether to generate.
+
+Do not change `Image generation authorized` to `YES` from image-brief approval alone.
+
+Never generate in the same turn as brief approval unless that same human message explicitly approves the brief **and** explicitly authorizes generation.
 
 ---
 
 # Post-generation review
 
-Complete only after brief approval and candidate generation.
+Complete only after separate generation authorization and candidate generation.
 
 ## Candidate record
 
