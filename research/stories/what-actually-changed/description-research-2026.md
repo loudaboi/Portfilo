@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: COMPLETE / BODY APPROVED / HEADLINE APPROVED / DEK APPROVED / DESCRIPTION CANDIDATE PROPOSED / USER APPROVAL REQUIRED_
+_Status: COMPLETE / BODY APPROVED / HEADLINE APPROVED / DEK APPROVED / DESCRIPTION APPROVED_
 
 ## Purpose
 
@@ -83,7 +83,7 @@ Using it directly has an important advantage under the current writing system: t
 
 ## Candidate development
 
-### Candidate A — recommended
+### Candidate A — APPROVED
 
 > **The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.**
 
@@ -166,11 +166,7 @@ Reason:
 - over-centers announcements;
 - `reaches real decisions and constraints` is abstract and model-shaped.
 
-## Recommendation
-
-> **The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.**
-
-## Approved framing so far
+## Final approved framing
 
 Headline:
 
@@ -180,18 +176,16 @@ Dek:
 
 > **A business or technology development can mean something different once it changes what someone has to do or decide.**
 
-Description — **PROPOSED / USER APPROVAL REQUIRED**:
+Description:
 
 > **The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.**
 
+Approved by Louda Tuppal on 2026-09-04.
+
 ## Gate
 
-`USER DESCRIPTION APPROVAL REQUIRED.`
+`DESCRIPTION APPROVED / COMPLETE EDITORIAL PACKAGE LOCKED.`
 
-If approved:
+The approved package may be assembled in the C030 content entry while preserving `status: draft`, `featured: false`, and no `publishedAt`.
 
-1. lock the complete framing package;
-2. assemble the approved V3 body with the approved headline/dek/description in the live C030 content entry;
-3. decide publication metadata deliberately — C030 is currently `status: draft`, `featured: false`, and has no `publishedAt`;
-4. obtain explicit publication authorization before changing `status` to `published` or adding a publication date;
-5. verify the deployed result after publication.
+Changing `status` to `published` or adding a publication date requires a separate explicit publication authorization.
