@@ -61,9 +61,21 @@ Any publishable factual story must follow:
 
 - `docs/EDITORIAL_STANDARD.md`
 - `docs/RESEARCH_STANDARD.md`
+- `docs/WRITING_SYSTEM.md`
 - `docs/PUBLISHING_STANDARD.md`
 
 AI is an assistant for research organization, analysis, challenge, drafting, and editing. AI output is not evidence.
+
+AI output also has zero stylistic authority. Do not let a model silently invent a story form, institutional position, house voice, or rhetorical style and then treat the generated prose as precedent.
+
+Before Draft 1 of a substantial story:
+
+- choose the writing form from the material and reader need;
+- create and approve `style-brief.md` using `research/STYLE_BRIEF_TEMPLATE.md`;
+- record any professional form research or exemplars used;
+- use exemplars for structural decisions only, not sentence-level imitation.
+
+Existing published Portfilo prose is not automatically an approved style exemplar. It must first pass the current writing-system audit.
 
 ## 5. Research integrity
 
@@ -79,11 +91,14 @@ For factual work:
 
 If evidence is insufficient, say so or do not publish the claim.
 
-## 6. Design discipline
+## 6. Design and copy discipline
 
 Follow `docs/DESIGN_DIRECTION.md`.
 
-Public-facing copy must also follow `docs/COPY_STYLE.md`.
+Public-facing copy must follow:
+
+- `docs/COPY_STYLE.md`;
+- `docs/WRITING_SYSTEM.md`.
 
 Do not default to generic SaaS components, card grids, gradients, glassmorphism, or decorative motion.
 
@@ -96,7 +111,9 @@ For public copy:
 - use familiar interface labels before branded alternatives;
 - keep internal project language out of production surfaces;
 - prefer clear, concrete, useful language over promotional or AI-shaped phrasing;
-- express Filipino specificity through real context rather than decorative slang or clichés.
+- express Filipino specificity through real context rather than decorative slang or clichés;
+- do not invent what Portfilo `believes`, `wants`, `cares about`, `is interested in`, or `exists to do` without canonical or explicit human authority;
+- classify nontrivial institutional copy by functional, operational, editorial/institutional, legal/privacy, or promotional provenance before approval.
 
 ## 7. Implementation discipline
 
@@ -133,12 +150,13 @@ Suggested new-chat instruction:
 
 ## 9. Definition of done
 
-A task is not done because code exists.
+A task is not done because code exists or prose exists.
 
 It is done when:
 
-- the requested behavior is implemented;
+- the requested behavior or editorial job is implemented;
 - scope has not silently expanded;
 - relevant validation passes;
 - obvious regressions have been checked;
+- writing has passed the applicable evidence, form, provenance, structure, human-language, and slop gates;
 - documentation/state is updated when necessary.
