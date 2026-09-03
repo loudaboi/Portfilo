@@ -4,11 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - STYLE RESEARCH GATE ADDED / PHASE 3 C027 STYLE RESEARCH COMPLETE / REVISED BRIEF AWAITING APPROVAL**
+**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 BODY APPROVED / DEEPER FRAMING RESEARCH COMPLETE / FRAMING PACKAGE AWAITING USER APPROVAL**
 
-Portfilo's publishing system, research standards, first published stories, `/stories` archive, site-copy correction, and Portfilo Brief foundation remain in place.
-
-The current system-level correction addresses a specific failure mode: verified ideas and product decisions being presented through generic, invented, or AI-shaped prose.
+Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, first published stories, and Portfilo Brief foundation remain in place.
 
 Core rules:
 
@@ -64,7 +62,7 @@ Email/deployment:
 
 ## Writing-system state
 
-The writing system now distinguishes four separate questions before prose:
+The writing system now separates four questions before prose:
 
 1. **What can the story say?** -> subject research, evidence, contradictions.
 2. **What must the story do for the reader?** -> reader need and audience assumptions.
@@ -83,20 +81,22 @@ subject research
   -> style-research.md
   -> style-brief.md
   -> human approval
-  -> Draft 1
+  -> draft
+  -> adversarial / claim / structure / imitation / AI-slop review
+  -> headline / dek / description research and audit
+  -> final human approval
+  -> publish / update
 ```
 
-`docs/STYLE_RESEARCH_STANDARD.md` is canonical for the new per-story style-research gate.
-
-Every substantial story must create `style-research.md` using `research/STYLE_RESEARCH_TEMPLATE.md` before the final style brief is approved.
+`docs/STYLE_RESEARCH_STANDARD.md` is canonical for the per-story style-research gate.
 
 Default human-edited exemplar target:
 
 **2-4 relevant pieces chosen because they solve a similar writing problem.**
 
-Exemplars are used to study transferable editorial decisions such as lead behavior, thesis timing, paragraph development, evidence handling, transitions, person, rhetorical devices, counterargument, and ending.
+More examples may be used for a narrow sub-problem such as headline/dek framing when the initial comparison is insufficient.
 
-They are not used to copy distinctive wording, cadence, metaphors, jokes, branded terminology, rhetorical quirks, or another publication's institutional voice.
+Exemplars are used to study transferable editorial decisions. They are never wording, cadence, metaphor, joke, branded-term, or house-voice authority.
 
 A model may execute approved editorial decisions. It may not supply missing style decisions from bare statistical intuition.
 
@@ -130,7 +130,7 @@ Phase 2B implemented:
 
 Louda Tuppal approved the deployed Phase 2 result on 2026-09-03.
 
-A local `npm run build` for Phase 2A/2B remains **NOT RECORDED**. Do not convert deployed user review into a local-build claim.
+A local `npm run build` for Phase 2 remains **NOT RECORDED**. Do not convert deployed user review into a local-build claim.
 
 One final-release check remains: directly confirm `/series/content-architecture-fixtures` and any sitemap entry are absent from production.
 
@@ -138,7 +138,7 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 STYLE RESEARCH COMPLETE / REVISED STYLE BRIEF AWAITING USER APPROVAL**
+**ACTIVE / C027 BODY APPROVED / FRAMING V2 AWAITING USER APPROVAL**
 
 Repair order:
 
@@ -150,7 +150,7 @@ Do not rewrite all three in one undifferentiated pass.
 
 ### C027 - current repair state
 
-Published story:
+Published story currently live:
 
 **Build things that make the next thing easier**
 
@@ -162,69 +162,100 @@ Style research:
 
 `research/stories/building-the-foundation/style-research.md`
 
-Revised decision brief:
+Research-derived decision brief:
 
 `research/stories/building-the-foundation/style-brief.md`
 
-Current state:
+Approved researched body candidate:
 
-`STYLE RESEARCH COMPLETE / STYLE BRIEF PROPOSED / USER APPROVAL REQUIRED / NO NEW DRAFT AUTHORIZED`
+`research/stories/building-the-foundation/rewrite-v5-researched.md`
 
-The earlier C027 form approval occurred before the mandatory style-research gate existed and is superseded for drafting purposes.
+Deeper framing research:
 
-The pre-standard `rewrite-v1.md` and `rewrite-v2.md` are diagnostic artifacts only. They must not be used as final prose or as style exemplars.
+`research/stories/building-the-foundation/headline-dek-description-research-v2.md`
 
-The currently published C027 remains live and has not been replaced.
+#### C027 approvals already granted
 
-#### C027 research basis
+- mandatory per-story style research: COMPLETE;
+- revised style brief: APPROVED by Louda Tuppal on 2026-09-03;
+- researched body V5: APPROVED by Louda Tuppal on 2026-09-03.
+
+The currently published C027 has **not** yet been replaced. Its older prose remains live until the complete framing package is approved.
+
+#### C027 body direction
 
 Reader need:
 
 `Interpret`
 
-Audience principle:
+Content type:
 
-Reuters Institute's audience/user-needs research supports planning different pieces around different reader needs. It does not establish a demographic prevalence claim for C027.
+`Perspective`
 
-Professional form guidance used:
+Body principles now approved:
 
-- Poynter form-follows-material guidance;
-- Poynter opinion-writing guidance;
-- The OpEd Project argument/counterargument guidance.
-
-Human-edited exemplars reviewed:
-
-1. The Atlantic / Derek Thompson — `Workism Is Making Americans Miserable`;
-2. WIRED UK / John Gerzema — `'Embracing failure' isn't the right way to succeed`.
-
-Cross-example findings selected for C027:
-
-- establish the argumentative position early;
-- let developed examples carry the middle;
-- use normal multi-sentence paragraphs by default for this assignment;
-- do not use second-person coaching as the organizing voice;
-- use a real counterargument/concession;
-- do not require rhetorical questions or quippy metaphors;
-- end by narrowing/resolving the argument rather than motivating the reader.
-
-Anti-imitation boundary:
-
-Do not copy Thompson's religious metaphor system/coinage or Gerzema's quippy failure metaphors/rhetorical cadence. Do not reproduce sentence sequences or house voice from either publication.
-
-#### Revised C027 writing decisions awaiting approval
-
-- Perspective form remains correct;
-- thesis within the first 3-5 paragraphs;
-- ordinary hypothetical contrast is allowed and must be obviously hypothetical;
-- maximum two developed examples by default;
-- normal multi-sentence paragraphs, with one-sentence paragraphs only for genuine structural turns;
+- thesis early;
+- two developed hypothetical examples by default;
+- normal multi-sentence paragraphs;
 - no named framework such as `carryover`;
 - no rhetorical-question lead or ending;
 - minimal second person;
-- structural constraints appear before the main counterargument;
-- `I learned a lot` rationalization is the main adversarial turn;
-- ending is declarative and bounded;
-- headline, dek, and description remain separate later jobs.
+- structural constraints inside the argument;
+- explicit `I learned a lot` rationalization challenge;
+- declarative, bounded ending;
+- no unverified factual examples.
+
+#### C027 framing history
+
+First framing research:
+
+`headline-dek-description-research.md`
+
+Status:
+
+**REJECTED BY USER / SUPERSEDED.**
+
+The rejected package over-centered failure with the proposed headline:
+
+`A failed project can still change what comes next`
+
+The first pass used legitimate general headline guidance but the comparison set was too small for the exact framing problem, and the final wording narrowed the story more than the approved body justified.
+
+#### C027 deeper framing research V2
+
+The second pass expanded the human-edited headline comparison across The Atlantic, Harvard Business Review, and WIRED and classified headline patterns rather than treating one publication as a voice model.
+
+Key finding:
+
+**imperative headlines are not automatically Guide headlines.** Edited Perspectives/advice-analysis pieces use imperatives when the imperative itself is the argument.
+
+Other findings:
+
+- a headline normally carries one proposition rather than every caveat;
+- the dek can carry scope and qualification;
+- failure should not become the subject when the approved body is broader than failure;
+- question headlines are unnecessary because C027 already has a position;
+- no coined/clever framework is needed.
+
+Current V2 recommendation:
+
+Headline:
+
+`Build things that make the next thing easier`
+
+Dek:
+
+`The result still comes first. Beyond that, the work should only count if it changes how the next attempt begins in a concrete way.`
+
+Description:
+
+`A Perspective on judging early projects by their result and by whether the work changes how a later attempt begins.`
+
+Status:
+
+**USER APPROVAL REQUIRED.**
+
+No live-story change is authorized until this package is approved or revised.
 
 ### C009 - PUBLISHED / WRITING RE-AUDIT REQUIRED
 
@@ -236,7 +267,7 @@ Packet:
 
 Its evidence base remains valuable.
 
-When C009 begins, it must receive fresh Explained-purpose research plus its own professional-form and 2-4 human-edited exemplar study. Do not reuse C027's Perspective mechanics.
+When C009 begins, it must receive fresh Explained-purpose research plus its own professional-form and human-edited exemplar study. Do not reuse C027's Perspective mechanics.
 
 ### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
 
@@ -380,9 +411,11 @@ Still pending before final public launch:
 | Privacy vs current signup code | PASS |
 | Synthetic fixture direct production/sitemap check | PENDING FINAL RELEASE QA |
 | C027 style research | COMPLETE |
-| C027 revised style brief | PROPOSED / USER REVIEW REQUIRED |
+| C027 revised style brief | APPROVED |
+| C027 researched body V5 | APPROVED |
+| C027 first framing package | REJECTED / SUPERSEDED |
+| C027 deeper framing research V2 | COMPLETE / USER REVIEW REQUIRED |
 | C027 public story | PUBLISHED / OLD PROSE STILL LIVE |
-| C027 pre-standard rewrite v1/v2 | DIAGNOSTIC ONLY / NOT FINAL |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
 | C001 | ACTIVE / CONTINUE |
@@ -393,14 +426,13 @@ Still pending before final public launch:
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of the research-derived C027 style brief.**
+**Obtain Louda Tuppal's approval or revision of the C027 V2 headline/dek/description package.**
 
 If approved:
 
-1. mark `style-brief.md` approved;
-2. write a **new** C027 draft after the style research gate, not by polishing `rewrite-v2.md`;
-3. use only the authorized evidence/argument and researched writing mechanics;
-4. run adversarial, claim, structure, imitation, and AI-slop passes;
-5. research/audit headline, dek, and description as separate jobs;
-6. present the complete candidate for user review before replacing the live public story;
-7. do not begin C009 until C027 is approved or deliberately paused.
+1. replace the live C027 body with `rewrite-v5-researched.md`;
+2. retain the approved headline and apply approved dek/description;
+3. preserve current content type/topic/author/publication metadata unless separately changed;
+4. create/update the final C027 review record;
+5. verify the deployed story before calling C027 repair complete;
+6. only then begin C009.
