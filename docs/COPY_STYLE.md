@@ -1,6 +1,6 @@
 # Portfilo Copy Style
 
-_Last updated: 2026-09-02_
+_Last updated: 2026-09-03_
 
 ## Purpose
 
@@ -16,7 +16,19 @@ This standard applies to:
 - newsletter copy;
 - story headlines and deks, together with the stricter editorial standards that govern journalism.
 
-For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, or `PUBLISHING_STANDARD.md`.
+For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, or `PUBLISHING_STANDARD.md`.
+
+## Writing-system rule
+
+> **AI output has zero stylistic authority.**
+
+A generated line is a proposal, not an approved Portfilo line.
+
+Do not publish a sentence because it sounds polished, sounds journalistic, or appears consistent with the brand strategy.
+
+The structure, institutional position, and writing form must be justified before prose. Follow `docs/WRITING_SYSTEM.md`.
+
+Existing Portfilo copy is not automatically an approved style exemplar merely because it is already published. It must pass the current copy/provenance audit before being used as precedent.
 
 ## Approved positioning architecture
 
@@ -136,6 +148,46 @@ Avoid copy whose main job is to explain:
 
 Those ideas should usually be demonstrated through the product.
 
+## Institutional-copy provenance
+
+Before approving a nontrivial public line that speaks for Portfilo, classify it.
+
+### Functional
+
+Describes what a page, link, button, form, route, or feature does.
+
+Authority: actual implementation.
+
+### Operational
+
+Describes a real service condition or process such as newsletter cadence, confirmation, provider behavior, or current availability.
+
+Authority: actual configuration or documented product behavior.
+
+### Editorial / institutional
+
+Describes what Portfilo covers, publishes, requires, believes, intends, promises, or prioritizes.
+
+Authority: canonical repository document or explicit founder/editor approval.
+
+Generated language is not authority.
+
+Statements using verbs such as `believes`, `wants`, `cares`, `is interested in`, `exists to`, or `aims to` require special scrutiny because they often smuggle strategy into public copy.
+
+### Legal / privacy
+
+Describes data handling, terms, disclosures, rights, corrections, or commercial relationships.
+
+Authority: actual data flow/procedure plus appropriate legal/policy review where required.
+
+### Promotional
+
+Claims a quality or benefit such as `best`, `smart`, `essential`, `trusted`, `clear`, `rigorous`, `practical`, or `must-read`.
+
+Default: reject unless a specific approved use and support exists.
+
+The site-wide copy audit should record this class and authority for every nontrivial public line.
+
 ## Temporary coverage descriptors
 
 While Portfilo still relies on fixtures, a short functional descriptor may be used where the layout needs context.
@@ -149,6 +201,8 @@ or, if a sentence is genuinely needed:
 > Stories about companies, products, markets, and the people building them.
 
 These are not taglines. They should not be repeated across every surface or treated as permanent brand assets without later evidence that they are useful.
+
+Portfilo now has real stories, so any descriptor previously justified as a fixture-era aid must be re-evaluated during the site-wide copy audit rather than retained automatically.
 
 ## Writing rules
 
@@ -180,6 +234,7 @@ The problem is sentences that try to explain the subject, audience, mission, geo
 
 Prefer:
 
+- Stories
 - Latest
 - Read story
 - Subscribe
@@ -241,7 +296,9 @@ Edit aggressively when copy relies on:
 - every section headline sounding like a campaign slogan;
 - explanatory bridge sentences that exist mainly to make the positioning logically complete;
 - an unnatural level of polish where every line resolves neatly;
-- generic positivity or elevated vocabulary where a plain sentence works.
+- generic positivity or elevated vocabulary where a plain sentence works;
+- repeated rhetorical questions or sentence fragments used mainly to create rhythm;
+- institutional self-description without provenance.
 
 Do not mechanically ban rhetorical devices. Predictability and unnecessary explanation are the problem.
 
@@ -256,7 +313,7 @@ Personality should come from:
 - what details it includes;
 - what claims it challenges;
 - headline choices;
-- sentence rhythm;
+- sentence rhythm that arises naturally from the material;
 - specific words that fit the subject.
 
 A plain sentence with a sharp observation is better than a branded sentence with no information.
@@ -285,9 +342,17 @@ Question headlines are allowed but should not become a default template.
 
 Avoid empty curiosity gaps and generic `Here's why` framing when the actual subject can be named.
 
-## Deks and summaries
+## Headline, dek, and description
 
-A dek should add information rather than translate the headline into a second sentence.
+These are separate editorial jobs even though the current Astro schema still uses `description` for multiple surfaces.
+
+### Headline
+
+Names the development, finding, question, tension, or argument.
+
+### Dek
+
+Adds information rather than translating the headline into a second sentence.
 
 Useful additions include:
 
@@ -299,6 +364,16 @@ Useful additions include:
 
 One or two sentences is usually enough.
 
+### Description / summary
+
+A compact summary for story cards, indexes, SEO, and social metadata.
+
+It should be literal, short, and specific. It does not need to sound like article prose.
+
+Do not force one generated string to perform all three jobs.
+
+Splitting `dek` and `description` in the content schema is approved for the subsequent site-copy/content-schema phase, not this writing-system phase.
+
 ## Homepage copy
 
 The homepage is content-first.
@@ -309,7 +384,7 @@ Its main jobs are:
 2. provide enough coverage context to orient them;
 3. show the lead story;
 4. show more stories;
-5. provide a path to About, Standards, and Subscribe.
+5. provide a path to Stories, About, Standards, and Subscribe.
 
 The homepage does **not** need a large institutional positioning sentence.
 
@@ -422,13 +497,20 @@ Before any public line is approved, ask:
 8. Could this appear unchanged on a generic AI-generated publication?
 9. Did we write another sentence only because the previous one felt too simple?
 10. Is the journalism better placed to prove this claim than the brand copy?
+11. What is the provenance class for this institutional line?
+12. Would we still approve the line if we knew a model generated it without any stylistic context?
 
 If removing a sentence makes the page clearer, remove it.
 
 ## Research basis
 
-This architecture was adopted after reviewing the failed Portfilo copy implementation and studying publications including BackScoop, Morning Brew, and The Hustle.
+The original content-first architecture was adopted after reviewing the failed Portfilo copy implementation and studying publications including BackScoop, Morning Brew, and The Hustle.
 
-The key research lesson is not to copy their wording. It is that successful publication brands can use very little institutional copy when the product, cadence, story selection, headlines, and editorial execution make the proposition clear.
+The current writing system adds professional content-design and editorial-form guidance from Poynter, GOV.UK, Microsoft, and other form-specific references recorded in `docs/WRITING_SYSTEM.md`.
 
-See `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md` for the research comparison and rejected alternatives.
+The key lesson is not to copy wording. Professional examples and guides can establish useful **forms, sequencing decisions, and editing tests**. They do not grant authority to imitate another publication's voice.
+
+See:
+
+- `docs/WRITING_SYSTEM.md`;
+- `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`.
