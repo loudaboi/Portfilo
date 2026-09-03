@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: PROPOSED / USER APPROVAL REQUIRED / NO REWRITE AUTHORIZED_
+_Status: APPROVED / REWRITE AUTHORIZED_
 
 Follow `docs/WRITING_SYSTEM.md`.
 
@@ -366,10 +366,10 @@ Final wording is not authorized at the style-brief stage.
 
 Structure/form decision:
 
-`PROPOSED`
+`APPROVED`
 
 Approved by/date:
 
-`PENDING LOUDA TUPPAL REVIEW`
+`Louda Tuppal / 2026-09-03`
 
-No C027 rewrite may begin until this brief is approved.
+C027 rewrite is authorized. Approval applies to the writing form and structure, not to any future draft wording, headline, dek, description, or replacement of the currently published story.
