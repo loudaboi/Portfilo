@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: APPROVED / CANONICAL / PILOT REQUIRED / NO IMAGE GENERATION UNTIL STORY BRIEF APPROVED_
+_Status: APPROVED / CANONICAL / PILOT REQUIRED / EXPLICIT GENERATION AUTHORIZATION REQUIRED_
 
 Research basis:
 
@@ -65,6 +65,8 @@ HUMAN BRIEF APPROVAL
   ↓
 GENERATOR INSTRUCTIONS DERIVED FROM BRIEF
   ↓
+HUMAN GENERATION AUTHORIZATION
+  ↓
 CANDIDATE GENERATION
   ↓
 BRIEF / FACTUAL-IMPLICATION / ARTIFACT REVIEW
@@ -80,9 +82,21 @@ IMPLEMENTATION
 ARTICLE + CARD + SHARE PREVIEW QA
 ```
 
-No actual Portfilo story image may be generated before the image brief is approved.
+Brief approval authorizes the brief as the visual source of truth and permits generator-instruction preparation. It does **not** authorize image generation.
+
+No actual Portfilo story image may be generated until the generator instruction has been presented and a separate explicit human generation authorization has been given.
 
 No generated candidate becomes public merely because it is technically impressive or visually attractive.
+
+### Approval scope
+
+Human approval is scoped to the gate explicitly awaiting approval.
+
+A short reply such as `I approve`, `yes`, or `go ahead` advances only that immediately pending gate unless the human explicitly names additional actions.
+
+Do not advance more than one human-controlled gate from one approval unless the human message explicitly authorizes those multiple gates.
+
+For image generation specifically, never treat image-brief approval as generation authorization.
 
 ## Stage 1 — image necessity gate
 
@@ -202,6 +216,8 @@ The image brief is the source of authority for generation.
 A prompt is only a derived execution artifact.
 
 If a generated prompt adds an object, claim, person, location, brand, interface, mood or symbolism that the approved brief did not authorize, revise the prompt rather than treating the model's addition as creative precedent.
+
+Brief approval completes the brief gate only. It does not authorize candidate generation.
 
 ## Portfilo visual language
 
@@ -455,6 +471,23 @@ The generation instruction must be derived from the approved image brief and inc
 
 The prompt itself must be inspectable.
 
+After the image brief is approved:
+
+1. derive the generator instruction from the approved brief;
+2. record it in the story image brief or another approved research artifact;
+3. present the actual generator instruction to the human editor;
+4. keep generation blocked until a separate explicit generation authorization is given.
+
+Before invoking any image-generation tool, all of the following must be true:
+
+1. an approved image brief exists;
+2. the exact generator instruction has already been presented for human inspection;
+3. the current human message explicitly authorizes generation, or directly answers yes to the immediately preceding question asking whether to generate.
+
+A brief-approval response cannot satisfy condition 3 by itself.
+
+Never invoke image generation in the same turn in which the human approves the image brief unless that same human message explicitly says to approve the brief **and** generate candidates.
+
 Do not use:
 
 - `make something cool`;
@@ -524,6 +557,7 @@ For each generated visual, retain in the research packet:
 
 - approved image brief;
 - generation instruction version;
+- generation authorization by/date;
 - generation date;
 - candidate IDs/file names;
 - rejection reasons for material failures;
@@ -543,10 +577,12 @@ After this system is approved:
 1. choose **one published story** as a visual pilot;
 2. create its image research/brief;
 3. approve the brief;
-4. generate a small candidate set;
-5. evaluate visual consistency, factual risk, crop behavior and site fit;
-6. revise the system if the pilot reveals a structural problem;
-7. only then extend the process to the remaining stories.
+4. derive and review the generator instruction;
+5. obtain separate explicit generation authorization;
+6. generate a small candidate set;
+7. evaluate visual consistency, factual risk, crop behavior and site fit;
+8. revise the system if the pilot reveals a structural problem;
+9. only then extend the process to the remaining stories.
 
 The first generated image must not become style authority merely because it was first.
 
@@ -582,4 +618,4 @@ Approved by/date:
 
 `Louda Tuppal / 2026-09-04`
 
-No actual Portfilo editorial image generation is authorized until the first pilot story's separate image brief is approved.
+No actual Portfilo editorial image generation is authorized solely by image-brief approval. Each generated candidate set requires a separate explicit human generation authorization after the generator instruction has been presented.
