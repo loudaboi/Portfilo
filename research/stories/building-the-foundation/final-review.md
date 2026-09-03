@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: EDITORIAL PACKAGE APPROVED / LIVE SOURCE UPDATED / DEPLOYED VERIFICATION PENDING_
+_Status: COMPLETE / EDITORIAL PACKAGE APPROVED / LIVE SOURCE UPDATED / DEPLOYED USER REVIEW PASS_
 
 ## Story
 
@@ -96,25 +96,20 @@ Source update commit:
 
 Repository re-fetch after the update confirmed the approved headline, dek, description, body, and preserved publication metadata are present on `build/portfilo-v0`.
 
-## Validation boundary
+## Validation
 
 Repository/source verification: **PASS**.
 
 Local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
-Cloudflare deployed-page verification: **PENDING**.
+Cloudflare deployed-page review: **PASS / USER APPROVED 2026-09-03**.
 
-A direct deployment check could not be completed from the available web/runtime path in this session, so the repository commit must not be treated as proof that Cloudflare has already served the new build.
+Louda Tuppal approved the deployed C027 result after being asked to verify the article headline/dek/body opening, homepage Featured description, `/stories` description, and obvious rendering regressions.
 
-## Completion rule
+This is a deployed user review, not a claim that a local Astro build was run.
 
-C027 editorial repair is complete at the source/editorial level.
+## Completion
 
-Do not mark deployed verification complete until the Cloudflare page visibly shows:
+**C027 EDITORIAL REPAIR: COMPLETE.**
 
-1. the approved headline;
-2. the approved dek;
-3. the new opening beginning `Imagine two people each spend several months on a small software product.`;
-4. the approved card description on the homepage and `/stories` where C027 appears.
-
-After deployed verification passes, C027 may be marked fully complete and Phase 3 can proceed to C009.
+Phase 3 may proceed to C009 under its own subject, audience, form and style research. C027's Perspective mechanics are not precedent for C009.
