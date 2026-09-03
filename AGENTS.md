@@ -62,20 +62,34 @@ Any publishable factual story must follow:
 - `docs/EDITORIAL_STANDARD.md`
 - `docs/RESEARCH_STANDARD.md`
 - `docs/WRITING_SYSTEM.md`
+- `docs/STYLE_RESEARCH_STANDARD.md`
 - `docs/PUBLISHING_STANDARD.md`
 
 AI is an assistant for research organization, analysis, challenge, drafting, and editing. AI output is not evidence.
 
 AI output also has zero stylistic authority. Do not let a model silently invent a story form, institutional position, house voice, or rhetorical style and then treat the generated prose as precedent.
 
-Before Draft 1 of a substantial story:
+Before Draft 1 of every substantial story:
 
-- choose the writing form from the material and reader need;
-- create and approve `style-brief.md` using `research/STYLE_BRIEF_TEMPLATE.md`;
-- record any professional form research or exemplars used;
-- use exemplars for structural decisions only, not sentence-level imitation.
+- research the subject and evidence first;
+- identify and record the primary reader need and audience assumptions;
+- research the appropriate professional writing form;
+- review 2-4 relevant human-edited exemplars by default, chosen because they solve a similar writing problem rather than because they are famous or cover the same topic;
+- create `style-research.md` using `research/STYLE_RESEARCH_TEMPLATE.md`;
+- use exemplars to study transferable editorial decisions such as lead behavior, thesis timing, paragraph development, evidence handling, transitions, person, counterargument, and ending;
+- do not imitate distinctive wording, cadence, metaphors, jokes, branded terminology, or another publication's institutional voice;
+- create or revise `style-brief.md` using `research/STYLE_BRIEF_TEMPLATE.md`;
+- approve the style brief before drafting.
+
+The sequence is:
+
+`subject research -> evidence -> story decision -> reader need -> form research -> human-edited style research -> style-research.md -> style-brief.md -> approval -> draft`
+
+Do not skip from an approved idea or structure directly to generated prose.
 
 Existing published Portfilo prose is not automatically an approved style exemplar. It must first pass the current writing-system audit.
+
+If a story is materially reframed, re-research the writing approach rather than forcing the old style packet onto the new assignment.
 
 ## 5. Research integrity
 
@@ -98,7 +112,8 @@ Follow `docs/DESIGN_DIRECTION.md`.
 Public-facing copy must follow:
 
 - `docs/COPY_STYLE.md`;
-- `docs/WRITING_SYSTEM.md`.
+- `docs/WRITING_SYSTEM.md`;
+- `docs/STYLE_RESEARCH_STANDARD.md` when a copy task involves meaningful editorial discretion.
 
 Do not default to generic SaaS components, card grids, gradients, glassmorphism, or decorative motion.
 
@@ -113,7 +128,9 @@ For public copy:
 - prefer clear, concrete, useful language over promotional or AI-shaped phrasing;
 - express Filipino specificity through real context rather than decorative slang or clichés;
 - do not invent what Portfilo `believes`, `wants`, `cares about`, `is interested in`, or `exists to do` without canonical or explicit human authority;
-- classify nontrivial institutional copy by functional, operational, editorial/institutional, legal/privacy, or promotional provenance before approval.
+- classify nontrivial institutional copy by functional, operational, editorial/institutional, legal/privacy, or promotional provenance before approval;
+- for significant About, Standards, Subscribe, newsletter, or other discretionary copy rewrites, research comparable professional examples and content-design guidance before drafting;
+- small literal maintenance copy whose wording is dictated by actual behavior does not require an artificial multi-exemplar exercise.
 
 ## 7. Implementation discipline
 
@@ -158,5 +175,5 @@ It is done when:
 - scope has not silently expanded;
 - relevant validation passes;
 - obvious regressions have been checked;
-- writing has passed the applicable evidence, form, provenance, structure, human-language, and slop gates;
+- writing has passed the applicable evidence, reader-need, style-research, form, provenance, structure, human-language, and slop gates;
 - documentation/state is updated when necessary.
