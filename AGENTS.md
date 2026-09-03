@@ -32,6 +32,16 @@ Before adding a dependency, ask:
 
 Prefer the simplest implementation that preserves a clean migration path.
 
+### Human approval scope
+
+A human approval applies only to the artifact, decision, or gate explicitly awaiting approval.
+
+Do not treat approval of the current gate as authorization for a later workflow stage that has not yet been presented.
+
+Advance at most one human-controlled gate from a single approval unless the human message explicitly authorizes multiple named gates or actions.
+
+A short response such as `I approve`, `yes`, or `go ahead` inherits only the immediately pending approval scope. It does not silently authorize downstream generation, publication, sending, deployment, deletion, or another consequential side effect.
+
 ## 3. Current architecture rules
 
 For v0:
@@ -147,12 +157,18 @@ For substantial story imagery:
 - develop 2-3 concept candidates from approved editorial material;
 - require human concept selection;
 - create `research/stories/<story-slug>/image-brief.md` using `research/IMAGE_BRIEF_TEMPLATE.md`;
-- obtain explicit human approval of the image brief before any generation;
+- obtain explicit human approval of the image brief;
 - derive generator instructions from the approved brief rather than letting the model invent scene, symbolism, subject, palette, or factual implications;
+- present the derived generator instruction for human inspection before generation;
+- obtain separate explicit human authorization to generate candidates;
+- never invoke image generation in the same turn that the human approves the image brief unless that same human message explicitly approves the brief **and** explicitly authorizes image generation;
+- before any image-generation call, verify that the approved brief exists, the generator instruction has already been presented, and the current human message explicitly authorizes generation or directly answers yes to the immediately preceding question asking whether to generate;
 - treat generated imagery as editorial illustration, never documentary evidence;
 - do not generate real-person likenesses, fake screenshots, fake source documents, fake logos, or invented documentary scenes for v0 editorial heroes;
 - audit candidates for factual implication, brief compliance, visual artifacts, crop behavior, accessibility role, disclosure, and color compliance;
 - require human final image selection before implementation.
+
+Brief approval and generation authorization are separate gates. Do not infer the second from the first.
 
 A generated image is not approved merely because it looks good. The first generated Portfilo image also does not become visual precedent merely because it was first.
 
