@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / C021 Data-Center Capacity Source Reconnaissance - ACTIVE**
+**Portfilo v0 / C021 Data-Center Capacity Source Reconnaissance - ACTIVE; C029 Desk Pilot - COMPLETE / DECISION PENDING**
 
 Portfilo's publishing system, editorial standards, first published stories, homepage real-content integration, and Portfilo Brief foundation are in place.
 
@@ -27,17 +27,37 @@ C027 visual sourcing remains planned. No final hero image has been selected, gen
 
 ### Current editorial decision
 
-C029, `The second question after the headline`, is now **HOLD / FIELDWORK REQUIRED**. Its original contribution depends on participant diaries and real-time reader walkthroughs, and suitable recruitment is not practical at Portfilo's current stage. The packet is preserved for later rather than weakened into a derivative desk-only story.
-
-C021 has been activated in the freed research slot:
+C021 remains the active third launch-research assignment:
 
 > **How much Philippine data-center capacity is operating, under construction, committed, and merely announced?**
 
-Its first source pass already shows a credible information gap: public capacity figures can mix different project statuses and different power metrics. C021 is therefore proceeding as a bottom-up project-status ledger, with a possible reframe to explaining why national MW totals conflict if a clean national subtotal cannot be supported.
+Its first source pass shows a credible information gap: public capacity figures can mix different project statuses and different power metrics. C021 is proceeding as a bottom-up project-status ledger, with a possible reframe to explaining why national MW totals conflict if a clean national subtotal cannot be supported.
 
 C021 packet:
 
 `research/stories/data-center-capacity-ledger/`
+
+C029, `The second question after the headline`, has changed from `HOLD / FIELDWORK REQUIRED` to:
+
+**`REFRAME / DESK PILOT PASS / FULL CORPUS REQUIRED / NOT ACTIVE`**.
+
+A six-event pilot established that a narrower desk-reported version is feasible if the unit of analysis is the public question inside a defined Reddit corpus, not the person asking it or Filipino readers generally.
+
+Current desk-research question:
+
+> **What questions surface in public Reddit discussion around preselected Philippine business and technology news events after the initial update?**
+
+The strongest pilot contribution is the comparison:
+
+`selected news event -> visible public question -> what the selected source story already established`
+
+The pilot found multiple article-question relationships — `ANSWERED`, `PARTIAL`, `UNANSWERED`, and `EXPANDS_FRAME` — which prevents the story from assuming that every public follow-up question proves inadequate reporting.
+
+C029 has **not** displaced C021 and is **not** authorized for drafting. A deliberate assignment decision is still required before a full 24-event corpus begins.
+
+C029 packet:
+
+`research/stories/second-question-after-headline/`
 
 ## Current branch
 
@@ -298,12 +318,12 @@ The source reconnaissance already identifies a real measurement/status problem:
 
 Priority contradiction work includes:
 
-1. reconcile STT's portfolio-level >140/nearly 150 MW figures with current facility labels such as `Launching Soon` and `Under Development`;
-2. establish the current live IT-load phase of VITRO Sta. Rosa rather than assuming the full 36 MW is commissioned;
-3. establish YCO Malvar One's current IT load rather than treating 30 MW energized/powered-shell capacity as equivalent;
-4. verify whether any Evolution/Megawide phase actually reached service after its stated Q3 2026 RFS target;
-5. expand the census to significant operators/projects not yet fully mapped, including current VITRO portfolio sites, Converge/Digital Halo and other material facilities;
-6. prevent double counting and identify operating facilities for which comparable public MW is unavailable, such as Equinix.
+1. reconcile STT facility/portfolio status;
+2. establish current VITRO live-phase IT load;
+3. establish YCO Malvar One's current IT load rather than equating energized/powered-shell capacity;
+4. verify whether any Evolution/Megawide phase reached service after its stated Q3 2026 target;
+5. expand the census to material operators/projects not yet fully mapped;
+6. prevent double counting and record operating facilities for which comparable public MW is unavailable.
 
 No national subtotal is publication-ready.
 
@@ -313,37 +333,103 @@ Possible evidence-led reframe if clean subtotals remain impossible:
 
 Do not research article structure or draft C021 until the operator census, evidence ledger and contradiction search support a story decision.
 
-## Held research
+## Reframed / decision-pending research
 
-### C029 - HOLD / FIELDWORK REQUIRED
+### C029 - REFRAME / DESK PILOT PASS / FULL CORPUS REQUIRED / NOT ACTIVE
 
 Working label:
 
 `The second question after the headline`
 
-Question:
+Current desk question:
 
-> What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?
+> **What questions surface in public Reddit discussion around preselected Philippine business and technology news events after the initial update?**
+
+Reader-facing working formulation:
+
+> **What comes after `what happened?` in Philippine business and technology news?**
 
 Packet:
 
 `research/stories/second-question-after-headline/`
 
-Why held:
+The original participant study remains preserved in `fieldwork-plan.md`. It can later investigate actual information-seeking behavior, but it is no longer required for the narrower desk version.
 
-The current documentary research cannot provide the story's intended original contribution. That contribution requires observing actual reader behavior:
+### C029 pilot design
 
-`encounter -> unanswered question -> next action -> stopping point`
+The pilot locked six recent business/technology events before searching discussion. An event remained in the sample even if it produced no clean discussion trace or no usable question.
 
-The ready fieldwork method targets 12-15 participants, with 10 complete records minimum. Suitable recruitment is not currently practical.
+Pilot files:
 
-Do not substitute public comments or desk research while keeping the stronger behavior claim.
+- `desk-pilot.md`;
+- `desk-pilot-questions.csv`;
+- `desk-pilot-results.md`.
 
-Revisit trigger:
+Pilot result:
 
-Resume when Portfilo can recruit at least 10 suitable participants without relying almost entirely on Louda Tuppal's immediate friend/founder/supporter circle.
+- `6` preselected events;
+- `4` with eligible related public discussion traces;
+- `3` with at least one usable information-seeking question;
+- `14` usable questions coded;
+- `3` zero-question / no-clean-discussion cases preserved.
 
-No C029 draft exists or is authorized.
+Question-to-source relation:
+
+- `ANSWERED`: 2;
+- `PARTIAL`: 4;
+- `UNANSWERED`: 5;
+- `EXPANDS_FRAME`: 3.
+
+The counts describe only this pilot corpus. They do not estimate prevalence among Filipino readers.
+
+### C029 pilot interpretation
+
+The pilot passes as a method because real questions can be recovered and audited without inventing them, while negative cases remain in the sample.
+
+The strongest finding is not `news lacks context`.
+
+Instead, public questions can have different relationships to the initial update:
+
+- already answered by the selected story;
+- partly answered;
+- genuinely unresolved by the selected story;
+- expanding into a separate but relevant frame.
+
+This makes the method adversarial to Portfilo's own premise. A question already answered by the article could reflect headline-only exposure, another entry surface, attention/memory effects, or something else. The desk method cannot establish why and must not pretend it can.
+
+### C029 full-corpus threshold
+
+If deliberately activated, the next method is a `24-event` Reddit-only corpus:
+
+1. six `AI / work / enterprise adoption` events;
+2. six `companies / startups / markets` events;
+3. six `fintech / platforms / regulation` events;
+4. six `infrastructure / data centers / semiconductors` events.
+
+Rules:
+
+- select all 24 before discussion search;
+- use a fixed `0-7 day` primary window;
+- preserve zero-result cases;
+- require direct-link, exact-event, or unmistakable same-event matching;
+- include only genuine information-seeking questions;
+- exclude rhetoric, jokes, insults and duplicate questions;
+- code question type;
+- code relation to the source as `ANSWERED / PARTIAL / UNANSWERED / EXPANDS_FRAME / UNCLEAR`;
+- keep a short audit note for every relation judgment;
+- prevent one publisher, subreddit or controversy from dominating the sample.
+
+Do not claim:
+
+- representativeness of Filipino readers;
+- commenter age;
+- what people read first;
+- private search/AI behavior;
+- why information already in an article was missed;
+- that every unanswered question is a reporting failure;
+- that Portfilo is the solution.
+
+No C029 article draft exists or is authorized.
 
 ## Homepage and fixture state
 
@@ -455,26 +541,28 @@ Do not add Turnstile unless real traffic demonstrates abuse after honeypot and e
 | Newest homepage/share-readiness live recheck | PENDING |
 | Subscribe emoji-arrow mobile live recheck | PENDING |
 | C027 final hero image | NOT SELECTED |
-| C029 | HOLD / FIELDWORK REQUIRED |
 | C001 | ACTIVE / CONTINUE |
 | C017 | ACTIVE / REFRAME / CONTINUE |
 | C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C021 national capacity subtotal | NOT READY |
+| C029 desk method | REFRAME / PILOT PASS / FULL CORPUS REQUIRED / NOT ACTIVE |
+| C029 original fieldwork method | PRESERVED FOR FUTURE |
 | Final-domain configuration | PENDING DOMAIN |
 
-## Exact next task
+## Exact next decision
 
-**Continue C021's comprehensive operator/project census and contradiction reconciliation.**
+**Choose whether C029 should receive an active slot for the full 24-event corpus or whether C021 should remain the current third launch-story priority.**
 
-Priority sequence:
+Until that choice is made:
 
-1. reconcile STT facility/portfolio status;
-2. establish current VITRO live-phase IT load;
-3. verify Evolution/Megawide current service status;
-4. map omitted material operators/projects and BOI/PEZA records;
-5. distinguish IT load from utility/energized power for every row;
-6. update `capacity-ledger.csv`, evidence and contradictions;
-7. decide `CONTINUE / REFRAME / PUBLISH-CANDIDATE / KILL` before any article structure or draft.
+- C021 remains active;
+- C029 remains decision-pending and should not be drafted;
+- C001 and C017 remain unchanged;
+- do not exceed the normal three-story active-research limit.
+
+If C021 remains prioritized, continue its operator/project census and contradiction reconciliation.
+
+If C029 is activated, first decide which existing active assignment leaves or enters a waiting state before starting the 24-event corpus.
 
 C027 visual sourcing may resume later when deliberately reprioritized.
 
