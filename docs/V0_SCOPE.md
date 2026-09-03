@@ -22,7 +22,17 @@ The first real editorial series will be chosen through a separate research proje
    - clear Portfilo identity;
    - newsletter call to action.
 
-2. **Story page**
+2. **Stories index**
+   - `/stories` route;
+   - all published stories in reverse chronological order;
+   - publication date;
+   - content type/topic;
+   - headline;
+   - short story description;
+   - author;
+   - no search, filters, or pagination until volume creates a real need.
+
+3. **Story page**
    - headline and dek;
    - author;
    - publish/update dates;
@@ -36,24 +46,24 @@ The first real editorial series will be chosen through a separate research proje
    - related stories;
    - newsletter call to action.
 
-3. **Series page**
+4. **Series page**
    - generic series metadata;
    - ordered story list;
    - active/completed state.
 
-4. **Research & Standards**
+5. **Research & Standards**
    - sourcing;
    - verification;
    - AI usage;
    - corrections;
    - commercial/editorial separation.
 
-5. **About**
+6. **About**
    - who Portfilo serves;
    - what it does;
    - concise company/editorial thesis.
 
-6. **Subscribe**
+7. **Subscribe**
    - Portfilo Brief;
    - native Portfilo newsletter signup UI;
    - one narrow Cloudflare Pages Function that forwards confirmed-opt-in subscription requests to beehiiv.
@@ -66,6 +76,7 @@ The first real editorial series will be chosen through a separate research proje
 - draft/published state
 - topic
 - content type
+- distinct story `dek` and short `description` writing jobs
 - optional series relationship
 - featured state
 - publish/update dates
@@ -224,7 +235,7 @@ Do not revisit architecture because of hypothetical future complexity.
 v0 is complete when:
 
 - all in-scope public surfaces exist;
-- at least one clearly labeled design fixture proves the story system;
+- at least one clearly labeled design fixture proves the story system without being publicly exposed in production;
 - content schema validates;
 - production build passes;
 - desktop/mobile layouts are manually inspected;
