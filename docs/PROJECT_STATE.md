@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 BODY + HEADLINE APPROVED / DEK RESEARCH COMPLETE / DEK AWAITING USER APPROVAL**
+**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 EDITORIAL REPAIR COMPLETE IN SOURCE / DEPLOYED VERIFICATION REQUIRED**
 
 Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, first published stories, and Portfilo Brief foundation remain in place.
 
@@ -62,7 +62,7 @@ Email/deployment:
 
 ## Writing-system state
 
-The writing system now separates four questions before prose:
+The writing system separates four questions before substantial public prose:
 
 1. **What can the story say?** -> subject research, evidence, contradictions.
 2. **What must the story do for the reader?** -> reader need and audience assumptions.
@@ -86,6 +86,7 @@ subject research
   -> headline / dek / description research and audit
   -> final human approval
   -> publish / update
+  -> deployed verification
 ```
 
 `docs/STYLE_RESEARCH_STANDARD.md` is canonical for the per-story style-research gate.
@@ -94,13 +95,13 @@ Default human-edited exemplar target:
 
 **2-4 relevant pieces chosen because they solve a similar writing problem.**
 
-More examples may be used for a narrow sub-problem such as headline/dek framing when the initial comparison is insufficient.
+More examples may be used for a narrow framing problem when the initial comparison is insufficient.
 
-Exemplars are used to study transferable editorial decisions. They are never wording, cadence, metaphor, joke, branded-term, or house-voice authority.
+Exemplars authorize transferable editorial decisions only. They do not authorize copying wording, cadence, metaphors, jokes, branded terminology, rhetorical quirks, or house voice.
 
 A model may execute approved editorial decisions. It may not supply missing style decisions from bare statistical intuition.
 
-Existing published Portfilo prose is not automatically an approved style exemplar.
+Existing Portfilo prose is not automatically a style exemplar merely because it was previously published.
 
 If the assignment materially changes, re-research the writing approach.
 
@@ -138,7 +139,7 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 BODY + HEADLINE APPROVED / DEK RESEARCH COMPLETE / DEK USER REVIEW REQUIRED**
+**ACTIVE / C027 EDITORIAL REPAIR COMPLETE IN SOURCE / DEPLOYED VERIFICATION REQUIRED**
 
 Repair order:
 
@@ -148,9 +149,9 @@ Repair order:
 
 Do not rewrite all three in one undifferentiated pass.
 
-### C027 - current repair state
+### C027 - source updated / deployed verification pending
 
-Published story currently live:
+Story:
 
 **Build things that make the next thing easier**
 
@@ -158,36 +159,46 @@ Packet:
 
 `research/stories/building-the-foundation/`
 
-Style research:
+Key records:
 
-`research/stories/building-the-foundation/style-research.md`
+- `style-research.md`
+- `style-brief.md`
+- `rewrite-v5-researched.md`
+- `headline-dek-description-research.md` — first framing pass, rejected/superseded
+- `headline-dek-description-research-v2.md`
+- `dek-research.md`
+- `description-research.md`
+- `final-review.md`
 
-Research-derived decision brief:
+Published source:
 
-`research/stories/building-the-foundation/style-brief.md`
+`src/content/stories/build-things-that-make-the-next-thing-easier.md`
 
-Approved researched body candidate:
+#### C027 approvals
 
-`research/stories/building-the-foundation/rewrite-v5-researched.md`
+Louda Tuppal approved on 2026-09-03:
 
-Deeper framing research:
+- mandatory per-story style-research direction;
+- research-derived Perspective style brief;
+- researched V5 body;
+- headline;
+- final dek;
+- final description/card/metadata summary;
+- complete publication package.
 
-`research/stories/building-the-foundation/headline-dek-description-research-v2.md`
+Approved headline:
 
-Dek-specific research:
+`Build things that make the next thing easier`
 
-`research/stories/building-the-foundation/dek-research.md`
+Approved dek:
 
-#### C027 approvals already granted
+`An early project should leave you with more than a story about what you learned.`
 
-- mandatory per-story style research: COMPLETE;
-- revised style brief: APPROVED by Louda Tuppal on 2026-09-03;
-- researched body V5: APPROVED by Louda Tuppal on 2026-09-03;
-- headline `Build things that make the next thing easier`: APPROVED by Louda Tuppal on 2026-09-03.
+Approved description:
 
-The currently published C027 has **not** yet been replaced. Its older prose remains live until the remaining framing and final package are approved.
+`A project deserves credit beyond its direct result only when the work itself changes a later choice or produces something that can actually be used again.`
 
-#### C027 body direction
+#### C027 research/writing decisions
 
 Reader need:
 
@@ -197,78 +208,68 @@ Content type:
 
 `Perspective`
 
-Body principles now approved:
+Approved mechanics:
 
-- thesis early;
+- argument becomes clear early;
 - two developed hypothetical examples by default;
-- normal multi-sentence paragraphs;
+- normal multi-sentence paragraphs rather than dramatic compression;
 - no named framework such as `carryover`;
 - no rhetorical-question lead or ending;
-- minimal second person;
-- structural constraints inside the argument;
-- explicit `I learned a lot` rationalization challenge;
+- minimal second-person coaching;
+- structural constraints remain inside the argument;
+- explicit attack on retrospective `I learned a lot` rationalization;
 - declarative, bounded ending;
-- no unverified factual examples.
+- no unverified factual examples;
+- human-edited examples used for function/mechanics only, never voice imitation.
 
-#### C027 framing history
+The first framing proposal that centered failure was rejected and superseded. The later two-sentence dek beginning `The result still comes first. Beyond that...` was also rejected as weak, overly structured AI-shaped prose.
 
-First framing research:
+Dedicated dek research found that the second line should do one additional job rather than reproduce the article's internal logic. Dedicated description research confirmed that `description` is visible card copy on the homepage and `/stories`, while also serving metadata, so schema-like copy such as `A Perspective on...` was rejected.
 
-`headline-dek-description-research.md`
+#### C027 implementation
 
-Status:
+The complete approved package was written to the published story source on `build/portfilo-v0`.
 
-**REJECTED BY USER / SUPERSEDED.**
+Source update commit:
 
-The rejected package over-centered failure with the proposed headline:
+`b98922ea1ce8f780ef32cefda4e647db05b5f0f7`
 
-`A failed project can still change what comes next`
+Repository re-fetch confirmed:
 
-The first pass used legitimate general headline guidance but the comparison set was too small for the exact framing problem, and the final wording narrowed the story more than the approved body justified.
+- approved headline present;
+- approved dek present;
+- approved description present;
+- approved V5 body present;
+- `contentType: perspective` preserved;
+- `topic: building` preserved;
+- author `Louda Tuppal` preserved;
+- `publishedAt: 2026-09-03` preserved;
+- `status: published` preserved;
+- `featured: true` preserved.
 
-#### C027 deeper framing research V2
+Final review record commit:
 
-The second pass expanded the human-edited headline comparison across The Atlantic, Harvard Business Review, and WIRED and classified headline patterns rather than treating one publication as a voice model.
+`954dbf6c1f3b5292d1e144d6b57d193686e852b4`
 
-Key finding:
+#### C027 validation boundary
 
-**imperative headlines are not automatically Guide headlines.** Edited Perspectives/advice-analysis pieces use imperatives when the imperative itself is the argument.
+Repository/source verification: **PASS**.
 
-Louda approved retaining:
+Local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
-`Build things that make the next thing easier`
+Cloudflare deployed-page verification: **PENDING**.
 
-The V2 dek was then rejected by Louda as weak, overly structured AI-shaped prose:
+A direct deployed-page check could not be completed from the available web/runtime path in the implementation session. Do not treat the GitHub source update as proof that Cloudflare already serves the new build.
 
-`The result still comes first. Beyond that, the work should only count if it changes how the next attempt begins in a concrete way.`
+Deployed verification must confirm:
 
-Status:
+1. approved headline;
+2. approved dek;
+3. opening begins `Imagine two people each spend several months on a small software product.`;
+4. approved description appears correctly on homepage and `/stories` card surfaces;
+5. no obvious rendering/regression issue on the article page.
 
-**HEADLINE APPROVED / V2 DEK REJECTED / DESCRIPTION NOT YET APPROVED.**
-
-#### C027 dek-specific research
-
-The dek pass reviewed the actual second-line behavior of human-edited argumentative pieces from The Atlantic and WIRED rather than relying on general headline guidance.
-
-Key findings:
-
-- a strong dek normally does one additional job beneath the headline: scope, consequence, mechanism, tension, or concrete entry point;
-- it does not need to summarize every caveat or reproduce the style brief;
-- the rejected V2 dek failed because it exposed the internal proposition -> transition -> proposition scaffold;
-- C027's most useful missing layer under the optimistic headline is the anti-rationalization tension around `I learned a lot`;
-- one sentence is sufficient; no two-sentence structure is required.
-
-Proposed dek:
-
-`An early project should leave you with more than a story about what you learned.`
-
-Status:
-
-**USER APPROVAL REQUIRED.**
-
-Description remains pending until headline + dek are locked.
-
-No live-story change is authorized until the complete C027 package is approved.
+Do not begin C009 until C027 deployed verification passes or Louda explicitly chooses to proceed while recording that validation debt.
 
 ### C009 - PUBLISHED / WRITING RE-AUDIT REQUIRED
 
@@ -280,7 +281,18 @@ Packet:
 
 Its evidence base remains valuable.
 
-When C009 begins, it must receive fresh Explained-purpose research plus its own professional-form and human-edited exemplar study. Do not reuse C027's Perspective mechanics.
+When C009 begins, it must receive fresh research for its own reader purpose and writing mechanics. Do not reuse C027's Perspective mechanics.
+
+Expected form remains `Explained`, subject to fresh per-story verification.
+
+Known prior issues:
+
+- current dek/description were mechanically duplicated during schema migration;
+- reader-question flow needs deliberate review;
+- caveats currently repeat;
+- the evidence can support an explainer but cannot establish population shares, pay premiums, growth rates, or transition probabilities from the existing non-random job-posting sample.
+
+No new research is required merely to rewrite existing supported claims, but any new factual claim must return to the evidence packet.
 
 ### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
 
@@ -328,6 +340,18 @@ Primary reader needs:
 - Understand
 - Interpret
 - Decide
+
+Core editorial rule:
+
+**Help through reporting and evidence, not generic advice.**
+
+Research rule:
+
+**AI output has zero evidentiary weight.**
+
+Writing rule:
+
+**AI output has zero stylistic authority.**
 
 ## Active research assignments
 
@@ -411,6 +435,16 @@ Still pending before final public launch:
 - final browser/responsive/link/console QA;
 - MFA/passkeys where applicable.
 
+Newsletter state:
+
+- reusable Portfilo Brief foundation exists;
+- double opt-in tested previously;
+- sender: Portfilo;
+- Reply-To: `portfilo.ph@gmail.com`;
+- Welcome Email OFF;
+- Smart Nudge OFF;
+- no C027/C009 distribution authorized or sent as part of this repair phase.
+
 ## Validation status
 
 | Check | Status |
@@ -424,14 +458,13 @@ Still pending before final public launch:
 | Privacy vs current signup code | PASS |
 | Synthetic fixture direct production/sitemap check | PENDING FINAL RELEASE QA |
 | C027 style research | COMPLETE |
-| C027 revised style brief | APPROVED |
+| C027 style brief | APPROVED |
 | C027 researched body V5 | APPROVED |
 | C027 headline | APPROVED |
-| C027 first framing package | REJECTED / SUPERSEDED |
-| C027 V2 dek | REJECTED |
-| C027 dek-specific research | COMPLETE / USER REVIEW REQUIRED |
-| C027 description | PENDING |
-| C027 public story | PUBLISHED / OLD PROSE STILL LIVE |
+| C027 dek | APPROVED |
+| C027 description | APPROVED |
+| C027 source implementation | PASS |
+| C027 deployed verification | PENDING |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
 | C001 | ACTIVE / CONTINUE |
@@ -442,13 +475,14 @@ Still pending before final public launch:
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of the C027 dek candidate.**
+**Verify the deployed C027 rewrite on Cloudflare Pages.**
 
-If approved:
+Check:
 
-1. lock headline + dek;
-2. research/audit the compact description as its own metadata/card job;
-3. assemble the complete candidate with the already approved researched body;
-4. obtain final package approval before replacing the live public story;
-5. verify the deployed story before calling C027 repair complete;
-6. only then begin C009.
+1. story page headline/dek/body opening and overall rendering;
+2. homepage Featured card description;
+3. `/stories` archive description;
+4. desktop and mobile readability if available;
+5. no obvious navigation or metadata regression.
+
+If deployed verification passes, record **C027 DEPLOYED USER REVIEW: PASS** and begin C009 only after explicit Phase 3 continuation approval or an explicit instruction to proceed.
