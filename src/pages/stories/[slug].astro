@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 const { story } = Astro.props;
 const {
   title,
+  dek,
   description,
   contentType,
   topic,
@@ -66,7 +67,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
           </p>
 
           <h1 id="story-title">{title}</h1>
-          <p class="story-dek">{description}</p>
+          <p class="story-dek">{dek}</p>
 
           <dl class="story-meta">
             <div class="story-meta__item">
