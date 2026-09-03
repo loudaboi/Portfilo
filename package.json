@@ -1,7 +1,7 @@
 {
   "name": "portfilo",
   "version": "1.0.0",
-  "description": "Portfilo is a Filipino-first media and community company built around practical intelligence for ambitious Filipinos.",
+  "description": "Portfilo is a business and technology publication.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
