@@ -20,7 +20,7 @@ Individual story packets supersede those planning snapshots for current research
 |---|---|---|---|---|---|---|---|
 | C001 | Flagship research | What separates an AI pilot from a production system inside a Philippine company? | AI | PASS | HIGH | CONTINUE / OUTREACH READY | `research/stories/ai-pilot-to-production/` |
 | C021 | Supporting research | How much Philippine data-center capacity is operating, under construction, committed, and merely announced? | Technology | PASS | HIGH | CONTINUE / SOURCE RECONNAISSANCE | `research/stories/data-center-capacity-ledger/` |
-| C030 | Third launch Perspective | What actually changed? | Building - provisional | APPROVED DIRECTION | HIGH / LAUNCH | CORE IDEA APPROVED / STRUCTURE READY | `research/stories/what-actually-changed/` |
+| C030 | Third launch Perspective | What actually changed? | Building - provisional | APPROVED DIRECTION | HIGH / LAUNCH | DRAFT V2 COMPLETE / USER REVIEW REQUIRED | `research/stories/what-actually-changed/` |
 
 Current active WIP is `C001 + C021 + C030`.
 
@@ -128,7 +128,7 @@ C021 remains active research but is no longer being treated as the third launch 
 
 ## C030 checkpoint
 
-Louda Tuppal approved C030 as the third launch article on 2026-09-03.
+Louda Tuppal approved C030 as the third launch article on 2026-09-03 and approved the substance of Draft 1 before the adversarial/editorial revision.
 
 Working label:
 
@@ -142,34 +142,37 @@ Author:
 
 `Louda Tuppal`
 
-Target length:
-
-approximately `800-1,200` words.
-
 Packet:
 
 `research/stories/what-actually-changed/`
+
+Current editorial files:
+
+- `brief.md` - approved purpose, scope, and current gate;
+- `structure.md` - approved six-part argumentative arc;
+- `draft-v1.md` - first complete draft, substance approved;
+- `adversarial-review.md` - `PASS WITH REVISION`;
+- `draft-v2.md` - tightened editorial revision;
+- `headline-dek.md` - headline/dek audit and recommendation.
 
 The article has one institutional/editorial job:
 
 > Explain why Portfilo's Business, Technology, Startups, AI, and Building coverage belongs together by showing the editorial instinct Portfilo follows after an update: what changed in actual operation, economics, implementation, consequence, or constraint?
 
-This is deliberately different from `/about`:
+The adversarial pass found that Draft 1 repeated the same editorial motion too many times and drifted toward brand-promise language in the closing. Draft 2 compresses those repetitions and keeps the limiting principle that sometimes the update itself is enough.
 
-- About tells readers what Portfilo is and what it covers;
-- C030 explains the connective editorial lens underneath those choices.
+Recommended headline/dek for the current gate:
 
-The mission does not need to be proved through population research. C030 must not claim that readers are confused, journalism is broken, or other publications fail to provide context.
+- `What actually changed?`
+- `An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
 
-The article should also acknowledge that narrow updates have value. Portfilo follows deeper only when the second layer materially changes understanding.
+This pair is article-specific and must not be promoted into a permanent tagline without a separate decision.
 
 Current outcome:
 
-`CORE IDEA APPROVED / STRUCTURE READY / DRAFT NOT YET AUTHORIZED`.
+`DRAFT V2 COMPLETE / HEADLINE-DEK RECOMMENDATION READY / USER REVIEW REQUIRED`.
 
-Next gate:
-
-Louda Tuppal reviews `structure.md`. Draft 1 begins only after that structure is approved.
+Do not create the public story file until Louda Tuppal approves Draft 2 and the metadata direction.
 
 ## Held / future research
 
