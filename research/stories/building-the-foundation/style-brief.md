@@ -2,9 +2,16 @@
 
 _Last updated: 2026-09-03_
 
-_Status: APPROVED / REWRITE AUTHORIZED_
+_Status: PROPOSED / STYLE RESEARCH COMPLETE / USER APPROVAL REQUIRED / NO NEW DRAFT AUTHORIZED_
 
-Follow `docs/WRITING_SYSTEM.md`.
+Follow:
+
+- `docs/WRITING_SYSTEM.md`
+- `docs/STYLE_RESEARCH_STANDARD.md`
+
+Research input:
+
+`research/stories/building-the-foundation/style-research.md`
 
 ## Assignment
 
@@ -20,356 +27,368 @@ Primary reader need: `Interpret`
 
 ## Writing job
 
-Give the reader a defensible way to judge an early project by both its direct outcome and what it genuinely changes about the next starting point, without turning failure into success or writing generic self-improvement advice.
+Give the reader a defensible way to judge early work by both its direct outcome and any specific change it creates for a later attempt, without converting failure into success or producing generic self-improvement advice.
 
-This is an argument about how to evaluate work. It is not a Portfilo mission statement, founder memoir, productivity guide, or motivational essay.
+## Audience decision
+
+The intended reader is someone evaluating early projects, work, or experiments where the immediate outcome is uncertain.
+
+This is an editorial target, not a population claim.
+
+Assume basic familiarity with projects, paid work, users, revenue, completion, and continuation.
+
+Do not assume familiarity with startup-strategy jargon. Avoid `leverage`, `optionality`, `career capital`, `residual value`, and similar abstractions unless the argument later requires and defines them.
 
 ## Evidence shape
 
-The usable material contains:
+The public argument contains:
 
-- one authored argument;
-- a concrete contrast between work with similar immediate outcomes but different reusable consequences;
-- ordinary hypothetical examples rather than reported case studies;
-- a meaningful counterargument: retrospective `I learned a lot` reasoning can rationalize wasted time;
-- a limiting principle: money, access, timing, luck, customers, and structural constraints are not erased by project choice;
-- no consequential external factual claims in the current public version.
+- authored judgment rather than a reported finding;
+- ordinary hypothetical examples;
+- no required current-event hook;
+- no consequential external factual claims in the current direction;
+- a strong rationalization counterargument;
+- a structural-constraint limitation.
 
-The earlier research packet contains AI/productivity evidence, but the approved public argument no longer depends on those claims. Do not reintroduce AI research merely to make the essay look researched. If a factual example is added later, return to `evidence.md`, `sources.md`, and `contradictions.md` and verify it claim by claim.
+The earlier AI/productivity research remains in the packet but is not required for this version. Do not add it simply to signal research depth.
+
+## Style-research findings used
+
+Source:
+
+`style-research.md`
+
+### Finding 1 — the argument should become clear early
+
+Observed practice:
+
+Both selected human-edited exemplars establish the central challenge/interpretation near the top rather than withholding it.
+
+Portfilo interpretation:
+
+C027 is not a suspense essay.
+
+Decision:
+
+State the bounded thesis within the first 3-5 paragraphs.
+
+### Finding 2 — developed examples should carry the middle
+
+Observed practice:
+
+The exemplars use evidence or examples to advance the argument rather than repeatedly summarizing the thesis after each paragraph.
+
+Portfilo interpretation:
+
+The old C027 became repetitive because it listed many kinds of work and many possible benefits.
+
+Decision:
+
+Use no more than two developed hypothetical examples unless a third has a distinct argumentative job.
+
+### Finding 3 — paragraph rhythm is not universal
+
+Observed practice:
+
+The Atlantic exemplar uses developed multi-sentence paragraphs; the WIRED exemplar is shorter, punchier, and more rhetorical.
+
+Portfilo interpretation:
+
+Because C027's known failure mode is dramatic compression, the more developed paragraph behavior fits this assignment better.
+
+Decision:
+
+Default to normal multi-sentence paragraphs. One-sentence paragraphs are exceptional structural turns, not the default cadence.
+
+### Finding 4 — counterargument should be a real logical turn
+
+Observed practice:
+
+Both examples concede or test a meaningful objection rather than treating the premise as universal.
+
+Decision:
+
+After the examples and constraint section, explicitly confront the possibility that `I learned a lot` can rationalize wasted or unfinished work.
+
+### Finding 5 — rhetorical devices are optional
+
+Observed practice:
+
+WIRED uses rhetorical questions and quippy metaphors; The Atlantic uses them much more selectively.
+
+Portfilo interpretation:
+
+Those devices belong to publication/writer choices, not to the Perspective form itself.
+
+Decision:
+
+No rhetorical-question lead. No rhetorical-question ending. No quippy metaphor system.
+
+### Finding 6 — endings resolve rather than coach
+
+Observed practice:
+
+Both exemplars narrow or resolve their claim rather than ending with generic encouragement.
+
+Decision:
+
+End declaratively on what must actually change for a project's secondary value to count.
 
 ## Selected Portfilo recipe
 
 Selected recipe: `Perspective`
 
-Why it fits this material:
+Why it fits:
 
-The central value is Louda Tuppal's judgment about how early work can be evaluated. The argument can be tested through examples and a serious failure mode, but it is not a reported finding or an explainer answer.
-
-The Portfilo Perspective recipe requires:
-
-1. a concrete observation, event, tension, or experience that genuinely belongs to the argument;
-2. an early thesis;
-3. a small number of developed points;
-4. the strongest obvious counterargument or limitation;
-5. a fair response;
-6. an ending that advances or returns to the argument without restating it in elevated language.
+The story's main value is Louda Tuppal's bounded judgment about how work can be evaluated. It needs argument, examples, limitation, and counterargument rather than reporting chronology or step-by-step guidance.
 
 ## Deviations
 
-### 1. Do not use a named framework
+### No named framework
 
-The current article briefly names `carryover`. The rewrite should not depend on that term and should normally remove it.
-
-Reason:
-
-The idea is understandable without a coined label. Naming it creates unnecessary framework energy and makes the prose more likely to sound generated or self-help-like.
-
-### 2. Do not force three equal supporting points
-
-The middle should use only the examples needed to establish the argument. Two developed examples are preferable to three shallow symmetrical examples if two are sufficient.
+Do not use `carryover` or invent a replacement label.
 
 Reason:
 
-The current article repeatedly restates the same motion across product, paid work, newsletter/research/community, and then again as lists of skills, relationships, proof, income, and understanding. The argument weakens when breadth replaces development.
+The idea is understandable without branding it, and the style research gives no reason to create a framework term.
 
-### 3. The application question should not be the final sentence
+### No artificial three-point middle
 
-A useful question may appear near the end, but the essay should close with a statement about the changed starting point rather than a rhetorical-question crescendo.
+Two developed examples are preferred if they establish both the project and non-startup application.
 
 Reason:
 
-This reduces the motivational/poster-like ending pattern in the current version.
+Breadth previously produced repetitive list-like prose.
+
+### No motivational application ending
+
+A practical application can appear near the end, but the final paragraph must be declarative.
 
 ## Professional form references
 
-### Poynter — `Seven Steps to a Strong Opinion`
+Recorded in full in `style-research.md`:
 
-URL: https://www.poynter.org/archive/2003/seven-steps-to-a-strong-opinion/
+- Poynter, `The hourglass: serving the news, serving the reader`;
+- Poynter, `Seven Steps to a Strong Opinion`;
+- The OpEd Project, `Op-Ed Writing: The Basics`.
 
-Structural lesson:
+The selected principle is form-following-material plus early argument and serious counterargument. None of these references authorizes sentence-level imitation.
 
-- persuasive opinion gets its authority from facts and reasoning rather than an institutional or omniscient voice;
-- the writer should identify what is being contributed to the discussion;
-- the writer should attack the premise with the strongest opposing argument before publication.
+## Human-edited exemplar lessons
 
-Relevance/limitation:
+Full analysis is in `style-research.md`.
 
-This is guidance for editorial/opinion writing, not a formula for C027. Portfilo uses the adversarial-premise and contribution principles, not Poynter's wording or tone.
+Selected exemplars:
 
-### The OpEd Project — `Op-Ed Writing: The Basics`
+- The Atlantic / Derek Thompson, `Workism Is Making Americans Miserable`;
+- WIRED UK / John Gerzema, `'Embracing failure' isn't the right way to succeed`.
 
-URL: https://www.theopedproject.org/resources
+Transferable decisions selected:
 
-Structural lesson:
+- thesis early;
+- examples/evidence develop the middle;
+- second-person coaching is not the default;
+- counterargument/concession changes the argument;
+- ending narrows/resolves the claim.
 
-- establish the argument early;
-- support it with credible evidence, experience, or reasoning;
-- include a serious `to be sure`/counterargument turn;
-- use plain language and respect the reader's intelligence;
-- a conclusion can return to the opening, but the structure is explicitly presented as guidance rather than a rule.
+Do not imitate:
 
-Relevance/limitation:
-
-C027 is evergreen and does not need a news hook. The useful lesson is argumentative sequencing and counterargument, not the publication-oriented op-ed template.
-
-### Nieman Storyboard / Jack Hart — `Nut grafs: Getting to the heart of the story`
-
-URL: https://niemanstoryboard.org/2021/10/19/nut-grafs-getting-to-the-heart-of-the-story/
-
-Structural lesson:
-
-A rough internal theme statement can govern inclusion, sequence, and emphasis without appearing in public copy.
-
-Internal theme statement for this rewrite:
-
-> Some early work is worth judging partly by whether it changes the position from which the next attempt begins.
-
-This is an editorial control sentence, not proposed public prose.
-
-Relevance/limitation:
-
-Hart discusses nonfiction broadly. Portfilo is using the theme-statement discipline to prevent digression, not importing a feature-writing formula.
-
-### Existing C027 structure research
-
-Internal source: `research/stories/building-the-foundation/structure-research.md`
-
-Structural lesson retained:
-
-The existing research correctly selected a contrast-led argumentative funnel and correctly rejected a listicle, founder chronology, and abstract question-led essay.
-
-Structural lesson revised:
-
-The earlier implementation still allowed too much repeated symmetry and too many compressed examples. The new brief narrows the middle and removes the need to name `carryover` as a concept.
-
-## Human-edited exemplars
-
-None selected for this rewrite.
-
-Professional form guidance and the existing C027 research are sufficient to choose the structure. Omitting exemplars is deliberate: the current problem is not lack of stylistic inspiration, and adding essayists as models would increase the risk of copying cadence, rhetorical habits, or founder-essay voice.
-
-If an exemplar is added later, it must be used only to study structural decisions and recorded here before drafting.
+- Thompson's religious metaphor system or coined `workism` framing;
+- Gerzema's quippy failure metaphors, rhetorical-question cluster, or punchline cadence;
+- sentence rhythm or distinctive phrasing from either publication.
 
 ## Lead job
 
-The opening should establish one ordinary tension: two pieces of work can have similarly modest or unsuccessful direct outcomes while leaving their makers with materially different starting positions afterward.
+Open with an ordinary hypothetical contrast showing that two projects can receive a similar direct verdict while leaving different concrete consequences afterward.
 
-The contrast may be hypothetical, but if so it must be obviously hypothetical and ordinary. It must not masquerade as a reported anecdote.
+The hypothetical nature must be obvious.
 
-The opening should fit in one or two normal paragraphs. It should not stage the argument through a sequence of dramatic one-line sentences.
+Rejected:
 
-Rejected opening forms:
+- rhetorical-question lead;
+- dramatic one-line sequence;
+- founder autobiography;
+- AI hook;
+- success/failure montage;
+- motivational declaration.
 
-- `Two projects can end the same way: they stop.` followed by several short dramatic lines;
-- a rhetorical question such as `What is a project for?`;
-- a founder autobiography;
-- a success/failure montage;
-- an AI hook that is not necessary to the argument;
-- a motivational declaration about starting from nothing.
+## Thesis position
 
-## Nut / answer / thesis position
+By paragraph 3-5, establish:
 
-The thesis should be clear within the opening section, after the concrete contrast and before the essay begins expanding into examples.
+- direct outcomes still deserve an honest verdict;
+- a second consideration may be whether the work created something specific that changes a later attempt;
+- this does not mean failure is secretly success.
 
-The reader should understand early that the argument is **not** `failure is secretly success`.
+## Paragraph development
 
-The thesis must establish both sides:
+Default to multi-sentence paragraphs that develop one argumentative job.
 
-- direct outcomes still matter;
-- a second legitimate consideration is whether the work leaves something specific that changes the next attempt.
+Do not impose a fixed sentence count.
 
-Do not hide this distinction until the middle for suspense.
+One-sentence paragraphs are allowed only for a genuine logical turn.
 
 ## Middle logic
 
-### Block 1 — prove the distinction with one developed example
+### Block 1 — one developed project example
 
-Job:
+Show work -> observable change -> later decision/capability.
 
-Show how an ordinary project can fail or remain small while still changing a later starting point in a way that is specific and externally legible.
+Do not append an exhaustive list of other benefits.
 
-Possible evidence/example shape:
+### Block 2 — one developed outside-counterparty example
 
-- a small product or project that does not become a business but produces finished work, customer knowledge, or a demonstrated capability.
+Preferred domain: paid/client work or another real exchange with an outside party.
 
-Constraint:
+Its job is to show that the idea is not software/startup-specific.
 
-Do not list every possible benefit. Develop one causal chain far enough that the reader can see why the next attempt is different.
+### Block 3 — constrain the argument
 
-### Block 2 — show that the idea is not startup-specific
+Acknowledge that money, access, health, family responsibilities, timing, opportunity, and luck can shape which choices exist.
 
-Job:
-
-Use one second domain to demonstrate transfer without creating a listicle.
-
-Preferred domain:
-
-- paid/client work or another concrete form of work with a real outside counterparty.
-
-Constraint:
-
-Do not add newsletter, research, event, community, job, service, and product examples simply to show breadth. One contrasting domain is enough if it establishes generality.
-
-### Block 3 — explain why starting position matters
-
-Job:
-
-Explain that people begin projects with different amounts of experience, money, access, reputation, distribution, and relationships, and that project choice does not erase those differences.
-
-The bounded argument is only that, where choices exist, work can sometimes change part of the next starting position.
-
-Constraint:
-
-Avoid claims about all `young people`, `founders`, `builders`, or `people early in their careers`. Keep this as argument and conditional reasoning rather than a population claim.
+Do not imply project selection neutralizes unequal starting conditions.
 
 ### Block 4 — attack the premise
 
-Job:
+Confront retrospective `I learned a lot` rationalization.
 
-Present the strongest failure mode: almost any failed or unfinished project can be redescribed afterward as a learning experience.
+Require a specific later action, piece of evidence, capability, relationship, body of work, or decision to have changed.
 
-The response must require something specific, usable, or observable to have changed. Vague self-description is not enough.
-
-Constraint:
-
-Do not turn the response into a checklist of five tests. One or two concrete tests can carry the distinction.
+Do not turn this into a checklist.
 
 ### Block 5 — application and resolution
 
-Job:
+Give a compact way to evaluate the secondary value before or after a project, then end declaratively.
 
-Give the reader a compact way to use the argument when choosing or evaluating work, then resolve on the changed-starting-point idea.
+## Evidence and example handling
 
-The existing conceptual question — `If this does not become the thing, what will it make easier to do next?` — may be reconsidered during drafting, but it is not automatically protected because it already shipped.
+Examples are explicitly hypothetical unless supported by reporting.
+
+Each example should be developed enough to show causality inside the argument.
+
+Do not introduce new factual claims, numbers, research findings, company examples, or historical claims without returning to the evidence packet.
+
+## Transition behavior
+
+Prefer logical continuity.
+
+Avoid repeated transition formulas:
+
+- `The point is`;
+- `What matters is`;
+- `In practice`;
+- `The real question`;
+- repeated `This does not mean...` / `That does not mean...` constructions.
+
+## Person and rhetorical devices
+
+First person: none required.
+
+Second person: not the default mode. Use only if one application sentence genuinely improves clarity.
+
+Rhetorical questions: zero in the lead and final paragraph; at most one genuine application question if human review later prefers it.
+
+Metaphor: no recurring metaphor system.
 
 ## Counterevidence / limitation
 
-Strongest counterargument:
+Structural constraints belong before the main counterargument so they shape the claim rather than appear as a disclaimer.
 
-This idea can become a flattering excuse for wasted effort, unfinished projects, or repeated failure. A person can always invent a lesson after the fact.
+The main counterargument belongs after the examples:
 
-Required response:
+> almost any failed project can be redescribed afterward as learning.
 
-The argument only survives if the supposed benefit is specific enough to change a later action, option, capability, relationship, body of work, or decision. If nothing consequential changed, the essay should not relabel the time as valuable.
-
-Secondary limitation:
-
-Work cannot guarantee money, access, customers, timing, health, luck, or opportunity. The essay must not imply that choosing the right project neutralizes unequal starting conditions.
-
-Placement:
-
-The main counterargument belongs after the examples and starting-position section, before the final application/resolution. The structural-constraint limitation should appear earlier, when the essay explains why starting position matters, rather than being bolted on as a disclaimer near the end.
+The response must require something concrete to have changed.
 
 ## Ending job
 
-The ending should leave the reader with the narrow implication: an early project can be judged partly by whether the next attempt genuinely starts with something the previous attempt created.
+End on the narrow implication:
 
-It may return to the opening contrast, but only if the return adds information or resolution.
+secondary value counts only when the work itself created a real difference that a later attempt can use.
 
-Prohibited endings:
+Prohibited:
 
-- repeating the thesis in three new formulations;
-- `The strongest work can do both`-style slogan escalation;
-- an inspirational final question;
-- `keep building`, `start now`, or other calls to action;
-- a Portfilo mission statement;
-- claims that every project is valuable if you learn from it.
+- final rhetorical question;
+- motivational crescendo;
+- `keep building` call to action;
+- three reformulations of the thesis;
+- Portfilo mission statement;
+- claim that every failed project is valuable.
 
-## Voice constraints
+## Voice and vocabulary constraints
 
-Use normal paragraph prose.
+Use ordinary subject-verb prose.
 
-Prefer:
+Prefer concrete nouns and verbs over strategic abstractions.
 
-- subject-verb sentences;
-- concrete nouns and verbs;
-- paragraphs that develop one thought rather than one sentence each;
-- conditional wording where the argument is conditional;
-- examples detailed enough to do argumentative work;
-- explicit distinction between judgment/opinion and factual claims where needed.
+Avoid unnecessary framework vocabulary including:
 
-Avoid:
+- `carryover`;
+- `leverage`;
+- `optionality`;
+- `residual value`;
+- `durable advantage`;
+- `foundation` when used as vague strategic metaphor.
 
-- repeated `not X, but Y` constructions;
-- three-part slogan sequences;
-- `what matters`, `in practice`, `the real question`, `the point is`, and similar essay glue unless the sentence truly needs it;
-- unexplained abstractions such as `leverage`, `foundation`, `optionality`, `residual value`, or `durable advantage`;
-- coined concepts such as `carryover` unless human review later decides the term solves a real clarity problem;
-- dramatic one-line paragraphs as a default rhythm;
-- second-person instruction throughout the piece;
-- claims that imply a universal model of success.
+Do not use another publication's cadence as a target.
 
 ## Institutional-copy provenance
 
-The story does not need to make statements about Portfilo itself.
-
-Planned institutional ideas: `NONE`.
-
-If a later draft adds `Portfilo believes`, `Portfilo is interested in`, `we want`, `our mission`, or similar institutional language, remove it unless a separate editorial reason and approved source of authority are recorded first.
+Planned Portfilo institutional statements: `NONE`.
 
 ## Headline job
 
-The headline should name the argument or tension directly enough that a reader knows the piece is about how work affects what becomes possible afterward.
+Name the argument or tension without implying:
 
-The current headline, `Build things that make the next thing easier`, remains a candidate, not protected copy.
+- a step-by-step guide;
+- guaranteed progress;
+- that every failure creates value;
+- that success is fully individually controllable.
 
-It must not imply:
-
-- that the article is a step-by-step guide;
-- that every failed project creates value;
-- that building more things automatically produces progress;
-- that success is under complete individual control.
-
-Headline selection happens after the rewritten body survives the editorial and AI-slop passes.
+The existing headline remains a candidate only.
 
 ## Dek job
 
-The dek should add the missing qualification or tension that the headline cannot carry.
+Add the qualification/tension the headline cannot carry.
 
-It should clarify that direct outcomes matter while introducing the second evaluative question.
+Do not duplicate the headline, use institutional language, or summarize the entire essay.
 
-It should not:
+## Description job
 
-- speak for Portfilo institutionally;
-- repeat the headline as a rhetorical question;
-- use a slogan;
-- attempt to summarize the entire essay.
+Write a separate compact literal summary for cards/indexes/SEO/social after the body is stable.
 
-Final wording is not authorized at the style-brief stage.
-
-## Description / summary job
-
-The description should be a compact literal summary for homepage/archive cards, SEO, and social metadata.
-
-It should state the argument without rhetorical setup, institutional language, or motivational copy.
-
-It must be authored separately from the dek even if the underlying idea overlaps.
-
-Final wording is not authorized at the style-brief stage.
+Do not duplicate the dek automatically.
 
 ## Assignment-specific AI-slop risks
 
-1. Binary symmetry: `one project does X; the other does Y` repeated beyond the opening.
-2. Dramatic one-line paragraphs that manufacture importance through whitespace.
-3. Restating the same thesis after every example.
-4. Turning examples into an exhaustive list of skills, customers, relationships, money, proof, reputation, distribution, and knowledge.
-5. Naming a framework (`carryover`, `leverage`, `foundation`) that the reader does not need.
-6. Repeated `not X, but Y` and `the point is` constructions.
-7. Rhetorical questions used as transitions or conclusions.
-8. Generic second-person life advice.
-9. A motivational ending that upgrades a bounded argument into a philosophy of success.
-10. Artificially even section lengths or three-part argumentative symmetry.
-11. Reusing language from Paul Graham, Longreads essays, or other exemplars as if structural research supplied sentence-level authority.
-12. Treating the current published prose as a house-style exemplar simply because it already passed an older workflow.
+1. dramatic one-line paragraphs;
+2. binary symmetry repeated beyond the opening;
+3. thesis restatement after each example;
+4. exhaustive benefit lists;
+5. invented framework terms;
+6. repeated `not X, but Y` constructions;
+7. stock essay transitions;
+8. generic second-person advice;
+9. rhetorical-question ending;
+10. motivational escalation;
+11. artificial three-part balance;
+12. imitation of Atlantic/WIRED cadence;
+13. treating the pre-standard C027 drafts as approved house style.
 
 ## Draft authorization
 
+Style research complete:
+
+`YES`
+
 Structure/form decision:
 
-`APPROVED`
+`PROPOSED`
 
 Approved by/date:
 
-`Louda Tuppal / 2026-09-03`
+`PENDING LOUDA TUPPAL REVIEW`
 
-C027 rewrite is authorized. Approval applies to the writing form and structure, not to any future draft wording, headline, dek, description, or replacement of the currently published story.
+The user's earlier C027 form approval preceded the mandatory `style-research.md` gate and is therefore superseded for drafting purposes.
+
+No new C027 rewrite may begin until this revised brief is approved.
