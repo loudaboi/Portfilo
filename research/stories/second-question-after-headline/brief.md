@@ -4,11 +4,15 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**HOLD / FIELDWORK REQUIRED**
+**REFRAME / DESK PILOT PASS / FULL CORPUS REQUIRED / NOT ACTIVE**
 
-Louda Tuppal approved the core direction on 2026-09-03, but the assignment is no longer active for launch production because the original-reporting method requires participant recruitment that is not practical at the current stage of Portfilo.
+Louda Tuppal approved the core direction on 2026-09-03.
 
-The packet is preserved intact for later use. This is a feasibility hold, not an editorial rejection of the question.
+The first research design depended on original reader fieldwork. Because participant recruitment is not practical at Portfilo's current stage, that version is preserved for future use rather than discarded.
+
+A six-event desk-research pilot has since shown that C029 can proceed under a narrower, evidence-supported question without pretending public comments substitute for observed reader behavior.
+
+The desk version is **not yet an active launch assignment and is not ready to draft**. It requires a full structured corpus before a new story decision.
 
 ## Assignment
 
@@ -18,21 +22,29 @@ Working label: `The second question after the headline`
 
 Primary topic: `Technology` - provisional
 
-Likely content type: `Reported / Analysis` - provisional
+Likely content type: `Analysis / Reported` - provisional
 
 Primary reader need: `Understand`
 
 Priority: `MEDIUM`
 
-Planning decision: `PASS TO RESEARCH -> HOLD FOR ACCESS`
+Planning history:
 
-Research question:
+`PASS TO RESEARCH -> HOLD FOR ACCESS -> REFRAME / DESK PILOT PASS`
 
-> **What questions do younger Filipino readers ask after first encountering a business or technology news story, and what do they do next to answer them?**
+## Current desk-research question
 
-## Why the story is on hold
+> **What questions surface in public Reddit discussion around preselected Philippine business and technology news events after the initial update?**
 
-The current evidence establishes a real question but not a publishable original answer.
+Reader-facing working formulation:
+
+> **What comes after `what happened?` in Philippine business and technology news?**
+
+The unit of analysis is the **publicly observable question inside a defined corpus**, not the person behind it.
+
+The desk version does not attempt to establish what Filipino readers generally think, what younger Filipinos do, what a commenter read first, or what private information-seeking path followed.
+
+## Why the question was reframed
 
 Reuters Institute and Philippine reporting already establish that:
 
@@ -42,50 +54,138 @@ Reuters Institute and Philippine reporting already establish that:
 
 Portfilo therefore cannot claim originality by merely restating those findings.
 
-The intended original contribution is behavioral:
+The original fieldwork version attempted to add behavioral evidence:
 
-> observe the actual sequence from first exposure to an unanswered question, the next source/tool used, and the point where the reader stops.
+`encounter -> unanswered question -> next action -> stopping point`
 
-That requires original reader fieldwork. Public comments, Reddit threads, search data, or desk research can supply community signals, but they cannot validly substitute for the planned observation of reader behavior.
+That still requires participants and remains a valid future study.
 
-## Preserved fieldwork method
+The desk version asks a different question that public evidence can answer more honestly:
 
-The packet retains a ready method in `fieldwork-plan.md`:
+`selected news event -> visible public follow-up question -> relationship between that question and what the source story already established`
 
-- target `12-15` Filipino adults aged 18-34;
-- minimum `10` complete records before a publish decision;
-- three-day natural news-encounter diary;
+## Desk-pilot result
+
+Pilot files:
+
+- `desk-pilot.md` — locked six-event sample and method before discussion search;
+- `desk-pilot-questions.csv` — 14 coded public questions;
+- `desk-pilot-results.md` — evaluation, limitations and recommended full-corpus design.
+
+The pilot preserved all six preselected events, including zero-result cases.
+
+Pilot counts:
+
+- `6` preselected events;
+- `4` with an eligible related public discussion trace;
+- `3` with at least one usable information-seeking question;
+- `14` usable questions coded;
+- `3` zero-question / no-clean-discussion cases preserved.
+
+Article-relation coding across the 14 questions:
+
+- `ANSWERED`: 2;
+- `PARTIAL`: 4;
+- `UNANSWERED`: 5;
+- `EXPANDS_FRAME`: 3.
+
+These are descriptions of the pilot corpus only and must not be converted into population statistics.
+
+## Strongest pilot finding
+
+The useful contribution is not simply that people ask for more context.
+
+Public follow-up questions had different relationships to the source coverage:
+
+- some were already answered by the source story;
+- some were partly answered;
+- some sought operational details the update did not establish;
+- some introduced a different but relevant frame the original update was not principally trying to answer.
+
+This contradiction materially improves the idea because it prevents a predetermined `journalism fails to explain` thesis.
+
+## Required full-corpus design
+
+Before a new story decision, build a `24-event` Reddit-only corpus for methodological consistency.
+
+Use four clusters with six preselected events each:
+
+1. `AI / work / enterprise adoption`;
+2. `companies / startups / markets`;
+3. `fintech / platforms / regulation`;
+4. `infrastructure / data centers / semiconductors`.
+
+Rules:
+
+- select all 24 events before discussion search;
+- use a fixed `0-7 day` primary discussion window;
+- preserve events with no matching discussion or no usable questions;
+- require a direct link, exact event match, or unmistakable response to the same announcement/incident;
+- extract only genuine information-seeking questions;
+- exclude rhetoric, jokes, insults and duplicates;
+- code each question by information need;
+- compare each question with the source story as `ANSWERED / PARTIAL / UNANSWERED / EXPANDS_FRAME / UNCLEAR`;
+- retain a short audit note explaining each relation decision;
+- do not let one publisher, subreddit or controversy dominate the corpus.
+
+## What the desk version may establish
+
+If the full corpus supports it, C029 may describe:
+
+- which kinds of questions appear in the defined sample;
+- whether those questions tend to ask for definition, mechanism, consequence, comparison, evidence, responsibility or another information need;
+- whether the source story already answered, partly answered, did not answer, or was not trying to answer those questions;
+- how the pattern differs across the sampled beats.
+
+Any quantitative statement must be explicitly scoped to Portfilo's defined corpus.
+
+## What the desk version will not establish
+
+Do not claim:
+
+- that most Filipino readers ask a second question;
+- that the sample represents the Philippine public;
+- that commenters are young;
+- that people read only headlines;
+- that people use AI, search, creators or other tools after the question appears;
+- why a commenter missed information already present in an article;
+- that every unanswered question is a reporting failure;
+- that Philippine journalism broadly lacks context;
+- that Portfilo is the solution.
+
+## Preserved future fieldwork version
+
+`fieldwork-plan.md` remains intact as a stronger future behavioral study.
+
+It targets:
+
+- `12-15` Filipino adults aged 18-34;
+- minimum `10` complete records;
+- a three-day natural news-encounter diary;
 - semi-structured interview;
-- real-time walkthrough using a current unfamiliar Philippine business/technology story;
+- real-time walkthrough;
 - AI users and non-users;
-- preservation of negative cases, including no follow-up;
-- no population-level prevalence claims from the qualitative sample.
+- negative cases including no follow-up;
+- no population-level prevalence claims.
 
-The provisional story structure in `structure.md` remains research material only. No draft should be written from documentary evidence alone.
+That version can later answer questions the desk corpus cannot, including actual information-seeking pathways and stopping points.
 
-## Revisit trigger
+## Disproof / stop conditions for the desk version
 
-Resume C029 when Portfilo can recruit at least 10 suitable participants without relying almost entirely on Louda Tuppal's immediate friend/founder/supporter circle.
+Keep C029 held, reframe again, or kill the desk version if the full corpus shows that:
 
-A future Portfilo readership, newsletter subscriber base, school/community partnerships, or broader professional network may make the study both easier and methodologically stronger.
-
-## What not to do while held
-
-Do not:
-
-- turn C029 into a Digital News Report summary;
-- replace fieldwork with anecdotal social-media comments and keep the same claim;
-- publish `young people want clearer news` as the original finding;
-- present AI as the normal way Filipinos understand news;
-- make Portfilo the solution inside the article;
-- draft the behavior-first structure before original evidence exists.
-
-A compact public-community signal analysis may be added later as supporting research, but it does not clear the fieldwork requirement.
+- only a small number of events produce usable questions;
+- one subreddit or controversy dominates the result;
+- event matching is too ambiguous to audit;
+- coding requires substantial inference about commenter intent;
+- most apparent questions are rhetorical rather than information-seeking;
+- the only conclusion remains `people want more context`;
+- the story becomes dependent on generalizing from Reddit commenters to Filipino readers.
 
 ## Research outcome
 
-**HOLD / FIELDWORK REQUIRED**
+**REFRAME / PILOT PASS / FULL CORPUS REQUIRED**
 
-The question survives. The current access condition does not.
+The original fieldwork requirement no longer applies to the desk-reported version because the question itself has changed.
 
-C029 no longer occupies an active-research slot. C021 is activated in its place for the current launch workflow.
+The pilot does not authorize drafting and does not automatically displace C021. A deliberate assignment decision should follow comparison of C029's pilot evidence with C021's research progress.
