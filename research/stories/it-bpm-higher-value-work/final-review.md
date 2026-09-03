@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: EDITORIAL PACKAGE APPROVED / LIVE SOURCE UPDATED / DEPLOYED VERIFICATION PENDING_
+_Status: COMPLETE / EDITORIAL PACKAGE APPROVED / LIVE SOURCE UPDATED / DEPLOYED USER REVIEW PASS_
 
 ## Story
 
@@ -111,7 +111,7 @@ Repository re-fetch after the update confirmed:
 - `featured: false` preserved;
 - existing methodology field preserved.
 
-## Validation boundary
+## Validation
 
 Repository/source verification: **PASS**.
 
@@ -119,20 +119,16 @@ GitHub commit checks: **NO STATUS CHECKS PRESENT / NOT A BUILD PASS**.
 
 Local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
-Cloudflare deployed-page verification: **PENDING**.
+Cloudflare deployed-page verification: **PASS / USER REVIEW**.
 
-The available web search did not surface the temporary Cloudflare site, and the container runtime could not resolve `portfilo-app.pages.dev` because of DNS/network failure. Do not treat the GitHub source update as proof that Cloudflare is already serving the new build.
+Louda Tuppal reported `C009 is passed` on 2026-09-03 after reviewing the deployed result.
 
-## Completion rule
+This user review closes the deployment gate for C009. It does not retroactively create a local-build or CI claim.
 
-C009 editorial repair is complete at the source/editorial level.
+## Completion
 
-Do not mark deployed verification complete until the Cloudflare page visibly shows:
+C009 editorial repair: **COMPLETE**.
 
-1. the approved headline;
-2. the approved dek;
-3. the opening beginning `The IT & Business Process Association of the Philippines has put`;
-4. the approved description on `/stories` and any homepage card where C009 appears;
-5. normal rendering of question-led sections and methodology presentation.
+C009 deployed user review: **PASS**.
 
-After deployed verification passes, C009 may be marked fully complete and Phase 3 can proceed to C030.
+Phase 3 may proceed to C030 under its own research, form, style, drafting and approval gates. C009's Explained mechanics are not automatic precedent for C030.
