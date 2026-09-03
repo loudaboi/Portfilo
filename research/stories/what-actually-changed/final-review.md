@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PUBLISHED IN SOURCE / DEPLOYED VERIFICATION PENDING_
+_Status: COMPLETE / PUBLISHED / DEPLOYED USER REVIEW PASS_
 
 ## Story
 
@@ -72,7 +72,8 @@ The description is an exact sentence from the already approved body rather than 
 - headline researched separately and approved;
 - dek researched separately and approved;
 - description/card/metadata function researched separately and approved;
-- explicit publication authorization received from Louda Tuppal on 2026-09-04.
+- explicit publication authorization received from Louda Tuppal on 2026-09-04;
+- deployed user review passed on 2026-09-04.
 
 ## Institutional-provenance boundary
 
@@ -153,8 +154,8 @@ Repository/source publication: **PASS**.
 
 Explicit publication approval: **PASS**.
 
-Cloudflare deployed-page verification: **PENDING**.
+Cloudflare deployed user review: **PASS** — Louda Tuppal confirmed C030 passed on 2026-09-04.
 
 Local `npm run build`: **NOT RUN / NOT CLAIMED**.
 
-Do not mark C030 fully complete until the deployed story route and `/stories` listing are verified.
+C030 is complete. Deployed user review does not imply a local-build or CI pass.
