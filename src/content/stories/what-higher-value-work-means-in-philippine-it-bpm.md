@@ -1,5 +1,6 @@
 ---
 title: "What 'higher-value work' means in Philippine IT-BPM"
+dek: "Official skills frameworks and a structured sample of 15 current job postings point to specialized work in finance, healthcare, data, operations, risk and global capability centers. The phrase does not tell us how common those jobs are or whether they pay more."
 description: "Official skills frameworks and a structured sample of 15 current job postings point to specialized work in finance, healthcare, data, operations, risk and global capability centers. The phrase does not tell us how common those jobs are or whether they pay more."
 contentType: explained
 topic: business
