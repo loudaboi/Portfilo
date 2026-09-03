@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 COMPLETE / C009 STYLE RESEARCH COMPLETE / C009 STYLE BRIEF AWAITING USER APPROVAL**
+**Portfilo v0 / Writing System Upgrade - PHASE 3 C027 COMPLETE / C009 STYLE BRIEF APPROVED / C009 V3 BODY AWAITING USER REVIEW**
 
 Portfilo's publishing system, research standards, `/stories` archive, site-copy correction, first published stories, and Portfilo Brief foundation remain in place.
 
@@ -132,7 +132,7 @@ One final-release check remains: directly confirm `/series/content-architecture-
 
 Status:
 
-**ACTIVE / C027 COMPLETE / C009 STYLE BRIEF PROPOSED**
+**ACTIVE / C027 COMPLETE / C009 V3 BODY USER REVIEW REQUIRED**
 
 Repair order:
 
@@ -191,7 +191,7 @@ Validation:
 
 C027's Perspective mechanics are not precedent for later stories.
 
-### C009 - ACTIVE / STYLE RESEARCH COMPLETE / STYLE BRIEF PROPOSED
+### C009 - ACTIVE / BODY REVIEW
 
 Published story:
 
@@ -205,16 +205,20 @@ Packet:
 
 `research/stories/it-bpm-higher-value-work/`
 
-New writing-system records:
+Writing-system records:
 
 - `style-research.md`
 - `style-brief.md`
+- `rewrite-v1-researched.md`
+- `rewrite-v2-researched.md`
+- `rewrite-v3-researched.md`
+- `rewrite-review.md`
 
 Current state:
 
-**STYLE RESEARCH COMPLETE / STYLE BRIEF PROPOSED / USER APPROVAL REQUIRED / NO REWRITE AUTHORIZED.**
+**STYLE RESEARCH COMPLETE / STYLE BRIEF APPROVED / V3 BODY CANDIDATE AWAITING USER REVIEW / LIVE STORY UNCHANGED.**
 
-The current published prose remains live until a complete replacement package is separately approved.
+The current published prose remains live until a complete replacement body and later framing package are separately approved.
 
 #### C009 subject direction
 
@@ -226,20 +230,22 @@ Content type:
 
 `Explained`
 
-Current publishable question:
+Publishable question:
 
 > What does `higher-value work` actually mean when translated into Philippine IT-BPM roles and responsibilities?
 
 Fresh 2026 source verification retained the story direction:
 
-- IBPAP's July 2026 outlook says the industry's next phase should depend less on workforce scale and more on higher-value capabilities and AI-enabled talent, naming specialized areas including analytics, engineering, finance, healthcare information management, digital services and GCCs;
+- IBPAP's July 2026 outlook says the industry's next phase should depend less on workforce scale and more on higher-value capabilities and AI-enabled talent;
 - OECD's 2026 Philippines survey describes a sector still concentrated in contact centers/back-office operations while diversifying into GCCs, healthcare information management, IT and software.
 
 These sources support explaining the phrase. They do not prove prevalence, wage premiums or worker-transition outcomes.
 
-Existing evidence packet remains the factual authority for the rewrite. Any new factual claim must return to `sources.md`, `sample.md`, `evidence.md` and `contradictions.md`.
+Existing packet files remain factual authority for the rewrite, especially `sources.md`, `sample.md`, `evidence.md`, `contradictions.md`, and `fact-check.md`.
 
-#### C009 style research
+Any new factual claim must return to research.
+
+#### C009 style research and approved brief
 
 Professional guidance used:
 
@@ -254,20 +260,24 @@ Human-edited explainer examples reviewed:
 2. Reuters — `Why is mpox an emergency again, and how worried should I be?`;
 3. The Guardian — `What is neijuan, and why is China worried about it?`.
 
-Selected transferable findings:
+Approved transferable decisions:
 
 - answer the literal definition near the top;
-- organize around actual reader questions rather than research taxonomy;
-- make ambiguity part of the answer when a term is not a formal universal category;
-- use a small number of examples to prove distinctions rather than catalogue the sample;
+- organize around actual reader questions rather than the research taxonomy;
+- make ambiguity part of the answer because the phrase is not a formal occupation class;
+- use a small number of role examples to prove distinctions rather than catalogue all 15 postings;
 - put caveats where they constrain the relevant answer;
-- reduce public-facing framework language when it reflects internal synthesis more than reader need.
+- do not publish the five analytical dimensions as a branded Portfilo framework;
+- use normal multi-sentence explanatory paragraphs;
+- end on the evidence boundary rather than an upskilling or AI-opportunity slogan.
+
+Louda Tuppal approved `style-brief.md` on 2026-09-03.
 
 Anti-imitation boundary:
 
 Do not copy Reuters wire cadence/all-caps Q&A styling, Guardian phrasing, or sentence-level language from any comparator.
 
-#### C009 proposed structure awaiting approval
+#### C009 approved structure
 
 1. What does `higher-value work` mean here?
 2. Is it basically AI or non-voice work?
@@ -276,30 +286,49 @@ Do not copy Reuters wire cadence/all-caps Q&A styling, Guardian phrasing, or sen
 5. Does `higher value` mean higher pay or a better job?
 6. Can workers move into these roles, and how common are they?
 
-These are section jobs, not locked polished headings.
+These are functional reader-question section jobs.
 
-Likely role examples, subject to final evidence check:
+#### C009 rewrite history
 
-- Citi credit-risk analyst;
-- Optum clinical informatics analyst;
-- Concentrix workforce management;
-- Johnson & Johnson finance masterdata analyst;
-- Wells Fargo data analytics only if it performs a distinct explanatory job.
+`rewrite-v1-researched.md` was rejected internally as a user-review candidate because:
 
-Method rule:
+- `IT-BPM` was not expanded on first use;
+- the opening IBPAP strategy claim lacked its primary-source link in the body;
+- the ending partially restated the internal analytical dimensions.
 
-The 15-job sample remains illustrative, not random or weighted, and cannot estimate prevalence, growth, representative pay or transition rates.
+`rewrite-v2-researched.md` was rejected internally because it reused the same Citi, Optum and Concentrix examples across consecutive question sections, creating repetition beneath an otherwise clean structure.
 
-Known writing risks:
+`rewrite-v3-researched.md` is the current body candidate.
 
-- five analytical dimensions becoming an invented public framework;
-- generic AI-future lead;
-- `not X, but Y` definition loops;
-- role/employer catalogue prose;
-- repeated sample caveats;
-- commercial `value` being confused with worker pay/job quality;
-- ending with an upskilling or AI-opportunity slogan;
-- reusing C027 Perspective cadence.
+V3 changes:
+
+- links IBPAP's verified primary strategy source in the opening;
+- expands IT-BPM on first use;
+- gives the core answer in the opening four paragraphs;
+- separates framework evidence from employer examples;
+- uses Concentrix workforce management and Cognizant Systems Engineer as AI/non-voice/technical boundary cases;
+- uses Citi credit risk, Optum clinical informatics and Cognizant capital-markets operations as distinct role examples;
+- uses Johnson & Johnson finance masterdata only for the seniority question;
+- places pay/job-quality limits only where they are relevant;
+- closes on prevalence/pay/transition evidence limits.
+
+`rewrite-review.md` records the claim, structure, imitation and AI-slop audit.
+
+Internal result:
+
+**V3 BODY CANDIDATE / USER REVIEW REQUIRED.**
+
+#### C009 evidence boundaries retained in V3
+
+- `higher-value work` is not presented as an official occupation class;
+- 15-role sample is purposefully selected and illustrative, not random or weighted;
+- no percentages or market-share estimates are derived from the sample;
+- employer postings are described as advertised responsibilities, not direct observation of lived work;
+- technical/non-voice/AI labels are not treated as automatic definitions;
+- no wage-premium or better-job conclusion;
+- no claim that specialist roles are growing fast enough to absorb displacement;
+- no claim that frontline workers can transition into these roles at a measured rate;
+- no Concentrix experience threshold is used because the source is internally inconsistent on that point.
 
 #### C009 framing state
 
@@ -307,19 +336,22 @@ Current published headline remains a **strong candidate**, not yet locked:
 
 `What 'higher-value work' means in Philippine IT-BPM`
 
-Current mechanically duplicated `dek` and `description` are **not protected**. They will be researched/audited as separate jobs only after the replacement body is approved.
+Current mechanically duplicated `dek` and `description` are **not protected**.
+
+Headline/dek/description research begins only after the replacement body is approved.
 
 #### C009 exact gate
 
-**Obtain Louda Tuppal's approval or revision of `research/stories/it-bpm-higher-value-work/style-brief.md`.**
+**Obtain Louda Tuppal's approval or revision of `rewrite-v3-researched.md`.**
 
 If approved:
 
-1. write a fresh body from the approved reader-question explainer architecture rather than line-editing the published prose;
-2. preserve all existing factual/evidence boundaries;
-3. run adversarial, claim, structure, imitation and AI-slop reviews;
-4. research headline/dek/description separately after body approval;
-5. obtain complete package approval before replacing the current live story.
+1. lock the body direction;
+2. conduct dedicated headline research/audit;
+3. conduct dek-specific research;
+4. conduct description/card/metadata research;
+5. obtain complete package approval before replacing the live story;
+6. verify the deployed result before marking C009 complete.
 
 ### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
 
@@ -488,7 +520,10 @@ Newsletter state:
 | C027 deployed review | PASS / USER APPROVED |
 | C009 subject-direction recheck | PASS |
 | C009 style research | COMPLETE |
-| C009 style brief | PROPOSED / USER REVIEW REQUIRED |
+| C009 style brief | APPROVED |
+| C009 V1 | REJECTED INTERNALLY |
+| C009 V2 | REJECTED INTERNALLY |
+| C009 V3 body | USER REVIEW REQUIRED |
 | C009 current public story | PUBLISHED / OLD PROSE STILL LIVE |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
 | C001 | ACTIVE / CONTINUE |
@@ -499,6 +534,6 @@ Newsletter state:
 
 ## Exact next task
 
-**Obtain Louda Tuppal's approval or revision of the C009 research-derived style brief.**
+**Obtain Louda Tuppal's approval or revision of the researched C009 V3 body.**
 
-No C009 rewrite is authorized until that approval.
+Do not change the live C009 story or begin framing work until that body decision.
