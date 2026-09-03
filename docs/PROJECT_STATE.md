@@ -4,7 +4,7 @@ _Last updated: 2026-09-03_
 
 ## Current phase
 
-**Portfilo v0 / Writing System Upgrade - PHASE 2B IMPLEMENTED / DEPLOYED VISUAL REVIEW REQUIRED**
+**Portfilo v0 / Writing System Upgrade - PHASE 2 COMPLETE / PHASE 3 C027 STYLE BRIEF PROPOSED**
 
 Portfilo's publishing system, research standards, first published stories, `/stories` archive, and Portfilo Brief foundation remain in place.
 
@@ -98,11 +98,13 @@ One narrow final-release check remains: directly confirm that `/series/content-a
 
 Status:
 
-**IMPLEMENTED / DEPLOYED VISUAL REVIEW REQUIRED**
+**IMPLEMENTED / DEPLOYED USER REVIEW PASS**
 
 Implementation record:
 
 `docs/SITE_COPY_IMPLEMENTATION.md`
+
+Louda Tuppal approved the deployed Phase 2B result on 2026-09-03.
 
 ### Homepage
 
@@ -144,6 +146,48 @@ No personality rewrite was made.
 
 Re-verify Privacy before final launch if Cloudflare Web Analytics or another data-processing feature is enabled.
 
+## Phase 3 - story writing repair
+
+Status:
+
+**ACTIVE / C027 STYLE BRIEF PROPOSED / USER APPROVAL REQUIRED**
+
+Repair order remains:
+
+1. C027 Perspective;
+2. C009 Explained;
+3. C030 founding Perspective.
+
+Do not rewrite all three in one undifferentiated pass.
+
+### C027 style brief
+
+New pre-rewrite brief:
+
+`research/stories/building-the-foundation/style-brief.md`
+
+Current state:
+
+`PROPOSED / USER APPROVAL REQUIRED / NO REWRITE AUTHORIZED`
+
+The brief uses the Portfilo Perspective recipe plus professional form guidance from Poynter, The OpEd Project, Nieman Storyboard, and the existing C027 structure research.
+
+Key decisions proposed:
+
+- keep the central changed-starting-point argument;
+- use a contrast-led argumentative funnel;
+- establish the thesis early;
+- use a maximum of two developed example domains unless the material genuinely requires another;
+- attack the strongest failure mode directly: retrospective `I learned a lot` rationalization;
+- keep structural constraints inside the argument rather than adding them as a late disclaimer;
+- remove dependence on the coined `carryover` term;
+- use normal paragraph prose instead of dramatic one-line rhythm;
+- avoid repeated rhetorical questions, `not X, but Y` scaffolding, exhaustive asset lists, and motivational escalation;
+- do not use human-edited exemplars as sentence-level voice models;
+- re-audit headline, dek, and description only after the new body survives the writing gates.
+
+No public C027 prose has been changed in Phase 3 yet.
+
 ## Current editorial model
 
 Top-level topics:
@@ -175,7 +219,7 @@ Primary reader needs:
 
 ## Existing story state
 
-### C027 - PUBLISHED / FEATURED / WRITING RE-AUDIT REQUIRED
+### C027 - PUBLISHED / FEATURED / STYLE BRIEF PROPOSED
 
 **Build things that make the next thing easier**
 
@@ -183,7 +227,13 @@ Packet:
 
 `research/stories/building-the-foundation/`
 
-The premise remains available. Structure, rhythm, examples, headline, dek, description, and prose must receive a Perspective style brief and writing-system re-audit before launch copy is considered final.
+Style brief:
+
+`research/stories/building-the-foundation/style-brief.md`
+
+The premise remains available. Current public prose remains live while the rewrite is gated.
+
+Do not rewrite until Louda approves or revises the proposed style brief.
 
 Do not automatically unpublish it.
 
@@ -195,7 +245,7 @@ Packet:
 
 `research/stories/it-bpm-higher-value-work/`
 
-Its evidence base remains valuable. The next writing task is an Explained style brief, reader-question structure review, and deliberate separation of final `dek` from compact `description`.
+Its evidence base remains valuable. After C027 is completed, the next writing task is an Explained style brief, reader-question structure review, and deliberate separation of final `dek` from compact `description`.
 
 ### C030 - DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED
 
@@ -306,10 +356,11 @@ Still pending before final public launch:
 | Phase 2A deployed user review | PASS |
 | Phase 2A local `npm run build` | NOT RECORDED |
 | Phase 2B repository/source review | PASS |
-| Phase 2B Cloudflare visual review | PENDING |
+| Phase 2B Cloudflare visual review | PASS / USER APPROVED |
 | Privacy vs current signup code | PASS |
 | Synthetic fixture direct production/sitemap check | PENDING FINAL RELEASE QA |
-| C027 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
+| C027 style brief | PROPOSED / USER REVIEW REQUIRED |
+| C027 public story | PUBLISHED / CURRENT PROSE STILL LIVE |
 | C009 | PUBLISHED / WRITING RE-AUDIT REQUIRED |
 | C030 | DRAFT / PUBLICATION PAUSED / WRITING RE-AUDIT REQUIRED |
 | C001 | ACTIVE / CONTINUE |
@@ -320,22 +371,14 @@ Still pending before final public launch:
 
 ## Exact next task
 
-**Review Phase 2B on the deployed Cloudflare Pages site.**
+**Obtain Louda Tuppal's approval or revision of the proposed C027 style brief.**
 
-Check:
+If approved:
 
-1. homepage spacing after removal of the temporary descriptor and repeated labels;
-2. About's `Editorial types` section on desktop and mobile;
-3. Standards AI section and the transition from Commercial independence directly to the footer;
-4. Subscribe's `Subscription details` section and removal of the duplicate provider section;
-5. header/footer and `/stories` for regressions.
-
-If Phase 2B passes deployed review, begin **Phase 3: three-story writing repair**, one story at a time under a new style brief.
-
-Recommended order:
-
-1. C027 Perspective;
-2. C009 Explained;
-3. C030 founding Perspective.
-
-Do not rewrite all three in one undifferentiated pass.
+1. mark `research/stories/building-the-foundation/style-brief.md` as approved;
+2. rewrite C027 from the approved argument and form rather than line-editing the current prose;
+3. preserve the current evidence/claim boundaries and do not introduce unverified factual examples;
+4. run adversarial, claim, structure, and AI-slop passes;
+5. author headline, dek, and description as three separate jobs;
+6. present the rewritten C027 for user review before replacing the live public story text;
+7. do not begin C009 until C027 is approved or deliberately paused.
