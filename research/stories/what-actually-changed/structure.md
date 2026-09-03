@@ -4,7 +4,9 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**PROPOSED / USER REVIEW REQUIRED BEFORE DRAFTING**
+**APPROVED / DRAFT V1 COMPLETED**
+
+Louda Tuppal approved this six-part structure on 2026-09-03. Draft 1 is now in `draft-v1.md` and awaits user review.
 
 This structure is designed for a concise founding Perspective, not a manifesto and not a reported investigation.
 
@@ -161,6 +163,6 @@ Draft 1 should pass four questions:
 
 ## Current structure decision
 
-**Recommend this six-part argumentative arc for Draft 1.**
+**APPROVED / DRAFT V1 COMPLETED.**
 
-Do not draft until Louda Tuppal approves the structure.
+Next gate: user review of `draft-v1.md` before revision and headline/dek work.
