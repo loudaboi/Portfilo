@@ -4,9 +4,11 @@ _Last updated: 2026-09-03_
 
 ## Status
 
-**ACTIVE / DRAFT V2 APPROVED / CLAIM-COPY AUDIT PASS / SITE DRAFT READY FOR VISUAL REVIEW**
+**ACTIVE / PUBLICATION PAUSED / NEW WRITING-SYSTEM RE-AUDIT REQUIRED**
 
-Louda Tuppal approved the direction, six-part structure, Draft 1 substance, Draft 2, and the recommended headline/dek on 2026-09-03.
+Louda Tuppal previously approved the direction, six-part structure, Draft 1 substance, Draft 2, and the recommended headline/dek on 2026-09-03.
+
+Those approvals remain part of the editorial history, but they do **not** bypass the writing system adopted later on 2026-09-03.
 
 C030 is a separate story. It does not replace or rewrite C029's research history.
 
@@ -14,7 +16,7 @@ C030 is a separate story. It does not replace or rewrite C029's research history
 
 ID: `C030`
 
-Title: `What actually changed?`
+Current working title: `What actually changed?`
 
 Primary topic: `Building` - provisional until final publication approval
 
@@ -44,31 +46,35 @@ C030 answers a different question:
 
 > **Why do those subjects belong together, and what does Portfilo keep looking for across them?**
 
-## Approved core idea
+## Core idea retained for re-audit
 
 An update can establish that something happened without exhausting the interesting questions created by it.
 
-The editorial instinct is to notice when the announcement is the beginning of the useful question rather than the end of it.
+The earlier draft expressed this as an editorial instinct to notice when an announcement is the beginning of a useful question rather than the end of it.
 
-Internal formulation:
+That **idea** remains approved for evaluation. The existing phrasing around what `Portfilo is interested in`, `Portfilo wants`, `operating reality`, and similar institutional language is no longer presumed final merely because the earlier draft was approved.
+
+The new provenance rule in `docs/WRITING_SYSTEM.md` applies.
+
+Internal historical formulation:
 
 > **Portfilo follows business and technology past the update and into what actually changes.**
 
-This is not approved as a tagline and must not be promoted into permanent brand copy automatically.
+This is not a tagline and is not automatically approved public copy.
 
 ## The connection between Portfilo's subjects
 
-Business, Technology, Startups, AI, and Building meet in operating reality:
+The earlier editorial reasoning connected Business, Technology, Startups, AI, and Building through concrete operating relationships:
 
 - software changes how companies work;
 - companies shape jobs, prices, markets, and products;
-- AI changes workflows, costs, capabilities, and decisions;
+- AI can change workflows, costs, capabilities, and decisions;
 - capital changes what startups can attempt and how long they can attempt it;
 - regulation changes products and business models;
-- infrastructure determines what technology can actually run;
+- infrastructure constrains what technology can run;
 - building a product or company exposes how customers, distribution, pricing, hiring, technology, and capital interact.
 
-The article should make that connection legible without turning it into a five-part framework.
+These remain candidate ideas for the new style brief. They do not dictate the prose or final structure.
 
 ## Reader payoff
 
@@ -80,14 +86,14 @@ The payoff is orientation, not instruction.
 
 This is a Perspective, not a reported audience study.
 
-The mission itself is an editorial judgment and does not require a survey, interview sample, Reddit corpus, or large evidence ledger.
+The central editorial premise does not require a survey, interview sample, Reddit corpus, or large evidence ledger.
 
-Rules:
+Rules remain:
 
-- every specific factual example still requires verification;
-- generic hypothetical patterns may be used without pretending they describe a measured population;
-- do not use unresolved C001 or C021 findings as published facts;
-- no external research is needed merely to validate Portfilo's editorial point of view.
+- every specific factual example requires verification;
+- generic hypothetical patterns must not be presented as measured population behavior;
+- unresolved C001 or C021 findings cannot be used as published facts;
+- institutional statements about Portfilo require canonical or explicit editorial authority under the new writing system.
 
 ## Non-goals
 
@@ -112,19 +118,21 @@ Do not claim that every story needs exhaustive context. Some updates are useful 
 
 `/about` tells the reader what Portfilo is, what it covers, what it publishes, and who it is for.
 
-C030 explains the editorial connection underneath those choices.
+C030 should explain a different editorial connection rather than duplicate that page.
 
 ### Standards
 
 `/standards` explains sourcing, verification, AI use, corrections, and independence.
 
-C030 does not repeat those procedures.
+C030 should not repeat those procedures.
 
 ### C027
 
 `Build things that make the next thing easier` is a reader-facing argument about how to judge early work.
 
 C030 is an editorial Perspective about how Portfilo looks at the subjects it covers.
+
+Both will receive separate writing-system audits.
 
 ## Draft history
 
@@ -134,55 +142,54 @@ C030 is an editorial Perspective about how Portfilo looks at the subjects it cov
 
 User approved the substance on 2026-09-03.
 
-### Adversarial review
+### Earlier adversarial review
 
 `research/stories/what-actually-changed/adversarial-review.md`
 
-Outcome:
+Outcome at the time:
 
 `PASS WITH REVISION`.
 
-Main findings:
-
-- the middle repeated the same editorial motion too many times;
-- the Building section could be shorter;
-- the closing drifted toward brand-promise language;
-- `What actually changed?` works best if treated as the story concept rather than a repeated branded framework.
+Main findings included repeated editorial motion, an overlong Building section, brand-promise drift in the closing, and risk of turning the title into a repeated branded framework.
 
 ### Draft 2
 
 `research/stories/what-actually-changed/draft-v2.md`
 
-Louda Tuppal approved Draft 2 on 2026-09-03.
+Louda Tuppal approved Draft 2 on 2026-09-03 **before** the new writing-system standard was adopted.
 
-Draft 2 compresses the repeated middle sections, keeps the limiting principle that updates can be enough, and ends with a restrained statement of the kind of story Portfilo intends to follow.
+The prose is now an input to the re-audit, not protected final copy.
 
-## Claim and copy audit
+## Earlier claim and copy audit
 
 `research/stories/what-actually-changed/claim-audit.md`
 
-Outcome:
+Earlier outcome:
 
 `PASS / READY FOR DRAFT CONTENT ENTRY`.
 
-The approved text contains no statistics, quotations, named-company claims, named policies, population claims, or unresolved C001/C021 findings presented as fact. Its concrete examples remain generic and hypothetical.
+That audit remains useful for factual scope: the text contains no statistics, quotations, named-company claims, named policies, population claims, or unresolved C001/C021 findings presented as fact.
 
-## Headline and dek
+It did not apply the new style-authority/provenance system and therefore is not sufficient for publication.
 
-Approved pair:
+## Earlier headline and dek
+
+Previously approved pair:
 
 - title: `What actually changed?`
 - dek: `An update tells you something happened. Portfilo is interested in what changes when the announcement meets operating reality.`
 
-The title remains article-specific. It is not approved as a permanent Portfilo tagline.
+The title and dek are both **reopened** under the new writing system.
+
+The dek is specifically flagged because `Portfilo is interested in...` is institutional self-description whose wording was generated during drafting rather than derived from an approved style source or explicitly authored institutional statement.
 
 ## Site draft
 
-Draft content entry:
+Draft content entry remains:
 
 `src/content/stories/what-actually-changed.md`
 
-Metadata:
+Metadata remains:
 
 - `contentType: perspective`;
 - `topic: building` - provisional;
@@ -191,12 +198,23 @@ Metadata:
 - `featured: false`;
 - no `publishedAt` while draft.
 
-The story must remain absent from production routes and indexes until a separate publication approval.
+The story must remain absent from production routes and indexes.
 
-For local visual review, the shared story route now includes drafts only when `import.meta.env.DEV` is true. Production builds continue to include only `status: published` stories.
+The development-only draft route may remain for later visual review, but visual review is no longer the next gate.
+
+## New writing-system requirement
+
+Before any further C030 prose revision or publication decision:
+
+1. follow `docs/WRITING_SYSTEM.md`;
+2. create `style-brief.md` from `research/STYLE_BRIEF_TEMPLATE.md`;
+3. research the appropriate founding/editorial Perspective form if the base Perspective recipe is insufficient;
+4. approve the form before rewriting;
+5. treat existing Draft 2 as material to evaluate, not as the style source;
+6. run the new structural, provenance, human-language, and AI-slop gates.
 
 ## Current outcome
 
-**DRAFT V2 APPROVED / CLAIM-COPY AUDIT PASS / SITE DRAFT READY FOR VISUAL REVIEW**
+**PUBLICATION PAUSED / STYLE BRIEF NOT YET CREATED / WRITING RE-AUDIT REQUIRED**
 
-Next gate: local visual review of `/stories/what-actually-changed` in `npm run dev`, followed by any typography/copy adjustments and explicit publication approval. Do not change the story to `published` without that approval.
+Do not revise or publish C030 until the system-level writing work is complete and its individual re-audit is explicitly started.
