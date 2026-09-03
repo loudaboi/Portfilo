@@ -1,6 +1,6 @@
 # C030 Rewrite V3 — Researched Body Candidate
 
-_Status: BODY PASS / USER REVIEW REQUIRED / NOT LIVE_
+_Status: BODY APPROVED BY LOUDA TUPPAL / 2026-09-04 / FRAMING RESEARCH NEXT / NOT LIVE_
 
 Working headline remains open pending post-body framing research.
 
