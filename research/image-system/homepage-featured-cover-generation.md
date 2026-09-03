@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PREPARED / PRESENTED FOR HUMAN REVIEW / NO IMAGE GENERATION AUTHORIZED_
+_Status: V1 GENERATED / AUDIT COMPLETE / NO FINAL ASSET SELECTED_
 
 Authority:
 
@@ -88,16 +88,55 @@ The pair succeeds only if:
 - existing HTML metadata/topic text can remain readable over or alongside the imagery;
 - grayscale treatment is strong enough that no topic color is required.
 
-## Candidate-set plan after authorization
+## Candidate-set plan
 
-Recommended first generation:
+Authorized v1 generation:
 
 - `2` Building candidates from Building instruction `v1`;
 - `2` AI candidates from AI instruction `v1`.
 
-This is a small execution set, not four new concepts. The approved visual concept remains fixed; multiple candidates are only for render-quality and composition comparison.
+Generated candidates:
 
-Reject obvious failures before human review.
+### Building 01
+
+Generator ID: `f6fd91a5-58cc-4ee9-a8be-0ccfc1ee35a0`
+
+Working file: `monochrome_workshop_curved_wood_structure.png`
+
+### Building 02
+
+Generator ID: `49dedb90-b96f-4fcb-b09f-d214d65d34ae`
+
+Working file: `monochrome_carpentry_workshop_assembly.png`
+
+### AI 01
+
+Generator ID: `86d919f0-6586-47c2-9477-7b7dc4e931ae`
+
+Working file: `industrial_conveyor_inspection_scene.png`
+
+### AI 02
+
+Generator ID: `dd8935a2-cf42-49bf-a434-54c7968718c7`
+
+Working file: `monochrome_industrial_assembly_workshop.png`
+
+Candidate audit:
+
+`research/image-system/homepage-featured-cover-candidate-audit-v1.md`
+
+Audit result:
+
+`NO V1 CANDIDATE CLEARS FINAL PUBLICATION GATE`
+
+Strongest execution references:
+
+- Building 01 for composition/material-anchor logic;
+- AI 01 for negative space/automated-process logic.
+
+Decisive failure:
+
+All four read too strongly as black-and-white documentary/workplace photography rather than unmistakably synthetic editorial illustration.
 
 ## Prompt review
 
@@ -125,14 +164,26 @@ Generator instructions presented to human:
 
 Image generation authorized:
 
-`NO`
+`YES / V1 ONLY`
 
 Authorized by:
 
+`Louda Tuppal`
+
 Authorization date:
+
+`2026-09-04`
 
 Authorization evidence:
 
-`PENDING`
+Louda explicitly wrote: `i approve generation`.
 
-No image-generation tool may be invoked until Louda Tuppal separately and explicitly authorizes generation from these instructions.
+Generation executed:
+
+`YES`
+
+Final asset selected:
+
+`NO`
+
+Any revised v2 generator instruction is a new execution artifact and requires presentation plus separate human generation authorization before another image-generation call.
