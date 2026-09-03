@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: COMPLETE / BODY APPROVED / HEADLINE APPROVED / DEK CANDIDATE PROPOSED / USER APPROVAL REQUIRED_
+_Status: COMPLETE / BODY APPROVED / HEADLINE APPROVED / DEK APPROVED BY LOUDA TUPPAL_
 
 ## Purpose
 
@@ -165,7 +165,7 @@ For the dek, ordinary language about what someone has to **do or decide** is mor
 
 ## Candidate development
 
-### Candidate A — recommended
+### Candidate A — approved
 
 > **A business or technology development can mean something different once it changes what someone has to do or decide.**
 
@@ -231,19 +231,19 @@ Reason:
 
 Decision: `REJECT / SUPERSEDED.`
 
-## Recommended pair at this gate
+## Approved pair
 
 Headline — **APPROVED**:
 
 > **What actually changed?**
 
-Dek — **PROPOSED / USER APPROVAL REQUIRED**:
+Dek — **APPROVED BY LOUDA TUPPAL ON 2026-09-04**:
 
 > **A business or technology development can mean something different once it changes what someone has to do or decide.**
 
 ## Anti-imitation boundary
 
-The recommended wording is not adapted from any exemplar sentence.
+The approved wording is not adapted from any exemplar sentence.
 
 The exemplars authorize only the editorial function: under a short question headline, the dek can provide the missing situation, mechanism or interpretive scope.
 
@@ -251,10 +251,9 @@ Do not copy WIRED's anecdotal/cultural cadence or The Atlantic's institutional I
 
 ## Gate
 
-`USER DEK APPROVAL REQUIRED.`
+`HEADLINE + DEK LOCKED.`
 
-If approved:
+Next:
 
-1. lock headline + dek;
-2. research the separate description/card/metadata job against the actual Portfilo surfaces;
-3. obtain full framing-package approval before replacing the live C030 draft or changing publication status.
+1. research the separate description/card/metadata job against the actual Portfilo surfaces;
+2. obtain full framing-package approval before replacing the live C030 draft or changing publication status.
