@@ -2,10 +2,27 @@
 
 _Last updated: 2026-09-03_
 
+## Writing-system reopening note
+
+C009 is **currently published** on `build/portfilo-v0` and has been reopened for a writing-system re-audit after publication.
+
+The older publication-authorization language later in this file records the packet's pre-publication state and is retained as historical workflow context. It is superseded by the current published source and `docs/PROJECT_STATE.md`.
+
+On 2026-09-03, Louda Tuppal approved proceeding to the C009 repair after C027 passed deployed review.
+
+The existing subject research, evidence ledger, sample, contradiction log and fact-check remain usable. Before any new C009 prose is written, the upgraded workflow requires:
+
+- fresh subject-direction verification;
+- `style-research.md` for C009's own reader need and explainer mechanics;
+- a research-derived `style-brief.md`;
+- Louda Tuppal's approval of that brief.
+
+C027's Perspective mechanics are not precedent for C009.
+
 ## Assignment
 
 **Candidate ID:** C009  
-**State:** ACTIVE  
+**State:** ACTIVE / PUBLISHED / WRITING RE-AUDIT  
 **Role:** Supporting  
 **Primary topic:** Business  
 **Primary reader need:** Understand  
@@ -27,9 +44,9 @@ This narrower question preserves the original reader need while matching what th
 
 `PUBLISH`
 
-The story-decision, drafting, adversarial review, claim audit, editorial pass and headline/dek audit are complete.
+The story-decision, drafting, adversarial review, claim audit, editorial pass and headline/dek audit are complete under the earlier workflow.
 
-**Publication authorization has not been granted.** The prepared public content entry remains `status: draft` and must not be changed to `published` until Louda Tuppal explicitly approves the finished article.
+**Historical note:** the original packet reached this point before publication and therefore says below that publication authorization had not yet been granted. C009 was subsequently published. It is now being re-audited under the upgraded writing system rather than being prepared for first publication.
 
 ## Reader payoff
 
@@ -67,15 +84,15 @@ The packet now includes:
 - `evidence.md` - claim ledger;
 - `contradictions.md` - challenge and limitation log;
 - `notes.md` - synthesis and method decisions;
-- `draft.md` - revised internal article draft;
+- `draft.md` - revised internal article draft under the earlier workflow;
 - `adversarial-review.md` - skeptical review and required revisions;
-- `fact-check.md` - final claim, terminology, causality, methodology and headline audit.
+- `fact-check.md` - final claim, terminology, causality, methodology and headline audit under the earlier workflow;
+- `style-research.md` - fresh per-story explainer/style research under the upgraded workflow;
+- `style-brief.md` - research-derived rewrite decision brief, requiring new human approval before rewriting.
 
-Prepared content entry:
+Published content entry:
 
 `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
-
-The content entry is intentionally `status: draft`, has no `publishedAt`, and is excluded from the production story route by the current Astro publishing logic.
 
 The structural backbone comes from official Philippine Skills Frameworks. Current employer career pages are used to show concrete roles and requirements in the market now.
 
@@ -206,28 +223,28 @@ The current Portfilo packet adds a different layer:
 
 This is sufficient original synthesis for an Explained story without claiming a representative labor-market study.
 
-## Completed editorial checks
+## Earlier-workflow editorial checks
 
 - Draft: **PASS after revision**
 - Adversarial review: **PASS after revisions**
 - Claim audit: **PASS**
-- Editorial/copy pass: **PASS**
-- Headline/dek audit: **PASS**
+- Editorial/copy pass: **PASS under prior writing workflow**
+- Headline/dek audit: **PASS under prior writing workflow**
 - Methodology wording: **PASS**
-- Public content entry: **PREPARED AS DRAFT**
-- Publication approval: **PENDING USER APPROVAL**
+- Public content entry: **PUBLISHED**
+
+The earlier prose approvals do not exempt the story from the new style-research and human-language gates.
 
 No generic `Portfilo could not verify` language is used. Material limitations are stated through the method and evidence rather than newsroom-centered boilerplate.
 
 ## Exact next task
 
-**User editorial review and explicit publication decision for the finished C009 article.**
+**Obtain Louda Tuppal's approval or revision of the new C009 `style-brief.md`.**
 
 If approved:
 
-1. change the content entry from `draft` to `published`;
-2. set `publishedAt` and decide `featured` treatment;
-3. run `npm run build` and inspect the rendered story before treating publication as complete;
-4. then replace/retire fixture presentation and integrate the story into homepage/newsletter distribution as separately approved.
-
-Until that approval, do not publish C009.
+1. write a fresh C009 body from the approved reader-question explainer architecture rather than line-editing the current article;
+2. use only verified/qualified claims in the existing evidence packet unless new research is explicitly added;
+3. run adversarial, claim, structure, imitation and AI-slop reviews;
+4. research/audit headline, dek and description as separate post-body jobs;
+5. present the complete candidate for user approval before replacing the currently published C009 prose.
