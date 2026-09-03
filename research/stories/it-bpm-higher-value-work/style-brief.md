@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-03_
 
-_Status: PROPOSED / STYLE RESEARCH COMPLETE / USER APPROVAL REQUIRED / NO REWRITE AUTHORIZED_
+_Status: APPROVED / STYLE RESEARCH COMPLETE / DRAFT AUTHORIZED_
 
 Follow:
 
@@ -491,10 +491,10 @@ Style research complete:
 
 Structure/form decision:
 
-`PROPOSED`
+`APPROVED`
 
 Approved by/date:
 
-`PENDING LOUDA TUPPAL REVIEW`
+`LOUDA TUPPAL / 2026-09-03`
 
-No C009 rewrite may begin until this brief is approved.
+A fresh C009 rewrite is authorized. The currently published article remains untouched until the replacement body and later framing package are separately approved.
