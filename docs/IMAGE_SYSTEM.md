@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: PROPOSED / RESEARCH COMPLETE / USER APPROVAL REQUIRED / NO IMAGE GENERATION AUTHORIZED_
+_Status: APPROVED / CANONICAL / PILOT REQUIRED / NO IMAGE GENERATION UNTIL STORY BRIEF APPROVED_
 
 Research basis:
 
@@ -251,7 +251,7 @@ If a real person is visually central, use an owned/licensed/verified real image 
 
 ## Palette
 
-Current implemented Portfilo palette is the visual authority for this proposed v0 image system:
+Current implemented Portfilo palette is the visual authority for the v0 image system:
 
 - paper: `#f4f0e8`;
 - ink: `#171614`;
@@ -341,7 +341,7 @@ Reject by default:
 
 ### Canonical web cut
 
-Proposed v0 story-image ratio:
+Canonical v0 pilot story-image ratio:
 
 **16:9 landscape**
 
@@ -357,7 +357,7 @@ Why:
 - close enough to Open Graph landscape to support a derivative crop;
 - avoids importing the portrait-heavy aspect ratios of the supplied inspiration board into a web context.
 
-This ratio remains subject to one visual pilot before implementation is locked.
+This ratio is approved as the pilot baseline. The pilot may still justify a documented revision before rollout to all stories.
 
 ### Crop-safe composition
 
@@ -394,7 +394,7 @@ The crops may reframe the same approved asset. They must not silently introduce 
 
 ## File and delivery direction
 
-Proposed v0 implementation:
+Approved v0 implementation direction:
 
 - source/approved story assets live in the repository;
 - story image references are validated by the Astro Content Collection schema;
@@ -566,7 +566,7 @@ The later implementation phase should evaluate:
 - performance/LCP impact;
 - final social preview testing.
 
-Do not implement these before the system and pilot direction are approved.
+Do not implement these across the site until the pilot direction is approved and the pilot has been reviewed.
 
 ## Approval gate
 
@@ -576,10 +576,10 @@ Research complete:
 
 Visual system decision:
 
-`PROPOSED`
+`APPROVED / CANONICAL`
 
 Approved by/date:
 
-`PENDING LOUDA TUPPAL REVIEW`
+`Louda Tuppal / 2026-09-04`
 
-No actual Portfilo editorial image generation is authorized until this system is approved and the first story's separate image brief is also approved.
+No actual Portfilo editorial image generation is authorized until the first pilot story's separate image brief is approved.
