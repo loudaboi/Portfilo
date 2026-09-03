@@ -2,15 +2,15 @@
 
 _Last updated: 2026-09-04_
 
-_Status: COMPLETE / BODY APPROVED / HEADLINE RECOMMENDATION PENDING USER APPROVAL_
+_Status: COMPLETE / BODY APPROVED / HEADLINE APPROVED_
 
 ## Purpose
 
 Re-audit the C030 headline after Louda Tuppal approved `rewrite-v3-researched.md` under the current writing system.
 
-This research does not protect the earlier pre-standard headline approval in `headline-dek.md`. The headline is tested again against the approved V3 body, current professional guidance, and the C030-specific style brief.
+This research does not protect the earlier pre-standard headline approval in `headline-dek.md`. The headline was tested again against the approved V3 body, current professional guidance, and the C030-specific style brief.
 
-Dek and description are separate later gates.
+Dek and description remain separate later gates.
 
 ## Headline job from approved style brief
 
@@ -207,26 +207,24 @@ Weaknesses:
 
 Decision: **REJECT.**
 
-## Recommendation
-
-**RETAIN:**
+## Approved headline
 
 > **What actually changed?**
+
+Approved by Louda Tuppal on 2026-09-04 after the post-body headline re-audit.
 
 Reason:
 
 It is the narrowest headline that accurately spans the approved body's different examples without converting the essay into a promise that every update needs more reporting.
 
-The known context weakness should be solved by the later dek and description rather than by making the headline carry the entire institutional explanation.
+The known context weakness must be solved by the later dek and description rather than by making the headline carry the entire institutional explanation.
 
 ## Boundary
 
-This approval, if granted, applies only to C030.
+This approval applies only to C030.
 
 `What actually changed?` is not a Portfilo tagline, recurring section name, branded framework, or mandatory question for every story.
 
-## Gate
+## Next gate
 
-`USER HEADLINE APPROVAL REQUIRED.`
-
-Do not research/approve the final dek or description as settled public copy until the headline decision is made.
+Conduct dedicated dek research beneath the approved headline. The old pre-standard dek is not protected.
