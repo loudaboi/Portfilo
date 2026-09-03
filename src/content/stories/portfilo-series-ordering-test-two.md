@@ -1,5 +1,6 @@
 ---
 title: "Portfilo Series Ordering Test: Second Synthetic Entry"
+dek: "A synthetic development fixture used only to confirm series ordering, metadata, and story links."
 description: "A synthetic development fixture used only to confirm series ordering, metadata, and story links."
 contentType: analysis
 topic: technology
