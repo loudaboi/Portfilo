@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: RESEARCH / CONCEPT SELECTION REQUIRED / NO IMAGE GENERATION AUTHORIZED_
+_Status: RESEARCH COMPLETE / DIRECTION SELECTED / BRIEF APPROVED / NO IMAGE GENERATION AUTHORIZED_
 
 ## Purpose
 
@@ -13,7 +13,7 @@ This is a homepage/brand-editorial surface, not documentary story evidence.
 C030 remains paused with:
 
 - image brief: approved;
-- generator instruction: ready;
+- generator instruction: presented;
 - generation authorization: no;
 - valid candidate set: none.
 
@@ -46,17 +46,15 @@ Current canonical topics from `src/content.config.ts`:
 
 Therefore a topic-aware cover system has five v0 contexts.
 
-## Core product question
+## Core product decision
 
-Should the black featured panel become a visual cover whose image is selected by the featured story's topic?
+Approved system shape:
 
-Recommended system shape to test:
+`featured story -> topic -> canonical topic cover asset`
 
-`featured story -> topic -> topic cover asset`
+The article body does not automatically determine the homepage cover in v0.
 
-The article body does not automatically determine the image in v0.
-
-A later story-specific override could be evaluated after the visual system is proven, but it is not required for this pilot.
+A later story-specific override may be evaluated after the visual system is proven, but it is not required for this pilot.
 
 ## Why start here
 
@@ -70,298 +68,220 @@ This is a lower-risk pilot surface than a story hero because:
 
 ## Professional/editorial research
 
-### Shared grammar, variable subject
+### Consistency with controlled variation
 
-Useful illustration systems do not require the same object or composition everywhere. They use a shared visual grammar while allowing subjects and scale to change with the section's job.
+Fast Company's redesign process explicitly describes editorial design as a balance of consistency and variety. Stable branding and typographic systems give designers room to vary layouts and imagery according to editorial content.
 
-Source:
+Sources:
 
-- Designelier, `How to build a consistent website illustration system`
-  - https://designelier.com/resources/consistent-website-illustration-systems
-
-Transferable principle:
-
-Keep palette, texture, lighting, realism level, geometry, information density, and crop behavior consistent. Let subject/context vary by topic.
-
-### Flexible editorial foundation
-
-Editorial systems need a consistent visual foundation that can adapt across different content without losing cohesion.
-
-Source:
-
-- Mike Steven François, `MR Magazine | Art Direction`
-  - https://www.mikesteven-francois.com/works/mr-magazine
+- https://www.fastcompany.com/90490678/inside-the-redesign-of-fast-company-magazine
+- https://www.fastcompany.com/90946499/how-to-redesign-a-magazine-fast-company-style
 
 Transferable principle:
 
-Do not create five independent art directions. Create one Portfilo cover language with five topic expressions.
+Keep Portfilo's visual grammar stable while allowing each topic to change the subject/context.
 
-### Section identity as wayfinding
+### Small flexible systems rather than rigid or over-engineered ones
 
-Consistent section openers and visual signposts help readers understand where they are in a publication.
+Rest of World's homepage redesign describes the tension between standard layouts that become inflexible and systems that try to account for every possible use case and become over-engineered. Its solution was a small flexible system.
 
-Source:
+Sources:
 
-- Pages the Magazine / Journey Group, `The Power of Perspective`
-  - https://pagesthemagazine.com/the-power-of-perspective/
-
-Transferable principle:
-
-The topic visual can function as wayfinding, but should still look like editorial art rather than a navigation icon.
-
-### Approve the system before scaling
-
-Representative-page/system approval before full production reduces rework and prevents drift.
-
-Source:
-
-- Brand Elevate Marketing Solutions, `Editorial & Magazine Layouts`
-  - https://www.bemsolutions.net/editorial-magazine-layouts
+- https://restofworld.org/inside/homepage-redesign/
+- https://restofworld.org/style-guide/
 
 Transferable principle:
 
-First approve the shared grammar and representative topic concepts. Do not generate all future variations first.
+Start with five canonical topic assets and one shared grammar. Do not design a large variant engine before the first five prove useful.
 
 ### Concept review before execution
 
-Professional editorial illustration workflows commonly review multiple conceptual directions before final execution.
+The Washington Post's documented illustration workflow asks illustrators to provide multiple rough concepts with descriptions before final execution and review.
 
 Source:
 
-- The Washington Post, `How The Washington Post design team works with freelance illustrators`
-  - https://www.washingtonpost.com/pr/2020/12/18/washington-post-design-team-is-looking-illustrators/
+- https://www.washingtonpost.com/pr/2020/12/18/washington-post-design-team-is-looking-illustrators/
 
 Transferable principle:
 
-Present materially different system concepts first; human selection remains authoritative.
+Human concept/system selection precedes generation.
 
-## Shared visual grammar proposed for all five topics
+### Professional-quality filter
 
-These are inherited from the approved Portfilo image/design system unless later revised by human approval:
+Society of Publication Designers medal-finalist records repeatedly include publications such as Fast Company, WIRED, MIT Technology Review, Bloomberg Businessweek, The Washington Post, and other established editorial-design organizations.
 
-- realistic editorial illustration rather than cartoon/anime;
+Sources:
+
+- https://www.spd.org/spd-61-medal-finalists
+- https://www.spd.org/spd-58-medal-finalists
+
+This is used only as a quality filter for the references, not as proof that Portfilo should imitate their styles.
+
+## What `proven` means here
+
+The chosen direction is grounded in established, award-recognized editorial-design practice rather than model preference alone.
+
+It is not scientifically proven that this aesthetic will maximize audience performance for Portfilo. The pilot still exists to test whether the system works in Portfilo's own homepage context.
+
+## Direction comparison
+
+### A — Working Worlds
+
+Environment-led realistic editorial imagery.
+
+Strengths:
+
+- strongest topic differentiation;
+- closest to Louda's preference for realistic illustration;
+- strong fit with the existing dark feature panel;
+- scalable to future variations.
+
+Risks:
+
+- generic stock-like workplace scenes;
+- fake documentary implication;
+- AI and Technology overlap.
+
+### B — Material Evidence of Work
+
+Object/process-led realistic imagery.
+
+Strengths:
+
+- tactile;
+- strong at small sizes;
+- low fake-workplace risk;
+- less dependent on anatomy.
+
+Risks:
+
+- Business is difficult to represent cleanly;
+- topic distinctions can become subtle;
+- can drift toward product photography.
+
+### C — Human Work
+
+Human-action-led imagery using anonymous partial figures/hands.
+
+Strengths:
+
+- clearly about people doing actual work;
+- realistic and human;
+- recurring continuity.
+
+Risks:
+
+- highest stock-photo feel risk;
+- anatomy/identity risk;
+- actions can become staged or overly literal.
+
+## Selected direction
+
+Selected by:
+
+`Louda Tuppal`
+
+Selection date:
+
+`2026-09-04`
+
+Selected direction:
+
+`Working Worlds / Material Anchors`
+
+This combines Direction A's environment-led differentiation with Direction B's compositional restraint.
+
+Core rule:
+
+> The topic determines the environment. One dominant material/process anchor gives the image focus. Humans are optional and secondary.
+
+Why selected:
+
+- strongest differentiation among Business, Technology, Startups, AI, and Building;
+- one dominant anchor improves small-panel readability and prevents scene clutter;
+- human presence remains available without becoming a mandatory stock-photo motif;
+- preserves one Portfilo grammar instead of creating five independent art styles;
+- aligns with the approved realistic grayscale editorial direction.
+
+## Shared grammar
+
+All five covers should retain:
+
+- realistic editorial illustration;
 - monochrome / grayscale base;
-- near-black / off-white tonal compatibility with the existing panel;
 - high but readable contrast;
 - strong geometry and negative space;
 - directional or low-key light;
-- restrained visible grain/texture;
-- ordinary work/building/process contexts rather than glossy ad sets;
+- restrained grain/texture;
+- ordinary work/building/process environments;
 - restrained information density;
 - no generated typography;
-- no fake logos, readable screens, documents, charts, dashboards, or named-person likenesses;
+- no fake logos, readable screens, documents, dashboards, or named-person likenesses;
 - no unrelated hues;
-- topic difference should come primarily from subject/context, not from five unrelated palettes or styles.
+- no named-artist/publication imitation.
 
-## What the five topics should mean visually
-
-These are content territories, not final scenes.
+## Topic territories
 
 ### Business
 
-Visual territory:
-
 `coordination / exchange / operating decisions`
 
-Avoid:
-
-- handshakes;
-- skyscraper clichés;
-- money piles;
-- generic boardroom smiles;
-- finance-dashboard shorthand.
+Avoid handshakes, skyscrapers, money, boardroom smiles, and dashboard shorthand.
 
 ### Technology
 
-Visual territory:
+`systems / tools / infrastructure / technical process`
 
-`systems / tools / infrastructure / interfaces as physical process`
-
-Avoid:
-
-- neon circuitry;
-- floating UI;
-- generic server racks as universal technology shorthand;
-- hacker/cyberpunk treatment.
+Avoid neon circuitry, floating UI, hacker/cyberpunk treatment, and generic server-rack shorthand.
 
 ### Startups
 
-Visual territory:
-
 `prototyping / iteration / constrained early-stage making`
 
-Avoid:
-
-- celebratory founders;
-- pitch decks;
-- rocket/growth metaphors;
-- generic coworking scenes.
+Avoid celebratory founders, pitch decks, rocket/growth metaphors, and generic coworking scenes.
 
 ### AI
 
-Visual territory:
+`human-machine process / automation entering work`
 
-`human-machine process / inference / automation entering work`
-
-Avoid:
-
-- robot heads;
-- glowing brains;
-- humanoid androids;
-- neon neural networks;
-- magical floating interfaces.
+Avoid robot heads, glowing brains, humanoids, neural-network spectacle, and magical UI.
 
 ### Building
 
-Visual territory:
-
 `making / assembly / physical or operational construction`
 
-Avoid:
+Avoid hard-hat category iconography, generic blueprints, and inspirational maker clichés.
 
-- literal construction-site cliché unless a specific story requires it;
-- hard hats as category iconography;
-- generic blueprints;
-- inspirational maker imagery.
+## V0 production strategy
 
-## Concept directions
+Approved representative test pair:
 
-The three directions below are system-level concepts. Each would produce five related topic covers.
+1. `Building`
+2. `AI`
 
-### Direction A — Working Worlds
+Reason:
 
-Core idea:
+They are meaningfully different topic territories. If the same shared grammar can make both legible without collapsing into one generic generated universe, the system has evidence of useful range.
 
-Each topic is represented by a realistic but generic environment where that kind of work plausibly occurs. The environment carries the topic; anonymous people, if present, remain secondary.
+Do not generate all five before this pair is reviewed.
 
-Examples of subject logic:
+## Approved brief
 
-- Business: coordination around a shared operating surface or exchange point;
-- Technology: a physical technical system, tools, cables, or infrastructure being worked on;
-- Startups: an unfinished prototype/workbench environment;
-- AI: a restrained human-machine work setting where automation/compute is present without robot symbolism;
-- Building: a making/assembly environment with materials, tools, or structural work.
+Canonical execution brief:
 
-Why it works:
+`research/image-system/homepage-featured-cover-brief.md`
 
-- closest to Louda's preference for realistic illustration;
-- gives each topic a distinct context without changing art style;
-- strong fit with the existing black cover because environments can use deep shadows and large geometry;
-- scalable to later variations.
+Brief status:
 
-Main risks:
+`APPROVED`
 
-- scenes may become generic stock-like workplaces;
-- Technology and AI may overlap;
-- generated environments may look documentary or imply a real company.
+Image generation authorization:
 
-Controls:
+`NO`
 
-- generic/editorialized spaces;
-- no branding, readable UI, signage, distinctive company architecture, uniforms, or named products;
-- each topic requires a clear subject rule before generation;
-- disclosure remains visible if generated assets are used publicly.
+Implementation authorization:
 
-### Direction B — Material Evidence of Work
-
-Core idea:
-
-Use realistic close or medium views of tools, materials, components, prototypes, surfaces, and physical traces of work. People are absent or limited to anonymous hands.
-
-Examples of subject logic:
-
-- Business: physical coordination objects and operating materials without readable paperwork;
-- Technology: components, connectors, tools, devices, cabling, or infrastructure detail;
-- Startups: rough prototypes, taped assemblies, test pieces, or incomplete builds;
-- AI: compute-related physical objects or human-machine input/output process without AI iconography;
-- Building: tools, materials, joinery, fixtures, assembly traces.
-
-Why it works:
-
-- reduces fake-workplace/documentary risk;
-- strong at small homepage sizes;
-- tactile and visually consistent;
-- avoids dependence on faces/anatomy.
-
-Main risks:
-
-- topic distinctions may become too subtle;
-- Business is harder to represent without drifting into documents or money;
-- can become a product-photography system rather than editorial art.
-
-Controls:
-
-- compose objects as editorial stills, not catalog photography;
-- define one clear topic mechanism rather than random objects;
-- no readable paper/screens/logos.
-
-### Direction C — Human Work, Environment Secondary
-
-Core idea:
-
-Use anonymous partial figures or hands as the repeated visual grammar. Each topic differs by the action being performed rather than by a literal category symbol.
-
-Examples of subject logic:
-
-- Business: coordinating, comparing, handing off, reviewing a physical process;
-- Technology: testing, wiring, calibrating, or inspecting a system;
-- Startups: assembling or revising a prototype;
-- AI: operating or reviewing an automated process without identifiable UI;
-- Building: measuring, fitting, assembling, or making.
-
-Why it works:
-
-- immediately communicates that Portfilo covers people doing actual work;
-- realistic and human without requiring portraits;
-- provides strong recurring visual continuity across topics.
-
-Main risks:
-
-- can drift toward stock-photo hands;
-- actions may become staged or overly literal;
-- Business and AI are difficult to show without implying specific processes or fake interfaces.
-
-Controls:
-
-- anonymous partial figures only;
-- environment-led composition with restrained gesture;
-- no smiling corporate-team treatment, handshake, fake UI, branded equipment, or dramatic performance cues.
-
-## Comparative evaluation
-
-| Criterion | A — Working Worlds | B — Material Evidence | C — Human Work |
-|---|---|---|---|
-| Realistic editorial feel | Strong | Strong | Strong |
-| Topic differentiation | Strongest | Moderate | Moderate-strong |
-| Small-panel readability | Strong | Strongest | Strong |
-| Documentary-misread risk | Highest of the three | Lowest | Moderate |
-| Risk of generic stock feel | Moderate | Low-moderate | Highest |
-| Expansion to future variants | Strong | Strong | Strong |
-| Fit with current Portfilo image direction | Strong | Strong | Strong |
-
-No direction is selected by this document.
-
-## V0 asset-count recommendation
-
-If the system is approved:
-
-- start with **5 canonical topic assets**, one each for Business, Technology, Startups, AI, and Building;
-- do not generate a separate asset for every story yet;
-- do not create multiple variants per topic until the first five are reviewed together in the homepage context;
-- later evaluate whether each topic needs a small variant family or whether story-specific covers should override the topic fallback.
-
-## Implementation model to evaluate after visual approval
-
-Simple v0 direction:
-
-`topic -> local asset`
-
-Possible implementation approaches later:
-
-1. a deterministic topic-to-asset map in the homepage component; or
-2. a small canonical topic-cover configuration module reused by future surfaces.
-
-Do not add story image schema fields merely to support this first topic-cover pilot unless a real implementation need requires them.
+`NO`
 
 ## Current gate
 
@@ -369,18 +289,22 @@ Research complete:
 
 `YES`
 
-Human system-direction selection:
+Human direction selection:
 
-`REQUIRED`
+`YES`
+
+Visual brief approved:
+
+`YES`
+
+Generator instructions prepared/presented:
+
+`NO`
 
 Image generation authorized:
 
 `NO`
 
-Implementation authorized:
-
-`NO`
-
 Next step:
 
-Present Directions A, B, and C to Louda Tuppal for selection or revision. After selection, create a concise five-topic visual brief for the chosen direction. Only after that brief is approved should generator instructions be prepared and separately authorized under `docs/IMAGE_SYSTEM.md`.
+Derive the Building + AI representative-test generator instructions from the approved brief, present the exact instructions to Louda Tuppal, then obtain separate explicit generation authorization before invoking any image-generation tool.
