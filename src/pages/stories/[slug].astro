@@ -7,7 +7,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 export async function getStaticPaths() {
   const stories = await getCollection(
     "stories",
-    ({ data }) => data.status === "published",
+    ({ data }) => data.status === "published" || import.meta.env.DEV,
   );
 
   return stories.map((story) => ({
