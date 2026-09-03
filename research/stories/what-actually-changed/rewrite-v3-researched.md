@@ -1,6 +1,6 @@
 # C030 Rewrite V3 — Researched Body Candidate
 
-_Status: BODY CANDIDATE / FINAL AUDIT REQUIRED / USER REVIEW PENDING / NOT LIVE_
+_Status: BODY PASS / USER REVIEW REQUIRED / NOT LIVE_
 
 Working headline remains open pending post-body framing research.
 
