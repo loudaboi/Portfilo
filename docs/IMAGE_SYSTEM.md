@@ -227,6 +227,33 @@ Brief approval completes the brief gate only. It does not authorize candidate ge
 
 These controls apply to generated Portfilo imagery regardless of surface or topic. A surface-specific brief may be stricter.
 
+### Execution-only authority
+
+The image generator is an execution engine, not a creative director, art director, concept developer or decision-maker.
+
+Before generation, the approved brief and generator instruction must already decide every **material visual choice** that affects editorial meaning, composition or system consistency. This includes, where relevant:
+
+- the image job and concept;
+- the exact primary subject and subject count;
+- the environment or absence of an environment;
+- human presence and number of people;
+- viewpoint and perspective;
+- action or motion;
+- relative placement of major elements;
+- negative-space and overlay-safe regions;
+- lighting and tonal hierarchy;
+- visual medium and rendering treatment;
+- palette and accent use;
+- crop behavior;
+- factual and physical constraints;
+- must-not-show elements.
+
+The generator may resolve unavoidable low-level rendering details needed to produce pixels, but it has **zero authority** to introduce or choose a new concept, subject, object, person, environment, symbol, story implication, composition strategy, mood, palette, text element or narrative action.
+
+Do not use instructions such as `make an appropriate scene`, `add whatever is needed`, `choose the best composition`, `use your judgment`, or any equivalent delegation of material visual decisions.
+
+If a material choice is still open when the prompt is ready to run, stop and decide it before generation. Do not ask the generator to decide among alternatives.
+
 ### Simplicity and complexity ceiling
 
 Default to the smallest scene that can perform the approved image job:
@@ -297,17 +324,20 @@ Instead:
 
 ### Prompt discipline
 
-Favor lean, inspectable generator instructions over long descriptive prompts.
+Favor **decision-complete, inspectable generator instructions**.
+
+The prompt should be as specific and detailed as necessary to eliminate material ambiguity before execution. `Detailed` means that every meaningful visual decision has already been made; it does **not** mean adding redundant adjectives, decorative prose or extra scene detail that was not approved.
 
 State each requirement once. A useful default order is:
 
 1. purpose / visual medium;
 2. subject / scene;
-3. composition;
-4. treatment;
-5. hard constraints.
+3. composition and relative placement;
+4. treatment / light / tonal hierarchy;
+5. physical-logic constraints;
+6. hard must-not-show constraints.
 
-Use concrete spatial and material language when it matters. Avoid photographic camera/lens/bokeh vocabulary when the required output is editorial illustration rather than photography.
+Use concrete spatial, material and relational language whenever it reduces ambiguity. Avoid photographic camera/lens/bokeh vocabulary when the required output is editorial illustration rather than photography.
 
 Refine through small targeted changes after audit rather than rewriting every variable at once.
 
@@ -561,7 +591,7 @@ The generation instruction must be derived from the approved image brief and inc
 - no generated text;
 - no real logos or named-person likenesses unless an exceptional separate approval exists.
 
-The prompt itself must be inspectable.
+The prompt itself must be inspectable and **decision-complete**. It must not delegate any material visual choice to the generator.
 
 After the image brief is approved:
 
@@ -585,6 +615,7 @@ Do not use:
 - `make something cool`;
 - `surprise me`;
 - `use your judgment` for the visual concept;
+- `choose what works best` or equivalent open-ended delegation;
 - named living/dead artist or photographer style imitation;
 - `exactly like this reference`;
 - instructions that invite the model to add whatever background details feel realistic.
@@ -612,7 +643,8 @@ Check:
 - forbidden details absent;
 - crop works;
 - mood/treatment matches the system;
-- brand accent, if any, is controlled.
+- brand accent, if any, is controlled;
+- no material visual decision was invented by the generator beyond the approved brief/instruction.
 
 ### Visual quality
 
