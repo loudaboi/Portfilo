@@ -8,11 +8,12 @@ Story selection before research follows:
 
 `docs/CONTENT_PLANNING.md`
 
-Writing-form selection before drafting follows:
+Writing-form and writing-style preparation before drafting follows:
 
-`docs/WRITING_SYSTEM.md`
+- `docs/WRITING_SYSTEM.md`
+- `docs/STYLE_RESEARCH_STANDARD.md`
 
-The planning system decides which questions deserve research time. This workspace holds the strategy research and story evidence that follow those decisions, plus the pre-draft style brief that records how approved evidence will be presented.
+The planning system decides which questions deserve research time. This workspace holds the strategy research and story evidence that follow those decisions, plus the pre-draft style research and style brief that determine how approved evidence will be presented.
 
 ## Two research layers
 
@@ -69,7 +70,9 @@ The first real launch package should not be selected until this research is comp
 
 ### 2. Individual story research and writing preparation
 
-Every substantial reported/explained/profile/guide investigation should get its own packet. Analysis, Perspective, and Field Notes pieces should also use a packet whenever they make material factual claims or require a deliberate writing-form decision.
+Every substantial story gets its own packet.
+
+That includes Reported, Explained, Profile, Guide, Analysis, Perspective, and Field Notes work. The depth of factual reporting can vary by content type, but the writing approach must still be researched before Draft 1.
 
 Suggested structure:
 
@@ -82,15 +85,32 @@ research/
         ├── evidence.md
         ├── contradictions.md
         ├── notes.md
+        ├── style-research.md
         ├── style-brief.md
         └── fact-check.md
 ```
 
-`style-brief.md` is created **after the story decision and before Draft 1**. It is not a post-hoc explanation of prose that has already been generated.
+The required pre-draft sequence is:
+
+```text
+subject research
+  -> evidence / contradictions
+  -> story decision
+  -> reader need / audience assumptions
+  -> professional form research
+  -> human-edited style exemplar research
+  -> style-research.md
+  -> style-brief.md
+  -> human approval
+  -> Draft 1
+```
+
+`style-research.md` and `style-brief.md` are created **before Draft 1**. They are not post-hoc explanations of prose that has already been generated.
 
 Use:
 
-`research/STYLE_BRIEF_TEMPLATE.md`
+- `research/STYLE_RESEARCH_TEMPLATE.md`
+- `research/STYLE_BRIEF_TEMPLATE.md`
 
 ## File responsibilities
 
@@ -169,9 +189,47 @@ Working material:
 
 Label speculation and unverified claims clearly.
 
+### `style-research.md`
+
+Pre-draft research record for the writing problem.
+
+At minimum record:
+
+- story purpose;
+- primary reader need;
+- audience knowledge assumptions;
+- which audience-interest assumptions are established, researched, or merely editorial hypotheses;
+- evidence shape;
+- professional form references actually used;
+- by default 2-4 relevant human-edited exemplars chosen for a similar writing job;
+- opening behavior observed;
+- answer/thesis timing;
+- paragraph development;
+- evidence/example handling;
+- transitions;
+- first/second person use;
+- rhetorical-question use;
+- subhead/section behavior;
+- counterargument/limitation handling;
+- ending behavior;
+- vocabulary/assumed knowledge;
+- patterns notably absent;
+- cross-example findings;
+- explicit no-imitation boundaries;
+- proposed writing mechanics;
+- research confidence.
+
+This file records what the research showed. It does not authorize copied voice or sentence patterns.
+
+Use:
+
+`research/STYLE_RESEARCH_TEMPLATE.md`
+
 ### `style-brief.md`
 
-Pre-draft writing decision record.
+Pre-draft editorial decision record.
+
+It converts the style research and story evidence into the constraints the draft must follow.
 
 At minimum record:
 
@@ -182,22 +240,21 @@ At minimum record:
 - selected Portfilo recipe from `docs/WRITING_SYSTEM.md`;
 - why the form fits;
 - deviations;
-- professional form references actually used;
-- optional human-edited exemplars and structural lessons;
-- explicit no-imitation boundaries;
+- relevant findings from `style-research.md`;
 - lead job;
 - central answer/thesis position;
 - middle logic;
 - counterevidence/limitation position;
 - ending job;
+- paragraph/rhythm constraints where material;
 - institutional-copy provenance when Portfilo itself is discussed;
 - headline, dek, and description jobs;
 - assignment-specific AI-slop risks;
 - approval state.
 
-A substantial story is not authorized for Draft 1 until this brief is approved.
+A substantial story is not authorized for Draft 1 until `style-research.md` exists and `style-brief.md` is approved.
 
-AI may propose forms. AI output has zero stylistic authority: the recorded form must be justified by material, professional practice, or explicit editorial judgment.
+AI may propose forms and wording. AI output has zero stylistic authority: the recorded decisions must be justified by material, professional practice, human-edited research, or explicit editorial judgment.
 
 ### `fact-check.md`
 
@@ -238,20 +295,28 @@ AI can assist with the research process but is not a source.
 
 Any claim, citation, quotation, number, or attribution produced by AI must be verified against an actual source before use.
 
-### Writing form
+### Writing form and style
 
-AI can assist with structural alternatives, drafting, and editing but is not a style source.
+AI can assist with research organization, structural alternatives, drafting, and editing but is not a style source.
 
 Do not cite `the model wrote it` or `the model recommended it` as the reason for:
 
 - a story structure;
 - voice;
+- paragraph rhythm;
 - rhetorical device;
 - institutional claim;
 - headline/dek style;
 - ending.
 
-Follow `docs/WRITING_SYSTEM.md`.
+Do not ask AI to `write this like [named writer]`.
+
+Do not use human-edited exemplars to harvest phrases, cadence, metaphors, jokes, branded terminology, or another publication's institutional voice.
+
+Follow:
+
+- `docs/WRITING_SYSTEM.md`
+- `docs/STYLE_RESEARCH_STANDARD.md`
 
 ## Public content boundary
 
