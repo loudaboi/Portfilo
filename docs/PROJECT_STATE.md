@@ -4,9 +4,9 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Final Release Readiness - PHASE 3 STORY WRITING REPAIR COMPLETE**
+**Portfilo v0 / Product Finalization - IMAGE SYSTEM APPROVED / VISUAL PILOT SELECTION REQUIRED**
 
-Portfilo's publishing system, research standards, writing system, `/stories` archive, site-copy correction, published launch stories, and Portfilo Brief foundation are in place.
+Portfilo's publishing system, research standards, writing system, published launch stories, and Portfilo Brief foundation are in place. Phase 4 finalizes the visual/brand system and then performs the full engineering, security, SEO, accessibility, performance, and release audit before v0 is declared a working product.
 
 Core rules:
 
@@ -19,6 +19,10 @@ Core rules:
 > **AI output has zero stylistic authority.**
 
 > **Research the writing problem before asking AI to write.**
+
+> **Research the visual problem before asking AI to generate the image.**
+
+> **AI output has zero visual authority.**
 
 No permanent tagline by default.
 
@@ -52,9 +56,12 @@ Editorial/research/writing:
 - `research/STYLE_RESEARCH_TEMPLATE.md`
 - `research/STYLE_BRIEF_TEMPLATE.md`
 
-Design:
+Design / imagery:
 
 - `docs/DESIGN_DIRECTION.md`
+- `docs/IMAGE_SYSTEM.md`
+- `research/image-system/research.md`
+- `research/IMAGE_BRIEF_TEMPLATE.md`
 
 Email/deployment:
 
@@ -299,6 +306,105 @@ Validation:
 
 The title is story-specific. `What actually changed?` is not a permanent Portfilo tagline, recurring framework, or mandatory question for every story.
 
+## Phase 4 - product finalization
+
+Status:
+
+**ACTIVE / IMAGE SYSTEM APPROVED / PILOT SELECTION REQUIRED**
+
+The remaining v0 product-finalization work is intentionally kept on `build/portfilo-v0`.
+
+### 4A - editorial image system
+
+Canonical standard:
+
+`docs/IMAGE_SYSTEM.md`
+
+Research basis:
+
+`research/image-system/research.md`
+
+Reusable per-story brief:
+
+`research/IMAGE_BRIEF_TEMPLATE.md`
+
+Louda Tuppal approved the image system on 2026-09-04.
+
+Non-negotiable rules:
+
+- AI output has zero visual authority;
+- do not begin with an image prompt;
+- story/evidence extraction and an image-necessity decision come first;
+- develop 2-3 genuinely different concepts;
+- a human selects the concept;
+- `image-brief.md` must be approved before generation;
+- generated images are editorial illustration, never documentary evidence;
+- a human selects the final image after factual-implication, artifact, crop, color, accessibility, and disclosure review;
+- the first generated image does not become visual precedent merely because it was first.
+
+Approved pilot baseline:
+
+- monochrome / grayscale editorial treatment;
+- strong geometry, directional/low-key light, visible texture/grain;
+- zero or one chromatic accent;
+- approved accents only: Portfilo blue `#0050a4` or Portfilo red `#b42318`;
+- no unrelated hue;
+- no generated typography;
+- 16:9 canonical pilot cut, with 1200x630 social derivative and crop-safe 4:3 / 1:1 derivatives from the same approved concept;
+- generated imagery requires visible synthetic/AI disclosure when published.
+
+Current implementation facts:
+
+- `src/components/SiteHead.astro` already emits Open Graph/X image metadata;
+- all pages currently use the same `/social/portfilo-default.png`;
+- `src/content.config.ts` does not yet contain story image fields;
+- story-specific image/schema/component/social implementation is intentionally deferred until the pilot proves the system.
+
+Exact gate:
+
+**Choose one published story for the image-system pilot.**
+
+After pilot selection:
+
+1. inspect the approved story and its research packet;
+2. perform the image-necessity gate and visual story extraction;
+3. present 2-3 researched concept candidates with factual/misreading risks;
+4. obtain human concept selection;
+5. create and obtain approval of the story's `image-brief.md`;
+6. only then generate a small candidate set.
+
+### 4B - brand asset system
+
+Pending after the image-pilot direction is established.
+
+Required v0 outcomes include:
+
+- final Portfilo wordmark/brand-mark decision;
+- favicon/site icon;
+- social avatar;
+- monochrome and light/dark usage;
+- default site social-preview composition;
+- usage rules sufficient for consistent site/email/social application.
+
+### 4C - full site engineering / security / SEO / quality audit
+
+Pending after the visual and brand layers are implemented.
+
+The audit must cover the complete v0 product, including:
+
+- Astro/content architecture and code quality;
+- dependencies and secret exposure;
+- Cloudflare subscription function and security controls;
+- accessibility and responsive behavior;
+- performance and image delivery;
+- canonical/robots/sitemap metadata;
+- Open Graph/X previews;
+- structured data and story-specific image metadata;
+- internal links, 404/error states, browser console, and fixture leakage;
+- final deployment/domain configuration.
+
+A successful audit must record actual checks and findings. Do not infer a pass from code inspection alone.
+
 ## Current editorial model
 
 Top-level topics:
@@ -451,6 +557,10 @@ Newsletter state:
 | C030 editorial repair | COMPLETE |
 | C030 deployed review | PASS / USER APPROVED |
 | Phase 3 story writing repair | COMPLETE |
+| Editorial image system | APPROVED / CANONICAL |
+| Image-system pilot | SELECTION REQUIRED |
+| Brand asset system | PENDING |
+| Full engineering/security/SEO audit | PENDING |
 | C001 | ACTIVE / CONTINUE |
 | C021 | ACTIVE / SOURCE RECONNAISSANCE |
 | C017 | WAITING / EXTERNAL CLARIFICATION |
@@ -460,12 +570,18 @@ Newsletter state:
 
 ## Exact next task
 
-**Begin final-release readiness QA.**
+**Select one published story for the Portfilo image-system pilot.**
 
-First gate:
+Do not generate an image yet.
 
-1. obtain and record a fresh successful local `npm run build` on `build/portfilo-v0`;
-2. directly verify the synthetic fixture route and any sitemap entry are absent from production;
-3. then proceed through final browser/responsive/link/console and deployment-configuration checks from `docs/V0_SCOPE.md` and `docs/CLOUDFLARE_PRODUCTION_SETUP.md`.
+After the pilot story is selected:
 
-Do not declare Portfilo v0 complete until the remaining Definition-of-v0-complete checks and final-domain/deployment requirements are explicitly resolved or deliberately deferred for launch.
+1. inspect its approved body and research/evidence boundaries;
+2. perform the image-necessity gate;
+3. extract the visual problem from the approved editorial material;
+4. present 2-3 concept candidates with explicit factual/misreading and crop risks;
+5. obtain Louda Tuppal's concept selection;
+6. create `image-brief.md` from the selected concept;
+7. obtain explicit image-brief approval before any image-generation call.
+
+Fresh local production-build validation and final-release QA remain required later in Phase 4; they have not been waived or converted into a pass.
