@@ -18,4 +18,7 @@ if (site) {
 export default defineConfig({
   site: site || undefined,
   integrations,
+  build: {
+    inlineStylesheets: "always",
+  },
 });
