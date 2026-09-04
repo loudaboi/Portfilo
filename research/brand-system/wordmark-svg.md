@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-04_
 
-_Status: USER REFERENCE ACCEPTED / OUTLINED COLOR CANDIDATE READY FOR REVIEW / RUNTIME REPLACEMENT NOT AUTHORIZED_
+_Status: USER REFERENCE ACCEPTED / OUTLINED COLOR CANDIDATE SPACING-CORRECTED / RUNTIME REPLACEMENT NOT AUTHORIZED_
 
 ## Source of truth for this gate
 
@@ -26,7 +26,27 @@ The reconstructed geometry uses the current canonical Portfilo palette:
 - blue: `#0050a4`;
 - red: `#b42318`.
 
-The supplied raster reference governs letter shape, slant, spacing, and overall silhouette. Existing canonical brand colors remain unchanged by this gate.
+The supplied raster reference governs letter shape, slant, and overall silhouette. Existing canonical brand colors remain unchanged by this gate.
+
+## Optical spacing correction
+
+The reference-derived outline was checked pair-by-pair across:
+
+- `Po`;
+- `or`;
+- `rt`;
+- `tf`;
+- `fi`;
+- `il`;
+- `lo`.
+
+The `i` -> `l` transition was the clear spacing outlier. The red `lo` group was moved 6 SVG units left while preserving the internal `lo` relationship and the existing letter shapes.
+
+The intent is optical consistency rather than identical numeric sidebearings: different italic letterforms need different geometric overlaps to read as evenly spaced.
+
+The outer viewBox was reduced by the same 6 units so the corrected wordmark keeps approximately balanced left/right canvas margins.
+
+No other pair was changed because the remaining neighbor clearances already formed a coherent optical rhythm and further equalization would risk over-tightening the rounded or diagonal forms.
 
 ## Runtime status
 
@@ -36,7 +56,11 @@ The outlined SVG is a review asset only. It does not authorize replacing the liv
 
 ## Next gate
 
-Review `public/brand/portfilo-wordmark-color.svg` against the supplied raster reference.
+Review `public/brand/portfilo-wordmark-color.svg` for:
+
+1. spacing rhythm;
+2. overall balance;
+3. silhouette against the supplied reference.
 
 If it passes:
 
