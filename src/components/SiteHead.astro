@@ -149,8 +149,7 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 
 {
   isHomepage && (
-    <style is:inline>
-      {`.feature-panel {
+    <style is:inline set:html={`.feature-panel {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -214,8 +213,7 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
   .feature-panel::before {
     background-position: center 46%;
   }
-}`}
-    </style>
+}`} />
   )
 }
 
