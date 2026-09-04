@@ -1,13 +1,9 @@
 {
   "name": "portfilo",
   "version": "1.0.0",
+  "private": true,
   "description": "Portfilo is a business and technology publication.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -17,14 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/loudaai/Portfilo.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/loudaai/Portfilo/issues"
-  },
-  "homepage": "https://github.com/loudaai/Portfilo#readme",
   "dependencies": {
     "astro": "^7.2.10",
     "@astrojs/sitemap": "^3.7.4"
