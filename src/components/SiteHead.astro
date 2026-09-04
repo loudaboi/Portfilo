@@ -86,7 +86,6 @@ const articleStructuredData = article && canonicalUrl && publisherStructuredData
         ...(article.author === "Portfilo" && siteRootUrl ? { url: siteRootUrl } : {}),
       },
       publisher: publisherStructuredData,
-      ...(websiteId ? { isPartOf: { "@id": websiteId } } : {}),
       ...(article.publishedAt
         ? { datePublished: article.publishedAt.toISOString() }
         : {}),
