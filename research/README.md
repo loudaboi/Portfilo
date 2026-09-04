@@ -1,96 +1,54 @@
 # Portfilo Research Workspace
 
+_Last updated: 2026-09-04_
+
 Research is intentionally separate from public story content.
 
-The purpose is to preserve the messy evidence-gathering process without allowing unfinished or unverified material to leak into publishable articles.
+The purpose is to preserve the evidence-gathering and writing-preparation process without allowing unfinished or unverified material to leak into publishable articles.
 
-Story selection before research follows:
+Story selection follows:
 
 `docs/CONTENT_PLANNING.md`
 
-Writing-form and writing-style preparation before drafting follows:
+Writing-form and writing-style preparation follows:
 
 - `docs/WRITING_SYSTEM.md`
 - `docs/STYLE_RESEARCH_STANDARD.md`
 
-The planning system decides which questions deserve research time. This workspace holds the strategy research and story evidence that follow those decisions, plus the pre-draft style research and style brief that determine how approved evidence will be presented.
+## Research layers
 
-## Two research layers
+### Editorial planning / launch research
 
-### 1. Editorial launch research
+`research/editorial-launch/` records the completed first application of Portfilo's launch-planning process. It is historical strategy research and remains useful as provenance, but it is no longer a future launch task.
 
-Answers:
+Current active editorial assignments and their states are recorded in:
 
-> What should Portfilo investigate first?
+`docs/PROJECT_STATE.md`
 
-This is strategy research, not an article.
+### Individual story research and writing preparation
 
-Use `docs/CONTENT_PLANNING.md` as the decision framework.
+Every substantial story gets its own packet under:
 
-Suggested structure:
-
-```text
-research/
-└── editorial-launch/
-    ├── brief.md
-    ├── audience-signals.md
-    ├── competitor-map.md
-    ├── information-gaps.md
-    ├── candidate-stories.md
-    ├── candidate-series.md
-    ├── evaluation.md
-    └── recommendation.md
-```
-
-The research should evaluate candidate stories and, where justified, candidate series by:
-
-- reader importance;
-- primary reader need;
-- information gap;
-- timing / why now;
-- evidence availability;
-- potential originality;
-- Portfilo fit;
-- reporting feasibility;
-- useful lifespan;
-- derivative/distribution potential as a secondary consideration;
-- series depth where a series is actually justified;
-- commercial audience relevance without compromising editorial independence.
-
-`candidate-stories.md` is required. Do not assume that Portfilo must launch with a series.
-
-The research may recommend:
-
-- one standalone flagship;
-- several unrelated strong stories;
-- one coherent launch package;
-- a real series.
-
-The first real launch package should not be selected until this research is complete.
-
-### 2. Individual story research and writing preparation
-
-Every substantial story gets its own packet.
+`research/stories/<story-slug>/`
 
 That includes Reported, Explained, Profile, Guide, Analysis, Perspective, and Field Notes work. The depth of factual reporting can vary by content type, but the writing approach must still be researched before Draft 1.
 
-Suggested structure:
+A normal packet may contain:
 
 ```text
-research/
-└── stories/
-    └── story-slug/
-        ├── brief.md
-        ├── sources.md
-        ├── evidence.md
-        ├── contradictions.md
-        ├── notes.md
-        ├── style-research.md
-        ├── style-brief.md
-        └── fact-check.md
+brief.md
+sources.md
+evidence.md
+contradictions.md
+notes.md
+style-research.md
+style-brief.md
+fact-check.md
 ```
 
-The required pre-draft sequence is:
+Additional working files are allowed when a story genuinely needs them, including datasets, ledgers, calculations, interview records, rewrite reviews, visual plans, and image briefs.
+
+## Required pre-draft sequence
 
 ```text
 subject research
@@ -116,7 +74,7 @@ Use:
 
 ### `brief.md`
 
-Contains:
+Normally records:
 
 - research question;
 - reader payoff;
@@ -129,63 +87,27 @@ Contains:
 
 ### `sources.md`
 
-Source inventory.
-
-Record:
-
-- source name;
-- URL or identifier;
-- source type/tier;
-- publication/data date;
-- access date when relevant;
-- why it matters;
-- known limitations.
+Source inventory. Record source name, URL or identifier, source type/tier, publication/data date, access date when relevant, why it matters, and known limitations.
 
 Prefer primary sources.
 
 ### `evidence.md`
 
-Claim ledger.
+Claim ledger. Consequential factual claims should be grounded here or in another explicit evidence record before publication.
 
-Suggested format:
+Suggested status vocabulary:
 
-```text
-## C01
-
-Candidate claim:
-
-Evidence:
-
-Source:
-
-Tier:
-
-Confidence:
-
-Caveat:
-
-Status:
-VERIFIED | QUALIFY | UNVERIFIED | REJECT
-```
-
-A draft should not invent new consequential factual claims outside this ledger.
+`VERIFIED | QUALIFY | UNVERIFIED | REJECT`
 
 ### `contradictions.md`
 
 Evidence, methodologies, cases, or interpretations that challenge the emerging story.
 
-This file is mandatory for substantial investigations even if the final conclusion remains unchanged.
+This file is mandatory for substantial factual investigations even if the final conclusion remains unchanged.
 
 ### `notes.md`
 
-Working material:
-
-- interview notes;
-- observations;
-- calculations;
-- follow-up questions;
-- unused leads;
-- possible future stories.
+Working material such as interview notes, observations, calculations, follow-up questions, unused leads, and possible future stories.
 
 Label speculation and unverified claims clearly.
 
@@ -193,90 +115,41 @@ Label speculation and unverified claims clearly.
 
 Pre-draft research record for the writing problem.
 
-At minimum record:
+At minimum, record:
 
 - story purpose;
 - primary reader need;
 - audience knowledge assumptions;
-- which audience-interest assumptions are established, researched, or merely editorial hypotheses;
 - evidence shape;
 - professional form references actually used;
 - by default 2-4 relevant human-edited exemplars chosen for a similar writing job;
-- opening behavior observed;
+- opening behavior;
 - answer/thesis timing;
-- paragraph development;
-- evidence/example handling;
+- paragraph and evidence handling;
 - transitions;
-- first/second person use;
-- rhetorical-question use;
-- subhead/section behavior;
+- person and rhetorical-device use;
 - counterargument/limitation handling;
 - ending behavior;
 - vocabulary/assumed knowledge;
-- patterns notably absent;
-- cross-example findings;
 - explicit no-imitation boundaries;
 - proposed writing mechanics;
 - research confidence.
 
 This file records what the research showed. It does not authorize copied voice or sentence patterns.
 
-Use:
-
-`research/STYLE_RESEARCH_TEMPLATE.md`
-
 ### `style-brief.md`
 
 Pre-draft editorial decision record.
 
-It converts the style research and story evidence into the constraints the draft must follow.
-
-At minimum record:
-
-- content type;
-- primary reader need;
-- writing job;
-- evidence shape;
-- selected Portfilo recipe from `docs/WRITING_SYSTEM.md`;
-- why the form fits;
-- deviations;
-- relevant findings from `style-research.md`;
-- lead job;
-- central answer/thesis position;
-- middle logic;
-- counterevidence/limitation position;
-- ending job;
-- paragraph/rhythm constraints where material;
-- institutional-copy provenance when Portfilo itself is discussed;
-- headline, dek, and description jobs;
-- assignment-specific AI-slop risks;
-- approval state.
-
-A substantial story is not authorized for Draft 1 until `style-research.md` exists and `style-brief.md` is approved.
-
-AI may propose forms and wording. AI output has zero stylistic authority: the recorded decisions must be justified by material, professional practice, human-edited research, or explicit editorial judgment.
+It converts style research and story evidence into constraints the draft must follow. A substantial story is not authorized for Draft 1 until `style-research.md` exists and `style-brief.md` is approved.
 
 ### `fact-check.md`
 
-Final verification record.
-
-At minimum check:
-
-- names;
-- titles;
-- dates;
-- numbers;
-- quotations;
-- legal/regulatory claims;
-- company claims;
-- historical claims;
-- causal language;
-- headline/dek;
-- material institutional statements where applicable.
+Final verification record. At minimum, check names, titles, dates, numbers, quotations, legal/regulatory claims, company claims, historical claims, causal language, headline/dek, and material institutional statements where applicable.
 
 ## Research outcome
 
-Every story packet should end with one explicit outcome:
+Every substantial story packet should end with one explicit outcome:
 
 - `PUBLISH`
 - `REFRAME`
@@ -285,13 +158,23 @@ Every story packet should end with one explicit outcome:
 
 Do not force research into publication merely because time has already been spent.
 
-Editorial launch research should end with a clear recommendation about the first real launch package and why the selected questions survived the planning gates.
+## Image research
+
+Editorial imagery follows:
+
+`docs/IMAGE_SYSTEM.md`
+
+Story-specific generated imagery requires the separate visual-research, brief, approval, generation-authorization, candidate-review, and final-selection gates defined there.
+
+Historical homepage image experiments under `research/image-system/` do not override the current homepage decision in:
+
+`research/image-system/homepage-featured-cover-decision.md`
 
 ## AI rules
 
 ### Evidence
 
-AI can assist with the research process but is not a source.
+AI can assist with research organization and analysis but is not a source.
 
 Any claim, citation, quotation, number, or attribution produced by AI must be verified against an actual source before use.
 
@@ -299,15 +182,7 @@ Any claim, citation, quotation, number, or attribution produced by AI must be ve
 
 AI can assist with research organization, structural alternatives, drafting, and editing but is not a style source.
 
-Do not cite `the model wrote it` or `the model recommended it` as the reason for:
-
-- a story structure;
-- voice;
-- paragraph rhythm;
-- rhetorical device;
-- institutional claim;
-- headline/dek style;
-- ending.
+Do not cite `the model wrote it` or `the model recommended it` as the reason for a story structure, voice, paragraph rhythm, rhetorical device, institutional claim, headline/dek style, or ending.
 
 Do not ask AI to `write this like [named writer]`.
 
@@ -320,7 +195,7 @@ Follow:
 
 ## Public content boundary
 
-Public stories should live in the website's structured content system.
+Public stories live in the website's structured content system under `src/content/`.
 
 Do not publish directly from `research/`.
 
