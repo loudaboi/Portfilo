@@ -4,13 +4,13 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization — REPOSITORY HYGIENE AUDIT COMPLETE / BRAND ASSET SYSTEM NEXT**
+**Portfilo v0 / Product Finalization — PHASE 4B BRAND ASSET SYSTEM COMPLETE / PHASE 4C AUDIT NEXT**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, and universal homepage feature image are in place.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, and v0 brand asset system are in place.
 
 Next sequence:
 
-`Phase 4B brand assets -> Phase 4C engineering/security/SEO/accessibility/performance/release audit -> intentional release review`
+`Phase 4C engineering/security/SEO/accessibility/performance/release audit -> intentional release review`
 
 Core rules remain:
 
@@ -66,6 +66,7 @@ Canonical groups:
 - product: `docs/V0_SCOPE.md`, `docs/CONTENT_PLANNING.md`, `BACKLOG.md`;
 - editorial/writing: `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, `docs/WRITING_SYSTEM.md`, `docs/STYLE_RESEARCH_STANDARD.md`, `docs/PUBLISHING_STANDARD.md`, `docs/COPY_STYLE.md`;
 - design/image: `docs/DESIGN_DIRECTION.md`, `docs/IMAGE_SYSTEM.md`, `docs/PHOTO_TREATMENT.md`, `research/image-system/homepage-featured-cover-decision.md`;
+- brand: `research/brand-system/wordmark-svg.md`, `research/brand-system/icon-system.md`, `research/brand-system/social-preview.md`;
 - email/deployment: `docs/EMAIL_SYSTEM_PLAN.md`, `docs/BEEHIIV_EMAIL_SETUP.md`, `docs/CLOUDFLARE_PRODUCTION_SETUP.md`;
 - research workspace: `research/README.md` and the relevant story packet.
 
@@ -197,20 +198,65 @@ Per-story generated-image pilot: **PAUSED**. No C030 or other story image is cur
 
 ### 4B — brand asset system
 
-Status: **NEXT / PENDING HUMAN-CONTROLLED DESIGN WORK**
+Status: **COMPLETE / USER APPROVED / IMPLEMENTED / DEPLOYED SOCIAL-PREVIEW PASS**
 
-Required v0 outcomes:
+Canonical wordmarks:
 
-- final wordmark/brand-mark decision;
-- favicon/site icon;
-- social avatar;
-- monochrome and light/dark usage;
-- default site social-preview composition;
-- usage rules for site/email/social consistency.
+- `public/brand/portfilo-wordmark-color.svg`;
+- `public/brand/portfilo-wordmark-ink.svg`;
+- `public/brand/portfilo-wordmark-light.svg`.
+
+Compact brand system:
+
+- approved pinched-rectangle symbol;
+- ink and paper master symbol SVGs;
+- social/profile avatar derivatives;
+- adaptive SVG favicon;
+- 16px and 32px PNG favicon fallbacks;
+- 16/32/48px `.ico` legacy fallback;
+- corrected and reapproved 180 x 180 Apple touch icon.
+
+Default social preview:
+
+`public/social/portfilo-default.png`
+
+Required and implemented dimensions:
+
+`1200 x 630`
+
+Validation completed during the Phase 4B closeout:
+
+- final social-preview composition: USER APPROVED;
+- repository social-preview asset: IMPLEMENTED;
+- direct deployed image URL: PASS;
+- production `SITE_URL` set to temporary canonical origin `https://portfilo-app.pages.dev`: PASS FOR CURRENT TEMPORARY DEPLOYMENT;
+- generated homepage `og:image`: PASS;
+- Facebook sharing post preview: PASS;
+- Discord preview: PASS;
+- Messenger-only omission observed in some client contexts, treated as non-blocking platform/client behavior after independent metadata and delivery validation;
+- malformed first Apple touch PNG was corrected, visually approved, and replaced.
+
+Brand usage rules:
+
+- full wordmark is the primary identity whenever horizontal space permits;
+- compact symbol is reserved for favicon, avatar, touch-icon, and other constrained square/compact surfaces;
+- no permanent tagline is part of the v0 identity;
+- do not use the compact symbol as decoration beside the wordmark;
+- default social preview remains the approved `1200 x 630` asset until a new design gate intentionally replaces it.
+
+Phase 4B records:
+
+- `research/brand-system/wordmark-svg.md`;
+- `research/brand-system/icon-system.md`;
+- `research/brand-system/social-preview.md`.
+
+Duplicate live wordmark markup is intentionally **not** being refactored during Phase 4B. Revisit only if Phase 4C finds a concrete maintainability or consistency problem.
+
+The Phase 4B brand design decisions are closed unless Louda explicitly reopens them.
 
 ### 4C — full engineering / security / SEO / quality audit
 
-Status: **PENDING AFTER 4B**
+Status: **NEXT**
 
 Must cover:
 
@@ -222,6 +268,7 @@ Must cover:
 - canonical/robots/sitemap metadata;
 - Open Graph/X previews;
 - Article structured data and image metadata;
+- favicon/legacy-icon technical integrity across relevant browser/device surfaces;
 - internal links and 404/error states;
 - browser console;
 - fixture leakage;
@@ -287,10 +334,16 @@ Temporary production URL: `https://portfilo-app.pages.dev`
 
 Production branch: `build/portfilo-v0`
 
+Current temporary production `SITE_URL`:
+
+`https://portfilo-app.pages.dev`
+
+This temporary value is intentional for current metadata validation and must be replaced by the final canonical public domain before release.
+
 Pending before final public launch:
 
 - final public domain;
-- final production `SITE_URL`;
+- final production `SITE_URL` replacement with that domain;
 - Cloudflare `/api/subscribe` edge rate limit;
 - Cloudflare Web Analytics enable/verification;
 - final beehiiv opt-in redirect to `/confirmed`;
@@ -323,15 +376,19 @@ Newsletter state:
 | Universal homepage feature image | PASS / IMPLEMENTED + DEPLOYED USER APPROVED |
 | Latest pre-hygiene `npm run check` | PASS / USER-REPORTED |
 | Latest pre-hygiene `npm run build` | PASS / USER-REPORTED |
-| Post-hygiene local check/build | NOT RERUN / DOCS + PACKAGE METADATA ONLY |
-| Brand asset system | NEXT |
-| Full engineering/security/SEO/performance audit | PENDING AFTER BRAND ASSETS |
+| Post-hygiene / post-Phase-4B local check/build | NOT YET RERUN |
+| Brand asset system | PASS / PHASE 4B CLOSED |
+| Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
+| Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
+| Full engineering/security/SEO/performance audit | NEXT / PHASE 4C |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Begin Phase 4B: finalize the Portfilo brand asset system.**
+**Begin Phase 4C: full engineering, security, SEO, accessibility, performance, and release-readiness audit.**
 
-Before implementation, inspect current wordmark/brand usage, `research/brand-system/research.md`, and `docs/DESIGN_DIRECTION.md`. Define the smallest v0 brand-asset set needed for favicon/site icon, social avatar, light/dark/monochrome use, default social preview, and consistent site/email/social application.
+Start with repository and runtime inspection before changing code. Establish a measured baseline, run fresh local `npm run check` and `npm run build`, then audit the site systematically rather than mixing unrelated fixes into one pass.
 
-Do not reopen the five-topic homepage image plan unless Louda explicitly makes a new decision.
+The first Phase 4C pass should inventory findings by severity and evidence before implementation. Prioritize release blockers, security/correctness defects, broken metadata or routing, accessibility failures, and major performance regressions. Treat cosmetic refactors and speculative cleanup as lower priority.
+
+Do not reopen approved Phase 4A image design or Phase 4B brand design unless the audit finds a concrete implementation defect or Louda explicitly requests a new design decision.
