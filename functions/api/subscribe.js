@@ -6,6 +6,7 @@ const JSON_HEADERS = {
 
 const BEEHIIV_PUBLICATION_ID = "pub_dde8610d-d1a8-4c74-aa13-aeb3838b2d40";
 const MAX_REQUEST_BYTES = 4096;
+const BEEHIIV_TIMEOUT_MS = 10_000;
 
 class RequestTooLargeError extends Error {}
 
@@ -21,22 +22,59 @@ function isValidEmail(value) {
   const email = value.trim();
 
   if (email.length < 3 || email.length > 320) return false;
-  if (email.includes(" ")) return false;
+  if (/\s/.test(email)) return false;
 
-  const at = email.lastIndexOf("@");
-  if (at <= 0 || at === email.length - 1) return false;
+  const at = email.indexOf("@");
+  if (at <= 0 || at !== email.lastIndexOf("@") || at === email.length - 1) {
+    return false;
+  }
 
   const domain = email.slice(at + 1);
   return domain.includes(".") && !domain.startsWith(".") && !domain.endsWith(".");
 }
 
-async function readPayload(request) {
-  const body = await request.arrayBuffer();
+async function readBoundedBody(request) {
+  if (!request.body) return new Uint8Array();
 
-  if (body.byteLength > MAX_REQUEST_BYTES) {
-    throw new RequestTooLargeError();
+  const reader = request.body.getReader();
+  const chunks = [];
+  let totalBytes = 0;
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value) continue;
+
+      totalBytes += value.byteLength;
+      if (totalBytes > MAX_REQUEST_BYTES) {
+        try {
+          await reader.cancel();
+        } catch {
+          // The response is already determined; cancellation failure is non-fatal.
+        }
+        throw new RequestTooLargeError();
+      }
+
+      chunks.push(value);
+    }
+  } finally {
+    reader.releaseLock();
   }
 
+  const body = new Uint8Array(totalBytes);
+  let offset = 0;
+
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+
+  return body;
+}
+
+async function readPayload(request) {
+  const body = await readBoundedBody(request);
   const contentType = request.headers.get("content-type") || "";
 
   if (contentType.includes("application/json")) {
@@ -125,7 +163,10 @@ export async function onRequest(context) {
     );
   }
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), BEEHIIV_TIMEOUT_MS);
   let beehiivResponse;
+
   try {
     beehiivResponse = await fetch(
       `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
@@ -144,6 +185,7 @@ export async function onRequest(context) {
           utm_medium: "website",
           utm_campaign: "portfilo_brief_signup",
         }),
+        signal: controller.signal,
       },
     );
   } catch (error) {
@@ -155,6 +197,8 @@ export async function onRequest(context) {
       },
       502,
     );
+  } finally {
+    clearTimeout(timeoutId);
   }
 
   if (!beehiivResponse.ok) {
