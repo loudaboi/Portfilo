@@ -4,9 +4,9 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - UNIVERSAL HOMEPAGE FEATURE IMAGE IMPLEMENTED / DEPLOYED REVIEW + FRESH LOCAL VALIDATION PENDING**
+**Portfilo v0 / Product Finalization - UNIVERSAL HOMEPAGE FEATURE IMAGE VALIDATED / BRAND ASSET SYSTEM NEXT**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, and core visual direction are in place. Phase 4 is now focused on validating the approved universal homepage feature image, completing the remaining brand assets, then performing the full engineering, security, SEO, accessibility, performance, and release audit.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, and core visual direction are in place. The approved universal homepage feature image has now passed repository cleanup, local validation, and deployed desktop/mobile review. Phase 4 proceeds next to the remaining brand asset system, followed by the full engineering, security, SEO, accessibility, performance, and release audit.
 
 Core rules remain:
 
@@ -36,11 +36,11 @@ Authoritative branch:
 
 Do not merge to `main` until an intentional later release review.
 
-Repository cleanup note:
+Repository cleanup state:
 
-- `main` and `build/portfilo-v0` are the only branches intended to remain;
-- ten stale remote branches were audited as having zero unique commits relative to `build/portfilo-v0` and are safe deletion candidates;
-- remote branch deletion still requires the user's local authenticated Git client because the connected GitHub tooling does not expose branch deletion.
+- only `main` and `build/portfilo-v0` remain as remote branches;
+- the ten audited stale remote branches were deleted on 2026-09-04;
+- branch cleanup was independently confirmed through the connected GitHub repository view.
 
 ## Canonical documents
 
@@ -150,7 +150,7 @@ The image system itself remains approved. Generated imagery is editorial illustr
 
 #### Universal homepage feature image
 
-Status: **APPROVED / IMPLEMENTED / DEPLOYED REVIEW PENDING**
+Status: **APPROVED / IMPLEMENTED / VALIDATED**
 
 Canonical asset:
 
@@ -162,8 +162,8 @@ Implementation behavior:
 - the image does not vary by Business, Technology, Startups, AI, or Building;
 - story type, topic, author, and Read navigation remain live HTML;
 - the asset is displayed with `cover` cropping;
-- presentation may use restrained edge/bottom darkening for legibility;
-- the generated image requires a visible `AI-generated image` disclosure;
+- presentation uses restrained edge/bottom darkening for legibility;
+- the generated image carries a visible `AI-generated image` disclosure;
 - the rejected Astra image is removed;
 - the temporary preview stylesheet is removed;
 - the accidental `tmp-test.txt` repository probe is removed.
@@ -172,9 +172,9 @@ Implementation commit:
 
 `b4b4db86482ec3c2e0d56f83b708b15d5a230853`
 
-Decision-record commit:
+System finalization commit:
 
-`4774688ad48b83eab91b53386bb00098ad83a0b0`
+`fde1b0488a1e84de6a960ca82a8fd1dac9bcdc69`
 
 The earlier five-topic system:
 
@@ -184,15 +184,14 @@ is **SUPERSEDED FOR V0**.
 
 Earlier Building, AI, Pinterest, Astra, and other candidate imagery has no current project authority unless explicitly re-approved in a later decision.
 
-Required validation before pass:
+Validation recorded on 2026-09-04:
 
-- `npm run check`;
-- `npm run build`;
-- deployed desktop homepage inspection;
-- deployed mobile homepage inspection;
-- text/read-link/disclosure legibility;
-- crop quality at responsive breakpoints;
-- no request for rejected preview assets.
+- stale branch cleanup: **PASS / independently verified in GitHub**;
+- `npm run check`: **PASS / user-reported local validation**;
+- `npm run build`: **PASS / user-reported local validation**;
+- deployed desktop homepage inspection: **PASS / user approved**;
+- deployed mobile homepage inspection: **PASS / user approved**;
+- text/read-link/disclosure legibility and responsive crop: **PASS / user approved**.
 
 #### C030 story-image pilot
 
@@ -202,7 +201,7 @@ The previous C030-specific image brief remains a historical approved brief, but 
 
 ### 4B - brand asset system
 
-Status: **PENDING**
+Status: **NEXT / PENDING HUMAN-CONTROLLED DESIGN WORK**
 
 Required v0 outcomes include:
 
@@ -215,7 +214,7 @@ Required v0 outcomes include:
 
 ### 4C - full engineering / security / SEO / quality audit
 
-Status: **PENDING**
+Status: **PENDING AFTER 4B**
 
 The final audit must cover:
 
@@ -353,6 +352,7 @@ Newsletter state:
 |---|---|
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
+| Remote branch cleanup | PASS / ONLY `main` + `build/portfilo-v0` REMAIN |
 | Content architecture | PASS / STABLE |
 | Writing system | PASS / CANONICAL |
 | Site copy + IA | PASS / DEPLOYED USER APPROVED |
@@ -360,30 +360,20 @@ Newsletter state:
 | C009 editorial repair | COMPLETE / DEPLOYED USER APPROVED |
 | C030 editorial repair | COMPLETE / DEPLOYED USER APPROVED |
 | Editorial image system | APPROVED / CANONICAL |
-| Universal homepage feature image | IMPLEMENTED / DEPLOYED REVIEW PENDING |
+| Universal homepage feature image | PASS / IMPLEMENTED + DEPLOYED USER APPROVED |
 | Rejected Astra asset | REMOVED |
 | Temporary homepage preview stylesheet | REMOVED |
 | `tmp-test.txt` | REMOVED |
-| Stale remote branches | AUDITED / DELETION PENDING LOCAL GIT |
-| Fresh `npm run check` | PENDING |
-| Fresh `npm run build` | PENDING |
-| Brand asset system | PENDING |
-| Full engineering/security/SEO audit | PENDING |
+| Fresh `npm run check` | PASS / USER-REPORTED LOCAL VALIDATION |
+| Fresh `npm run build` | PASS / USER-REPORTED LOCAL VALIDATION |
+| Brand asset system | NEXT |
+| Full engineering/security/SEO audit | PENDING AFTER BRAND ASSETS |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-Validate the universal homepage feature-image implementation before moving into additional visual work.
+**Begin Phase 4B: finalize the Portfilo brand asset system.**
 
-Required sequence:
-
-1. finish the visible AI-generated disclosure in the homepage presentation;
-2. user pulls the latest `build/portfilo-v0` locally;
-3. delete the ten audited stale remote branches;
-4. run `npm run check`;
-5. run `npm run build`;
-6. inspect the Cloudflare-deployed homepage on desktop and mobile;
-7. record pass/fail and fix only issues found in that validation;
-8. after a pass, proceed to the remaining brand asset system.
+Before implementation, inspect the current wordmark/brand usage and canonical design direction, then define the smallest v0 brand-asset set needed for favicon/site icon, social avatar, light/dark/monochrome use, default social preview, and consistent site/email/social application.
 
 Do not reopen the five-topic homepage image plan unless Louda explicitly makes a new decision.
