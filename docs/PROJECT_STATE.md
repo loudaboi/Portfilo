@@ -4,9 +4,9 @@ _Last updated: 2026-09-04_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - UNIVERSAL HOMEPAGE FEATURE IMAGE VALIDATED / BRAND ASSET SYSTEM NEXT**
+**Portfilo v0 / Product Finalization - REPOSITORY HYGIENE AUDIT COMPLETE / BRAND ASSET SYSTEM NEXT**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, and core visual direction are in place. The approved universal homepage feature image has now passed repository cleanup, local validation, and deployed desktop/mobile review. Phase 4 proceeds next to the remaining brand asset system, followed by the full engineering, security, SEO, accessibility, performance, and release audit.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, and approved universal homepage feature image are in place. The repository/documentation hygiene pass is complete. Phase 4 proceeds next to the remaining brand asset system, followed by the full engineering, security, SEO, accessibility, performance, and release audit.
 
 Core rules remain:
 
@@ -40,17 +40,33 @@ Repository cleanup state:
 
 - only `main` and `build/portfilo-v0` remain as remote branches;
 - the ten audited stale remote branches were deleted on 2026-09-04;
-- branch cleanup was independently confirmed through the connected GitHub repository view.
+- branch cleanup was independently confirmed through the connected GitHub repository view;
+- rejected Astra preview assets and temporary homepage preview files are removed;
+- the accidental `tmp-test.txt` repository probe is removed;
+- root package metadata has been cleaned and the package is explicitly marked `private`;
+- no dependency upgrade was mixed into the hygiene pass.
+
+## Documentation authority
+
+Read first:
+
+1. `AGENTS.md`
+2. `docs/PROJECT_STATE.md`
+3. `docs/V0_SCOPE.md`
+4. `docs/DOCUMENT_STATUS.md`
+5. the canonical document relevant to the task
+
+`docs/DOCUMENT_STATUS.md` distinguishes current authority from historical/superseded implementation records. Old status lines such as `implementation pending`, old fixture-era homepage copy, or the earlier `Latest` global-navigation contract do not override current runtime code or current canonical documents.
 
 ## Canonical documents
 
 Project/product:
 
-- `docs/V0_SCOPE.md`
 - `docs/PROJECT_STATE.md`
+- `docs/DOCUMENT_STATUS.md`
+- `docs/V0_SCOPE.md`
 - `docs/CONTENT_PLANNING.md`
-- `docs/SITE_COPY_AND_IA_AUDIT.md`
-- `docs/SITE_COPY_IMPLEMENTATION.md`
+- `BACKLOG.md`
 
 Editorial/research/writing:
 
@@ -68,11 +84,9 @@ Design / imagery:
 
 - `docs/DESIGN_DIRECTION.md`
 - `docs/IMAGE_SYSTEM.md`
-- `research/image-system/research.md`
+- `docs/PHOTO_TREATMENT.md`
 - `research/image-system/homepage-featured-cover-decision.md`
 - `research/IMAGE_BRIEF_TEMPLATE.md`
-
-The earlier homepage featured-cover research, multi-topic briefs, candidate audits, and generation records remain historical research only. They do not override `homepage-featured-cover-decision.md`.
 
 Email/deployment:
 
@@ -80,13 +94,15 @@ Email/deployment:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
+Historical copy/navigation/audit records remain in the repository for provenance and are mapped in `docs/DOCUMENT_STATUS.md`.
+
 ## Completed product work
 
 ### Site foundation and content architecture
 
 Status: **COMPLETE**
 
-Current v0 architecture remains:
+Current v0 architecture:
 
 - Astro + TypeScript;
 - static-first output;
@@ -102,7 +118,16 @@ Synthetic development fixtures remain intentionally in source and are excluded f
 
 Status: **COMPLETE / DEPLOYED USER REVIEW PASS**
 
-The homepage, Stories archive, Story route, Series route, Standards, About, Subscribe, confirmation, Privacy, 404, navigation, and footer are in place. Public copy follows the current writing/copy standards and the approved newsletter flow.
+The homepage, Stories archive, Story route, Series route, Standards, About, Subscribe, confirmation, Privacy, 404, navigation, and footer are in place.
+
+Current global navigation:
+
+- Stories
+- Standards
+- About
+- Subscribe
+
+The Portfilo wordmark links Home. The earlier `Latest` global-navigation contract is historical.
 
 ### Published launch stories
 
@@ -132,6 +157,31 @@ Status: **IMPLEMENTED / FUNCTIONAL BASELINE**
 
 Final-domain and first-send compliance QA remain pending.
 
+## Repository hygiene audit
+
+Status: **COMPLETE**
+
+Audit completed on 2026-09-04 before Phase 4B.
+
+Changes made:
+
+- root `README.md` rewritten to match the current business-and-technology publication definition and current v0 architecture;
+- `docs/DOCUMENT_STATUS.md` added as the authoritative map for current vs historical/superseded documentation;
+- `package.json` marked `private`, fake placeholder test command removed, and irrelevant npm-init metadata removed without changing runtime dependencies;
+- `docs/DESIGN_DIRECTION.md` synchronized with the implemented Instrument Sans / Source Serif 4 / IBM Plex Mono baseline and current fixture/image state;
+- `docs/CLOUDFLARE_PRODUCTION_SETUP.md` synchronized with the existing `portfilo-app.pages.dev` baseline and the remaining final-domain work;
+- `research/README.md` updated so the first editorial-launch research is correctly described as completed historical strategy work rather than a future task;
+- historical copy/navigation/IA implementation records preserved for provenance rather than deleted.
+
+Intentionally deferred to Phase 4C:
+
+- dependency upgrades;
+- broad CSS/font/token refactoring;
+- image delivery/LCP optimization;
+- final security/SEO/accessibility/performance review.
+
+The approved homepage feature PNG is currently about 2.58 MB and is used as a CSS background. It passed visual review, so optimization must be handled as a measured performance task rather than silently changing the approved visual during this hygiene pass.
+
 ## Phase 4 - product finalization
 
 Status: **ACTIVE**
@@ -146,7 +196,7 @@ Current homepage decision:
 
 `research/image-system/homepage-featured-cover-decision.md`
 
-The image system itself remains approved. Generated imagery is editorial illustration, not documentary evidence, and requires human approval plus visible synthetic/AI disclosure when published.
+Generated imagery is editorial illustration, not documentary evidence, and requires human approval plus visible synthetic/AI disclosure when published.
 
 #### Universal homepage feature image
 
@@ -164,25 +214,14 @@ Implementation behavior:
 - the asset is displayed with `cover` cropping;
 - presentation uses restrained edge/bottom darkening for legibility;
 - the generated image carries a visible `AI-generated image` disclosure;
-- the rejected Astra image is removed;
-- the temporary preview stylesheet is removed;
-- the accidental `tmp-test.txt` repository probe is removed.
-
-Implementation commit:
-
-`b4b4db86482ec3c2e0d56f83b708b15d5a230853`
-
-System finalization commit:
-
-`fde1b0488a1e84de6a960ca82a8fd1dac9bcdc69`
+- rejected Astra imagery is removed;
+- the temporary preview stylesheet is removed.
 
 The earlier five-topic system:
 
 `featured story -> topic -> canonical topic cover asset`
 
 is **SUPERSEDED FOR V0**.
-
-Earlier Building, AI, Pinterest, Astra, and other candidate imagery has no current project authority unless explicitly re-approved in a later decision.
 
 Validation recorded on 2026-09-04:
 
@@ -193,11 +232,11 @@ Validation recorded on 2026-09-04:
 - deployed mobile homepage inspection: **PASS / user approved**;
 - text/read-link/disclosure legibility and responsive crop: **PASS / user approved**.
 
-#### C030 story-image pilot
+#### Per-story generated-image pilot
 
 Status: **PAUSED**
 
-The previous C030-specific image brief remains a historical approved brief, but no C030 story image is currently authorized for implementation. Resume only through a new explicit decision after the homepage/brand work is stable.
+The previous C030-specific image work remains historical. No C030 or other per-story generated image is currently authorized for implementation. Resume only through a new explicit decision after the homepage/brand work is stable.
 
 ### 4B - brand asset system
 
@@ -219,10 +258,10 @@ Status: **PENDING AFTER 4B**
 The final audit must cover:
 
 - Astro/content architecture and code quality;
-- dependencies and secret exposure;
+- dependency freshness, compatibility, and secret exposure;
 - Cloudflare subscription function and abuse controls;
 - accessibility and responsive behavior;
-- performance and image delivery;
+- performance and image delivery, including the universal homepage feature asset;
 - canonical/robots/sitemap metadata;
 - Open Graph/X previews;
 - Article structured data and image metadata;
@@ -327,13 +366,13 @@ Production branch:
 Still pending before final public launch:
 
 - final public domain;
-- production `SITE_URL` after domain connection;
+- final production `SITE_URL` after domain connection;
 - Cloudflare `/api/subscribe` edge rate limit;
 - Cloudflare Web Analytics enable/verification;
 - final beehiiv opt-in redirect to canonical `/confirmed`;
 - final-domain subscribe/confirm/unsubscribe QA;
 - mailing-address/compliance clearance before first public newsletter send;
-- final browser/responsive/link/console QA;
+- final browser/responsive/link/console/security/SEO/performance QA;
 - MFA/passkeys where applicable.
 
 Newsletter state:
@@ -353,27 +392,25 @@ Newsletter state:
 | Repository access | PASS |
 | `build/portfilo-v0` branch | PASS |
 | Remote branch cleanup | PASS / ONLY `main` + `build/portfilo-v0` REMAIN |
+| Repository/documentation hygiene audit | PASS / COMPLETE |
+| README current-state alignment | PASS |
+| Document authority map | PASS / `docs/DOCUMENT_STATUS.md` |
+| Package metadata cleanup | PASS / NO DEPENDENCY CHANGE |
 | Content architecture | PASS / STABLE |
 | Writing system | PASS / CANONICAL |
 | Site copy + IA | PASS / DEPLOYED USER APPROVED |
-| C027 editorial repair | COMPLETE / DEPLOYED USER APPROVED |
-| C009 editorial repair | COMPLETE / DEPLOYED USER APPROVED |
-| C030 editorial repair | COMPLETE / DEPLOYED USER APPROVED |
 | Editorial image system | APPROVED / CANONICAL |
 | Universal homepage feature image | PASS / IMPLEMENTED + DEPLOYED USER APPROVED |
-| Rejected Astra asset | REMOVED |
-| Temporary homepage preview stylesheet | REMOVED |
-| `tmp-test.txt` | REMOVED |
 | Fresh `npm run check` | PASS / USER-REPORTED LOCAL VALIDATION |
 | Fresh `npm run build` | PASS / USER-REPORTED LOCAL VALIDATION |
 | Brand asset system | NEXT |
-| Full engineering/security/SEO audit | PENDING AFTER BRAND ASSETS |
+| Full engineering/security/SEO/performance audit | PENDING AFTER BRAND ASSETS |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
 **Begin Phase 4B: finalize the Portfilo brand asset system.**
 
-Before implementation, inspect the current wordmark/brand usage and canonical design direction, then define the smallest v0 brand-asset set needed for favicon/site icon, social avatar, light/dark/monochrome use, default social preview, and consistent site/email/social application.
+Before implementation, inspect the current wordmark/brand usage, `research/brand-system/research.md`, and canonical design direction. Define the smallest v0 brand-asset set needed for favicon/site icon, social avatar, light/dark/monochrome use, default social preview, and consistent site/email/social application.
 
 Do not reopen the five-topic homepage image plan unless Louda explicitly makes a new decision.
