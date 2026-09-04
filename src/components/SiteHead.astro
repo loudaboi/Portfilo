@@ -31,6 +31,7 @@ const socialImageUrl = site
   ? new URL("/social/portfilo-default.png", site).href
   : undefined;
 const sitemapUrl = site ? new URL("/sitemap-index.xml", site).href : undefined;
+const isHomepage = Astro.url.pathname === "/";
 
 const articleStructuredData = article && canonicalUrl && site
   ? {
@@ -68,7 +69,7 @@ const articleStructuredData = article && canonicalUrl && site
 
 {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 {sitemapUrl && <link rel="sitemap" href={sitemapUrl} />}
-<link rel="stylesheet" href="/homepage-feature-preview.css" />
+{isHomepage && <link rel="stylesheet" href="/homepage-feature.css" />}
 
 {
   social && (
