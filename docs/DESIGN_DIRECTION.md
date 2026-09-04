@@ -1,5 +1,7 @@
 # Portfilo Design Direction
 
+_Last updated: 2026-09-04_
+
 ## Objective
 
 Portfilo should feel like a contemporary editorial institution built for the internet, not a generic news site, SaaS landing page, or AI content product.
@@ -106,13 +108,13 @@ No gradient-first identity.
 
 ## Typography
 
-Limit the system to a small set of roles:
+The implemented v0 typography baseline is:
 
-1. primary sans / grotesk for interface and readable editorial use;
-2. one expressive editorial/display face if it materially improves the identity;
-3. mono for data, source metadata, timestamps, or technical labels.
+1. `Instrument Sans` for interface, navigation, metadata, and much editorial display use;
+2. `Source Serif 4` for long-form/body roles where a serif is used;
+3. `IBM Plex Mono` for technical labels, source metadata, timestamps, and compact utility roles.
 
-Do not freeze exact font families until implementation/design testing.
+These are the current runtime families, not a permanent commitment for every future Portfilo product. Do not replace or expand them during v0 finalization without a concrete design requirement and visual regression review.
 
 Avoid unnecessary font weights and styles.
 
@@ -187,6 +189,8 @@ Prefer:
 
 Generated imagery is illustration, not evidence. It requires a researched visual decision, an approved story image brief before generation, visible synthetic/AI disclosure when published, and human final selection.
 
+The homepage currently uses the separately approved universal feature image recorded in `research/image-system/homepage-featured-cover-decision.md`. That homepage decision does not automatically authorize generated images for individual stories.
+
 Avoid:
 
 - generic stock-photo mood boards;
@@ -229,15 +233,6 @@ Accessibility is part of completion, not a later polish phase.
 
 ## Design fixture rule
 
-Before real editorial content is selected, use clearly labeled design fixtures to test:
+Synthetic content-architecture fixtures remain development-only test material. They may be used to test long headlines, series ordering, draft filtering, wrapping, and other structural behavior, but they must remain excluded from public production routes where required.
 
-- long headlines;
-- long body text;
-- figures;
-- source notes;
-- methodology;
-- corrections;
-- series metadata;
-- mobile wrapping.
-
-Fixtures must not present fabricated reporting as real Portfilo journalism.
+Real published stories are now the primary visual QA material for editorial surfaces. Fixtures must never present fabricated reporting as real Portfilo journalism.
