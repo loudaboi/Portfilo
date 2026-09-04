@@ -27,29 +27,66 @@ const site = Astro.site;
 const canonicalUrl = site && canonical
   ? new URL(Astro.url.pathname, site).href
   : undefined;
+const siteRootUrl = site ? new URL("/", site).href : undefined;
 const socialImageUrl = site
   ? new URL("/social/portfilo-default.png", site).href
   : undefined;
+const brandLogoUrl = site ? new URL("/apple-touch-icon.png", site).href : undefined;
 const sitemapUrl = site ? new URL("/sitemap-index.xml", site).href : undefined;
 const isHomepage = Astro.url.pathname === "/";
+const organizationId = siteRootUrl ? `${siteRootUrl}#organization` : undefined;
+const websiteId = siteRootUrl ? `${siteRootUrl}#website` : undefined;
 
-const articleStructuredData = article && canonicalUrl && site
+const publisherStructuredData = siteRootUrl && organizationId
+  ? {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: "Portfilo",
+      url: siteRootUrl,
+      ...(brandLogoUrl
+        ? {
+            logo: {
+              "@type": "ImageObject",
+              url: brandLogoUrl,
+              width: 180,
+              height: 180,
+            },
+          }
+        : {}),
+    }
+  : undefined;
+
+const homepageStructuredData = isHomepage && siteRootUrl && websiteId && publisherStructuredData
+  ? {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": websiteId,
+          url: siteRootUrl,
+          name: "Portfilo",
+          description,
+          publisher: { "@id": organizationId },
+        },
+        publisherStructuredData,
+      ],
+    }
+  : undefined;
+
+const articleStructuredData = article && canonicalUrl && publisherStructuredData
   ? {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: title,
       description,
       mainEntityOfPage: canonicalUrl,
-      image: socialImageUrl ? [socialImageUrl] : undefined,
       author: {
         "@type": article.author === "Portfilo" ? "Organization" : "Person",
         name: article.author,
+        ...(article.author === "Portfilo" && siteRootUrl ? { url: siteRootUrl } : {}),
       },
-      publisher: {
-        "@type": "Organization",
-        name: "Portfilo",
-        url: new URL("/", site).href,
-      },
+      publisher: publisherStructuredData,
+      ...(websiteId ? { isPartOf: { "@id": websiteId } } : {}),
       ...(article.publishedAt
         ? { datePublished: article.publishedAt.toISOString() }
         : {}),
@@ -58,6 +95,8 @@ const articleStructuredData = article && canonicalUrl && site
         : {}),
     }
   : undefined;
+
+const structuredData = articleStructuredData ?? homepageStructuredData;
 ---
 
 <meta charset="UTF-8" />
@@ -100,10 +139,11 @@ const articleStructuredData = article && canonicalUrl && site
 }
 
 {
-  articleStructuredData && (
+  structuredData && (
     <script
+      is:inline
       type="application/ld+json"
-      set:html={JSON.stringify(articleStructuredData).replace(/</g, "\\u003c")}
+      set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")}
     />
   )
 }
