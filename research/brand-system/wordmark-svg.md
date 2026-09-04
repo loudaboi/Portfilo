@@ -2,60 +2,45 @@
 
 _Last updated: 2026-09-04_
 
-_Status: CREATED FOR PHASE 4B REVIEW / RUNTIME REPLACEMENT NOT AUTHORIZED_
+_Status: USER REFERENCE ACCEPTED / OUTLINED COLOR CANDIDATE READY FOR REVIEW / RUNTIME REPLACEMENT NOT AUTHORIZED_
 
-## Decision
+## Source of truth for this gate
 
-The existing Portfilo live-text wordmark remains the primary brand identity for v0.
+The first Phase 4B SVG attempt was rejected because its standalone rendering did not faithfully match the previously approved/generated Portfilo wordmark.
 
-Phase 4B now has reusable SVG source variants derived from the same implemented construction:
+The user supplied the approved raster reference directly in the Phase 4B review conversation on 2026-09-04. That reference now governs the wordmark geometry for this gate.
 
-- Instrument Sans Bold;
-- tight negative tracking equivalent to `-0.085em` at the source size;
-- `-12deg` horizontal skew;
-- `Port` in ink `#171614`;
-- `fi` in Portfilo blue `#0050a4`;
-- `lo` in Portfilo red `#b42318`.
-
-Files:
+The active review candidate is:
 
 - `public/brand/portfilo-wordmark-color.svg`
-- `public/brand/portfilo-wordmark-ink.svg`
-- `public/brand/portfilo-wordmark-light.svg`
 
-## Usage roles
+It is a path-outlined vector reconstruction of the supplied reference, not editable SVG text and not a font-substitution approximation.
 
-### Color
+The previous text-based `color / ink / light` SVG source files are retired. The monochrome variants will be derived only after the color geometry passes visual review.
 
-Default brand presentation on paper/light neutral surfaces.
+## Color treatment
 
-### Ink
+The reconstructed geometry uses the current canonical Portfilo palette:
 
-One-color mark for restrained print, editorial, legal, or technical use on light surfaces.
+- ink: `#171614`;
+- blue: `#0050a4`;
+- red: `#b42318`.
 
-### Light
+The supplied raster reference governs letter shape, slant, spacing, and overall silhouette. Existing canonical brand colors remain unchanged by this gate.
 
-One-color paper/light mark for dark surfaces.
+## Runtime status
 
-Do not mechanically force both blue and red onto every brand application. The full-color wordmark is the default identity; monochrome variants exist for surfaces where color is inappropriate or loses clarity.
+The website header and footer remain unchanged and continue using their current live HTML/CSS wordmark implementation.
 
-## Source format note
-
-These Phase 4B SVGs intentionally preserve the exact currently implemented typography by referencing the same Instrument Sans variable webfont used by the site. They are vector text source assets, not yet path-outlined distribution exports.
-
-Do not substitute a different local font merely to create outlines. A path-outlined export should be produced only from the approved Instrument Sans Bold rendering so the canonical wordmark does not silently change shape.
-
-The website header and footer remain live HTML/CSS for now. These SVG files do not authorize replacing that implementation before visual review.
+The outlined SVG is a review asset only. It does not authorize replacing the live site wordmark, adding a favicon, or finalizing the social avatar.
 
 ## Next gate
 
-Review the SVG wordmark variants for fidelity to the approved live wordmark.
+Review `public/brand/portfilo-wordmark-color.svg` against the supplied raster reference.
 
-After approval:
+If it passes:
 
-1. lock the primary wordmark construction;
-2. continue Phase 4B with the separate simple-symbol icon exploration for favicon/social-avatar use;
-3. create path-outlined distribution exports when the exact approved rendering can be converted without a font substitution;
-4. consolidate duplicated header/footer wordmark markup only as a later implementation step.
-
-No favicon/icon/social-preview implementation is authorized by this wordmark-source gate alone.
+1. lock the outlined wordmark geometry;
+2. derive ink and light monochrome SVG variants from the exact same paths;
+3. continue the separate simple-symbol icon exploration for favicon/social-avatar use;
+4. later consolidate the duplicated header/footer wordmark implementation without changing its approved appearance.
