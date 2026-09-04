@@ -1,10 +1,26 @@
 # Portfilo Cloudflare Production Setup
 
-_Status: production account configuration pending_
+_Status: PARTIALLY CONFIGURED / FINAL RELEASE CONFIGURATION PENDING_
+
+_Last updated: 2026-09-04_
 
 This document records the approved v0 production configuration for Cloudflare Pages.
 
-Do not invent or hard-code a production domain. Apply the domain-specific values only after the final public Portfilo domain is selected and connected.
+Current Pages project:
+
+`portfilo-app`
+
+Current temporary production URL:
+
+`https://portfilo-app.pages.dev`
+
+Current production branch:
+
+`build/portfilo-v0`
+
+The Pages deployment and subscription baseline exist. Final public-domain, edge-control, analytics, redirect, compliance, and final-domain QA work remains pending.
+
+Do not invent or hard-code a final production domain. Apply domain-specific values only after the final public Portfilo domain is selected and connected.
 
 ## Pages project
 
@@ -34,16 +50,16 @@ Set these in the Cloudflare Pages production environment, not in source control.
 
 ### `SITE_URL`
 
-Value:
+Final value:
 
 `https://<final-production-domain>`
 
 Requirements:
 
 - use the canonical public HTTPS origin only;
-- do not use a preview deployment URL;
+- do not use a preview deployment URL as the final canonical origin;
 - do not use `CF_PAGES_URL` as the canonical production origin;
-- do not set this until the final domain is known.
+- replace the temporary deployment-origin configuration only after the final domain is known.
 
 `SITE_URL` controls canonical URLs, social URLs, sitemap generation, and the production sitemap reference in `robots.txt`.
 
@@ -92,7 +108,7 @@ Do not add Turnstile by default. Revisit it only if the existing honeypot, same-
 
 ## Web Analytics
 
-Enable Cloudflare Web Analytics for the production Pages project and verify the production deployment is reporting traffic.
+Enable Cloudflare Web Analytics for the production Pages project and verify the final production deployment is reporting traffic.
 
 Do not add a separate analytics backend for v0.
 
@@ -100,15 +116,15 @@ If the implementation method changes from Cloudflare's Pages integration to a ma
 
 ## beehiiv production redirect
 
-After the production domain is stable, set beehiiv's Opt-in Redirect URL to:
+After the final public domain is stable, set beehiiv's Opt-in Redirect URL to:
 
 `https://<final-production-domain>/confirmed`
 
-Do not point the redirect at a preview or temporary Pages URL.
+Do not use the temporary Pages URL as the permanent redirect.
 
 ## Production email QA
 
-Run one real end-to-end production test after deployment:
+Run one real end-to-end final-domain test after the custom domain is connected:
 
 1. Open `/subscribe` on the canonical production domain.
 2. Submit a real test address.
@@ -136,17 +152,20 @@ Repository-side Task 1B hardening:
 - production Astro build: PASS;
 - build with validation `SITE_URL`: PASS.
 
+These historical checks do not replace the fresh Phase 4C engineering/security audit.
+
 ## Still pending
 
-These items cannot be completed correctly until the production account/domain is available in the execution environment:
+These items remain release-readiness work:
 
 - final public domain selection;
 - Cloudflare custom-domain connection;
-- production `SITE_URL` value;
-- production `BEEHIIV_API_KEY` configuration;
+- final production `SITE_URL` value;
 - Cloudflare rate limiting rule creation;
 - Cloudflare Web Analytics production verification;
-- beehiiv production Opt-in Redirect URL;
-- deployed end-to-end signup/confirmation/unsubscribe QA.
+- beehiiv final production Opt-in Redirect URL;
+- final-domain signup/confirmation/unsubscribe QA;
+- mailing-address/compliance clearance before the first public newsletter send;
+- final browser/responsive/link/console/security/SEO/performance audit.
 
-Mailing-address/compliance clearance and replacement of development fixture content remain separate launch requirements.
+The existing `portfilo-app.pages.dev` deployment is a working temporary production baseline, not the final public-domain configuration.
