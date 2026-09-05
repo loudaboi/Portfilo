@@ -1,8 +1,8 @@
 # Portfilo Wordmark SVG Source
 
-_Last updated: 2026-09-04_
+_Last updated: 2026-09-06_
 
-_Status: COLOR GEOMETRY APPROVED / MONOCHROME VARIANTS DERIVED / LIVE SITE WORDMARK UNCHANGED_
+_Status: MASTER GEOMETRY APPROVED / FOUR TEAM WORDMARK VARIANTS APPROVED / LIVE SITE WORDMARK UNCHANGED_
 
 ## Approved wordmark geometry
 
@@ -34,23 +34,38 @@ The outer viewBox was reduced by the same 6 units so the corrected wordmark keep
 
 The correction uses optical consistency rather than mechanically identical numeric gaps.
 
-## Approved color treatment
+## Approved palette
 
-Canonical palette:
+Canonical wordmark colors:
 
 - ink: `#171614`;
 - blue: `#0050a4`;
 - red: `#b42318`;
 - paper/light: `#f4f0e8`.
 
-## Derived monochrome variants
+## Approved wordmark variants
 
-The following variants use the exact same approved paths, transforms, spacing, and viewBox as the approved color wordmark:
+All approved variants use the exact same master paths, transforms, spacing, and `0 0 865 219` viewBox. No variant redraws or repositions the wordmark geometry.
 
-- `public/brand/portfilo-wordmark-ink.svg` — all-ink for light surfaces;
-- `public/brand/portfilo-wordmark-light.svg` — all-paper/light for dark surfaces.
+- `public/brand/portfilo-wordmark-color.svg` — ink `Port`, blue `fi`, red `lo`; default full-color treatment for paper/light neutral surfaces.
+- `public/brand/portfilo-wordmark-ink.svg` — all-ink treatment for light surfaces.
+- `public/brand/portfilo-wordmark-light.svg` — all-paper/light treatment for dark surfaces.
+- `public/brand/portfilo-wordmark-port-paper.svg` — paper/light `Port`, blue `fi`, red `lo`; approved 2026-09-06 as a dark-surface full-color team/social variant.
 
-No geometry was redrawn for the monochrome versions. Only the fill treatment changes.
+The monochrome and paper-Port variants change fill treatment only. The approved master silhouette remains unchanged.
+
+## Consistency verification
+
+The 2026-09-06 team logo-pack review checked the four variants for:
+
+- identical `865 x 219` SVG viewBox;
+- identical path geometry and transforms;
+- unchanged optical spacing;
+- exact canonical fills;
+- transparent PNG export behavior;
+- identical raster alpha silhouette at the reviewed export size.
+
+A perceived difference in the light wordmark around the `i` and its dot was investigated. No geometry or spacing difference was found; the light and ink versions use the same outlined geometry. The difference was treated as an optical contrast effect rather than a reason to create a special-case light geometry.
 
 ## Usage roles
 
@@ -66,23 +81,26 @@ One-color treatment for restrained editorial, technical, print, legal, or other 
 
 One-color treatment for dark surfaces.
 
-Do not mechanically force both accent colors onto every brand surface.
+### Paper Port + blue/red
+
+Full-color dark-surface variant for approved team, social, or other brand use where the original ink `Port` would not maintain sufficient contrast.
+
+Do not mechanically force both accent colors onto every brand surface. Use the full wordmark whenever horizontal space reasonably permits it.
 
 ## Runtime status
 
 The website header and footer remain unchanged and continue using the existing live HTML/CSS wordmark implementation.
 
-This approval locks the master wordmark geometry, but does not by itself authorize replacing the live site implementation. Any later consolidation into a shared Wordmark component must preserve the approved appearance.
+Approval of the additional team-use variant does not authorize replacing the live site implementation. Any later consolidation into a shared Wordmark component must preserve the approved appearance.
 
-## Next Phase 4B gate
+## Compact symbol relationship
 
-Continue the separate simple-symbol icon exploration for favicon, social-avatar, and other compact square surfaces.
+The separately approved pinched-rectangle compact symbol remains reserved for favicon, avatar, touch-icon, and other constrained square/compact surfaces. See `research/brand-system/icon-system.md`.
 
-The compact icon should be:
+Do not place the compact symbol beside the wordmark merely as decoration.
 
-- a simple symbol/illustration rather than a forced lettermark;
-- highly legible at small sizes;
-- visually related to Portfilo's restrained editorial/technical identity;
-- evaluated separately from the approved primary wordmark.
+## Team distribution
 
-No favicon, social avatar, or default social-preview replacement is finalized yet.
+The canonical SVG masters remain in the repository. Team-facing copies and ready-to-use PNG exports may be synchronized to the approved Portfilo Google Drive Brand kit for easier access by employees, contractors, writers, marketers, and designers.
+
+If a Drive copy and repository master ever conflict, the repository master governs.
