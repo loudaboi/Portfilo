@@ -1,6 +1,6 @@
 # Portfilo Content Planning
 
-_Last updated: 2026-09-03_
+_Last updated: 2026-09-05_
 
 ## Purpose
 
@@ -40,6 +40,38 @@ Better candidate:
 The question must be specific enough to investigate without assuming the conclusion.
 
 A working headline may be explored later. The final headline is governed by the evidence and the Portfilo copy and editorial standards.
+
+## Approved internal editorial focus
+
+Portfilo remains a business and technology publication. Its approved internal editorial thesis is:
+
+> **Portfilo focuses on understanding how technology is changing companies, industries, work, and the process of building businesses, with the Philippines as its primary reporting context and AI as its strongest current acquisition and reporting wedge.**
+
+This is an internal editorial and prioritization statement. It is **not** a tagline, homepage promise, or automatic authorization to rewrite public institutional copy.
+
+Three priority lanes guide assignment selection:
+
+### AI + Work
+
+Models, products, adoption, implementation, workflows, jobs, economics, governance, and the practical consequences of AI inside companies and industries.
+
+AI is a current reporting and acquisition wedge, not Portfilo's entire identity. A weak AI story does not become publishable merely because AI is strategically important.
+
+### Digital Economy Infrastructure
+
+Payments, fintech, IT-BPM, cloud, data centers, platforms, cybersecurity, connectivity, and other systems that materially enable or constrain the digital economy.
+
+### Building Companies
+
+Product, distribution, sales, pricing, hiring, funding, operations, business models, and the decisions involved in creating and growing companies.
+
+These lanes do **not** replace the public topic taxonomy:
+
+`Business / Technology / Startups / AI / Building`
+
+A story may fit more than one strategic lane or none. Strategic fit influences **priority only after** the normal editorial gate is passed.
+
+Philippine reporting context should be used when geography materially affects the company, market, regulation, infrastructure, workforce, customer, or consequence being examined. Global developments can belong on Portfilo without a manufactured Philippine angle.
 
 ## Reader needs
 
@@ -240,8 +272,11 @@ Priority is editorial judgment informed by:
 - originality potential;
 - evidence availability;
 - Portfilo fit;
+- strategic-lane fit;
 - useful lifespan;
 - reporting effort.
+
+Strategic fit is a **priority input, not an editorial gate**. It may help choose between otherwise worthy assignments. It may not rescue a weak question, weak evidence path, low-value rewrite, or infeasible assignment.
 
 A numerically measurable factor does not automatically deserve more weight than an editorially important one.
 
@@ -272,6 +307,9 @@ STORY QUESTION
 
 Primary topic:
 Business / Technology / Startups / AI / Building
+
+Strategic lane:
+AI + Work / Digital Economy Infrastructure / Building Companies / None
 
 Likely content type:
 Reported / Explained / Guide / Profile / Analysis / Perspective / Field Notes
@@ -382,7 +420,20 @@ A short factual update may use a faster path when:
 - the scope is narrow;
 - Portfilo does not imply consequences that have not been researched.
 
-A larger question raised by the event should become a separate planning candidate and follow the normal gate.
+For fast-moving AI developments, `AI Update` may be used as an **internal operating label** for this narrow path. It is not a new public topic or Astro `contentType`.
+
+An AI Update should answer only what can be established quickly and responsibly, usually:
+
+- what materially changed;
+- what the company, model, product, policy, or research release actually says;
+- what is directly observable or independently verifiable;
+- what remains unknown.
+
+It may be distributed through social or Portfilo Brief without requiring a full website story. If the development requires explanation, testing, or consequential interpretation, create a separate planning candidate and use the normal gate.
+
+`Portfilo Test` is a provisional internal label for an original product/model/workflow test or comparison. The first Portfilo Test is **not authorized for publication** until a dedicated methodology research cycle defines and approves the test standard. Do not turn vendor demos, casual prompting, or one-off impressions into evidence by naming them a Portfilo Test.
+
+A larger question raised by any fast update should become a separate planning candidate and follow the normal gate.
 
 ## Editorial launch research
 
@@ -454,6 +505,8 @@ Useful reference points include:
 - Reuters Institute, `More than 'just the facts': How news audiences think about user needs` (2024): https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024/more-just-facts-how-news-audiences-think-about-user-needs
 - Reuters Institute, `Digital News Report 2024` executive summary: https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024/dnr-executive-summary
 - Smartocto, `User needs explained`: https://smartocto.com/user-needs/
+
+The 2026 vision-alignment pass additionally reviewed current evidence on Philippine digital-economy scale and AI adoption/exposure, publisher investment in original reporting/explanation and specialist distribution, and Google's stated preference for original, locally relevant, expert content in Discover. Those sources support the strategic lanes and AI wedge, but they do not override Portfilo's editorial gates or create public institutional claims automatically.
 
 The research supports using audience needs as an editorial lens, but Portfilo deliberately reduces the broader User Needs 2.0 framework to four needs that fit the v0 publication: Update, Understand, Interpret, and Decide.
 
