@@ -1,6 +1,6 @@
 # Portfilo Content Planning
 
-_Last updated: 2026-09-05_
+_Last updated: 2026-09-06_
 
 ## Purpose
 
@@ -431,7 +431,11 @@ An AI Update should answer only what can be established quickly and responsibly,
 
 It may be distributed through social or Portfilo Brief without requiring a full website story. If the development requires explanation, testing, or consequential interpretation, create a separate planning candidate and use the normal gate.
 
-`Portfilo Test` is a provisional internal label for an original product/model/workflow test or comparison. The first Portfilo Test is **not authorized for publication** until a dedicated methodology research cycle defines and approves the test standard. Do not turn vendor demos, casual prompting, or one-off impressions into evidence by naming them a Portfilo Test.
+`Portfilo Test` is the approved internal format for an original product/model/agent/workflow test or comparison. It is governed by `docs/PORTFILO_TEST_STANDARD.md` and does not bypass this planning gate. A Test candidate must still establish a worthwhile question, contribution, evidence path, feasibility, and scope before a test protocol is built.
+
+Methodology approval does not authorize any specific Test. Each Test requires its own assignment decision and frozen brief before final scored runs.
+
+`AI Showcase` is not a separate research format. A showcase, screenshot sequence, video, carousel, social post, or newsletter item may present evidence from a completed Portfilo Test only as a derivative format. Do not turn vendor demos, casual prompting, one-off impressions, or cherry-picked runs into evidence by calling them a Test or showcase.
 
 A larger question raised by any fast update should become a separate planning candidate and follow the normal gate.
 
@@ -474,6 +478,8 @@ Do not manufacture stories to fill homepage slots.
 ## Relationship to research packets
 
 Once a candidate becomes a substantial assignment, create the appropriate packet under `research/stories/` and follow `RESEARCH_STANDARD.md`.
+
+For a Portfilo Test assignment, use `research/tests/<slug>/` and `research/PORTFILO_TEST_TEMPLATE.md` under the additional rules in `docs/PORTFILO_TEST_STANDARD.md`.
 
 The research packet, not the planning record, becomes the source of truth for factual claims.
 

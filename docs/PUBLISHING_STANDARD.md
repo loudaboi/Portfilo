@@ -103,28 +103,24 @@ An AI Update may live only on a social surface or in Portfilo Brief when a websi
 
 ### Portfilo Test
 
-`Portfilo Test` is a provisional internal format for an original product, model, workflow, or comparison test intended to establish what Portfilo actually observed rather than repeat vendor claims.
+`Portfilo Test` is Portfilo's approved internal format for an original product, model, agent, workflow, or comparison test intended to establish what Portfilo actually observed rather than repeat vendor claims.
 
-The first Portfilo Test is **not authorized for publication** until a dedicated methodology research cycle is completed and explicitly approved.
+The governing methodology is:
 
-That methodology must, at minimum, define how Portfilo records and discloses:
+`docs/PORTFILO_TEST_STANDARD.md`
 
-- the test question;
-- product/model/version;
-- date of testing;
-- setup and environment;
-- inputs and task conditions;
-- repetitions or sample size where relevant;
-- scoring or evaluation method where used;
-- cost and timing where material;
-- raw or retained evidence needed to support the result;
-- reproducibility limits;
-- failure cases;
-- limitations;
-- vendor claims separately from Portfilo observations;
-- any use of synthetic data, private data, or third-party material.
+Methodology approval does **not** authorize a specific Test or publication. Every Portfilo Test must still:
 
-Do not convert a vendor demo, casual prompting session, or subjective first impression into a Portfilo Test merely by adding a label.
+- pass the normal planning/assignment gate;
+- create a Test packet from `research/PORTFILO_TEST_TEMPLATE.md`;
+- freeze the test protocol before final scored runs;
+- retain valid final evidence, including failures;
+- follow the normal research, contradiction, writing, claim-audit, and publication gates;
+- obtain explicit publication approval when required.
+
+Do not convert a vendor demo, casual prompting session, subjective first impression, cherry-picked screenshot, or one-off successful run into a Portfilo Test merely by adding the label.
+
+`AI Showcase` is not a separate evidence standard. A showcase, video, carousel, screenshot sequence, social post, or newsletter item may present evidence from a completed Portfilo Test only as a derivative format under the rules in `docs/PORTFILO_TEST_STANDARD.md`.
 
 ## Stage 1 - Idea
 
@@ -143,6 +139,8 @@ Create a research packet and define:
 - scope;
 - potential sources;
 - potential interviews.
+
+For a Portfilo Test, use the more specific Test packet and frozen-brief requirements in `docs/PORTFILO_TEST_STANDARD.md`.
 
 ## Stage 3 - Research
 
@@ -267,6 +265,15 @@ Challenge:
 - whether audience assumptions are being presented as facts;
 - whether generated rhetoric creates claims or implications the evidence/brief did not authorize;
 - whether the prose has drifted toward the style of one researched exemplar.
+
+For a Portfilo Test, also challenge:
+
+- whether the task set answers the stated question;
+- whether setup differences confound the comparison;
+- whether valid failures were retained;
+- whether non-determinism/sample size weakens the conclusion;
+- whether an infrastructure failure was misclassified as a model failure or vice versa;
+- whether the article generalizes beyond the tested conditions.
 
 Resolve material findings before publication.
 
@@ -422,7 +429,7 @@ A derivative format with a materially different audience need or writing job may
 
 Fast factual items may originate from direct authoritative evidence rather than a substantial story packet, but the supporting source/evidence, publication date, and scope must remain recoverable. Do not manufacture fast posts merely to satisfy a content calendar.
 
-If a Portfilo Test later produces social/video derivatives, those derivatives must preserve the approved test setup, material limitations, and distinction between vendor claims and observed results.
+If a Portfilo Test produces social/video/showcase derivatives, those derivatives must preserve the approved test setup, material limitations, representativeness of highlighted runs, and distinction between vendor claims and observed results.
 
 ## Corrections and updates
 
@@ -440,6 +447,8 @@ Meaningful factual update:
 Do not silently erase the history of a consequential error.
 
 A later style rewrite that does not change factual meaning does not require a correction note, but it must not silently alter material claims or conclusions.
+
+A later product/model version does not silently invalidate a historical Portfilo Test. The original Test remains evidence of its recorded test window. A meaningful retest should be dated and treated as new evidence.
 
 ## Publication checklist
 
@@ -484,9 +493,18 @@ For a fast factual item distributed outside the full story workflow:
 - [ ] no unsupported consequence or prediction added;
 - [ ] human editorial approval obtained.
 
-For a future Portfilo Test:
+For a Portfilo Test:
 
-- [ ] dedicated Portfilo Test methodology has been approved;
-- [ ] the assignment follows that methodology;
-- [ ] test evidence is retained;
-- [ ] limitations and failure cases are disclosed where material.
+- [ ] `docs/PORTFILO_TEST_STANDARD.md` was followed;
+- [ ] the Test passed the normal assignment gate;
+- [ ] the Test brief was frozen before final scored runs;
+- [ ] test evidence is retained, including valid failures;
+- [ ] trial/rerun rules were followed;
+- [ ] evaluation method matches the frozen protocol;
+- [ ] infrastructure anomalies are resolved or disclosed;
+- [ ] vendor claims are separated from Portfilo observations;
+- [ ] cost/timing are reported when material;
+- [ ] privacy/safety conditions are satisfied;
+- [ ] limitations and failure cases are disclosed where material;
+- [ ] highlighted showcase/derivative runs are not presented as representative unless they are;
+- [ ] no conclusion is broader than the tested conditions.

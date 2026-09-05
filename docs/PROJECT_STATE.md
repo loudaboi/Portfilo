@@ -1,17 +1,17 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-05_
+_Last updated: 2026-09-06_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE**
+**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, and the approved Vision Alignment v1 are in place.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, and Portfilo Test Methodology v0 are in place.
 
 Current parallel sequence:
 
 - product release: `Track 6 remaining pre-domain work -> final-domain work when available -> intentional release review -> main release boundary`;
-- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test methodology research NEXT -> later audience/growth subjects one at a time`.
+- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test Methodology v0 COMPLETE -> internal methodology dry-run proposal NEXT -> later audience/growth subjects one at a time`.
 
 Core rules remain:
 
@@ -19,7 +19,9 @@ Core rules remain:
 
 > **Say the thing. Then stop.**
 
-> **AI output has zero evidentiary authority.**
+> **AI output has zero evidentiary authority for factual claims about the outside world.**
+
+> **A Portfilo Test execution record may evidence how the tested system behaved under recorded conditions.**
 
 > **AI output has zero stylistic authority.**
 
@@ -71,11 +73,11 @@ Read first:
 Canonical groups:
 
 - product: `docs/V0_SCOPE.md`, `docs/CONTENT_PLANNING.md`, `BACKLOG.md`;
-- editorial/writing: `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, `docs/WRITING_SYSTEM.md`, `docs/STYLE_RESEARCH_STANDARD.md`, `docs/PUBLISHING_STANDARD.md`, `docs/COPY_STYLE.md`;
+- editorial/writing: `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, `docs/WRITING_SYSTEM.md`, `docs/STYLE_RESEARCH_STANDARD.md`, `docs/PUBLISHING_STANDARD.md`, `docs/COPY_STYLE.md`, `docs/PORTFILO_TEST_STANDARD.md`;
 - design/image: `docs/DESIGN_DIRECTION.md`, `docs/IMAGE_SYSTEM.md`, `docs/PHOTO_TREATMENT.md`, `research/image-system/homepage-featured-cover-decision.md`;
 - brand: `research/brand-system/wordmark-svg.md`, `research/brand-system/icon-system.md`, `research/brand-system/social-preview.md`;
 - email/deployment: `docs/EMAIL_SYSTEM_PLAN.md`, `docs/BEEHIIV_EMAIL_SETUP.md`, `docs/CLOUDFLARE_PRODUCTION_SETUP.md`;
-- research workspace: `research/README.md` and the relevant story packet.
+- research workspace: `research/README.md`, `research/PORTFILO_TEST_TEMPLATE.md`, and the relevant story or Test packet.
 
 Historical copy/navigation/audit records remain for provenance and are mapped in `docs/DOCUMENT_STATUS.md`.
 
@@ -396,7 +398,7 @@ Approved two-speed operating model:
 
 `AI Update` is an internal label for the fast path, not a new public topic or content type.
 
-`Portfilo Test` is a provisional internal format for original product/model/workflow testing. **No Portfilo Test is authorized for publication until the dedicated methodology research cycle is complete and approved.**
+At the Vision Alignment v1 gate, `Portfilo Test` remained provisional pending dedicated methodology research. That dependency has since been resolved by the separately approved Portfilo Test Methodology v0 recorded below.
 
 Vision Alignment v1 did **not** change:
 
@@ -410,7 +412,59 @@ Vision Alignment v1 did **not** change:
 - content schema;
 - technical architecture.
 
-Canonical changes were limited to `docs/CONTENT_PLANNING.md`, `docs/COPY_STYLE.md`, `docs/PUBLISHING_STANDARD.md`, and this project-state record.
+Canonical changes for Vision Alignment v1 were limited to `docs/CONTENT_PLANNING.md`, `docs/COPY_STYLE.md`, `docs/PUBLISHING_STANDARD.md`, and this project-state record.
+
+## Portfilo Test Methodology v0
+
+Status: **COMPLETE / FOUNDER APPROVED / IMPLEMENTED**
+
+Governing standard:
+
+`docs/PORTFILO_TEST_STANDARD.md`
+
+Reusable packet template:
+
+`research/PORTFILO_TEST_TEMPLATE.md`
+
+Methodology v0 establishes:
+
+- question-first, narrow real-world testing;
+- normal planning/assignment gate before any Test;
+- frozen protocol before final scored runs;
+- original task design by default rather than dependence on public benchmark items;
+- pilot/dev separation from final evidence;
+- about 6-12 final tasks across about 2-4 relevant task families as defaults, not quotas;
+- three independent final trials per task/system by default when non-determinism matters;
+- predeclared retry/rerun rules;
+- objective outcome checks before subjective judgment where possible;
+- `PASS/FAIL` or `PASS/PARTIAL/FAIL` rather than a universal 0-100 intelligence score;
+- blinded/randomized human evaluation where practical when subjective judgment matters;
+- second human review for central/close subjective conclusions where practical;
+- explicit version, plan/tier, setup, tools, environment, and material resource recording;
+- cost and time-to-usable-outcome measurement when material;
+- retention of all valid final runs, including failures;
+- distinction among system/task, product/integration, and Portfilo-infrastructure failures;
+- vendor claims separated from Portfilo observations and interpretation;
+- public/synthetic/explicitly permissioned data by default;
+- sandbox/test accounts for consequential external agent actions;
+- Philippine, Filipino, Taglish, Cebuano, or other local testing only when materially relevant;
+- naturally authored/native-validated local-language tasks preferred over mechanical translation;
+- no claim broader than the tested conditions;
+- `AI Showcase` treated only as a derivative presentation format from completed Test evidence, not a separate evidence standard.
+
+The methodology does **not** create:
+
+- a permanent model leaderboard;
+- a universal Portfilo AI score;
+- custom benchmark infrastructure;
+- a database;
+- an automated judge pipeline;
+- weekly retesting;
+- automatic authorization to publish any Test.
+
+No specific Portfilo Test is currently approved for publication by virtue of methodology approval alone.
+
+Recommended next methodology-validation gate: propose one low-risk internal dry run using public or synthetic data to test whether the protocol is operationally clear. Do not execute that dry run until its assignment/protocol is separately approved.
 
 ## Active research assignments
 
@@ -508,6 +562,7 @@ Newsletter state:
 | Phase 4C Track 5A - Code + release integrity | PASS / COMPLETE |
 | Phase 4C Track 5B - Search + institutional copy | PASS / COMPLETE |
 | Vision Alignment v1 | PASS / FOUNDER APPROVED / DOCS ALIGNED |
+| Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / NO SPECIFIC TEST AUTHORIZED |
 | Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
 | Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
 | Brand asset system | PASS / PHASE 4B CLOSED |
@@ -516,15 +571,21 @@ Newsletter state:
 | Track 6 final production/release readiness | OPEN / DOMAIN-DEPENDENT ITEMS PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
+The Portfilo Test Methodology v0 implementation is documentation-only. It changes no runtime code, dependencies, content schema, routes, navigation, design, or public Test output. No new `npm run check` or `npm run build` result is inferred from this documentation change.
+
 ## Exact next tasks
 
 ### Editorial strategy
 
-**Subject 02: research and define the Portfilo Test methodology.**
+**Portfilo Test Methodology v0 is complete. The next gate is to propose one low-risk internal dry run for methodology validation.**
 
-Treat this as a separate research -> evaluation -> approval -> implementation cycle. Before any Portfilo Test is published, establish evidence-backed rules for test questions, versions, setup, reproducibility, scoring, cost/timing, retained evidence, failure cases, limitations, vendor-claim separation, synthetic/private data, and disclosure.
+The dry run should use public or synthetic data, test a narrow non-sensitive workflow, and exist to validate the methodology rather than to manufacture a publishable story.
 
-Do not research the later audience-growth subjects simultaneously. Close Portfilo Test methodology first, then move to the next approved subject.
+Before execution, present the proposed dry-run question, systems, tasks, trial count, evaluation rule, and evidence plan for explicit approval. Do not run it automatically from methodology approval.
+
+No public Portfilo Test is authorized yet. A future publishable Test must independently pass the normal planning gate, freeze its own protocol, produce retained evidence, and pass the normal publication workflow.
+
+Do not research later audience/growth subjects simultaneously. Close the internal methodology validation gate first or explicitly defer it before moving to the next subject.
 
 ### Product release
 
@@ -547,4 +608,4 @@ Domain-dependent items remain deferred until the final public domain exists:
 
 Do not merge to `main` merely because local checks pass. Final release still requires the environment-dependent Track 6 checks and explicit release approval.
 
-Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, or Vision Alignment v1 unless a concrete implementation defect or new evidence justifies a new decision.
+Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, Vision Alignment v1, or Portfilo Test Methodology v0 unless a concrete implementation defect or new evidence justifies a new decision.
