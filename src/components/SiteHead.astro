@@ -1,6 +1,7 @@
 ---
 interface ArticleMeta {
   author: string;
+  authorUrl?: string;
   publishedAt?: Date;
   updatedAt?: Date;
 }
@@ -36,6 +37,9 @@ const sitemapUrl = site ? new URL("/sitemap-index.xml", site).href : undefined;
 const isHomepage = Astro.url.pathname === "/";
 const organizationId = siteRootUrl ? `${siteRootUrl}#organization` : undefined;
 const websiteId = siteRootUrl ? `${siteRootUrl}#website` : undefined;
+const articleAuthorUrl = article?.authorUrl && site
+  ? new URL(article.authorUrl, site).href
+  : undefined;
 
 const publisherStructuredData = siteRootUrl && organizationId
   ? {
@@ -83,7 +87,11 @@ const articleStructuredData = article && canonicalUrl && publisherStructuredData
       author: {
         "@type": article.author === "Portfilo" ? "Organization" : "Person",
         name: article.author,
-        ...(article.author === "Portfilo" && siteRootUrl ? { url: siteRootUrl } : {}),
+        ...(article.author === "Portfilo" && siteRootUrl
+          ? { url: siteRootUrl }
+          : articleAuthorUrl
+            ? { url: articleAuthorUrl }
+            : {}),
       },
       publisher: publisherStructuredData,
       ...(article.publishedAt
