@@ -42,6 +42,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 
 const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
+const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined;
 ---
 
 <!doctype html>
@@ -50,7 +51,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
     <SiteHead
       title={`${title} | Portfilo`}
       description={description}
-      article={{ author, publishedAt, updatedAt }}
+      article={{ author, authorUrl: authorHref, publishedAt, updatedAt }}
     />
   </head>
   <body>
@@ -72,7 +73,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
           <dl class="story-meta">
             <div class="story-meta__item">
               <dt>Author</dt>
-              <dd>{author}</dd>
+              <dd>{authorHref ? <a href={authorHref}>{author}</a> : author}</dd>
             </div>
 
             {
@@ -206,6 +207,8 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       .story-meta__item { min-width: 0; }
       .story-meta dt, .story-rail dt { margin: 0 0 0.32rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
       .story-meta dd, .story-rail dd { margin: 0; overflow-wrap: anywhere; }
+      .story-meta dd a { text-decoration-color: var(--accent); text-underline-offset: 0.15em; }
+      .story-meta dd a:hover { color: var(--accent); }
       .story-meta__series { grid-column: span 2; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
 
       .story-rule { width: min(100%, var(--page-max)); margin-inline: auto; padding: 0.65rem var(--gutter) 0; display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--ink); color: var(--muted); font: 400 0.64rem/1.35 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
