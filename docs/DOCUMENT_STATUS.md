@@ -1,6 +1,6 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-04_
+_Last updated: 2026-09-06_
 
 This file prevents historical implementation notes and research records from being mistaken for current authority.
 
@@ -29,9 +29,14 @@ When documents disagree, use this priority order:
 - `docs/STYLE_RESEARCH_STANDARD.md`
 - `docs/PUBLISHING_STANDARD.md`
 - `docs/COPY_STYLE.md`
+- `docs/PORTFILO_TEST_STANDARD.md`
 - `research/README.md`
 - `research/STYLE_RESEARCH_TEMPLATE.md`
 - `research/STYLE_BRIEF_TEMPLATE.md`
+
+### Audience and distribution
+
+- `docs/SOCIAL_DISTRIBUTION.md`
 
 ### Design and imagery
 

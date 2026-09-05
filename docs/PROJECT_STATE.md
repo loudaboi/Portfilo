@@ -4,14 +4,14 @@ _Last updated: 2026-09-06_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE / TEST EXECUTION DEFERRED**
+**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE / TEST EXECUTION DEFERRED / AUDIENCE & SOCIAL DISTRIBUTION V0 COMPLETE**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, and Portfilo Test Methodology v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, Portfilo Test Methodology v0, and Audience & Social Distribution Strategy v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
 
 Current parallel sequence:
 
 - product release: `Track 6 remaining pre-domain work -> final-domain work when available -> intentional release review -> main release boundary`;
-- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test Methodology v0 COMPLETE / DEFERRED -> Audience / Social Distribution Strategy NEXT`.
+- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test Methodology v0 COMPLETE / DEFERRED -> Audience & Social Distribution Strategy v0 COMPLETE -> Social Visual System v0 + first pre-launch post brief NEXT`.
 
 Core rules remain:
 
@@ -52,11 +52,14 @@ Repository cleanup state:
 - root package metadata is cleaned and the project is explicitly `private`;
 - repository metadata now points to `loudaboi/Portfilo`;
 - `package.json` is explicitly `UNLICENSED` by founder decision;
+- `package-lock.json` root package metadata is now synchronized to `UNLICENSED`;
+- no dependency version or resolution change was included in the lockfile license-sync commit;
 - no dependency upgrade was mixed into the hygiene or Track 5 metadata work.
 
-Known release-integrity follow-up:
+Release-integrity cleanup completed 2026-09-06:
 
-- `package-lock.json` root package metadata still carries the earlier ISC license snapshot and should be synchronized to `UNLICENSED` before final release. Runtime code and dependency resolution are unaffected.
+- commit `0f9b5afdad29f20700516bfb6c1fc71676d04a22` changed only the root `package-lock.json` license snapshot from `ISC` to `UNLICENSED`;
+- no fresh `npm run check` or `npm run build` result is inferred from that metadata-only commit unless separately reported.
 
 ## Documentation authority
 
@@ -74,6 +77,7 @@ Canonical groups:
 
 - product: `docs/V0_SCOPE.md`, `docs/CONTENT_PLANNING.md`, `BACKLOG.md`;
 - editorial/writing: `docs/EDITORIAL_STANDARD.md`, `docs/RESEARCH_STANDARD.md`, `docs/WRITING_SYSTEM.md`, `docs/STYLE_RESEARCH_STANDARD.md`, `docs/PUBLISHING_STANDARD.md`, `docs/COPY_STYLE.md`, `docs/PORTFILO_TEST_STANDARD.md`;
+- audience/distribution: `docs/SOCIAL_DISTRIBUTION.md`;
 - design/image: `docs/DESIGN_DIRECTION.md`, `docs/IMAGE_SYSTEM.md`, `docs/PHOTO_TREATMENT.md`, `research/image-system/homepage-featured-cover-decision.md`;
 - brand: `research/brand-system/wordmark-svg.md`, `research/brand-system/icon-system.md`, `research/brand-system/social-preview.md`;
 - email/deployment: `docs/EMAIL_SYSTEM_PLAN.md`, `docs/BEEHIIV_EMAIL_SETUP.md`, `docs/CLOUDFLARE_PRODUCTION_SETUP.md`;
@@ -329,7 +333,7 @@ Findings/changes:
 - historical documents remain intentionally retained and mapped rather than treated as dead files;
 - repository URL metadata corrected from the obsolete owner path to `loudaboi/Portfilo`;
 - package license explicitly changed to `UNLICENSED` after founder approval;
-- `package-lock.json` root license snapshot synchronization remains a Track 6 release-integrity follow-up.
+- `package-lock.json` root license snapshot synchronization was completed on 2026-09-06 in commit `0f9b5afdad29f20700516bfb6c1fc71676d04a22`; only the root license field changed.
 
 #### Track 5B - Search + Institutional Copy Refinement
 
@@ -466,6 +470,34 @@ No specific Portfilo Test is currently approved for publication by virtue of met
 
 Portfilo Test execution is intentionally deferred. A standalone methodology dry run is not required now. Reopen this subject when Portfilo has an audience and/or a specific high-value Test candidate; at that point, use the Test's pilot/dev phase to validate any remaining operational questions before final evidence-producing runs.
 
+## Audience & Social Distribution Strategy v0
+
+Status: **COMPLETE / FOUNDER APPROVED / CANONICAL**
+
+Governing strategy:
+
+`docs/SOCIAL_DISTRIBUTION.md`
+
+Approved v0 decisions:
+
+- Portfilo social should be useful inside the feed, not merely a stream of article links;
+- the website remains the canonical publication and Portfilo Brief remains the owned audience layer;
+- primary Portfilo social channels are **Facebook, Instagram, and LinkedIn**;
+- Louda's Facebook and LinkedIn act as a personal/human distribution layer alongside the institutional accounts;
+- Instagram is a primary v0 channel, especially for carousels, visual essays, data graphics, editorial imagery, and later Reels;
+- native institutional post formats include Story Post, Carousel Explainer, Editorial Visual Essay, Data / Chart Post, Fast Factual Post, and Editorial Observation;
+- social-only factual work remains subject to Portfilo's normal evidence and research standards;
+- use an editorial-event cadence rather than a daily posting quota;
+- roughly 2-4 meaningful Portfilo posts per week total is the initial capacity target, not per platform and not a mandatory quota;
+- reuse one evidence base and visual master across platforms where appropriate, then adapt natively rather than copy-pasting blindly;
+- Portfilo visual social work should extend the website/brand system and avoid generic Canva-card, AI-slop, gradient/glow, stock-business, and filler-content patterns;
+- TikTok and YouTube remain later channels until a repeatable human-led video workflow is proven;
+- X, Threads, and Reddit have no v0 publishing obligation;
+- pre-launch audience building may begin before the final domain, but the approved strategy does not itself authorize any specific post, visual, or publication action;
+- no social CMS, scheduler, custom analytics backend, paid social, bulk AI content generation, or growth-hack infrastructure is justified for v0.
+
+Next distribution gate: research and define a small **Social Visual System v0** and the **first pre-launch post brief**. Present the visual direction and Post 01 concept for approval before generating assets or publishing anything.
+
 ## Active research assignments
 
 ### C001 - ACTIVE / FLAGSHIP / CONTINUE
@@ -530,7 +562,6 @@ Pending before final public launch:
 - final-domain subscribe/confirm/unsubscribe QA;
 - mailing-address/compliance clearance before first public newsletter send;
 - final browser/responsive/link/console/security/SEO/performance QA;
-- synchronize the root `package-lock.json` license snapshot to `UNLICENSED`;
 - MFA/passkeys where applicable.
 
 Newsletter state:
@@ -551,7 +582,7 @@ Newsletter state:
 | Remote branch cleanup | PASS / ONLY `main` + `build/portfilo-v0` REMAIN |
 | Repository/documentation hygiene audit | PASS / COMPLETE |
 | Document authority map | PASS / `docs/DOCUMENT_STATUS.md` |
-| Package metadata cleanup | PASS / `package.json` PRIVATE + UNLICENSED / LOCKFILE LICENSE SNAPSHOT PENDING SYNC |
+| Package metadata cleanup | PASS / `package.json` + ROOT `package-lock.json` UNLICENSED |
 | Content architecture | PASS / STABLE |
 | Site copy + IA | PASS / DEPLOYED USER APPROVED |
 | Universal homepage feature image | PASS / OPTIMIZED WEBP DELIVERY + APPROVED PNG MASTER RETAINED |
@@ -563,36 +594,37 @@ Newsletter state:
 | Phase 4C Track 5B - Search + institutional copy | PASS / COMPLETE |
 | Vision Alignment v1 | PASS / FOUNDER APPROVED / DOCS ALIGNED |
 | Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / EXECUTION DEFERRED / NO SPECIFIC TEST AUTHORIZED |
-| Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
-| Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
+| Audience & Social Distribution Strategy v0 | PASS / FOUNDER APPROVED / CANONICAL |
+| Latest recorded `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS / PRE-LOCKFILE-SYNC |
+| Latest recorded `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS / PRE-LOCKFILE-SYNC |
 | Brand asset system | PASS / PHASE 4B CLOSED |
 | Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
 | Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
 | Track 6 final production/release readiness | OPEN / DOMAIN-DEPENDENT ITEMS PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
-The Portfilo Test Methodology v0 implementation is documentation-only. It changes no runtime code, dependencies, content schema, routes, navigation, design, or public Test output. No new `npm run check` or `npm run build` result is inferred from this documentation change.
+The Portfilo Test Methodology v0 implementation and Audience & Social Distribution Strategy v0 are documentation-only. They change no runtime code, dependencies, content schema, routes, navigation, design, or public Test/social output. No new `npm run check` or `npm run build` result is inferred from these documentation changes.
 
 ## Exact next tasks
 
-### Editorial strategy
+### Editorial strategy / distribution
 
-**Subject 03: research and define Portfilo's Audience / Social Distribution Strategy.**
+**Subject 03 is complete. Next gate: Social Visual System v0 + first pre-launch post brief.**
 
-Treat this as a separate research -> evaluation -> approval -> implementation cycle. The objective is to determine how Portfilo should begin building and serving an audience before launch and after launch without turning the publication into a generic content account.
+Research the visual problem before making assets. Use the approved Portfilo website/brand direction as the base and evaluate how it should translate to Facebook, Instagram, and LinkedIn without copying another publisher's visual identity.
 
-The research should determine, at minimum:
+The next proposal should define:
 
-- which social/distribution platforms are worth maintaining at v0;
-- the role of Louda's personal account versus Portfilo's brand accounts;
-- which formats belong on each selected platform;
-- how website stories, Portfilo Brief, fast factual updates, and future deeper work should feed distribution;
-- a realistic posting cadence for limited editorial capacity;
-- what can begin before the final domain and what should wait for public launch;
-- how to avoid posting quotas, low-value filler, generic AI-content behavior, and unsupported derivative claims;
-- the initial launch/distribution sequence and what evidence should later trigger changes to the strategy.
+- 2-3 small reusable visual systems at most, such as Visual Essay, Evidence/Data, and Story;
+- shared typography, spacing, image, source-note, and color behavior;
+- practical aspect-ratio/crop behavior across the three primary platforms;
+- the exact job and concept of Post 01;
+- whether Post 01 needs editorial imagery, typography-only treatment, or another approved asset type;
+- what is reusable versus specific to Post 01.
 
-Do not begin an official posting cadence merely because this strategy subject has started. Research and approve the operating plan first. Portfilo Test execution remains deferred unless a later specific Test candidate justifies reopening it.
+Present the visual-system recommendation and Post 01 brief for explicit approval. **Do not generate social assets and do not publish any post from this approval alone.**
+
+Portfilo Test execution remains deferred unless a later specific Test candidate justifies reopening it.
 
 ### Product release
 
@@ -600,7 +632,7 @@ Do not begin an official posting cadence merely because this strategy subject ha
 
 Current actionable items before the domain exists:
 
-1. synchronize `package-lock.json` root license metadata to `UNLICENSED` and rerun local validation if that file changes;
+1. if not already run locally after the lockfile metadata sync, run and record fresh `npm run check` and `npm run build` results;
 2. enable/verify Cloudflare Web Analytics on the temporary Pages deployment;
 3. continue temporary-production QA where useful.
 
@@ -615,4 +647,4 @@ Domain-dependent items remain deferred until the final public domain exists:
 
 Do not merge to `main` merely because local checks pass. Final release still requires the environment-dependent Track 6 checks and explicit release approval.
 
-Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, Vision Alignment v1, or Portfilo Test Methodology v0 unless a concrete implementation defect or new evidence justifies a new decision.
+Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, Vision Alignment v1, Portfilo Test Methodology v0, or Audience & Social Distribution Strategy v0 unless a concrete implementation defect or new evidence justifies a new decision.
