@@ -4,13 +4,14 @@ _Last updated: 2026-09-05_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - PHASE 4C TRACKS 1-5 COMPLETE / TRACK 6 FINAL RELEASE READINESS NEXT**
+**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, and Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5 are in place.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, and the approved Vision Alignment v1 are in place.
 
-Next sequence:
+Current parallel sequence:
 
-`Track 6 final production/release readiness -> intentional release review -> main release boundary`
+- product release: `Track 6 remaining pre-domain work -> final-domain work when available -> intentional release review -> main release boundary`;
+- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test methodology research NEXT -> later audience/growth subjects one at a time`.
 
 Core rules remain:
 
@@ -262,7 +263,7 @@ The Phase 4B brand design decisions are closed unless Louda explicitly reopens t
 
 ### 4C - full engineering / security / SEO / quality audit
 
-Status: **TRACKS 1-5 COMPLETE / TRACK 6 NEXT**
+Status: **TRACKS 1-5 COMPLETE / TRACK 6 OPEN**
 
 Completed audit sequence:
 
@@ -366,6 +367,51 @@ Primary reader needs:
 
 Partner content is commercial and must be unmistakably labeled.
 
+## Vision Alignment v1
+
+Status: **COMPLETE / FOUNDER APPROVED / CANONICAL DOCS ALIGNED**
+
+Approved internal editorial thesis:
+
+> **Portfilo focuses on understanding how technology is changing companies, industries, work, and the process of building businesses, with the Philippines as its primary reporting context and AI as its strongest current acquisition and reporting wedge.**
+
+This is an internal editorial and prioritization statement, not a public tagline or automatic public-copy change.
+
+Priority lanes:
+
+1. **AI + Work** - models, products, adoption, implementation, workflows, jobs, economics, governance, and company/industry consequences;
+2. **Digital Economy Infrastructure** - payments, fintech, IT-BPM, cloud, data centers, platforms, cybersecurity, connectivity, and enabling systems;
+3. **Building Companies** - product, distribution, sales, pricing, hiring, funding, operations, business models, and company-building decisions.
+
+The existing public topics remain unchanged:
+
+`Business / Technology / Startups / AI / Building`
+
+AI is a reporting/acquisition wedge, not Portfilo's entire identity. Strategic-lane fit affects prioritization only after the normal editorial gate is passed.
+
+Approved two-speed operating model:
+
+- **fast factual layer:** narrow, verified updates when the value is establishing what materially changed;
+- **deep layer:** explanation, analysis, reporting, datasets, interviews, investigations, and other substantial work using the existing full pipeline.
+
+`AI Update` is an internal label for the fast path, not a new public topic or content type.
+
+`Portfilo Test` is a provisional internal format for original product/model/workflow testing. **No Portfilo Test is authorized for publication until the dedicated methodology research cycle is complete and approved.**
+
+Vision Alignment v1 did **not** change:
+
+- brand identity;
+- wordmark;
+- navigation;
+- public topic taxonomy;
+- website design;
+- Portfilo Brief name;
+- current homepage/About body copy;
+- content schema;
+- technical architecture.
+
+Canonical changes were limited to `docs/CONTENT_PLANNING.md`, `docs/COPY_STYLE.md`, `docs/PUBLISHING_STANDARD.md`, and this project-state record.
+
 ## Active research assignments
 
 ### C001 - ACTIVE / FLAGSHIP / CONTINUE
@@ -376,6 +422,8 @@ Packet: `research/stories/ai-pilot-to-production/`
 
 State: `CONTINUE / OUTREACH READY`.
 
+Vision fit: **STRONG / AI + WORK**.
+
 The Swarm Philippine AI Report 2025 contains an unresolved 65% vs 40% proof-of-concept contradiction. Do not use 65% as a clean factual anchor until reconciled. No draft is authorized until reporting and style-research gates are met.
 
 ### C021 - ACTIVE / SOURCE RECONNAISSANCE
@@ -384,6 +432,8 @@ Question: How much Philippine data-center capacity is operating, under construct
 
 Packet: `research/stories/data-center-capacity-ledger/`
 
+Vision fit: **STRONG / DIGITAL ECONOMY INFRASTRUCTURE**.
+
 Keep capacity categories distinct. No national subtotal is publication-ready.
 
 ### C017 - WAITING / EXTERNAL CLARIFICATION
@@ -391,6 +441,8 @@ Keep capacity categories distinct. No national subtotal is publication-ready.
 Question: What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
 
 Packet: `research/stories/zero-fee-merchant-payments/`
+
+Vision fit: **POTENTIAL / DIGITAL ECONOMY INFRASTRUCTURE**.
 
 Needs narrow written BSP/PPMI clarification. It does not block v0 finalization.
 
@@ -455,32 +507,44 @@ Newsletter state:
 | Phase 4C Track 4 - Security + reliability | PASS / COMPLETE |
 | Phase 4C Track 5A - Code + release integrity | PASS / COMPLETE |
 | Phase 4C Track 5B - Search + institutional copy | PASS / COMPLETE |
-| Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 |
-| Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 |
+| Vision Alignment v1 | PASS / FOUNDER APPROVED / DOCS ALIGNED |
+| Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
+| Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
 | Brand asset system | PASS / PHASE 4B CLOSED |
 | Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
 | Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
-| Track 6 final production/release readiness | NEXT |
+| Track 6 final production/release readiness | OPEN / DOMAIN-DEPENDENT ITEMS PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
-## Exact next task
+## Exact next tasks
 
-**Begin Phase 4C Track 6: final production and release readiness.**
+### Editorial strategy
 
-Track 6 is the release-gate pass. It should complete the remaining environment-dependent work rather than reopen closed design/editorial decisions.
+**Subject 02: research and define the Portfilo Test methodology.**
 
-Required sequence:
+Treat this as a separate research -> evaluation -> approval -> implementation cycle. Before any Portfilo Test is published, establish evidence-backed rules for test questions, versions, setup, reproducibility, scoring, cost/timing, retained evidence, failure cases, limitations, vendor-claim separation, synthetic/private data, and disclosure.
 
-1. choose/configure the final public domain;
-2. replace production `SITE_URL` with the final canonical origin;
-3. configure Cloudflare `/api/subscribe` edge rate limiting;
-4. enable/verify Cloudflare Web Analytics;
-5. set and verify the final beehiiv confirmation redirect to `/confirmed`;
-6. complete final-domain subscribe/confirm/unsubscribe and first-send compliance QA;
-7. synchronize `package-lock.json` root license metadata to `UNLICENSED` and rerun local validation if that file changes;
-8. run the final deployed browser/mobile/internal-link/404/console/metadata/security/performance QA;
-9. perform the intentional release review before any merge to `main`.
+Do not research the later audience-growth subjects simultaneously. Close Portfilo Test methodology first, then move to the next approved subject.
 
-Do not merge to `main` merely because local checks pass. Final release requires the environment-dependent Track 6 checks and explicit release approval.
+### Product release
 
-Do not reopen approved Phase 4A image design, Phase 4B brand design, or Track 5 institutional copy unless a concrete implementation defect is found or Louda explicitly requests a new decision.
+**Continue the remaining pre-domain portion of Phase 4C Track 6 without inventing a final domain.**
+
+Current actionable items before the domain exists:
+
+1. synchronize `package-lock.json` root license metadata to `UNLICENSED` and rerun local validation if that file changes;
+2. enable/verify Cloudflare Web Analytics on the temporary Pages deployment;
+3. continue temporary-production QA where useful.
+
+Domain-dependent items remain deferred until the final public domain exists:
+
+- final production `SITE_URL`;
+- custom-domain/canonical-host configuration;
+- Cloudflare zone-level `/api/subscribe` rate limiting;
+- beehiiv production opt-in redirect;
+- final-domain subscribe/confirm/unsubscribe QA;
+- final release browser/metadata/security/performance verification.
+
+Do not merge to `main` merely because local checks pass. Final release still requires the environment-dependent Track 6 checks and explicit release approval.
+
+Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, or Vision Alignment v1 unless a concrete implementation defect or new evidence justifies a new decision.
