@@ -1,8 +1,8 @@
 # Portfilo Cloudflare Production Setup
 
-_Status: PARTIALLY CONFIGURED / FINAL RELEASE CONFIGURATION PENDING_
+_Status: PARTIALLY CONFIGURED / TRACK 6 IN PROGRESS / FINAL DOMAIN PENDING_
 
-_Last updated: 2026-09-04_
+_Last updated: 2026-09-05_
 
 This document records the approved v0 production configuration for Cloudflare Pages.
 
@@ -18,7 +18,7 @@ Current production branch:
 
 `build/portfilo-v0`
 
-The Pages deployment and subscription baseline exist. Final public-domain, edge-control, analytics, redirect, compliance, and final-domain QA work remains pending.
+The Pages deployment and subscription baseline exist. Cloudflare Web Analytics can be enabled on the current Pages project before the final domain exists. Final public-domain configuration, zone-level rate limiting, beehiiv redirect, compliance, and final-domain QA remain pending.
 
 Do not invent or hard-code a final production domain. Apply domain-specific values only after the final public Portfilo domain is selected and connected.
 
@@ -59,7 +59,8 @@ Requirements:
 - use the canonical public HTTPS origin only;
 - do not use a preview deployment URL as the final canonical origin;
 - do not use `CF_PAGES_URL` as the canonical production origin;
-- replace the temporary deployment-origin configuration only after the final domain is known.
+- keep the current temporary `https://portfilo-app.pages.dev` value until the final domain is known;
+- replace the temporary deployment-origin configuration only after the final domain is connected and ready for canonical cutover.
 
 `SITE_URL` controls canonical URLs, social URLs, sitemap generation, and the production sitemap reference in `robots.txt`.
 
@@ -89,9 +90,18 @@ After the final domain is selected:
 
 The v0 protection should stay simple and should not introduce Turnstile unless actual abuse requires it.
 
-Cloudflare Free provides one rate limiting rule. Use that rule for the subscription endpoint.
+Cloudflare rate limiting rules are deployed at the zone level. The temporary `portfilo-app.pages.dev` hostname is not a Portfilo-owned zone, so this WAF rule should be created only after the final custom domain is attached to a Cloudflare zone.
 
-Recommended initial rule:
+Current Cloudflare Free-plan constraints verified during Track 6:
+
+- one rate limiting rule;
+- URI Path is available as a rule-expression field;
+- IP is available as the counting characteristic;
+- the Free-plan counting period is 10 seconds;
+- the Free-plan mitigation timeout is 10 seconds;
+- HTTP Method is not available as a Free-plan rule-expression field.
+
+Recommended initial rule after the final domain is active:
 
 - matching path: `/api/subscribe`;
 - counting characteristic: IP;
@@ -100,7 +110,7 @@ Recommended initial rule:
 - action: Block;
 - mitigation duration: 10 seconds.
 
-On the Free plan, URI Path is available as a matching field and IP is available as the counting characteristic. Method matching is not available on the Free-plan rate limiting rule, so the path-level rule will count all requests to `/api/subscribe`. The endpoint itself still rejects non-POST requests with `405`.
+Because Method matching is not available on the Free-plan rate limiting rule, the path-level rule will count all requests to `/api/subscribe`. The endpoint itself still rejects non-POST requests with `405`.
 
 This threshold is deliberately tolerant of normal signup retries while stopping simple high-rate automation. Review Cloudflare security events after launch and adjust only if real traffic shows false positives or abuse.
 
@@ -108,11 +118,20 @@ Do not add Turnstile by default. Revisit it only if the existing honeypot, same-
 
 ## Web Analytics
 
-Enable Cloudflare Web Analytics for the production Pages project and verify the final production deployment is reporting traffic.
+Cloudflare Pages provides a one-click Web Analytics integration and does not require the final public domain to be selected first.
 
-Do not add a separate analytics backend for v0.
+Current Track 6 action:
 
-If the implementation method changes from Cloudflare's Pages integration to a manually inserted beacon, update the Privacy page before launch.
+1. In Cloudflare, open **Workers & Pages**.
+2. Select the `portfilo-app` Pages project.
+3. Open **Metrics**.
+4. Select **Enable** under **Web Analytics**.
+5. Trigger or wait for the next production deployment.
+6. Verify the Pages deployment is reporting traffic in Cloudflare Web Analytics.
+
+Cloudflare automatically injects the Web Analytics JavaScript snippet into valid HTML on the next deployment. Do not add a separate analytics backend or manually insert a second beacon for v0.
+
+If the implementation method changes from Cloudflare's Pages integration to a manually inserted beacon, review and update the Privacy page before launch.
 
 ## beehiiv production redirect
 
@@ -139,7 +158,7 @@ Run one real end-to-end final-domain test after the custom domain is connected:
 
 ## Security verification
 
-Repository-side Task 1B hardening:
+Repository-side subscription hardening:
 
 - `/api/subscribe` enforces the 4 KB request cap against actual body bytes as well as the `Content-Length` fast-path;
 - JSON signup: validated;
@@ -148,24 +167,33 @@ Repository-side Task 1B hardening:
 - cross-origin request rejection when `Origin` is supplied: validated;
 - oversized actual body without relying on `Content-Length`: validated;
 - honeypot requests remain accepted without forwarding to beehiiv: validated;
-- `npm audit`: zero vulnerabilities reported on 2026-09-02;
-- production Astro build: PASS;
-- build with validation `SITE_URL`: PASS.
+- upstream beehiiv requests use a 10-second timeout;
+- latest recorded `npm audit`: zero vulnerabilities;
+- latest post-Track-5 `npm run check`: PASS, user-reported 2026-09-05;
+- latest post-Track-5 `npm run build`: PASS, user-reported 2026-09-05.
 
-These historical checks do not replace the fresh Phase 4C engineering/security audit.
+These checks do not replace the final deployed Track 6 runtime QA.
 
 ## Still pending
 
-These items remain release-readiness work:
+Can be completed before the final domain:
+
+- enable and verify Cloudflare Web Analytics on the `portfilo-app` Pages project;
+- synchronize the root `package-lock.json` package license snapshot from `ISC` to `UNLICENSED`;
+- continue temporary-production browser/mobile/link/404/console/metadata QA where the environment permits.
+
+Blocked on the final public domain:
 
 - final public domain selection;
 - Cloudflare custom-domain connection;
 - final production `SITE_URL` value;
-- Cloudflare rate limiting rule creation;
-- Cloudflare Web Analytics production verification;
+- Cloudflare zone-level `/api/subscribe` rate limiting rule;
 - beehiiv final production Opt-in Redirect URL;
 - final-domain signup/confirmation/unsubscribe QA;
-- mailing-address/compliance clearance before the first public newsletter send;
-- final browser/responsive/link/console/security/SEO/performance audit.
+- final canonical-host metadata/redirect verification.
 
-The existing `portfilo-app.pages.dev` deployment is a working temporary production baseline, not the final public-domain configuration.
+Also required before first public newsletter send:
+
+- mailing-address/compliance clearance.
+
+The existing `portfilo-app.pages.dev` deployment remains the working temporary production baseline, not the final public-domain configuration.
