@@ -1,6 +1,6 @@
 # Portfilo Copy Style
 
-_Last updated: 2026-09-03_
+_Last updated: 2026-09-05_
 
 ## Purpose
 
@@ -61,6 +61,16 @@ Portfilo's identity should come from:
 
 The homepage should show the publication before it explains the publication.
 
+## Internal editorial center
+
+Portfilo's approved internal editorial center is understanding how technology is changing companies, industries, work, and the process of building businesses, with the Philippines as its primary reporting context and AI as its strongest current acquisition and reporting wedge.
+
+This is **internal strategy**, not public brand copy.
+
+It does not authorize a new tagline, masthead line, homepage mission statement, About rewrite, or repeated use of `Philippines`, `AI`, `work`, or `building` across public surfaces. Public copy should change only when the relevant page has a concrete communication problem and the proposed line has institutional authority.
+
+AI is a wedge, not Portfilo's whole identity. Public language should not make Portfilo sound like an AI-tools account, AI consultancy, or trend feed.
+
 ## Geography
 
 Philippine relevance remains part of Portfilo's reporting and early distribution strategy, but geography is **not required brand copy**.
@@ -77,18 +87,21 @@ A global story does not need a manufactured Philippine justification to belong o
 
 The early audience is an internal editorial and distribution focus, not a public slogan.
 
-Portfilo is initially aimed at younger readers around the founder's peer group who are curious about business, technology, startups, AI, companies, careers, and building.
+Portfilo is initially aimed at people trying to understand, work in, or build within the changing business and technology economy, especially readers whose work or decisions are increasingly shaped by software, AI, digital platforms, infrastructure, and company-building.
 
-They may be students, early-career operators, developers, designers, sellers, founders, or simply people trying to understand how companies and technology work.
+That can include students, early-career professionals, operators, developers, designers, sellers, managers, founders, and other people trying to understand how companies and technology actually work.
 
-Do not publicly label them as:
+The Philippines is the primary reporting and early-distribution context, but this internal audience definition does not require every reader or every story to be Philippine-specific.
+
+Do not publicly label the audience as:
 
 - Gen Z;
 - young Filipinos;
 - ambitious Filipinos;
 - future leaders;
 - builders of tomorrow;
-- high performers.
+- high performers;
+- emerging decision-makers.
 
 Do not flatter the audience. Make the product worth reading.
 
@@ -326,6 +339,25 @@ If something is an estimate, claim, preview, hypothesis, or judgment, label it a
 
 A more confident sentence is not automatically a better sentence.
 
+## Fast AI copy
+
+Fast AI coverage must follow the same voice and evidence rules as other Portfilo work.
+
+Do not use urgency or spectacle as a substitute for information. Avoid default language such as:
+
+- insane;
+- crazy;
+- mind-blowing;
+- game-changing;
+- this changes everything;
+- you need to see this;
+- X just killed Y;
+- the future is here.
+
+A fast update should state what materially changed and what is known. A test or showcase should state what was tested and what was observed. Vendor claims must remain distinguishable from Portfilo's own observations.
+
+Social or video copy may be concise and native to the platform, but it may not become more certain, promotional, or sensational than the underlying evidence.
+
 ## Headlines
 
 A Portfilo headline should usually:
@@ -427,6 +459,8 @@ It does not need:
 
 Founder treatment remains minimal unless deliberately reopened later.
 
+The 2026 vision alignment does not itself authorize a rewrite of the current About or homepage copy. Any future public change still requires a concrete communication reason, provenance, and normal approval.
+
 ## Newsletter copy
 
 Subscribe is product copy.
@@ -507,6 +541,8 @@ If removing a sentence makes the page clearer, remove it.
 The original content-first architecture was adopted after reviewing the failed Portfilo copy implementation and studying publications including BackScoop, Morning Brew, and The Hustle.
 
 The current writing system adds professional content-design and editorial-form guidance from Poynter, GOV.UK, Microsoft, and other form-specific references recorded in `docs/WRITING_SYSTEM.md`.
+
+The 2026 vision-alignment pass adds current evidence about the scale of the Philippine digital economy, uneven AI adoption and labor exposure, publisher movement toward original reporting/explanation and specialist distribution, and platform pressure against generic/automated content. Those findings inform internal strategy; they do not automatically create public copy.
 
 The key lesson is not to copy wording. Professional examples and guides can establish useful **forms, sequencing decisions, and editing tests**. They do not grant authority to imitate another publication's voice.
 
