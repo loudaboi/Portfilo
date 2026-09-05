@@ -1,16 +1,16 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-04_
+_Last updated: 2026-09-05_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization — PHASE 4B BRAND ASSET SYSTEM COMPLETE / PHASE 4C AUDIT NEXT**
+**Portfilo v0 / Product Finalization - PHASE 4C TRACKS 1-5 COMPLETE / TRACK 6 FINAL RELEASE READINESS NEXT**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, and v0 brand asset system are in place.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, and Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5 are in place.
 
 Next sequence:
 
-`Phase 4C engineering/security/SEO/accessibility/performance/release audit -> intentional release review`
+`Track 6 final production/release readiness -> intentional release review -> main release boundary`
 
 Core rules remain:
 
@@ -47,7 +47,13 @@ Repository cleanup state:
 - rejected Astra preview assets and temporary homepage preview files are removed;
 - accidental `tmp-test.txt` is removed;
 - root package metadata is cleaned and the project is explicitly `private`;
-- no dependency upgrade was mixed into the hygiene pass.
+- repository metadata now points to `loudaboi/Portfilo`;
+- `package.json` is explicitly `UNLICENSED` by founder decision;
+- no dependency upgrade was mixed into the hygiene or Track 5 metadata work.
+
+Known release-integrity follow-up:
+
+- `package-lock.json` root package metadata still carries the earlier ISC license snapshot and should be synchronized to `UNLICENSED` before final release. Runtime code and dependency resolution are unaffected.
 
 ## Documentation authority
 
@@ -153,20 +159,20 @@ Changes:
 - `research/README.md` updated so editorial-launch research is correctly treated as completed historical strategy work;
 - historical implementation/research records preserved rather than deleted.
 
-Intentionally deferred to Phase 4C:
+Intentionally deferred to Phase 4C at that point:
 
 - dependency upgrades;
 - broad CSS/font/token refactoring;
 - image delivery/LCP optimization;
 - full security/SEO/accessibility/performance review.
 
-The approved homepage feature PNG is about 2.58 MB and is currently delivered as a CSS background. It passed visual review; optimization must be a measured Phase 4C performance task rather than an unreviewed visual replacement.
+The approved homepage feature PNG is about 2.58 MB and remains the approved master/provenance asset. The production homepage serves the optimized WebP derivative rather than the PNG as the feature-panel background.
 
-No runtime source, dependency version, build command, or dependency set changed in this hygiene pass. The latest hygiene commit has **not** been rerun through the user's local `npm run check` / `npm run build`; the most recent local passes occurred immediately before this documentation/package-metadata-only cleanup.
+The hygiene pass itself did not rerun local validation. Later Phase 4C work has since been validated with fresh `npm run check` and `npm run build` passes reported by the user on 2026-09-05.
 
 ## Phase 4
 
-### 4A — editorial image system
+### 4A - editorial image system
 
 Status: **HOMEPAGE SYSTEM APPROVED / IMPLEMENTED / VALIDATED**
 
@@ -196,7 +202,7 @@ Validation recorded before the hygiene pass:
 
 Per-story generated-image pilot: **PAUSED**. No C030 or other story image is currently authorized for implementation.
 
-### 4B — brand asset system
+### 4B - brand asset system
 
 Status: **COMPLETE / USER APPROVED / IMPLEMENTED / DEPLOYED SOCIAL-PREVIEW PASS**
 
@@ -254,27 +260,95 @@ Duplicate live wordmark markup is intentionally **not** being refactored during 
 
 The Phase 4B brand design decisions are closed unless Louda explicitly reopens them.
 
-### 4C — full engineering / security / SEO / quality audit
+### 4C - full engineering / security / SEO / quality audit
 
-Status: **NEXT**
+Status: **TRACKS 1-5 COMPLETE / TRACK 6 NEXT**
 
-Must cover:
+Completed audit sequence:
 
-- Astro/content architecture and code quality;
-- dependency freshness/compatibility and secret exposure;
-- Cloudflare subscription function and abuse controls;
-- accessibility and responsive behavior;
-- performance and image delivery;
-- canonical/robots/sitemap metadata;
-- Open Graph/X previews;
-- Article structured data and image metadata;
-- favicon/legacy-icon technical integrity across relevant browser/device surfaces;
-- internal links and 404/error states;
-- browser console;
-- fixture leakage;
-- final deployment/domain configuration.
+#### Track 1 - Technical SEO foundation
 
-Do not infer a pass from code inspection alone.
+Status: **COMPLETE**
+
+- canonical, robots, sitemap, social metadata, Article structured-data baseline, icon metadata, and related search-facing implementation reviewed and corrected where needed;
+- Google indexing/search visibility is not yet established and is not being treated as equivalent to technical SEO readiness.
+
+#### Track 2 - Performance
+
+Status: **COMPLETE**
+
+- homepage feature-image delivery optimized while retaining the approved PNG master/provenance asset;
+- production feature-panel image delivery uses the optimized WebP derivative;
+- no speculative design replacement was introduced.
+
+#### Track 3 - Accessibility + responsive QA
+
+Status: **COMPLETE**
+
+- accessibility and responsive implementation reviewed through the Phase 4C pass;
+- approved layout/brand decisions were not reopened without a concrete defect.
+
+#### Track 4 - Security + reliability
+
+Status: **COMPLETE / VALIDATED**
+
+Subscription endpoint hardening includes:
+
+- true streaming 4 KB request-body limit;
+- 10-second beehiiv upstream timeout;
+- tighter server-side email validation;
+- POST-only behavior;
+- same-origin check when `Origin` is supplied;
+- honeypot handling;
+- provider failure/rate-limit handling.
+
+Validation recorded for Track 4:
+
+- `npm run check`: PASS, user-reported;
+- `npm run build`: PASS, user-reported;
+- `npm audit`: 0 vulnerabilities, user-reported;
+- normal signup: PASS;
+- non-POST request: 405 PASS;
+- malformed email: 400 PASS;
+- oversized body: 413 PASS.
+
+Cloudflare edge rate limiting remains intentionally deferred to final-domain setup in Track 6.
+
+#### Track 5A - Code & Release Integrity Audit
+
+Status: **COMPLETE**
+
+Findings/changes:
+
+- no broken internal route construction found in the inspected production source;
+- production fixture leakage checks passed by source inspection;
+- no obvious temporary files, secrets, committed build output, or rejected preview assets found in the audited tree;
+- historical documents remain intentionally retained and mapped rather than treated as dead files;
+- repository URL metadata corrected from the obsolete owner path to `loudaboi/Portfilo`;
+- package license explicitly changed to `UNLICENSED` after founder approval;
+- `package-lock.json` root license snapshot synchronization remains a Track 6 release-integrity follow-up.
+
+#### Track 5B - Search + Institutional Copy Refinement
+
+Status: **COMPLETE / IMPLEMENTED / VALIDATED**
+
+Implemented narrowly from approved/publicly grounded copy:
+
+- homepage title: `Portfilo | Business and Technology Publication`;
+- homepage meta description now uses the approved publication identity plus approved coverage language;
+- About meta description now describes the actual About-page contents;
+- existing Louda Tuppal founder block now has the stable `#louda-tuppal` anchor;
+- Louda Tuppal story bylines link to `/about#louda-tuppal`;
+- Article structured data supports a human `author.url` while `Portfilo` remains a valid Organization author.
+
+No About-body rewrite, generic mission, permanent tagline, contact email, keyword stuffing, filler page, author CMS, or speculative SEO surface was added.
+
+Fresh post-Track-5 validation on 2026-09-05:
+
+- `npm run check`: PASS, user-reported;
+- `npm run build`: PASS, user-reported.
+
+Track 6 remains responsible for final deployment/domain/runtime verification. Do not infer final production readiness from source inspection or local build validation alone.
 
 ## Editorial model
 
@@ -294,7 +368,7 @@ Partner content is commercial and must be unmistakably labeled.
 
 ## Active research assignments
 
-### C001 — ACTIVE / FLAGSHIP / CONTINUE
+### C001 - ACTIVE / FLAGSHIP / CONTINUE
 
 Question: What separates an AI pilot from a production system inside a Philippine company?
 
@@ -304,7 +378,7 @@ State: `CONTINUE / OUTREACH READY`.
 
 The Swarm Philippine AI Report 2025 contains an unresolved 65% vs 40% proof-of-concept contradiction. Do not use 65% as a clean factual anchor until reconciled. No draft is authorized until reporting and style-research gates are met.
 
-### C021 — ACTIVE / SOURCE RECONNAISSANCE
+### C021 - ACTIVE / SOURCE RECONNAISSANCE
 
 Question: How much Philippine data-center capacity is operating, under construction, committed, and merely announced?
 
@@ -312,7 +386,7 @@ Packet: `research/stories/data-center-capacity-ledger/`
 
 Keep capacity categories distinct. No national subtotal is publication-ready.
 
-### C017 — WAITING / EXTERNAL CLARIFICATION
+### C017 - WAITING / EXTERNAL CLARIFICATION
 
 Question: What does `zero fees for small merchant payments` actually mean under the BSP's 2026 payment rules?
 
@@ -320,7 +394,7 @@ Packet: `research/stories/zero-fee-merchant-payments/`
 
 Needs narrow written BSP/PPMI clarification. It does not block v0 finalization.
 
-### C029 — HOLD / FUTURE AUDIENCE RESEARCH
+### C029 - HOLD / FUTURE AUDIENCE RESEARCH
 
 Packet: `research/stories/second-question-after-headline/`
 
@@ -350,6 +424,7 @@ Pending before final public launch:
 - final-domain subscribe/confirm/unsubscribe QA;
 - mailing-address/compliance clearance before first public newsletter send;
 - final browser/responsive/link/console/security/SEO/performance QA;
+- synchronize the root `package-lock.json` license snapshot to `UNLICENSED`;
 - MFA/passkeys where applicable.
 
 Newsletter state:
@@ -370,25 +445,42 @@ Newsletter state:
 | Remote branch cleanup | PASS / ONLY `main` + `build/portfilo-v0` REMAIN |
 | Repository/documentation hygiene audit | PASS / COMPLETE |
 | Document authority map | PASS / `docs/DOCUMENT_STATUS.md` |
-| Package metadata cleanup | PASS / NO DEPENDENCY OR BUILD-SCRIPT CHANGE |
+| Package metadata cleanup | PASS / `package.json` PRIVATE + UNLICENSED / LOCKFILE LICENSE SNAPSHOT PENDING SYNC |
 | Content architecture | PASS / STABLE |
 | Site copy + IA | PASS / DEPLOYED USER APPROVED |
-| Universal homepage feature image | PASS / IMPLEMENTED + DEPLOYED USER APPROVED |
-| Latest pre-hygiene `npm run check` | PASS / USER-REPORTED |
-| Latest pre-hygiene `npm run build` | PASS / USER-REPORTED |
-| Post-hygiene / post-Phase-4B local check/build | NOT YET RERUN |
+| Universal homepage feature image | PASS / OPTIMIZED WEBP DELIVERY + APPROVED PNG MASTER RETAINED |
+| Phase 4C Track 1 - Technical SEO | PASS / COMPLETE |
+| Phase 4C Track 2 - Performance | PASS / COMPLETE |
+| Phase 4C Track 3 - Accessibility + responsive | PASS / COMPLETE |
+| Phase 4C Track 4 - Security + reliability | PASS / COMPLETE |
+| Phase 4C Track 5A - Code + release integrity | PASS / COMPLETE |
+| Phase 4C Track 5B - Search + institutional copy | PASS / COMPLETE |
+| Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 |
+| Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 |
 | Brand asset system | PASS / PHASE 4B CLOSED |
 | Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
 | Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
-| Full engineering/security/SEO/performance audit | NEXT / PHASE 4C |
+| Track 6 final production/release readiness | NEXT |
 | Final-domain configuration | PENDING DOMAIN |
 
 ## Exact next task
 
-**Begin Phase 4C: full engineering, security, SEO, accessibility, performance, and release-readiness audit.**
+**Begin Phase 4C Track 6: final production and release readiness.**
 
-Start with repository and runtime inspection before changing code. Establish a measured baseline, run fresh local `npm run check` and `npm run build`, then audit the site systematically rather than mixing unrelated fixes into one pass.
+Track 6 is the release-gate pass. It should complete the remaining environment-dependent work rather than reopen closed design/editorial decisions.
 
-The first Phase 4C pass should inventory findings by severity and evidence before implementation. Prioritize release blockers, security/correctness defects, broken metadata or routing, accessibility failures, and major performance regressions. Treat cosmetic refactors and speculative cleanup as lower priority.
+Required sequence:
 
-Do not reopen approved Phase 4A image design or Phase 4B brand design unless the audit finds a concrete implementation defect or Louda explicitly requests a new design decision.
+1. choose/configure the final public domain;
+2. replace production `SITE_URL` with the final canonical origin;
+3. configure Cloudflare `/api/subscribe` edge rate limiting;
+4. enable/verify Cloudflare Web Analytics;
+5. set and verify the final beehiiv confirmation redirect to `/confirmed`;
+6. complete final-domain subscribe/confirm/unsubscribe and first-send compliance QA;
+7. synchronize `package-lock.json` root license metadata to `UNLICENSED` and rerun local validation if that file changes;
+8. run the final deployed browser/mobile/internal-link/404/console/metadata/security/performance QA;
+9. perform the intentional release review before any merge to `main`.
+
+Do not merge to `main` merely because local checks pass. Final release requires the environment-dependent Track 6 checks and explicit release approval.
+
+Do not reopen approved Phase 4A image design, Phase 4B brand design, or Track 5 institutional copy unless a concrete implementation defect is found or Louda explicitly requests a new decision.
