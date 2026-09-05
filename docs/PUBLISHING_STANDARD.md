@@ -57,6 +57,75 @@ The writing gates are governed by:
 - `docs/WRITING_SYSTEM.md`;
 - `docs/STYLE_RESEARCH_STANDARD.md`.
 
+## Two operating speeds
+
+Portfilo supports two editorial speeds without creating two standards of evidence.
+
+### Substantial work
+
+Reported stories, explainers, analysis, guides, profiles, perspectives, field notes, datasets, and other work that requires meaningful research or interpretation continue to use the full publishing pipeline in this document.
+
+### Fast factual work
+
+A narrow update may use a lighter path when the value is establishing a verified development rather than producing analysis.
+
+The lightweight path is:
+
+```text
+SIGNAL
+  ↓
+AUTHORITATIVE SOURCE / DIRECT EVIDENCE
+  ↓
+VERIFY WHAT CHANGED
+  ↓
+DEFINE NARROW READER NEED + SCOPE
+  ↓
+HUMAN EDITORIAL APPROVAL
+  ↓
+CLAIM / COPY CHECK
+  ↓
+PUBLISH OR DISTRIBUTE
+  ↓
+CORRECT / UPDATE WHEN NEEDED
+```
+
+Fast does not mean speculative. The lighter path is appropriate only when:
+
+- the development itself is verifiable;
+- the source is authoritative or the evidence is direct;
+- the scope is narrow;
+- Portfilo does not infer consequences that have not been researched;
+- uncertainty and missing information are stated where material.
+
+`AI Update` may be used internally for a fast factual item about a material AI model, product, company, policy, research, or market development. It is not a new public topic or Astro `contentType`.
+
+An AI Update may live only on a social surface or in Portfilo Brief when a website story would add no meaningful value. If the development requires explanation, testing, comparison, or consequential interpretation, create a separate assignment and use the appropriate deeper path.
+
+### Portfilo Test
+
+`Portfilo Test` is a provisional internal format for an original product, model, workflow, or comparison test intended to establish what Portfilo actually observed rather than repeat vendor claims.
+
+The first Portfilo Test is **not authorized for publication** until a dedicated methodology research cycle is completed and explicitly approved.
+
+That methodology must, at minimum, define how Portfilo records and discloses:
+
+- the test question;
+- product/model/version;
+- date of testing;
+- setup and environment;
+- inputs and task conditions;
+- repetitions or sample size where relevant;
+- scoring or evaluation method where used;
+- cost and timing where material;
+- raw or retained evidence needed to support the result;
+- reproducibility limits;
+- failure cases;
+- limitations;
+- vendor claims separately from Portfilo observations;
+- any use of synthetic data, private data, or third-party material.
+
+Do not convert a vendor demo, casual prompting session, or subjective first impression into a Portfilo Test merely by adding a label.
+
 ## Stage 1 - Idea
 
 An idea is not an assignment and not a headline.
@@ -351,6 +420,10 @@ Do not allow downstream social content to introduce unsupported factual claims o
 
 A derivative format with a materially different audience need or writing job may require its own lightweight style research rather than blindly copying the article's prose style.
 
+Fast factual items may originate from direct authoritative evidence rather than a substantial story packet, but the supporting source/evidence, publication date, and scope must remain recoverable. Do not manufacture fast posts merely to satisfy a content calendar.
+
+If a Portfilo Test later produces social/video derivatives, those derivatives must preserve the approved test setup, material limitations, and distinction between vendor claims and observed results.
+
 ## Corrections and updates
 
 Material factual correction:
@@ -401,3 +474,19 @@ Before changing a story to `published`:
 - [ ] mobile layout checked;
 - [ ] metadata/description set;
 - [ ] explicit publication approval obtained when the workflow requires it.
+
+For a fast factual item distributed outside the full story workflow:
+
+- [ ] authoritative/direct source retained;
+- [ ] material date/version captured;
+- [ ] scope kept narrow;
+- [ ] vendor claim distinguished from Portfilo statement;
+- [ ] no unsupported consequence or prediction added;
+- [ ] human editorial approval obtained.
+
+For a future Portfilo Test:
+
+- [ ] dedicated Portfilo Test methodology has been approved;
+- [ ] the assignment follows that methodology;
+- [ ] test evidence is retained;
+- [ ] limitations and failure cases are disclosed where material.
