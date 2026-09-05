@@ -4,14 +4,14 @@ _Last updated: 2026-09-06_
 
 ## Current phase
 
-**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE**
+**Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE / TEST EXECUTION DEFERRED**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, and Portfilo Test Methodology v0 are in place.
+Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, and Portfilo Test Methodology v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
 
 Current parallel sequence:
 
 - product release: `Track 6 remaining pre-domain work -> final-domain work when available -> intentional release review -> main release boundary`;
-- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test Methodology v0 COMPLETE -> internal methodology dry-run proposal NEXT -> later audience/growth subjects one at a time`.
+- editorial strategy: `Vision Alignment v1 COMPLETE -> Portfilo Test Methodology v0 COMPLETE / DEFERRED -> Audience / Social Distribution Strategy NEXT`.
 
 Core rules remain:
 
@@ -416,7 +416,7 @@ Canonical changes for Vision Alignment v1 were limited to `docs/CONTENT_PLANNING
 
 ## Portfilo Test Methodology v0
 
-Status: **COMPLETE / FOUNDER APPROVED / IMPLEMENTED**
+Status: **COMPLETE / FOUNDER APPROVED / IMPLEMENTED / EXECUTION DEFERRED**
 
 Governing standard:
 
@@ -464,7 +464,7 @@ The methodology does **not** create:
 
 No specific Portfilo Test is currently approved for publication by virtue of methodology approval alone.
 
-Recommended next methodology-validation gate: propose one low-risk internal dry run using public or synthetic data to test whether the protocol is operationally clear. Do not execute that dry run until its assignment/protocol is separately approved.
+Portfilo Test execution is intentionally deferred. A standalone methodology dry run is not required now. Reopen this subject when Portfilo has an audience and/or a specific high-value Test candidate; at that point, use the Test's pilot/dev phase to validate any remaining operational questions before final evidence-producing runs.
 
 ## Active research assignments
 
@@ -562,7 +562,7 @@ Newsletter state:
 | Phase 4C Track 5A - Code + release integrity | PASS / COMPLETE |
 | Phase 4C Track 5B - Search + institutional copy | PASS / COMPLETE |
 | Vision Alignment v1 | PASS / FOUNDER APPROVED / DOCS ALIGNED |
-| Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / NO SPECIFIC TEST AUTHORIZED |
+| Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / EXECUTION DEFERRED / NO SPECIFIC TEST AUTHORIZED |
 | Latest `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
 | Latest `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS |
 | Brand asset system | PASS / PHASE 4B CLOSED |
@@ -577,15 +577,22 @@ The Portfilo Test Methodology v0 implementation is documentation-only. It change
 
 ### Editorial strategy
 
-**Portfilo Test Methodology v0 is complete. The next gate is to propose one low-risk internal dry run for methodology validation.**
+**Subject 03: research and define Portfilo's Audience / Social Distribution Strategy.**
 
-The dry run should use public or synthetic data, test a narrow non-sensitive workflow, and exist to validate the methodology rather than to manufacture a publishable story.
+Treat this as a separate research -> evaluation -> approval -> implementation cycle. The objective is to determine how Portfilo should begin building and serving an audience before launch and after launch without turning the publication into a generic content account.
 
-Before execution, present the proposed dry-run question, systems, tasks, trial count, evaluation rule, and evidence plan for explicit approval. Do not run it automatically from methodology approval.
+The research should determine, at minimum:
 
-No public Portfilo Test is authorized yet. A future publishable Test must independently pass the normal planning gate, freeze its own protocol, produce retained evidence, and pass the normal publication workflow.
+- which social/distribution platforms are worth maintaining at v0;
+- the role of Louda's personal account versus Portfilo's brand accounts;
+- which formats belong on each selected platform;
+- how website stories, Portfilo Brief, fast factual updates, and future deeper work should feed distribution;
+- a realistic posting cadence for limited editorial capacity;
+- what can begin before the final domain and what should wait for public launch;
+- how to avoid posting quotas, low-value filler, generic AI-content behavior, and unsupported derivative claims;
+- the initial launch/distribution sequence and what evidence should later trigger changes to the strategy.
 
-Do not research later audience/growth subjects simultaneously. Close the internal methodology validation gate first or explicitly defer it before moving to the next subject.
+Do not begin an official posting cadence merely because this strategy subject has started. Research and approve the operating plan first. Portfilo Test execution remains deferred unless a later specific Test candidate justifies reopening it.
 
 ### Product release
 
