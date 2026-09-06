@@ -70,11 +70,11 @@ New ventures operate under substantial uncertainty, so early business-building i
 
 Evidence:
 
-Nanda and Rhodes-Kropf describe the potential of early innovative ventures as fundamentally uncertain and entrepreneurship as a process of experimentation over time. Steve Blank's customer-development framework independently makes a practitioner version of the same distinction: initial business-model elements are hypotheses to test rather than facts to execute blindly.
+Entrepreneurship-as-experimentation research argues that venture outcomes can be difficult to know before investment and market exposure. Steve Blank's customer-development framework independently makes a practitioner version of the same distinction: initial business-model elements are hypotheses to test rather than facts to execute blindly. Evidence from microenterprise-development research and self-employment dynamics broadens the learning-under-uncertainty mechanism beyond venture-backed startups.
 
 Sources:
 
-S005, S010.
+S005, S010, S018, S019, S020.
 
 Tier:
 
@@ -82,11 +82,11 @@ Tier A research plus primary practitioner methodology.
 
 Confidence:
 
-HIGH within innovative/startup venture scope.
+HIGH for entrepreneurship involving meaningful uncertainty; scope varies by business type.
 
 Caveat:
 
-The degree of uncertainty varies by business type. A proven local service franchise and a novel technology startup do not face identical uncertainty.
+The degree and kind of uncertainty differ materially by business. A proven local service franchise and a novel technology startup do not face identical uncertainty. Experimentation is also not an all-purpose method for every entrepreneurial knowledge problem.
 
 Status:
 
@@ -160,23 +160,23 @@ Persistence is not always the correct entrepreneurial response; learning can mak
 
 Evidence:
 
-A 2026 randomized field experiment involving 553 science- and technology-based startups found that entrepreneurship training increased shutdown rates and accelerated shutdown, while surviving treated firms raised funding faster and more, and had higher employment and revenue. The authors interpret the pattern as consistent with `rationally quit` / fail-fast learning.
+A 2026 randomized field experiment involving 553 science- and technology-based startups found that entrepreneurship training increased shutdown rates and accelerated shutdown, while surviving treated firms raised funding faster and more, and had higher employment and revenue. Separate persistence research indicates that persistence decisions can be influenced by backward-looking factors such as prior investment and past underperformance, and review literature does not treat persistence as uniformly advantageous.
 
-Source:
+Sources:
 
-S009 - NBER `Learning to Quit?`.
+S009, S021, S022.
 
 Tier:
 
-A research source.
+A research sources.
 
 Confidence:
 
-HIGH for the experiment; MEDIUM for broader generalization.
+HIGH for the cited studies; MEDIUM for broad generalization.
 
 Caveat:
 
-The sample was U.S. innovation-driven startups. The study does not prove that quitting is generally superior to persistence or that shutdown causes better outcomes.
+The randomized shutdown result comes from U.S. innovation-driven startups. Choice experiments and literature reviews do not prove that persistence is generally irrational. The point is narrower: persistence itself is not evidence that continued investment is justified.
 
 Status:
 
@@ -246,15 +246,15 @@ QUALIFY
 
 Candidate claim:
 
-The Philippine business context is dominated numerically by smaller establishments, while local firms and startups face structural constraints that can make growth harder.
+Philippine firms face concrete operating constraints that make the local environment relevant to a story about starting and growing a business.
 
 Evidence:
 
-PSA formal-sector data show micro and small establishments make up the large majority of establishment counts. ADB identifies funding, talent/mentorship, digital infrastructure, and digital literacy as constraints in the Philippine technology-startup ecosystem. World Bank work identifies regulatory complexity, competition, finance, and technology-adoption constraints affecting Philippine firm dynamism and scaling.
+The weighted World Bank Enterprise Survey Philippines 2023 country profile places electricity, practices of the informal sector, access to finance, business licenses and permits, tax rates, and transportation among the leading business-environment obstacles reported by firms. The same profile shows meaningful reliance on internal finance and differences in obstacles by firm size. The World Bank's 2025 Growth and Jobs Report identifies regulatory complexity, competition, finance, skills scarcity, technology adoption, and climate shocks as constraints on Philippine firm dynamism and scaling. The 2026 COMPETE for SMEs project document identifies business, managerial and technical skills, quality certifications, market intelligence/business connections, and long-term finance as constraints to SME investment and competitiveness.
 
 Sources:
 
-S014, S015, S016.
+S016, S017, S024.
 
 Tier:
 
@@ -266,11 +266,11 @@ HIGH for the cited structural findings.
 
 Caveat:
 
-These sources do not directly measure individual founder hardship or business survival. They should supply Philippine context only where it materially helps answer the story question.
+The Enterprise Survey excludes firms with fewer than five employees and covers formal private firms. These sources do not measure founder psychology, quitting motives, or the smallest informal microbusinesses. Structural constraints should not be used as deterministic explanations of individual outcomes.
 
 Status:
 
-VERIFIED / CONTEXT ONLY
+VERIFIED / CONTEXT
 
 ## C10
 
@@ -280,7 +280,7 @@ The emerging evidence supports describing the `grind` less as a test of toughnes
 
 Evidence:
 
-This is an inference synthesized from C01-C09, not a directly measured universal construct.
+This is an inference synthesized from C01-C09 rather than a directly measured universal construct.
 
 Source:
 
@@ -292,12 +292,102 @@ Inference.
 
 Confidence:
 
-MEDIUM
+MEDIUM-HIGH after research pass 2.
 
 Caveat:
 
-Must remain an explicitly bounded interpretation unless further research and interviews establish a stronger formulation.
+Must remain a bounded explanation rather than a claim that all founders experience the same sequence or intensity.
 
 Status:
 
-PROVISIONAL INFERENCE
+PROVISIONAL INFERENCE / STRONG
+
+## C11
+
+Candidate claim:
+
+Learning under uncertainty is not only a Silicon Valley startup idea; related evidence appears in microenterprise and self-employment research.
+
+Evidence:
+
+`Hoping to Win, Expected to Lose` examines microenterprise development and argues that financial and managerial-capital constraints can limit experimentation and learning about profitability. `Self-Employment Dynamics and the Returns to Entrepreneurship` documents transitions between paid work and self-employment and models gradual learning about uncertain entrepreneurial earnings.
+
+Sources:
+
+S019, S020.
+
+Tier:
+
+A research sources.
+
+Confidence:
+
+MEDIUM-HIGH for the broader mechanism.
+
+Caveat:
+
+The evidence comes from Ghanaian microenterprises and U.S. self-employment rather than Philippine businesses. It supports the general mechanism, not local prevalence or a universal founder experience.
+
+Status:
+
+VERIFIED / QUALIFY
+
+## C12
+
+Candidate claim:
+
+A simple `test everything like a scientist` formula would overstate what entrepreneurial experimentation can do.
+
+Evidence:
+
+Recent entrepreneurship scholarship argues that scientific-style experimentation is useful for some forms of uncertainty but faces tight boundary conditions when problems cannot be cleanly decomposed, measured, or resolved through controlled tests.
+
+Source:
+
+S023 - `Pivot, persist or perish?`
+
+Tier:
+
+A peer-reviewed conceptual research.
+
+Confidence:
+
+MEDIUM-HIGH
+
+Caveat:
+
+Conceptual research, not a causal estimate.
+
+Status:
+
+VERIFIED AS LIMITATION
+
+## C13
+
+Candidate claim:
+
+The core Explained story can be established without founder interviews.
+
+Evidence:
+
+The central mechanisms are already supported through government data, institutional firm surveys, peer-reviewed entrepreneurship research, NBER research, and primary practitioner writing. Interviews would add original examples and test Philippine applicability but are not necessary to establish that business-building involves uncertainty, resource constraints, operational friction, and persistence decisions.
+
+Source:
+
+Research-packet sufficiency assessment.
+
+Tier:
+
+Editorial judgment based on source map.
+
+Confidence:
+
+HIGH
+
+Caveat:
+
+If the eventual article makes experiential claims such as `Filipino founders commonly feel X` or relies on a lived Philippine narrative, direct reporting would become necessary.
+
+Status:
+
+EDITORIAL DECISION SUPPORT
