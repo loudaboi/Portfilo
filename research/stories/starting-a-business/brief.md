@@ -26,16 +26,9 @@ Replace vague `grind harder` entrepreneurship language with a more concrete expl
 
 The difficulty of starting a business is not one thing and should not be reduced to long hours or toughness.
 
-A plausible working hypothesis is that early-stage business-building combines:
+The strengthened evidence supports a bounded version of the hypothesis: early business-building often combines action under uncertainty with learning, customer acquisition, resource constraints, operational friction, psychological strain, and repeated decisions about whether to persist, change direction, or stop.
 
-- manual customer acquisition and other work that does not yet scale;
-- repeated testing of assumptions about customers, product, pricing, distribution, and business model;
-- long periods in which progress is ambiguous and outcomes are uncertain;
-- resource constraints involving time, money, people, attention, and capability;
-- psychological strain and difficulty detaching from the work;
-- repeated decisions about whether to persist, change direction, or stop.
-
-The research must test this rather than assume it.
+The evidence does **not** support a general claim that successful founders are simply the people who refuse to quit.
 
 ## Disproof / kill conditions
 
@@ -59,8 +52,9 @@ Reframe or kill the story if:
 - Closure, exit, sale, pivot, and voluntary abandonment are not automatically interchangeable.
 - Geography is global unless Philippine context materially improves the explanation.
 - Philippine evidence should be included where it helps explain the local business environment or prevents imported startup advice from being treated as universal.
+- World Bank Enterprise Survey results cover formal firms with at least five employees and therefore do not represent the smallest microbusinesses; use them as firm-environment evidence, not as a complete picture of Philippine entrepreneurship.
 
-## Initial source map
+## Strengthened source map
 
 Practitioner / primary writing:
 
@@ -75,26 +69,62 @@ Empirical / institutional research:
 - U.S. Bureau of Labor Statistics Business Employment Dynamics survival data.
 - Global Entrepreneurship Monitor 2025/2026 global report.
 - NBER, `Learning to Quit? A Multi-Year, Multi-Site Field Experiment with Innovation-Driven Entrepreneurs`.
-- NBER, `Financing Entrepreneurial Experimentation`.
-- Journal of Business Venturing research on entrepreneurial stress, recovery, and self-employment stress.
+- NBER, `Entrepreneurship as Experimentation` and `Financing Entrepreneurial Experimentation`.
+- NBER, `Hoping to Win, Expected to Lose`, which extends experimentation and learning logic to microenterprise development rather than only venture-backed startups.
+- NBER, `Self-Employment Dynamics and the Returns to Entrepreneurship`, which models movement between paid work and self-employment as experimentation under uncertain earnings.
+- Journal of Business Venturing research on entrepreneurial persistence, persistence decisions, stress, recovery, and exit.
 - Philippine Statistics Authority business-establishment data.
-- Asian Development Bank research on the Philippine technology-startup ecosystem.
-- World Bank Philippines growth/jobs and firm-growth research.
+- World Bank Enterprise Survey 2023 Philippines country profile.
+- World Bank Philippines Growth and Jobs Report 2025 and COMPETE for SMEs material.
+- Asian Development Bank research on Philippine MSME finance and technology-startup constraints.
 
-## Interviews / original reporting
+## Philippine evidence added in pass 2
 
-Current assessment: `PLAUSIBLE / USEFUL, NOT YET ESSENTIAL`.
+The Philippine evidence now provides concrete local operating context rather than a decorative local angle.
 
-A stronger Portfilo version would likely benefit from several Filipino operators across different business types, for example technology, services, retail, or another bootstrapped business. The purpose would be to test whether the documentary findings describe real early-stage work in the Philippine context and to surface differences between startup advice and ordinary small-business operation.
+The World Bank's 2023 Philippines Enterprise Survey identifies electricity, competition from the informal sector, access to finance, business licenses and permits, tax rates, and transport among the most commonly selected business-environment obstacles. Its country profile also reports that firms rely heavily on internal finance for investment and that business-environment obstacles differ by firm size.
 
-Do not make the story dependent on interviews unless the eventual angle requires claims that documentary evidence cannot establish.
+The 2025 World Bank Growth and Jobs Report identifies regulatory complexity, competition, finance, skills scarcity, technology adoption, and climate shocks as constraints on firm dynamism and scaling. A 2026 World Bank COMPETE for SMEs project document similarly identifies skills, quality certifications, market intelligence/business connections, and long-term finance as key SME competitiveness constraints.
 
-## Initial research outcome
+These sources establish real operating constraints. They do not establish why any particular founder succeeds, fails, persists, or quits.
 
-**CONTINUE**
+## Interviews / original reporting decision
 
-The subject passes the first editorial gate, but the evidence does not support a simple `most founders give up` thesis.
+Assessment: `OPTIONAL / MATERIALLY USEFUL / NOT REQUIRED`.
 
-The strongest emerging research question is the tension between persistence and rational quitting, inside a broader explanation of the hidden work and uncertainty that make starting a business difficult.
+The documentary evidence is sufficient to answer the core Explained question if the public story stays within the verified scope.
 
-Do not begin style research or Draft 1 until the evidence and contradictions are reviewed and a human approves the story decision.
+Interviews would materially improve the story by:
+
+- testing whether the documented mechanisms appear in Philippine founder experience;
+- supplying concrete examples of manual work, wrong assumptions, resource constraints, and persistence decisions;
+- reducing dependence on Silicon Valley practitioner examples;
+- distinguishing technology-startup advice from ordinary service, retail, food, agency, family-business, or other operating realities.
+
+However, interviews are **not essential evidence** for the central mechanism. The story should not be blocked indefinitely on outreach.
+
+If interviews are pursued, target diversity rather than celebrity and treat individual experience as illustration or original reporting, not as population-level proof.
+
+## Original contribution available without interviews
+
+A defensible Portfilo contribution already exists through synthesis:
+
+1. separate business closure from `giving up`;
+2. explain starting a business as action and learning under uncertainty rather than execution of a known plan;
+3. distinguish useful persistence from excessive persistence or rational shutdown;
+4. connect practitioner descriptions of early manual work to broader entrepreneurship evidence rather than treating famous-founder advice as authority;
+5. ground the explanation in concrete Philippine firm constraints without claiming those constraints determine individual outcomes.
+
+Interviews can strengthen that contribution but are not a prerequisite.
+
+## Research recommendation
+
+**PUBLISH CANDIDATE / AWAITING HUMAN STORY DECISION**
+
+The subject-research phase is now strong enough to recommend proceeding to the writing-form research stage.
+
+Recommended editorial direction:
+
+> Explain the hidden work and uncertainty of starting a business, with persistence versus rational quitting as the central tension. Do not build the story around `most people give up` or `never quit`.
+
+This recommendation is not Draft 1 authorization. Per the Portfilo writing system, the next stage after human story-decision approval is reader/audience confirmation, professional form research, human-edited exemplar research, `style-research.md`, and `style-brief.md`. Drafting begins only after the style brief is separately approved.
