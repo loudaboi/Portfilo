@@ -4,7 +4,7 @@ _Last updated: 2026-09-07_
 
 ## Current state
 
-Subject research pass 1 is complete enough for a story-decision gate.
+Subject research pass 2 is complete enough for a formal story-decision gate.
 
 No style research, style brief, headline research, draft, or image work is authorized yet.
 
@@ -14,9 +14,9 @@ The original intuitive angle was something like:
 
 > Starting a business is hard and most people give up.
 
-The research does not support that sentence cleanly.
+The research did not support that sentence cleanly.
 
-The evidence instead separates several different ideas:
+The evidence instead separated several different ideas:
 
 1. Closure is common over multi-year horizons.
 2. Closure is not the same as `giving up`.
@@ -26,71 +26,103 @@ The evidence instead separates several different ideas:
 6. Persistence is not automatically virtuous; learning can make shutting down a weak venture rational.
 7. Business type matters. High-growth technology-startup advice cannot be applied mechanically to every small business.
 
+## What the second pass added
+
+The approved second research pass deliberately tested whether the emerging explanation survives outside Silicon Valley practitioner literature.
+
+It added:
+
+- microenterprise research showing that financial and managerial constraints can limit experimentation and learning;
+- self-employment research treating movement into and out of entrepreneurship as learning under uncertain earnings;
+- entrepreneurship research showing that persistence decisions can be affected by prior investments and backward-looking factors;
+- review and conceptual work cautioning that persistence is not uniformly beneficial and that entrepreneurial experimentation has boundary conditions;
+- the weighted World Bank Enterprise Survey Philippines 2023 country profile;
+- the World Bank Growth and Jobs Report 2025 and 2026 COMPETE for SMEs sector material.
+
+This materially reduces dependence on famous technology founders as the basis for the story.
+
+## Philippine context now supported
+
+Philippine firm evidence can establish that local operators face concrete environmental constraints. Among the leading obstacles identified in the World Bank Enterprise Survey country profile are electricity, informal-sector competition, access to finance, licensing and permits, taxes, and transport. World Bank work also identifies skills, business connections/market intelligence, financing, competition, regulation, technology adoption, and climate exposure as constraints affecting firms and SMEs.
+
+Important boundary:
+
+The Enterprise Survey excludes firms with fewer than five employees, so it must not be presented as a complete picture of the smallest Filipino businesses. These sources describe the business environment; they do not tell us why an individual founder quits.
+
 ## Strongest provisional editorial direction
 
-The most promising question is no longer `Why do most people give up?`
-
-Current candidate:
-
-> What makes starting a business so hard when no one can tell you in advance which effort will actually work?
-
-Alternative bounded question:
+The most promising question remains:
 
 > What does the hard part of starting a business actually consist of?
 
-A possible tension emerging from the evidence is:
+The strongest explanatory tension is now:
 
-> Founders need enough persistence to keep testing a business under uncertainty, but enough judgment to stop treating persistence itself as proof that the business deserves to continue.
+> Starting a business is difficult partly because the founder has to keep acting before the answer is known, while also learning when continued effort is no longer justified.
 
-This is a provisional inference, not an approved thesis or headline.
+This allows the article to explain several concrete components without glorifying hardship:
 
-## Potential original contribution
+- finding and persuading customers before demand is proven;
+- doing work manually before systems and scale exist;
+- learning which assumptions about product, price, market, and distribution are wrong;
+- operating with limited money, people, time, skills, information, and attention;
+- dealing with business-environment friction that differs by geography and business type;
+- carrying stress and uncertainty without equating them with failure;
+- deciding whether evidence supports persistence, a change in direction, or exit.
 
-A useful Portfilo contribution could be to combine:
+This remains a bounded synthesis, not a universal formula.
 
-- proven startup-practitioner observations;
-- business-survival and exit evidence;
-- research on experimentation, stress, and rational quitting;
-- Philippine business constraints where relevant;
-- several Filipino founder/operator interviews if practical.
+## Interview decision
 
-The original contribution should be the synthesis and, ideally, local reporting rather than a summary of famous startup essays.
+`OPTIONAL / MATERIALLY USEFUL / NOT REQUIRED`.
 
-## Possible interview plan after story-decision approval
+The documentary packet can support the core Explained story without interviews.
 
-Target diversity rather than celebrity:
+Original interviews would still improve the Portfilo version by supplying Philippine examples and testing imported founder advice against different business types. If pursued, target diversity rather than celebrity:
 
 - one technology/startup founder;
 - one service or agency operator;
-- one retail, food, franchise, or other physical-business operator;
-- optionally one founder who closed or materially changed a previous business.
+- one retail, food, franchise, family-business, or other physical-business operator;
+- optionally one operator who closed or materially changed a previous business.
 
-Questions should test the evidence rather than solicit motivational quotes, for example:
+Use interviews as original reporting and examples, not as proof of prevalence.
+
+Do not make publication dependent on responses unless the story is later reframed around lived Filipino founder experience.
+
+## Interview questions if reporting is later authorized
+
+Questions should test evidence rather than solicit motivational quotes:
 
 - What work took more time than you expected before the business felt real?
 - Which early assumption turned out to be wrong?
 - What did you keep doing manually before you could systematize it?
-- What was the hardest period to judge: when to continue, change direction, or stop?
+- What signal made you continue when the outcome was uncertain?
+- What signal made you change direction or stop something?
 - Which difficulty came from the Philippine operating environment rather than the business idea itself?
-- What advice about `grind` or persistence do you now think is misleading?
+- What advice about `grind`, persistence, or `never quitting` do you now think is misleading?
 
-Interview questions remain provisional until the story decision is approved.
+These remain optional until direct reporting is explicitly chosen.
 
-## Evidence gaps before Draft 1
+## Original contribution assessment
 
-- Decide whether the piece is truly about `business` broadly or startups specifically.
-- Determine whether Philippine-specific business-survival / discontinuation data strong enough for the central story can be located. Current PSA material establishes business structure, not survival motive.
-- Decide whether original interviews are needed to justify the final contribution.
-- If the story remains broad, add at least one evidence stream outside innovation-driven startups so startup advice does not dominate the explanation.
-- Verify any consequential survival number against the exact BLS table/cohort before public use.
-- Do not use `failure rate` and `closure rate` interchangeably.
+The story has a viable contribution even without interviews:
+
+- reject the unsupported `most people give up` cliché;
+- separate closure from personal failure;
+- explain business formation as action and learning under uncertainty;
+- distinguish persistence from stubbornness and rational exit;
+- connect practitioner observations to empirical entrepreneurship research instead of repeating founder lore;
+- show where Philippine operating constraints materially change the environment without forcing a Philippine psychological claim.
+
+That is more than a rewrite of existing startup essays.
 
 ## Current recommended research outcome
 
-`CONTINUE`
+`PUBLISH CANDIDATE / AWAITING HUMAN STORY DECISION`
 
 Reason:
 
-The question is valuable and the contradiction search improved it, but one human editorial decision is needed before additional reporting: approve, reject, or change the revised story direction.
+The question has survived two subject-research passes, the evidence now extends beyond venture-backed startups, the major contradictions are documented, Philippine context is materially supported, and interviews have been assessed as optional rather than essential.
 
-If approved, the next gate is additional subject reporting / interviews as needed, followed by a formal `PUBLISH / REFRAME / CONTINUE / KILL` story decision. Only after that should Portfilo begin professional form and exemplar research.
+If the human approves the story decision, the next gate is **writing-form and human-edited exemplar research** under `docs/WRITING_SYSTEM.md` and `docs/STYLE_RESEARCH_STANDARD.md`, followed by `style-research.md` and `style-brief.md` for separate approval.
+
+Do not draft before that approval.
