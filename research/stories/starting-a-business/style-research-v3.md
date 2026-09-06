@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: PARAGRAPH-LEVEL FORM RESEARCH COMPLETE / AWAITING FOUNDER-EDITOR APPROVAL_
+_Status: FOUNDER-EDITOR APPROVED / PARAGRAPH-LEVEL FORM RESEARCH COMPLETE_
 
 ## Why this pass exists
 
@@ -11,8 +11,6 @@ Draft 6 improved the story's message but still read as AI-shaped at paragraph le
 The failure was not the approved high-level form. The failure was execution: repeated one-sentence declarations, repeated setup -> example -> mini-conclusion cycles, and a tendency to state the implication after every small example.
 
 This pass studies how human-edited explainers actually move through difficult material after the central answer is established.
-
-It does not authorize Draft 7 by itself.
 
 ## Approved reader destination
 
@@ -166,9 +164,9 @@ Short paragraphs can create emphasis, but Draft 6 uses them as default separator
 
 The draft often tells the reader what the example means immediately after the example. Strong explanatory prose can sometimes let two or three connected facts/examples establish the distinction before naming the implication once.
 
-## Proposed paragraph-level method for Draft 7
+## Approved paragraph-level method for Draft 7
 
-This is **not a paragraph template**. It is a set of constraints derived from the research.
+This is **not a paragraph template**. It is a set of constraints derived from the research and approved by the founder/editor on 2026-09-07.
 
 ### A. Start the explanation, do not announce it
 
@@ -228,7 +226,7 @@ Reject the draft if it contains a visible repeated pattern of:
 - repeated restatement of `result != cause` in different wording;
 - transitions that announce structure rather than continue thought.
 
-## Recommendation
+## Approved recommendation
 
 Keep the approved high-level form:
 
@@ -244,10 +242,14 @@ This is a reasoning dependency, not an instruction to make five sections or five
 
 ## Authorization boundary
 
-Draft 7 is **NOT AUTHORIZED** by this research file alone.
+Paragraph-level method:
+
+`APPROVED BY FOUNDER/EDITOR — 2026-09-07`
+
+Draft 7:
+
+`NOT YET AUTHORIZED`
 
 Next gate:
 
-Founder/editor approves or rejects this paragraph-level method.
-
-If approved, revise the story style brief to incorporate the reader destination and paragraph-level constraints before drafting again.
+Revise `style-brief.md` to incorporate the approved reader destination and paragraph-level constraints, then obtain founder/editor approval of that revised brief before drafting again.
