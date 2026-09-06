@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: INITIAL DEK SET REJECTED / RE-RESEARCH REQUIRED_
+_Status: TENSION-LED DIRECTION APPROVED / DEK WORDING NOT YET APPROVED_
 
 ## Approved headline
 
@@ -53,22 +53,26 @@ The next pass must distinguish between:
 
 The dek should sharpen the story's promise without becoming clickbait, a slogan, a second headline, or a mini-guide.
 
-## Next research question
+## Re-research decision
 
-Before generating another set, study how strong human-edited business and explanatory publications use deks under broad question headlines.
+The founder/editor approved the **tension-led** direction on 2026-09-07 after comparing it with using no dek.
 
-Focus on what the dek adds that the headline intentionally leaves unresolved:
+The approved editorial job is narrow:
 
-- a consequential tension;
-- the scope of the explanation;
-- a useful surprise;
-- a concrete stake;
-- or the specific payoff the reader receives.
+> Expose the tension created by having to act on business results before their cause is clear.
 
-Do not generate a replacement set from model intuition alone.
+The dek should not summarize the article's whole mechanism. In particular, it should not enumerate the possible causes of weak sales, recap the resource stakes, or reproduce the article's closing lesson.
+
+A tension-led dek is preferred because the approved headline is intentionally broad. The dek can reveal what kind of difficulty the story examines without answering the entire article.
+
+**No dek remains the fallback.** If tension-led wording cannot add genuine information without behaving like a compressed summary, Portfilo should publish the headline without a dek rather than force one.
+
+## Candidate gate
+
+No wording is approved yet.
+
+Candidate generation may now proceed within the approved tension-led job. AI-generated wording remains proposal-only and has zero stylistic authority until founder/editor approval.
 
 ## Boundary
-
-No dek is approved.
 
 Description, public-story assembly, and publishing remain separate later gates.
