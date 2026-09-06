@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: REVISED BRIEF / AWAITING FOUNDER-EDITOR APPROVAL_
+_Status: FOUNDER-EDITOR APPROVED_
 
 ## Assignment
 
@@ -272,10 +272,8 @@ Paragraph-level method:
 
 Revised style brief v3:
 
-`AWAITING FOUNDER/EDITOR APPROVAL`
+`APPROVED BY FOUNDER/EDITOR — 2026-09-07`
 
 Draft 7:
 
-`NO`
-
-Draft 7 may begin only after this revised brief is explicitly approved.
+`AUTHORIZED — 2026-09-07`
