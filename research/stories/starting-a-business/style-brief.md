@@ -455,10 +455,10 @@ Style research complete:
 
 Structure/form decision:
 
-`PROPOSED`
+`APPROVED`
 
 Approved by/date:
 
-`AWAITING FOUNDER/EDITOR APPROVAL`
+`FOUNDER/EDITOR APPROVED — 2026-09-07`
 
-Draft 1 may begin only after this brief is explicitly approved.
+Draft 1 may begin under this approved brief.
