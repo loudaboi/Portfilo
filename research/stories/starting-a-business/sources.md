@@ -117,7 +117,7 @@ Dates: 2024 spotlight; survival tables updated through 2025.
 
 Why it matters:
 
-BLS longitudinal establishment data show that business closure is common. Five-year survival rates for selected U.S. startup cohorts are roughly around half, while 34.7% of private-sector establishments born in March 2013 were still operating ten years later.
+BLS longitudinal establishment data show that business closure is common. Five-year survival rates for selected U.S. startup-establishment cohorts are roughly around half, while 34.7% of private-sector establishments born in March 2013 were still operating ten years later.
 
 Known limitations:
 
@@ -239,12 +239,12 @@ Release date: July 8, 2026
 
 Why it matters:
 
-Provides current formal-sector context. PSA reported 281,834 formal-sector establishments in 2022, with wholesale/retail the largest industry group. Separate employment-grouping results show micro and small establishments dominate counts.
+Provides formal-sector context and business composition. Separate PSA establishment-list and labor-survey materials show that more than one million establishments were in operation in the country in the 2023 establishment frame, while formal business activity spans a wide range of service, retail, manufacturing, and other industries.
 
 Known limitations:
 
 - Not a business-survival dataset.
-- Formal establishments only.
+- Formal establishments only in ASPBI coverage.
 - Does not directly establish why businesses close or what founders experience.
 
 ## S015 - Asian Development Bank, The Philippines' Ecosystem for Technology Startups
@@ -274,12 +274,167 @@ Date: 2025
 
 Why it matters:
 
-Describes constraints on Philippine firm dynamism and scaling, including regulatory complexity, competition, financing, and technology-adoption constraints.
+Describes constraints on Philippine firm dynamism and scaling, including regulatory complexity, competition, financing, skills scarcity, technology adoption, and recurring climate shocks affecting smaller firms.
 
 Known limitations:
 
 - Economy-level analysis rather than a founder-experience study.
 - Should support local structural context, not personal hardship claims.
+
+## S017 - World Bank Enterprise Surveys, Philippines 2023 Country Profile
+
+URL: https://www.enterprisesurveys.org/content/dam/enterprisesurveys/documents/country/Philippines-2023.pdf
+
+Type / tier: Tier A/B institutional firm survey.
+
+Survey period: 2023
+
+Why it matters:
+
+The weighted country profile identifies electricity, practices of the informal sector, access to finance, business licenses and permits, tax rates, transport, corruption, crime, workforce constraints, and political instability among the business-environment obstacles selected by Philippine firms. The profile also shows substantial reliance on internal financing and meaningful differences in reported obstacles by firm size.
+
+Known limitations:
+
+- Covers formal private firms with at least five employees; firms with fewer than five employees are ineligible.
+- Firm perceptions of obstacles do not establish causality or individual founder failure.
+- Use the weighted country profile for population-facing percentages, not raw case counts from the microdata catalog.
+
+## S018 - NBER, Entrepreneurship as Experimentation
+
+URL: https://www.nber.org/papers/w20358
+
+Type / tier: Tier A research source; NBER working paper.
+
+Date: July 2014
+
+Why it matters:
+
+Argues that entrepreneurship has an experimental character because venture outcomes are often highly uncertain and cannot be known fully before investment and market exposure. It provides a broader economic frame for why early entrepreneurial work involves learning rather than only executing a predetermined plan.
+
+Known limitations:
+
+- Conceptual framework with emphasis on innovation and financing environments.
+- Does not imply every business decision can or should be treated as a clean experiment.
+
+## S019 - NBER, Hoping to Win, Expected to Lose: Theory and Lessons on Micro Enterprise Development
+
+URL: https://www.nber.org/papers/w18325
+
+Type / tier: Tier A research source; economic model plus field evidence / meta-analysis.
+
+Date: August 2012
+
+Why it matters:
+
+Extends experimentation and learning logic beyond technology startups. The paper examines how financial and managerial-capital constraints can limit experimentation among microenterprises and how owners may learn about the profitability of different enterprise choices through investment and experience.
+
+Known limitations:
+
+- Evidence includes Ghanaian microenterprises and a small meta-analysis, not the Philippines.
+- Older study and development-economics context.
+- Should support the general mechanism, not a claim about Philippine microbusiness outcomes.
+
+## S020 - NBER, Self-Employment Dynamics and the Returns to Entrepreneurship
+
+URL: https://www.nber.org/papers/w23168
+
+Type / tier: Tier A research source; dynamic economic model with empirical evidence.
+
+Date: February 2017
+
+Why it matters:
+
+Documents that transitions between paid work and self-employment are common and models self-employment as a setting in which people learn over time about uncertain entrepreneurial earnings. This broadens the learning-under-uncertainty evidence beyond venture-backed startups.
+
+Known limitations:
+
+- U.S. self-employment context.
+- Economic-model interpretation rather than direct observation of every founder's reasoning.
+
+## S021 - Journal of Business Venturing, Persist or let it go: Do rational entrepreneurs make decisions rationally?
+
+URL: https://www.sciencedirect.com/science/article/pii/S0883902622000222
+
+Type / tier: Tier A peer-reviewed entrepreneurship research.
+
+Date: 2022
+
+Why it matters:
+
+Three discrete-choice experiments with entrepreneur samples in Australia and the United Kingdom examine persistence decisions for underperforming ventures. The findings show that backward-looking factors such as prior underperformance and personal investment can influence persistence decisions and that self-described rational decision makers do not always behave in a purely prospective way.
+
+Known limitations:
+
+- Choice experiments rather than observed shutdown behavior.
+- Australia/UK samples.
+- Does not show that persistence is generally irrational.
+
+## S022 - Journal of Business Venturing Insights, The unrelenting entrepreneur
+
+URL: https://www.sciencedirect.com/science/article/pii/S2352673423000495
+
+Type / tier: Tier A peer-reviewed review article.
+
+Date: 2023
+
+Why it matters:
+
+Reviews the fragmented entrepreneurial-persistence literature and cautions against treating persistence as a single simple construct with uniformly positive consequences.
+
+Known limitations:
+
+- Literature review rather than new causal evidence.
+- The field itself contains definitional and theoretical fragmentation.
+
+## S023 - Journal of Business Venturing Insights, Pivot, persist or perish?
+
+URL: https://www.sciencedirect.com/science/article/pii/S2352673424000118
+
+Type / tier: Tier A peer-reviewed conceptual research.
+
+Date: 2024
+
+Why it matters:
+
+Challenges an overly clean `entrepreneur as scientist` metaphor and argues that experimentation is useful under some kinds of uncertainty but has important boundary conditions. This is valuable counterevidence against turning the article into a simplistic test-and-learn formula.
+
+Known limitations:
+
+- Conceptual analysis rather than a population estimate.
+
+## S024 - World Bank, Philippines COMPETE for SMEs
+
+URL: https://documents1.worldbank.org/curated/en/099012126091536048/pdf/P507827-6119c7d0-f4ac-40e0-9152-251cf951050f.pdf
+
+Type / tier: Tier A/B institutional project and sector analysis.
+
+Date: 2026
+
+Why it matters:
+
+The project document cites firm analysis and management interviews identifying lack of business, managerial and technical skills, quality certifications, market intelligence and business connections, and long-term finance as constraints to Philippine SME investment and competitiveness.
+
+Known limitations:
+
+- Development-project document, not an entrepreneurship-survival study.
+- Addresses SME upgrading and competitiveness more than formation-stage psychology.
+
+## S025 - Asian Development Bank, Measuring Progress on Women's Financial Inclusion and Entrepreneurship in the Philippines
+
+URL: https://www.adb.org/publications/women-financial-inclusion-entrepreneurship-philippines
+
+Type / tier: Tier A/B institutional MSME survey research.
+
+Date: October 2023
+
+Why it matters:
+
+Provides Philippine MSME survey evidence on access to financial services and documents additional barriers faced by women-owned MSMEs. Useful for showing that financing constraints differ across founder groups rather than affecting all entrepreneurs identically.
+
+Known limitations:
+
+- Gender and finance focus.
+- Does not measure the entire experience of starting a business.
 
 ## Source-use rule
 
@@ -291,3 +446,5 @@ The eventual public story should distinguish:
 - empirical evidence;
 - Philippine structural context;
 - Portfilo inference.
+
+The second research pass deliberately broadens the evidence beyond venture-backed technology startups. It still does not justify presenting all businesses as equivalent.
