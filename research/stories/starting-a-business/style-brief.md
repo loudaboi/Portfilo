@@ -1,8 +1,8 @@
-# Starting a Business Style Brief v2
+# Starting a Business Style Brief v3
 
 _Last updated: 2026-09-07_
 
-_Status: FOUNDER-EDITOR APPROVED_
+_Status: REVISED BRIEF / AWAITING FOUNDER-EDITOR APPROVAL_
 
 ## Assignment
 
@@ -16,315 +16,266 @@ Primary topic: `Building`
 
 Primary reader need: `Understand`
 
-## Why this brief replaces the previous one
+## Why this brief replaces v2
 
-The previous brief prescribed a five-block architecture:
+Drafts 4-6 showed that the previous brief was still too broad for the story that emerged.
 
-`work -> uncertainty -> constraints -> persistence -> synthesis`
+The approved reader destination is now narrower and more useful: help the reader understand why a business result does not automatically reveal its cause, and why that makes early business decisions difficult and costly.
 
-That structure was not sufficiently grounded in professional practice for this specific writing problem. Drafts built from it repeatedly produced AI-shaped symmetry and source-heavy exposition.
+This brief therefore removes stale obligations around Philippine operating constraints and quitting/persistence. Those remain in the research packet but are not part of the current article unless a later editorial decision changes the assignment.
 
-This brief supersedes that architecture.
-
-Drafts 2 and 3 are rejected as writing precedent. They remain research-process records only.
+Drafts 2-6 remain process records, not writing precedent.
 
 ## Writing job
 
-Help the reader understand what makes starting a business difficult without reducing the answer to:
+Help a founder, small-business owner, or reader learning about business understand one practical problem:
 
-- long hours;
-- `grind harder`;
-- `most people give up`;
-- `never quit`;
-- a universal startup-failure formula.
+> **A business result tells you what happened. It does not automatically tell you what caused it.**
 
-The story must remain an explainer, not a motivational essay, literature review, guide, or founder profile.
+The article should explain why this matters when a new business is deciding what to change, where to spend, and what deserves more effort.
 
-## Approved structural authority
+The piece remains an explainer. It is not a motivational essay, business-diagnosis guide, startup framework, founder profile, or article about when to quit.
 
-Source: `style-research-v2.md`
+## Approved reader question
 
-Founder/editor approved on 2026-09-07:
-
-> **Direct question -> succinct answer -> explanation**
-
-This method is grounded in the Poynter-documented Slate Explainer practice associated with Brian Palmer and checked against an actual human-edited Slate Explainer.
-
-The research also tested Reuters modular Q&A and HBR research-derived taxonomy structures. Both are legitimate forms in the right evidence shape, but neither is selected for this story.
-
-## Reader question
-
-The internal reader question is:
+Internal working question:
 
 > **What actually makes starting a business difficult, beyond simply working long hours?**
 
-This is an editorial working question, not an approved headline.
+This is not an approved headline and does not need to appear literally in the article.
 
-The draft does not need to print this sentence literally if a more natural opening can establish the same information problem without adding rhetoric.
+## Approved reader destination
 
-## Succinct-answer requirement
+Source: `reader-destination-decision.md`
 
-The reader should receive the clearest defensible answer immediately after the minimum context needed to understand the question.
+After reading, the reader should understand:
 
-The answer must communicate, in ordinary language, that a new business has to make consequential decisions before it has enough information to know which decisions will work, and that learning what works consumes real time, money, and attention.
+> **A bad business result tells you what happened. It does not automatically tell you what caused it.**
 
-Persistence-versus-exit belongs in the answer only to the extent needed to prevent the misleading conclusion that continued effort automatically means progress.
+Weak sales may come from price, awareness, distribution, demand, the offer, or another cause. Different causes can require very different responses.
 
-This is a **content requirement**, not approved final wording.
+The reader should also understand the useful consequence:
 
-Do not hide the answer behind:
+> **More effort is useful only when it is directed at a problem the owner understands well enough to act on, or when the effort itself helps the owner learn what the problem is.**
 
-- a founder anecdote;
-- a history of entrepreneurship;
-- a failure-rate statistic;
-- famous-founder advice;
-- a rhetorical hook;
-- several paragraphs of scene-setting.
+This is an explanatory destination, not a step-by-step instruction set.
 
-## Explanation method
+## Approved high-level form
 
-After the succinct answer, elaborate only where the reader needs more understanding.
+Source: `style-research-v2.md`
 
-The explanation should follow **dependency**, not a predetermined section count.
+Founder/editor approved:
 
-A point enters because the previous point creates a real reader need for clarification, evidence, scale, limitation, or contradiction.
+> **Direct question -> succinct answer -> explanation**
 
-Likely explanatory dependencies in the current evidence include:
+The succinct answer should communicate, in ordinary language, that a new business has to make consequential decisions before it has enough information to know what is causing its results or which response will work.
 
-- what kinds of decisions are being made with incomplete information;
-- how real customers, prices, costs, and operations produce information over time;
-- why learning is costly when the business is spending real resources while operating;
-- why the Philippine operating environment can make those costs or delays more concrete;
-- why persistence cannot be treated as proof that continued investment is correct.
+Do not hide the answer behind an anecdote, statistic, famous founder, history lesson, or rhetorical hook.
 
-These are **not required sections or headings**. They are the main evidence-backed clarifications currently available if the explanation needs them.
+## Approved paragraph-level method
 
-If the question is already answered without one of them, omit it.
+Source: `style-research-v3.md`
 
-## Sectioning rule
+Founder/editor approved on 2026-09-07:
 
-There is **no predetermined number of sections**.
+> Execute the explanation as a **continuous causal development of one concrete business problem**, not as a sequence of outline blocks.
 
-Do not create three, four, or five balanced sections because the page looks more complete that way.
+The current reasoning dependency is:
 
-Subheads may be added only if the developed explanation becomes long enough that navigation materially helps the reader.
+`weak result -> ambiguity about cause -> different causes imply different actions -> wrong diagnosis wastes resources -> reader understands why operating and diagnosing happen at the same time`
 
-Any subhead must name a genuine reader question, factual distinction, or turn in the explanation. It must not be a polished slogan.
+This is not a five-part structure. It does not authorize five sections, five paragraphs, balanced blocks, or any fixed paragraph count.
 
-A continuous article with no subheads is acceptable if it reads more naturally and remains clear.
+## Main explanatory case
 
-## Evidence-display rule
+Use **weak sales** as the primary business situation because it makes the result-versus-cause distinction concrete.
 
-Research depth does not determine visible source density.
+Stay with that situation long enough to make it useful.
 
-Use a source in the public body only when it materially helps the reader:
+The explanation may develop:
 
-- trust a consequential factual claim;
-- understand scale;
-- understand a Philippine-specific condition;
-- see why a common assumption is misleading;
-- understand the persistence-versus-exit contradiction;
-- understand a necessary limitation.
+- what weak sales actually establish;
+- plausible causes;
+- how different causes point to different responses;
+- how a wrong response can worsen the business or waste resources.
 
-Do not organize paragraphs around sources.
+Do not end each step with a mini-takeaway.
 
-Reject the pattern:
-
-> Graham says X. Blank says Y. NBER says Z. World Bank says A.
-
-The research packet may contain many supporting sources while the public explanation names very few.
-
-### Practitioner material
-
-Paul Graham, Steve Blank, Sam Altman, Ben Horowitz, and other practitioners are **backstage by default**.
-
-Their writing may help Portfilo understand operating mechanisms, but famous names do not need to appear merely because they were researched.
-
-Surface practitioner material only if the specific observation adds something that cannot be explained more clearly from the broader evidence.
-
-### Empirical material
-
-Prefer the strongest evidence for the specific public claim rather than several studies supporting the same point.
-
-When a population matters, name it accurately:
-
-- establishments;
-- startups;
-- formal firms;
-- business owners;
-- other source-specific populations.
-
-Do not turn survival into success, closure into `giving up`, or one startup study into an all-business law.
-
-### Philippine context
-
-Use Philippine evidence only where it changes the explanation.
-
-The World Bank Enterprise Survey can establish that formal Philippine firms report concrete operating constraints such as finance, electricity, permits, and transport.
-
-Its population boundary must remain accurate: registered private firms with at least five workers in eligible sectors. It does not represent every microbusiness or informal business.
-
-Do not add a Philippines paragraph merely to localize a global point.
-
-## Complexity and pacing
-
-Professional guidance in `style-research-v2.md` supports slowing the information rate when the material becomes difficult.
-
-Therefore:
-
-- use few numbers;
-- translate research terminology into ordinary language unless the term itself matters;
-- introduce one difficult distinction at a time;
-- prefer a clear example to an extra abstract sentence when the example is evidence-safe;
-- cut methodological detail that does not change interpretation;
-- do not stack caveats, studies, and definitions in one paragraph.
-
-The reader should not have to understand the research process in order to understand the answer.
+Do not add unrelated examples merely to create variety.
 
 ## Paragraph behavior
 
-A normal paragraph should advance the explanation by doing one main job, such as:
+Paragraph size follows thought size.
 
-- clarify part of the answer;
-- give a concrete example;
-- establish one consequential fact;
-- explain a limitation that changes interpretation;
-- introduce counterevidence that changes the answer.
+Combine sentences that belong to one explanatory unit. A paragraph may simply continue the example, add a consequence, establish a distinction, or supply a necessary limitation.
 
-Do not write paragraphs whose main job is to sound polished, summarize the outline, or prove that Portfilo did extensive research.
+Use one-sentence paragraphs only when the sentence genuinely deserves emphasis or marks a real turn.
 
-## Counterevidence
+Do not require every paragraph to:
 
-The strongest contradiction remains:
+- open with a mini-thesis;
+- contain an example;
+- end with a lesson;
+- sound quotable;
+- function as a self-contained mini-essay.
 
-> persistence is not automatically the correct response, and business closure cannot be equated with founder weakness.
+The larger sequence may carry the meaning.
 
-This should enter when the explanation reaches the point where a reader might otherwise infer that the answer is simply `keep trying until the uncertainty clears`.
+## Reader-payoff placement
 
-The `Learning to Quit?` research is useful because it changes the interpretation of persistence. If used publicly, preserve its boundaries:
+State the result-versus-cause distinction clearly **once it has been earned by the example**.
 
-- science- and technology-based startup sample;
-- treatment increased shutdown;
-- stronger outcomes among treated ventures were observed conditional on survival;
-- the study does not establish that shutdown itself causes success.
+Do not repeat the same idea throughout the article in progressively polished wording.
 
-Do not turn the contradiction into a `when to quit` guide.
+After the distinction is clear, move to its consequence: the owner is allocating time and money while still trying to understand the cause of the result.
 
-## Lead behavior
+## Evidence-display rule
 
-The lead's only job is to establish the genuine information problem with minimum friction.
+The research packet remains the evidentiary foundation, but there is no quota for visible studies, statistics, experts, or Philippine references.
 
-Avoid:
+A source enters the public body only if it materially improves the reader's understanding or is required to support a consequential factual claim.
 
-- `Starting a business is hard. That sentence is true enough to be useless.`;
-- fake profundity;
-- `hard truth` framing;
-- fictional or composite founder scenes;
-- famous-founder anecdotes;
-- motivational quotes;
-- shock failure statistics;
-- strings of rhetorical questions;
-- `Everyone says...` or `People think...` without evidence.
+For Draft 7 specifically:
 
-Plain orientation is preferred over cleverness.
+- Paul Graham, Steve Blank, Sam Altman, Ben Horowitz, and other practitioner names stay backstage by default;
+- the World Bank Philippines Enterprise Survey stays backstage because it distracted from the current message in Draft 4;
+- the `Learning to Quit?` study stays backstage because quitting/persistence is no longer the article's destination;
+- survival statistics stay backstage;
+- no source should be inserted merely to demonstrate research depth.
+
+If Draft 7 introduces a new factual claim that requires visible evidence, use the strongest relevant source and preserve its scope.
+
+## Complexity and pacing
+
+Control information rate rather than forcing short paragraphs.
+
+- Introduce one difficult distinction at a time.
+- Use ordinary business language.
+- Prefer a developed concrete example to extra abstract explanation.
+- Cut methodological detail that does not change interpretation.
+- Do not stack caveats, studies, and definitions into one paragraph.
+- Allow longer paragraphs when several sentences belong to one connected thought.
 
 ## Transition behavior
 
-Let logic carry transitions.
+Let the causal development carry transitions.
 
-Do not manufacture bridge sentences to make the article sound authored.
+Do not use sentences whose main job is to announce the outline or tell the reader that the previous example was important.
 
-Avoid repeated formulas such as:
+Deletion signals include repeated use of:
 
-- `That is why...`;
-- `This is where...`;
+- `This is why...`;
 - `The point is...`;
-- `The reality is...`;
+- `The goal is...`;
+- `That means...`;
 - `In other words...`;
-- `But here's the thing...`;
-- `Ultimately...`.
+- `So the owner has to...`;
+- `What matters is...`.
 
-None is banned individually. Repeated or unnecessary use is a deletion signal.
+None is individually banned. Repetition or lack of new information is the problem.
 
-## Person and voice
+## Explicit anti-slop rejection test
 
-First person:
+Reject Draft 7 before founder review if it contains a visible repeated pattern of:
 
-None by default.
+- one-sentence declaration -> example -> one-sentence lesson;
+- mini-thesis sentence -> explanation -> summary sentence in every paragraph;
+- equal-length paragraphs throughout;
+- repeated three-item or five-item symmetry created for rhythm;
+- repeated restatement of `result != cause` in different wording;
+- transitions that announce structure rather than continue thought;
+- a final paragraph that merely restates the opening more dramatically.
 
-Second person:
+Also reject it if the article feels like an outline whose bullets were expanded into prose.
 
-Use only if it genuinely makes a concrete business situation easier to understand. Do not turn the piece into coaching.
+## Sectioning rule
 
-Tone:
+There is no predetermined number of sections.
+
+A continuous body with no subheads is acceptable and currently preferred unless the developed article becomes long enough that navigation genuinely helps.
+
+Do not invent subheads for visual completeness.
+
+## Person and tone
+
+First person: none by default.
+
+Second person: use only where it makes a concrete business situation easier to understand. Do not turn the article into coaching.
+
+Tone should be:
 
 - literal;
 - readable;
 - specific;
+- useful;
 - evidence-aware;
-- skeptical of easy entrepreneurship slogans without becoming cynical;
-- comfortable leaving uncertainty unresolved when the evidence does not resolve it.
+- skeptical of easy entrepreneurship slogans without becoming cynical.
 
 Do not write toward quotability.
 
 ## Ending condition
 
-There is **no required final synthesis section**.
+End at the approved reader destination.
 
-Stop when the original question has been answered well enough that additional paragraphs would mainly repeat, moralize, advise, or display more research.
+The final movement should leave the reader understanding that before committing more resources to a bad result, a business owner still has to distinguish the result from its possible cause.
 
-The ending may be a final clarification or limitation if that is what completes the answer.
+This should be explanatory, not prescriptive.
 
-Do not end with:
+Do not add:
 
 - a motivational instruction;
-- `never give up`;
-- `know when to quit` coaching;
-- a resilience lesson;
+- a quitting lesson;
+- a resilience message;
 - a recap list;
+- a framework;
 - a slogan;
-- an elevated restatement of the thesis.
+- another summary of why business is hard.
+
+Stop when the distinction and its consequence are clear.
+
+## Boundaries
+
+This article does not currently answer:
+
+- exactly when a founder should quit;
+- how to conduct customer interviews;
+- how to diagnose every business problem;
+- a complete testing framework;
+- a universal sequence for starting a business;
+- Philippine business-environment constraints as a separate subject.
+
+Those may become separate assignments if justified later.
 
 ## Headline / dek / description
 
-No headline is currently approved.
+No headline is approved.
 
-Headline research resumes **after the founder/editor approves the body direction**.
+Headline research resumes only after the founder/editor approves the body direction.
 
 The old candidate `What makes starting a business so hard?` remains rejected.
 
-Dek and description remain separate later jobs.
-
-## Assignment-specific AI-slop risks
-
-Reject or rewrite:
-
-- neat three-part or five-part architectures not produced by the evidence;
-- symmetrical section lengths;
-- polished insight sentences whose main job is to sound quotable;
-- `not X, but Y` used as a recurring rhythm;
-- source parades;
-- academic phrases such as `experimentation under uncertainty` when plain language carries the meaning;
-- repeating `grind` as a motif;
-- transforming each research finding into a lesson;
-- artificial examples written only to create narrative flow;
-- endings that become advice;
-- prose that resembles a research summary with friendlier words.
+Dek and description remain separate later gates.
 
 ## Draft authorization
 
-Professional form re-research:
-
-`COMPLETE`
-
-Selected structural method:
+High-level form:
 
 `APPROVED BY FOUNDER/EDITOR — 2026-09-07`
 
-Revised brief:
+Reader destination:
 
 `APPROVED BY FOUNDER/EDITOR — 2026-09-07`
 
-Draft 4 authorization:
+Paragraph-level method:
 
-`YES — 2026-09-07`
+`APPROVED BY FOUNDER/EDITOR — 2026-09-07`
+
+Revised style brief v3:
+
+`AWAITING FOUNDER/EDITOR APPROVAL`
+
+Draft 7:
+
+`NO`
+
+Draft 7 may begin only after this revised brief is explicitly approved.
