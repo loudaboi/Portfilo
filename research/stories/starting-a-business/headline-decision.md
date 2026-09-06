@@ -4,35 +4,42 @@ _Last updated: 2026-09-07_
 
 ## Status
 
-**NO HEADLINE APPROVED / PREVIOUS SELECTION REJECTED BY FOUNDER-EDITOR**
+**FOUNDER-EDITOR APPROVED**
 
-## Decision
+## Approved headline
 
-The previously selected headline:
+> **What actually makes starting a business hard?**
+
+Approved by the founder/editor on 2026-09-07 after approval of Draft 8's body direction.
+
+## Why this headline was selected
+
+The fresh headline pass initially recommended a weak-sales headline because weak sales are the article's main explanatory case. The founder/editor rejected that framing because weak sales are the mechanism used to explain the story, not the story's broader subject.
+
+This is Portfilo's first business article, so the headline should clearly claim the broader subject of **starting a business** while the body supplies the more specific result-versus-cause explanation.
+
+The selected headline is supported by the approved body because the article explains why starting a business can remain difficult beyond workload alone: the owner has to make consequential decisions while still learning what the business's results actually mean.
+
+`Actually` signals that the article moves past the obvious `business is hard because it takes work` answer without promising a secret, formula, or universal cause.
+
+## Superseded headline decisions
+
+The earlier candidate:
 
 > What makes starting a business so hard?
 
-was rejected by the founder/editor after the adversarial-review gate.
+remains rejected.
 
-This decision supersedes any earlier `APPROVED` or `KEEP` wording for that headline in `headline-research.md` or `adversarial-review.md`.
+The primary recommendation in `headline-research-v2.md`:
 
-The underlying headline research remains useful as research, but no candidate from that pass is currently approved for publication.
+> Why weak sales don't tell you what to fix
 
-## Workflow correction
-
-Do not select a replacement headline before the founder/editor reads and approves the revised article body.
-
-Current sequence:
-
-1. revise Draft 1 into `draft-v2.md` using the approved style brief and adversarial review;
-2. present Draft 2 to the founder/editor for a full read-through;
-3. revise the body again if the founder/editor requests changes;
-4. once the body direction is approved, conduct a fresh headline evaluation against that body;
-5. obtain explicit founder/editor headline approval;
-6. research and approve the dek separately.
+was not selected. It remains a useful research candidate but is not authorized for publication.
 
 ## Boundary
 
-`Starting a business` remains only a working label.
+This approval applies only to the headline.
 
-No headline is currently authorized for the public story.
+Draft 8 remains the approved body direction.
+
+Dek, description, public-story assembly, and publishing remain separate later gates.
