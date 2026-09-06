@@ -43,16 +43,13 @@ A software startup seeking rapid growth, a local restaurant, an agency, a family
 
 Implication:
 
-The story should either:
-
-- remain clearly scoped to startups; or
-- use startup literature as one stream while deliberately broadening evidence for business formation more generally.
+The story should use startup literature as one stream while deliberately retaining broader entrepreneurship evidence.
 
 Current recommendation: broader `starting a business` scope, with startup advice explicitly labeled rather than universalized.
 
 ## 5. Hard work is not automatically useful work
 
-Practitioner sources emphasize intensity and dedication, but Steve Blank and the entrepreneurship-experimentation literature emphasize learning and testing rather than blind execution.
+Practitioner sources emphasize intensity and dedication, but Steve Blank and entrepreneurship-experimentation research emphasize learning and testing rather than blind execution.
 
 Implication:
 
@@ -76,13 +73,21 @@ Do not use survival rate as a direct proxy for success or founder quality.
 
 ## 8. Philippine structural constraints are real but do not automatically explain individual failure
 
-ADB and World Bank work identifies financing, talent, infrastructure, regulatory, competition, and scaling constraints in the Philippines. These operate at an ecosystem/firm level.
+World Bank and ADB work identifies finance, infrastructure, regulation, competition, skills, market access, technology adoption, and other constraints affecting Philippine firms and SMEs.
 
 Implication:
 
 Do not turn structural context into a deterministic explanation for why a particular founder succeeds or fails.
 
-## 9. Persistence itself may be selected
+## 9. Philippine firm surveys do not represent the smallest businesses
+
+The World Bank Enterprise Survey Philippines 2023 covers formal private firms with at least five employees. Many very small and informal Philippine businesses therefore sit outside that frame.
+
+Implication:
+
+Use the survey to establish that real operating constraints exist among covered firms, not to claim it captures the full experience of every sari-sari store, solo operator, freelancer, microenterprise, or informal business.
+
+## 10. Persistence itself may be selected
 
 People who persist may differ from people who stop in capital, skill, opportunity cost, family obligations, network, industry, or prior performance. Observing that survivors persisted does not prove persistence caused survival.
 
@@ -90,12 +95,44 @@ Implication:
 
 Avoid retrospective hero narratives in which endurance alone explains outcomes.
 
-## 10. The strongest article may not actually be about `grind`
+## 11. Persistence can also become excessive
 
-The evidence currently suggests a more interesting tension:
+Entrepreneurial-persistence literature does not treat all persistence as advantageous. Experimental work on persistence decisions suggests prior investment and backward-looking information can influence decisions to keep supporting an underperforming venture.
+
+Implication:
+
+The article should not merely replace `never quit` with `quit faster`. The useful question is how founders learn what continued effort is buying them.
+
+## 12. Entrepreneurship is not a clean laboratory
+
+The `entrepreneur as scientist` metaphor is useful but incomplete. Recent entrepreneurship scholarship argues that some entrepreneurial uncertainty is testable while other knowledge problems have much tighter limits on clean experimentation.
+
+Implication:
+
+Do not turn the explainer into a simplistic `form a hypothesis, run a test, win` framework. Some business decisions remain ambiguous even after substantial effort and feedback.
+
+## 13. Broader entrepreneurship evidence reduces but does not eliminate geography problems
+
+Microenterprise research from Ghana and self-employment research from the United States support the broader learning-under-uncertainty mechanism outside venture-backed startups. They still do not establish how often the same mechanism appears among Philippine founders.
+
+Implication:
+
+The article may explain the mechanism globally and add Philippine operating context, but should not present imported research as direct measurement of Filipino founder behavior.
+
+## 14. Interviews would improve originality but are not evidentially mandatory
+
+Direct interviews could show how Philippine operators experience manual work, wrong assumptions, resource constraints, and persistence decisions. But the central explanatory claims are already supported by documentary evidence.
+
+Implication:
+
+Do not block the story on interviews. If interviews are not done, avoid claims about what Filipino founders `typically feel` or `usually do` and keep Philippine claims tied to institutional evidence.
+
+## 15. The strongest article may not actually be about `grind`
+
+The evidence now supports a more precise tension:
 
 > Starting a business is difficult partly because the founder has to keep acting before the answer is known, while also learning when continued effort is no longer justified.
 
-This is not yet the approved thesis. It is the strongest provisional synthesis produced by the contradiction search.
+This is the strongest provisional synthesis after two subject-research passes.
 
-If later evidence does not support it, reframe again.
+It remains an editorial interpretation, not a universal law. If the human story-decision gate approves it, the next task is writing-form research rather than more thesis invention.
