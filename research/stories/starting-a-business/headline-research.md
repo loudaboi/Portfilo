@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: RESEARCH COMPLETE / HEADLINE AWAITING FOUNDER-EDITOR APPROVAL_
+_Status: RESEARCH COMPLETE / HEADLINE APPROVED_
 
 ## Purpose
 
@@ -188,7 +188,7 @@ Weaknesses:
 
 Editorial assessment:
 
-**RECOMMENDED PRIMARY.**
+**APPROVED PRIMARY.**
 
 Reason:
 
@@ -213,7 +213,7 @@ Weaknesses:
 
 Editorial assessment:
 
-**STRONG ALTERNATIVE.**
+**STRONG ALTERNATIVE / NOT SELECTED.**
 
 Candidate A's `what makes` better accommodates multiple mechanisms.
 
@@ -237,7 +237,7 @@ Weaknesses:
 
 Editorial assessment:
 
-**SECONDARY ONLY / NOT RECOMMENDED AS PRIMARY.**
+**SECONDARY ONLY / NOT SELECTED.**
 
 ### Candidate D - `What the grind leaves out about starting a business`
 
@@ -306,13 +306,13 @@ Editorial assessment:
 
 **REJECT.**
 
-## Recommended headline direction
-
-Primary recommendation:
+## Approved headline
 
 > **What makes starting a business so hard?**
 
-Why this wins:
+Approved by founder/editor on 2026-09-07.
+
+Why it was selected:
 
 - it asks exactly the question the body answers;
 - it does not strengthen the evidence beyond what the packet supports;
@@ -321,9 +321,9 @@ Why this wins:
 - it works out of context;
 - it is plain enough that the headline is not competing with the reporting.
 
-This recommendation intentionally prioritizes **accuracy, clarity and editorial fit over cleverness**.
+This decision intentionally prioritizes **accuracy, clarity and editorial fit over cleverness**.
 
-## Proposed headline/dek division
+## Headline/dek division
 
 Headline job:
 
@@ -337,8 +337,6 @@ The exact dek remains a separate research/editing gate.
 
 ## Boundary
 
-No headline is approved merely because this file recommends it.
-
-Founder/editor approval is required before inserting a final headline into the draft or public story.
+This approval applies only to this story.
 
 Do not treat this headline as a recurring Portfilo formula for future Explained articles.
