@@ -29,8 +29,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state.
-- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. As of 2026-09-08 it includes the founder-approved 7-minute reading-time promise and three-times-per-week newsletter cadence.
+- `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state. As of 2026-09-08 it records the founder-approved **compact no-image homepage hero**, the revised newsletter placements, and Static Homepage Rebuild v1 as the active implementation/validation task.
+- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. Its older line describing one standalone final newsletter signup is superseded by the later homepage placement decision in `docs/PROJECT_STATE.md` until the scope file is synchronized.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -51,13 +51,13 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current visual principles.
+- `docs/DESIGN_DIRECTION.md` — current visual principles. Its old homepage-composition and selected-hero-image clauses are superseded where they conflict with the later founder decisions in `docs/PROJECT_STATE.md`: Static Homepage Rebuild v1 uses a compact **no-image** newsletter hero, a Feature/newsletter paired module, and a compact footer signup.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
-- `research/homepage-redesign-v1.md` — founder-approved homepage composition/design contract. Its old in-file `Current active task: Hero Visual Direction v1` section is superseded; hero selection is complete and the current task lives only in `PROJECT_STATE.md`.
-- `research/image-system/homepage-hero-image-brief-v1.md` — approved brief/provenance for the new hero concept. Its old `awaiting concept selection` status line is superseded by the selection record below.
-- `research/image-system/homepage-hero-selection-v1.md` — current authority for the selected new hero candidate and asset-provenance requirements.
-- `research/image-system/homepage-featured-cover-decision.md` — historical/current-runtime authority for the **older Feature-panel image**, not the selected new homepage hero.
+- `research/homepage-redesign-v1.md` — founder-approved redesign provenance. Its original hero-image requirement, standalone final newsletter CTA, and old active-task section are superseded by the 2026-09-08 decisions recorded in `docs/PROJECT_STATE.md`.
+- `research/image-system/homepage-hero-image-brief-v1.md` — historical brief/provenance for the architectural hero concept; no longer an active implementation requirement for Homepage Rebuild v1.
+- `research/image-system/homepage-hero-selection-v1.md` — **HISTORICAL SELECTION / PROVENANCE ONLY FOR THE CURRENT REBUILD**. The exact selected image must not be regenerated or silently substituted, but the founder has chosen not to use a hero image in Static Homepage Rebuild v1.
+- `research/image-system/homepage-featured-cover-decision.md` — current/historical authority for the older Feature-panel image, which remains eligible for its approved Feature job.
 
 ### Product-model / newsletter research and copy
 
@@ -65,7 +65,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `research/portfilo-product-model-research-v1.md` — research record whose model recommendation remains useful internally. `Briefing` may describe an internal archetype in that research, but it is rejected as public homepage/newsletter acquisition language at the current boundary.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is parked until the core redesigned site is built and now validates whether the approved 7-minute / three-times-per-week promise can be sustained operationally.
 - `research/homepage-copy-evidence-matrix-v1.md` — research/provenance record. Its former Architecture A hero selection is superseded for actual hero wording/structure by the founder's later acquisition-copy decision.
-- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE HERO COPY AUTHORITY**. It records the exact hero copy, the `latest news` acquisition promise, the 7-minute reading-time promise, the three-times-per-week cadence, rejection of `briefing` as public acquisition language, and the rule that lower-page signup copy must be section-specific.
+- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE HERO COPY AUTHORITY**. It records the exact hero copy, the `latest news` acquisition promise, the 7-minute reading-time promise, the three-times-per-week cadence, and rejection of `briefing` as public acquisition language. Its earlier section-specific lower-signup rule is superseded for the first static build by the founder's explicit approval to reuse the hero copy in all three signup placements.
 
 ### Brand
 
@@ -120,15 +120,20 @@ Their old navigation, fixture-era copy, approval status, or `next task` language
 
 ## Current runtime vs redesign target
 
-The current runtime is transitional.
+Static Homepage Rebuild v1 has now replaced the rejected first homepage composition in `src/pages/index.astro` on the working branch.
 
-Actual working-branch header currently renders:
+The current rebuild implements:
 
-- `Latest`
-- `Features`
-- `Subscribe free`
+- compact no-image newsletter hero;
+- static Latest strip;
+- development-only News fixtures for hierarchy testing;
+- current Feature treatment using the approved existing Feature image;
+- Feature + newsletter-card pairing;
+- compact footer newsletter signup.
 
-The current `src/pages/index.astro` is the rejected first homepage-rebuild attempt. It is not visual or copy precedent, even though it remains runtime code until replacement.
+`src/components/NewsletterSignup.astro` now supplies compact hero/card/footer variants while preserving the existing subscription behavior.
+
+`src/components/SiteHeader.astro` now exposes the intended `Business / Technology / Startup / AI` coverage labels as presentation text without performing the later schema/taxonomy migration.
 
 The current content schema still uses:
 
@@ -138,28 +143,26 @@ The approved target public coverage set is:
 
 `Business / Technology / Startup / AI`
 
-Do not confuse the approved target with an already completed schema migration.
+Do not confuse header presentation with an already completed schema migration.
 
 ## Homepage image authority
 
-Two different image jobs now exist:
-
-### Older Feature image
+### Feature image
 
 Current repository assets:
 
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-These remain valid for their prior Feature/runtime job and may be reused for a Feature when justified.
+These remain valid for the Feature job and are used by the current static homepage Feature treatment.
 
-### New homepage hero
+### Historical architectural hero image
 
-Founder selected generated architectural candidate 2. See:
+Founder previously selected generated architectural candidate 2. See:
 
 `research/image-system/homepage-hero-selection-v1.md`
 
-The exact selected binary is not yet committed. Do not regenerate or substitute it if unavailable. Ask for the approved asset and verify the recorded hash when practical.
+The current homepage hero deliberately uses **no image**. The historical selection remains preserved but is not an implementation dependency. Do not add or regenerate it unless the founder explicitly reopens that decision.
 
 ## Validation authority
 
@@ -169,7 +172,7 @@ Current validation state is recorded only in:
 
 `docs/PROJECT_STATE.md`
 
-Documentation-only state reconciliation and copy/product-decision documentation do not create a new runtime check/build result.
+The current static homepage runtime changes require fresh validation. Documentation updates do not create a check/build pass.
 
 ## Maintenance rule
 
