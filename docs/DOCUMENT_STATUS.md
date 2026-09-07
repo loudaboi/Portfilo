@@ -64,7 +64,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `research/newsletter-copy-reference-corpus-v1.md` — current research corpus only; it grants no Portfilo copy authority by itself.
 - `research/portfilo-product-model-research-v1.md` — research record whose recommendation **Model 2: focused business/technology briefing + original reporting** and **no geographic product promise** were founder-approved after the file was written. Its in-file `approval pending` status is stale.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is **parked until the core redesigned site is built**.
-- `research/homepage-copy-evidence-matrix-v1.md` — founder-approved homepage copy-structure decision record. **Architecture A — Product/output first** is selected. This record authorizes the structure only; it does not authorize final homepage wording or implementation.
+- `research/homepage-copy-evidence-matrix-v1.md` — founder-approved homepage copy-structure decision record. **Architecture A — Product/output first** is selected.
+- `research/homepage-copy-v2.md` — current exact homepage copy candidate produced from approved Architecture A. It is **awaiting founder copy approval** and has no implementation authority until approved.
 
 ### Brand
 
@@ -93,9 +94,9 @@ Its former position as the immediate next project task is superseded. Social Vis
 
 `research/homepage-copy-v1.md` is **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
-Do not use its Candidate A/B/C wording or lightly paraphrase it into the next homepage-copy attempt. This includes the rejected direction around `news and deeper stories`.
+Do not use its Candidate A/B/C wording or lightly paraphrase it into the current homepage-copy attempt. This includes the rejected directions around `keep up`, `latest`, `business and technology, by email`, `news and deeper stories`, and `Get Portfilo in your inbox`.
 
-The approved copy process has now completed the reference-corpus + Portfilo claim-sheet + message-architecture gate. Architecture A is selected in `research/homepage-copy-evidence-matrix-v1.md`. Final wording remains a separate explicit approval gate.
+The approved process completed the reference-corpus + Portfilo claim-sheet + message-architecture gate. Architecture A is selected in `research/homepage-copy-evidence-matrix-v1.md`. The new exact wording candidate is `research/homepage-copy-v2.md` and remains pending founder approval.
 
 ### Historical copy/navigation records
 
@@ -164,7 +165,7 @@ Current validation state is recorded only in:
 
 `docs/PROJECT_STATE.md`
 
-Documentation-only state reconciliation does not create a new runtime check/build result.
+Documentation-only state reconciliation and copy-candidate documentation do not create a new runtime check/build result.
 
 ## Maintenance rule
 
