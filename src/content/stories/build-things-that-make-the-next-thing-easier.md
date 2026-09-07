@@ -6,8 +6,8 @@ contentType: perspective
 topic: building
 author: "Louda Tuppal"
 publishedAt: 2026-09-03
-status: published
-featured: true
+status: draft
+featured: false
 ---
 
 Imagine two people each spend several months on a small software product. Both release it, attract a few users, and shut it down when those users do not return. Measured against the product's goal, both projects failed.
