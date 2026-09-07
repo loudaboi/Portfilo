@@ -1,32 +1,45 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-06_
+_Last updated: 2026-09-07_
 
-This file prevents historical implementation notes and research records from being mistaken for current authority.
+This file prevents historical implementation notes, stale status lines, and research records from being mistaken for current authority.
 
-When documents disagree, use this priority order:
+## Authority order
 
-1. `AGENTS.md` for contributor/workflow rules;
+When documents disagree, use this order:
+
+1. `AGENTS.md` for contributor/workflow/approval rules;
 2. `docs/PROJECT_STATE.md` for the current phase, validated state, and exact next task;
-3. the current canonical standard for the subject;
-4. current source code for runtime behavior;
-5. historical decision/research records for provenance only.
+3. this status map for whether a document is current, partial, historical, or superseded;
+4. `docs/V0_SCOPE.md` for current v0 product boundaries;
+5. the current canonical standard for the subject;
+6. current source code for actual runtime behavior;
+7. historical research/decision records for provenance only.
+
+A current founder decision should be reconciled into the proper canonical file before a later chat relies on it.
+
+Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the active sequence.
 
 ## Current canonical documents
 
-### Product and scope
+### Contributor / decision control
 
-- `docs/PROJECT_STATE.md`
-- `docs/V0_SCOPE.md`
-- `docs/CONTENT_PLANNING.md`
-- `BACKLOG.md`
+- `AGENTS.md` — repository authority, scope, approvals, implementation discipline.
+- `skills/portfilo-anti-slop/SKILL.md` — mandatory evidence-first decision gate for nontrivial discretionary product/copy/design decisions.
 
-### Editorial, research, and writing
+### Product and state
+
+- `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state.
+- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries.
+- `BACKLOG.md` — valid ideas outside current scope.
+
+### Editorial, research, writing
 
 - `docs/EDITORIAL_STANDARD.md`
 - `docs/RESEARCH_STANDARD.md`
 - `docs/WRITING_SYSTEM.md`
 - `docs/STYLE_RESEARCH_STANDARD.md`
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`
 - `docs/PUBLISHING_STANDARD.md`
 - `docs/COPY_STYLE.md`
 - `docs/PORTFILO_TEST_STANDARD.md`
@@ -34,86 +47,131 @@ When documents disagree, use this priority order:
 - `research/STYLE_RESEARCH_TEMPLATE.md`
 - `research/STYLE_BRIEF_TEMPLATE.md`
 
-### Audience and distribution
-
-- `docs/SOCIAL_DISTRIBUTION.md`
+`docs/CONTENT_PLANNING.md` remains canonical for its planning gates, reader needs, evidence/feasibility checks, and assignment workflow. Its 2026-09-06 internal geography thesis and old five-topic public taxonomy are **superseded by the 2026-09-07 product decision recorded in `docs/PROJECT_STATE.md`**. Do not use those stale clauses to reintroduce a Philippines-first product promise or `Building` as an intended public coverage label. Full planning-taxonomy synchronization belongs to the later News/Feature architecture migration.
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md`
-- `docs/IMAGE_SYSTEM.md`
-- `docs/PHOTO_TREATMENT.md`
-- `research/image-system/homepage-featured-cover-decision.md` for the current homepage feature-image decision
+- `docs/DESIGN_DIRECTION.md` — current visual principles.
+- `docs/IMAGE_SYSTEM.md` — general editorial image rules.
+- `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
+- `research/homepage-redesign-v1.md` — founder-approved homepage composition/design contract. Its old in-file `Current active task: Hero Visual Direction v1` section is superseded; hero selection is complete and the current task lives only in `PROJECT_STATE.md`.
+- `research/image-system/homepage-hero-image-brief-v1.md` — approved brief/provenance for the new hero concept. Its old `awaiting concept selection` status line is superseded by the selection record below.
+- `research/image-system/homepage-hero-selection-v1.md` — current authority for the selected new hero candidate and asset-provenance requirements.
+- `research/image-system/homepage-featured-cover-decision.md` — historical/current-runtime authority for the **older Feature-panel image**, not the selected new homepage hero.
 
-### Email and deployment
+### Product-model / newsletter research
+
+- `research/newsletter-copy-reference-corpus-v1.md` — current research corpus only; it grants no Portfilo copy authority by itself.
+- `research/portfilo-product-model-research-v1.md` — research record whose recommendation **Model 2: focused business/technology briefing + original reporting** and **no geographic product promise** were founder-approved after the file was written. Its in-file `approval pending` status is stale.
+- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is **parked until the core redesigned site is built**.
+
+### Brand
+
+- `research/brand-system/wordmark-svg.md`
+- `research/brand-system/icon-system.md`
+- `research/brand-system/social-preview.md`
+- canonical assets under `public/brand/` and `public/social/`.
+
+### Email / deployment
 
 - `docs/EMAIL_SYSTEM_PLAN.md`
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-## Historical / superseded implementation records
+The email infrastructure remains current. `Portfilo Brief` still exists as the operational name on current runtime/email surfaces. The approved redesign direction is a later **coordinated** public naming migration to `Newsletter`; do not perform a piecemeal migration.
 
-The following files remain in the repository for provenance. Their old status lines, pending-QA language, fixture references, or earlier navigation/copy decisions do **not** override current implementation or `docs/PROJECT_STATE.md`.
+### Audience / distribution
 
-- `docs/COPY_REPLACEMENT_CANDIDATE.md` — historical content-first copy implementation record. Its earlier `Latest` navigation and fixture-era homepage details were superseded by the later Stories archive and copy/IA work.
-- `docs/NAVIGATION_RESEARCH.md` — historical navigation reset record. The final runtime navigation is `Stories / Standards / About / Subscribe`, as implemented in `src/components/SiteHeader.astro` and `src/components/SiteFooter.astro`.
-- `docs/SITE_COPY_AND_IA_AUDIT.md` — completed audit/decision record. Implementation is no longer pending.
-- `docs/SITE_COPY_IMPLEMENTATION.md` — completed Phase 2B implementation record. Its earlier pending deployment/build language is historical.
-- `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md` — approved historical decision record establishing the content-first/no-tagline architecture. Current public-copy rules live in `docs/COPY_STYLE.md`.
-- `docs/NAVIGATION_RESEARCH.md` and earlier copy records must not be used to reintroduce `Latest` as the global nav destination; `/stories` is the current archive.
+- `docs/SOCIAL_DISTRIBUTION.md` remains current strategy.
 
-## Historical image-system material
+Its former position as the immediate next project task is superseded. Social Visual System work is deferred until the redesigned website is stable.
 
-The homepage image-system research directory intentionally preserves rejected candidates, earlier briefs, pilot experiments, and generation records.
+## Rejected / historical records with zero current decision authority
 
-Current authority is:
+### Rejected homepage copy
 
-- `docs/IMAGE_SYSTEM.md` for general editorial image rules;
-- `research/image-system/homepage-featured-cover-decision.md` for the homepage feature panel;
-- `public/images/homepage-feature-image.png` for the approved universal homepage feature asset.
+`research/homepage-copy-v1.md` is **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
-The earlier five-topic homepage mapping and earlier Building/Astra/Pinterest candidates are superseded for v0.
+Do not use its Candidate A/B/C wording or lightly paraphrase it into the next homepage-copy attempt. This includes the rejected direction around `news and deeper stories`.
 
-The universal homepage feature image is already implemented and validated. The separate per-story generated-image pilot remains paused unless explicitly reopened.
+The approved process now starts from the reference corpus + Portfilo claim sheet + structural message direction before any final wording.
 
-## Navigation authority
+### Historical copy/navigation records
 
-Current global navigation is:
+The following remain for provenance only:
 
-- `Stories` → `/stories`
-- `Standards` → `/standards`
-- `About` → `/about`
-- `Subscribe` → `/subscribe`
+- `docs/COPY_REPLACEMENT_CANDIDATE.md`;
+- `docs/NAVIGATION_RESEARCH.md`;
+- `docs/SITE_COPY_AND_IA_AUDIT.md`;
+- `docs/SITE_COPY_IMPLEMENTATION.md`;
+- `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`.
 
-The Portfilo wordmark links to `/` and acts as Home.
+Their old navigation, fixture-era copy, approval status, or `next task` language does not override current state.
 
-Current runtime sources:
+### Removed duplicate plan
 
-- `src/components/SiteHeader.astro`
-- `src/components/SiteFooter.astro`
+`docs/EXECUTION_PLAN.md` was created during the 2026-09-07 redesign discussion but duplicated the existing project-state authority model. It is intentionally removed during state reconciliation. Its useful current decisions were reconciled into `docs/PROJECT_STATE.md`; it must not be recreated as a second current-phase authority.
 
-## Current homepage image authority
+## Current runtime vs redesign target
 
-The homepage feature panel uses one universal image regardless of the featured story topic:
+The current runtime is transitional.
 
-`public/images/homepage-feature-image.png`
+Actual working-branch header currently renders:
 
-The image is not mapped separately to Business, Technology, Startups, AI, or Building.
+- `Latest`
+- `Features`
+- `Subscribe free`
 
-## Current validation authority
+The current `src/pages/index.astro` is the rejected first homepage-rebuild attempt. It is not visual or copy precedent, even though it remains runtime code until replacement.
 
-Do not infer a current pass from an old document that says QA was pending or from an old document that says QA passed.
+The current content schema still uses:
+
+`business / technology / startups / ai / building`
+
+The approved target public coverage set is:
+
+`Business / Technology / Startup / AI`
+
+Do not confuse the approved target with an already completed schema migration.
+
+## Homepage image authority
+
+Two different image jobs now exist:
+
+### Older Feature image
+
+Current repository assets:
+
+- `public/images/homepage-feature-image.png`
+- `public/images/homepage-feature-image.webp`
+
+These remain valid for their prior Feature/runtime job and may be reused for a Feature when justified.
+
+### New homepage hero
+
+Founder selected generated architectural candidate 2. See:
+
+`research/image-system/homepage-hero-selection-v1.md`
+
+The exact selected binary is not yet committed. Do not regenerate or substitute it if unavailable. Ask for the approved asset and verify the recorded hash when practical.
+
+## Validation authority
+
+Do not infer a current pass from an old record saying QA passed or was pending.
 
 Current validation state is recorded only in:
 
 `docs/PROJECT_STATE.md`
 
+Documentation-only state reconciliation does not create a new runtime check/build result.
+
 ## Maintenance rule
 
-When a later decision supersedes an older implementation record:
+When a later decision supersedes an older record:
 
-- preserve the old file when it contains useful provenance;
-- update this status map when the old file could plausibly mislead future work;
-- update the canonical standard when the governing rule itself changed;
-- update `docs/PROJECT_STATE.md` at meaningful phase boundaries;
-- do not duplicate current state across many historical files merely to make every old timestamp read as current.
+- preserve historical material when it is useful for provenance;
+- update this status map if the older record could plausibly mislead later work;
+- update the governing canonical standard when the rule itself changed;
+- update `docs/PROJECT_STATE.md` whenever the current phase or exact next task changes;
+- do not duplicate current state across multiple new planning documents;
+- do not edit old history merely to make every old status line read as current when a clear status map is sufficient.
