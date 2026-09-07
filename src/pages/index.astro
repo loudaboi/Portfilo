@@ -329,7 +329,8 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
 
       .newsletter-band {
         width: 100%;
-        background: var(--paper);
+        background: var(--accent);
+        color: #fff;
       }
 
       .newsletter-band__inner,
@@ -346,13 +347,12 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
         grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
         gap: clamp(2.5rem, 3.2vw, 3.5rem);
         align-items: center;
-        border-top: 2px solid var(--accent);
-        border-bottom: 2px solid var(--accent);
       }
 
       .newsletter-band__copy h1 {
         max-width: 17ch;
         margin: 0;
+        color: #fff;
         font: 680 clamp(2.15rem, 2.65vw, 2.8rem) / 0.98 var(--sans);
         letter-spacing: -0.045em;
         text-wrap: balance;
@@ -361,7 +361,7 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
       .newsletter-band__copy p {
         max-width: 43rem;
         margin: 0.65rem 0 0;
-        color: var(--muted);
+        color: rgba(255, 255, 255, 0.8);
         font: 440 clamp(0.9rem, 1vw, 1rem) / 1.45 var(--sans);
       }
 
@@ -378,12 +378,38 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
       }
 
       .newsletter-band__form :global(.newsletter-signup input) {
-        border: 1px solid var(--line-strong);
-        background: #fff;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .newsletter-band__form :global(.newsletter-signup input::placeholder) {
+        color: rgba(255, 255, 255, 0.58);
       }
 
       .newsletter-band__form :global(.newsletter-signup button) {
         width: 100%;
+        border-color: var(--paper);
+        background: var(--paper);
+        color: var(--accent);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup button:hover) {
+        filter: none;
+        background: rgba(248, 246, 241, 0.9);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup__note),
+      .newsletter-band__form :global(.newsletter-signup__status) {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup__status[data-state="success"]) {
+        color: #fff;
+      }
+
+      .newsletter-band__form :global(.newsletter-signup__status[data-state="error"]) {
+        color: #ffe1dc;
       }
 
       .latest-strip {
@@ -765,6 +791,10 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
           gap: 2rem;
         }
 
+        .newsletter-band__copy h1 {
+          font-size: clamp(1.95rem, 3.6vw, 2.3rem);
+        }
+
         .featured-pair {
           grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.8fr);
         }
@@ -799,6 +829,14 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
           gap: 1.2rem;
         }
 
+        .newsletter-band__copy h1 {
+          font-size: clamp(1.85rem, 5.4vw, 2.05rem);
+        }
+
+        .newsletter-band__copy p {
+          font-size: clamp(0.85rem, 2.1vw, 0.9rem);
+        }
+
         .newsletter-band__form {
           width: min(100%, var(--signup-control-max));
           justify-self: start;
@@ -817,7 +855,7 @@ const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
 
         .newsletter-band__copy h1 {
           max-width: 18ch;
-          font-size: clamp(2rem, 9vw, 2.5rem);
+          font-size: clamp(1.75rem, 7.7vw, 2rem);
         }
 
         .latest-strip {
