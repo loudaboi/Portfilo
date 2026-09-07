@@ -1,0 +1,314 @@
+---
+interface Props {
+  id: string;
+  heading: string;
+  copy?: string;
+  variant?: "hero" | "inline" | "footer";
+}
+
+const {
+  id,
+  heading,
+  copy = "Get Portfilo's latest news and deeper stories by email.",
+  variant = "inline",
+} = Astro.props;
+
+const emailId = `${id}-email`;
+const statusId = `${id}-status`;
+const honeypotId = `${id}-company`;
+---
+
+<section class:list={["newsletter-signup", `newsletter-signup--${variant}`]} aria-labelledby={`${id}-title`}>
+  <div class="newsletter-signup__copy">
+    <h2 id={`${id}-title`}>{heading}</h2>
+    <p>{copy}</p>
+  </div>
+
+  <form class="newsletter-signup__form" action="/api/subscribe" method="post" novalidate data-newsletter-form>
+    <div class="newsletter-signup__field">
+      <label class="newsletter-signup__label" for={emailId}>Email address</label>
+      <div class="newsletter-signup__row">
+        <input
+          id={emailId}
+          name="email"
+          type="email"
+          inputmode="email"
+          autocomplete="email"
+          maxlength="320"
+          placeholder="you@email.com"
+          required
+          aria-describedby={statusId}
+          data-newsletter-email
+        />
+        <button type="submit" data-newsletter-submit>
+          <span data-submit-label>Subscribe free</span>
+        </button>
+      </div>
+      <p class="newsletter-signup__note">Free newsletter. Unsubscribe anytime.</p>
+      <p
+        class="newsletter-signup__status"
+        id={statusId}
+        role="status"
+        aria-live="polite"
+        data-newsletter-status
+      ></p>
+    </div>
+
+    <div class="newsletter-signup__honeypot" aria-hidden="true">
+      <label for={honeypotId}>Company</label>
+      <input id={honeypotId} name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+  </form>
+</section>
+
+<script is:inline>
+  if (!document.documentElement.dataset.newsletterSignupBound) {
+    document.documentElement.dataset.newsletterSignupBound = "true";
+
+    document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
+      if (!(form instanceof HTMLFormElement)) return;
+
+      const emailInput = form.querySelector("[data-newsletter-email]");
+      const statusMessage = form.querySelector("[data-newsletter-status]");
+      const submitButton = form.querySelector("[data-newsletter-submit]");
+      const submitLabel = form.querySelector("[data-submit-label]");
+
+      const setStatus = (message, state = "") => {
+        if (!(statusMessage instanceof HTMLElement)) return;
+        statusMessage.textContent = message;
+        statusMessage.dataset.state = state;
+      };
+
+      const setSubmitting = (isSubmitting) => {
+        if (!(submitButton instanceof HTMLButtonElement) || !(submitLabel instanceof HTMLElement)) return;
+        submitButton.disabled = isSubmitting;
+        submitButton.setAttribute("aria-busy", String(isSubmitting));
+        submitLabel.textContent = isSubmitting ? "Submitting…" : "Subscribe free";
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!(emailInput instanceof HTMLInputElement)) return;
+
+        emailInput.removeAttribute("aria-invalid");
+        setStatus("");
+
+        if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+          emailInput.setAttribute("aria-invalid", "true");
+          setStatus("Enter a valid email address.", "error");
+          emailInput.focus();
+          return;
+        }
+
+        const formData = new FormData(form);
+        const payload = {
+          email: String(formData.get("email") || "").trim(),
+          company: String(formData.get("company") || "").trim(),
+        };
+
+        setSubmitting(true);
+
+        try {
+          const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json().catch(() => null);
+
+          if (!response.ok || !result?.ok) {
+            throw new Error(result?.message || "We could not submit your email. Please try again.");
+          }
+
+          form.reset();
+          setStatus("Check your inbox. Confirm your email to finish subscribing.", "success");
+        } catch (error) {
+          setStatus(
+            error instanceof Error ? error.message : "We could not submit your email. Please try again.",
+            "error",
+          );
+        } finally {
+          setSubmitting(false);
+        }
+      });
+    });
+  }
+</script>
+
+<style>
+  .newsletter-signup {
+    display: grid;
+    gap: clamp(1.35rem, 2.5vw, 2.5rem);
+  }
+
+  .newsletter-signup__copy h2,
+  .newsletter-signup__copy p,
+  .newsletter-signup__note,
+  .newsletter-signup__status {
+    margin: 0;
+  }
+
+  .newsletter-signup__copy h2 {
+    max-width: 14ch;
+    font: 650 clamp(2.1rem, 4.2vw, 4.8rem) / 0.96 var(--sans);
+    letter-spacing: -0.055em;
+  }
+
+  .newsletter-signup__copy p {
+    max-width: 39rem;
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font: 400 clamp(1rem, 1.25vw, 1.18rem) / 1.45 var(--serif);
+  }
+
+  .newsletter-signup__form,
+  .newsletter-signup__field {
+    min-width: 0;
+  }
+
+  .newsletter-signup__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    max-width: 42rem;
+  }
+
+  .newsletter-signup__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .newsletter-signup input,
+  .newsletter-signup button {
+    min-height: 3.25rem;
+    border-radius: 0;
+    font: 500 0.9rem/1 var(--sans);
+  }
+
+  .newsletter-signup input {
+    min-width: 0;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line-strong, #a9a39a);
+    border-right: 0;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .newsletter-signup input::placeholder {
+    color: var(--muted);
+  }
+
+  .newsletter-signup button {
+    padding: 0.9rem clamp(1rem, 2vw, 1.45rem);
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .newsletter-signup button:hover {
+    filter: brightness(0.93);
+  }
+
+  .newsletter-signup button:disabled {
+    cursor: wait;
+    opacity: 0.68;
+  }
+
+  .newsletter-signup input:focus-visible,
+  .newsletter-signup button:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .newsletter-signup__note,
+  .newsletter-signup__status {
+    margin-top: 0.55rem;
+    color: var(--muted);
+    font: 400 0.72rem/1.4 var(--sans);
+  }
+
+  .newsletter-signup__status {
+    min-height: 1em;
+  }
+
+  .newsletter-signup__status[data-state="error"] {
+    color: var(--correction);
+  }
+
+  .newsletter-signup__status[data-state="success"] {
+    color: var(--accent);
+  }
+
+  .newsletter-signup__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .newsletter-signup--hero {
+    align-content: end;
+  }
+
+  .newsletter-signup--hero .newsletter-signup__copy h2 {
+    max-width: 11ch;
+    font-size: clamp(3.25rem, 6.3vw, 7.3rem);
+    line-height: 0.9;
+  }
+
+  .newsletter-signup--inline {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.92fr);
+    align-items: end;
+  }
+
+  .newsletter-signup--inline .newsletter-signup__copy h2 {
+    font-size: clamp(2.2rem, 3.6vw, 4rem);
+  }
+
+  .newsletter-signup--footer {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
+    align-items: center;
+  }
+
+  .newsletter-signup--footer .newsletter-signup__copy h2 {
+    font-size: clamp(2rem, 3vw, 3.3rem);
+  }
+
+  @media (max-width: 48rem) {
+    .newsletter-signup--inline,
+    .newsletter-signup--footer {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .newsletter-signup--hero .newsletter-signup__copy h2 {
+      font-size: clamp(3rem, 15vw, 5rem);
+    }
+  }
+
+  @media (max-width: 28rem) {
+    .newsletter-signup__row {
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+    }
+
+    .newsletter-signup input {
+      border-right: 1px solid var(--line-strong, #a9a39a);
+    }
+  }
+</style>
