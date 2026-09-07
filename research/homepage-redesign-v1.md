@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-08_
 
-_Status: HOMEPAGE V3 PLAN FOUNDER-APPROVED / STATIC IMPLEMENTATION COMPLETE / VALIDATION + VISUAL QA PENDING_
+_Status: POST-V3 HOMEPAGE CORRECTION PLAN FOUNDER-APPROVED / IMPLEMENTATION NOT YET AUTHORIZED_
 
 ## Purpose
 
@@ -10,189 +10,225 @@ Portfilo is being redesigned as a contemporary business-and-technology publicati
 
 The homepage must behave like a publication first and a signup funnel second.
 
-Morning Brew and BackScoop remain composition references only. Use their page logic and hierarchy where useful, but do not copy their branding, colors, layout details, or wording.
+Morning Brew and BackScoop remain composition references only. The approved lesson is their compact publication/signup relationship and hierarchy, not their branding, colors, typography, wording, or proprietary layout details.
 
-## Homepage v3 approved composition
+## Governing homepage composition
 
 ```text
+SHARED CONTENT SHELL
+one common alignment for header, hero, Feature area, News, footer-inner
+working desktop content width roughly 1280–1360 px
+only ticker is full-bleed
+
 HEADER
 Portfilo
-Latest | Stories
+Latest | Stories | Subscribe free
 
-EDITORIAL NEWSLETTER ACQUISITION AREA
-warm white / paper surface
-large editorial proposition
-support line
-stacked email field + Subscribe free
-thin structural rule / restrained blue accent
+TOP NEWSLETTER SIGNUP
+left: approved headline + support copy
+right: signup form
+Instrument Sans
+hero CTA: Send me the news
 
-LATEST STRIP
+FULL-WIDTH LATEST TICKER
 black Latest label only
 light headline rail
 
-FEATURE + CONTEXTUAL NEWSLETTER CARD
-left: smaller full Feature image, headline, dek
-right: blue newsletter card
+MAIN FEATURE AREA
+left: development image placeholder + Feature headline + dek
+right: stacked rail
+  blue contextual signup block
+  square Portfilo brand/editorial placeholder
 
 NEWS
-plain News heading
-lead current story + supporting current stories
+plain News heading + current development hierarchy
 
 BLACK FOOTER ENDCAP
-compact newsletter signup
-minimal institutional/legal links
+existing compact signup + minimal links
 ```
+
+## Global shell invariant
+
+The homepage now has one hard alignment rule:
+
+- header inner content, top signup inner content, Feature area, News, and footer inner content use the same shell;
+- the preferred left edge is the Feature image/placeholder edge shown in the founder-approved screenshots;
+- working large-desktop content width is roughly **1280–1360 px**, responsive downward;
+- individual sections must not invent independent global centering/max-width rules;
+- internal grids may vary inside the shell;
+- **only the Latest ticker is full-bleed**.
+
+This is a frozen structural invariant for the next implementation pass.
 
 ## Header
 
-Freeze the current header unless visual QA exposes an actual defect.
+Approved target:
+
+- Portfilo wordmark at the earlier restrained scale;
+- `Latest | Stories` navigation;
+- `Subscribe free` CTA button at the right;
+- no topic labels;
+- no unrelated header redesign;
+- header inner content aligns to the same shared shell as the Feature placeholder.
+
+## Top newsletter signup
+
+The approved behavior is a compact two-column publication signup:
+
+`[content] [signup]`
 
 Requirements:
 
-- use the approved Portfilo wordmark at the current larger restrained scale;
-- primary navigation is `Latest | Stories`;
-- no topic labels in the header;
-- no Subscribe CTA in the header;
-- preserve shared page alignment and mobile usability.
-
-## Primary newsletter acquisition area
-
-The top signup should not look like a generic white marketing block or a large colored hero.
-
-Approved direction:
-
-- warm white / paper background;
+- warm paper / near-white surface;
 - no hero image;
+- no blue full-section background;
 - no `NEWSLETTER` eyebrow;
-- no card container, shadow, rounded panel, gradient, or decorative icon;
-- editorial composition carried by typography, spacing, and one restrained blue rule/accent;
-- headline may use Source Serif 4 to establish a publication/editorial tone;
-- support copy remains Instrument Sans;
-- target large-desktop headline roughly 44–48 px, responsive downward;
-- target total desktop section height roughly 170–200 px;
-- copy/form columns remain balanced and compact;
-- form is stacked on desktop rather than a stretched horizontal input/button row;
-- form width roughly 420–480 px maximum on desktop;
-- input and CTA share the same width;
-- CTA text is exactly `Subscribe free`;
-- CTA uses Portfilo blue with white text;
-- one small line such as `Free newsletter. Unsubscribe anytime.` remains below the form;
-- mobile stacks naturally without forcing desktop equal-height behavior.
+- **Instrument Sans**, not Source Serif 4, for the hero headline;
+- approved headline remains `Get ahead in business and tech in 7 minutes.`;
+- approved support copy remains `The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.`;
+- internal desktop relationship roughly 52–55% content / 45–48% signup;
+- internal gap roughly 40–56 px on large desktop;
+- content and signup must feel like one compact unit rather than opposite ends of a large empty canvas;
+- hero CTA is **`Send me the news`**;
+- free/unsubscribe note stays with the form;
+- no independent hero max-width that breaks the shared shell;
+- mobile stacks naturally.
 
-Approved primary acquisition copy remains:
+The header and hero deliberately use different CTA labels:
 
-```text
-Get ahead in business and tech in 7 minutes.
+- header: `Subscribe free`;
+- hero: `Send me the news`.
 
-The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.
-```
+## Latest ticker
 
-The 7-minute and three-times-per-week statements remain public operating promises.
-
-## Latest strip
-
-Keep the corrected strip structure:
+Keep the corrected static ticker:
 
 - full viewport width;
-- only the `Latest` identifier uses the near-black/ink block;
-- headline rail remains on the light page treatment;
+- only the `Latest` identifier is near-black/ink;
+- headline rail remains light;
 - category labels may use Portfilo blue;
 - no red ticker treatment;
-- no fabricated production headlines;
-- no automatic movement during Homepage v3 static implementation.
+- no automatic movement during this static correction pass;
+- ticker motion remains a separate post-static approval task.
 
-Ticker motion remains a separate post-static approval task.
+## Feature + stacked right rail
 
-## Feature + contextual newsletter card
+The next pass should approve geometry without depending on the current Feature artwork.
 
-The prior Feature was too large on wide desktop because the story column received too much of the `100rem` page width while preserving the full image aspect ratio.
+### Left Feature column
 
-Homepage v3 solves this by constraining the module rather than cropping the image.
-
-Approved direction:
-
-- dedicated Feature composition maximum roughly 88–92 rem;
-- desktop story/card relationship roughly 62–65% story and 30–34% newsletter card;
-- gap roughly 32–48 px;
-- Feature image target roughly 800–850 px wide on large desktop rather than approximately 1000 px+;
-- preserve the full image composition;
-- no fixed-height crop;
-- no `object-fit: cover` crop for this approved Feature image;
-- image → headline → short dek;
+- use a clearly synthetic/development image placeholder;
+- landscape proportion around 16:9 or slightly wider;
+- Feature should be prominent but must not dominate the viewport;
+- target roughly 64% of the shared module;
+- placeholder -> headline -> short dek;
 - no Feature eyebrow;
 - no `A CLOSER LOOK` title;
-- Feature headline roughly 40–48 px serif on large desktop, responsive downward;
-- do not stretch the newsletter card to match the image height;
-- mobile stacks Feature first, then newsletter card.
+- do not source/generate a final image during this layout pass.
 
-## Feature-side newsletter card
+### Right rail
 
-Founder-approved card headline:
+- target roughly 32% of the shared module;
+- gap from Feature roughly 32–40 px;
+- stack two distinct blocks vertically;
+- top block: blue contextual newsletter signup;
+- bottom block: square brand/editorial visual placeholder;
+- square placeholder may center the approved ink/black Portfilo wordmark;
+- do not generate or source a final right-rail image during this layout pass;
+- mobile order: Feature -> contextual signup -> square brand visual -> News.
 
-```text
-There's more to it than the headline.
-```
+## Contextual newsletter block
 
-The card should explain why a reader would subscribe after seeing the Feature, rather than repeating the hero proposition.
+Founder-approved headline:
 
-Open item:
+`There's more to it than the headline.`
 
-- exact one-sentence support copy is not yet approved.
+A support description beneath that headline is **structurally required**.
 
-Do not copy BackScoop's supporting wording. The support sentence must state a concrete Portfilo value using approved claims.
+The exact one-sentence support wording is still **OPEN / NOT YET APPROVED**.
 
-Homepage v3 static implementation intentionally omits that support sentence rather than inventing one. The omission is temporary until a later copy gate approves the exact sentence.
+Do not copy BackScoop's support copy and do not silently invent a new Portfilo public claim during implementation.
+
+Until wording is approved, preserve the description slot as a clearly non-public development placeholder or stop before public-copy completion. Do not omit the slot entirely.
+
+The contextual block then contains:
+
+- email field;
+- contextual subscribe action using already approved subscription language unless separately reopened;
+- no eyebrow spam.
 
 ## News
 
-News remains below the Feature composition.
+News stays below the Feature/right-rail composition.
 
 Requirements:
 
 - one plain `News` heading;
-- lead current item + supporting current items;
-- no repeated decorative eyebrow system;
-- no redesign of News during Homepage v3 unless the new Feature scale exposes a concrete layout problem;
-- development fixtures remain clearly synthetic and excluded from production.
+- lead current item + supporting items;
+- development fixtures remain synthetic and excluded from production;
+- do not redesign News unless the new shared shell exposes a concrete defect.
 
 ## Footer
 
-Keep the near-black footer endcap for the Homepage v3 static pass.
+Keep the near-black footer endcap.
 
 Requirements:
 
 - compact newsletter signup;
 - minimal institutional/legal links;
-- light wordmark where used;
-- no new footer redesign during this pass unless QA exposes a defect.
+- footer inner content aligns to the same shared shell;
+- no unrelated footer redesign during this pass.
 
-## Mobile
+## Explicitly rejected recent choices
 
-Mobile remains first-class.
+The following recent choices have zero forward homepage authority:
 
-Expected order:
+- Source Serif 4 hero headline;
+- current Homepage v3 hero composition;
+- independently centered/narrowed Feature shell that changes the global page edge;
+- oversized Feature treatment;
+- using the current Feature image as a layout dependency for the next pass;
+- muted/light-blue full hero background;
+- red ticker treatment;
+- entire ticker rendered black;
+- topic labels in the header;
+- removing `Latest | Stories` from the header based on an exploratory question;
+- implementation-time gutter/max-width changes that were not explicitly approved.
 
-1. header;
-2. editorial newsletter acquisition area;
-3. Latest strip;
-4. Feature image + headline + dek;
-5. contextual newsletter card;
-6. News;
-7. black footer endcap.
+## Implementation discipline for this pass
 
-No horizontal page overflow. No desktop equal-height assumptions. Preserve the Feature image composition.
+Before editing runtime code, treat these as frozen:
 
-## Implementation state
+- shared content shell/alignment;
+- header target;
+- Instrument Sans hero baseline;
+- hero CTA `Send me the news`;
+- only ticker is full-bleed;
+- ticker black only on `Latest` identifier;
+- Feature uses a development image placeholder;
+- right rail is signup + square brand placeholder;
+- contextual headline stays `There's more to it than the headline.`;
+- support-description slot must exist;
+- News and footer remain structurally unchanged;
+- no ticker motion.
 
-The founder explicitly authorized Homepage v3 implementation on 2026-09-08.
+Do not introduce a new font, color surface, image crop, route, taxonomy field, public claim, or section-specific global max-width during implementation without a separate approval.
 
-Static implementation is complete on `build/portfilo-v0` and is limited to the approved v3 contract:
+## Implementation boundary
 
-- top newsletter acquisition composition and `Subscribe free` CTA;
-- Feature module width/ratio/type scale;
-- contextual newsletter-card placement/headline;
+This correction plan is founder-approved as of 2026-09-08.
+
+Approval of the plan does **not** itself authorize runtime implementation.
+
+Once the founder explicitly authorizes implementation, changes are limited to this contract:
+
+- one shared homepage shell/alignment;
+- header `Subscribe free` CTA;
+- compact Instrument Sans `[content] [signup]` hero with `Send me the news`;
+- Feature development placeholder and reduced Feature scale;
+- stacked contextual-signup + square-brand right rail;
 - responsive behavior required by those changes.
 
-The implementation does not add ticker motion, taxonomy migration, new routes, article redesign, or unrelated visual changes.
+Do not add ticker motion, taxonomy/schema migration, new routes, article redesign, final imagery generation, or unrelated visual changes.
 
-Fresh `npm run check` and `npm run build` are still required before validation can be claimed. After validation, stop for desktop/mobile visual QA before ticker motion.
+After runtime changes, run actual `npm run check` and `npm run build`, then stop for desktop/mobile visual QA before ticker motion.
