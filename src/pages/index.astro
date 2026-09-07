@@ -33,36 +33,41 @@ const devNews = import.meta.env.DEV
       {
         topic: "business",
         time: "12 min ago",
-        title: "Development fixture: a long lead-news headline tests hierarchy and wrapping",
-        dek: "Synthetic layout copy used only in local development to test the future News composition.",
+        title: "Development fixture: lead headline tests a two-line current story",
+        dek: "Synthetic layout copy used only in local development to test the future News hierarchy.",
       },
       {
         topic: "technology",
         time: "28 min ago",
         title: "Development fixture: compact technology headline",
-        dek: "Tests a shorter secondary item without presenting fabricated reporting.",
+        dek: "Synthetic copy for testing a shorter supporting item.",
       },
       {
-        topic: "startups",
+        topic: "startup",
         time: "46 min ago",
         title: "Development fixture: startup update with a medium-length headline",
-        dek: "Tests supporting-news density and mobile stacking.",
+        dek: "Synthetic copy for testing supporting-news density and mobile stacking.",
       },
       {
         topic: "ai",
         time: "1 hr ago",
-        title: "Development fixture: another update for the chronological feed",
-        dek: "Tests the fourth item in a realistic local-development composition.",
+        title: "Development fixture: fourth update for the chronological feed",
+        dek: "Synthetic copy for testing the final supporting item.",
       },
     ]
   : [];
 
 const tickerItems =
   devNews.length > 0
-    ? devNews.map((item) => ({ label: item.topic, title: item.title }))
+    ? devNews.map((item) => ({
+        label: item.topic,
+        title: item.title,
+        href: undefined,
+      }))
     : storiesByDate.map((story) => ({
         label: story.data.topic,
         title: story.data.title,
+        href: `/stories/${story.id}`,
       }));
 ---
 
@@ -71,7 +76,7 @@ const tickerItems =
   <head>
     <SiteHead
       title="Portfilo | Business and Technology News"
-      description="Business and technology news, plus deeper stories from Portfilo."
+      description="The latest news on companies, startups, products, markets, AI, and technology."
     />
   </head>
   <body>
@@ -79,53 +84,45 @@ const tickerItems =
     <SiteHeader />
 
     <main id="main-content" tabindex="-1">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__main">
-          <p class="hero__kicker">Business / Technology / Startups / AI / Building</p>
-          <h1 id="hero-title">Keep up with business and technology.</h1>
-          <p class="hero__dek">Get the latest news and deeper stories from Portfilo by email.</p>
-
-          <div class="hero__signup" id="newsletter">
-            <NewsletterSignup
-              id="home-hero-newsletter"
-              heading="Get Portfilo by email."
-              copy="News and features from Portfilo, free."
-              variant="hero"
-            />
-          </div>
+      <section class="newsletter-hero" id="newsletter" aria-labelledby="newsletter-title">
+        <div class="newsletter-hero__copy">
+          <p class="section-label">Newsletter</p>
+          <h1 id="newsletter-title">Get ahead in business and tech in 7 minutes.</h1>
+          <p>
+            The latest news on companies, startups, products, markets, AI, and technology.
+            Three times a week, straight to your inbox.
+          </p>
         </div>
 
-        <aside class="hero__panel" aria-label="Portfilo coverage">
-          <div class="hero__panel-top">
-            <span>Portfilo</span>
-            <span>Newsletter</span>
-          </div>
-          <p class="hero__panel-statement">Latest news.<br />Deeper stories.</p>
-          <div class="hero__panel-bottom">
-            <span>Business</span>
-            <span>Technology</span>
-            <span>Startups</span>
-            <span>AI</span>
-            <span>Building</span>
-          </div>
-        </aside>
+        <div class="newsletter-hero__form">
+          <NewsletterSignup
+            id="home-hero-newsletter"
+            variant="hero"
+            showCopy={false}
+          />
+        </div>
       </section>
 
       {
         tickerItems.length > 0 && (
           <section class="latest-strip" id="latest" aria-label="Latest from Portfilo">
             <div class="latest-strip__label">
-              <span class="latest-strip__dot" aria-hidden="true"></span>
               <strong>Latest</strong>
-              {devNews.length > 0 && <span>Development fixture</span>}
             </div>
-            <div class="latest-strip__items">
-              {tickerItems.map((item) => (
-                <span class="latest-strip__item">
-                  <span>{formatLabel(item.label)}</span>
-                  <strong>{item.title}</strong>
-                </span>
-              ))}
+            <div class="latest-strip__rail">
+              {tickerItems.map((item) =>
+                item.href ? (
+                  <a class="latest-strip__item" href={item.href}>
+                    <span>{formatLabel(item.label)}</span>
+                    <strong>{item.title}</strong>
+                  </a>
+                ) : (
+                  <span class="latest-strip__item">
+                    <span>{formatLabel(item.label)}</span>
+                    <strong>{item.title}</strong>
+                  </span>
+                ),
+              )}
             </div>
           </section>
         )
@@ -133,33 +130,32 @@ const tickerItems =
 
       {
         devNews.length > 0 && (
-          <section class="latest-layout" aria-labelledby="latest-layout-title">
-            <header class="section-title-row">
+          <section class="latest-section" aria-labelledby="latest-section-title">
+            <header class="section-heading">
               <div>
-                <p>Local development preview</p>
-                <h2 id="latest-layout-title">The latest</h2>
+                <p class="section-label">Current</p>
+                <h2 id="latest-section-title">The latest</h2>
               </div>
-              <p class="fixture-warning">Synthetic fixture copy. Not Portfilo reporting.</p>
+              <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
             </header>
 
             <div class="latest-grid">
               <article class="lead-news">
-                <div class="fixture-media" aria-hidden="true">
-                  <span>News</span>
+                <div class="news-image-placeholder" aria-hidden="true">
+                  <span>News image</span>
+                  <small>Development layout only</small>
                 </div>
-                <div class="lead-news__copy">
-                  <div class="news-meta">
-                    <span>{devNews[0].topic}</span>
-                    <span>{devNews[0].time}</span>
-                  </div>
-                  <h3>{devNews[0].title}</h3>
-                  <p>{devNews[0].dek}</p>
+                <div class="news-meta">
+                  <span>{devNews[0].topic}</span>
+                  <span>{devNews[0].time}</span>
                 </div>
+                <h3>{devNews[0].title}</h3>
+                <p>{devNews[0].dek}</p>
               </article>
 
-              <div class="news-cluster">
+              <div class="news-list">
                 {devNews.slice(1).map((item) => (
-                  <article class="cluster-news">
+                  <article class="news-list__item">
                     <div class="news-meta">
                       <span>{item.topic}</span>
                       <span>{item.time}</span>
@@ -176,81 +172,68 @@ const tickerItems =
 
       {
         featureStory && (
-          <section class="feature-showcase" aria-labelledby="feature-title">
-            <header class="section-title-row section-title-row--feature">
+          <section class="feature-section" aria-labelledby="feature-section-title">
+            <header class="section-heading section-heading--feature">
               <div>
-                <p>Feature</p>
-                <h2>A closer look</h2>
+                <p class="section-label">Feature</p>
+                <h2 id="feature-section-title">A closer look</h2>
               </div>
               <a href="/stories">Browse Features</a>
             </header>
 
-            <article class="feature-card">
-              <a class="feature-card__media" href={`/stories/${featureStory.id}`} aria-label={`Read ${featureStory.data.title}`}>
-                <img
-                  src="/images/homepage-feature-image.webp"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
+            <div class="feature-pair">
+              <article class="feature-story">
+                <a
+                  class="feature-story__media"
+                  href={`/stories/${featureStory.id}`}
+                  aria-label={`Read ${featureStory.data.title}`}
+                >
+                  <img
+                    src="/images/homepage-feature-image.webp"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="feature-story__disclosure">AI-generated editorial image</span>
+                </a>
+
+                <div class="feature-story__body">
+                  <div class="feature-story__meta">
+                    <span>{formatLabel(featureStory.data.contentType)}</span>
+                    <span>{formatLabel(featureStory.data.topic)}</span>
+                    <span>{formatDate(featureStory.data.publishedAt)}</span>
+                  </div>
+                  <h3>
+                    <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
+                  </h3>
+                  <p>{featureStory.data.dek}</p>
+                  <div class="feature-story__footer">
+                    <span>{featureStory.data.author}</span>
+                    <a href={`/stories/${featureStory.id}`}>Read Feature <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+              </article>
+
+              <aside class="newsletter-card" aria-label="Subscribe to the Portfilo newsletter">
+                <p class="newsletter-card__label">Newsletter</p>
+                <NewsletterSignup
+                  id="home-feature-newsletter"
+                  heading="Get ahead in business and tech in 7 minutes."
+                  copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
+                  variant="card"
                 />
-                <span class="feature-card__disclosure">AI-generated editorial image</span>
-              </a>
-
-              <div class="feature-card__copy">
-                <div class="feature-card__meta">
-                  <span>{formatLabel(featureStory.data.contentType)}</span>
-                  <span>{formatLabel(featureStory.data.topic)}</span>
-                  <span>{formatDate(featureStory.data.publishedAt)}</span>
-                </div>
-                <h2 id="feature-title">
-                  <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
-                </h2>
-                <p>{featureStory.data.dek}</p>
-                <div class="feature-card__footer">
-                  <span>{featureStory.data.author}</span>
-                  <a href={`/stories/${featureStory.id}`}>Read Feature <span aria-hidden="true">→</span></a>
-                </div>
-              </div>
-            </article>
-          </section>
-        )
-      }
-
-      {
-        storiesByDate.length > 1 && (
-          <section class="more-features" aria-labelledby="more-features-title">
-            <header class="section-title-row">
-              <div>
-                <p>Features</p>
-                <h2 id="more-features-title">More from Portfilo</h2>
-              </div>
-              <a href="/stories">View all</a>
-            </header>
-
-            <div class="more-features__grid">
-              {storiesByDate
-                .filter((story) => story.id !== featureStory?.id)
-                .slice(0, 3)
-                .map((story) => (
-                  <article>
-                    <div class="feature-card__meta">
-                      <span>{formatLabel(story.data.contentType)}</span>
-                      <span>{formatLabel(story.data.topic)}</span>
-                    </div>
-                    <h3><a href={`/stories/${story.id}`}>{story.data.title}</a></h3>
-                    <p>{story.data.dek}</p>
-                  </article>
-                ))}
+              </aside>
             </div>
           </section>
         )
       }
 
-      <section class="newsletter-final" aria-label="Subscribe to the Portfilo newsletter">
+      <section class="footer-newsletter" aria-label="Subscribe to the Portfilo newsletter">
+        <p class="section-label">Newsletter</p>
         <NewsletterSignup
           id="home-footer-newsletter"
-          heading="Portfilo in your inbox."
-          copy="Subscribe free for the next business and technology update."
+          heading="Get ahead in business and tech in 7 minutes."
+          copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
           variant="footer"
         />
       </section>
@@ -291,18 +274,23 @@ const tickerItems =
         --line: #d4cfc6;
         --line-strong: #aaa39a;
         --accent: #0050a4;
-        --accent-on-ink: #9dceff;
+        --accent-soft: #e9f1f8;
         --correction: #b42318;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
-        --grid-gap: clamp(0.9rem, 1.7vw, 1.6rem);
+        --grid-gap: clamp(1rem, 1.8vw, 1.75rem);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --mono: "IBM Plex Mono", "Courier New", monospace;
       }
 
       :global(*) { box-sizing: border-box; }
-      :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; scroll-behavior: smooth; }
+      :global(html) {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-synthesis: none;
+      }
       :global(body) { margin: 0; min-width: 0; background: var(--paper); }
       :global(a) { color: inherit; }
       :global(a:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; }
@@ -316,478 +304,462 @@ const tickerItems =
         padding: 0.7rem 0.85rem;
         background: var(--ink);
         color: var(--paper);
-        font: 500 0.75rem/1 var(--sans);
+        font: 550 0.75rem/1 var(--sans);
         text-decoration: none;
         transform: translateY(-200%);
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .hero,
+      .newsletter-hero,
       .latest-strip,
-      .latest-layout,
-      .feature-showcase,
-      .more-features,
-      .newsletter-final {
+      .latest-section,
+      .feature-section,
+      .footer-newsletter {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
 
-      .hero {
-        padding: clamp(2.4rem, 4.5vw, 4.75rem) var(--gutter) clamp(2.5rem, 4vw, 4rem);
+      .section-label {
+        margin: 0;
+        color: var(--accent);
+        font: 650 0.68rem/1.2 var(--sans);
+        letter-spacing: 0.085em;
+        text-transform: uppercase;
+      }
+
+      .newsletter-hero {
+        min-height: 0;
+        padding: clamp(1.65rem, 2.7vw, 2.7rem) var(--gutter);
         display: grid;
-        grid-template-columns: minmax(0, 1.12fr) minmax(19rem, 0.78fr);
+        grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
         gap: clamp(2rem, 5vw, 5.5rem);
         align-items: center;
-      }
-
-      .hero__main { align-self: center; }
-
-      .hero__kicker {
-        margin: 0 0 0.9rem;
-        color: var(--accent);
-        font: 650 clamp(0.68rem, 0.8vw, 0.78rem) / 1.25 var(--sans);
-        letter-spacing: 0.075em;
-        text-transform: uppercase;
-      }
-
-      .hero h1 {
-        max-width: 11ch;
-        margin: 0;
-        font: 650 clamp(3.25rem, 5.8vw, 6.5rem) / 0.91 var(--sans);
-        letter-spacing: -0.06em;
-      }
-
-      .hero__dek {
-        max-width: 36rem;
-        margin: 1rem 0 0;
-        color: var(--muted);
-        font: 400 clamp(1.05rem, 1.35vw, 1.28rem) / 1.45 var(--serif);
-      }
-
-      .hero__signup {
-        max-width: 43rem;
-        margin-top: clamp(1.6rem, 3vw, 2.5rem);
-        padding-top: 1.1rem;
-        border-top: 1px solid var(--line);
-      }
-
-      .hero__signup :global(.newsletter-signup__copy h2) {
-        font-size: clamp(1.45rem, 1.9vw, 2rem);
-        letter-spacing: -0.03em;
-      }
-      .hero__signup :global(.newsletter-signup__copy p) { margin-top: 0.35rem; }
-      .hero__signup :global(.newsletter-signup) { gap: 0.9rem; }
-
-      .hero__panel {
-        min-height: clamp(21rem, 31vw, 27rem);
-        padding: clamp(1.25rem, 2.4vw, 2rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: var(--ink);
-        color: var(--paper);
-      }
-
-      .hero__panel-top,
-      .hero__panel-bottom {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        color: #c7c3bc;
-        font: 550 0.65rem/1.2 var(--sans);
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-      }
-
-      .hero__panel-statement {
-        max-width: 7ch;
-        margin: 0;
-        font: 450 clamp(2.5rem, 4vw, 4.4rem) / 0.94 var(--serif);
-        letter-spacing: -0.04em;
-      }
-
-      .hero__panel-bottom {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 0.5rem 0.95rem;
-      }
-
-      .latest-strip {
-        min-height: 3.25rem;
-        padding-inline: var(--gutter);
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
-        align-items: center;
-        border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
 
+      .newsletter-hero__copy h1 {
+        max-width: 16ch;
+        margin: 0.45rem 0 0;
+        font: 680 clamp(2rem, 3.35vw, 3.75rem) / 0.98 var(--sans);
+        letter-spacing: -0.052em;
+        text-wrap: balance;
+      }
+
+      .newsletter-hero__copy > p:last-child {
+        max-width: 48rem;
+        margin: 0.8rem 0 0;
+        color: var(--muted);
+        font: 430 clamp(0.92rem, 1.05vw, 1.04rem) / 1.5 var(--sans);
+      }
+
+      .newsletter-hero__form {
+        min-width: 0;
+        padding-top: 1.1rem;
+        border-top: 2px solid var(--accent);
+      }
+
+      .latest-strip {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        min-height: 2.85rem;
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+
       .latest-strip__label {
-        padding-right: 1.25rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        white-space: nowrap;
-        font: 600 0.68rem/1 var(--sans);
+        padding: 0.72rem var(--gutter);
+        background: var(--ink);
+        color: #fff;
+        font: 650 0.65rem/1 var(--sans);
+        letter-spacing: 0.085em;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
       }
 
-      .latest-strip__label > span:last-child:not(.latest-strip__dot) {
-        color: var(--correction);
-        font-weight: 500;
-      }
-
-      .latest-strip__dot {
-        width: 0.45rem;
-        height: 0.45rem;
-        border-radius: 50%;
-        background: var(--accent);
-      }
-
-      .latest-strip__items {
+      .latest-strip__rail {
         min-width: 0;
-        padding-block: 0.9rem;
         display: flex;
-        gap: 1.5rem;
+        align-items: stretch;
         overflow-x: auto;
-        overscroll-behavior-inline: contain;
         scrollbar-width: none;
       }
-      .latest-strip__items::-webkit-scrollbar { display: none; }
+      .latest-strip__rail::-webkit-scrollbar { display: none; }
 
       .latest-strip__item {
         flex: 0 0 auto;
         display: flex;
-        gap: 0.6rem;
-        align-items: baseline;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.7rem clamp(1rem, 1.8vw, 1.55rem);
+        border-right: 1px solid var(--line);
+        text-decoration: none;
         white-space: nowrap;
-        font-size: 0.75rem;
       }
-      .latest-strip__item::after {
-        content: "•";
-        margin-left: 0.85rem;
-        color: var(--muted);
-      }
+
       .latest-strip__item > span {
         color: var(--accent);
-        font-size: 0.63rem;
-        font-weight: 650;
+        font: 650 0.63rem/1 var(--sans);
         letter-spacing: 0.06em;
         text-transform: uppercase;
       }
-      .latest-strip__item strong { font-weight: 500; }
 
-      .latest-layout,
-      .feature-showcase,
-      .more-features {
-        padding: clamp(3.25rem, 5vw, 5.5rem) var(--gutter);
+      .latest-strip__item > strong {
+        max-width: 34rem;
+        overflow: hidden;
+        font: 520 0.75rem/1.2 var(--sans);
+        text-overflow: ellipsis;
       }
 
-      .section-title-row {
+      a.latest-strip__item:hover strong {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+
+      .latest-section,
+      .feature-section {
+        padding: clamp(2.5rem, 5vw, 5rem) var(--gutter);
+      }
+
+      .section-heading {
         padding-bottom: 0.9rem;
         display: flex;
         justify-content: space-between;
-        gap: 1.5rem;
+        gap: 2rem;
         align-items: end;
-        border-bottom: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--ink);
       }
-      .section-title-row p,
-      .section-title-row h2 { margin: 0; }
-      .section-title-row > div > p {
-        margin-bottom: 0.3rem;
-        color: var(--accent);
-        font: 650 0.65rem/1.2 var(--sans);
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
+
+      .section-heading h2 {
+        margin: 0.32rem 0 0;
+        font: 680 clamp(2rem, 3.1vw, 3.4rem) / 0.96 var(--sans);
+        letter-spacing: -0.045em;
       }
-      .section-title-row h2 {
-        font: 550 clamp(1.9rem, 3vw, 3.2rem) / 0.98 var(--serif);
-        letter-spacing: -0.04em;
+
+      .section-heading > a,
+      .fixture-warning {
+        margin: 0 0 0.2rem;
+        color: var(--muted);
+        font: 520 0.72rem/1.35 var(--sans);
       }
-      .section-title-row > a {
-        color: var(--accent);
-        font: 600 0.78rem/1 var(--sans);
-        text-decoration: none;
+
+      .section-heading > a {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.22em;
       }
 
       .fixture-warning {
-        max-width: 24rem;
-        color: var(--correction);
-        font: 550 0.68rem/1.4 var(--sans);
+        max-width: 18rem;
         text-align: right;
       }
 
       .latest-grid {
-        padding-top: 1.25rem;
+        padding-top: clamp(1.25rem, 2.5vw, 2.25rem);
         display: grid;
-        grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.72fr);
-        gap: clamp(1.75rem, 4vw, 4rem);
+        grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
+        gap: clamp(1.5rem, 3.5vw, 3.5rem);
+        align-items: start;
       }
 
-      .lead-news {
-        display: grid;
-        grid-template-columns: minmax(14rem, 0.85fr) minmax(0, 1.15fr);
-        gap: clamp(1.5rem, 3vw, 2.75rem);
+      .lead-news h3,
+      .news-list__item h3,
+      .lead-news p,
+      .news-list__item p,
+      .news-meta {
+        margin: 0;
       }
 
-      .fixture-media {
-        position: relative;
-        min-height: 24rem;
-        padding: 1.5rem;
+      .news-image-placeholder {
+        aspect-ratio: 16 / 8.6;
+        margin-bottom: 1rem;
+        padding: 1rem;
         display: flex;
-        align-items: end;
-        overflow: hidden;
-        background: var(--ink);
-        color: var(--paper);
-      }
-      .fixture-media::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0.32rem;
-        height: 100%;
-        background: var(--accent);
-      }
-      .fixture-media span {
-        font: 650 clamp(2.75rem, 5vw, 5rem) / 0.9 var(--sans);
-        letter-spacing: -0.06em;
-      }
-
-      .lead-news__copy {
-        align-self: end;
-        padding-bottom: 0.25rem;
-      }
-
-      .news-meta,
-      .feature-card__meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.55rem 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--paper-soft);
+        border-top: 3px solid var(--accent);
         color: var(--muted);
-        font: 600 0.64rem/1.3 var(--sans);
+      }
+
+      .news-image-placeholder span {
+        color: var(--ink);
+        font: 620 clamp(1.3rem, 2vw, 2rem) / 1 var(--sans);
+        letter-spacing: -0.025em;
+      }
+
+      .news-image-placeholder small {
+        font: 540 0.65rem/1.2 var(--sans);
         letter-spacing: 0.06em;
         text-transform: uppercase;
       }
-      .news-meta span:first-child,
-      .feature-card__meta span:first-child { color: var(--accent); }
 
-      .lead-news h3,
-      .cluster-news h3,
-      .more-features h3 {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 520;
-        letter-spacing: -0.035em;
-      }
-      .lead-news h3 {
-        margin-top: 0.75rem;
-        font-size: clamp(2.1rem, 3.5vw, 4rem);
-        line-height: 0.99;
-      }
-      .lead-news p,
-      .cluster-news p,
-      .more-features p {
+      .news-meta,
+      .feature-story__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem 0.8rem;
         color: var(--muted);
-        font-family: var(--serif);
-      }
-      .lead-news p {
-        max-width: 38rem;
-        margin: 0.9rem 0 0;
-        font-size: 1rem;
-        line-height: 1.45;
+        font: 550 0.64rem/1.2 var(--sans);
+        letter-spacing: 0.045em;
+        text-transform: uppercase;
       }
 
-      .news-cluster { border-top: 1px solid var(--line); }
-      .cluster-news {
-        padding: 1.1rem 0 1.25rem;
+      .news-meta span:first-child,
+      .feature-story__meta span:first-child {
+        color: var(--accent);
+      }
+
+      .lead-news h3 {
+        max-width: 20ch;
+        margin-top: 0.55rem;
+        font: 670 clamp(2rem, 3.3vw, 3.55rem) / 0.98 var(--sans);
+        letter-spacing: -0.048em;
+      }
+
+      .lead-news > p {
+        max-width: 48rem;
+        margin-top: 0.75rem;
+        color: var(--muted);
+        font: 420 clamp(0.95rem, 1.1vw, 1.06rem) / 1.55 var(--sans);
+      }
+
+      .news-list {
+        border-top: 1px solid var(--line);
+      }
+
+      .news-list__item {
+        padding: 1rem 0 1.15rem;
         border-bottom: 1px solid var(--line);
       }
-      .cluster-news h3 {
-        margin-top: 0.6rem;
-        font-size: clamp(1.25rem, 1.8vw, 1.8rem);
-        line-height: 1.07;
-      }
-      .cluster-news p {
-        margin: 0.55rem 0 0;
-        font-size: 0.9rem;
-        line-height: 1.42;
+
+      .news-list__item h3 {
+        max-width: 28ch;
+        margin-top: 0.45rem;
+        font: 650 clamp(1.2rem, 1.55vw, 1.55rem) / 1.08 var(--sans);
+        letter-spacing: -0.03em;
       }
 
-      .feature-showcase { padding-top: 0.75rem; }
-      .section-title-row--feature { margin-bottom: 1.25rem; }
+      .news-list__item p {
+        margin-top: 0.55rem;
+        color: var(--muted);
+        font: 420 0.84rem/1.5 var(--sans);
+      }
 
-      .feature-card {
+      .feature-section {
+        border-top: 1px solid var(--line);
+      }
+
+      .feature-pair {
+        padding-top: clamp(1.25rem, 2.5vw, 2.25rem);
         display: grid;
-        grid-template-columns: minmax(0, 1.04fr) minmax(20rem, 0.96fr);
-        gap: clamp(1.75rem, 4vw, 4.5rem);
+        grid-template-columns: minmax(0, 1.7fr) minmax(19rem, 0.72fr);
+        gap: clamp(1.5rem, 3.4vw, 3.5rem);
         align-items: stretch;
       }
 
-      .feature-card__media {
-        position: relative;
-        min-height: 26rem;
-        display: block;
-        overflow: hidden;
-        background: var(--paper-soft);
-      }
-      .feature-card__media img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-      .feature-card__disclosure {
-        position: absolute;
-        right: 0.75rem;
-        bottom: 0.75rem;
-        padding: 0.4rem 0.5rem;
-        background: rgb(23 22 20 / 82%);
-        color: white;
-        font: 500 0.6rem/1 var(--sans);
+      .feature-story {
+        min-width: 0;
       }
 
-      .feature-card__copy { align-self: center; }
-      .feature-card__copy h2 {
-        margin: 0.8rem 0 0;
-        font: 520 clamp(2.6rem, 4.5vw, 5.2rem) / 0.93 var(--serif);
-        letter-spacing: -0.05em;
+      .feature-story__media {
+        position: relative;
+        display: block;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: var(--paper-soft);
+        line-height: 0;
       }
-      .feature-card__copy h2 a,
-      .more-features h3 a { text-decoration: none; }
-      .feature-card__copy > p {
-        max-width: 40rem;
-        margin: 1rem 0 0;
+
+      .feature-story__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+
+      .feature-story__disclosure {
+        position: absolute;
+        right: 0.7rem;
+        bottom: 0.65rem;
+        padding: 0.28rem 0.38rem;
+        background: rgba(23, 22, 20, 0.78);
+        color: #fff;
+        font: 520 0.58rem/1 var(--sans);
+        letter-spacing: 0.04em;
+      }
+
+      .feature-story__body {
+        padding-top: 1rem;
+      }
+
+      .feature-story__body h3 {
+        max-width: 22ch;
+        margin: 0.6rem 0 0;
+        font: 540 clamp(2rem, 3vw, 3.35rem) / 1 var(--serif);
+        letter-spacing: -0.038em;
+      }
+
+      .feature-story__body h3 a {
+        text-decoration: none;
+      }
+
+      .feature-story__body h3 a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.14em;
+      }
+
+      .feature-story__body > p {
+        max-width: 49rem;
+        margin: 0.75rem 0 0;
         color: var(--muted);
-        font: 400 clamp(1.02rem, 1.25vw, 1.18rem) / 1.5 var(--serif);
+        font: 410 clamp(0.98rem, 1.12vw, 1.08rem) / 1.58 var(--serif);
       }
-      .feature-card__footer {
-        margin-top: 1.5rem;
-        padding-top: 0.85rem;
+
+      .feature-story__footer {
+        margin-top: 1.05rem;
+        padding-top: 0.8rem;
         display: flex;
         justify-content: space-between;
         gap: 1rem;
         border-top: 1px solid var(--line);
-        font: 550 0.72rem/1.2 var(--sans);
+        color: var(--muted);
+        font: 530 0.72rem/1.3 var(--sans);
       }
-      .feature-card__footer a {
-        color: var(--accent);
+
+      .feature-story__footer a {
+        color: var(--ink);
         text-decoration: none;
       }
 
-      .more-features { padding-top: clamp(2.75rem, 4vw, 4.5rem); }
-      .more-features__grid {
-        padding-top: 1.15rem;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--grid-gap);
-      }
-      .more-features article {
-        padding-right: 1.25rem;
-        border-right: 1px solid var(--line);
-      }
-      .more-features article:last-child { border-right: 0; }
-      .more-features h3 {
-        margin-top: 0.7rem;
-        font-size: clamp(1.4rem, 2vw, 2rem);
-        line-height: 1.06;
-      }
-      .more-features p {
-        margin: 0.7rem 0 0;
-        font-size: 0.92rem;
-        line-height: 1.45;
+      .feature-story__footer a:hover {
+        color: var(--accent);
       }
 
-      .newsletter-final {
-        margin-top: clamp(1rem, 2vw, 2rem);
-        padding: clamp(2.6rem, 4vw, 4rem) var(--gutter);
+      .newsletter-card {
+        min-width: 0;
+        padding: clamp(1.3rem, 2.3vw, 2rem);
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .newsletter-card__label {
+        margin: 0 0 clamp(1.6rem, 3vw, 3rem);
+        font: 650 0.66rem/1.2 var(--sans);
+        letter-spacing: 0.085em;
+        text-transform: uppercase;
+      }
+
+      .newsletter-card :global(.newsletter-signup__copy h2) {
+        color: #fff;
+      }
+
+      .footer-newsletter {
+        padding: clamp(1.75rem, 3.4vw, 3.2rem) var(--gutter);
         border-top: 1px solid var(--ink);
       }
 
-      @media (max-width: 68rem) {
-        .hero {
-          grid-template-columns: 1fr;
+      .footer-newsletter > .section-label {
+        margin-bottom: 0.8rem;
+      }
+
+      @media (max-width: 64rem) {
+        .newsletter-hero {
+          grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
           gap: 2rem;
         }
-        .hero__main { max-width: 52rem; }
-        .hero__panel { min-height: 18rem; }
-        .hero__panel-statement { font-size: clamp(2.7rem, 8vw, 4.8rem); }
-        .latest-grid,
-        .feature-card { grid-template-columns: 1fr; }
-        .lead-news { grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.25fr); }
-        .news-cluster {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 1.1rem;
-          border-top: 0;
+
+        .feature-pair {
+          grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.75fr);
         }
-        .cluster-news { border-top: 1px solid var(--line); }
-        .feature-card__media { min-height: 24rem; }
       }
 
       @media (max-width: 48rem) {
-        :global(:root) { --gutter: 1.15rem; }
+        .newsletter-hero,
+        .latest-grid,
+        .feature-pair {
+          grid-template-columns: 1fr;
+        }
 
-        .hero {
-          padding-top: 2.1rem;
-          padding-bottom: 2.4rem;
-          gap: 1.75rem;
+        .newsletter-hero {
+          gap: 1.5rem;
         }
-        .hero h1 {
-          max-width: 10ch;
-          font-size: clamp(3.2rem, 14vw, 5.4rem);
+
+        .newsletter-hero__form {
+          padding-top: 0;
+          border-top: 0;
         }
-        .hero__panel {
-          min-height: 16rem;
-          padding: 1.15rem;
+
+        .fixture-warning {
+          max-width: 13rem;
         }
-        .hero__panel-top,
-        .hero__panel-bottom { font-size: 0.6rem; }
+
+        .news-image-placeholder {
+          aspect-ratio: 16 / 9;
+        }
+
+        .newsletter-card {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 36rem) {
+        .newsletter-hero,
+        .latest-section,
+        .feature-section,
+        .footer-newsletter {
+          --gutter: 1.1rem;
+        }
+
+        .newsletter-hero {
+          padding-top: 1.45rem;
+          padding-bottom: 1.55rem;
+        }
+
+        .newsletter-hero__copy h1 {
+          max-width: 17ch;
+          font-size: clamp(2rem, 10vw, 2.75rem);
+        }
+
         .latest-strip {
-          grid-template-columns: 1fr;
-          padding-top: 0.75rem;
+          grid-template-columns: auto minmax(0, 1fr);
         }
-        .latest-strip__label { padding-right: 0; }
-        .latest-strip__items { padding-top: 0.65rem; }
-        .section-title-row { align-items: start; }
+
+        .latest-strip__label {
+          padding-inline: 0.85rem;
+        }
+
+        .latest-strip__item {
+          max-width: 82vw;
+          padding-inline: 0.9rem;
+        }
+
+        .latest-strip__item > strong {
+          max-width: 62vw;
+        }
+
+        .section-heading {
+          align-items: start;
+        }
+
         .fixture-warning {
-          max-width: 12rem;
-          font-size: 0.62rem;
+          font-size: 0.64rem;
         }
-        .lead-news { grid-template-columns: 1fr; }
-        .fixture-media { min-height: 15rem; }
-        .news-cluster {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-        .feature-card__media { min-height: 19rem; }
-        .feature-card__copy h2 { font-size: clamp(2.5rem, 11.5vw, 4.3rem); }
-        .more-features__grid { grid-template-columns: 1fr; }
-        .more-features article {
-          padding: 1rem 0;
-          border-right: 0;
-          border-bottom: 1px solid var(--line);
+
+        .feature-story__footer {
+          align-items: flex-start;
+          flex-direction: column;
         }
       }
 
-      @media (max-width: 30rem) {
-        .hero__kicker {
-          max-width: 24rem;
-          line-height: 1.5;
+      @media (max-width: 23rem) {
+        .newsletter-hero,
+        .latest-section,
+        .feature-section,
+        .footer-newsletter {
+          --gutter: 1rem;
         }
-        .section-title-row {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-        .fixture-warning {
-          max-width: none;
-          text-align: left;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        :global(html) { scroll-behavior: auto; }
       }
     </style>
   </body>
