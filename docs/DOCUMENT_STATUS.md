@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, Homepage v3 design is founder-approved and runtime implementation still requires explicit authorization.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, Homepage v3 is statically implemented and fresh validation + desktop/mobile visual QA are pending.
 - `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Homepage-specific presentation clauses are subordinate to the newer Homepage v3 contract where they differ.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -45,8 +45,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Design and imagery
 
-- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE V3 DESIGN CONTRACT**. Despite the filename, its current in-file status governs Homepage v3. It records the editorial white signup treatment, `Subscribe free` hero CTA, smaller constrained Feature composition, contextual newsletter-card headline, and implementation boundary.
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Its older Homepage v2-specific examples are superseded where they conflict with `PROJECT_STATE` or the current `research/homepage-redesign-v1.md` contract.
+- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE V3 DESIGN CONTRACT AND IMPLEMENTATION RECORD**. Despite the filename, its current in-file status governs Homepage v3.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles aligned to Homepage v3.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 - `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
@@ -67,7 +67,7 @@ Feature-side newsletter card headline is founder-approved as:
 
 `There's more to it than the headline.`
 
-Its exact one-sentence support copy remains open and must not be invented during implementation.
+Its exact one-sentence support copy remains open. Homepage v3 static implementation intentionally omits that sentence rather than inventing it.
 
 ### Brand
 
@@ -123,25 +123,27 @@ The following remain for provenance only:
 
 `docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
-## Current runtime vs Homepage v3 target
+## Current runtime: Homepage v3
 
-Current runtime is still the prior correction pass, not Homepage v3.
-
-It currently includes:
+Current working-branch homepage now implements:
 
 - `Latest | Stories` header navigation;
 - no topic labels/header Subscribe CTA;
-- warm near-white acquisition area;
-- horizontal hero form with `Send me the news`;
+- warm near-white editorial acquisition area with restrained blue structural rule;
+- Source Serif 4 hero headline;
+- stacked hero form constrained to roughly 30 rem;
+- exact hero CTA `Subscribe free`;
 - Latest strip with black identifier and light rail;
 - Feature + newsletter-card pairing;
-- full uncropped Feature image that is too large on wide desktop;
-- temporary repeated primary acquisition copy in the side card;
+- Feature composition constrained to 88 rem maximum;
+- full uncropped Feature image at reduced rendered scale;
+- reduced Feature headline scale;
+- contextual blue newsletter card with `There's more to it than the headline.`;
+- no contextual-card support sentence yet;
 - News below Feature;
 - black footer endcap;
-- no ticker motion.
-
-Homepage v3 target changes only the approved items in `research/homepage-redesign-v1.md` and `docs/PROJECT_STATE.md`.
+- no ticker motion;
+- no route/schema/taxonomy migration.
 
 ## Information architecture authority
 
@@ -178,13 +180,13 @@ The prior selected architectural image remains provenance only. Homepage v3 top 
 
 ## Motion authority
 
-Ticker movement remains deliberately deferred until Homepage v3 static desktop/mobile composition is implemented and founder-approved.
+Ticker movement remains deliberately deferred until Homepage v3 static desktop/mobile composition is validated and founder-approved.
 
 ## Validation authority
 
-No fresh runtime validation was created by the Homepage v3 docs-only approval record.
+Homepage v3 runtime implementation now exists, but fresh `npm run check` and `npm run build` have not yet been recorded as passing.
 
-The current runtime requires actual implementation plus `npm run check` and `npm run build` before a Homepage v3 validation pass can be claimed.
+Do not claim a Homepage v3 validation pass until those commands actually succeed.
 
 ## Maintenance rule
 
