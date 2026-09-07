@@ -14,7 +14,8 @@ const { current } = Astro.props;
   </a>
 
   <nav class="site-nav" aria-label="Primary">
-    <a class="site-nav__link" href="/stories" aria-current={current === "stories" ? "page" : undefined}>Features</a>
+    <a class="site-nav__link" href="/#latest">Latest</a>
+    <a class="site-nav__link" href="/stories" aria-current={current === "stories" ? "page" : undefined}>Stories</a>
   </nav>
 </header>
 
@@ -46,6 +47,7 @@ const { current } = Astro.props;
     justify-self: end;
     display: flex;
     align-items: center;
+    gap: clamp(0.95rem, 1.7vw, 1.55rem);
   }
 
   .site-nav__link {
@@ -95,6 +97,10 @@ const { current } = Astro.props;
 
     .wordmark {
       width: 5.7rem;
+    }
+
+    .site-nav {
+      gap: 0.8rem;
     }
 
     .site-nav__link {
