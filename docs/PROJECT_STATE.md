@@ -8,9 +8,9 @@ _Last updated: 2026-09-08_
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, and prior technical foundation remain in place.
 
-The active priority is still: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
+The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
-The founder reviewed Homepage v2 on 2026-09-08 and rejected several implementation choices from that pass. Those rejected choices have zero visual authority. A focused correction pass now replaces them.
+The founder has reviewed multiple homepage passes. Rejected implementation choices have zero visual authority. The current working branch reflects the latest focused correction pass only.
 
 ## Repository authority
 
@@ -45,8 +45,8 @@ Founder-approved at this boundary:
 - product category: business and technology media product;
 - newsletter/email acquisition is a primary conversion and recurring-reader relationship;
 - **News** is the intended current/day-to-day editorial layer;
-- **Features** is the deeper editorial layer;
-- intended reader-facing coverage labels remain `Business / Technology / Startup / AI` for the eventual taxonomy, but **those labels are not approved as homepage header navigation/presentation**;
+- **Features** remains the deeper editorial layer internally/currently;
+- intended eventual coverage taxonomy remains `Business / Technology / Startup / AI`, but those labels are **not homepage header navigation**;
 - `Building` is removed from the intended public coverage set;
 - `Startups` becomes singular `Startup` in the intended public coverage set;
 - Portfilo has **no geographic product promise**;
@@ -54,7 +54,7 @@ Founder-approved at this boundary:
 - public newsletter acquisition promises **latest news**, a **7-minute** read, and delivery **three times per week**;
 - exact send days/times remain open;
 - `briefing` is rejected as public homepage/newsletter acquisition language;
-- the four-issue newsletter pilot remains parked until the core site is built, then validates whether the approved newsletter promise is operationally sustainable before recurring public sends and final launch readiness.
+- the four-issue newsletter pilot remains parked until the core site is built, then validates whether the newsletter promise is operationally sustainable before recurring public sends and final launch readiness.
 
 Approved internal selection lens:
 
@@ -62,18 +62,22 @@ Approved internal selection lens:
 
 This is internal only. It is not homepage copy or a tagline.
 
-## Information architecture clarification
+## Information architecture state
 
-Current interpretation:
+The earlier discussion about removing `Latest` / `Stories` from the header was exploratory, not a founder decision.
 
-- **News** = current/day-to-day editorial content;
-- **Features** = deeper editorial content;
-- **Latest** = chronological view/ticker concept, not a content type;
-- **Stories** = current technical route terminology, not the intended public product label.
+Current homepage header is approved to show:
 
-Homepage header currently keeps only `Features` as the explicit editorial navigation link.
+`Latest | Stories`
 
-Do **not** create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during homepage visual work. Those remain for the later News/Feature architecture gate.
+Current behavior:
+
+- `Latest` links to the homepage Latest/ticker area;
+- `Stories` links to the existing `/stories` route;
+- topic labels do not appear in the header;
+- no Subscribe CTA appears in the header.
+
+The deeper News / Features / Stories information architecture is still an open later task. Do **not** create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during homepage visual QA.
 
 Current `src/content.config.ts` still uses topics:
 
@@ -101,27 +105,28 @@ The published starting-business story remains the real Feature used for homepage
 
 ## Current homepage composition
 
-Founder-approved correction direction as of the latest 2026-09-08 review:
+Latest founder-approved correction direction:
 
 ```text
 HEADER
 Portfilo wordmark at the earlier/larger restrained scale
-Features
-no topic/category labels in the header
+Latest | Stories
+no topic/category labels
 no header Subscribe CTA
 
-MUTED-BLUE NEWSLETTER BAND
+WHITE / WARM-NEUTRAL NEWSLETTER AREA
 Get ahead in business and tech in 7 minutes.
 approved support line
 email + Send me the news
-white CTA
 no hero image
 
-FULL-WIDTH BLACK LATEST TICKER
+FULL-WIDTH LATEST STRIP
+only the Latest label is near-black/ink
+headline rail returns to the light page treatment
 static during current visual QA
 
 FEATURED AREA
-left: Feature image + headline + short dek
+left: full, uncropped Feature image + headline + short dek
 right: newsletter signup card
 no Feature eyebrow / no A CLOSER LOOK title
 
@@ -138,31 +143,35 @@ Morning Brew and BackScoop screenshots supplied by the founder are **composition
 
 ## Latest visual review corrections
 
-The founder explicitly rejected these Homepage v2 choices:
+The founder explicitly corrected these implementation choices:
 
-- undersized wordmark/header proportions;
-- topic labels `Business / Technology / Startup / AI` in the header;
-- the resulting header/content alignment drift;
-- Portfilo red as the Latest ticker treatment;
-- the overly pale hero newsletter background;
-- removing the Feature-paired newsletter card.
+- removing `Latest | Stories` from the header was based on a question, not approval;
+- topic labels must stay out of the header;
+- the entire ticker must not be black: only the `Latest` label is ink/black while the headline rail remains light;
+- the muted-blue hero/signup surface was rejected; return to the earlier white/warm-neutral treatment;
+- the Feature image must not be aggressively cropped;
+- the Feature + newsletter-card side-by-side composition remains desired.
 
-Current correction pass implements:
+Current runtime correction pass implements:
 
-- restored the earlier header padding/wordmark scale;
-- removed all topic labels from the header;
-- retained only `Features` in primary header navigation;
-- retained no header Subscribe CTA;
-- changed the newsletter band to the Portfilo light/muted blue `#8fc7ff`;
-- changed the hero signup CTA surface to white;
-- changed the entire Latest ticker to near-black/ink with light text and blue category accents;
-- restored the Feature + newsletter-card side-by-side composition on desktop;
-- preserved Feature image -> headline -> short dek hierarchy;
-- restored shared page gutters for the Feature area instead of the over-indented centered 78rem treatment;
-- preserved mobile stacking and horizontal ticker safety;
+- restored `Latest | Stories` in the header;
+- retained the earlier/larger wordmark scale and shared page alignment;
+- removed all topic labels and header Subscribe CTA;
+- restored the newsletter area to the warm near-white page treatment;
+- restored the hero form to the normal white-input / blue-CTA treatment;
+- made only the ticker `Latest` label near-black while the rest of the strip is light;
+- preserved blue category accents in the ticker;
+- removed the fixed-height `object-fit: cover` Feature crop;
+- Feature image now renders at its natural aspect ratio with `height: auto` / `object-fit: contain`;
+- retained the Feature + newsletter-card side-by-side desktop composition and mobile stacking;
+- kept News below the Feature area;
 - kept the black footer endcap;
 - kept ticker movement deferred until static layout approval;
 - performed no schema/taxonomy/route migration.
+
+## Why the Feature image was cropped
+
+The rejected pass set a fixed responsive height on `.featured-story__media` and used `object-fit: cover` on the image. That combination intentionally fills a shorter rectangle by cropping image edges. The current correction removes that behavior so the full approved Feature image composition is visible.
 
 ## Newsletter copy and behavior
 
@@ -190,17 +199,15 @@ Underlying newsletter behavior remains:
 
 ### Feature-side newsletter card copy
 
-The founder wants the restored card to use a **different, more contextual acquisition message**, structurally similar to the role played by BackScoop's side card, with the working idea:
+The founder wants the restored side card to use a different, more contextual acquisition message, structurally similar to the role played by BackScoop's side card, with a working direction around:
 
 `There's more to it than the headline.`
 
 That wording is **NOT YET APPROVED AS FINAL COPY**.
 
-The correction pass therefore restores the card layout using the already-approved primary newsletter copy temporarily rather than inventing a new public claim during implementation.
+The current card therefore uses the already-approved primary newsletter copy temporarily. Exact card headline/support copy remains an open copy gate after the corrected composition is visually reviewed.
 
-Exact card headline/support copy is an open copy gate after the corrected composition is visible.
-
-The coordinated public/email `Portfilo Brief` -> `Newsletter` migration remains deferred. Do not perform it piecemeal during homepage work.
+The coordinated public/email `Portfilo Brief` -> `Newsletter` migration remains deferred.
 
 ## Motion state
 
@@ -226,20 +233,19 @@ Planned ticker motion after static approval:
 
 1. Homepage redesign/reference work — COMPLETE.
 2. Newsletter primary acquisition copy — COMPLETE.
-3. Homepage v1 static rebuild — SUPERSEDED.
-4. Homepage v2 correction plan — SUPERSEDED BY FOUNDER VISUAL REVIEW.
-5. Focused homepage visual correction pass — IMPLEMENTED IN REPOSITORY.
-6. **Local validation + desktop/mobile visual QA — ACTIVE NEXT GATE.**
-7. Approve or correct the current static composition.
-8. Approve exact Feature-side newsletter card copy.
-9. Add Latest ticker motion after static approval.
-10. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
-11. News/Feature reading surfaces, Latest archive if still justified, and Features archive/presentation.
-12. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
-13. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
-14. Four-issue newsletter pilot.
-15. Full QA, domain/release readiness, then intentional `main` release review.
-16. Resume Social Visual System work.
+3. Earlier homepage static passes — SUPERSEDED WHERE REJECTED BY FOUNDER REVIEW.
+4. Focused homepage visual correction pass — IMPLEMENTED IN REPOSITORY.
+5. **Local validation + desktop/mobile visual QA — ACTIVE NEXT GATE.**
+6. Approve or correct the current static composition.
+7. Approve exact Feature-side newsletter card copy.
+8. Add Latest ticker motion after static approval.
+9. News/Feature/Stories content architecture + taxonomy migration plan, separate approval, implementation, validation.
+10. Reading surfaces and archive presentation.
+11. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
+12. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
+13. Four-issue newsletter pilot.
+14. Full QA, domain/release readiness, then intentional `main` release review.
+15. Resume Social Visual System work.
 
 ## Exact next task
 
@@ -261,12 +267,12 @@ Then inspect at minimum:
 
 Review specifically:
 
-- restored header scale and alignment;
-- absence of topic labels in the header;
-- muted-blue newsletter band and white CTA;
-- full-width black ticker;
+- restored header scale and `Latest | Stories` navigation;
+- absence of topic labels and header Subscribe CTA;
+- white/warm-neutral newsletter area;
+- black `Latest` label with light ticker rail;
+- full uncropped Feature image;
 - Feature + newsletter-card desktop pairing;
-- Feature-first hierarchy with no eyebrow spam;
 - News below Feature;
 - black footer endcap;
 - no horizontal overflow;
