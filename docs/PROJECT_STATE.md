@@ -4,13 +4,13 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — POST-V3 HOMEPAGE CORRECTION PLAN FOUNDER-APPROVED / IMPLEMENTATION AUTHORIZATION PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — APPROVED POST-V3 HOMEPAGE CORRECTION IMPLEMENTED / VALIDATION + VISUAL QA PENDING**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, and prior technical foundation remain in place.
 
 The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
-The founder visually rejected the implemented Homepage v3 composition. That rejected runtime remains in the branch until the next implementation pass, but its rejected design choices have zero forward visual authority. A new focused homepage correction plan is founder-approved and is now the governing target.
+The founder visually rejected the prior Homepage v3 composition. Those rejected choices have zero forward visual authority. The newer post-v3 correction plan was founder-approved and is now implemented on `build/portfilo-v0`.
 
 ## Repository authority
 
@@ -39,16 +39,12 @@ Authoritative working branch:
 
 ## Approved current product direction
 
-Founder-approved at this boundary:
-
 - brand: **Portfilo**;
 - product category: business and technology media product;
 - newsletter/email acquisition is a primary conversion and recurring-reader relationship;
 - **News** is the intended current/day-to-day editorial layer;
 - **Features** remains the deeper editorial layer internally/currently;
 - intended eventual coverage taxonomy remains `Business / Technology / Startup / AI`, but those labels are not homepage header navigation;
-- `Building` is removed from the intended public coverage set;
-- `Startups` becomes singular `Startup` in the intended public coverage set;
 - Portfilo has no geographic product promise;
 - Portfilo remains free in v0;
 - public newsletter acquisition promises **latest news**, a **7-minute** read, and delivery **three times per week**;
@@ -60,22 +56,22 @@ Approved internal selection lens:
 
 > Portfilo covers business and technology developments that materially change how companies, products, markets, infrastructure, or work operate.
 
-This is internal only. It is not homepage copy or a tagline.
+This is internal only.
 
 ## Homepage information architecture state
 
-The approved homepage header target is now:
+Current homepage header now implements:
 
 `Portfilo | Latest | Stories | Subscribe free`
 
 Rules:
 
-- `Latest` links to the homepage Latest/ticker area;
-- `Stories` continues to use the existing `/stories` route;
+- `Latest` links to the homepage ticker area;
+- `Stories` continues to use `/stories`;
+- `Subscribe free` is a header CTA;
 - topic labels do not appear in the header;
-- `Subscribe free` is a header CTA again;
 - deeper News / Features / Stories information architecture remains a later task;
-- do not create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during this homepage correction pass.
+- do not create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during homepage QA.
 
 Current `src/content.config.ts` still uses topics:
 
@@ -85,241 +81,199 @@ Target public taxonomy remains:
 
 `Business / Technology / Startup / AI`
 
-## Current content set
+## Governing homepage composition
 
-Published on the working branch:
-
-- `src/content/stories/what-actually-makes-starting-a-business-hard.md`
-
-Withdrawn to draft:
-
-- `src/content/stories/build-things-that-make-the-next-thing-easier.md`;
-- `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`;
-- `src/content/stories/what-actually-changed.md`.
-
-The published starting-business story remains useful for headline/dek layout testing, but the next homepage correction pass should use a **development image placeholder** for the Feature instead of the current editorial image so geometry can be approved independently of artwork.
-
-## Governing homepage correction plan
-
-Canonical composition record:
+Canonical record:
 
 `research/homepage-redesign-v1.md`
 
-Founder-approved target:
+Implemented target:
 
 ```text
 SHARED CONTENT SHELL
-one common left/right alignment for header, hero, Feature area, News, footer-inner
-working desktop content width roughly 1280–1360 px
-Feature-placeholder left edge is the canonical content edge
-only the Latest ticker is full-bleed
+one common alignment for header, hero, Feature area, News, footer-inner
+working desktop shell: 84rem / 1344px max
+only ticker is full-bleed
 
 HEADER
-Portfilo logo
-Latest | Stories | Subscribe free
+Portfilo | Latest | Stories | Subscribe free
 
 TOP NEWSLETTER SIGNUP
-warm paper background
-left: approved acquisition headline + support copy
-right: signup form
-Instrument Sans, not Source Serif 4
+left: approved headline + support copy
+right: stacked signup form
+Instrument Sans
 hero CTA: Send me the news
-compact content/signup relationship
 
 FULL-WIDTH LATEST TICKER
-black Latest identifier only
+black Latest label only
 light headline rail
 
 MAIN FEATURE AREA
 left: development Feature image placeholder + headline + dek
 right: stacked rail
-  1. blue contextual newsletter block
-  2. square Portfilo brand/editorial visual placeholder
+  blue contextual signup block
+  square Portfilo brand visual placeholder
 
 NEWS
-plain News heading + existing development hierarchy
+existing plain News hierarchy
 
 BLACK FOOTER ENDCAP
 existing compact signup + minimal links
 ```
 
-Morning Brew and BackScoop remain **composition references only**. The approved lesson from BackScoop is the compact `[content] [signup]` relationship and editorial/signup adjacency, not its color palette, typography, exact wording, or proprietary visual identity.
+Morning Brew and BackScoop remain composition references only. The approved lesson is compact publication/signup adjacency and hierarchy, not their colors, branding, typography, or wording.
 
-## Global shell / alignment invariant
+## Shared shell invariant
 
-This is now a hard homepage implementation invariant.
+This is a hard homepage rule:
 
-- Header inner content, top signup inner content, Feature area, News, and footer inner content must use the same shared shell/alignment.
-- The preferred canonical left edge is the left edge represented by the Feature image/placeholder in the founder screenshots.
-- Working large-desktop content width should be roughly **1280–1360 px**, responsive downward.
-- Do not give individual homepage sections independent centering/max-width rules that move their global left or right edges.
-- Internal module grids may vary inside the shell.
-- **Only the Latest ticker may escape the shell to full viewport width.**
+- header inner content, top signup inner content, Feature area, News, footer newsletter inner content, and site footer inner alignment use the same shell;
+- current implementation uses `--content-max: 84rem` and a responsive `--shell-gutter`;
+- individual homepage sections must not invent independent global centering/max-width rules;
+- internal grids may vary inside the shell;
+- **only the Latest ticker may be full-bleed**.
 
-This invariant exists specifically to prevent the repeated indent drift seen in recent rejected passes.
+This exists specifically to prevent the repeated indent drift seen in rejected passes.
 
-## Header target
+## Current runtime implementation
 
-Freeze these requirements for the next pass:
+### Header
 
-- retain the approved Portfilo wordmark/brand asset;
-- use the earlier restrained header proportions rather than an undersized logo;
-- navigation: `Latest | Stories`;
-- add a clear `Subscribe free` CTA button at the right;
-- no topic/category labels;
-- align header inner content to the same shared shell as the Feature placeholder;
-- no unrelated header redesign during implementation.
+Implemented in `src/components/SiteHeader.astro`:
 
-## Top newsletter signup target
+- Portfilo wordmark retained at the current restrained scale;
+- `Latest | Stories` retained;
+- `Subscribe free` CTA restored;
+- topic labels remain absent;
+- homepage header alignment follows the shared shell.
 
-The founder approved returning to the compact BackScoop-like **behavior**, not its visual styling:
+### Top newsletter signup
 
-`[content] [signup]`
+Implemented in `src/pages/index.astro`:
 
-Requirements:
-
-- warm paper / near-white background;
+- warm paper / near-white surface;
+- `[content] [signup]` desktop relationship;
+- Instrument Sans hero headline;
+- approved headline: `Get ahead in business and tech in 7 minutes.`;
+- approved support copy unchanged;
+- hero CTA: `Send me the news`;
+- stacked email field + CTA in the right column;
 - no hero image;
 - no blue full-section background;
-- no serif hero experiment;
-- **Instrument Sans** is the homepage hero baseline;
-- approved headline remains `Get ahead in business and tech in 7 minutes.`;
-- approved support copy remains `The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.`;
-- left content and right signup should feel close enough to belong to one compact unit, not float at opposite ends of an oversized container;
-- internal desktop relationship roughly 52–55% content / 45–48% signup;
-- internal gap roughly 40–56 px on large desktop;
-- hero CTA returns to **`Send me the news`**;
-- free/unsubscribe note stays immediately associated with the form;
 - no `NEWSLETTER` eyebrow;
-- no independent hero max-width that breaks the global shell;
-- target density should feel publication-like, not spacious SaaS marketing.
+- no independent hero shell.
 
-The header CTA and hero CTA deliberately serve different roles:
+### Latest ticker
 
-- header: `Subscribe free`;
-- hero: `Send me the news`.
-
-## Latest ticker target
-
-Keep the currently approved ticker presentation:
+Preserved:
 
 - full viewport width;
-- only the `Latest` identifier is near-black/ink;
-- headline rail remains light;
-- blue category labels may remain;
-- no red treatment;
-- ticker remains static during this correction pass;
-- automatic motion remains a separate post-static approval task.
+- black/ink `Latest` identifier only;
+- light headline rail;
+- blue category labels;
+- static behavior;
+- no red treatment.
 
-## Feature + stacked right rail target
+### Feature + stacked right rail
 
-The next pass should not depend on the current Feature image.
+Implemented:
 
-Left column:
-
-- use a clearly synthetic/development image placeholder for layout QA;
-- placeholder should approximate a restrained editorial landscape proportion, around 16:9 or slightly wider;
-- do not let the Feature dominate the viewport;
-- target Feature/left-column width roughly 64% of the shared module;
-- placeholder -> Feature headline -> short dek;
-- no Feature eyebrow;
-- no `A CLOSER LOOK` title.
-
-Right rail:
-
-- target roughly 32% of the shared module with about 32–40 px gap from the Feature;
-- stack two blocks vertically rather than stretching one signup card to Feature height;
+- actual Feature artwork is removed from homepage layout QA for now but the asset remains in the repository;
+- left column uses a clearly synthetic 16:9 Feature image placeholder;
+- Feature headline + dek remain below the placeholder;
+- right rail stacks two blocks rather than stretching one card;
 - top block is the blue contextual newsletter signup;
-- bottom block is a **square brand/editorial visual placeholder**;
-- the square placeholder may center the approved **ink/black Portfilo wordmark**;
-- do not generate or source a final right-rail image during this layout pass;
-- mobile order is Feature -> contextual signup -> square brand visual -> News.
+- bottom block is a square brand visual placeholder using the approved ink Portfilo wordmark;
+- mobile/tablet behavior stacks naturally.
 
-### Contextual newsletter block
-
-Founder-approved headline:
+Founder-approved contextual card headline remains:
 
 `There's more to it than the headline.`
 
-A support description is **required** beneath it.
+A description slot is now present. Because exact contextual support wording remains open, the current implementation temporarily reuses the already-approved primary newsletter support copy rather than inventing a new public claim. This is **not final contextual card copy**.
 
-The exact one-sentence support wording remains **OPEN / NOT YET APPROVED**. Do not copy BackScoop's supporting sentence and do not invent a new public claim during implementation.
+Current contextual card CTA is `Subscribe`.
 
-Until that sentence is approved, implementation may use a clearly marked development-only placeholder for the support-copy slot or stop before public-copy completion, but it must not silently omit the structural description slot.
+### News and footer
 
-The block then contains:
-
-- email field;
-- contextual signup CTA, exact wording to remain within already approved subscription language unless separately reopened;
-- no eyebrow spam.
-
-## News and footer
-
-News remains below the Feature/right-rail composition. Do not redesign News unless the new shared shell exposes a concrete defect.
-
-The near-black footer endcap remains approved. Align its inner content to the same shared shell. Do not redesign the footer during this pass unless QA exposes a defect.
+- News remains structurally unchanged apart from shared-shell alignment;
+- dark footer newsletter endcap remains;
+- site footer homepage alignment now follows the same shared shell;
+- no unrelated footer redesign occurred.
 
 ## Explicitly rejected recent choices
 
-The following have zero forward homepage authority:
+These have zero forward homepage authority:
 
 - Source Serif 4 hero headline;
-- independently centered/narrowed Feature shell that breaks the shared page edge;
+- prior Homepage v3 hero composition;
+- hero CTA `Subscribe free` as the in-page hero action;
+- independently centered/narrowed Feature shell that changes the global page edge;
 - oversized Feature presentation;
-- current Homepage v3 hero composition;
-- muted/light-blue full hero background;
+- current Feature artwork as a required layout dependency during this QA pass;
+- muted/light-blue full hero surface;
 - red ticker treatment;
 - entire ticker black;
 - topic labels in the header;
 - removing `Latest | Stories` based on an exploratory question;
-- implementation-time changes to global gutters without explicit approval.
+- implementation-time global gutter/max-width changes without approval.
 
-## Process invariants for the next implementation
+## Motion state
 
-To stop repeated visual regressions:
+Automatic Latest ticker movement remains deliberately unimplemented.
 
-1. Treat the shared content shell as immutable during section work.
-2. Do not change typography, global width, header, ticker, Feature, News, or footer unless the approved task explicitly names that change.
-3. Do not introduce a new font, color treatment, max-width, crop, or public copy during implementation merely because it seems better.
-4. Only the ticker is allowed to be full-bleed.
-5. After implementation, review desktop and mobile screenshots before freezing any changed section.
-6. Ticker motion remains blocked until the corrected static homepage is visually approved.
+Sequence:
 
-## Current runtime vs approved target
-
-Current runtime still contains the rejected Homepage v3 implementation, including the Source Serif hero, `Subscribe free` hero CTA, independently constrained Feature shell, actual Feature image, and contextual card without its required support-description slot.
-
-Those runtime choices remain only because the new correction plan has **not yet been authorized for implementation**. They are not current design authority.
-
-## Current sequence
-
-1. Post-v3 homepage correction plan — **FOUNDER APPROVED**.
-2. Explicit implementation authorization — **ACTIVE NEXT GATE**.
-3. Implement only the approved correction contract.
-4. Run fresh `npm run check` and `npm run build`.
-5. Desktop + mobile visual QA.
-6. Correct only visible regressions against the approved contract.
-7. Freeze the static homepage.
-8. Add ticker motion as a separate narrow pass.
-9. Later News/Feature/Stories architecture and taxonomy work.
+1. post-v3 correction plan — COMPLETE;
+2. implementation authorization — COMPLETE;
+3. correction implementation — COMPLETE;
+4. **fresh local `npm run check` + `npm run build` — ACTIVE NEXT STEP**;
+5. desktop/mobile visual QA;
+6. correct only visible regressions against this contract;
+7. founder static-homepage approval;
+8. add ticker motion as a separate narrow pass;
+9. later News/Feature/Stories architecture and taxonomy work.
 
 ## Exact next task
 
-### Post-v3 homepage correction implementation authorization gate
+### Validate and visually review the corrected homepage
 
-No runtime edits are authorized by this design approval alone.
+Run locally:
 
-The founder may explicitly authorize:
+```text
+npm run check
+npm run build
+npm run dev
+```
 
-`Proceed with the approved homepage correction implementation.`
+Then inspect at minimum:
 
-Once authorized, do not expand scope into taxonomy, routes, article surfaces, ticker motion, final imagery generation, or unrelated design work.
+- wide desktop / current normal browser viewport;
+- 1440×900 class desktop;
+- 1366×768 laptop if available;
+- mobile around 390 px width.
+
+Review specifically:
+
+- one consistent content edge from header through Feature/News/footer;
+- only ticker is full-bleed;
+- header CTA balance;
+- hero `[content] [signup]` density and Instrument Sans treatment;
+- `Send me the news` hero CTA;
+- Feature placeholder scale;
+- left Feature / stacked right rail balance;
+- blue contextual signup block description slot;
+- square Portfilo brand placeholder size;
+- News appearing at the right vertical point;
+- no horizontal overflow on mobile.
+
+Do not treat the temporary repeated primary support copy in the contextual card as final wording. Exact contextual support copy remains a later copy gate.
 
 ## Validation authority
 
-The previous Homepage v3 runtime has not received a fresh recorded `npm run check` / `npm run build` pass after this new plan, and this docs-only decision creates no validation result.
+Fresh `npm run check` and `npm run build` have **not yet been recorded as passing against this correction implementation**.
 
-Do not claim the corrected homepage is implemented or validated until the authorized implementation occurs and the relevant commands actually succeed.
+Do not claim a validation pass until those commands actually succeed.
 
 ## Deployment / release boundary
 
