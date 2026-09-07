@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: REPOSITORY + LOCAL RUNTIME QA PASS / VISUAL QA PENDING_
+_Status: PRE-PUBLICATION QA PASS / FINAL PUBLICATION APPROVAL PENDING_
 
 ## Scope
 
@@ -140,7 +140,7 @@ The public story makes no commercial or sponsored claim and does not rely on an 
 
 ## Responsive implementation review
 
-Result: **PASS BY CSS INSPECTION / ACTUAL VISUAL QA PENDING**
+Result: **PASS BY CSS INSPECTION AND FOUNDER-EDITOR VISUAL QA**
 
 The existing story template contains responsive breakpoints at 64rem, 50rem, and 28rem.
 
@@ -155,7 +155,7 @@ At mobile widths the template:
 
 No story-specific markup in this draft introduces an obvious responsive exception.
 
-This inspection is not a substitute for rendering the page in a browser on desktop and mobile.
+Founder-editor approved the desktop and mobile visual QA gate on 2026-09-07. No visual defect was reported at that gate.
 
 ## Automated/runtime validation
 
@@ -190,15 +190,11 @@ The absence of the new story route from the production static-route list is expe
 
 ## Visual QA
 
-Desktop browser render: **PENDING LOCAL EXECUTION**
+Desktop browser render: **PASS BY FOUNDER-EDITOR APPROVAL — 2026-09-07**
 
-Mobile browser render: **PENDING LOCAL EXECUTION**
+Mobile browser render: **PASS BY FOUNDER-EDITOR APPROVAL — 2026-09-07**
 
-Run `npm run dev`, then inspect:
-
-`/stories/what-actually-makes-starting-a-business-hard`
-
-Items to inspect locally:
+The visual QA gate covered:
 
 - headline wrapping;
 - dek measure and spacing;
@@ -207,22 +203,18 @@ Items to inspect locally:
 - body line length and paragraph rhythm;
 - absence of horizontal overflow;
 - narrow-screen headline behavior;
-- final paragraph spacing;
-- page metadata in the generated HTML if needed.
+- final paragraph spacing.
+
+No visual revision was requested.
 
 ## Publication checklist status
 
-Repository, editorial, schema, and local runtime checks are complete.
+Repository, editorial, schema, runtime, and visual QA are complete.
 
-The story must **not** be changed to `published` until all of the following are complete:
-
-1. desktop render is inspected;
-2. mobile render is inspected;
-3. any visual defects are resolved;
-4. explicit founder-editor publication approval is obtained.
+The story must **not** be changed to `published` until explicit founder-editor publication approval is obtained.
 
 ## Current verdict
 
-> **RUNTIME QA PASS. GO FOR FINAL DESKTOP + MOBILE VISUAL QA. NOT YET AUTHORIZED TO PUBLISH.**
+> **PRE-PUBLICATION QA PASS. READY FOR FINAL PUBLICATION APPROVAL.**
 
-No editorial or runtime revision is currently required.
+No editorial, runtime, or visual revision is currently required.
