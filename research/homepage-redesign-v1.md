@@ -2,21 +2,15 @@
 
 _Last updated: 2026-09-08_
 
-_Status: FOUNDER APPROVED / STATIC REBUILD AUTHORIZED / HERO ASSET REQUIRED_
+_Status: FOUNDER APPROVED / HOMEPAGE V2 CORRECTION AUTHORIZED / TICKER MOTION DEFERRED UNTIL STATIC VISUAL APPROVAL_
 
 ## Purpose
 
-Portfilo is being redesigned as a premium, newsletter-first business and technology news product.
+Portfilo is being redesigned as a contemporary business-and-technology publication with strong newsletter acquisition and clear editorial hierarchy.
 
-The homepage must prioritize:
+The homepage must behave like a publication first and a signup funnel second.
 
-1. a clear newsletter value proposition and email signup;
-2. current business and technology news as the primary repeat-visit surface;
-3. deeper Features as a secondary, more art-directed editorial layer;
-4. newsletter acquisition placed naturally around editorial content rather than as repeated landing-page sections;
-5. a premium but restrained visual system that feels current rather than static or institutional.
-
-This decision supersedes the visual authority of the currently implemented homepage composition created during the first redesign attempt. That implementation may contain reusable behavior, but its layout, scale, spacing, hierarchy, copy, and visual treatment are rejected as precedent.
+Current reference evidence includes Morning Brew and BackScoop screenshots supplied by the founder on 2026-09-08. They are **composition references only**. Transfer useful page logic, not their visual identity, colors, branding, or copy.
 
 ## Public coverage labels
 
@@ -24,173 +18,145 @@ Approved reader-facing coverage labels:
 
 `Business / Technology / Startup / AI`
 
-Changes from the earlier system:
+`Building` is removed from the intended public coverage set and `Startups` becomes singular `Startup`.
 
-- remove `Building` from the intended public coverage set;
-- rename `Startups` to singular `Startup`.
-
-This decision is approved at the product/design level. Schema, content taxonomy, routes, existing story metadata, and canonical editorial documents must not be migrated during the homepage rebuild. That remains a later separately approved architecture task.
+This remains a presentation/product decision only until the later taxonomy migration. Do not migrate schema, routes, or story metadata during homepage work.
 
 ## Brand
 
-Keep the existing approved Portfilo brand assets.
-
-Canonical wordmarks remain:
+Keep the approved Portfilo brand assets:
 
 - `public/brand/portfilo-wordmark-color.svg`;
 - `public/brand/portfilo-wordmark-ink.svg`;
 - `public/brand/portfilo-wordmark-light.svg`.
 
-Do not create or substitute a new logo or wordmark for the redesign.
+Do not create a replacement logo or wordmark.
 
-## Homepage composition contract
+## Homepage v2 composition contract
 
-Founder-approved composition as of 2026-09-08:
+Founder-approved on 2026-09-08:
 
 ```text
-HEADER
-Portfilo | Business / Technology / Startup / AI
-Latest | Features | Subscribe free
+COMPACT HEADER
+smaller Portfilo wordmark
+Business / Technology / Startup / AI
+Features
+no header Subscribe CTA
+no primary Latest navigation item
 
-HERO
-Newsletter label
-Approved acquisition headline + support line
-Email + Subscribe free
-Selected architectural hero visual
+COMPACT LIGHT-BLUE NEWSLETTER BAND
+Get ahead in business and tech in 7 minutes.
+approved support line
+email form
+button: Send me the news
+no hero image
+no decorative eyebrow required
 
-LATEST STRIP
-Current headlines / updates
+FULL-WIDTH LATEST TICKER
+static for the Homepage v2 visual pass
+slow motion added only after static visual approval
 
-THE LATEST
-Primary current story
-Supporting current stories / compact feed as justified
+FEATURED STORY
+no section eyebrow
+no A CLOSER LOOK heading
+story image first
+story headline directly below
+minimal supporting copy only when useful
+this is the first editorial object after the newsletter/ticker area
 
-FEATURED / A CLOSER LOOK
-One deeper Feature / featured editorial story
-Newsletter signup card paired beside the editorial module on desktop
-Newsletter card follows the story on mobile
+NEWS
+plain section title
+lead current item
+supporting current items
+no repeated decorative eyebrow system
 
-FOOTER
-Compact newsletter signup
-Minimal institutional / legal links
+BLACK FOOTER ENDCAP
+compact newsletter signup
+minimal institutional/legal links
 ```
 
-The previously planned standalone full-width `FINAL NEWSLETTER CTA` section is removed.
+## Information architecture clarification
 
-The founder approved using the BackScoop screenshot shared on 2026-09-08 as a **composition reference only** for pairing editorial content with a newsletter signup card. Do not copy BackScoop styling, copy, branding, colors, or proprietary visual identity.
+The founder identified a redundancy between `Latest` and `Stories`.
 
-## Newsletter acquisition placement
+Current product interpretation:
 
-Homepage v1 now uses three signup moments:
+- **News** is the current/day-to-day content layer;
+- **Features** is the deeper editorial content layer;
+- **Latest** is a chronological view, not a content type;
+- **Stories** should not remain a reader-facing product label merely because `/stories` is the current technical route.
 
-1. **Hero signup** — primary acquisition surface with the approved full hero copy.
-2. **Editorial-paired signup card** — placed beside the Featured / `A CLOSER LOOK` editorial module on desktop and after it on mobile.
-3. **Compact footer signup** — a small final fallback integrated into the footer rather than a separate oversized section.
+For Homepage v2:
 
-For the first static build, the founder approved reusing the already approved hero newsletter copy in all three placements so implementation can proceed without another copy gate. Context-specific card/footer copy may be refined later after the full homepage can be reviewed as a composition.
+- remove `Latest` from primary header navigation;
+- keep `Features` as the reader-facing deeper-content label;
+- keep existing `/stories` technical route for now;
+- do not invent a new `/news` route or perform route migration during this visual correction pass.
 
-Do not turn the second or third signup into another large landing-page hero. Hierarchy must remain: hero first, editorial content second, supporting acquisition moments subordinate.
-
-## Hard alignment rule
-
-For desktop and large-tablet side-by-side modules, especially the Hero and Featured/newsletter-card pairing:
-
-- columns share the same outer row;
-- top edges align;
-- bottom edges align when the composition calls for a shared rectangle;
-- do not fix imbalance with arbitrary spacer blocks.
-
-On mobile, once modules stack vertically, equal-height alignment is no longer required.
+The later News/Feature architecture gate will decide the clean route/schema model.
 
 ## Header
 
-The header should be compact and editorial, not a billboard.
-
 Requirements:
 
-- use the canonical Portfilo wordmark;
-- keep the wordmark visually restrained;
-- expose current coverage as `Business / Technology / Startup / AI` where the composition supports it;
-- primary navigation focuses on `Latest`, `Features`, and `Subscribe free`;
-- `Subscribe free` is an action, not an institutional navigation label;
-- About and Standards do not receive primary-navigation emphasis.
+- reduce the wordmark scale by roughly 15–20% from Homepage v1;
+- reduce overall header height;
+- remove the header `Subscribe free` CTA because the newsletter acquisition area follows immediately below;
+- remove `Latest` from primary navigation;
+- expose `Business / Technology / Startup / AI` on wider screens where space allows;
+- keep `Features` as the primary editorial navigation link;
+- mobile must remain compact and usable without horizontal overflow.
 
-## Hero
+## Newsletter band
 
-The hero is a compact newsletter-first editorial introduction, not a full-screen SaaS landing page.
+The newsletter area is not a full-screen hero.
 
-Approved copy:
+Use:
+
+- a compact light-blue Portfilo surface;
+- approved acquisition headline;
+- approved support line;
+- email field + `Send me the news` button;
+- no hero image;
+- no oversized empty marketing space;
+- no decorative `NEWSLETTER` eyebrow required.
+
+Target desktop content height is roughly 180–220 px where the viewport allows, so editorial content appears quickly.
+
+Approved copy remains:
 
 ```text
-NEWSLETTER
-
 Get ahead in business and tech in 7 minutes.
 
 The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.
 ```
 
-Requirements:
+The 7-minute and three-times-per-week statements remain public operating promises.
 
-- compact desktop height rather than viewport-filling hero;
-- get to actual journalism quickly;
-- embedded email form;
-- no duplicate signup immediately after the hero;
-- no decorative black placeholder panel;
-- no gradient;
-- no giant startup illustration;
-- no oversized logo treatment;
-- `briefing` is rejected as public acquisition language.
+## Latest ticker
 
-The 7-minute and three-times-per-week statements are approved public operating promises, not placeholder marketing copy.
+The ticker should run full viewport width rather than stopping at the page content max-width.
 
-## Hero visual
+For the Homepage v2 correction pass:
 
-Founder selected generated architectural candidate 2.
+- full-width / full-bleed;
+- mobile responsive and horizontally safe;
+- red may be used as a restrained Portfilo accent for the ticker identifier;
+- no fabricated production headlines;
+- automatic movement remains deferred until the new static composition is visually approved.
 
-Canonical selection/provenance record:
+Immediate post-static motion pass:
 
-`research/image-system/homepage-hero-selection-v1.md`
+- slow continuous horizontal movement;
+- pause on hover/focus where applicable;
+- touch-safe mobile behavior;
+- `prefers-reduced-motion` becomes stationary/manual;
+- no obsolete `<marquee>`;
+- CSS-first implementation.
 
-Approved character:
+## Featured story
 
-- grayscale / monochrome;
-- premium print-like grain;
-- contemporary architectural/city geometry;
-- no embedded text;
-- no logos;
-- no documentary claim;
-- small live HTML disclosure such as `AI-generated editorial image`.
-
-The exact binary is not committed to the repository. **Do not regenerate, recreate, reinterpret, or substitute it.** Static homepage implementation must obtain the exact approved asset and verify the recorded hash when practical.
-
-## Latest strip
-
-Static phase:
-
-- horizontally laid out headlines;
-- no automatic movement during static design approval.
-
-Motion is deferred until after static desktop/mobile approval. Later motion must include reduced-motion behavior and a usable pause/stop mechanism where applicable.
-
-Do not fabricate production headlines to make the strip look active.
-
-## The Latest
-
-News is the primary editorial surface.
-
-Use a small flexible hierarchy rather than equal card grids:
-
-- Lead News;
-- supporting News cluster;
-- compact chronological/feed treatment when justified by available content.
-
-Editorial importance determines scale.
-
-Development fixtures may be used locally only when they are unmistakably synthetic and excluded from production.
-
-## Featured / A Closer Look
-
-The deeper Feature layer should feel slower and more art-directed than current News.
+The Feature is promoted above News in Homepage v2.
 
 Current published Feature candidate:
 
@@ -198,100 +164,113 @@ Current published Feature candidate:
 
 Requirements:
 
-- strong image-led, split-editorial, or type-led composition;
-- serif may be used selectively for meaningful editorial contrast;
-- do not expose unnecessary internal taxonomy or metadata UI;
-- use the existing approved story headline/dek unless a separate editorial gate reopens them;
-- pair the newsletter signup card with this editorial module in the first static build, using the founder-approved BackScoop composition logic without copying its visual identity.
+- immediately after the ticker;
+- no `Feature` eyebrow;
+- no `A CLOSER LOOK` section title;
+- image first;
+- headline directly below the image;
+- dek may follow when useful, but metadata should remain minimal;
+- no paired newsletter card in this first-screen Feature composition;
+- use the existing approved story image and story packaging;
+- aim for the image + headline to appear within the initial desktop viewport on common 1440×900 screens, without brittle fixed-viewport hacks.
+
+## News
+
+News follows the Featured story.
+
+Use:
+
+- one plain `News` section heading;
+- lead current item;
+- supporting current items;
+- development fixtures only when unmistakably synthetic and excluded from production;
+- no repeated `Current`, `The Latest`, `Feature`, or other decorative eyebrow stack.
+
+Editorial importance determines scale. Do not default to equal-card grids.
+
+## Footer
+
+Use a strong near-black footer endcap.
+
+Requirements:
+
+- compact newsletter signup integrated into the dark endcap;
+- minimal institutional/legal links;
+- light wordmark on the dark surface;
+- blue remains the primary action color;
+- Portfilo red may appear as a small accent, not as a competing full-page color block.
 
 ## Visual rules
 
-Working visual direction:
+Working direction:
 
 **premium editorial restraint + digital immediacy**
 
 Use:
 
-- warm near-white canvas;
+- warm near-white editorial canvas;
 - near-black ink;
-- Portfilo blue as the dominant functional/editorial accent;
+- Portfilo blue as primary functional/editorial accent;
+- a restrained light-blue newsletter surface;
 - Portfilo red rarely and intentionally;
-- square geometry by default;
+- square geometry;
 - thin rules;
 - strong sans-led homepage typography;
-- Source Serif 4 selectively for Feature/editorial contrast;
-- visible grain on selected editorial imagery;
-- restrained information density.
+- serif selectively for deeper editorial contrast;
+- imagery concentrated on actual News/Feature content rather than decorative hero art.
 
 Avoid:
 
-- generic SaaS composition;
+- generic SaaS hero composition;
 - gradients/glow/glass;
-- default shadows;
-- rounded-card and pill-heavy systems;
+- rounded-card systems and pill-heavy UI;
 - card soup;
 - fake newspaper styling;
-- decorative black panels;
-- `01 / 02 / 03` section-decoration systems;
+- decorative black panels in the body;
 - excessive monospace;
-- stock-business clichés;
-- generic AI imagery;
-- decorative motion before static approval.
-
-Typography baseline remains Instrument Sans + Source Serif 4 + IBM Plex Mono only for true utility roles.
+- `01 / 02 / 03` decoration;
+- repeated eyebrows used only to make sections look designed;
+- decorative motion before static composition approval.
 
 ## Mobile
-
-Mobile receives its own editorial reading order rather than a shrunken desktop grid.
 
 Expected order:
 
 1. compact header;
-2. newsletter hero;
-3. hero visual;
-4. Latest strip;
-5. lead News;
-6. supporting News;
-7. Featured / `A CLOSER LOOK` story;
-8. newsletter signup card;
-9. footer with compact signup + institutional links.
+2. compact newsletter band;
+3. full-width Latest ticker;
+4. Featured story image + headline;
+5. News;
+6. black footer endcap with compact signup and links.
 
-## Static Homepage Rebuild v1
+Mobile is not a shrunken desktop grid. Preserve readable widths, usable form controls, and no horizontal page overflow.
 
-**AUTHORIZED by the founder on 2026-09-08.**
+## Homepage v2 implementation boundary
 
-Implementation requirements:
+Founder approval on 2026-09-08 authorizes this Homepage v2 visual correction pass.
 
-- rebuild the homepage from this approved composition rather than patching the rejected layout into shape;
-- preserve reusable underlying content/newsletter/brand behavior where sound;
-- use the approved hero copy;
-- reuse that copy in the editorial-paired card and compact footer signup for this first build;
-- use the exact selected hero binary only;
-- no motion;
-- no News/Feature schema or taxonomy migration;
-- no site-wide `Portfilo Brief` -> `Newsletter` migration in this task;
-- no article-route redesign in this task;
-- run `npm run check` and `npm run build` before claiming implementation validation;
-- stop after the static build for desktop / large-tablet / mobile visual QA.
+Authorized now:
 
-## Current blocker
+- header resizing/navigation simplification;
+- light-blue newsletter band;
+- `Send me the news` signup button label on homepage signup instances;
+- full-width static ticker;
+- Featured-before-News ordering;
+- removal of decorative homepage eyebrows/section titles described above;
+- removal of the Feature-paired signup card;
+- black footer endcap;
+- responsive corrections required by this composition.
 
-The exact selected hero asset binary is not committed.
+Not authorized in this pass:
 
-The static rebuild may begin only once the exact approved hero image is supplied. If the asset is unavailable, ask the founder for it rather than generating or substituting another image.
-
-## Approval boundary
-
-Founder approval now covers this design contract and authorizes Static Homepage Rebuild v1 once the required hero asset is available.
-
-It does not authorize:
-
+- ticker auto-motion before static Homepage v2 visual approval;
 - schema/taxonomy migration;
-- hero-image regeneration/substitution;
-- article redesign;
-- route deletion/redirects;
-- public `Portfilo Brief` naming migration;
-- motion implementation;
+- new News routes;
+- deletion/redirect of `/stories`;
+- article reading-surface redesign;
+- site-wide `Portfilo Brief` naming migration;
 - deployment;
 - merge to `main`;
 - release.
+
+After implementation, run actual `npm run check` and `npm run build` before claiming local validation, then stop for desktop/mobile visual QA.
