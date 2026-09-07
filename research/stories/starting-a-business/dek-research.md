@@ -102,11 +102,69 @@ Professional examples may justify editorial behavior, but their wording, cadence
 
 **No dek remains the fallback.** If a subject-led scope/context line cannot add useful orientation without repeating the headline or body, Portfilo should publish the headline without a dek rather than force one.
 
+## Human-edited exemplar check
+
+Research completed after the subject-led correction focused on how established business/explainer publications use the line beneath a broad business or entrepreneurship headline.
+
+### Professional guidance
+
+Poynter, `Hierarchy Within Headlines: Layers of Storytelling`:
+
+https://www.poynter.org/reporting-editing/2002/hierarchy-within-headlines-layers-of-storytelling/
+
+Transferable lesson: additional decks should flesh out the story and add information beyond the main headline. Poynter also explicitly notes that not every headline needs multiple decks.
+
+### Bloomberg Businessweek
+
+`Business Plan in Hand, a Founder Starts Searching for Something to Sell`:
+
+https://www.bloomberg.com/news/articles/2025-08-11/business-plan-in-hand-a-founder-starts-searching-for-something-to-sell
+
+Observed behavior: the subhead stays with the founder and the practical startup problem. It adds concrete context about what proved difficult instead of trying to become a separate aphorism or generic entrepreneurship thesis.
+
+Transferable lesson: under a specific or broad business headline, the supporting line can simply locate the reader inside the actual business situation.
+
+### WIRED
+
+`Entrepreneur First doesn't find startups, it builds them`:
+
+https://www.wired.com/story/entrepreneur-first-startups-london/
+
+Observed behavior: the dek plainly explains what Entrepreneur First does and the scope of the story. The line depends on the headline and does not try to function as a standalone slogan.
+
+Transferable lesson: a useful dek can be descriptive and subordinate to the headline rather than rhetorically self-contained.
+
+### Harvard Business Review
+
+`So You Want to Be an Entrepreneur?`:
+
+https://hbr.org/2020/07/so-you-want-to-be-an-entrepreneur
+
+`Making the Leap to Entrepreneurship`:
+
+https://hbr.org/2020/04/making-the-leap-to-entrepreneurship
+
+Observed behavior: HBR often uses a visible `Summary` layer rather than a conventional one-line dek. In these entrepreneurship examples, that layer begins by orienting the reader around starting the business and the specific issue the article will address.
+
+Transferable lesson: the supporting copy does not need to manufacture a clever second proposition. Its useful job can be to narrow the subject and tell the reader what part of entrepreneurship the piece examines.
+
+### Result for this story
+
+The examples support the founder/editor correction rather than the earlier tension-led rule.
+
+For this article, candidate deks should:
+
+1. begin from the subject of starting or running a new business;
+2. narrow the broad headline toward the early operating/learning problem actually covered by Draft 8;
+3. use ordinary editorial language;
+4. avoid trying to sound memorable by itself;
+5. leave the weak-sales explanation and the article's final lesson to the body.
+
 ## Candidate gate
 
 No wording is approved yet.
 
-Candidate generation may proceed only after the approved subject-led scope/context behavior is grounded in relevant human-edited examples. AI-generated wording remains proposal-only and has zero stylistic authority until founder/editor approval.
+Candidate generation may proceed within the researched subject-led scope/context behavior above. AI-generated wording remains proposal-only and has zero stylistic authority until founder/editor approval.
 
 ## Boundary
 
