@@ -177,7 +177,7 @@ What must not be imitated:
 
 ## Editorial packaging research
 
-Complete this section when headline, dek, or description has meaningful editorial discretion or when the body-writing exemplars do not answer the packaging problem.
+Complete this section when headline or dek has meaningful editorial discretion, or when a possible metadata override needs evidence.
 
 Do not assume the same exemplars are useful for both body form and story packaging.
 
@@ -189,34 +189,43 @@ Headline/title:
 
 URL/date:
 
-Supporting-copy type:
+Visible supporting-copy type:
 
-`dek | standfirst | summary | card description | meta description | other`
+`dek | standfirst | summary | other`
 
-What job does the supporting copy perform?
+What job does the visible supporting copy perform?
 
-Examples of jobs to classify:
+Examples:
 
+- gives the clearest answer;
 - establishes the situation;
-- states the reporting/explanation promise;
 - defines scope;
-- surfaces distinctive evidence/method/case;
-- states a bounded finding;
-- frames the reader's practical question.
+- surfaces a finding;
+- states a limitation;
+- explains why the subject matters now;
+- identifies reporting/method context.
 
 What new information does it add after the headline?
 
 How dependent is it on the headline?
 
-Does it summarize the conclusion, or does it introduce the premise/scope/reporting instead?
+How does headline + supporting copy behave on an article page or index/card surface?
 
 What concrete nouns, cases, methods, or details keep it from becoming generic?
-
-How would the supporting copy behave if shown alone on a story card?
 
 Transferable editorial lesson:
 
 What must not be imitated:
+
+### Metadata comparison, when relevant
+
+Was a separate meta/social description inspectable and materially different from the visible supporting copy?
+
+`YES | NO | NOT INSPECTED`
+
+If yes, what concrete metadata problem appears to justify the difference?
+
+Do not infer a universal rule from one publication's CMS implementation.
 
 ## Cross-example findings
 
@@ -270,9 +279,15 @@ Headline job:
 
 Dek job:
 
-Description / story-summary job:
+How should headline + dek work together as the complete reader-facing package?
 
 What information should be left to the body rather than repeated in the package?
+
+Does the proposed dek appear suitable as default metadata when separated from the headline?
+
+`YES | NO | UNKNOWN`
+
+If no, what exact metadata problem may justify an optional `metaDescription` override?
 
 What package-level AI-slop patterns are especially likely for this assignment?
 

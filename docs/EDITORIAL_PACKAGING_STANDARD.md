@@ -2,37 +2,45 @@
 
 _Last updated: 2026-09-07_
 
+_Status: EDITORIAL PACKAGING ARCHITECTURE V1 / FOUNDER-EDITOR APPROVED_
+
 ## Purpose
 
-This standard governs the editorial package around a Portfilo story:
+This standard governs the editorial package around a Portfilo story and the separate metadata description used by search, social, and structured-data surfaces.
 
-- headline;
-- dek;
-- description / story summary.
+For stories, the reader-facing editorial package is:
 
-It exists because accurate copy can still fail when each field is generated as a compressed version of the same thesis.
+1. headline;
+2. dek.
 
-For these three fields, this document refines the relevant guidance in:
+Metadata is infrastructure. It is not a mandatory third piece of reader-facing editorial copy.
+
+This standard refines and, where necessary, supersedes older wording in:
 
 - `docs/COPY_STYLE.md`;
 - `docs/WRITING_SYSTEM.md`;
-- `docs/PUBLISHING_STANDARD.md`.
+- `docs/PUBLISHING_STANDARD.md`;
+- `AGENTS.md`;
+- `research/STYLE_BRIEF_TEMPLATE.md`;
+- `research/STYLE_RESEARCH_TEMPLATE.md`.
 
-Where older wording in those documents implies that a description is adequately defined by being merely `short, literal, and specific`, use this standard's more complete description-job process.
+If older wording treats `description` as a required third reader-facing story-summary layer, use this standard instead.
 
-Research basis:
+Decision record:
 
-`research/editorial-packaging/description-system-research.md`
+`research/editorial-packaging/architecture-v1-decision.md`
+
+Historical description-system research remains useful for provenance but does not override this v1 architecture.
 
 ## Core rule
 
-> **Editorial packaging is not article compression.**
+> **A Portfilo story has a headline and a dek. Do not manufacture a third visible sentence merely because metadata exists.**
 
-The headline, dek, and description are three different editorial jobs.
+The headline and dek should work together as one editorial package.
 
-They should be evaluated as one package, but they should not be produced by paraphrasing one another or by repeatedly compressing the body.
+The metadata description should normally reuse the dek. A separate metadata description is an exception for a concrete metadata problem, not a routine writing exercise.
 
-AI output has zero stylistic authority. A generated field is a proposal until it passes the story-specific editorial gate.
+AI output has zero stylistic authority. A generated headline, dek, or metadata override is a proposal until it passes the relevant human editorial gate.
 
 ## 1. Headline job
 
@@ -40,109 +48,115 @@ The headline names the development, finding, question, tension, or argument.
 
 It should give the reader the clearest useful entry into the story without outrunning the evidence.
 
-A headline may be broad when the story genuinely answers a broad question. The supporting fields can then narrow or orient the reader.
+A headline may be broad when the story genuinely answers a broad question. The dek can then narrow, answer, orient, qualify, or add the most useful missing information.
 
 ## 2. Dek job
 
-The dek adds editorial information the headline does not carry.
+The dek is the supporting reader-facing copy attached to the headline.
+
+It appears wherever Portfilo presents the story package, including:
+
+- the story page;
+- homepage feature treatment;
+- homepage story listings;
+- Stories archive.
+
+The dek should add useful editorial information the headline does not carry.
 
 Possible jobs include:
 
-- narrowing scope;
-- locating the reader in the specific situation;
-- stating what was examined;
-- adding a meaningful finding;
-- adding a material limitation;
-- explaining why the question is being examined now.
+- give the clearest defensible answer;
+- narrow scope;
+- establish the concrete situation;
+- state a meaningful finding;
+- surface a material limitation;
+- explain why the subject matters now;
+- identify what was examined when the reporting method itself is useful context.
 
-The dek is visible article copy. It does not need to stand alone as a slogan or quotation.
+One or two sentences will usually be enough.
 
-Do not force tension, cleverness, aphorism, or a second headline when plain context does the job better.
+Do not force the dek to become:
 
-## 3. Description / story-summary job
+- a second headline;
+- a slogan;
+- a curiosity gap;
+- a compressed abstract of the article;
+- a list of every mechanism or conclusion.
 
-### Primary function
+Read the headline and dek together. The package should make sense without requiring a third sentence to explain what the article is doing.
 
-Under Portfilo's current implementation, `description` is visible reader-facing copy on the homepage and Stories archive and is also reused for search/social metadata and Article structured data.
+## 3. Metadata description job
 
-Therefore:
+### Default behavior
 
-> **Write the description as reader-facing editorial packaging first. Check metadata compatibility second.**
+Story metadata uses:
 
-Do not start from `write an SEO description`.
+```text
+metaDescription ?? dek
+```
 
-Do not start from `summarize the article in 150 characters`.
+The dek is therefore the default source for:
 
-Do not default to restating the thesis or conclusion.
+- HTML meta description;
+- Open Graph description;
+- Twitter description;
+- Article structured-data description.
 
-### Choose the job before wording
+### Optional override
 
-Before generating description copy, choose the most useful job for the specific story.
+A story may define an optional `metaDescription` only when there is a concrete reason the approved dek is a poor metadata string.
 
-A description may:
+Legitimate reasons may include:
 
-1. **Establish the situation**
-   - name the concrete problem, event, stage, or circumstance the story examines.
+- the dek depends heavily on visible headline context and becomes unclear when separated from it;
+- the dek contains formatting or wording unsuitable for a metadata surface;
+- a materially more self-contained metadata sentence is needed without changing the visible editorial package.
 
-2. **State the reporting or explanation promise**
-   - tell the reader what Portfilo examined, tested, compared, reviewed, or set out to explain.
+A separate override is **not** justified merely because:
 
-3. **Define the scope**
-   - identify the specific part of a broad subject that the story actually covers.
+- every story should have three different packaging sentences;
+- SEO folklore suggests a target character count;
+- the writer wants another opportunity to summarize the article;
+- the dek already performs the reader-facing job well.
 
-4. **Surface distinctive evidence**
-   - mention a case, dataset, source set, experiment, example, or reporting method when it helps the reader understand what is distinctive about the story.
+### Metadata is not card copy
 
-5. **State a bounded finding**
-   - use the finding when it is the clearest and most useful reason to read, provided the wording does not simply duplicate the headline or dek.
+`metaDescription` is not displayed as the homepage or Stories-archive summary.
 
-6. **Frame the reader's practical question**
-   - use when the story genuinely helps a reader understand or decide something and the question is supported by the article's actual scope.
-
-One job is usually enough. Two may be combined when the sentence remains natural.
-
-Do not combine several modes merely to make the description feel comprehensive.
-
-### Description length
-
-There is no Portfilo character-count formula.
-
-One sentence will often be enough. Two sentences are allowed when the story needs them.
-
-The description must remain compact enough to work on the homepage and Stories archive, but editing should be based on what the reader needs rather than an arbitrary metadata target.
-
-Search snippets may truncate. That is a presentation constraint, not a writing form.
+Do not write metadata first and then force the visible site to display it.
 
 ## 4. Package-first workflow
 
 For every nontrivial story package:
 
 1. read the approved body or final evidence position;
-2. read the proposed/approved headline;
-3. read the proposed/approved dek;
-4. state what information the package still needs;
-5. choose the description job before drafting wording;
-6. when the job is not obvious, review a small set of relevant human-edited headline/dek/description or headline/standfirst/summary examples;
-7. generate only a small number of materially different proposals;
-8. read the complete package aloud;
-9. test the description alone as card copy;
-10. check metadata/social compatibility;
-11. require human approval at the story-specific gate.
+2. state the headline job;
+3. state the dek job;
+4. draft a small number of materially different headline/dek proposals when needed;
+5. read headline + dek together;
+6. verify that the dek adds useful information rather than translating the headline;
+7. check the dek in the actual card/index context;
+8. check whether the dek also works as metadata;
+9. add `metaDescription` only if a real conflict remains;
+10. require human approval at the story-specific gate.
 
-Do not move directly from `body approved` to `AI, summarize this story`.
+Do not move from `body approved` to `AI, summarize this story`.
+
+Do not ask what a third description can say that the headline and dek have not said. If headline + dek already form a complete package, stop.
 
 ## 5. Human-edited exemplar use
 
-Examples are selected because they solve a comparable editorial-packaging problem, not because the publication is famous.
+When packaging research is needed, choose examples because they solve a comparable editorial problem, not because the publication is famous.
 
 Study:
 
-- what new information the supporting copy adds;
-- whether it frames a situation, scope, finding, method, or reader question;
-- how much it depends on the headline;
-- whether it reveals the conclusion or only the premise;
-- what concrete nouns/details make it specific;
-- how it behaves when read as card copy.
+- what the headline establishes;
+- what the standfirst/dek adds;
+- how dependent the supporting copy is on the headline;
+- whether it states an answer, situation, finding, scope, limitation, or reporting context;
+- how the pair behaves on article and index/card surfaces.
+
+When metadata is inspectable and relevant, study it separately from the visible package.
 
 Do not imitate:
 
@@ -150,49 +164,36 @@ Do not imitate:
 - cadence;
 - metaphors;
 - jokes;
-- branded voice;
-- another publication's repeated sentence construction.
+- branded terminology;
+- another publication's institutional voice.
 
-## 6. Description failure modes
+Examples teach decisions, not sentences.
 
-Reject a description when it behaves like any of these without a story-specific reason:
+## 6. Failure modes
 
-### Thesis compression
+### Manufactured third layer
 
-It takes the body conclusion, replaces concrete material with abstractions, and calls the result a summary.
+Reject a workflow that assumes a story needs a third visible summary after a complete headline + dek package.
 
 Warning pattern:
 
-`X can have several causes, and choosing the wrong response can create costs.`
+`Using X as the main example, this article/explainer shows how Y...`
 
-The statement may be true while still failing to tell the reader what is distinctive about this story.
+This construction is not banned, but it is a strong warning sign when its main job is to describe the article as an object rather than tell the reader something useful.
 
-### Dek duplication
+### Headline/dek duplication
 
-The headline and dek already establish the problem, and the description merely says it again with synonyms.
+Reject a dek that simply restates the headline with synonyms.
 
-### Generic abstraction
+### Thesis compression
 
-The sentence relies on words such as:
-
-- results;
-- factors;
-- challenges;
-- outcomes;
-- decisions;
-- uncertainty;
-- change;
-- impact;
-
-when the story contains more concrete material that would better establish its scope or premise.
-
-These words are not banned. They are warning signs when they replace the actual subject.
+Reject supporting copy that turns the article conclusion into a vague abstract summary when a clearer answer, situation, scope, or finding exists.
 
 ### Mechanical article language
 
-Phrases such as `This article explores`, `This story looks at`, or `This piece examines` are allowed when the verb introduces useful concrete information.
+Phrases such as `This article explores`, `This story looks at`, or `This explainer shows` require a concrete editorial reason.
 
-Reject them when they merely hide a generic summary behind editorial-sounding scaffolding.
+Reject them when they merely hide generic summary prose behind editorial scaffolding.
 
 ### SEO-shaped prose
 
@@ -200,57 +201,74 @@ Reject:
 
 - keyword stuffing;
 - unnatural repetition of headline terms;
-- filler written only to hit an imagined character count;
-- wording selected for search engines at the expense of the visible reader-facing card.
+- filler written to hit an imagined character count;
+- metadata wording promoted into visible copy solely because it exists.
 
 ### Comprehensive-in-one-sentence pressure
 
-Do not force every mechanism, cause, example, limitation, and conclusion into the description.
-
-A good description selects the most useful entry into the story.
+Do not force every cause, mechanism, example, limitation, and conclusion into the dek or metadata override.
 
 ### Manufactured intrigue
 
-Do not turn the description into a curiosity gap, slogan, or fake tension merely because a literal sentence feels too simple.
+Do not create curiosity gaps, slogans, or fake tension merely because literal supporting copy feels too simple.
 
-## 7. Package audit
+## 7. Editorial-package audit
 
 Read in order:
 
 1. headline;
-2. dek;
-3. description.
+2. dek.
 
 Ask:
 
-- Does each field add a different useful layer?
-- Is the subject clear without reading the body?
-- Does any field merely translate another?
-- Does the description tell me what this particular story is, or only summarize its thesis?
-- Is there a concrete situation, scope, method, case, or finding that would orient the reader better?
-- Does the package create interest through the subject itself rather than copywriting tricks?
-- Could a generic AI publication publish the description unchanged under a different business article?
-- Does the description still work when shown alone on a card?
+- Does the headline accurately establish the story?
+- Does the dek add a different useful layer?
+- Does the pair tell the reader enough to decide whether the story is relevant?
+- Does either field merely translate the other?
+- Is the subject concrete enough?
+- Does the package create interest through the subject rather than copywriting tricks?
+- Could a generic AI publication reuse the wording unchanged under an unrelated story?
 
-If the last two answers are `yes` and `no` respectively, rewrite the description job before rewriting the sentence.
+Then audit metadata separately:
 
-## 8. Current implementation boundary
+- Does the dek remain understandable when used as metadata?
+- If yes, do not add `metaDescription`.
+- If no, what exact metadata problem requires an override?
+- Does the override accurately describe the page without becoming SEO filler?
 
-The current content schema already separates `dek` and `description`.
+## 8. Current implementation contract
 
-The `description` field is reused across visible card copy and metadata surfaces.
+The story schema uses:
 
-Do not describe splitting `dek` and `description` as a future schema task. That split already exists.
+```yaml
+title: required
+dek: required
+metaDescription: optional
+```
 
-A future dedicated `metaDescription` field may be considered only if a real conflict appears between strong reader-facing card copy and metadata requirements. Do not add another field preemptively.
+The old required story `description` field is retired.
+
+This change applies to the **stories** collection only. Other content types, such as series or site-level page metadata, may still legitimately use a field or prop named `description` for their own purpose.
+
+Reader-facing story listings use `dek`.
+
+Story-page metadata resolves to:
+
+```ts
+metaDescription ?? dek
+```
+
+The shared `SiteHead` component may continue to receive a generic prop named `description`; story routes are responsible for supplying the resolved metadata value.
 
 ## 9. Research and approval boundary
 
-Headline/dek/description research may happen after body approval when those jobs materially differ from the body form.
+Headline/dek research may happen after body approval when the packaging problem materially differs from the body-writing problem.
 
-Approval of one field does not approve the others.
+Approval of the body does not automatically approve headline or dek.
 
-Approval of the editorial package does not itself authorize publication.
+Approval of headline/dek does not authorize publication.
+
+A metadata override does not become required merely because one was useful for a different story.
 
 Public-story assembly and publication remain later gates under `docs/PUBLISHING_STANDARD.md`.
 
@@ -258,9 +276,9 @@ Public-story assembly and publication remain later gates under `docs/PUBLISHING_
 
 See:
 
-- `research/editorial-packaging/description-system-research.md`;
-- Poynter guidance already recorded in Portfilo's writing-system research;
+- `research/editorial-packaging/architecture-v1-decision.md`;
+- `research/editorial-packaging/description-system-research.md` for historical research provenance;
 - Google Search Central, `Control your snippets in search results`;
-- the human-edited WIRED, The Guardian, Harvard Business Review, and McKinsey examples recorded in the research file.
+- the human-edited publication examples recorded in the architecture decision.
 
-The examples justify editorial behaviors only. They do not authorize imitation of another publication's voice.
+These sources justify editorial and implementation behavior only. They do not authorize imitation of another publication's voice.

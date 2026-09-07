@@ -1,7 +1,6 @@
 ---
 title: "What actually changed?"
 dek: "A business or technology development can mean something different once it changes what someone has to do or decide."
-description: "The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates."
 contentType: perspective
 topic: building
 author: "Louda Tuppal"

@@ -20,7 +20,7 @@ const { story } = Astro.props;
 const {
   title,
   dek,
-  description,
+  metaDescription,
   contentType,
   topic,
   author,
@@ -43,6 +43,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined;
+const pageDescription = metaDescription ?? dek;
 ---
 
 <!doctype html>
@@ -50,7 +51,7 @@ const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined
   <head>
     <SiteHead
       title={`${title} | Portfilo`}
-      description={description}
+      description={pageDescription}
       article={{ author, authorUrl: authorHref, publishedAt, updatedAt }}
     />
   </head>

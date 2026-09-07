@@ -1,7 +1,6 @@
 ---
 title: "What actually makes starting a business hard?"
 dek: "New businesses have to make important decisions with very little information about what is working and what is not."
-description: "Using weak sales as the main example, this explainer shows how the same early business result can point to very different problems."
 contentType: explained
 topic: building
 author: "Portfilo"

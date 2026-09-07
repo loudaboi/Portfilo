@@ -1,7 +1,6 @@
 ---
 title: "Build things that make the next thing easier"
 dek: "An early project should leave you with more than a story about what you learned."
-description: "A project deserves credit beyond its direct result only when the work itself changes a later choice or produces something that can actually be used again."
 contentType: perspective
 topic: building
 author: "Louda Tuppal"

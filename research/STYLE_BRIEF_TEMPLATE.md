@@ -225,54 +225,72 @@ What must it not imply?
 
 ## Dek job
 
-What information should the dek add that the headline does not?
-
-## Description / story-summary job
-
 Follow `docs/EDITORIAL_PACKAGING_STANDARD.md`.
 
-Do not begin with `summarize the article` or an arbitrary character target.
+What useful information should the dek add after the headline?
 
-Which primary job should the description perform?
+Which job is most useful for this story?
 
-Choose the best fit for this story:
+Examples:
 
+- give the clearest defensible answer;
+- narrow scope;
 - establish the concrete situation;
-- state the reporting/explanation promise;
-- define the scope;
-- surface distinctive evidence, method, case, or example;
-- state a bounded finding;
-- frame the reader's practical question.
+- state a meaningful finding;
+- surface a material limitation;
+- explain why the subject matters now;
+- identify what was examined when the method itself is useful context.
 
 Selected job:
 
-Why is this the most useful missing layer after the headline and dek?
+What must the dek avoid duplicating from the headline?
 
-What concrete information should it carry?
+How should headline + dek work together on the story page, homepage, and Stories archive?
 
-What must it avoid duplicating from the headline or dek?
+## Metadata description override
 
-How should it work when shown alone as story-card copy?
+Default:
 
-Are there any actual metadata/social constraints that materially affect the wording?
+`NONE — use dek as metadata`
 
-Do not add a constraint merely because SEO folklore suggests one.
+A separate `metaDescription` is optional and metadata-only.
+
+Does the approved/proposed dek have a concrete problem when separated from the headline on search/social/structured-data surfaces?
+
+`YES | NO`
+
+If `YES`, state the exact problem:
+
+Why can it not be solved by improving the dek itself without harming the visible package?
+
+Proposed `metaDescription` job, if needed:
+
+What must the override preserve from the story?
+
+What must it avoid?
+
+Do not create an override merely because SEO folklore suggests a character target or because a third sentence feels expected.
 
 ## Editorial-package audit
 
-Read the planned package in order:
+Read the planned visible package in order:
 
 1. headline;
-2. dek;
-3. description.
+2. dek.
 
 What distinct job does each field perform?
 
-Does any field merely translate another?
+Does the dek merely translate the headline?
 
-Would a generic AI publication be able to reuse the description unchanged under a different story?
+Does the pair give the reader enough useful information to decide whether the story is relevant?
 
-Does the description still identify this particular story when shown alone on a card?
+Would a generic AI publication be able to reuse the package unchanged under a materially different story?
+
+Then audit metadata separately:
+
+Does the dek work accurately and intelligibly as metadata?
+
+If not, is the optional override justified by a concrete metadata problem?
 
 ## Assignment-specific AI-slop risks
 
@@ -290,8 +308,9 @@ Examples:
 - artificial symmetry across sections;
 - copying the cadence of a researched exemplar;
 - generating polished connective prose that was never authorized by the research;
-- turning the description into a compressed abstract thesis;
-- treating metadata length as the description's editorial form.
+- manufacturing a third visible summary after headline + dek;
+- using `This article explores`, `This story looks at`, or `This explainer shows` as generic packaging scaffolding;
+- treating metadata length as an editorial form.
 
 Risks:
 

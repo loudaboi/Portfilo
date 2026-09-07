@@ -98,7 +98,7 @@ The sequence is:
 
 Do not skip from an approved idea or structure directly to generated prose.
 
-For headline, dek, and description work, follow `docs/EDITORIAL_PACKAGING_STANDARD.md`. Treat those fields as separate editorial jobs and evaluate them as one package. Do not obtain a description by asking AI to compress or summarize the approved body. When the packaging job is materially different from the body-writing job, research relevant human-edited packaging examples before proposing wording.
+For story packaging, follow `docs/EDITORIAL_PACKAGING_STANDARD.md`. Treat **headline + dek** as the complete reader-facing editorial package. The same dek should travel with the headline across the story page, homepage, and Stories archive. Do not manufacture a third visible story-summary sentence merely because metadata exists. A story may use optional `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline; otherwise metadata should fall back to the dek. When the packaging job is materially different from the body-writing job, research relevant human-edited headline/dek or headline/standfirst examples before proposing wording.
 
 Existing published Portfilo prose is not automatically an approved style exemplar. It must first pass the current writing-system audit.
 
@@ -126,7 +126,7 @@ Public-facing copy must follow:
 
 - `docs/COPY_STYLE.md`;
 - `docs/WRITING_SYSTEM.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` for story headlines, deks, descriptions, and other story-package fields;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` for story headlines, deks, and optional metadata-description overrides;
 - `docs/STYLE_RESEARCH_STANDARD.md` when a copy task involves meaningful editorial discretion.
 
 Do not default to generic SaaS components, card grids, gradients, glassmorphism, or decorative motion.

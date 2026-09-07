@@ -65,7 +65,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
                 <h1 id="feature-title">
                   <a href={`/stories/${featuredStory.id}`}>{featuredStory.data.title}</a>
                 </h1>
-                <p class="feature__dek">{featuredStory.data.description}</p>
+                <p class="feature__dek">{featuredStory.data.dek}</p>
 
                 <dl class="feature__meta">
                   <div>
@@ -126,7 +126,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
                     <h2>
                       <a href={`/stories/${story.id}`}>{story.data.title}</a>
                     </h2>
-                    <p>{story.data.description}</p>
+                    <p>{story.data.dek}</p>
                     <div class="latest-story__footer">
                       <span>{story.data.author}</span>
                       <a href={`/stories/${story.id}`}>
