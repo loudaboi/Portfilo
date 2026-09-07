@@ -64,6 +64,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `research/newsletter-copy-reference-corpus-v1.md` — current research corpus only; it grants no Portfilo copy authority by itself.
 - `research/portfilo-product-model-research-v1.md` — research record whose recommendation **Model 2: focused business/technology briefing + original reporting** and **no geographic product promise** were founder-approved after the file was written. Its in-file `approval pending` status is stale.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is **parked until the core redesigned site is built**.
+- `research/homepage-copy-evidence-matrix-v1.md` — founder-approved homepage copy-structure decision record. **Architecture A — Product/output first** is selected. This record authorizes the structure only; it does not authorize final homepage wording or implementation.
 
 ### Brand
 
@@ -94,7 +95,7 @@ Its former position as the immediate next project task is superseded. Social Vis
 
 Do not use its Candidate A/B/C wording or lightly paraphrase it into the next homepage-copy attempt. This includes the rejected direction around `news and deeper stories`.
 
-The approved process now starts from the reference corpus + Portfilo claim sheet + structural message direction before any final wording.
+The approved copy process has now completed the reference-corpus + Portfilo claim-sheet + message-architecture gate. Architecture A is selected in `research/homepage-copy-evidence-matrix-v1.md`. Final wording remains a separate explicit approval gate.
 
 ### Historical copy/navigation records
 
