@@ -1,6 +1,6 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-08_
 
 This file prevents historical implementation notes, stale status lines, and research records from being mistaken for current authority.
 
@@ -30,7 +30,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 ### Product and state
 
 - `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state.
-- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries.
+- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. As of 2026-09-08 it includes the founder-approved 7-minute reading-time promise and three-times-per-week newsletter cadence.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -59,13 +59,13 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `research/image-system/homepage-hero-selection-v1.md` — current authority for the selected new hero candidate and asset-provenance requirements.
 - `research/image-system/homepage-featured-cover-decision.md` — historical/current-runtime authority for the **older Feature-panel image**, not the selected new homepage hero.
 
-### Product-model / newsletter research
+### Product-model / newsletter research and copy
 
 - `research/newsletter-copy-reference-corpus-v1.md` — current research corpus only; it grants no Portfilo copy authority by itself.
-- `research/portfilo-product-model-research-v1.md` — research record whose recommendation **Model 2: focused business/technology briefing + original reporting** and **no geographic product promise** were founder-approved after the file was written. Its in-file `approval pending` status is stale.
-- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is **parked until the core redesigned site is built**.
-- `research/homepage-copy-evidence-matrix-v1.md` — founder-approved homepage copy-structure decision record. **Architecture A — Product/output first** is selected.
-- `research/homepage-copy-v2.md` — current exact homepage copy candidate produced from approved Architecture A. It is **awaiting founder copy approval** and has no implementation authority until approved.
+- `research/portfilo-product-model-research-v1.md` — research record whose model recommendation remains useful internally. `Briefing` may describe an internal archetype in that research, but it is rejected as public homepage/newsletter acquisition language at the current boundary.
+- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is parked until the core redesigned site is built and now validates whether the approved 7-minute / three-times-per-week promise can be sustained operationally.
+- `research/homepage-copy-evidence-matrix-v1.md` — research/provenance record. Its former Architecture A hero selection is superseded for actual hero wording/structure by the founder's later acquisition-copy decision.
+- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE HERO COPY AUTHORITY**. It records the exact hero copy, the `latest news` acquisition promise, the 7-minute reading-time promise, the three-times-per-week cadence, rejection of `briefing` as public acquisition language, and the rule that lower-page signup copy must be section-specific.
 
 ### Brand
 
@@ -94,9 +94,13 @@ Its former position as the immediate next project task is superseded. Social Vis
 
 `research/homepage-copy-v1.md` is **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
-Do not use its Candidate A/B/C wording or lightly paraphrase it into the current homepage-copy attempt. This includes the rejected directions around `keep up`, `latest`, `business and technology, by email`, `news and deeper stories`, and `Get Portfilo in your inbox`.
+Do not use its Candidate A/B/C wording or lightly paraphrase it into the current homepage-copy work. This includes the rejected directions around `keep up`, `latest` used generically without the now-approved concrete promise, `business and technology, by email`, `news and deeper stories`, and `Get Portfilo in your inbox`.
 
-The approved process completed the reference-corpus + Portfilo claim-sheet + message-architecture gate. Architecture A is selected in `research/homepage-copy-evidence-matrix-v1.md`. The new exact wording candidate is `research/homepage-copy-v2.md` and remains pending founder approval.
+`research/homepage-copy-v2.md` is also **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**. Do not restore its briefing-led headline:
+
+`A briefing on business and technology, with original reporting from Portfilo.`
+
+The current hero authority is `research/homepage-hero-copy-v3.md`.
 
 ### Historical copy/navigation records
 
@@ -165,7 +169,7 @@ Current validation state is recorded only in:
 
 `docs/PROJECT_STATE.md`
 
-Documentation-only state reconciliation and copy-candidate documentation do not create a new runtime check/build result.
+Documentation-only state reconciliation and copy/product-decision documentation do not create a new runtime check/build result.
 
 ## Maintenance rule
 
