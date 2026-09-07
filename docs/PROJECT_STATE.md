@@ -4,13 +4,15 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — FOLLOW-UP HOMEPAGE CORRECTION IMPLEMENTED / VALIDATION + VISUAL QA PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — PRODUCTION-SAFETY HOMEPAGE CORRECTION IMPLEMENTED / LOCAL VALIDATION + VISUAL QA PENDING**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, and prior technical foundation remain in place.
 
 The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
-The founder approved the focused follow-up homepage correction and explicitly authorized implementation. That correction is now implemented on `build/portfilo-v0`. The next gate is fresh local validation followed by desktop/tablet/mobile visual QA. Earlier rejected square-placeholder and serif-Feature treatments have zero forward visual authority.
+The founder approved and explicitly authorized a production-safety homepage correction after visual QA exposed an oversized Feature image, rail-content bottom-push behavior, missing production News structure, a stale `Building` topic leak, and missing breathing room above the Latest ticker. That correction is now implemented on `build/portfilo-v0`.
+
+The next gate is fresh local validation followed by desktop/tablet/mobile visual QA. No deployment or release approval has been given.
 
 ## Repository authority
 
@@ -71,15 +73,17 @@ Rules:
 - `Subscribe free` remains the header CTA;
 - topic labels do not appear in the header;
 - deeper News / Features / Stories information architecture remains a later task;
-- do not create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during homepage QA.
+- do not create `/news`, delete/redirect `/stories`, or perform the full schema/taxonomy migration during homepage QA.
 
-Current `src/content.config.ts` still uses topics:
+Current `src/content.config.ts` still permits:
 
 `business / technology / startups / ai / building`
 
 Target public taxonomy remains:
 
 `Business / Technology / Startup / AI`
+
+The currently published Feature metadata was narrowly corrected from `topic: building` to `topic: business` so the rejected public `Building` label no longer leaks into the homepage ticker. This is not the full taxonomy migration.
 
 ## Shared shell invariant
 
@@ -116,16 +120,22 @@ Instrument Sans
 hero CTA: Send me the news
 blue rule below
 
+PAPER SPACE
+
 FULL-WIDTH LATEST TICKER
 black Latest label only
 light headline rail
 
+PAPER SPACE
+
 FEATURE AREA
-left: existing Feature image + Instrument Sans headline + dek
-right: one continuous blue editorial/newsletter rail
+left: restrained approved 16:9 Feature image + Instrument Sans headline + dek
+right: one continuous blue editorial/newsletter rail with top-flowing signup + Latest block
 
 NEWS
-existing plain News hierarchy
+plain News heading
+local development hierarchy when fixtures exist
+production-safe factual empty state when no real News inventory exists yet
 
 BLACK FOOTER ENDCAP
 existing compact signup + minimal links
@@ -143,66 +153,69 @@ Implemented in `src/pages/index.astro`:
 - approved headline remains `Get ahead in business and tech in 7 minutes.`;
 - approved support copy remains unchanged;
 - hero CTA remains `Send me the news`;
-- a 2 px Portfilo-primary-blue rule now frames the shared hero unit above and below;
+- 2 px Portfilo-primary-blue rule frames the shared hero unit above and below;
 - no vertical divider, colored hero background, shadow, gradient, rounded shell, or eyebrow;
-- hero signup is constrained with the shared form-system sizing and remains responsive.
+- hero signup remains constrained with the shared form-system sizing and remains responsive.
 
-Hero and Feature-rail signup controls continue to use the same `NewsletterSignup` component so input/button height, typography, square geometry, border rhythm, and state behavior remain aligned even though available widths differ.
+Hero and Feature-rail signup controls continue to use the same `NewsletterSignup` component so control height, typography, square geometry, border rhythm, and state behavior remain aligned even though available widths differ.
 
 ## Latest ticker
 
-Preserved unchanged:
+Current static treatment:
 
 - full viewport width;
 - only the `Latest` identifier is near-black/ink;
 - headline rail remains light;
 - blue category labels remain;
 - no red treatment;
-- no automatic movement yet.
+- no automatic movement yet;
+- deliberate paper breathing room now exists above and below the ticker;
+- target spacing is approximately 24 px desktop and 16 px narrow mobile.
 
 Ticker motion remains a separate post-static approval task.
 
 ## Feature implementation
 
-The rejected synthetic Feature placeholder is removed from the current homepage runtime.
+Current approved implementation:
 
-Implemented:
-
-- existing `public/images/homepage-feature-image.webp` is shown again;
-- image preserves natural responsive height with no fixed-height crop;
+- selected asset: `public/images/homepage-feature-16x9.png`;
+- homepage Feature uses the canonical 16:9 landscape image format;
+- large-desktop Feature media is capped at approximately 52rem / 832 px and scales fluidly downward;
+- arbitrary tall natural-ratio homepage rendering is rejected;
+- no fixed-height crop is used;
 - 3 px Portfilo-primary-blue top rule sits on the Feature image only;
 - AI-generated editorial-image disclosure remains present;
-- homepage Feature headline now uses Instrument Sans;
-- homepage Feature dek now uses Instrument Sans;
+- homepage Feature headline and dek use Instrument Sans;
 - image -> headline -> short dek remains the order;
 - no Feature eyebrow;
 - no `A CLOSER LOOK` heading.
 
-The current image remains a visual/layout asset for this pass and does not prevent a later editorial-image decision.
+The 16:9 decision aligns with the canonical story-image ratio already defined in `docs/IMAGE_SYSTEM.md`.
 
 ## Continuous blue editorial/newsletter rail
 
-The square Portfilo right-rail placeholder is removed.
+The square Portfilo right-rail placeholder remains removed.
 
-Current rail behavior:
+Current rail order:
 
 1. contextual newsletter signup;
 2. thin internal divider;
-3. one current-news teaser with a short description when an eligible item exists;
-4. `See the latest news →` link.
+3. Latest block;
+4. real teaser title + short description when an eligible item exists, otherwise a restrained factual empty state;
+5. `See the latest news →` link.
 
 Desktop/tablet behavior:
 
-- rail is a single continuous Portfilo-blue panel;
-- the grid stretches it with the Feature module so both columns read as one composition;
-- signup content remains top-aligned;
-- the single Latest teaser is pushed toward the lower portion of the rail rather than creating a second nested card.
+- rail remains one continuous Portfilo-blue panel;
+- signup stays top-aligned;
+- Latest content follows the signup in normal top-to-bottom flow;
+- `margin-top:auto` / bottom-push behavior is removed;
+- a tall image must not force the Latest content to the bottom of the rail.
 
 Responsive behavior:
 
 - below the Feature/rail breakpoint the composition stacks;
 - rail becomes normal content-height flow;
-- Latest teaser uses normal spacing rather than desktop equal-height behavior;
 - mobile order is Feature -> blue rail -> News.
 
 Founder-approved contextual headline remains:
@@ -211,22 +224,28 @@ Founder-approved contextual headline remains:
 
 A support description remains structurally present. Exact final contextual wording is still **OPEN / NOT YET APPROVED**. Runtime continues to reuse the already-approved primary newsletter support copy temporarily rather than inventing a new public claim. That temporary reuse has no final contextual-copy authority.
 
-Current contextual CTA remains:
-
-`Subscribe`
-
 ### Rail news-source behavior
 
 During local development, the rail teaser uses the clearly synthetic first News fixture so visual QA can evaluate the completed rail.
 
-Outside development, the rail uses the newest additional published story when one exists. If no additional eligible published item exists, the teaser is omitted rather than fabricating production news.
+Outside development, the rail uses the newest additional published story when one exists. If no additional eligible published item exists, the lower Latest block remains present with a restrained factual empty state rather than disappearing or fabricating production journalism.
+
+## News production behavior
+
+News remains structurally present below the Feature/rail composition in both development and production.
+
+- development fixtures remain clearly synthetic and local-only;
+- development keeps the existing lead + supporting News hierarchy for layout QA;
+- production excludes those fixtures;
+- when real News inventory does not yet exist, production shows a restrained factual empty state instead of removing the entire News section;
+- this does not create a `/news` route or complete the later News/Feature schema architecture.
 
 ## Editorial image-top rule
 
 Current approved homepage image treatment:
 
 - Feature image uses a 3 px Portfilo-primary-blue top rule;
-- current News development image placeholder already uses the same blue top-edge behavior;
+- current News development image placeholder uses the same blue top-edge behavior;
 - no border is added on the other three image edges;
 - the rule follows responsive image width.
 
@@ -236,15 +255,16 @@ Do not apply this device indiscriminately to non-editorial visuals.
 
 Responsiveness is a hard completion requirement for every homepage visual change.
 
-Current implementation is designed so:
+Current implementation is intended so:
 
 - shared shell scales fluidly;
 - hero remains `[content] [signup]` while space permits, then stacks;
 - hero blue top/bottom rules stay aligned to the shared shell;
 - ticker remains the only full-bleed element;
+- ticker breathing room reduces appropriately on mobile;
 - Feature + blue rail remain side-by-side only while readable;
+- Feature image is capped on large desktop and scales fluidly downward;
 - tablet/mobile stack Feature then rail;
-- Feature image uses responsive width and natural height;
 - image-top blue rule follows image width;
 - blue rail becomes content-height on mobile;
 - forms fill available width without horizontal overflow;
@@ -267,6 +287,8 @@ These have zero forward homepage authority:
 - prior Homepage v3 hero composition;
 - independently centered/narrowed Feature shell that changes the global page edge;
 - oversized Feature presentation;
+- arbitrary tall/natural-ratio homepage Feature rendering;
+- rail Latest content pushed toward the bottom with `margin-top:auto`;
 - synthetic Feature image placeholder as the current visual target;
 - square Portfilo right-rail placeholder;
 - muted/light-blue full hero surface;
@@ -274,33 +296,38 @@ These have zero forward homepage authority:
 - entire ticker black;
 - topic labels in the header;
 - removing `Latest | Stories` based on an exploratory question;
-- implementation-time global gutter/max-width changes without approval.
+- implementation-time global gutter/max-width changes without approval;
+- hiding the News section in production because fixtures are excluded;
+- fabricating production News to fill the layout.
 
 ## Current sequence
 
 1. post-v3 correction implementation — COMPLETE;
 2. follow-up visual QA review — COMPLETE;
-3. follow-up correction plan — COMPLETE;
-4. follow-up implementation authorization — COMPLETE;
-5. follow-up correction implementation — COMPLETE;
-6. **fresh local `npm run check` + `npm run build` — ACTIVE NEXT STEP**;
-7. desktop/tablet/mobile visual QA;
-8. correct only visible regressions against the approved contract;
-9. founder static-homepage approval;
-10. add ticker motion as a separate narrow pass;
-11. later News/Feature/Stories architecture and taxonomy work.
+3. first follow-up correction implementation — COMPLETE;
+4. production visual review exposed concrete regressions — COMPLETE;
+5. production-safety correction plan + founder authorization — COMPLETE;
+6. production-safety correction implementation — COMPLETE;
+7. **fresh local `npm run check` + `npm run build` + production-equivalent preview — ACTIVE NEXT STEP**;
+8. wide desktop / 1440 / 1366 / tablet / ~390 mobile visual QA;
+9. correct only visible regressions against the approved contract;
+10. founder static-homepage approval;
+11. add ticker motion as a separate narrow pass;
+12. later News/Feature/Stories architecture and taxonomy work.
 
 ## Exact next task
 
-### Validate and visually review the implemented follow-up homepage correction
+### Validate and visually review the production-safety homepage correction
 
-Run locally:
+First pull the current working branch, then run locally:
 
 ```text
 npm run check
 npm run build
-npm run dev
+npm run preview
 ```
+
+Use `npm run dev` only as an additional development-fixture view. The production-equivalent preview is required because the previous defect came from DEV-only content behavior.
 
 Then inspect at minimum:
 
@@ -313,12 +340,15 @@ Then inspect at minimum:
 Review specifically:
 
 - shared content edge remains unchanged;
-- hero blue top/bottom rules feel structural rather than decorative;
-- hero and rail forms read as one control system;
-- Feature image scale and blue top-image rule;
-- Feature Instrument Sans headline/dek treatment;
-- blue rail reaches a convincing desktop relationship with the Feature without feeling like an oversized empty slab;
-- single Latest teaser gives the rail useful editorial weight without competing with the News section;
+- hero blue top/bottom rules remain structural;
+- clear paper space exists between hero rule -> ticker -> Feature;
+- production ticker says `Business`, not `Building`, for the current Feature;
+- approved 16:9 Feature image is visibly restrained rather than dominating the page;
+- large-desktop Feature image does not exceed the intended scale;
+- blue-rail Latest content stays near the signup in normal flow and is not pushed to the bottom;
+- production rail keeps its lower Latest block even with no second story;
+- News section remains present in production;
+- development fixtures never leak into production preview;
 - rail becomes content-height after stacking;
 - no horizontal overflow.
 
@@ -326,9 +356,9 @@ Do not reopen final contextual support copy during this layout QA unless the fou
 
 ## Validation authority
 
-Fresh `npm run check` and `npm run build` have **not yet been recorded as passing against this follow-up implementation**.
+Fresh `npm run check`, `npm run build`, and production-equivalent preview have **not yet been recorded as passing against this production-safety correction**.
 
-Do not claim a validation pass until those commands actually succeed.
+The remote implementation session could not execute local npm validation. Do not claim a validation pass until the commands above actually succeed on the working tree.
 
 ## Deployment / release boundary
 
