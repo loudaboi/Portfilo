@@ -124,29 +124,41 @@ const tickerItems =
 
       {
         featureStory && (
-          <section class="featured-story" aria-labelledby="featured-story-title">
-            <article>
-              <a
-                class="featured-story__media"
-                href={`/stories/${featureStory.id}`}
-                aria-label={`Read ${featureStory.data.title}`}
-              >
-                <img
-                  src="/images/homepage-feature-image.webp"
-                  alt=""
-                  loading="eager"
-                  decoding="async"
-                />
-                <span class="featured-story__disclosure">AI-generated editorial image</span>
-              </a>
+          <section class="featured-section" aria-label="Featured story">
+            <div class="featured-pair">
+              <article class="featured-story">
+                <a
+                  class="featured-story__media"
+                  href={`/stories/${featureStory.id}`}
+                  aria-label={`Read ${featureStory.data.title}`}
+                >
+                  <img
+                    src="/images/homepage-feature-image.webp"
+                    alt=""
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <span class="featured-story__disclosure">AI-generated editorial image</span>
+                </a>
 
-              <div class="featured-story__copy">
-                <h2 id="featured-story-title">
-                  <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
-                </h2>
-                <p>{featureStory.data.dek}</p>
-              </div>
-            </article>
+                <div class="featured-story__copy">
+                  <h2>
+                    <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
+                  </h2>
+                  <p>{featureStory.data.dek}</p>
+                </div>
+              </article>
+
+              <aside class="feature-newsletter" aria-label="Subscribe to the Portfilo newsletter">
+                <NewsletterSignup
+                  id="home-feature-newsletter"
+                  heading="Get ahead in business and tech in 7 minutes."
+                  copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
+                  variant="card"
+                  buttonLabel="Send me the news"
+                />
+              </aside>
+            </div>
           </section>
         )
       }
@@ -236,8 +248,7 @@ const tickerItems =
         --line: #d4cfc6;
         --line-strong: #aaa39a;
         --accent: #0050a4;
-        --newsletter-surface: #d8ecff;
-        --brand-red: #b42318;
+        --newsletter-surface: #8fc7ff;
         --correction: #b42318;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
@@ -276,23 +287,22 @@ const tickerItems =
       .newsletter-band {
         width: 100%;
         background: var(--newsletter-surface);
-        border-bottom: 1px solid rgba(0, 80, 164, 0.22);
+        border-bottom: 1px solid rgba(23, 22, 20, 0.18);
       }
 
       .newsletter-band__inner,
-      .featured-story,
-      .news-section,
-      .footer-newsletter {
+      .featured-section,
+      .news-section {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
 
       .newsletter-band__inner {
-        min-height: clamp(11.25rem, 14vw, 13.75rem);
+        min-height: clamp(11rem, 14vw, 13.5rem);
         padding: clamp(1.35rem, 2.2vw, 2.1rem) var(--gutter);
         display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 0.85fr);
-        gap: clamp(2rem, 5vw, 5.5rem);
+        grid-template-columns: minmax(0, 1.12fr) minmax(21rem, 0.88fr);
+        gap: clamp(2rem, 5vw, 5rem);
         align-items: center;
       }
 
@@ -307,7 +317,7 @@ const tickerItems =
       .newsletter-band__copy p {
         max-width: 48rem;
         margin: 0.7rem 0 0;
-        color: #33495e;
+        color: #24384c;
         font: 440 clamp(0.9rem, 1vw, 1rem) / 1.48 var(--sans);
       }
 
@@ -316,13 +326,24 @@ const tickerItems =
       }
 
       .newsletter-band__form :global(.newsletter-signup input) {
-        background: rgba(255, 255, 255, 0.66);
-        border-color: rgba(23, 22, 20, 0.52);
+        border-color: rgba(23, 22, 20, 0.58);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup button) {
+        border-color: #fff;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup button:hover) {
+        filter: none;
+        background: rgba(255, 255, 255, 0.88);
       }
 
       .newsletter-band__form :global(.newsletter-signup__note),
       .newsletter-band__form :global(.newsletter-signup__status) {
-        color: #42596d;
+        color: #2c4358;
       }
 
       .latest-strip {
@@ -330,8 +351,8 @@ const tickerItems =
         min-height: 2.8rem;
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
-        border-bottom: 1px solid var(--line);
-        background: var(--paper);
+        background: var(--ink);
+        color: #fff;
         overflow: hidden;
       }
 
@@ -339,8 +360,7 @@ const tickerItems =
         display: flex;
         align-items: center;
         padding: 0.72rem clamp(1rem, 2.1vw, 1.6rem);
-        background: var(--brand-red);
-        color: #fff;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
         font: 680 0.64rem/1 var(--sans);
         letter-spacing: 0.085em;
         text-transform: uppercase;
@@ -363,13 +383,14 @@ const tickerItems =
         align-items: center;
         gap: 0.65rem;
         padding: 0.7rem clamp(1rem, 1.8vw, 1.55rem);
-        border-right: 1px solid var(--line);
+        border-right: 1px solid rgba(255, 255, 255, 0.16);
+        color: #fff;
         text-decoration: none;
         white-space: nowrap;
       }
 
       .latest-strip__item > span {
-        color: var(--accent);
+        color: var(--newsletter-surface);
         font: 650 0.62rem/1 var(--sans);
         letter-spacing: 0.055em;
         text-transform: uppercase;
@@ -387,19 +408,25 @@ const tickerItems =
         text-underline-offset: 0.18em;
       }
 
-      .featured-story {
-        padding: clamp(1.45rem, 2.8vw, 2.6rem) var(--gutter) clamp(2.25rem, 4vw, 3.75rem);
+      .featured-section {
+        padding: clamp(1.45rem, 2.8vw, 2.6rem) var(--gutter) clamp(2.4rem, 4.5vw, 4.25rem);
       }
 
-      .featured-story article {
-        max-width: 78rem;
-        margin-inline: auto;
+      .featured-pair {
+        display: grid;
+        grid-template-columns: minmax(0, 1.68fr) minmax(19rem, 0.72fr);
+        gap: clamp(1.4rem, 3vw, 3rem);
+        align-items: stretch;
+      }
+
+      .featured-story {
+        min-width: 0;
       }
 
       .featured-story__media {
         position: relative;
         display: block;
-        height: clamp(15rem, 27vw, 22rem);
+        height: clamp(15rem, 25vw, 21rem);
         overflow: hidden;
         background: var(--paper-soft);
         line-height: 0;
@@ -425,7 +452,7 @@ const tickerItems =
       }
 
       .featured-story__copy {
-        padding-top: 0.85rem;
+        padding-top: 0.8rem;
       }
 
       .featured-story__copy h2,
@@ -434,8 +461,8 @@ const tickerItems =
       }
 
       .featured-story__copy h2 {
-        max-width: 24ch;
-        font: 560 clamp(1.95rem, 3.15vw, 3.5rem) / 1 var(--serif);
+        max-width: 23ch;
+        font: 560 clamp(1.9rem, 3vw, 3.35rem) / 1 var(--serif);
         letter-spacing: -0.038em;
       }
 
@@ -450,10 +477,21 @@ const tickerItems =
       }
 
       .featured-story__copy p {
-        max-width: 54rem;
+        max-width: 52rem;
         margin-top: 0.55rem;
         color: var(--muted);
         font: 420 clamp(0.94rem, 1.05vw, 1.02rem) / 1.5 var(--serif);
+      }
+
+      .feature-newsletter {
+        min-width: 0;
+        padding: clamp(1.35rem, 2.3vw, 2rem);
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .feature-newsletter :global(.newsletter-signup__copy h2) {
+        color: #fff;
       }
 
       .news-section {
@@ -578,7 +616,6 @@ const tickerItems =
       }
 
       .footer-newsletter {
-        max-width: none;
         width: 100%;
         padding: clamp(2.2rem, 4vw, 3.8rem) max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
         background: var(--ink);
@@ -607,7 +644,7 @@ const tickerItems =
       }
 
       .footer-newsletter :global(.newsletter-signup__status[data-state="success"]) {
-        color: #8fc7ff;
+        color: var(--newsletter-surface);
       }
 
       .footer-newsletter :global(.newsletter-signup__status[data-state="error"]) {
@@ -619,10 +656,15 @@ const tickerItems =
           grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
           gap: 2rem;
         }
+
+        .featured-pair {
+          grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.75fr);
+        }
       }
 
       @media (max-width: 48rem) {
         .newsletter-band__inner,
+        .featured-pair,
         .news-grid {
           grid-template-columns: 1fr;
         }
@@ -632,12 +674,12 @@ const tickerItems =
           gap: 1.15rem;
         }
 
-        .featured-story article {
-          max-width: none;
-        }
-
         .featured-story__media {
           height: clamp(13.5rem, 52vw, 20rem);
+        }
+
+        .feature-newsletter {
+          min-height: 0;
         }
 
         .fixture-warning {
@@ -651,7 +693,7 @@ const tickerItems =
 
       @media (max-width: 36rem) {
         .newsletter-band__inner,
-        .featured-story,
+        .featured-section,
         .news-section {
           --gutter: 1.1rem;
         }
@@ -679,7 +721,7 @@ const tickerItems =
           max-width: 62vw;
         }
 
-        .featured-story {
+        .featured-section {
           padding-top: 1.1rem;
           padding-bottom: 2rem;
         }
@@ -704,7 +746,7 @@ const tickerItems =
 
       @media (max-width: 23rem) {
         .newsletter-band__inner,
-        .featured-story,
+        .featured-section,
         .news-section,
         .footer-newsletter {
           --gutter: 1rem;
