@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: DESCRIPTION RESEARCH COMPLETE / WORDING PROPOSAL NOT YET APPROVED_
+_Status: DESCRIPTION APPROVED_
 
 ## Approved package inputs
 
@@ -68,11 +68,15 @@ This corresponds to the editorial-packaging modes:
 
 The description should not try to carry the resource-cost conclusion, every possible cause of weak sales, or the article's closing lesson.
 
-## Proposal
+## Approved description
+
+Founder-editor approved on 2026-09-07:
 
 > **Using weak sales as the main example, this explainer shows how the same early business result can point to very different problems.**
 
-## Why this proposal is stronger than the rejected summary approach
+This wording is the canonical description for the current story package unless explicitly reopened by the founder-editor.
+
+## Why this proposal was selected
 
 - it tells the reader what the article actually uses to explain the subject;
 - `weak sales` provides concrete scope rather than abstract words alone;
@@ -81,14 +85,8 @@ The description should not try to carry the resource-cost conclusion, every poss
 - it remains accurate to Draft 8;
 - it can function as visible story-card copy and as current metadata reuse without being written as SEO filler.
 
-## Risks to review
+## Boundary
 
-- `this explainer shows` is intentionally plain editorial scaffolding, but the founder-editor should decide whether it feels natural enough for Portfilo;
-- `very different problems` is accurate but still somewhat general; adding the full list of possible causes would make the description more concrete but also denser and more summary-like;
-- the description should be judged with the headline and dek, not as a standalone slogan.
+Headline, dek, body, and description are now approved as separate editorial components.
 
-## Approval boundary
-
-The proposed wording is not approved until the founder-editor explicitly approves it.
-
-No public story file, publishing status, body, headline, or dek is changed by this research record.
+Public-story assembly and publishing remain separate later gates. No public story file or publishing status is changed by this approval record.
