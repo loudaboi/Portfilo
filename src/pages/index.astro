@@ -49,6 +49,8 @@ const devNews = import.meta.env.DEV
     ]
   : [];
 
+const leadDevNews = devNews[0];
+
 const tickerItems =
   devNews.length > 0
     ? devNews.map((item) => ({
@@ -62,20 +64,19 @@ const tickerItems =
         href: `/stories/${story.id}`,
       }));
 
-const railNews =
-  devNews.length > 0
-    ? {
-        title: devNews[0].title,
-        dek: devNews[0].dek,
-      }
-    : storiesByDate
-        .filter((story) => story.id !== featureStory?.id)
-        .map((story) => ({
-          title: story.data.title,
-          dek: story.data.dek,
-        }))[0];
+const railNews = leadDevNews
+  ? {
+      title: leadDevNews.title,
+      dek: leadDevNews.dek,
+    }
+  : storiesByDate
+      .filter((story) => story.id !== featureStory?.id)
+      .map((story) => ({
+        title: story.data.title,
+        dek: story.data.dek,
+      }))[0];
 
-const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
+const railNewsCtaHref = leadDevNews ? "#news" : "#latest";
 ---
 
 <!doctype html>
@@ -148,7 +149,9 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
                   aria-label={`Read ${featureStory.data.title}`}
                 >
                   <img
-                    src="/images/homepage-feature-image.webp"
+                    src="/images/homepage-feature-16x9.png"
+                    width="1672"
+                    height="941"
                     alt=""
                     loading="eager"
                     decoding="async"
@@ -175,30 +178,36 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
                   />
                 </div>
 
-                {
-                  railNews && (
-                    <div class="feature-rail__latest">
-                      <p class="feature-rail__latest-label">Latest</p>
-                      <h3>{railNews.title}</h3>
-                      <p>{railNews.dek}</p>
-                      <a href={railNewsCtaHref}>See the latest news <span aria-hidden="true">→</span></a>
-                    </div>
-                  )
-                }
+                <div class="feature-rail__latest">
+                  <p class="feature-rail__latest-label">Latest</p>
+                  {
+                    railNews ? (
+                      <>
+                        <h3>{railNews.title}</h3>
+                        <p>{railNews.dek}</p>
+                      </>
+                    ) : (
+                      <p class="feature-rail__latest-empty">No additional news published yet.</p>
+                    )
+                  }
+                  <a href={railNewsCtaHref}>See the latest news <span aria-hidden="true">→</span></a>
+                </div>
               </aside>
             </div>
           </section>
         )
       }
 
-      {
-        devNews.length > 0 && (
-          <section class="news-section" id="news" aria-labelledby="news-section-title">
-            <header class="news-section__heading">
-              <h2 id="news-section-title">News</h2>
-              <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
-            </header>
+      <section class="news-section" id="news" aria-labelledby="news-section-title">
+        <header class="news-section__heading">
+          <h2 id="news-section-title">News</h2>
+          {leadDevNews && (
+            <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
+          )}
+        </header>
 
+        {
+          leadDevNews ? (
             <div class="news-grid">
               <article class="lead-news">
                 <div class="news-image-placeholder" aria-hidden="true">
@@ -206,11 +215,11 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
                   <small>Development layout only</small>
                 </div>
                 <div class="news-meta">
-                  <span>{devNews[0].topic}</span>
-                  <span>{devNews[0].time}</span>
+                  <span>{leadDevNews.topic}</span>
+                  <span>{leadDevNews.time}</span>
                 </div>
-                <h3>{devNews[0].title}</h3>
-                <p>{devNews[0].dek}</p>
+                <h3>{leadDevNews.title}</h3>
+                <p>{leadDevNews.dek}</p>
               </article>
 
               <div class="news-list">
@@ -226,9 +235,11 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
                 ))}
               </div>
             </div>
-          </section>
-        )
-      }
+          ) : (
+            <p class="news-empty">No published News items yet.</p>
+          )
+        }
+      </section>
 
       <section class="footer-newsletter" aria-label="Subscribe to the Portfilo newsletter">
         <div class="footer-newsletter__inner">
@@ -378,6 +389,7 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
       .latest-strip {
         width: 100%;
         min-height: 2.8rem;
+        margin-block: 1.5rem;
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         background: var(--paper);
@@ -440,12 +452,12 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
       }
 
       .featured-section {
-        padding: clamp(1.5rem, 2.7vw, 2.35rem) 0 clamp(2.4rem, 4vw, 3.75rem);
+        padding: 0 0 clamp(2.4rem, 4vw, 3.75rem);
       }
 
       .featured-pair {
         display: grid;
-        grid-template-columns: minmax(0, 1.9fr) minmax(19rem, 1fr);
+        grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
         gap: clamp(2rem, 2.7vw, 2.5rem);
         align-items: stretch;
       }
@@ -457,6 +469,8 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
       .featured-story__media {
         position: relative;
         display: block;
+        width: 100%;
+        max-width: 52rem;
         overflow: hidden;
         border-top: 3px solid var(--accent);
         background: var(--paper-soft);
@@ -532,7 +546,7 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
       }
 
       .feature-rail__latest {
-        margin-top: auto;
+        margin-top: clamp(1.35rem, 2vw, 1.8rem);
         padding-top: clamp(1.35rem, 2vw, 1.8rem);
         border-top: 1px solid rgba(255, 255, 255, 0.34);
       }
@@ -615,6 +629,13 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
         grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
         gap: clamp(1.5rem, 3.5vw, 3.5rem);
         align-items: start;
+      }
+
+      .news-empty {
+        margin: 0;
+        padding-top: clamp(1.25rem, 2.4vw, 2.2rem);
+        color: var(--muted);
+        font: 420 0.9rem/1.5 var(--sans);
       }
 
       .lead-news h3,
@@ -799,6 +820,10 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
           font-size: clamp(2rem, 9vw, 2.5rem);
         }
 
+        .latest-strip {
+          margin-block: 1rem;
+        }
+
         .latest-strip__label {
           padding-inline: 0.82rem;
         }
@@ -813,7 +838,7 @@ const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
         }
 
         .featured-section {
-          padding-top: 1.1rem;
+          padding-top: 0;
           padding-bottom: 2rem;
         }
 
