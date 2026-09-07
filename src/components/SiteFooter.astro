@@ -1,57 +1,49 @@
 <footer class="site-footer">
   <a class="site-footer__brand" href="/" aria-label="Portfilo home">
-    <span class="site-footer__port">Port</span><span class="site-footer__fi">fi</span><span class="site-footer__lo">lo</span>
+    <img src="/brand/portfilo-wordmark-ink.svg" alt="Portfilo" />
   </a>
 
   <nav class="site-footer__nav" aria-label="Footer">
-    <a href="/stories">Stories</a>
+    <a href="/stories">Features</a>
     <a href="/standards">Standards</a>
-    <a href="/about">About</a>
-    <a href="/subscribe">Subscribe</a>
     <a href="/privacy">Privacy</a>
+    <a href="/#newsletter">Subscribe</a>
   </nav>
+
+  <p class="site-footer__meta">Business and technology news and deeper stories.</p>
 </footer>
 
 <style>
   .site-footer {
     width: min(100%, var(--page-max));
     margin-inline: auto;
-    padding: 1.2rem var(--gutter) 1.4rem;
+    padding: 1.5rem var(--gutter) 2rem;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: clamp(1.5rem, 3vw, 3.5rem);
+    grid-template-columns: auto 1fr auto;
+    gap: clamp(1.2rem, 3vw, 3rem);
     align-items: end;
-    border-top: 1px solid var(--ink);
+    border-top: 1px solid var(--line);
   }
 
   .site-footer__brand {
-    width: fit-content;
-    display: inline-block;
-    white-space: nowrap;
-    font: 700 1.55rem/0.9 var(--sans);
-    letter-spacing: -0.085em;
-    text-decoration: none;
-    transform: skewX(-12deg);
-    transform-origin: left center;
+    width: 7.4rem;
+    display: block;
+    line-height: 0;
   }
 
-  .site-footer__port,
-  .site-footer__fi,
-  .site-footer__lo {
-    display: inline-block;
+  .site-footer__brand img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
-
-  .site-footer__port { color: var(--ink); }
-  .site-footer__fi { color: var(--accent); }
-  .site-footer__lo { color: var(--correction); }
 
   .site-footer__nav {
-    justify-self: end;
+    justify-self: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.75rem 1.4rem;
-    font: 500 0.72rem/1.2 var(--sans);
+    justify-content: center;
+    gap: 0.8rem 1.35rem;
+    font: 500 0.74rem/1.2 var(--sans);
   }
 
   .site-footer__nav a {
@@ -62,20 +54,35 @@
     color: var(--accent);
   }
 
+  .site-footer__meta {
+    max-width: 20rem;
+    margin: 0;
+    justify-self: end;
+    color: var(--muted);
+    font: 400 0.72rem/1.4 var(--sans);
+    text-align: right;
+  }
+
+  .site-footer a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+  }
+
   @media (max-width: 50rem) {
     .site-footer {
       grid-template-columns: 1fr;
       align-items: start;
     }
 
-    .site-footer__nav {
+    .site-footer__nav,
+    .site-footer__meta {
       justify-self: start;
       justify-content: flex-start;
+      text-align: left;
     }
   }
 
   @media (max-width: 23rem) {
     .site-footer { --gutter: 1rem; }
-    .site-footer__nav { gap: 0.65rem 1rem; }
   }
 </style>
