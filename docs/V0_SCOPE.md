@@ -40,12 +40,17 @@ The redesigned homepage should provide:
 
 - compact Portfilo header and primary navigation;
 - compact newsletter-first hero with embedded signup;
-- one approved universal hero visual or approved no-image treatment;
+- the exact approved universal hero visual;
 - Latest strip;
 - current News hierarchy;
-- one deeper Feature treatment;
-- one final newsletter signup after editorial content;
-- minimal footer.
+- one deeper Feature / `A CLOSER LOOK` treatment;
+- a newsletter signup card paired with the featured editorial module on desktop and following it on mobile;
+- a compact newsletter signup integrated into the footer;
+- minimal institutional/legal footer links.
+
+The homepage should not add a separate oversized final newsletter section. Acquisition after the hero should be integrated into the editorial composition and footer.
+
+For the first static build, the founder approved reusing the already approved hero newsletter copy in the hero, editorial-paired signup card, and compact footer signup. Context-specific card/footer copy may be refined after visual QA.
 
 The homepage must not manufacture production news density. Clearly labeled development-only fixtures may be used locally and must remain excluded from production.
 
