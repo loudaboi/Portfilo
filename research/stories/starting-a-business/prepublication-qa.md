@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: PUBLICATION APPROVED / STORY MARKED PUBLISHED / FINAL POST-PUBLICATION BUILD VERIFICATION PENDING_
+_Status: WORKFLOW CLOSED / STORY PUBLISHED ON WORKING BRANCH / POST-PUBLICATION BUILD NOT RE-RUN_
 
 ## Scope
 
@@ -55,7 +55,7 @@ Result before publication status change: **PASS BY REPOSITORY INSPECTION AND LOC
 
 The schema requires `publishedAt` when `status` is `published`. The publication change supplied both fields together.
 
-A final local build after the publication status change remains required to confirm the production route is generated under the actual runtime.
+No post-publication local `astro check` was executed after the metadata-only publication change. The current published frontmatter matches the inspected schema contract.
 
 ## Publication routing
 
@@ -66,11 +66,11 @@ After founder-editor publication approval on 2026-09-07, the story was changed t
 - `status: published`;
 - `publishedAt: 2026-09-07`.
 
-The next production build should therefore include:
+Under the inspected routing code, the next production build is expected to include:
 
 `/stories/what-actually-makes-starting-a-business-hard/`
 
-This expected route must be confirmed by final local build output.
+That specific post-publication route generation was not re-run locally before this workflow was closed.
 
 ## Metadata wiring
 
@@ -87,7 +87,7 @@ The story route passes the approved description into `SiteHead.astro`.
 
 Because the author is `Portfilo`, Article structured data identifies the author as an Organization.
 
-With `publishedAt` now present, the article metadata is expected to emit the publication date in the rendered production page.
+With `publishedAt` present, the article metadata is expected to emit the publication date in the rendered production page.
 
 ## Editorial package audit
 
@@ -201,22 +201,18 @@ Founder-editor publication approval: **GRANTED — 2026-09-07**
 
 Publication state change: **COMPLETE**
 
-The story is now marked `published` on `build/portfilo-v0` with publication date `2026-09-07`.
+The story is marked `published` on `build/portfilo-v0` with publication date `2026-09-07`.
 
 This approval does not merge the branch to `main`. `main` remains the release boundary.
 
-## Remaining verification
+## Closure note
 
-Final post-publication local build: **PENDING**
+Founder-editor approved closing this article workflow on 2026-09-07 and proceeding to the broader next project task.
 
-Confirm that:
+The post-publication metadata change was not followed by a new local `npm run check` / `npm run build` execution. This is retained as an explicit validation caveat rather than silently promoted to a pass.
 
-1. `npm run check` still passes;
-2. `npm run build` still passes;
-3. the build output now includes `/stories/what-actually-makes-starting-a-business-hard/`;
-4. the story appears in the generated Stories index/homepage ordering as expected for `featured: false`;
-5. no unrelated production route regresses.
+If a later release-readiness gate requires a fresh production build, verify that the generated output includes this story route and that no unrelated route regresses.
 
 ## Current verdict
 
-> **PUBLICATION APPROVED AND STORY MARKED PUBLISHED ON THE WORKING BRANCH. FINAL POST-PUBLICATION BUILD VERIFICATION PENDING. MAIN REMAINS UNCHANGED.**
+> **WORKFLOW CLOSED. STORY PUBLISHED ON `build/portfilo-v0`. EDITORIAL, PRE-PUBLICATION RUNTIME, AND VISUAL QA PASSED. POST-PUBLICATION BUILD WAS NOT RE-RUN. `main` REMAINS UNCHANGED.**
