@@ -1,28 +1,39 @@
 ---
 interface Props {
   id: string;
-  heading: string;
+  heading?: string;
   copy?: string;
-  variant?: "hero" | "inline" | "footer";
+  variant?: "hero" | "inline" | "card" | "footer";
+  showCopy?: boolean;
 }
 
 const {
   id,
-  heading,
-  copy = "Get Portfilo's latest news and deeper stories by email.",
+  heading = "Get ahead in business and tech in 7 minutes.",
+  copy = "The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.",
   variant = "inline",
+  showCopy = true,
 } = Astro.props;
 
 const emailId = `${id}-email`;
 const statusId = `${id}-status`;
 const honeypotId = `${id}-company`;
+const titleId = `${id}-title`;
 ---
 
-<section class:list={["newsletter-signup", `newsletter-signup--${variant}`]} aria-labelledby={`${id}-title`}>
-  <div class="newsletter-signup__copy">
-    <h2 id={`${id}-title`}>{heading}</h2>
-    <p>{copy}</p>
-  </div>
+<section
+  class:list={["newsletter-signup", `newsletter-signup--${variant}`]}
+  aria-labelledby={showCopy ? titleId : undefined}
+  aria-label={!showCopy ? "Subscribe to the Portfilo newsletter" : undefined}
+>
+  {
+    showCopy && (
+      <div class="newsletter-signup__copy">
+        <h2 id={titleId}>{heading}</h2>
+        {copy && <p>{copy}</p>}
+      </div>
+    )
+  }
 
   <form class="newsletter-signup__form" action="/api/subscribe" method="post" novalidate data-newsletter-form>
     <div class="newsletter-signup__field">
@@ -139,7 +150,8 @@ const honeypotId = `${id}-company`;
 <style>
   .newsletter-signup {
     display: grid;
-    gap: clamp(1.35rem, 2.5vw, 2.5rem);
+    gap: 1.15rem;
+    min-width: 0;
   }
 
   .newsletter-signup__copy h2,
@@ -150,16 +162,16 @@ const honeypotId = `${id}-company`;
   }
 
   .newsletter-signup__copy h2 {
-    max-width: 14ch;
-    font: 650 clamp(2.1rem, 4.2vw, 4.8rem) / 0.96 var(--sans);
-    letter-spacing: -0.055em;
+    max-width: 18ch;
+    font: 650 clamp(1.65rem, 2.15vw, 2.45rem) / 1 var(--sans);
+    letter-spacing: -0.04em;
   }
 
   .newsletter-signup__copy p {
-    max-width: 39rem;
-    margin-top: 0.85rem;
+    max-width: 41rem;
+    margin-top: 0.65rem;
     color: var(--muted);
-    font: 400 clamp(1rem, 1.25vw, 1.18rem) / 1.45 var(--serif);
+    font: 430 clamp(0.92rem, 1vw, 1rem) / 1.5 var(--sans);
   }
 
   .newsletter-signup__form,
@@ -170,6 +182,7 @@ const honeypotId = `${id}-company`;
   .newsletter-signup__row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
+    width: 100%;
     max-width: 42rem;
   }
 
@@ -187,16 +200,16 @@ const honeypotId = `${id}-company`;
 
   .newsletter-signup input,
   .newsletter-signup button {
-    min-height: 3.25rem;
+    min-height: 3.15rem;
     border-radius: 0;
-    font: 500 0.9rem/1 var(--sans);
+    font: 550 0.86rem/1 var(--sans);
   }
 
   .newsletter-signup input {
     min-width: 0;
     width: 100%;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--line-strong, #a9a39a);
+    padding: 0.82rem 0.95rem;
+    border: 1px solid var(--line-strong, #aaa39a);
     border-right: 0;
     background: transparent;
     color: var(--ink);
@@ -207,11 +220,12 @@ const honeypotId = `${id}-company`;
   }
 
   .newsletter-signup button {
-    padding: 0.9rem clamp(1rem, 2vw, 1.45rem);
+    padding: 0.82rem clamp(0.95rem, 1.8vw, 1.35rem);
     border: 1px solid var(--accent);
     background: var(--accent);
     color: #fff;
     cursor: pointer;
+    white-space: nowrap;
   }
 
   .newsletter-signup button:hover {
@@ -233,9 +247,9 @@ const honeypotId = `${id}-company`;
 
   .newsletter-signup__note,
   .newsletter-signup__status {
-    margin-top: 0.55rem;
+    margin-top: 0.45rem;
     color: var(--muted);
-    font: 400 0.72rem/1.4 var(--sans);
+    font: 430 0.69rem/1.4 var(--sans);
   }
 
   .newsletter-signup__status {
@@ -259,32 +273,89 @@ const honeypotId = `${id}-company`;
   }
 
   .newsletter-signup--hero {
-    align-content: end;
+    display: block;
   }
 
-  .newsletter-signup--hero .newsletter-signup__copy h2 {
-    max-width: 16ch;
-    font-size: clamp(1.65rem, 2.3vw, 2.5rem);
-    line-height: 1;
-    letter-spacing: -0.035em;
+  .newsletter-signup--hero .newsletter-signup__row {
+    max-width: none;
   }
 
   .newsletter-signup--inline {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.92fr);
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
     align-items: end;
+    gap: clamp(1.25rem, 2.8vw, 3rem);
   }
 
-  .newsletter-signup--inline .newsletter-signup__copy h2 {
-    font-size: clamp(2.2rem, 3.6vw, 4rem);
+  .newsletter-signup--card {
+    display: block;
+  }
+
+  .newsletter-signup--card .newsletter-signup__copy h2 {
+    max-width: 14ch;
+    font-size: clamp(1.7rem, 2.3vw, 2.35rem);
+  }
+
+  .newsletter-signup--card .newsletter-signup__copy p {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .newsletter-signup--card .newsletter-signup__form {
+    margin-top: clamp(1.25rem, 2.2vw, 2rem);
+  }
+
+  .newsletter-signup--card .newsletter-signup__row {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    max-width: none;
+  }
+
+  .newsletter-signup--card input {
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .newsletter-signup--card input::placeholder,
+  .newsletter-signup--card .newsletter-signup__note,
+  .newsletter-signup--card .newsletter-signup__status {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .newsletter-signup--card button {
+    border-color: #fff;
+    background: #fff;
+    color: var(--accent);
+  }
+
+  .newsletter-signup--card button:hover {
+    filter: none;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .newsletter-signup--card .newsletter-signup__status[data-state="success"] {
+    color: #fff;
+  }
+
+  .newsletter-signup--card .newsletter-signup__status[data-state="error"] {
+    color: #ffe1dc;
   }
 
   .newsletter-signup--footer {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
     align-items: center;
+    gap: clamp(1.4rem, 3vw, 3.5rem);
   }
 
   .newsletter-signup--footer .newsletter-signup__copy h2 {
-    font-size: clamp(2rem, 3vw, 3.3rem);
+    font-size: clamp(1.55rem, 2vw, 2.15rem);
+  }
+
+  .newsletter-signup--footer .newsletter-signup__copy p {
+    max-width: 44rem;
+  }
+
+  .newsletter-signup--footer .newsletter-signup__row {
+    max-width: none;
   }
 
   @media (max-width: 48rem) {
@@ -302,7 +373,7 @@ const honeypotId = `${id}-company`;
     }
 
     .newsletter-signup input {
-      border-right: 1px solid var(--line-strong, #a9a39a);
+      border-right: 1px solid var(--line-strong, #aaa39a);
     }
   }
 </style>
