@@ -1,251 +1,307 @@
 # Portfilo v0 Scope
 
+_Last updated: 2026-09-07_
+
 ## Objective
 
-Ship the smallest credible Portfilo editorial product that can publish high-quality research, establish a distinct visual identity, collect an owned audience, and scale structurally without premature infrastructure.
+Ship the smallest credible Portfilo business-and-technology media product that can:
+
+- publish high-quality current News and deeper Features;
+- establish a distinctive editorial identity;
+- make email/newsletter acquisition a primary reader relationship;
+- operate cleanly without a CMS, database, or unnecessary application infrastructure;
+- preserve a clear path for later scale without pretending Portfilo already has newsroom-scale throughput.
 
 The v0 should be good enough to launch publicly. It does not need to contain the eventual Portfilo product ecosystem.
 
-## Product principle
+## Product direction
 
-**Build the publishing machine before deciding what it should investigate first.**
+Current founder-approved v0 direction:
 
-The first real editorial series will be chosen through a separate research project after the site and publishing workflow are ready.
+- Portfilo is the brand;
+- Portfilo is a business-and-technology media product;
+- the working product model is **focused business/technology briefing + original reporting**;
+- Portfilo has **no geographic product promise**;
+- News is the intended current/day-to-day editorial layer;
+- Features are the deeper editorial layer;
+- newsletter/email acquisition is a primary conversion and recurring-reader relationship;
+- intended reader-facing coverage labels are `Business / Technology / Startup / AI`;
+- no public newsletter cadence or reading-time promise is approved yet;
+- v0 remains free.
 
-## In scope
+The current runtime has not completed every migration implied by this direction. `docs/PROJECT_STATE.md` records the distinction between approved target and implemented state.
 
-### Public surfaces
+## Target public surfaces
 
-1. **Homepage**
-   - one dominant editorial feature;
-   - latest/select stories;
-   - clear Portfilo identity;
-   - newsletter call to action.
+### 1. Homepage
 
-2. **Stories index**
-   - `/stories` route;
-   - all published stories in reverse chronological order;
-   - publication date;
-   - content type/topic;
-   - headline;
-   - short story description;
-   - author;
-   - no search, filters, or pagination until volume creates a real need.
+The redesigned homepage should provide:
 
-3. **Story page**
-   - headline and dek;
-   - author;
-   - publish/update dates;
-   - content type/topic;
-   - optional series metadata;
-   - long-form body;
-   - images/data figures;
-   - pull quotes;
-   - source/methodology section;
-   - correction notice;
-   - related stories;
-   - newsletter call to action.
+- compact Portfilo header and primary navigation;
+- compact newsletter-first hero with embedded signup;
+- one approved universal hero visual or approved no-image treatment;
+- Latest strip;
+- current News hierarchy;
+- one deeper Feature treatment;
+- one final newsletter signup after editorial content;
+- minimal footer.
 
-4. **Series page**
-   - generic series metadata;
-   - ordered story list;
-   - active/completed state.
+The homepage must not manufacture production news density. Clearly labeled development-only fixtures may be used locally and must remain excluded from production.
 
-5. **Research & Standards**
-   - sourcing;
-   - verification;
-   - AI usage;
-   - corrections;
-   - commercial/editorial separation.
+### 2. Latest
 
-6. **About**
-   - who Portfilo serves;
-   - what it does;
-   - concise company/editorial thesis.
+Target route:
 
-7. **Subscribe**
-   - Portfilo Brief;
-   - native Portfilo newsletter signup UI;
-   - one narrow Cloudflare Pages Function that forwards confirmed-opt-in subscription requests to beehiiv.
+`/latest`
 
-### Content system
+Purpose:
 
-- Astro build-time Content Collections
-- local Markdown stories
-- schema validation
-- draft/published state
-- topic
-- content type
-- distinct story `dek` and short `description` writing jobs
-- optional series relationship
-- featured state
-- publish/update dates
-- optional methodology/correction metadata
+- reverse-chronological browsing across the relevant current News and Feature content once the News/Feature model is implemented;
+- simple, useful archive behavior before search/filter/pagination are justified by volume.
 
-### Technical
+The exact implementation is a later approved content-architecture gate.
 
-- Astro
-- TypeScript
-- custom CSS
-- minimal client-side JavaScript
-- semantic HTML
-- responsive images where appropriate
-- sitemap
-- robots.txt
-- canonical URLs
-- Open Graph/social metadata
-- Article structured data where appropriate
-- custom 404
-- reduced-motion support
-- one single-purpose Cloudflare Pages Function for newsletter subscription forwarding
+### 3. News
+
+Target route family:
+
+`/news/[slug]`
+
+Purpose:
+
+- concise factual/current developments;
+- enough sourcing/context for the item’s verified job;
+- newsletter acquisition at an appropriate point;
+- no forced long-form treatment.
+
+The exact schema and route migration are not authorized merely by this scope file. They require the later News/Feature architecture plan and approval.
+
+### 4. Features
+
+Current stable story route may remain:
+
+`/stories/[slug]`
+
+The public presentation can call this deeper layer **Features** while preserving URL stability unless a later migration has a concrete reason to change it.
+
+Feature pages should support:
+
+- headline + dek;
+- author;
+- publish/update dates where applicable;
+- content type/topic where useful;
+- long-form body;
+- verified imagery/data figures;
+- methodology/correction material where applicable;
+- newsletter signup;
+- related material only when inventory justifies it.
+
+The existing `/stories` archive can be refined into the Features browsing surface.
+
+### 5. Series
+
+Keep generic series capability while actual editorial use justifies it.
+
+Do not expand series into a separate product system.
+
+### 6. Standards
+
+Keep public editorial standards/trust infrastructure available but visually subordinate to the main editorial product.
+
+### 7. Subscribe
+
+Keep `/subscribe` as a focused utility landing page for direct links, social bios, QR codes, and campaigns.
+
+Embedded signup remains the normal browsing path.
+
+The current operational `Portfilo Brief` naming remains until the separately approved coordinated migration to `Newsletter` across website and beehiiv-facing surfaces.
+
+### 8. Confirmation
+
+Keep `/confirmed` as the post-double-opt-in website destination once production redirect configuration is complete.
+
+### 9. Privacy
+
+Keep the privacy surface required by the actual data flow.
+
+### 10. About
+
+`/about` currently exists.
+
+The redesign direction is to absorb most product explanation into the homepage and potentially retire/redirect About later. Do not remove it until author/byline/metadata dependencies are inspected and safely migrated.
+
+### 11. 404
+
+Keep a custom accessible 404.
+
+## Content system
+
+Current v0 content architecture remains Astro Content Collections + local Markdown.
+
+### Story packaging
+
+The reader-facing package is:
+
+- required `title`;
+- required `dek`.
+
+Optional metadata-only override:
+
+- `metaDescription?` when the approved dek has a concrete metadata problem.
+
+Default metadata behavior:
+
+`metaDescription ?? dek`
+
+Do not reintroduce a required separate story `description` field.
+
+### Current schema vs target migration
+
+Current implemented topics remain:
+
+`business / technology / startups / ai / building`
+
+Approved intended public coverage set:
+
+`Business / Technology / Startup / AI`
+
+The current collection also uses editorial `contentType` values such as Reported, Explained, Analysis, Perspective, etc.
+
+The later architecture gate must decide the smallest clean News-vs-Feature distinction, including whether a separate field such as `format: news | feature` remains the right implementation. Do not add fields or migrate content before that review/approval.
+
+### Publication states
+
+Keep:
+
+- draft/published state;
+- publish/update dates;
+- optional series relationship;
+- featured state where still justified;
+- optional methodology/correction metadata.
+
+## Technical architecture
+
+### In scope
+
+- Astro;
+- TypeScript;
+- static-first output;
+- Astro Content Collections;
+- local Markdown;
+- custom CSS;
+- minimal client-side JavaScript;
+- semantic HTML;
+- responsive images where appropriate;
+- sitemap;
+- robots.txt;
+- canonical URLs;
+- Open Graph/social metadata;
+- Article structured data where appropriate;
+- custom 404;
+- reduced-motion support;
+- one narrow Cloudflare Pages Function for newsletter subscription forwarding.
 
 ### External infrastructure
 
-- GitHub repository
-- Cloudflare Pages
-- Cloudflare Pages Functions for the single newsletter subscription endpoint
-- Cloudflare Web Analytics
-- beehiiv for subscriber storage, confirmation, delivery, and unsubscribe handling
+- GitHub repository;
+- Cloudflare Pages;
+- Cloudflare Pages Function for `/api/subscribe`;
+- Cloudflare Web Analytics;
+- beehiiv for subscriber confirmation, storage, sending, deliverability, and unsubscribe handling.
 
-## Explicitly out of scope
+### Explicitly out of scope for v0
 
-Do not build in v0:
+Do not build without a newly validated requirement:
 
-- database
-- authentication
-- user accounts
-- member profiles
-- comments
-- likes
-- bookmarks
-- reading history
-- recommendation engine
-- personalization
-- native app
-- AI assistant
-- custom CMS
-- admin dashboard
-- custom newsletter platform or backend beyond the single approved beehiiv subscription proxy
-- custom analytics backend
-- advanced site search
-- paywall
-- membership
-- job board
-- opportunity database
-- events platform
-- community features
-- sponsorship management
-- complex animation framework
-- WebGL/3D
-- monorepo
-- microservices
-- dedicated general-purpose API
-- background jobs
+- database;
+- authentication;
+- user accounts;
+- member profiles;
+- comments/likes/reactions;
+- bookmarks;
+- reading history;
+- recommendation engine;
+- personalization;
+- native app;
+- AI assistant;
+- custom CMS/admin dashboard;
+- custom newsletter platform/backend beyond the existing subscription proxy;
+- custom analytics backend;
+- advanced site search;
+- paywall/membership;
+- job board/opportunity database;
+- events platform;
+- community features;
+- sponsorship-management software;
+- complex animation framework;
+- WebGL/3D;
+- monorepo;
+- microservices;
+- general-purpose API;
+- background jobs.
 
-Valid future ideas belong in `BACKLOG.md`.
+Valid future ideas belong in `BACKLOG.md` until promoted.
 
-## Stack decision
+## Stack principles
 
 ### Astro + TypeScript
 
-Rationale:
-
-- Portfilo v0 is content-first.
-- Astro is optimized for content-heavy sites and static generation.
-- Build-time Content Collections provide schemas, type safety, and structured querying.
-- The content layer can later read from remote sources if a CMS becomes justified.
-- Static output minimizes runtime complexity.
-
-Do not add a frontend framework unless a current interaction clearly requires one.
+Portfilo is content-first. Static generation and typed content schemas minimize runtime complexity while preserving a migration path to a remote source later if justified.
 
 ### Local Markdown + Content Collections
 
-Rationale:
-
-- one source-controlled publishing workflow;
-- no database or CMS administration;
-- easy ChatGPT handoff through repository snapshots;
-- schema validation reduces metadata errors;
-- migration to a remote content source remains possible later.
+Use source-controlled authoring while the team is small. Do not add CMS administration before volume or collaboration creates a real problem.
 
 ### Custom CSS
 
-Rationale:
-
-Portfilo's visual identity should not inherit a generic component-library aesthetic. A small set of CSS tokens and editorial components is sufficient for v0.
+Portfilo’s visual identity should not inherit a generic component-library aesthetic. Use a small set of editorial primitives and build variants only when real pages require them.
 
 ### Cloudflare Pages
 
-Rationale:
-
-- Git-based Astro deployment;
-- preview deployments;
-- static CDN delivery;
-- custom domains;
-- simple build command and output;
-- integrates cleanly with Cloudflare Web Analytics;
-- Pages Functions allow the approved newsletter subscription proxy without converting the publication to a dynamic application.
+Use static CDN delivery, preview deployments, custom domains, and the narrow newsletter function without converting the site into a dynamic application.
 
 ### beehiiv
 
-Rationale:
-
-Newsletter sending, subscriber management, confirmation, deliverability, and unsubscribe handling are commodity infrastructure and should not be rebuilt.
-
-The current free Launch tier is sufficient for v0 audience validation. Portfilo renders the signup form itself because the third-party embed did not meet the approved visual and responsive standard; the server-side proxy only forwards subscription requests to beehiiv's official API.
+Use commodity newsletter infrastructure for subscriber management, confirmation, delivery, unsubscribe, and deliverability. Do not rebuild it.
 
 ## Scale philosophy
 
-Portfilo is not engineering for hypothetical millions of users.
+Portfilo is not engineering for hypothetical millions of users. It is avoiding choices that unnecessarily block growth.
 
-It is avoiding decisions that would block growth.
-
-### Content scale
-
-Structured content collections mean story #500 follows the same authoring model as story #1.
-
-### Traffic scale
-
-Static delivery minimizes application-server load. The newsletter endpoint is isolated to subscription requests rather than moving the site onto an application server.
-
-### Editorial scale
-
-Research packets and canonical publishing standards create repeatable newsroom operations.
-
-### Product scale
-
-Future authenticated or personalized applications can be introduced when validated. They do not need to dictate the v0 architecture.
+- content scale comes from structured collections;
+- traffic scale comes from static delivery;
+- editorial scale comes from repeatable research/publishing standards;
+- future dynamic product features can be added when validated.
 
 ## Revisit triggers
 
-A frozen v0 choice may be reconsidered when:
+Reconsider a frozen v0 choice only when:
 
 - a real editorial workflow is materially impaired;
-- a validated product feature requires dynamic state;
-- publishing volume makes repository-based authoring operationally inefficient;
-- multiple editors need a safer authoring interface;
+- a validated feature requires dynamic state;
+- publishing volume makes repository-based authoring inefficient;
+- multiple editors need safer authoring;
 - newsletter needs exceed the current provider;
 - analytics questions cannot be answered by the lightweight stack;
-- performance measurements identify a real bottleneck.
-
-Do not revisit architecture because of hypothetical future complexity.
+- performance measurements identify a real bottleneck;
+- implementation reveals a concrete contradiction with an approved product decision.
 
 ## Definition of v0 complete
 
-v0 is complete when:
+v0 is complete when the approved target surfaces and migrations required for launch are implemented and:
 
-- all in-scope public surfaces exist;
-- at least one clearly labeled design fixture proves the story system without being publicly exposed in production;
 - content schema validates;
 - production build passes;
 - desktop/mobile layouts are manually inspected;
 - keyboard navigation works;
 - reduced motion is respected;
-- newsletter capture is functional;
+- newsletter capture/confirmation flow is validated on production configuration;
 - sitemap/robots/canonical/social metadata are present;
 - 404 works;
+- production fixtures are excluded;
 - no obvious broken links or console errors remain;
-- deployment is live or deployment-ready;
-- `docs/PROJECT_STATE.md` records the final validation state.
+- final-domain/deployment requirements are satisfied;
+- `docs/PROJECT_STATE.md` records final validation state;
+- release receives explicit approval before merge to `main`.
 
-A real launch series is not required to declare the publishing system complete.
+The four-issue newsletter pilot validates the recurring email product before public cadence promises and recurring sends, but it does not block building the core website.
