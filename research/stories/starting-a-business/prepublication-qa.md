@@ -2,11 +2,11 @@
 
 _Last updated: 2026-09-07_
 
-_Status: PRE-PUBLICATION QA PASS / FINAL PUBLICATION APPROVAL PENDING_
+_Status: PUBLICATION APPROVED / STORY MARKED PUBLISHED / FINAL POST-PUBLICATION BUILD VERIFICATION PENDING_
 
 ## Scope
 
-This QA reviews the assembled draft story at:
+This QA reviews the story at:
 
 `src/content/stories/what-actually-makes-starting-a-business-hard.md`
 
@@ -26,11 +26,15 @@ Repository-side QA record commit before local runtime validation:
 
 `4af8ec42ad89e2c62ab439c13746751ac856fa06`
 
+Publication commit:
+
+`6262dc2ec894bd056bae2a4daf1cc07355ecc355`
+
 ## Content-entry integrity
 
-Result: **PASS BY REPOSITORY INSPECTION**
+Result: **PASS**
 
-The assembled story contains the approved:
+The story contains the approved:
 
 - headline;
 - dek;
@@ -38,40 +42,35 @@ The assembled story contains the approved:
 - `explained` content type;
 - `building` topic;
 - `Portfilo` byline;
-- `status: draft`;
+- `publishedAt: 2026-09-07`;
+- `status: published`;
 - `featured: false`;
 - public body beginning with `Low sales are an easy example.` after the approved packaging trim.
 
-No unapproved body rewrite was introduced during assembly.
+No unapproved body rewrite was introduced during assembly or publication.
 
 ## Schema compatibility
 
-Result: **PASS BY REPOSITORY INSPECTION AND LOCAL ASTRO CHECK**
+Result before publication status change: **PASS BY REPOSITORY INSPECTION AND LOCAL ASTRO CHECK**
 
-`src/content.config.ts` permits:
+The schema requires `publishedAt` when `status` is `published`. The publication change supplied both fields together.
 
-- `contentType: explained`;
-- `topic: building`;
-- any non-empty author string;
-- `status: draft`;
-- `featured: false`;
-- omission of `publishedAt` while status remains `draft`.
+A final local build after the publication status change remains required to confirm the production route is generated under the actual runtime.
 
-The schema requires `publishedAt` only after the story is changed to `published`.
+## Publication routing
 
-Local `astro check` later confirmed the assembled content passes the current schema and Astro diagnostics with zero errors, warnings, or hints.
+Before publication, the production build correctly excluded the story while it was `draft`.
 
-## Draft isolation
+After founder-editor publication approval on 2026-09-07, the story was changed to:
 
-Result: **PASS BY REPOSITORY INSPECTION AND PRODUCTION BUILD OUTPUT**
+- `status: published`;
+- `publishedAt: 2026-09-07`.
 
-Production homepage and Stories index queries include only stories whose status is `published`.
+The next production build should therefore include:
 
-The individual story route includes draft stories only when `import.meta.env.DEV` is true.
+`/stories/what-actually-makes-starting-a-business-hard/`
 
-Therefore the current draft is available for local development review but is excluded from production story routes and indexes while it remains `status: draft`.
-
-The local production build generated the three existing published story routes and did **not** generate `/stories/what-actually-makes-starting-a-business-hard/`, which is the expected behavior for a draft.
+This expected route must be confirmed by final local build output.
 
 ## Metadata wiring
 
@@ -88,7 +87,7 @@ The story route passes the approved description into `SiteHead.astro`.
 
 Because the author is `Portfilo`, Article structured data identifies the author as an Organization.
 
-No publication date is emitted while the draft has no `publishedAt`.
+With `publishedAt` now present, the article metadata is expected to emit the publication date in the rendered production page.
 
 ## Editorial package audit
 
@@ -128,7 +127,7 @@ The final paragraph remains explanatory rather than becoming a broad startup fra
 
 Result: **NOT APPLICABLE**
 
-The assembled public body contains no outbound or internal links requiring link validation.
+The public body contains no outbound or internal links requiring link validation.
 
 ## Methodology and commercial disclosure
 
@@ -153,11 +152,11 @@ At mobile widths the template:
 - changes metadata to two columns and then one column at the narrowest breakpoint;
 - reduces heading sizes and adjusts story spacing.
 
-No story-specific markup in this draft introduces an obvious responsive exception.
+No story-specific markup introduces an obvious responsive exception.
 
 Founder-editor approved the desktop and mobile visual QA gate on 2026-09-07. No visual defect was reported at that gate.
 
-## Automated/runtime validation
+## Automated/runtime validation before publication status change
 
 Local environment:
 
@@ -186,7 +185,7 @@ Observed output on 2026-09-07:
 - 11 production pages were generated;
 - build completed with no reported error.
 
-The absence of the new story route from the production static-route list is expected because the story remains `status: draft`.
+The story was still `draft` during that build, so its route was correctly absent.
 
 ## Visual QA
 
@@ -194,27 +193,30 @@ Desktop browser render: **PASS BY FOUNDER-EDITOR APPROVAL — 2026-09-07**
 
 Mobile browser render: **PASS BY FOUNDER-EDITOR APPROVAL — 2026-09-07**
 
-The visual QA gate covered:
-
-- headline wrapping;
-- dek measure and spacing;
-- metadata row;
-- first body paragraph transition from the dek;
-- body line length and paragraph rhythm;
-- absence of horizontal overflow;
-- narrow-screen headline behavior;
-- final paragraph spacing.
-
 No visual revision was requested.
 
-## Publication checklist status
+## Publication authorization
 
-Repository, editorial, schema, runtime, and visual QA are complete.
+Founder-editor publication approval: **GRANTED — 2026-09-07**
 
-The story must **not** be changed to `published` until explicit founder-editor publication approval is obtained.
+Publication state change: **COMPLETE**
+
+The story is now marked `published` on `build/portfilo-v0` with publication date `2026-09-07`.
+
+This approval does not merge the branch to `main`. `main` remains the release boundary.
+
+## Remaining verification
+
+Final post-publication local build: **PENDING**
+
+Confirm that:
+
+1. `npm run check` still passes;
+2. `npm run build` still passes;
+3. the build output now includes `/stories/what-actually-makes-starting-a-business-hard/`;
+4. the story appears in the generated Stories index/homepage ordering as expected for `featured: false`;
+5. no unrelated production route regresses.
 
 ## Current verdict
 
-> **PRE-PUBLICATION QA PASS. READY FOR FINAL PUBLICATION APPROVAL.**
-
-No editorial, runtime, or visual revision is currently required.
+> **PUBLICATION APPROVED AND STORY MARKED PUBLISHED ON THE WORKING BRANCH. FINAL POST-PUBLICATION BUILD VERIFICATION PENDING. MAIN REMAINS UNCHANGED.**
