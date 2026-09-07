@@ -6,7 +6,7 @@ contentType: perspective
 topic: building
 author: "Louda Tuppal"
 publishedAt: 2026-09-04
-status: published
+status: draft
 featured: false
 ---
 
