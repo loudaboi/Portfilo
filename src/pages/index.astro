@@ -18,14 +18,6 @@ const storiesByDate = [...publishedStories].sort(
 const featureStory =
   storiesByDate.find(({ data }) => data.featured) ?? storiesByDate[0];
 
-const dateFormatter = new Intl.DateTimeFormat("en-PH", {
-  day: "numeric",
-  month: "short",
-  year: "numeric",
-  timeZone: "UTC",
-});
-
-const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 
 const devNews = import.meta.env.DEV
@@ -84,22 +76,24 @@ const tickerItems =
     <SiteHeader />
 
     <main id="main-content" tabindex="-1">
-      <section class="newsletter-hero" id="newsletter" aria-labelledby="newsletter-title">
-        <div class="newsletter-hero__copy">
-          <p class="section-label">Newsletter</p>
-          <h1 id="newsletter-title">Get ahead in business and tech in 7 minutes.</h1>
-          <p>
-            The latest news on companies, startups, products, markets, AI, and technology.
-            Three times a week, straight to your inbox.
-          </p>
-        </div>
+      <section class="newsletter-band" id="newsletter" aria-labelledby="newsletter-title">
+        <div class="newsletter-band__inner">
+          <div class="newsletter-band__copy">
+            <h1 id="newsletter-title">Get ahead in business and tech in 7 minutes.</h1>
+            <p>
+              The latest news on companies, startups, products, markets, AI, and technology.
+              Three times a week, straight to your inbox.
+            </p>
+          </div>
 
-        <div class="newsletter-hero__form">
-          <NewsletterSignup
-            id="home-hero-newsletter"
-            variant="hero"
-            showCopy={false}
-          />
+          <div class="newsletter-band__form">
+            <NewsletterSignup
+              id="home-hero-newsletter"
+              variant="hero"
+              showCopy={false}
+              buttonLabel="Send me the news"
+            />
+          </div>
         </div>
       </section>
 
@@ -109,7 +103,7 @@ const tickerItems =
             <div class="latest-strip__label">
               <strong>Latest</strong>
             </div>
-            <div class="latest-strip__rail">
+            <div class="latest-strip__rail" tabindex="0" aria-label="Latest headlines">
               {tickerItems.map((item) =>
                 item.href ? (
                   <a class="latest-strip__item" href={item.href}>
@@ -129,17 +123,43 @@ const tickerItems =
       }
 
       {
-        devNews.length > 0 && (
-          <section class="latest-section" aria-labelledby="latest-section-title">
-            <header class="section-heading">
-              <div>
-                <p class="section-label">Current</p>
-                <h2 id="latest-section-title">The latest</h2>
+        featureStory && (
+          <section class="featured-story" aria-labelledby="featured-story-title">
+            <article>
+              <a
+                class="featured-story__media"
+                href={`/stories/${featureStory.id}`}
+                aria-label={`Read ${featureStory.data.title}`}
+              >
+                <img
+                  src="/images/homepage-feature-image.webp"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <span class="featured-story__disclosure">AI-generated editorial image</span>
+              </a>
+
+              <div class="featured-story__copy">
+                <h2 id="featured-story-title">
+                  <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
+                </h2>
+                <p>{featureStory.data.dek}</p>
               </div>
+            </article>
+          </section>
+        )
+      }
+
+      {
+        devNews.length > 0 && (
+          <section class="news-section" aria-labelledby="news-section-title">
+            <header class="news-section__heading">
+              <h2 id="news-section-title">News</h2>
               <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
             </header>
 
-            <div class="latest-grid">
+            <div class="news-grid">
               <article class="lead-news">
                 <div class="news-image-placeholder" aria-hidden="true">
                   <span>News image</span>
@@ -170,71 +190,13 @@ const tickerItems =
         )
       }
 
-      {
-        featureStory && (
-          <section class="feature-section" aria-labelledby="feature-section-title">
-            <header class="section-heading section-heading--feature">
-              <div>
-                <p class="section-label">Feature</p>
-                <h2 id="feature-section-title">A closer look</h2>
-              </div>
-              <a href="/stories">Browse Features</a>
-            </header>
-
-            <div class="feature-pair">
-              <article class="feature-story">
-                <a
-                  class="feature-story__media"
-                  href={`/stories/${featureStory.id}`}
-                  aria-label={`Read ${featureStory.data.title}`}
-                >
-                  <img
-                    src="/images/homepage-feature-image.webp"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span class="feature-story__disclosure">AI-generated editorial image</span>
-                </a>
-
-                <div class="feature-story__body">
-                  <div class="feature-story__meta">
-                    <span>{formatLabel(featureStory.data.contentType)}</span>
-                    <span>{formatLabel(featureStory.data.topic)}</span>
-                    <span>{formatDate(featureStory.data.publishedAt)}</span>
-                  </div>
-                  <h3>
-                    <a href={`/stories/${featureStory.id}`}>{featureStory.data.title}</a>
-                  </h3>
-                  <p>{featureStory.data.dek}</p>
-                  <div class="feature-story__footer">
-                    <span>{featureStory.data.author}</span>
-                    <a href={`/stories/${featureStory.id}`}>Read Feature <span aria-hidden="true">→</span></a>
-                  </div>
-                </div>
-              </article>
-
-              <aside class="newsletter-card" aria-label="Subscribe to the Portfilo newsletter">
-                <p class="newsletter-card__label">Newsletter</p>
-                <NewsletterSignup
-                  id="home-feature-newsletter"
-                  heading="Get ahead in business and tech in 7 minutes."
-                  copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
-                  variant="card"
-                />
-              </aside>
-            </div>
-          </section>
-        )
-      }
-
       <section class="footer-newsletter" aria-label="Subscribe to the Portfilo newsletter">
-        <p class="section-label">Newsletter</p>
         <NewsletterSignup
           id="home-footer-newsletter"
           heading="Get ahead in business and tech in 7 minutes."
           copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
           variant="footer"
+          buttonLabel="Send me the news"
         />
       </section>
     </main>
@@ -274,7 +236,8 @@ const tickerItems =
         --line: #d4cfc6;
         --line-strong: #aaa39a;
         --accent: #0050a4;
-        --accent-soft: #e9f1f8;
+        --newsletter-surface: #d8ecff;
+        --brand-red: #b42318;
         --correction: #b42318;
         --page-max: 100rem;
         --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
@@ -310,69 +273,75 @@ const tickerItems =
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .newsletter-hero,
-      .latest-strip,
-      .latest-section,
-      .feature-section,
+      .newsletter-band {
+        width: 100%;
+        background: var(--newsletter-surface);
+        border-bottom: 1px solid rgba(0, 80, 164, 0.22);
+      }
+
+      .newsletter-band__inner,
+      .featured-story,
+      .news-section,
       .footer-newsletter {
         width: min(100%, var(--page-max));
         margin-inline: auto;
       }
 
-      .section-label {
-        margin: 0;
-        color: var(--accent);
-        font: 650 0.68rem/1.2 var(--sans);
-        letter-spacing: 0.085em;
-        text-transform: uppercase;
-      }
-
-      .newsletter-hero {
-        min-height: 0;
-        padding: clamp(1.65rem, 2.7vw, 2.7rem) var(--gutter);
+      .newsletter-band__inner {
+        min-height: clamp(11.25rem, 14vw, 13.75rem);
+        padding: clamp(1.35rem, 2.2vw, 2.1rem) var(--gutter);
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+        grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 0.85fr);
         gap: clamp(2rem, 5vw, 5.5rem);
         align-items: center;
-        border-bottom: 1px solid var(--line);
       }
 
-      .newsletter-hero__copy h1 {
+      .newsletter-band__copy h1 {
         max-width: 16ch;
-        margin: 0.45rem 0 0;
-        font: 680 clamp(2rem, 3.35vw, 3.75rem) / 0.98 var(--sans);
-        letter-spacing: -0.052em;
+        margin: 0;
+        font: 680 clamp(1.9rem, 3vw, 3.35rem) / 0.98 var(--sans);
+        letter-spacing: -0.05em;
         text-wrap: balance;
       }
 
-      .newsletter-hero__copy > p:last-child {
+      .newsletter-band__copy p {
         max-width: 48rem;
-        margin: 0.8rem 0 0;
-        color: var(--muted);
-        font: 430 clamp(0.92rem, 1.05vw, 1.04rem) / 1.5 var(--sans);
+        margin: 0.7rem 0 0;
+        color: #33495e;
+        font: 440 clamp(0.9rem, 1vw, 1rem) / 1.48 var(--sans);
       }
 
-      .newsletter-hero__form {
+      .newsletter-band__form {
         min-width: 0;
-        padding-top: 1.1rem;
-        border-top: 2px solid var(--accent);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup input) {
+        background: rgba(255, 255, 255, 0.66);
+        border-color: rgba(23, 22, 20, 0.52);
+      }
+
+      .newsletter-band__form :global(.newsletter-signup__note),
+      .newsletter-band__form :global(.newsletter-signup__status) {
+        color: #42596d;
       }
 
       .latest-strip {
+        width: 100%;
+        min-height: 2.8rem;
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
-        min-height: 2.85rem;
         border-bottom: 1px solid var(--line);
+        background: var(--paper);
         overflow: hidden;
       }
 
       .latest-strip__label {
         display: flex;
         align-items: center;
-        padding: 0.72rem var(--gutter);
-        background: var(--ink);
+        padding: 0.72rem clamp(1rem, 2.1vw, 1.6rem);
+        background: var(--brand-red);
         color: #fff;
-        font: 650 0.65rem/1 var(--sans);
+        font: 680 0.64rem/1 var(--sans);
         letter-spacing: 0.085em;
         text-transform: uppercase;
       }
@@ -382,9 +351,11 @@ const tickerItems =
         display: flex;
         align-items: stretch;
         overflow-x: auto;
+        overscroll-behavior-inline: contain;
         scrollbar-width: none;
       }
       .latest-strip__rail::-webkit-scrollbar { display: none; }
+      .latest-strip__rail:focus-visible { outline-offset: -3px; }
 
       .latest-strip__item {
         flex: 0 0 auto;
@@ -399,8 +370,8 @@ const tickerItems =
 
       .latest-strip__item > span {
         color: var(--accent);
-        font: 650 0.63rem/1 var(--sans);
-        letter-spacing: 0.06em;
+        font: 650 0.62rem/1 var(--sans);
+        letter-spacing: 0.055em;
         text-transform: uppercase;
       }
 
@@ -416,13 +387,82 @@ const tickerItems =
         text-underline-offset: 0.18em;
       }
 
-      .latest-section,
-      .feature-section {
-        padding: clamp(2.5rem, 5vw, 5rem) var(--gutter);
+      .featured-story {
+        padding: clamp(1.45rem, 2.8vw, 2.6rem) var(--gutter) clamp(2.25rem, 4vw, 3.75rem);
       }
 
-      .section-heading {
-        padding-bottom: 0.9rem;
+      .featured-story article {
+        max-width: 78rem;
+        margin-inline: auto;
+      }
+
+      .featured-story__media {
+        position: relative;
+        display: block;
+        height: clamp(15rem, 27vw, 22rem);
+        overflow: hidden;
+        background: var(--paper-soft);
+        line-height: 0;
+      }
+
+      .featured-story__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(1);
+      }
+
+      .featured-story__disclosure {
+        position: absolute;
+        right: 0.65rem;
+        bottom: 0.6rem;
+        padding: 0.27rem 0.36rem;
+        background: rgba(23, 22, 20, 0.78);
+        color: #fff;
+        font: 520 0.57rem/1 var(--sans);
+        letter-spacing: 0.035em;
+      }
+
+      .featured-story__copy {
+        padding-top: 0.85rem;
+      }
+
+      .featured-story__copy h2,
+      .featured-story__copy p {
+        margin: 0;
+      }
+
+      .featured-story__copy h2 {
+        max-width: 24ch;
+        font: 560 clamp(1.95rem, 3.15vw, 3.5rem) / 1 var(--serif);
+        letter-spacing: -0.038em;
+      }
+
+      .featured-story__copy h2 a {
+        text-decoration: none;
+      }
+
+      .featured-story__copy h2 a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.14em;
+      }
+
+      .featured-story__copy p {
+        max-width: 54rem;
+        margin-top: 0.55rem;
+        color: var(--muted);
+        font: 420 clamp(0.94rem, 1.05vw, 1.02rem) / 1.5 var(--serif);
+      }
+
+      .news-section {
+        padding: clamp(2.5rem, 4.7vw, 4.7rem) var(--gutter) clamp(3.25rem, 6vw, 6rem);
+        border-top: 1px solid var(--line);
+      }
+
+      .news-section__heading {
+        padding-bottom: 0.8rem;
         display: flex;
         justify-content: space-between;
         gap: 2rem;
@@ -430,31 +470,25 @@ const tickerItems =
         border-bottom: 1px solid var(--ink);
       }
 
-      .section-heading h2 {
-        margin: 0.32rem 0 0;
-        font: 680 clamp(2rem, 3.1vw, 3.4rem) / 0.96 var(--sans);
+      .news-section__heading h2,
+      .fixture-warning {
+        margin: 0;
+      }
+
+      .news-section__heading h2 {
+        font: 680 clamp(2rem, 3.1vw, 3.35rem) / 0.96 var(--sans);
         letter-spacing: -0.045em;
       }
 
-      .section-heading > a,
       .fixture-warning {
-        margin: 0 0 0.2rem;
+        max-width: 19rem;
         color: var(--muted);
-        font: 520 0.72rem/1.35 var(--sans);
-      }
-
-      .section-heading > a {
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.22em;
-      }
-
-      .fixture-warning {
-        max-width: 18rem;
+        font: 520 0.7rem/1.35 var(--sans);
         text-align: right;
       }
 
-      .latest-grid {
-        padding-top: clamp(1.25rem, 2.5vw, 2.25rem);
+      .news-grid {
+        padding-top: clamp(1.25rem, 2.4vw, 2.2rem);
         display: grid;
         grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
         gap: clamp(1.5rem, 3.5vw, 3.5rem);
@@ -493,19 +527,17 @@ const tickerItems =
         text-transform: uppercase;
       }
 
-      .news-meta,
-      .feature-story__meta {
+      .news-meta {
         display: flex;
         flex-wrap: wrap;
         gap: 0.55rem 0.8rem;
         color: var(--muted);
         font: 550 0.64rem/1.2 var(--sans);
-        letter-spacing: 0.045em;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
       }
 
-      .news-meta span:first-child,
-      .feature-story__meta span:first-child {
+      .news-meta span:first-child {
         color: var(--accent);
       }
 
@@ -545,193 +577,101 @@ const tickerItems =
         font: 420 0.84rem/1.5 var(--sans);
       }
 
-      .feature-section {
-        border-top: 1px solid var(--line);
-      }
-
-      .feature-pair {
-        padding-top: clamp(1.25rem, 2.5vw, 2.25rem);
-        display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(19rem, 0.72fr);
-        gap: clamp(1.5rem, 3.4vw, 3.5rem);
-        align-items: stretch;
-      }
-
-      .feature-story {
-        min-width: 0;
-      }
-
-      .feature-story__media {
-        position: relative;
-        display: block;
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        background: var(--paper-soft);
-        line-height: 0;
-      }
-
-      .feature-story__media img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(1);
-      }
-
-      .feature-story__disclosure {
-        position: absolute;
-        right: 0.7rem;
-        bottom: 0.65rem;
-        padding: 0.28rem 0.38rem;
-        background: rgba(23, 22, 20, 0.78);
-        color: #fff;
-        font: 520 0.58rem/1 var(--sans);
-        letter-spacing: 0.04em;
-      }
-
-      .feature-story__body {
-        padding-top: 1rem;
-      }
-
-      .feature-story__body h3 {
-        max-width: 22ch;
-        margin: 0.6rem 0 0;
-        font: 540 clamp(2rem, 3vw, 3.35rem) / 1 var(--serif);
-        letter-spacing: -0.038em;
-      }
-
-      .feature-story__body h3 a {
-        text-decoration: none;
-      }
-
-      .feature-story__body h3 a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.14em;
-      }
-
-      .feature-story__body > p {
-        max-width: 49rem;
-        margin: 0.75rem 0 0;
-        color: var(--muted);
-        font: 410 clamp(0.98rem, 1.12vw, 1.08rem) / 1.58 var(--serif);
-      }
-
-      .feature-story__footer {
-        margin-top: 1.05rem;
-        padding-top: 0.8rem;
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font: 530 0.72rem/1.3 var(--sans);
-      }
-
-      .feature-story__footer a {
-        color: var(--ink);
-        text-decoration: none;
-      }
-
-      .feature-story__footer a:hover {
-        color: var(--accent);
-      }
-
-      .newsletter-card {
-        min-width: 0;
-        padding: clamp(1.3rem, 2.3vw, 2rem);
-        background: var(--accent);
-        color: #fff;
-      }
-
-      .newsletter-card__label {
-        margin: 0 0 clamp(1.6rem, 3vw, 3rem);
-        font: 650 0.66rem/1.2 var(--sans);
-        letter-spacing: 0.085em;
-        text-transform: uppercase;
-      }
-
-      .newsletter-card :global(.newsletter-signup__copy h2) {
-        color: #fff;
-      }
-
       .footer-newsletter {
-        padding: clamp(1.75rem, 3.4vw, 3.2rem) var(--gutter);
-        border-top: 1px solid var(--ink);
+        max-width: none;
+        width: 100%;
+        padding: clamp(2.2rem, 4vw, 3.8rem) max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
+        background: var(--ink);
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       }
 
-      .footer-newsletter > .section-label {
-        margin-bottom: 0.8rem;
+      .footer-newsletter :global(.newsletter-signup__copy h2) {
+        color: #fff;
+      }
+
+      .footer-newsletter :global(.newsletter-signup__copy p),
+      .footer-newsletter :global(.newsletter-signup__note),
+      .footer-newsletter :global(.newsletter-signup__status) {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .footer-newsletter :global(.newsletter-signup input) {
+        border-color: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+      }
+
+      .footer-newsletter :global(.newsletter-signup input::placeholder) {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .footer-newsletter :global(.newsletter-signup__status[data-state="success"]) {
+        color: #8fc7ff;
+      }
+
+      .footer-newsletter :global(.newsletter-signup__status[data-state="error"]) {
+        color: #ffc2b8;
       }
 
       @media (max-width: 64rem) {
-        .newsletter-hero {
-          grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+        .newsletter-band__inner {
+          grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
           gap: 2rem;
-        }
-
-        .feature-pair {
-          grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.75fr);
         }
       }
 
       @media (max-width: 48rem) {
-        .newsletter-hero,
-        .latest-grid,
-        .feature-pair {
+        .newsletter-band__inner,
+        .news-grid {
           grid-template-columns: 1fr;
         }
 
-        .newsletter-hero {
-          gap: 1.5rem;
+        .newsletter-band__inner {
+          min-height: 0;
+          gap: 1.15rem;
         }
 
-        .newsletter-hero__form {
-          padding-top: 0;
-          border-top: 0;
+        .featured-story article {
+          max-width: none;
+        }
+
+        .featured-story__media {
+          height: clamp(13.5rem, 52vw, 20rem);
         }
 
         .fixture-warning {
-          max-width: 13rem;
+          max-width: 14rem;
         }
 
         .news-image-placeholder {
           aspect-ratio: 16 / 9;
         }
-
-        .newsletter-card {
-          min-height: 0;
-        }
       }
 
       @media (max-width: 36rem) {
-        .newsletter-hero,
-        .latest-section,
-        .feature-section,
-        .footer-newsletter {
+        .newsletter-band__inner,
+        .featured-story,
+        .news-section {
           --gutter: 1.1rem;
         }
 
-        .newsletter-hero {
-          padding-top: 1.45rem;
-          padding-bottom: 1.55rem;
+        .newsletter-band__inner {
+          padding-top: 1.25rem;
+          padding-bottom: 1.3rem;
         }
 
-        .newsletter-hero__copy h1 {
-          max-width: 17ch;
-          font-size: clamp(2rem, 10vw, 2.75rem);
-        }
-
-        .latest-strip {
-          grid-template-columns: auto minmax(0, 1fr);
+        .newsletter-band__copy h1 {
+          max-width: 18ch;
+          font-size: clamp(1.85rem, 9vw, 2.55rem);
         }
 
         .latest-strip__label {
-          padding-inline: 0.85rem;
+          padding-inline: 0.82rem;
         }
 
         .latest-strip__item {
-          max-width: 82vw;
+          max-width: 84vw;
           padding-inline: 0.9rem;
         }
 
@@ -739,24 +679,33 @@ const tickerItems =
           max-width: 62vw;
         }
 
-        .section-heading {
+        .featured-story {
+          padding-top: 1.1rem;
+          padding-bottom: 2rem;
+        }
+
+        .featured-story__media {
+          height: 13.5rem;
+        }
+
+        .news-section__heading {
           align-items: start;
         }
 
         .fixture-warning {
-          font-size: 0.64rem;
+          font-size: 0.62rem;
         }
 
-        .feature-story__footer {
-          align-items: flex-start;
-          flex-direction: column;
+        .footer-newsletter {
+          --gutter: 1.1rem;
+          padding-inline: var(--gutter);
         }
       }
 
       @media (max-width: 23rem) {
-        .newsletter-hero,
-        .latest-section,
-        .feature-section,
+        .newsletter-band__inner,
+        .featured-story,
+        .news-section,
         .footer-newsletter {
           --gutter: 1rem;
         }
