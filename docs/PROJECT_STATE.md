@@ -209,7 +209,7 @@ The older `public/images/homepage-feature-image.*` assets remain valid historica
 
 ## Homepage copy state
 
-**STRUCTURE SELECTED. NO FINAL HERO COPY APPROVED.**
+**ARCHITECTURE A APPROVED. EXACT COPY CANDIDATE DRAFTED. FOUNDER COPY APPROVAL PENDING.**
 
 Canonical copy-structure decision record:
 
@@ -217,7 +217,7 @@ Canonical copy-structure decision record:
 
 Founder approved **Architecture A — Product/output first** on 2026-09-07.
 
-Approved structural contract only:
+Approved structural contract:
 
 ```text
 [NEWSLETTER / PRODUCT LABEL]
@@ -234,24 +234,56 @@ Closest reference family:
 
 The structure was selected because it can be supported from current Portfilo facts without inventing a catch-up guarantee, cadence, reading-time promise, geography, subscriber proof, quality claim, public narrow lens, or permanent slogan.
 
-This approval does **not** authorize final wording. The next wording gate must be explicitly opened before drafting Homepage Copy v1.
+The founder explicitly opened the wording gate on 2026-09-07.
+
+Current exact copy candidate record:
+
+`research/homepage-copy-v2.md`
+
+Candidate package awaiting founder approval:
+
+```text
+NEWSLETTER
+
+A briefing on business and technology, with original reporting from Portfilo.
+
+[you@email.com] [Subscribe free]
+Free newsletter. Unsubscribe anytime.
+```
+
+Hero supporting sentence: **omitted by design** because the primary line already carries the approved subject and product mode.
+
+Final signup candidate:
+
+```text
+Get the Portfilo newsletter.
+
+[you@email.com] [Subscribe free]
+Free newsletter. Unsubscribe anytime.
+```
+
+Final supporting sentence: **omitted by design** to avoid repeating the hero product definition.
+
+The candidate has line-by-line provenance in `research/homepage-copy-v2.md`. It does not reuse the rejected wording patterns from the earlier attempt.
+
+**No exact homepage copy is approved until the founder accepts this candidate or explicitly revises it.**
 
 The earlier `research/homepage-copy-v1.md` candidate set remains **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
 Rejected generated directions include, among others:
 
 - `A clearer picture of what's next.`;
+- `Keep up with business and technology.`;
+- `Business and technology, by email.`;
+- `Follow the latest in business and technology.`;
 - `News and deeper stories from Portfilo.`;
+- `Get Portfilo in your inbox.`;
 - `The important moves...`;
 - `...with the context to understand what they mean.`;
 - invented Philippines/SEA positioning;
 - close paraphrases of those directions.
 
-The real newsletter reference corpus is retained as research:
-
-`research/newsletter-copy-reference-corpus-v1.md`
-
-Substantial homepage/newsletter copy must use the research-bound process in:
+Substantial homepage/newsletter copy must continue to use:
 
 - `skills/portfilo-anti-slop/SKILL.md`;
 - `docs/COPY_STYLE.md`;
@@ -305,9 +337,9 @@ This sequence is the current active roadmap. Update this section when the phase 
 
 1. **Homepage Copy Evidence Matrix** — COMPLETE.
 2. Founder selects one researched structural/reference direction — COMPLETE: Architecture A approved.
-3. **Homepage Copy v1 wording gate** — ACTIVE NEXT GATE; final wording is not yet authorized.
-4. Draft the minimum Homepage Copy v1 from approved facts + Architecture A, with line provenance, only after explicit wording authorization.
-5. Founder approves exact homepage copy package.
+3. Homepage Copy v1 wording authorization — COMPLETE: founder explicitly opened the gate.
+4. Draft minimum Homepage Copy from approved facts + Architecture A, with line provenance — COMPLETE: candidate recorded in `research/homepage-copy-v2.md`.
+5. **Founder approves exact homepage copy package — ACTIVE NEXT GATE.**
 6. **Static Homepage Rebuild v1** from the approved composition and selected hero asset. No motion.
 7. Desktop / large-tablet / mobile visual QA and correction pass.
 8. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
@@ -323,28 +355,38 @@ Do not skip ahead because a later task is easier or more interesting.
 
 ## Exact next task
 
-### Homepage Copy v1 — wording authorization gate
+### Founder approval — Homepage Copy candidate
 
-**Architecture A is approved. Final Portfilo hero wording is not yet authorized. No runtime code change.**
+**No runtime code change. No implementation authorization yet.**
 
-When the founder explicitly opens the wording gate, the drafting task is limited to the minimum copy package required by the approved homepage composition:
+Review the exact candidate in:
 
-- hero/newsletter label;
-- hero headline/product promise using only Architecture A's approved fact classes;
-- one supporting sentence only if the composition and information job require it;
-- form placeholder/button/microcopy;
-- final newsletter signup copy.
+`research/homepage-copy-v2.md`
 
-Requirements for that later drafting task:
+Hero candidate:
 
-- use Architecture A from `research/homepage-copy-evidence-matrix-v1.md`;
-- trace every material line to approved Portfilo facts and the selected reference structure;
-- do not introduce a cadence, reading-time promise, catch-up guarantee, geography, subscriber proof, quality claim, public narrow lens, or permanent slogan;
-- do not reuse or lightly paraphrase rejected `research/homepage-copy-v1.md` wording;
-- keep `Portfilo Brief` -> `Newsletter` implementation migration separate and coordinated;
-- stop for founder approval of the exact copy package before implementation.
+- label: `NEWSLETTER`;
+- primary line: `A briefing on business and technology, with original reporting from Portfilo.`;
+- supporting sentence: omit;
+- placeholder: `you@email.com`;
+- button: `Subscribe free`;
+- microcopy: `Free newsletter. Unsubscribe anytime.`.
 
-Approval of Architecture A did not automatically authorize this wording task.
+Final signup candidate:
+
+- heading: `Get the Portfilo newsletter.`;
+- supporting sentence: omit;
+- same placeholder/button/microcopy as the hero.
+
+Founder may:
+
+- approve the exact package;
+- reject it;
+- request a specific revision within Architecture A.
+
+Approval of this exact copy package does **not** automatically authorize implementation unless the founder explicitly opens the Static Homepage Rebuild v1 gate.
+
+When implementation is later authorized, the exact selected hero binary remains a required input. If it is unavailable, ask the founder for the approved image rather than regenerating or substituting it.
 
 ## Deployment / release readiness
 
@@ -382,4 +424,4 @@ Latest recorded local validation before this state-reconciliation cleanup:
 
 Do not infer a later build pass that was not run.
 
-The repository-state cleanup and copy-direction documentation updates are documentation/workflow-only and do not themselves create a new runtime validation result.
+The repository-state cleanup and copy-direction/candidate documentation updates are documentation/workflow-only and do not themselves create a new runtime validation result.
