@@ -1,6 +1,6 @@
 # Portfilo Homepage Copy Evidence Matrix v1
 
-_Status: RESEARCH COMPLETE / STRUCTURAL DIRECTION AWAITING FOUNDER APPROVAL / NO FINAL COPY AUTHORIZED_
+_Status: FOUNDER APPROVED STRUCTURE A / NO FINAL COPY AUTHORIZED_
 
 _Date: 2026-09-07_
 
@@ -291,7 +291,20 @@ Evidence basis:
 4. It follows the current Portfilo copy rule: product clarity before positioning, and no permanent tagline by default.
 5. It leaves room for the next wording gate to be minimal rather than forcing a slogan plus explanation plus proof stack into a compact hero.
 
-This recommendation is a **structural direction only**. It does not authorize final Portfilo wording.
+## Founder decision
+
+On 2026-09-07, the founder approved **Architecture A — Product/output first**.
+
+Approved structural contract:
+
+```text
+[NEWSLETTER / PRODUCT LABEL]
+[BUSINESS-AND-TECHNOLOGY SUBJECT OR APPROVED COVERAGE FRAME]
+[FOCUSED BRIEFING + ORIGINAL REPORTING PRODUCT MODE]
+[EMAIL FORM + FREE ACTION]
+```
+
+This approval selects the message/reference structure only. It does **not** approve or authorize final Portfilo hero wording, supporting copy, form microcopy, final newsletter CTA wording, implementation, naming migration, cadence claims, taxonomy/schema changes, or any later gate.
 
 ## Unresolved questions deliberately left open
 
@@ -302,13 +315,8 @@ This recommendation is a **structural direction only**. It does not authorize fi
 
 None of these should be filled with invented copy at this gate.
 
-## Approval gate
+## Next approval gate
 
-Founder chooses one structural/reference direction:
+The structural direction gate is complete.
 
-- `A — Product/output first` (recommended);
-- `B — Functional catch-up`;
-- `C — Public narrow-lens definition`;
-- `D — Habit/cadence/time constraint`.
-
-Approval of a structure does **not** automatically authorize final wording unless the founder explicitly opens that next gate.
+The next gate is **Homepage Copy v1 wording authorization**. Final wording must not be drafted until the founder explicitly opens that gate.
