@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, the founder-approved follow-up homepage correction is implemented and fresh validation + desktop/tablet/mobile visual QA are pending.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, the founder-approved production-safety homepage correction is implemented and fresh local validation + production-equivalent visual QA are pending.
 - `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Homepage-specific presentation clauses are subordinate to the newer correction contract where they differ.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -45,13 +45,13 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Design and imagery
 
-- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE FOLLOW-UP CORRECTION CONTRACT AND IMPLEMENTATION RECORD**.
-- `docs/DESIGN_DIRECTION.md` — current general visual principles aligned to the implemented follow-up homepage contract.
-- `docs/IMAGE_SYSTEM.md` — general editorial image rules.
+- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE PRODUCTION-SAFETY CORRECTION CONTRACT AND IMPLEMENTATION RECORD**.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles aligned to the implemented production-safety homepage contract.
+- `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; canonical v0 story-image ratio is 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 - `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
 - `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current top acquisition area uses no image.
-- `research/image-system/homepage-featured-cover-decision.md` — existing Feature artwork remains valid and is the current homepage Feature visual/layout asset.
+- `research/image-system/homepage-featured-cover-decision.md` — historical provenance for the prior Feature artwork; current homepage uses the later founder-selected `public/images/homepage-feature-16x9.png` asset.
 
 ### Product-model / newsletter research and copy
 
@@ -108,6 +108,8 @@ The following are superseded and must not be treated as precedent:
 - prior Homepage v3 hero composition;
 - independently centered/narrowed Feature shell that changes the global left edge;
 - oversized Feature presentation;
+- arbitrary tall/natural-ratio homepage Feature rendering;
+- blue-rail Latest content pushed to the bottom with `margin-top:auto`;
 - synthetic Feature placeholder as the current visual target;
 - square Portfilo right-rail placeholder;
 - muted/light-blue full hero surface;
@@ -115,7 +117,9 @@ The following are superseded and must not be treated as precedent:
 - entire ticker black;
 - topic labels in the homepage header;
 - removing `Latest | Stories` based on an exploratory question;
-- implementation-time global gutter/max-width changes without explicit approval.
+- implementation-time global gutter/max-width changes without explicit approval;
+- hiding the entire News section in production because development fixtures are excluded;
+- fabricating production news to fill layout space.
 
 ### Historical copy/navigation records
 
@@ -131,7 +135,7 @@ The following remain for provenance only:
 
 `docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
-## Current runtime: implemented follow-up homepage correction
+## Current runtime: implemented production-safety homepage correction
 
 Current working-branch homepage now implements:
 
@@ -141,19 +145,25 @@ Current working-branch homepage now implements:
 - compact `[content] [signup]` hero using Instrument Sans;
 - hero CTA `Send me the news`;
 - 2 px Portfilo-blue rule above and below the shared hero unit;
+- deliberate paper breathing room above and below the Latest ticker;
 - black-only `Latest` identifier with light ticker rail;
-- existing homepage Feature image restored with natural responsive height;
+- selected `public/images/homepage-feature-16x9.png` Feature asset;
+- canonical 16:9 homepage Feature presentation;
+- large-desktop Feature media capped at approximately 52rem / 832 px and scaled fluidly downward;
 - 3 px Portfilo-blue top rule on the Feature image;
 - Instrument Sans Feature headline/dek;
 - one continuous blue editorial/newsletter rail;
 - contextual signup at the top of the rail;
-- one Latest teaser + short description + `See the latest news →` when an eligible item exists;
-- synthetic development fixture used for that teaser only in local development;
-- no fabricated production teaser when no additional eligible story exists;
-- News below Feature/rail, with its existing blue image-top placeholder treatment;
+- Latest block directly after the signup in normal document flow, with no bottom-push behavior;
+- real Latest teaser when an eligible item exists;
+- restrained factual lower-rail fallback when no second eligible published story exists;
+- current published Feature topic corrected from `building` to `business`;
+- News section remains structurally present in production;
+- synthetic News fixtures remain local-development-only;
+- production shows a restrained factual News empty state until real News inventory exists;
 - dark footer endcap preserved;
 - no ticker motion;
-- no route/schema/taxonomy migration.
+- no route/schema/full-taxonomy migration.
 
 ## Information architecture authority
 
@@ -163,7 +173,7 @@ Current homepage header presentation remains:
 
 The eventual relationship among News, Features, Stories, and Latest remains a later architecture decision. Do not infer route/schema migration from the current header wording.
 
-Current content schema still uses:
+Current content schema still permits:
 
 `business / technology / startups / ai / building`
 
@@ -171,18 +181,30 @@ Target public taxonomy remains:
 
 `Business / Technology / Startup / AI`
 
-Do not confuse target taxonomy with completed migration.
+The currently published Feature now uses `business`, but the full schema migration is still pending.
 
 ## Image authority
 
-### Feature image
+### Current homepage Feature image
 
-Existing assets remain:
+Current selected asset:
+
+- `public/images/homepage-feature-16x9.png`
+
+Current homepage presentation:
+
+- 16:9 landscape;
+- restrained large-desktop scale;
+- responsive downward scaling;
+- approved blue top-image rule;
+- AI-generated editorial-image disclosure.
+
+Older assets remain in the repository for provenance/possible later use:
 
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-The WebP asset is currently used on the homepage with its natural responsive aspect ratio and approved blue top-image rule.
+They are not the current homepage Feature visual authority.
 
 ### Square right-rail visual
 
@@ -202,13 +224,13 @@ Responsiveness is a hard completion requirement for every homepage visual pass.
 
 Required QA includes wide desktop, 1440 px, 1366 px, tablet, and approximately 390 px mobile. No horizontal overflow is acceptable.
 
-Current blue rail is designed to stretch beside the Feature on larger screens and become content-height when stacked.
+The current blue rail may stretch beside the Feature on larger screens, but its internal Latest content remains top-flowing. On stacked layouts the rail becomes content-height.
 
 ## Validation authority
 
-The follow-up runtime implementation now exists, but fresh `npm run check` and `npm run build` have not yet been recorded as passing.
+The production-safety runtime implementation exists, but fresh `npm run check`, `npm run build`, and production-equivalent preview have not yet been recorded as passing.
 
-Do not claim the follow-up correction has passed validation until those commands actually succeed.
+The implementation session could not execute local npm validation. Do not claim a pass until those commands actually succeed against the current branch.
 
 ## Maintenance rule
 
