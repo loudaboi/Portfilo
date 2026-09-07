@@ -4,13 +4,13 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE REBUILD IN PROGRESS**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE REBUILD IMPLEMENTED / VALIDATION + VISUAL QA PENDING**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, technical SEO/performance/accessibility/security work through the prior Phase 4C audit, and one current published Feature are in place.
 
 The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
-The current homepage implementation on `build/portfilo-v0` is transitional and visually rejected. It may contain reusable behavior, but it is **not design or copy precedent**.
+The rejected first homepage composition has been replaced on `build/portfilo-v0` by Static Homepage Rebuild v1. The new rebuild is **not yet founder-approved visually and has not yet received fresh local `npm run check` / `npm run build` validation in this session**.
 
 ## Repository authority
 
@@ -76,9 +76,13 @@ Target public taxonomy:
 
 The taxonomy direction is approved but **not yet migrated**. Schema/content/route migration requires its own later plan and approval.
 
-Current `SiteHeader.astro` on the working branch renders:
+Current `SiteHeader.astro` on the working branch now renders:
 
-`Latest / Features / Subscribe free`
+- the Portfilo wordmark;
+- presentation labels `Business / Technology / Startup / AI` on wider screens;
+- `Latest / Features / Subscribe free` primary navigation.
+
+This header presentation does **not** perform the later schema/taxonomy migration.
 
 Development News fixtures are guarded by `import.meta.env.DEV` and are not public production journalism.
 
@@ -133,7 +137,7 @@ minimal institutional / legal links
 
 The previously planned standalone full-width final newsletter CTA is removed.
 
-The founder approved the BackScoop screenshot shared on 2026-09-08 as a **composition reference only** for the editorial-content + newsletter-card pairing. Do not copy BackScoop styling, colors, copy, branding, or proprietary visual identity.
+The founder supplied Morning Brew and BackScoop screenshots on 2026-09-08 as **composition references**. Transfer only the useful publication logic: compact acquisition before editorial content, fast transition into current stories, strong static latest strip, and editorial-content + newsletter-card pairing. Do not copy their styling, colors, copy, branding, or proprietary visual identity.
 
 ### Hero treatment
 
@@ -147,6 +151,29 @@ The hero is an acquisition area, not a full-screen or oversized marketing hero. 
 - reserve substantial imagery for actual News and Feature content.
 
 The previously selected architectural hero image remains historical provenance only. It is **not required for Static Homepage Rebuild v1 and must not block implementation**.
+
+### Static Homepage Rebuild v1 implementation
+
+Current runtime implementation now includes:
+
+- compact no-image newsletter hero;
+- static/manual Latest strip with no automatic motion;
+- development-only synthetic News fixtures for testing the intended current-news hierarchy;
+- a lead News layout plus compact supporting list in development;
+- the published Feature using the existing approved Feature image;
+- a Feature + newsletter-card paired composition modeled on the approved publication logic;
+- compact footer newsletter signup;
+- the approved hero copy reused in all three signup placements for this first build;
+- responsive desktop/tablet/mobile stacking rules;
+- no schema/taxonomy migration;
+- no article/route redesign;
+- no motion dependency or decorative animation.
+
+Implementation files changed in this rebuild:
+
+- `src/pages/index.astro`;
+- `src/components/NewsletterSignup.astro`;
+- `src/components/SiteHeader.astro`.
 
 ### Visual direction
 
@@ -250,8 +277,8 @@ Existing public/email surfaces still use the operational name `Portfilo Brief` i
 2. Hero visual exploration — COMPLETE; current v1 treatment is no image.
 3. Homepage newsletter copy — COMPLETE.
 4. Homepage acquisition placement — COMPLETE.
-5. **Static Homepage Rebuild v1 — IN PROGRESS.**
-6. Desktop / large-tablet / mobile visual QA and correction pass.
+5. **Static Homepage Rebuild v1 — IMPLEMENTED / FRESH VALIDATION PENDING.**
+6. **Desktop / large-tablet / mobile visual QA and correction pass — ACTIVE NEXT GATE after validation.**
 7. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
 8. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
 9. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
@@ -265,24 +292,33 @@ Do not skip ahead because a later task is easier or more interesting.
 
 ## Exact next task
 
-### Static Homepage Rebuild v1
+### Validate Static Homepage Rebuild v1, then perform visual QA
 
-**IMPLEMENTATION AUTHORIZED. NO HERO-ASSET BLOCKER.**
+**RUNTIME IMPLEMENTATION EXISTS. FRESH VALIDATION IS REQUIRED BEFORE CLAIMING PASS.**
 
-Implementation requirements:
+Required validation:
 
-- rebuild `src/pages/index.astro` from the approved composition rather than patching the rejected layout into shape;
-- keep the newsletter hero compact and typography/form-led, with no hero image;
-- reuse sound underlying newsletter/content/brand behavior where helpful;
-- implement the hero + Latest strip + The Latest + Featured/A Closer Look + editorial-paired signup card + compact footer signup;
-- use the approved hero copy in all three signup placements for this first build;
-- reserve imagery for real News/Feature editorial content rather than the newsletter hero;
-- no motion;
-- no taxonomy/schema migration;
-- no article/route redesign;
-- no site-wide `Portfilo Brief` -> `Newsletter` migration;
-- run actual `npm run check` and `npm run build` before claiming validation;
-- stop after implementation for desktop / large-tablet / mobile visual QA.
+```bash
+npm run check
+npm run build
+```
+
+Then run the site locally and inspect the homepage at desktop, large-tablet, and mobile widths.
+
+Visual QA should specifically inspect:
+
+- hero remains compact and does not dominate the first viewport;
+- Latest strip reads like a publication utility, not decoration;
+- lead/supporting News hierarchy is clear in development fixtures;
+- Feature image and Feature copy feel like one editorial story treatment;
+- Feature + newsletter card pair has balanced desktop height/weight without arbitrary spacers;
+- newsletter card follows the Feature on mobile;
+- footer signup remains compact;
+- no horizontal overflow;
+- no rounded-card/SaaS drift;
+- typography and spacing feel closer to the approved Morning Brew / BackScoop publication logic without copying either product.
+
+Do not begin motion, taxonomy migration, article redesign, or another phase before this static visual QA gate is resolved.
 
 ## Deployment / release readiness
 
@@ -314,11 +350,11 @@ Remaining final-launch items include:
 
 ## Validation authority
 
-Latest recorded local validation before the current homepage implementation:
+Latest recorded local validation before Static Homepage Rebuild v1:
 
-- `npm run check`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes;
-- `npm run build`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes.
+- `npm run check`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes and before this homepage rebuild;
+- `npm run build`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes and before this homepage rebuild.
 
-Do not infer a later build pass that was not run.
+**No fresh `npm run check` or `npm run build` pass has been established for Static Homepage Rebuild v1 yet.**
 
-The no-image hero decision is documentation/product-state reconciliation and does not itself create a new runtime validation result.
+The current tool environment does not contain the repository dependencies needed to truthfully claim those commands passed. The next validation result must come from an actual local or CI run.
