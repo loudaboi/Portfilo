@@ -5,7 +5,8 @@ description: "Using weak sales as the main example, this explainer shows how the
 contentType: explained
 topic: building
 author: "Portfilo"
-status: draft
+publishedAt: 2026-09-07
+status: published
 featured: false
 ---
 
