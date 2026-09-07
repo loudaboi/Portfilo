@@ -6,6 +6,7 @@ Follow:
 
 - `docs/WRITING_SYSTEM.md`
 - `docs/STYLE_RESEARCH_STANDARD.md`
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`
 
 Required input:
 
@@ -226,11 +227,52 @@ What must it not imply?
 
 What information should the dek add that the headline does not?
 
-## Description / summary job
+## Description / story-summary job
 
-What short, literal information should work in cards, indexes, SEO, and social metadata?
+Follow `docs/EDITORIAL_PACKAGING_STANDARD.md`.
 
-Do not automatically duplicate the dek.
+Do not begin with `summarize the article` or an arbitrary character target.
+
+Which primary job should the description perform?
+
+Choose the best fit for this story:
+
+- establish the concrete situation;
+- state the reporting/explanation promise;
+- define the scope;
+- surface distinctive evidence, method, case, or example;
+- state a bounded finding;
+- frame the reader's practical question.
+
+Selected job:
+
+Why is this the most useful missing layer after the headline and dek?
+
+What concrete information should it carry?
+
+What must it avoid duplicating from the headline or dek?
+
+How should it work when shown alone as story-card copy?
+
+Are there any actual metadata/social constraints that materially affect the wording?
+
+Do not add a constraint merely because SEO folklore suggests one.
+
+## Editorial-package audit
+
+Read the planned package in order:
+
+1. headline;
+2. dek;
+3. description.
+
+What distinct job does each field perform?
+
+Does any field merely translate another?
+
+Would a generic AI publication be able to reuse the description unchanged under a different story?
+
+Does the description still identify this particular story when shown alone on a card?
 
 ## Assignment-specific AI-slop risks
 
@@ -247,7 +289,9 @@ Examples:
 - conclusions that restate the thesis;
 - artificial symmetry across sections;
 - copying the cadence of a researched exemplar;
-- generating polished connective prose that was never authorized by the research.
+- generating polished connective prose that was never authorized by the research;
+- turning the description into a compressed abstract thesis;
+- treating metadata length as the description's editorial form.
 
 Risks:
 
