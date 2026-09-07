@@ -24,7 +24,7 @@ Current founder-approved homepage contract:
 
 `docs/PROJECT_STATE.md` owns the current phase and exact next task.
 
-The previously implemented Homepage v3 composition was visually rejected. The current authority is the later founder-approved follow-up correction, now implemented on the working branch.
+The previously implemented Homepage v3 composition was visually rejected. The current authority is the later founder-approved production-safety correction implemented on the working branch.
 
 ## Core visual principles
 
@@ -55,6 +55,13 @@ Do not use repeated eyebrows, index labels, or typography tricks merely to make 
 ### 3. Whitespace is structural, not ornamental
 
 Use deliberate whitespace to separate editorial jobs and protect reading rhythm.
+
+The Latest strip now has explicit paper breathing room above and below it so the hero blue rule, ticker, and Feature read as three distinct layers.
+
+Target rhythm:
+
+- approximately 24 px above and below the ticker on desktop;
+- approximately 16 px on narrow mobile.
 
 Do not use oversized empty marketing regions to signal premium design. Portfilo should feel intentionally dense enough to read as a publication.
 
@@ -120,17 +127,23 @@ Instrument Sans
 hero CTA: Send me the news
 blue rule below
 
+PAPER SPACE
+
 LATEST STRIP
 black Latest label only
 light headline rail
 full viewport width
 
+PAPER SPACE
+
 FEATURE + CONTINUOUS BLUE RAIL
-left: existing Feature image + headline + dek
-right: contextual signup + one latest-news teaser + latest-news link
+left: restrained 16:9 Feature image + headline + dek
+right: contextual signup + divider + Latest block in normal top-down flow
 
 NEWS
-lead current item + supporting items
+plain News heading
+local development hierarchy when fixtures exist
+production-safe empty state when real News inventory does not yet exist
 
 BLACK FOOTER ENDCAP
 compact signup + minimal links
@@ -179,7 +192,8 @@ Use:
 - near-black `Latest` identifier only;
 - light headline rail;
 - blue category accents where useful;
-- static behavior until the corrected homepage is visually approved.
+- static behavior until the corrected homepage is visually approved;
+- deliberate paper space above and below it.
 
 Do not use the whole strip as a black bar and do not use red as the ticker treatment.
 
@@ -187,9 +201,12 @@ Do not use the whole strip as a black bar and do not use red as the ticker treat
 
 Feature column:
 
-- use the existing homepage Feature image;
-- preserve its natural aspect ratio responsively;
-- no fixed-height crop;
+- use `public/images/homepage-feature-16x9.png`;
+- homepage Feature presentation uses the canonical **16:9 landscape** format already defined by `docs/IMAGE_SYSTEM.md`;
+- large-desktop media should not exceed roughly 52rem / 832 px;
+- scale fluidly downward on smaller widths;
+- do not display arbitrary tall source ratios on the homepage;
+- do not use a fixed-height crop to repair a badly chosen source asset;
 - add a 2–3 px Portfilo-blue top rule to the image only;
 - use Instrument Sans for Feature headline and dek;
 - image -> headline -> short dek;
@@ -202,11 +219,14 @@ Blue rail:
 - use one continuous blue panel;
 - contextual signup comes first;
 - then a thin internal divider;
-- then one current-news teaser with a short description;
+- then one Latest block;
+- show a real teaser title + short description when eligible inventory exists;
+- otherwise keep the block present with a restrained factual empty state rather than fabricating news;
 - then `See the latest news →`;
 - no nested card inside the rail;
-- rail content stays top-aligned;
-- desktop/tablet rail may stretch with the Feature module;
+- content stays in normal top-to-bottom document flow;
+- **do not use `margin-top:auto` or any device that pushes Latest content to the bottom because the Feature image is tall**;
+- desktop/tablet rail may stretch with the Feature module, but content must remain top-flowing;
 - mobile rail becomes content-height and must not preserve desktop equal-height behavior.
 
 Approved contextual signup headline:
@@ -227,7 +247,9 @@ The line:
 
 ### News and footer
 
-News remains below the Feature/rail composition with its current plain `News` heading and development hierarchy.
+News remains below the Feature/rail composition with its plain `News` heading.
+
+Development fixtures may test the News hierarchy locally only. They must remain excluded from production. Production must not hide the entire News section simply because no real News inventory exists yet; use a restrained factual empty state until the later News/Feature architecture is implemented and populated.
 
 The near-black footer endcap remains. Its inner content uses the same shared shell.
 
@@ -280,7 +302,7 @@ Preferred modes when the editorial job supports them:
 
 The current top acquisition area uses no hero image.
 
-The existing Feature image is the current homepage visual/layout asset and remains responsive and uncropped.
+The homepage Feature now uses the approved 16:9 asset rather than the previous tall natural-ratio rendering. The canonical v0 story-image ratio remains 16:9 landscape; article-body imagery may still vary when the editorial job requires it.
 
 ## Responsive contract
 
@@ -292,9 +314,11 @@ Required behavior:
 - hero remains two-column while space permits, then stacks;
 - hero blue rules remain aligned to the shared shell;
 - ticker remains the only full-bleed element;
+- ticker breathing room reduces appropriately on mobile;
 - Feature + blue rail remain side-by-side only while readable;
+- Feature media is capped on large desktop instead of expanding arbitrarily;
 - tablet/mobile stack Feature then rail;
-- images use responsive width and natural height;
+- 16:9 Feature image scales responsively;
 - blue image-top rule follows image width;
 - blue rail becomes content-height on mobile;
 - forms fill available width without overflow;
