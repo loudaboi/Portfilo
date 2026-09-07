@@ -6,6 +6,7 @@ Follow:
 
 - `docs/STYLE_RESEARCH_STANDARD.md`
 - `docs/WRITING_SYSTEM.md`
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`
 
 ## Assignment
 
@@ -174,6 +175,49 @@ Transferable lesson:
 
 What must not be imitated:
 
+## Editorial packaging research
+
+Complete this section when headline, dek, or description has meaningful editorial discretion or when the body-writing exemplars do not answer the packaging problem.
+
+Do not assume the same exemplars are useful for both body form and story packaging.
+
+For each relevant human-edited package reviewed, record:
+
+Publication:
+
+Headline/title:
+
+URL/date:
+
+Supporting-copy type:
+
+`dek | standfirst | summary | card description | meta description | other`
+
+What job does the supporting copy perform?
+
+Examples of jobs to classify:
+
+- establishes the situation;
+- states the reporting/explanation promise;
+- defines scope;
+- surfaces distinctive evidence/method/case;
+- states a bounded finding;
+- frames the reader's practical question.
+
+What new information does it add after the headline?
+
+How dependent is it on the headline?
+
+Does it summarize the conclusion, or does it introduce the premise/scope/reporting instead?
+
+What concrete nouns, cases, methods, or details keep it from becoming generic?
+
+How would the supporting copy behave if shown alone on a story card?
+
+Transferable editorial lesson:
+
+What must not be imitated:
+
 ## Cross-example findings
 
 Separate observation from editorial decision.
@@ -217,6 +261,20 @@ Counterargument/limitation placement:
 Ending behavior:
 
 Terminology/vocabulary level:
+
+## Proposed editorial packaging mechanics
+
+Complete when packaging research was needed.
+
+Headline job:
+
+Dek job:
+
+Description / story-summary job:
+
+What information should be left to the body rather than repeated in the package?
+
+What package-level AI-slop patterns are especially likely for this assignment?
 
 ## Anti-imitation boundary
 
