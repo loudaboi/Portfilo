@@ -1,6 +1,6 @@
 # Portfilo v0 Scope
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-08_
 
 ## Objective
 
@@ -20,13 +20,14 @@ Current founder-approved v0 direction:
 
 - Portfilo is the brand;
 - Portfilo is a business-and-technology media product;
-- the working product model is **focused business/technology briefing + original reporting**;
+- the internal working product model remains **focused business/technology briefing + original reporting**, but `briefing` is not approved public acquisition language;
 - Portfilo has **no geographic product promise**;
 - News is the intended current/day-to-day editorial layer;
 - Features are the deeper editorial layer;
 - newsletter/email acquisition is a primary conversion and recurring-reader relationship;
 - intended reader-facing coverage labels are `Business / Technology / Startup / AI`;
-- no public newsletter cadence or reading-time promise is approved yet;
+- the public newsletter acquisition promise now includes **latest news**, a **7-minute** reading-time promise, and delivery **three times per week**;
+- exact newsletter send days and times are not yet approved;
 - v0 remains free.
 
 The current runtime has not completed every migration implied by this direction. `docs/PROJECT_STATE.md` records the distinction between approved target and implemented state.
@@ -304,4 +305,4 @@ v0 is complete when the approved target surfaces and migrations required for lau
 - `docs/PROJECT_STATE.md` records final validation state;
 - release receives explicit approval before merge to `main`.
 
-The four-issue newsletter pilot validates the recurring email product before public cadence promises and recurring sends, but it does not block building the core website.
+The four-issue newsletter pilot remains a validation exercise for whether Portfilo can reliably sustain the now-approved **7-minute / three-times-per-week** public promise. It does not block building the core website, but the promise should be operationally validated before the first recurring public newsletter run and before final launch readiness is declared.
