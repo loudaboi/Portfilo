@@ -6,7 +6,7 @@ _Last updated: 2026-09-07_
 
 **Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE / TEST EXECUTION DEFERRED / AUDIENCE & SOCIAL DISTRIBUTION V0 COMPLETE**
 
-Portfilo's publishing system, editorial/research/writing standards, four published story entries on the working branch, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, Portfilo Test Methodology v0, and Audience & Social Distribution Strategy v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
+Portfilo's publishing system, editorial/research/writing standards, one published story entry on the working branch, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, Portfilo Test Methodology v0, and Audience & Social Distribution Strategy v0 are in place. Three earlier story entries have been withdrawn to `draft` pending re-evaluation against the newer editorial standards. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
 
 Current parallel sequence:
 
@@ -124,16 +124,25 @@ Current global navigation:
 
 The wordmark links Home. The earlier `Latest` global-navigation contract is historical.
 
-### Published stories
+### Current public story set
 
-Status: **FOUR PUBLISHED CONTENT ENTRIES ON WORKING BRANCH / FIRST THREE DEPLOYED USER REVIEW PASS**
+Status: **ONE PUBLISHED STORY ON WORKING BRANCH / THREE EARLIER STORIES WITHDRAWN PENDING RE-EVALUATION**
+
+Currently published:
+
+1. `src/content/stories/what-actually-makes-starting-a-business-hard.md`
+
+Withdrawn to `draft` on 2026-09-07:
 
 1. `src/content/stories/build-things-that-make-the-next-thing-easier.md`
 2. `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 3. `src/content/stories/what-actually-changed.md`
-4. `src/content/stories/what-actually-makes-starting-a-business-hard.md`
 
-The fourth story completed its editorial, pre-publication runtime, and founder-editor visual QA workflow on 2026-09-07 and is marked `published` on `build/portfilo-v0`. The publication metadata change was not followed by a new local post-publication build; that caveat is retained in `research/stories/starting-a-business/prepublication-qa.md` and may be rechecked during a later release-readiness build.
+The three withdrawn files were not deleted. Their prior publication dates remain as provenance, but `status: draft` excludes them from production routes and indexes. `build-things-that-make-the-next-thing-easier.md` was also changed from `featured: true` to `featured: false` so an accidental future status change cannot silently restore it as the homepage feature.
+
+Withdrawal is an editorial-confidence decision, not a finding that every factual claim in those stories is wrong. They are no longer treated as current public examples of Portfilo's standard. Each may later be reworked through the current research/writing/publishing pipeline, abandoned, or replaced by a new story. No re-publication is authorized by retaining the files.
+
+The starting-a-business story completed its editorial, pre-publication runtime, and founder-editor visual QA workflow on 2026-09-07 and remains marked `published` on `build/portfilo-v0`. The publication metadata change was not followed by a new local post-publication build; that caveat is retained in `research/stories/starting-a-business/prepublication-qa.md` and may be rechecked during a later release-readiness build.
 
 Story research packets and final reviews remain authoritative for story-specific evidence.
 
@@ -599,8 +608,9 @@ Newsletter state:
 | Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / EXECUTION DEFERRED / NO SPECIFIC TEST AUTHORIZED |
 | Audience & Social Distribution Strategy v0 | PASS / FOUNDER APPROVED / CANONICAL |
 | Starting-a-business article workflow | CLOSED / PUBLISHED ON WORKING BRANCH / PRE-PUBLICATION RUNTIME + VISUAL QA PASS / POST-PUBLICATION BUILD NOT RE-RUN |
-| Latest recorded `npm run check` | PASS / USER-REPORTED / 2026-09-07 / 0 ERRORS / 0 WARNINGS / 0 HINTS / BEFORE PUBLICATION-METADATA CHANGE |
-| Latest recorded `npm run build` | PASS / USER-REPORTED / 2026-09-07 / STATIC BUILD COMPLETE / 11 PAGES / BEFORE PUBLICATION-METADATA CHANGE |
+| Earlier story set | WITHDRAWN TO DRAFT / RETAINED FOR POSSIBLE REWORK OR ABANDONMENT / NOT CURRENT PUBLIC STANDARD EXAMPLES |
+| Latest recorded `npm run check` | PASS / USER-REPORTED / 2026-09-07 / 0 ERRORS / 0 WARNINGS / 0 HINTS / BEFORE PUBLICATION + WITHDRAWAL METADATA CHANGES |
+| Latest recorded `npm run build` | PASS / USER-REPORTED / 2026-09-07 / STATIC BUILD COMPLETE / 11 PAGES / BEFORE PUBLICATION + WITHDRAWAL METADATA CHANGES |
 | Brand asset system | PASS / PHASE 4B CLOSED |
 | Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
 | Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
@@ -609,7 +619,7 @@ Newsletter state:
 
 The Portfilo Test Methodology v0 implementation and Audience & Social Distribution Strategy v0 are documentation-only. They change no runtime code, dependencies, content schema, routes, navigation, design, or public Test/social output.
 
-The 2026-09-07 local validation was run after the repository and editorial-system changes then present locally, but before the starting-a-business story's final `status: published` / `publishedAt` metadata change. Do not infer a post-publication build pass that was not executed.
+The 2026-09-07 local validation was run before the starting-a-business story's final `status: published` / `publishedAt` metadata change and before the three earlier stories were withdrawn to `draft`. Do not infer a later build pass that was not executed. The next production build is expected to expose only the current published story among the real story entries.
 
 ## Exact next tasks
 
@@ -640,7 +650,7 @@ Current actionable items before the domain exists:
 
 1. enable/verify Cloudflare Web Analytics on the temporary Pages deployment;
 2. continue temporary-production QA where useful;
-3. at a later release-readiness build, recheck the published starting-a-business route if fresh post-publication production-build evidence is required.
+3. at a later release-readiness build, verify the current one-story public set and recheck the published starting-a-business route if fresh production-build evidence is required.
 
 Domain-dependent items remain deferred until the final public domain exists:
 
