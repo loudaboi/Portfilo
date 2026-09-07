@@ -22,9 +22,9 @@ Current founder-approved homepage contract:
 
 `research/homepage-redesign-v1.md`
 
-Despite the filename, that file now records the approved **Homepage v3** plan.
-
 `docs/PROJECT_STATE.md` owns the current phase and implementation gate.
+
+The previously implemented Homepage v3 composition was visually rejected. The current design authority is the later post-v3 correction plan.
 
 ## Core visual principles
 
@@ -40,19 +40,34 @@ Prefer:
 
 - strong sans-led publication hierarchy;
 - disciplined reading typography;
-- serif contrast where it creates a meaningful editorial mode;
+- serif contrast only where it creates a meaningful reading/editorial mode;
 - compact utility/metadata typography;
 - natural variation in scale based on editorial importance.
 
+For the current homepage correction, the hero returns to **Instrument Sans**. The rejected Source Serif 4 hero treatment is not precedent.
+
 Do not use repeated eyebrows, index labels, or typography tricks merely to make the page feel designed.
 
-### 3. Whitespace is structural
+### 3. Whitespace is structural, not ornamental
 
 Use deliberate whitespace to separate editorial jobs and protect reading rhythm.
 
-Do not use arbitrary spacer blocks or oversized empty marketing regions to repair weak composition.
+Do not use oversized empty marketing regions to signal premium design. Portfilo should feel intentionally dense enough to read as a publication.
 
-### 4. Brand color is structural, not decorative
+### 4. One global homepage shell
+
+The current homepage has a hard alignment invariant:
+
+- header inner content, hero inner content, Feature area, News, and footer inner content share one common shell;
+- preferred large-desktop working width is roughly **1280–1360 px**;
+- the Feature placeholder edge is the canonical visual content edge;
+- individual homepage sections must not invent independent global max-width/centering rules;
+- internal grids may vary inside the shell;
+- **only the Latest ticker is full-bleed**.
+
+This rule exists to prevent repeated gutter/indent drift.
+
+### 5. Brand color is structural, not decorative
 
 Current palette:
 
@@ -68,35 +83,39 @@ Blue is the primary functional/editorial accent.
 
 Red is rare and intentional. Do not mechanically balance blue and red across page regions.
 
-Homepage v3 specifically rejects a large light-blue top signup surface and a red ticker treatment.
+The current homepage correction rejects a large light-blue hero surface and a red ticker treatment.
 
-### 5. Mobile is first-class
+### 6. Mobile is first-class
 
 Mobile is not a shrunken desktop composition.
 
 Preserve readable line lengths, editorial order, usable form controls, accessible tap targets, and no horizontal page overflow.
 
-## Homepage v3 visual contract
+## Current homepage visual contract
 
 Approved structure:
 
 ```text
-HEADER
-Portfilo | Latest | Stories
+SHARED CONTENT SHELL
+Header / Hero / Feature / News / Footer-inner
 
-EDITORIAL NEWSLETTER ACQUISITION AREA
+HEADER
+Portfilo | Latest | Stories | Subscribe free
+
+TOP NEWSLETTER SIGNUP
+[content] [signup]
+Instrument Sans
+hero CTA: Send me the news
 warm paper surface
-editorial proposition
-stacked form + Subscribe free
-restrained blue structural accent
 
 LATEST STRIP
 black Latest label only
 light headline rail
+full viewport width
 
-FEATURE + CONTEXTUAL NEWSLETTER CARD
-smaller uncropped Feature image + story copy
-blue contextual signup card
+FEATURE + STACKED RIGHT RAIL
+left: development Feature image placeholder + headline + dek
+right: blue contextual signup + square Portfilo brand placeholder
 
 NEWS
 lead current item + supporting items
@@ -105,25 +124,41 @@ BLACK FOOTER ENDCAP
 compact signup + minimal links
 ```
 
+### Header
+
+Use:
+
+- current approved Portfilo wordmark asset at the earlier restrained scale;
+- `Latest | Stories` navigation;
+- `Subscribe free` CTA button;
+- no topic labels;
+- shared shell alignment;
+- no unrelated header redesign.
+
 ### Top newsletter acquisition area
 
-The top signup should feel like the top of a publication, not a newsletter SaaS card.
+The top signup should behave like a compact publication acquisition unit:
+
+`[content] [signup]`
 
 Use:
 
 - warm paper background;
-- typography and spacing as the primary visual structure;
-- Source Serif 4 as an allowed headline treatment;
-- Instrument Sans for support copy and form UI;
-- roughly 44–48 px headline on large desktop;
-- roughly 170–200 px total section height;
-- stacked form around 420–480 px maximum width;
-- input and `Subscribe free` CTA at equal width;
-- blue CTA with white text;
-- one thin structural rule or restrained blue accent;
+- Instrument Sans headline/support/UI;
+- approved headline `Get ahead in business and tech in 7 minutes.`;
+- approved support line;
+- roughly 52–55% content / 45–48% signup internally on large desktop;
+- roughly 40–56 px internal gap;
+- hero CTA `Send me the news`;
+- free/unsubscribe note close to the form;
 - no hero image;
 - no `NEWSLETTER` eyebrow;
-- no gradient, shadow, rounded card, decorative icon, or large colored background block.
+- no huge independent hero container;
+- no colored full-section background block;
+- no serif hero experiment;
+- no gradient, shadow, card shell, or decorative icon.
+
+The header CTA remains `Subscribe free`; the in-page hero CTA remains `Send me the news`.
 
 ### Latest strip
 
@@ -133,32 +168,46 @@ Use:
 - near-black `Latest` identifier only;
 - light headline rail;
 - blue category accents where useful;
-- static behavior until Homepage v3 visual approval.
+- static behavior until the corrected homepage is visually approved.
 
 Do not use the whole strip as a black bar and do not use red as the ticker treatment.
 
-### Feature + contextual signup card
+### Feature + stacked right rail
 
-The Feature must be prominent without swallowing the viewport.
+For the next layout pass, geometry is more important than final imagery.
 
-Use:
+Feature column:
 
-- dedicated module max roughly 88–92 rem;
-- roughly 62–65% story / 30–34% card on large desktop;
-- roughly 32–48 px gap;
-- full image composition, no aggressive crop;
-- target image roughly 800–850 px wide on large desktop;
-- image → headline → short dek;
-- serif headline roughly 40–48 px on large desktop;
-- blue contextual newsletter card to the right;
-- do not force the card to match the image height;
-- mobile stacks story then signup card.
+- use a development image placeholder instead of the current Feature artwork;
+- landscape proportion around 16:9 or slightly wider;
+- roughly 64% of the shared module;
+- placeholder -> headline -> short dek;
+- no Feature eyebrow;
+- no `A CLOSER LOOK` heading;
+- keep Feature prominent without letting it dominate the viewport.
 
-Approved contextual card headline:
+Right rail:
+
+- roughly 32% of the shared module;
+- roughly 32–40 px gap from the Feature;
+- stack a blue contextual signup block above a square brand/editorial placeholder;
+- square placeholder may center the approved ink/black Portfilo wordmark;
+- do not generate/source final artwork during layout approval;
+- do not stretch the newsletter block to match Feature height.
+
+Approved contextual signup headline:
 
 `There's more to it than the headline.`
 
-Exact support sentence remains a separate copy gate.
+A one-sentence support description is required structurally, but exact wording remains a separate copy gate.
+
+### News and footer
+
+News remains below the Feature/right-rail composition with its current plain `News` heading and development hierarchy.
+
+The near-black footer endcap remains. Its inner content uses the same shared shell.
+
+Do not redesign either section unless the approved shell exposes a concrete defect.
 
 ## Geometry and surfaces
 
@@ -168,7 +217,8 @@ Default toward:
 - thin rules rather than heavy borders;
 - flat surfaces;
 - composition and spacing rather than shadows;
-- image scale based on editorial importance.
+- image scale based on editorial importance;
+- tighter publication density rather than oversized landing-page whitespace.
 
 Avoid by default:
 
@@ -187,8 +237,8 @@ Avoid by default:
 
 Baseline:
 
-1. `Instrument Sans` for homepage interface/navigation/metadata and much display work;
-2. `Source Serif 4` for long-form reading and meaningful editorial contrast;
+1. `Instrument Sans` for homepage interface/navigation/metadata and current homepage display work;
+2. `Source Serif 4` for long-form reading and selective deeper editorial contrast, not the current hero;
 3. `IBM Plex Mono` only for true utility/data/source/timestamp roles.
 
 Avoid excessive monospace and repeated eyebrow systems.
@@ -204,15 +254,17 @@ Preferred modes when the editorial job supports them:
 - data/document/evidence visuals;
 - typography-led/no-image treatment.
 
-Homepage v3 uses no hero image. Imagery is concentrated on actual editorial content.
+The current correction uses no hero image.
 
-The existing Feature image remains valid and must retain its approved composition. Reduce its rendered scale by constraining the module rather than cropping the artwork.
+The existing Feature image remains a valid repository asset, but the next homepage layout pass deliberately uses a development placeholder so geometry can be judged independently of artwork.
+
+The right-rail square visual is also a placeholder during the layout pass; final imagery is not authorized yet.
 
 ## Motion
 
 Motion remains subordinate to static composition.
 
-Homepage v3 static layout must be implemented and visually approved before automatic ticker motion is added.
+The corrected static homepage must be implemented and visually approved before automatic ticker motion is added.
 
 Later ticker motion should use:
 
@@ -242,6 +294,6 @@ Accessibility is part of completion, not later polish.
 
 ## Development fixture rule
 
-Synthetic content may be used to test hierarchy, wrapping, density, and responsive structure only when it is clearly synthetic, clearly labeled, and excluded from production.
+Synthetic content and image placeholders may be used to test hierarchy, wrapping, density, and responsive structure only when clearly synthetic, clearly labeled, and excluded from production.
 
 Do not fabricate realistic company/news claims merely to make a layout look populated.
