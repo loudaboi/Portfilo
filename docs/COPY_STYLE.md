@@ -4,106 +4,121 @@ _Last updated: 2026-09-07_
 
 ## Purpose
 
-Portfilo should sound like a capable person who knows the subject and can explain it plainly.
+Portfilo public copy should sound like a capable person who knows the subject and can explain it plainly.
 
-The job of public copy is not to make Portfilo sound impressive. The journalism, product, and editorial choices should create that impression.
+The job of public copy is not to make Portfilo sound impressive. The journalism, product, and design should create that impression.
 
 This standard applies to:
 
 - homepage and section copy;
 - navigation and interface labels;
-- About and Subscribe surfaces;
+- About, Standards, Subscribe, confirmation, privacy, and error surfaces;
 - newsletter copy;
-- story headlines and deks, together with the stricter editorial standards that govern journalism.
+- story headlines/deks together with the stricter editorial packaging rules.
 
 For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, `EDITORIAL_PACKAGING_STANDARD.md`, or `PUBLISHING_STANDARD.md`.
 
-## Writing-system rule
+## Rule zero
 
-> **AI output has zero stylistic authority.**
+> **AI output has zero stylistic or institutional authority.**
 
-A generated line is a proposal, not an approved Portfilo line.
+A generated line is a proposal, not Portfilo precedent.
 
-Do not publish a sentence because it sounds polished, sounds journalistic, or appears consistent with the brand strategy.
+Do not publish a sentence because it sounds polished, journalistic, premium, human, or consistent with strategy.
 
-The structure, institutional position, and writing form must be justified before prose. Follow `docs/WRITING_SYSTEM.md`.
+For significant public copy, apply:
 
-Existing Portfilo copy is not automatically an approved style exemplar merely because it is already published. It must pass the current copy/provenance audit before being used as precedent.
+`skills/portfilo-anti-slop/SKILL.md`
 
-## Approved positioning architecture
+before wording is drafted.
 
-Portfilo v0 uses a **content-first / no-tagline** architecture.
+The required sequence is:
 
-There is no permanent public tagline by default.
+```text
+REAL REFERENCE / PROFESSIONAL FORM EVIDENCE
+    ↓
+PORTFILO FACT + CLAIM SHEET
+    ↓
+MESSAGE / STRUCTURE OPTIONS
+    ↓
+FOUNDER SELECTS DIRECTION
+    ↓
+ONLY THEN DRAFT WORDING
+    ↓
+PROVENANCE + SLOP + HUMAN-LANGUAGE REVIEW
+    ↓
+FOUNDER COPY APPROVAL
+```
 
-Do not replace the rejected tagline with another slogan merely because the masthead or hero has space for one.
+Do not generate polished positioning first and search for justification afterward.
 
-Retired and rejected lines include:
+## Current product facts relevant to copy
+
+Current approved product direction is recorded in `docs/PROJECT_STATE.md`.
+
+At this boundary:
+
+- Portfilo is a business-and-technology media product;
+- working product model: focused business/technology briefing + original reporting;
+- News is the intended current/day-to-day editorial layer;
+- Features are the deeper layer;
+- intended public coverage labels: `Business / Technology / Startup / AI`;
+- newsletter/email acquisition is a primary product conversion;
+- Portfilo has **no geographic product promise**;
+- Portfilo remains free in v0;
+- no public newsletter cadence or reading-time promise is approved.
+
+These facts are inputs. They are not automatically homepage sentences.
+
+## No permanent tagline by default
+
+Portfilo uses a content-first / no-permanent-tagline architecture.
+
+Do not invent a slogan because the masthead or hero has empty space.
+
+Retired/rejected public lines and directions include:
 
 - `Practical intelligence for ambitious Filipinos.`
 - `Business and tech, from the Philippines.`
 - `Business and tech make more sense when you start from here.`
 - `Some stories start here. Others start somewhere else and matter here anyway.`
+- `A clearer picture of what's next.`
+- `News and deeper stories from Portfilo.`
+- `The important moves...`
+- `...with the context to understand what they mean.`
+- invented `stronger attention` language for the Philippines or Southeast Asia.
 
-Do not iterate on these lines in new public copy.
+The entire candidate set in `research/homepage-copy-v1.md` is rejected historical material. Do not polish, paraphrase, or smuggle it back into later copy.
 
-### What establishes the brand instead
-
-Portfilo's identity should come from:
-
-1. the wordmark and visual system;
-2. the subjects Portfilo covers;
-3. the lead story and latest stories;
-4. headline and dek quality;
-5. the About page when a reader wants more explanation;
-6. the Standards page when a reader wants to understand editorial rigor;
-7. Portfilo Brief when a reader wants the email product.
-
-The homepage should show the publication before it explains the publication.
-
-## Internal editorial center
-
-Portfilo's approved internal editorial center is understanding how technology is changing companies, industries, work, and the process of building businesses, with the Philippines as its primary reporting context and AI as its strongest current acquisition and reporting wedge.
-
-This is **internal strategy**, not public brand copy.
-
-It does not authorize a new tagline, masthead line, homepage mission statement, About rewrite, or repeated use of `Philippines`, `AI`, `work`, or `building` across public surfaces. Public copy should change only when the relevant page has a concrete communication problem and the proposed line has institutional authority.
-
-AI is a wedge, not Portfilo's whole identity. Public language should not make Portfilo sound like an AI-tools account, AI consultancy, or trend feed.
+Rejected output has zero authority.
 
 ## Geography
 
-Philippine relevance remains part of Portfilo's reporting and early distribution strategy, but geography is **not required brand copy**.
+Portfilo has **no geographic product-positioning promise**.
 
-Do not force `Philippines`, `Filipino`, `here`, `local`, or similar language into the masthead, hero, newsletter promise, or About page merely to establish identity.
+Do not force `Philippines`, `Filipino`, `Southeast Asia`, `regional`, `here`, `local`, or similar language into the masthead, homepage hero, newsletter promise, About copy, or product description merely to create differentiation.
 
-Use geography when it is actually part of the subject, source, market, company, regulation, price, person, event, or reader consequence being discussed.
+Use geography when it is a real part of the reported subject, source, market, regulation, price, person, company, event, or consequence.
 
-A Philippine story should sound Philippine because of the reporting, not because a generic paragraph has been added to prove that it belongs.
+A Philippine story should sound Philippine because of the reporting. A global story does not need a manufactured Philippine justification to belong.
 
-A global story does not need a manufactured Philippine justification to belong on Portfilo.
+Do not replace the retired Philippines-primary positioning with another invented regional modifier.
 
-## Initial audience
+## Audience
 
-The early audience is an internal editorial and distribution focus, not a public slogan.
+The early audience may guide internal editorial/distribution decisions, but it is not a public slogan.
 
-Portfilo is initially aimed at people trying to understand, work in, or build within the changing business and technology economy, especially readers whose work or decisions are increasingly shaped by software, AI, digital platforms, infrastructure, and company-building.
+Do not publicly flatter or label the audience as:
 
-That can include students, early-career professionals, operators, developers, designers, sellers, managers, founders, and other people trying to understand how companies and technology actually work.
-
-The Philippines is the primary reporting and early-distribution context, but this internal audience definition does not require every reader or every story to be Philippine-specific.
-
-Do not publicly label the audience as:
-
-- Gen Z;
-- young Filipinos;
 - ambitious Filipinos;
+- young Filipinos;
+- Gen Z;
 - future leaders;
 - builders of tomorrow;
 - high performers;
 - emerging decision-makers.
 
-Do not flatter the audience. Make the product worth reading.
+Do not manufacture belonging language. Make the product worth reading.
 
 ## Core voice
 
@@ -124,19 +139,17 @@ It should not sound:
 - motivational;
 - over-produced;
 - trend-chasing;
+- consultancy-like;
 - youth-marketed;
-- like a consultancy;
-- like a generic AI-written publication.
+- like a generic AI-created publication.
 
-## The main rule
+## Main editing rule
 
 > **Say the thing. Then stop.**
 
-This is an internal editing rule, not public brand copy.
-
 A sentence does not become better because it explains the strategy behind the previous sentence.
 
-If the reader understands what Portfilo is, what the story is about, or what an action does, extra connective copy is usually a deletion candidate.
+If the reader already understands the product, action, or subject, extra connective copy is usually a deletion candidate.
 
 ## Product clarity before positioning
 
@@ -153,126 +166,82 @@ Prefer copy that tells the reader:
 Avoid copy whose main job is to explain:
 
 - Portfilo's worldview;
-- why Portfilo is allowed to cover a subject;
-- why a global story can matter locally;
+- why Portfilo is allowed to cover something;
 - why Portfilo is useful;
 - why Portfilo is trustworthy;
-- why the reader belongs here.
-
-Those ideas should usually be demonstrated through the product.
+- why the reader belongs;
+- internal product strategy;
+- geographic permission;
+- editorial architecture;
+- implementation phases.
 
 ## Institutional-copy provenance
 
-Before approving a nontrivial public line that speaks for Portfilo, classify it.
+Before approving a nontrivial public line, classify it.
 
 ### Functional
 
-Describes what a page, link, button, form, route, or feature does.
+Describes what a control, page, route, form, or feature does.
 
-Authority: actual implementation.
+Authority: implementation.
 
 ### Operational
 
-Describes a real service condition or process such as newsletter cadence, confirmation, provider behavior, or current availability.
+Describes a real service condition or process such as confirmation, cadence, provider behavior, or availability.
 
-Authority: actual configuration or documented product behavior.
+Authority: actual configuration/documented behavior.
 
 ### Editorial / institutional
 
-Describes what Portfilo covers, publishes, requires, believes, intends, promises, or prioritizes.
+Describes what Portfilo covers, publishes, requires, intends, or promises.
 
-Authority: canonical repository document or explicit founder/editor approval.
-
-Generated language is not authority.
-
-Statements using verbs such as `believes`, `wants`, `cares`, `is interested in`, `exists to`, or `aims to` require special scrutiny because they often smuggle strategy into public copy.
+Authority: canonical repository decision or explicit founder/editor approval.
 
 ### Legal / privacy
 
 Describes data handling, terms, disclosures, rights, corrections, or commercial relationships.
 
-Authority: actual data flow/procedure plus appropriate legal/policy review where required.
+Authority: actual data flow/procedure plus appropriate policy/legal review where required.
 
 ### Promotional
 
-Claims a quality or benefit such as `best`, `smart`, `essential`, `trusted`, `clear`, `rigorous`, `practical`, or `must-read`.
+Claims a quality/benefit such as `best`, `smart`, `essential`, `trusted`, `clear`, `rigorous`, `practical`, or `must-read`.
 
-Default: reject unless a specific approved use and support exists.
+Default: reject unless a specific approved use and support exist.
 
-The site-wide copy audit should record this class and authority for every nontrivial public line.
-
-## Temporary coverage descriptors
-
-While Portfilo still relies on fixtures, a short functional descriptor may be used where the layout needs context.
-
-Preferred forms are literal, for example:
-
-> Business / Technology / Startups / AI / Building
-
-or, if a sentence is genuinely needed:
-
-> Stories about companies, products, markets, and the people building them.
-
-These are not taglines. They should not be repeated across every surface or treated as permanent brand assets without later evidence that they are useful.
-
-Portfilo now has real stories, so any descriptor previously justified as a fixture-era aid must be re-evaluated during the site-wide copy audit rather than retained automatically.
+Generated language is never its own authority.
 
 ## Writing rules
 
-### 1. Lead with information
+### Lead with information
 
 Do not make readers cross a paragraph of positioning before reaching the subject.
 
-Prefer:
+### Prefer concrete nouns and active verbs
 
-> The company raised ₱50 million.
-
-Over:
-
-> In a rapidly changing funding landscape, the company is entering its next phase of growth.
-
-### 2. Prefer concrete nouns and active verbs
-
-Prefer companies, people, products, prices, deals, markets, laws, jobs, customers, and decisions over abstractions when those concrete things exist.
+Prefer companies, people, products, prices, deals, markets, laws, jobs, customers, and decisions over abstractions when concrete things exist.
 
 Use the simplest accurate verb.
 
-### 3. One sentence should usually do one job
+### One sentence should usually do one job
 
-Natural writing can have long and short sentences. The goal is not uniformly short prose.
+Do not make one sentence carry subject, audience, geography, mission, benefit, and brand positioning simultaneously.
 
-The problem is sentences that try to explain the subject, audience, mission, geography, and brand promise at once.
+### Use familiar interface language
 
-### 4. Use familiar interface language
+Prefer ordinary labels such as:
 
-Prefer:
-
-- Stories
 - Latest
-- Read story
+- Features
 - Subscribe
-- About
+- Read Feature
 - Standards
+- Privacy
 - Back to home
 
-Do not rename familiar controls to make them feel branded.
+Do not brand a control merely to make it distinctive.
 
-### 5. Cut internal strategy from public copy
-
-Do not expose language about:
-
-- positioning architecture;
-- geographic permission;
-- beachhead audiences;
-- editorial systems;
-- content architecture;
-- reader payoff;
-- implementation phases;
-- why a subject is strategically in scope.
-
-Public copy is not a strategy memo.
-
-### 6. Do not claim qualities the work can prove
+### Do not claim qualities the work can prove
 
 Avoid repeatedly calling Portfilo:
 
@@ -285,65 +254,109 @@ Avoid repeatedly calling Portfilo:
 - evidence-driven;
 - ambitious.
 
-Standards can state procedures. Brand copy should not keep praising the publication.
+### Watch abstraction stacks
 
-### 7. Avoid abstraction stacks
+Words such as `intelligence`, `insights`, `innovation`, `ecosystem`, `landscape`, `journey`, `space`, `opportunity`, `context`, `transformation`, `what matters`, and `what's next` are warning signs when concrete information is available.
 
-Words such as `intelligence`, `insights`, `innovation`, `ecosystem`, `landscape`, `journey`, `space`, `opportunity`, `context`, and `transformation` are not banned.
+They are not mechanically banned. Unsupported abstraction is the problem.
 
-They are warning signs when concrete subjects could be named instead.
-
-### 8. Avoid AI-shaped structure
-
-A line can be grammatically correct and still fail.
+### Avoid AI-shaped structure
 
 Edit aggressively when copy relies on:
 
-- vague words such as `here`, `there`, `what matters`, or `what comes next` without a concrete referent;
+- vague `what matters` / `what comes next` language;
 - repeated `not X, but Y` constructions;
 - symmetrical slogan pairs;
 - three-part mission sentences;
 - `whether you're X, Y, or Z` audience framing;
 - `at the intersection of` language;
-- headline, dek, and paragraph all restating one idea;
-- every section headline sounding like a campaign slogan;
-- explanatory bridge sentences that exist mainly to make the positioning logically complete;
-- an unnatural level of polish where every line resolves neatly;
-- generic positivity or elevated vocabulary where a plain sentence works;
-- repeated rhetorical questions or sentence fragments used mainly to create rhythm;
+- headline/support/body all restating one idea;
+- every section heading sounding like a campaign slogan;
+- explanatory bridge sentences that exist only to make positioning feel complete;
+- unnatural polish where every line resolves too neatly;
+- generic positivity;
+- rhetorical fragments used only for rhythm;
 - institutional self-description without provenance.
 
-Do not mechanically ban rhetorical devices. Predictability and unnecessary explanation are the problem.
-
-### 9. Personality comes from editorial taste
-
-Do not manufacture humanity with slang.
-
-Personality should come from:
-
-- what Portfilo notices;
-- what questions it asks;
-- what details it includes;
-- what claims it challenges;
-- headline choices;
-- sentence rhythm that arises naturally from the material;
-- specific words that fit the subject.
-
-A plain sentence with a sharp observation is better than a branded sentence with no information.
-
-### 10. Preserve uncertainty
-
-Copy follows the same epistemic discipline as Portfilo journalism.
+### Preserve uncertainty
 
 If something is an estimate, claim, preview, hypothesis, or judgment, label it accurately.
 
-A more confident sentence is not automatically a better sentence.
+A more confident sentence is not automatically better.
 
-## Fast AI copy
+## Homepage copy
 
-Fast AI coverage must follow the same voice and evidence rules as other Portfilo work.
+Current homepage copy is an **open gate**.
 
-Do not use urgency or spectacle as a substitute for information. Avoid default language such as:
+Do not use the rejected first coded homepage or `research/homepage-copy-v1.md` as copy precedent.
+
+The current exact process is:
+
+1. build the Homepage Copy Evidence Matrix from the real reference corpus and approved Portfilo facts;
+2. founder selects a structural/reference direction;
+3. only then draft the minimum necessary homepage copy;
+4. trace each material line to its authority;
+5. founder approves the exact package;
+6. only then implement it in the static rebuild.
+
+The homepage should show the product quickly. It does not need a large institutional manifesto.
+
+No subscriber count, cadence, reading-time claim, quality claim, or geographic identity may be invented to make the hero stronger.
+
+## Newsletter / subscribe copy
+
+Newsletter copy is product copy.
+
+State only product behavior that is actually established.
+
+Current safe operational facts include:
+
+- subscription is free;
+- double opt-in confirmation is required;
+- unsubscribe is available;
+- no public fixed cadence has been approved.
+
+Existing runtime/email surfaces still use `Portfilo Brief` in places. The approved redesign direction is a later coordinated public naming migration to **Newsletter**. Do not perform or imply a piecemeal migration from a single copy edit.
+
+Do not use subscribe copy to explain Portfilo's worldview.
+
+Avoid default newsletter clichés such as:
+
+- curated intelligence;
+- exclusive insights;
+- stay ahead;
+- level up;
+- unlock;
+- your weekly dose;
+- smartest things you need to know.
+
+## Story headlines and deks
+
+For stories, the complete reader-facing package is **headline + dek** under `docs/EDITORIAL_PACKAGING_STANDARD.md`.
+
+### Headline
+
+Names the development, finding, question, tension, or argument.
+
+### Dek
+
+Adds useful information rather than translating the headline into another sentence.
+
+The same approved dek should travel with the headline across story page, homepage, and archive/listing surfaces.
+
+### Metadata description
+
+Story metadata defaults to the dek.
+
+Use optional `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline.
+
+Do not manufacture a third sentence merely because metadata exists.
+
+## Fast factual copy
+
+Fast factual coverage follows the same evidence and human-language rules.
+
+Avoid default hype such as:
 
 - insane;
 - crazy;
@@ -354,206 +367,52 @@ Do not use urgency or spectacle as a substitute for information. Avoid default l
 - X just killed Y;
 - the future is here.
 
-A fast update should state what materially changed and what is known. A test or showcase should state what was tested and what was observed. Vendor claims must remain distinguishable from Portfilo's own observations.
-
-Social or video copy may be concise and native to the platform, but it may not become more certain, promotional, or sensational than the underlying evidence.
-
-## Headlines
-
-A Portfilo headline should usually:
-
-- name a concrete development;
-- state a useful conclusion supported by reporting;
-- expose a real tension the story resolves;
-- ask a question the story genuinely answers;
-- tell the reader what company, technology, decision, or market the story is about.
-
-Prefer specific nouns and verbs.
-
-Question headlines are allowed but should not become a default template.
-
-Avoid empty curiosity gaps and generic `Here's why` framing when the actual subject can be named.
-
-## Headline and dek
-
-For stories, the complete reader-facing package is **headline + dek**. Follow `docs/EDITORIAL_PACKAGING_STANDARD.md`.
-
-### Headline
-
-Names the development, finding, question, tension, or argument.
-
-### Dek
-
-Adds useful information rather than translating the headline into a second sentence.
-
-Useful additions include:
-
-- the clearest defensible answer;
-- what was examined when that matters;
-- what changed;
-- a meaningful finding;
-- a material limitation;
-- the specific scope of the story;
-- why the subject matters now.
-
-One or two sentences is usually enough.
-
-The same approved dek should travel with the headline across the story page, homepage, and Stories archive. Do not create a different visible summary merely because the surface is a card or index.
-
-### Metadata description
-
-Story metadata defaults to the dek.
-
-A story may use optional `metaDescription` only when the approved dek has a concrete problem when separated from the headline on metadata surfaces. The override is not reader-facing card copy.
-
-Do not manufacture a third sentence because metadata exists. Do not use `This article explores`, `This story looks at`, or `This explainer shows` as generic scaffolding for a summary that the reader does not need.
-
-Do not add a metadata override merely to satisfy an imagined character target or SEO formula.
-
-## Homepage copy
-
-The homepage is content-first.
-
-Its main jobs are:
-
-1. establish that the visitor is on Portfilo;
-2. provide enough coverage context to orient them;
-3. show the lead story;
-4. show more stories;
-5. provide a path to Stories, About, Standards, and Subscribe.
-
-The homepage does **not** need a large institutional positioning sentence.
-
-### Homepage identity block
-
-The function and scale of the existing large identity block are reopened under the approved architecture.
-
-Preferred direction:
-
-- reduce it substantially; or
-- repurpose it into the lead story/current editorial focus.
-
-Do not preserve a giant empty brand headline area by inventing another slogan.
-
-### Homepage institutional copy
-
-If an About bridge remains on the homepage, keep it short and factual.
-
-It does not need to prove trust. Standards performs that job.
-
-## About copy
-
-About explains Portfilo plainly.
-
-It should answer:
-
-- what Portfilo is;
-- what it covers;
-- what kinds of stories it publishes;
-- who may find it useful;
-- where to read the editorial standards.
-
-It does not need:
-
-- a geographic philosophy;
-- a motivational mission statement;
-- a large audience slogan;
-- repeated claims of clarity, usefulness, or trust;
-- a founder-centered narrative.
-
-Founder treatment remains minimal unless deliberately reopened later.
-
-The 2026 vision alignment does not itself authorize a rewrite of the current About or homepage copy. Any future public change still requires a concrete communication reason, provenance, and normal approval.
-
-## Newsletter copy
-
-Subscribe is product copy.
-
-Lead with the product name and what arrives.
-
-Preferred pattern:
-
-> **Portfilo Brief**
->
-> New Portfilo stories by email.
-
-Then the form.
-
-State operational facts plainly:
-
-- no fixed schedule yet, if still true;
-- confirmation required, if relevant at the form step;
-- unsubscribe any time.
-
-Do not use the Subscribe page to restate Portfilo's mission, standards, audience theory, or geography.
-
-Avoid phrases such as:
-
-- curated intelligence;
-- exclusive insights;
-- stay ahead;
-- level up;
-- unlock;
-- your weekly dose;
-- the smartest things you need to know.
-
-## Standards, methodology, and corrections
-
-These surfaces remain literal and restrained.
-
-Accuracy and procedural clarity matter more than personality.
-
-Do not make corrections, disclosures, or methodology copy cute or promotional.
+State what materially changed and what is actually known. Keep vendor claims distinguishable from Portfilo observations.
 
 ## Repetition audit
 
-Before approving a page, check the whole surface rather than individual sentences only.
+Before approving a page, review the entire surface.
 
 Look for repeated:
 
 - topic lists;
-- `report / explain / evidence` loops;
-- claims of usefulness or trust;
-- audience descriptions;
 - newsletter promises;
+- claims of usefulness/trust;
+- audience descriptions;
 - sentence structures;
-- positioning language.
+- institutional positioning;
+- section headings that perform the same job.
 
-If one line already established the point, later lines should usually move on.
+If one line already established the point, later lines should move on.
 
-## Human-language gate
+## Human-language / slop gate
 
-Before any public line is approved, ask:
+Before approving a public line, ask:
 
-1. Does this sentence add information?
+1. Does it add information?
 2. Would a normal person say it aloud?
 3. Can it be shorter without losing meaning?
-4. Is it describing the product or explaining internal strategy?
-5. Does the reader need this before seeing a story?
+4. Is it describing the product or exposing internal strategy?
+5. Does the reader need it before seeing the journalism?
 6. Would removing it make the page clearer?
-7. Is there a concrete noun or verb available instead of an abstraction?
-8. Could this appear unchanged on a generic AI-generated publication?
-9. Did we write another sentence only because the previous one felt too simple?
-10. Is the journalism better placed to prove this claim than the brand copy?
-11. What is the provenance class for this institutional line?
-12. Would we still approve the line if we knew a model generated it without any stylistic context?
+7. Is there a concrete noun/verb available instead of an abstraction?
+8. Could it appear unchanged on a generic AI-generated publication?
+9. Did we add another sentence only because the previous one felt too simple?
+10. What is the provenance class and authority for this line?
+11. Did the model generate the message before the evidence/direction was fixed?
+12. Is any rejected direction being smuggled back in under new wording?
 
 If removing a sentence makes the page clearer, remove it.
 
-## Research basis
+## Relationship to the writing system
 
-The original content-first architecture was adopted after reviewing the failed Portfilo copy implementation and studying publications including BackScoop, Morning Brew, and The Hustle.
+`docs/WRITING_SYSTEM.md` remains the detailed authority for:
 
-The current writing system adds professional content-design and editorial-form guidance from Poynter, GOV.UK, Microsoft, and other form-specific references recorded in `docs/WRITING_SYSTEM.md`.
+- structural/stylistic/institutional authority;
+- story-form selection;
+- style research;
+- AI-slop audit;
+- public-copy provenance;
+- final writing gates.
 
-Editorial Packaging Architecture v1 additionally separates the visible headline/dek package from metadata infrastructure. Its research and decision record is `research/editorial-packaging/architecture-v1-decision.md`.
-
-The 2026 vision-alignment pass adds current evidence about the scale of the Philippine digital economy, uneven AI adoption and labor exposure, publisher movement toward original reporting/explanation and specialist distribution, and platform pressure against generic/automated content. Those findings inform internal strategy; they do not automatically create public copy.
-
-The key lesson is not to copy wording. Professional examples and guides can establish useful **forms, sequencing decisions, and editing tests**. They do not grant authority to imitate another publication's voice.
-
-See:
-
-- `docs/WRITING_SYSTEM.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
-- `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`.
+This file sets the public copy standard. The anti-slop skill controls the decision process before significant discretionary wording is produced.
