@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: REPOSITORY-SIDE QA PASS / LOCAL RUNTIME AND VISUAL QA PENDING_
+_Status: REPOSITORY + LOCAL RUNTIME QA PASS / VISUAL QA PENDING_
 
 ## Scope
 
@@ -11,8 +11,6 @@ This QA reviews the assembled draft story at:
 `src/content/stories/what-actually-makes-starting-a-business-hard.md`
 
 against the current Portfilo content schema, routing behavior, metadata implementation, approved editorial package, responsive story-page implementation, and publication checklist.
-
-This record does **not** claim that `npm run check`, `npm run build`, or browser rendering has passed unless those commands or renders are actually executed.
 
 ## Canonical branch state reviewed
 
@@ -23,6 +21,10 @@ Branch:
 Assembly commit reviewed:
 
 `9ca4e36c6006e033a8c7c0795cda4ddba6a01335`
+
+Repository-side QA record commit before local runtime validation:
+
+`4af8ec42ad89e2c62ab439c13746751ac856fa06`
 
 ## Content-entry integrity
 
@@ -44,7 +46,7 @@ No unapproved body rewrite was introduced during assembly.
 
 ## Schema compatibility
 
-Result: **PASS BY REPOSITORY INSPECTION**
+Result: **PASS BY REPOSITORY INSPECTION AND LOCAL ASTRO CHECK**
 
 `src/content.config.ts` permits:
 
@@ -57,15 +59,19 @@ Result: **PASS BY REPOSITORY INSPECTION**
 
 The schema requires `publishedAt` only after the story is changed to `published`.
 
+Local `astro check` later confirmed the assembled content passes the current schema and Astro diagnostics with zero errors, warnings, or hints.
+
 ## Draft isolation
 
-Result: **PASS BY REPOSITORY INSPECTION**
+Result: **PASS BY REPOSITORY INSPECTION AND PRODUCTION BUILD OUTPUT**
 
 Production homepage and Stories index queries include only stories whose status is `published`.
 
 The individual story route includes draft stories only when `import.meta.env.DEV` is true.
 
 Therefore the current draft is available for local development review but is excluded from production story routes and indexes while it remains `status: draft`.
+
+The local production build generated the three existing published story routes and did **not** generate `/stories/what-actually-makes-starting-a-business-hard/`, which is the expected behavior for a draft.
 
 ## Metadata wiring
 
@@ -153,24 +159,44 @@ This inspection is not a substitute for rendering the page in a browser on deskt
 
 ## Automated/runtime validation
 
-`npm run check`: **PENDING LOCAL EXECUTION**
+Local environment:
 
-`npm run build`: **PENDING LOCAL EXECUTION**
+`D:\Projects\Portfilo`
 
-Reason:
+### `npm run check`
 
-The connected repository provides source inspection but does not provide the user's local Windows runtime. The repository currently has no `.github/workflows` directory and the assembly commit has no associated GitHub Actions workflow runs, so there is no CI execution result that can substitute for local commands.
+Result: **PASS**
 
-The current `package.json` defines:
+Observed output on 2026-09-07:
 
-- `npm run check` -> `astro check`;
-- `npm run build` -> `astro check && astro build`.
+- Astro content synced successfully;
+- diagnostics completed across 18 files;
+- `0 errors`;
+- `0 warnings`;
+- `0 hints`.
+
+### `npm run build`
+
+Result: **PASS**
+
+Observed output on 2026-09-07:
+
+- the build's `astro check` stage completed with `0 errors`, `0 warnings`, and `0 hints`;
+- Astro static build completed successfully;
+- 11 production pages were generated;
+- build completed with no reported error.
+
+The absence of the new story route from the production static-route list is expected because the story remains `status: draft`.
 
 ## Visual QA
 
 Desktop browser render: **PENDING LOCAL EXECUTION**
 
 Mobile browser render: **PENDING LOCAL EXECUTION**
+
+Run `npm run dev`, then inspect:
+
+`/stories/what-actually-makes-starting-a-business-hard`
 
 Items to inspect locally:
 
@@ -186,19 +212,17 @@ Items to inspect locally:
 
 ## Publication checklist status
 
-Repository/editorial checks completed sufficiently to continue to runtime QA.
+Repository, editorial, schema, and local runtime checks are complete.
 
 The story must **not** be changed to `published` until all of the following are complete:
 
-1. `npm run check` passes;
-2. `npm run build` passes;
-3. desktop render is inspected;
-4. mobile render is inspected;
-5. any runtime/visual defects are resolved;
-6. explicit founder-editor publication approval is obtained.
+1. desktop render is inspected;
+2. mobile render is inspected;
+3. any visual defects are resolved;
+4. explicit founder-editor publication approval is obtained.
 
 ## Current verdict
 
-> **GO FOR LOCAL RUNTIME + VISUAL QA. NOT YET AUTHORIZED TO PUBLISH.**
+> **RUNTIME QA PASS. GO FOR FINAL DESKTOP + MOBILE VISUAL QA. NOT YET AUTHORIZED TO PUBLISH.**
 
-No editorial rewrite is currently required based on repository-side QA.
+No editorial or runtime revision is currently required.
