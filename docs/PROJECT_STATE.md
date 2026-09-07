@@ -67,7 +67,8 @@ Research basis:
 
 - `research/newsletter-copy-reference-corpus-v1.md`;
 - `research/portfilo-product-model-research-v1.md`;
-- `research/editorial-lens-four-issue-pilot-v1.md`.
+- `research/editorial-lens-four-issue-pilot-v1.md`;
+- `research/homepage-copy-evidence-matrix-v1.md`.
 
 ## Current implementation vs approved target
 
@@ -208,9 +209,34 @@ The older `public/images/homepage-feature-image.*` assets remain valid historica
 
 ## Homepage copy state
 
-**OPEN. NO FINAL HERO COPY APPROVED.**
+**STRUCTURE SELECTED. NO FINAL HERO COPY APPROVED.**
 
-The earlier `research/homepage-copy-v1.md` candidate set is **REJECTED / HISTORICAL / ZERO AUTHORITY**.
+Canonical copy-structure decision record:
+
+`research/homepage-copy-evidence-matrix-v1.md`
+
+Founder approved **Architecture A — Product/output first** on 2026-09-07.
+
+Approved structural contract only:
+
+```text
+[NEWSLETTER / PRODUCT LABEL]
+[BUSINESS-AND-TECHNOLOGY SUBJECT OR APPROVED COVERAGE FRAME]
+[FOCUSED BRIEFING + ORIGINAL REPORTING PRODUCT MODE]
+[EMAIL FORM + FREE ACTION]
+```
+
+Closest reference family:
+
+- Bloomberg Tech In Depth;
+- Platformer;
+- Stratechery.
+
+The structure was selected because it can be supported from current Portfilo facts without inventing a catch-up guarantee, cadence, reading-time promise, geography, subscriber proof, quality claim, public narrow lens, or permanent slogan.
+
+This approval does **not** authorize final wording. The next wording gate must be explicitly opened before drafting Homepage Copy v1.
+
+The earlier `research/homepage-copy-v1.md` candidate set remains **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
 Rejected generated directions include, among others:
 
@@ -230,8 +256,6 @@ Substantial homepage/newsletter copy must use the research-bound process in:
 - `skills/portfilo-anti-slop/SKILL.md`;
 - `docs/COPY_STYLE.md`;
 - `docs/WRITING_SYSTEM.md`.
-
-Do not draft polished Portfilo hero copy before the message/reference structure is selected.
 
 ## Newsletter infrastructure state
 
@@ -279,41 +303,48 @@ Do not let social work interrupt the current website redesign.
 
 This sequence is the current active roadmap. Update this section when the phase changes rather than creating another plan file.
 
-1. **Homepage Copy Evidence Matrix** — ACTIVE NEXT TASK.
-2. Founder selects one researched structural/reference direction.
-3. Draft the minimum Homepage Copy v1 from approved facts + selected structure, with line provenance.
-4. Founder approves exact homepage copy package.
-5. **Static Homepage Rebuild v1** from the approved composition and selected hero asset. No motion.
-6. Desktop / large-tablet / mobile visual QA and correction pass.
-7. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
-8. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
-9. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
-10. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
-11. Four-issue newsletter pilot.
-12. Motion pass: Latest ticker + approved micro-interactions only.
-13. Full QA, domain/release readiness, then intentional `main` release review.
-14. Resume Social Visual System v0.
+1. **Homepage Copy Evidence Matrix** — COMPLETE.
+2. Founder selects one researched structural/reference direction — COMPLETE: Architecture A approved.
+3. **Homepage Copy v1 wording gate** — ACTIVE NEXT GATE; final wording is not yet authorized.
+4. Draft the minimum Homepage Copy v1 from approved facts + Architecture A, with line provenance, only after explicit wording authorization.
+5. Founder approves exact homepage copy package.
+6. **Static Homepage Rebuild v1** from the approved composition and selected hero asset. No motion.
+7. Desktop / large-tablet / mobile visual QA and correction pass.
+8. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
+9. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
+10. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
+11. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
+12. Four-issue newsletter pilot.
+13. Motion pass: Latest ticker + approved micro-interactions only.
+14. Full QA, domain/release readiness, then intentional `main` release review.
+15. Resume Social Visual System v0.
 
 Do not skip ahead because a later task is easier or more interesting.
 
 ## Exact next task
 
-### Homepage Copy Evidence Matrix
+### Homepage Copy v1 — wording authorization gate
 
-**No final Portfilo hero wording yet. No runtime code change.**
+**Architecture A is approved. Final Portfilo hero wording is not yet authorized. No runtime code change.**
 
-Required deliverable:
+When the founder explicitly opens the wording gate, the drafting task is limited to the minimum copy package required by the approved homepage composition:
 
-- exact Portfilo facts currently supportable on the homepage/newsletter acquisition surface;
-- relevant structures from the real newsletter reference corpus;
-- 2-4 structural/message architectures without final Portfilo prose;
-- what each architecture requires Portfilo to claim;
-- each required claim marked `SUPPORTED`, `UNSUPPORTED`, or `NOT YET TESTED`;
-- reference products that demonstrate the structure;
-- one evidence-based recommendation;
-- then stop for founder approval of the direction.
+- hero/newsletter label;
+- hero headline/product promise using only Architecture A's approved fact classes;
+- one supporting sentence only if the composition and information job require it;
+- form placeholder/button/microcopy;
+- final newsletter signup copy.
 
-The next approval does not automatically authorize the wording gate unless explicitly stated.
+Requirements for that later drafting task:
+
+- use Architecture A from `research/homepage-copy-evidence-matrix-v1.md`;
+- trace every material line to approved Portfilo facts and the selected reference structure;
+- do not introduce a cadence, reading-time promise, catch-up guarantee, geography, subscriber proof, quality claim, public narrow lens, or permanent slogan;
+- do not reuse or lightly paraphrase rejected `research/homepage-copy-v1.md` wording;
+- keep `Portfilo Brief` -> `Newsletter` implementation migration separate and coordinated;
+- stop for founder approval of the exact copy package before implementation.
+
+Approval of Architecture A did not automatically authorize this wording task.
 
 ## Deployment / release readiness
 
@@ -351,4 +382,4 @@ Latest recorded local validation before this state-reconciliation cleanup:
 
 Do not infer a later build pass that was not run.
 
-This repository-state cleanup is documentation/workflow-only and does not itself create a new runtime validation result.
+The repository-state cleanup and copy-direction documentation updates are documentation/workflow-only and do not themselves create a new runtime validation result.
