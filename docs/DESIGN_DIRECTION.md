@@ -1,12 +1,12 @@
 # Portfilo Design Direction
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-08_
 
 ## Objective
 
 Portfilo should feel like a contemporary editorial product built for the internet, not a generic news template, SaaS landing page, AI-content product, or fake newspaper.
 
-Current working direction:
+Current direction:
 
 > **Premium editorial restraint + digital immediacy**
 
@@ -16,23 +16,21 @@ For nontrivial discretionary visual/product decisions, apply:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
-before recommending a direction.
-
 ## Current homepage authority
 
 Founder-approved composition contract:
 
 `research/homepage-redesign-v1.md`
 
-Current working-branch `src/pages/index.astro` is the **rejected first redesign attempt**. It may contain reusable behavior, but its layout, copy, scale, spacing, decorative choices, and hierarchy are not visual precedent.
+Homepage v2 was founder-approved on 2026-09-08 after reviewing the first static rebuild against Morning Brew and BackScoop composition references.
 
-The next homepage implementation must be a clean rebuild from the approved composition after homepage copy is approved and the exact selected hero asset is available.
+The current implementation target is a compact publication hierarchy, not a large marketing hero.
 
 ## Core visual principles
 
 ### 1. Editorial hierarchy before components
 
-Use differences in scale, typography, image treatment, placement, and whitespace to express editorial importance.
+Use scale, typography, image treatment, placement, and whitespace to express editorial importance.
 
 Avoid equal-card grids as the default. Cards are allowed only when they solve a real information problem.
 
@@ -46,101 +44,89 @@ Prefer:
 - serif contrast where it creates a meaningful slower Feature/reading mode;
 - natural variation in scale based on editorial importance.
 
-Do not use typography tricks merely to make the page feel designed.
+Do not use repeated eyebrows, index labels, or typography tricks merely to make the page feel designed.
 
 ### 3. Whitespace is structural
 
 Use deliberate whitespace to separate editorial jobs and protect reading rhythm.
 
-Do not maximize density merely because content exists.
-
-Do not use arbitrary spacer blocks to repair a composition that should be solved by grid/flex/layout structure.
+Do not maximize density merely because content exists. Do not use arbitrary spacer blocks to repair composition.
 
 ### 4. Evidence can be visual material
 
-When the journalism supports it, source documents, data, diagrams, methodology notes, calculations, and other evidence can become visual material.
+When journalism supports it, source documents, data, diagrams, methodology notes, calculations, and other evidence can become visual material.
 
-Do not make uncertain evidence look more authoritative through visual styling.
+Do not make uncertain evidence look more authoritative through styling.
 
 ### 5. Mobile is first-class
 
 Mobile is not a shrunken desktop composition.
 
-On mobile:
+Preserve readable line lengths, editorial order, usable form controls, accessible tap targets, and no horizontal page overflow.
 
-- preserve a clear editorial reading order;
-- maintain readable line lengths and strong hierarchy;
-- simplify two-column compositions intelligently;
-- avoid overlays/sidebars that obstruct reading;
-- preserve accessible tap targets and navigation.
+## Homepage v2 composition
 
-## Homepage composition
-
-The approved homepage structure is:
+Approved structure:
 
 ```text
 COMPACT HEADER
-Portfilo + Business / Technology / Startup / AI
-Latest | Features | Subscribe free
+smaller Portfilo wordmark
+Business / Technology / Startup / AI
+Features
 
-COMPACT NEWSLETTER HERO
-copy column + selected hero visual
+LIGHT-BLUE NEWSLETTER BAND
+approved acquisition copy
+email + Send me the news
 
-LATEST STRIP
+FULL-WIDTH LATEST TICKER
+static until Homepage v2 visual approval
 
-THE LATEST
-lead current item + supporting items/feed
+FEATURED STORY
+image
+headline
+minimal supporting copy
 
-A CLOSER LOOK
-one deeper Feature
+NEWS
+lead current item + supporting items
 
-FINAL NEWSLETTER SIGNUP
-
-MINIMAL FOOTER
+BLACK FOOTER ENDCAP
+compact newsletter signup
+minimal institutional/legal links
 ```
 
-### Hard text/image alignment rule
+`Latest` is a chronological view, not a content type. `News` and `Features` are the intended editorial layers. `Stories` should not be treated as the public product name merely because `/stories` remains the current technical route.
 
-For desktop and large-tablet side-by-side modules, especially Hero and Feature:
-
-- text and image live in the same grid row;
-- top edges align;
-- bottom edges align;
-- the module reads as one rectangle;
-- do not allow either side to hang materially lower;
-- do not insert decorative filler to force equal height.
-
-Once the module stacks on mobile, equal-height alignment no longer applies.
+Route/schema migration remains a later architecture task.
 
 ## Color
 
 Current Portfilo palette:
 
-- paper/off-white: `#f4f0e8` baseline, with restrained near-white variation allowed by the approved homepage composition;
+- paper/off-white: `#f4f0e8` baseline, with restrained near-white variation allowed;
 - ink: `#171614`;
 - muted neutral: `#69655e`;
 - line neutral: `#cbc5bb`;
 - Portfilo blue: `#0050a4`;
-- light blue on dark surfaces: `#8fc7ff`;
+- light blue: `#8fc7ff` as a brand reference, with restrained pale-blue surface derivations allowed for acquisition areas;
 - Portfilo red: `#b42318`.
 
 Blue is the primary functional accent for links, focus, active states, and newsletter actions.
 
-Red is rare and intentional. Do not use blue/red as mechanically balanced opposing page regions.
+Red is rare and intentional. Homepage v2 may use red as the small Latest ticker identifier accent.
+
+A near-black footer is approved as a strong publication endcap.
 
 No gradient-first identity.
 
 ## Typography
 
-Initial redesign baseline:
+Baseline:
 
 1. `Instrument Sans` for homepage, interface, navigation, metadata, and much display work;
 2. `Source Serif 4` for long-form/body and meaningful Feature contrast;
 3. `IBM Plex Mono` only for true utility/data/source/timestamp roles.
 
-The redesign reopens typography only after the first faithful static composition demonstrates a concrete problem. Do not add font dependencies merely to signal novelty.
-
-Avoid excessive monospaced labels and design-system decoration.
+Avoid excessive monospace and repeated eyebrow systems.
 
 ## Geometry and surfaces
 
@@ -159,9 +145,9 @@ Avoid by default:
 - glassmorphism;
 - default shadows;
 - glow;
-- decorative black panels;
+- decorative black panels in the page body;
 - gradient blocks;
-- `01 / 02 / 03` section-label systems used as decoration;
+- `01 / 02 / 03` decoration;
 - fake terminal styling;
 - faux-print/newsprint texture on the UI itself.
 
@@ -169,7 +155,7 @@ Avoid by default:
 
 Editorial imagery follows `docs/IMAGE_SYSTEM.md`.
 
-Preferred visual modes when the editorial job supports them:
+Preferred modes when the editorial job supports them:
 
 - owned/licensed/verified photography;
 - approved generated editorial illustration;
@@ -178,48 +164,24 @@ Preferred visual modes when the editorial job supports them:
 
 No image is required merely because a section feels empty.
 
+Homepage v2 explicitly uses **no hero image**. Imagery should be concentrated on actual News and Feature content.
+
 ### Grain as Portfilo image language
 
-Visible controlled print/film-like grain is an approved recurring trait for selected editorial imagery.
+Visible controlled print/film-like grain is an approved recurring trait for selected editorial imagery, not page backgrounds, forms, buttons, or the whole interface.
 
-Use it on appropriate hero/Feature/editorial visuals, not on:
+### Historical homepage hero selection
 
-- page backgrounds;
-- forms;
-- buttons;
-- body text;
-- the whole interface.
+`research/image-system/homepage-hero-selection-v1.md` records a previously selected architectural image. That asset is historical provenance only for the current Homepage v2 no-image hero treatment and must not be silently reintroduced.
 
-Grain should remain clean enough that geometry/details read clearly. It should not become faux-vintage distress.
-
-### New homepage hero
-
-Current selection authority:
-
-`research/image-system/homepage-hero-selection-v1.md`
-
-Founder selected generated architectural candidate 2.
-
-Required behavior:
-
-- monochrome/grayscale;
-- premium visible grain;
-- contemporary architectural/city geometry;
-- no embedded text/logos/UI;
-- no documentary claim;
-- live HTML disclosure such as `AI-generated editorial image`;
-- stable crop beside the hero copy.
-
-The exact binary is not currently committed. Do not regenerate or substitute it if unavailable.
-
-### Older homepage Feature image
+### Existing Feature image
 
 Existing assets:
 
 - `public/images/homepage-feature-image.png`;
 - `public/images/homepage-feature-image.webp`.
 
-These remain valid for their previous Feature/runtime job. They are not the selected new hero merely because they already exist.
+These remain valid for the current Feature job.
 
 ## Imagery anti-patterns
 
@@ -227,40 +189,33 @@ Reject by default:
 
 - robot heads;
 - glowing AI brains;
-- neon circuitry/cyberpunk technology shorthand;
+- neon circuitry/cyberpunk shorthand;
 - handshakes;
 - generic smiling business teams;
-- laptop/phone closeups used as generic technology symbolism;
-- anonymous executive staring at a skyline;
+- generic laptop/phone technology symbolism;
+- anonymous executive skyline imagery;
 - stock office meetings;
 - fake dashboards/screens/documents;
 - fake logos;
-- random abstract collage with no editorial job;
+- random abstract collage without an editorial job;
 - national/cultural symbols used only as decorative geographic signaling.
 
 ## Motion
 
-Motion is subordinate to static composition.
+Motion remains subordinate to static composition.
 
-**No decorative motion before static desktop/mobile surfaces are approved.**
+Homepage v2 static layout must be visually approved before automatic ticker motion is added.
 
-Later candidate motion:
+The immediate later ticker motion treatment should use:
 
-- slow Latest ticker movement;
-- visible pause/stop control;
+- slow horizontal movement;
+- pause behavior on hover/focus where applicable;
 - stationary/manual reduced-motion fallback;
-- restrained link/CTA feedback;
-- small image interaction only when useful.
+- touch-safe mobile behavior;
+- CSS first;
+- no obsolete `<marquee>`.
 
-Use CSS first. Do not add GSAP or another animation dependency unless a concrete approved interaction cannot be implemented cleanly without it.
-
-Avoid:
-
-- scroll-jacking;
-- decorative parallax;
-- fade-up on every section;
-- motion that delays reading;
-- movement added only to make the site feel premium.
+Avoid scroll-jacking, decorative parallax, fade-up on every section, or motion that delays reading.
 
 ## Accessibility
 
@@ -279,24 +234,12 @@ Accessibility is part of completion, not later polish.
 
 ## Development fixture rule
 
-Synthetic content may be used to test hierarchy, wrapping, density, and responsive structure only when it is:
-
-- clearly labeled as development fixture material;
-- obviously non-journalistic;
-- excluded from production.
+Synthetic content may be used to test hierarchy, wrapping, density, and responsive structure only when it is clearly synthetic, clearly labeled, and excluded from production.
 
 Do not fabricate realistic company/news claims merely to make a layout look populated.
 
 ## Design decision rule
 
 A new visual device requires a job and evidence, not merely taste.
-
-Before adding a nontrivial visual pattern, use the anti-slop skill to establish:
-
-- what problem it solves;
-- which approved constraints apply;
-- what references/professional patterns justify the approach when needed;
-- why simpler existing primitives are insufficient;
-- what must not be copied from references.
 
 Once a visual direction is founder-approved, implementation should execute it rather than silently redesign it.
