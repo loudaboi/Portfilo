@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, the follow-up homepage correction plan is founder-approved and runtime implementation is not yet authorized.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, the founder-approved follow-up homepage correction is implemented and fresh validation + desktop/tablet/mobile visual QA are pending.
 - `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Homepage-specific presentation clauses are subordinate to the newer correction contract where they differ.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -45,13 +45,13 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Design and imagery
 
-- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE FOLLOW-UP CORRECTION CONTRACT**.
-- `docs/DESIGN_DIRECTION.md` — current general visual principles aligned to the follow-up homepage contract.
+- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE FOLLOW-UP CORRECTION CONTRACT AND IMPLEMENTATION RECORD**.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles aligned to the implemented follow-up homepage contract.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 - `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
 - `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current top acquisition area uses no image.
-- `research/image-system/homepage-featured-cover-decision.md` — existing Feature artwork remains valid and is again the approved visual/layout asset for the next homepage pass.
+- `research/image-system/homepage-featured-cover-decision.md` — existing Feature artwork remains valid and is the current homepage Feature visual/layout asset.
 
 ### Product-model / newsletter research and copy
 
@@ -65,13 +65,13 @@ Current CTA authority:
 
 - header CTA: `Subscribe free`;
 - hero CTA: `Send me the news`;
-- contextual side-rail CTA may remain within already approved subscription wording unless separately reopened.
+- contextual side-rail CTA: `Subscribe`.
 
 Founder-approved contextual headline:
 
 `There's more to it than the headline.`
 
-A support description remains required beneath it. Exact final contextual wording remains open and must not be invented during implementation.
+A support description remains required beneath it. Exact final contextual wording remains open. Current runtime temporarily reuses the already-approved primary newsletter support copy rather than inventing a new claim. That reuse is not final contextual copy authority.
 
 ### Brand
 
@@ -108,7 +108,7 @@ The following are superseded and must not be treated as precedent:
 - prior Homepage v3 hero composition;
 - independently centered/narrowed Feature shell that changes the global left edge;
 - oversized Feature presentation;
-- synthetic Feature placeholder as the next-pass visual target;
+- synthetic Feature placeholder as the current visual target;
 - square Portfilo right-rail placeholder;
 - muted/light-blue full hero surface;
 - red ticker treatment;
@@ -131,33 +131,29 @@ The following remain for provenance only:
 
 `docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
-## Current runtime vs approved follow-up target
+## Current runtime: implemented follow-up homepage correction
 
-Current runtime still reflects the previous implemented correction. It currently includes:
+Current working-branch homepage now implements:
 
-- one shared 84rem / 1344px maximum shell;
+- one shared 84rem / 1344px maximum shell for header, hero, Feature, News, footer newsletter, and homepage footer alignment;
+- only the Latest ticker remains full-bleed;
 - header `Portfilo | Latest | Stories | Subscribe free`;
 - compact `[content] [signup]` hero using Instrument Sans;
 - hero CTA `Send me the news`;
+- 2 px Portfilo-blue rule above and below the shared hero unit;
 - black-only `Latest` identifier with light ticker rail;
-- synthetic Feature image placeholder;
-- Source Serif 4 Feature headline/dek;
-- blue contextual signup block plus square Portfilo placeholder;
-- News below Feature/right rail;
-- dark footer endcap;
-- no ticker motion.
-
-The founder-approved follow-up target supersedes the conflicting runtime details above and requires:
-
-- thin Portfilo-blue rule above and below the hero signup area;
-- return of the existing homepage Feature image;
-- 2–3 px Portfilo-blue top rule on Feature imagery and optionally News imagery;
+- existing homepage Feature image restored with natural responsive height;
+- 3 px Portfilo-blue top rule on the Feature image;
 - Instrument Sans Feature headline/dek;
-- removal of the square Portfilo right-rail placeholder;
 - one continuous blue editorial/newsletter rail;
-- one current-news teaser + short description + latest-news link inside that rail beneath the signup;
-- shared form-control system between hero and rail signup;
-- responsive stacking and content-height rail behavior on mobile.
+- contextual signup at the top of the rail;
+- one Latest teaser + short description + `See the latest news →` when an eligible item exists;
+- synthetic development fixture used for that teaser only in local development;
+- no fabricated production teaser when no additional eligible story exists;
+- News below Feature/rail, with its existing blue image-top placeholder treatment;
+- dark footer endcap preserved;
+- no ticker motion;
+- no route/schema/taxonomy migration.
 
 ## Information architecture authority
 
@@ -186,11 +182,11 @@ Existing assets remain:
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-They are not deleted or invalidated. The follow-up plan authorizes using the existing homepage Feature image for the next visual/layout pass with its natural responsive aspect ratio and a restrained blue top-image rule.
+The WebP asset is currently used on the homepage with its natural responsive aspect ratio and approved blue top-image rule.
 
 ### Square right-rail visual
 
-The square Portfilo brand placeholder is **REJECTED** for the next pass and has zero forward design authority.
+The square Portfilo brand placeholder is **REJECTED** and removed from current runtime. It has zero forward design authority.
 
 ### Historical architectural hero
 
@@ -198,7 +194,7 @@ The prior selected architectural image remains provenance only. The current top 
 
 ## Motion authority
 
-Ticker movement remains deliberately deferred until the corrected static desktop/tablet/mobile composition is implemented and founder-approved.
+Ticker movement remains deliberately deferred until the corrected static desktop/tablet/mobile composition is validated and founder-approved.
 
 ## Responsive authority
 
@@ -206,11 +202,13 @@ Responsiveness is a hard completion requirement for every homepage visual pass.
 
 Required QA includes wide desktop, 1440 px, 1366 px, tablet, and approximately 390 px mobile. No horizontal overflow is acceptable.
 
+Current blue rail is designed to stretch beside the Feature on larger screens and become content-height when stacked.
+
 ## Validation authority
 
-The follow-up correction plan is docs-only. It creates no new runtime validation result.
+The follow-up runtime implementation now exists, but fresh `npm run check` and `npm run build` have not yet been recorded as passing.
 
-Do not claim the follow-up correction is implemented or validated until runtime implementation is explicitly authorized and fresh `npm run check` and `npm run build` actually succeed.
+Do not claim the follow-up correction has passed validation until those commands actually succeed.
 
 ## Maintenance rule
 
