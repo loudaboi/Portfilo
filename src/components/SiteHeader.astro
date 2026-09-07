@@ -13,16 +13,6 @@ const { current } = Astro.props;
     <img src="/brand/portfilo-wordmark-color.svg" alt="Portfilo" />
   </a>
 
-  <p class="site-coverage" aria-label="Coverage: Business, Technology, Startup, AI">
-    <span>Business</span>
-    <span aria-hidden="true">/</span>
-    <span>Technology</span>
-    <span aria-hidden="true">/</span>
-    <span>Startup</span>
-    <span aria-hidden="true">/</span>
-    <span>AI</span>
-  </p>
-
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav__link" href="/stories" aria-current={current === "stories" ? "page" : undefined}>Features</a>
   </nav>
@@ -32,16 +22,16 @@ const { current } = Astro.props;
   .site-header {
     width: min(100%, var(--page-max));
     margin-inline: auto;
-    padding: 0.52rem var(--gutter);
+    padding: 0.72rem var(--gutter);
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: clamp(0.9rem, 2vw, 2.2rem);
+    grid-template-columns: auto 1fr;
+    gap: clamp(1.25rem, 2.5vw, 2.75rem);
     align-items: center;
     border-bottom: 1px solid var(--line);
   }
 
   .wordmark {
-    width: clamp(5.05rem, 5.8vw, 6.15rem);
+    width: clamp(6rem, 7.8vw, 8rem);
     display: block;
     line-height: 0;
   }
@@ -52,20 +42,6 @@ const { current } = Astro.props;
     height: auto;
   }
 
-  .site-coverage {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.42rem;
-    color: var(--muted);
-    font: 520 clamp(0.66rem, 0.7vw, 0.74rem) / 1 var(--sans);
-    white-space: nowrap;
-  }
-
-  .site-coverage span[aria-hidden="true"] {
-    color: var(--line-strong);
-  }
-
   .site-nav {
     justify-self: end;
     display: flex;
@@ -74,8 +50,8 @@ const { current } = Astro.props;
 
   .site-nav__link {
     position: relative;
-    padding-block: 0.24rem;
-    font: 560 clamp(0.72rem, 0.78vw, 0.8rem) / 1 var(--sans);
+    padding-block: 0.25rem;
+    font: 550 clamp(0.74rem, 0.82vw, 0.82rem) / 1 var(--sans);
     text-decoration: none;
     white-space: nowrap;
   }
@@ -84,7 +60,7 @@ const { current } = Astro.props;
     content: "";
     position: absolute;
     right: 0;
-    bottom: -0.15rem;
+    bottom: -0.16rem;
     left: 0;
     height: 1px;
     background: currentColor;
@@ -110,25 +86,15 @@ const { current } = Astro.props;
     }
   }
 
-  @media (max-width: 52rem) {
-    .site-coverage {
-      display: none;
-    }
-
+  @media (max-width: 38rem) {
     .site-header {
-      grid-template-columns: auto 1fr;
-    }
-  }
-
-  @media (max-width: 36rem) {
-    .site-header {
-      gap: 0.8rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      gap: 0.85rem;
+      padding-top: 0.68rem;
+      padding-bottom: 0.68rem;
     }
 
     .wordmark {
-      width: 4.85rem;
+      width: 5.7rem;
     }
 
     .site-nav__link {
