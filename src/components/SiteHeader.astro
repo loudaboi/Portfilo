@@ -14,6 +14,16 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
     <img src="/brand/portfilo-wordmark-color.svg" alt="Portfilo" />
   </a>
 
+  <p class="site-coverage" aria-label="Coverage: Business, Technology, Startup, AI">
+    <span>Business</span>
+    <span aria-hidden="true">/</span>
+    <span>Technology</span>
+    <span aria-hidden="true">/</span>
+    <span>Startup</span>
+    <span aria-hidden="true">/</span>
+    <span>AI</span>
+  </p>
+
   <nav class="site-nav" aria-label="Primary">
     <a class="site-nav__link" href="/#latest">Latest</a>
     <a class="site-nav__link" href="/stories" aria-current={current === "stories" ? "page" : undefined}>Features</a>
@@ -25,16 +35,16 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
   .site-header {
     width: min(100%, var(--page-max));
     margin-inline: auto;
-    padding: 0.72rem var(--gutter);
+    padding: 0.68rem var(--gutter);
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: clamp(1.25rem, 2.5vw, 2.75rem);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: clamp(1rem, 2.4vw, 2.6rem);
     align-items: center;
     border-bottom: 1px solid var(--line);
   }
 
   .wordmark {
-    width: clamp(6rem, 7.8vw, 8rem);
+    width: clamp(6rem, 7vw, 7.6rem);
     display: block;
     line-height: 0;
   }
@@ -45,16 +55,30 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
     height: auto;
   }
 
+  .site-coverage {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--muted);
+    font: 520 clamp(0.68rem, 0.72vw, 0.76rem) / 1 var(--sans);
+    white-space: nowrap;
+  }
+
+  .site-coverage span[aria-hidden="true"] {
+    color: var(--line-strong);
+  }
+
   .site-nav {
     justify-self: end;
     display: flex;
     align-items: center;
-    gap: clamp(0.9rem, 1.7vw, 1.6rem);
+    gap: clamp(0.9rem, 1.7vw, 1.55rem);
   }
 
   .site-nav__link,
   .site-nav__cta {
-    font: 550 clamp(0.74rem, 0.82vw, 0.82rem) / 1 var(--sans);
+    font: 560 clamp(0.73rem, 0.8vw, 0.81rem) / 1 var(--sans);
     text-decoration: none;
     white-space: nowrap;
   }
@@ -68,7 +92,7 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
     content: "";
     position: absolute;
     right: 0;
-    bottom: -0.16rem;
+    bottom: -0.18rem;
     left: 0;
     height: 1px;
     background: currentColor;
@@ -84,7 +108,7 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
   }
 
   .site-nav__cta {
-    padding: 0.66rem 0.9rem;
+    padding: 0.62rem 0.86rem;
     border: 1px solid var(--accent);
     background: var(--accent);
     color: #fff;
@@ -105,12 +129,21 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
     }
   }
 
-  @media (max-width: 38rem) {
+  @media (max-width: 62rem) {
+    .site-coverage {
+      display: none;
+    }
+
     .site-header {
       grid-template-columns: auto 1fr;
+    }
+  }
+
+  @media (max-width: 38rem) {
+    .site-header {
       gap: 0.85rem;
-      padding-top: 0.68rem;
-      padding-bottom: 0.68rem;
+      padding-top: 0.64rem;
+      padding-bottom: 0.64rem;
     }
 
     .wordmark {
@@ -126,7 +159,7 @@ const subscribeHref = current === "subscribe" ? "#signup-title" : "/#newsletter"
     }
 
     .site-nav__cta {
-      padding: 0.62rem 0.78rem;
+      padding: 0.6rem 0.76rem;
       font-size: 0.72rem;
     }
   }
