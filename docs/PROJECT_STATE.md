@@ -4,13 +4,13 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — HOMEPAGE V3 DESIGN APPROVED / IMPLEMENTATION AUTHORIZATION PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — HOMEPAGE V3 STATIC IMPLEMENTED / VALIDATION + VISUAL QA PENDING**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, and prior technical foundation remain in place.
 
 The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
-The founder has reviewed multiple homepage passes. Rejected implementation choices have zero visual authority. Homepage v3 is now the approved correction plan, but runtime implementation has not yet been authorized.
+Homepage v3 is now implemented on the working branch. The next gate is fresh runtime validation followed by desktop/mobile visual QA. Rejected earlier homepage choices have zero visual authority.
 
 ## Repository authority
 
@@ -75,7 +75,7 @@ Current behavior:
 - topic labels do not appear in the header;
 - no Subscribe CTA appears in the header.
 
-The deeper News / Features / Stories information architecture remains a later task. Do not create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during Homepage v3 work.
+The deeper News / Features / Stories information architecture remains a later task. Do not create `/news`, delete/redirect `/stories`, or migrate schema/taxonomy during Homepage v3 QA.
 
 Current `src/content.config.ts` still uses topics:
 
@@ -99,13 +99,13 @@ Withdrawn to draft:
 
 The published starting-business story remains the real Feature used for homepage visual QA.
 
-## Homepage v3 approved design
+## Homepage v3 authority
 
 Canonical composition record:
 
 `research/homepage-redesign-v1.md`
 
-Founder-approved Homepage v3 direction:
+Implemented Homepage v3 composition:
 
 ```text
 HEADER
@@ -114,9 +114,9 @@ Latest | Stories
 
 EDITORIAL NEWSLETTER ACQUISITION AREA
 warm white / paper surface
-editorial proposition + support line
+serif-led editorial proposition + support line
 stacked email field + Subscribe free
-restrained blue structural accent
+restrained blue structural rule
 
 LATEST STRIP
 black Latest label only
@@ -136,26 +136,28 @@ compact signup + minimal links
 
 Morning Brew and BackScoop are composition references only. Do not copy their branding, colors, proprietary wording, or distinctive layout treatment.
 
-## Homepage v3 top newsletter area
+## Homepage v3 implementation state
 
-Approved changes from the current runtime:
+Implemented in `src/pages/index.astro`:
 
-- warm white / paper surface remains;
-- no hero image;
-- no `NEWSLETTER` eyebrow;
-- no generic card/panel treatment;
-- stronger editorial composition through type/spacing rather than a colored background block;
-- headline may use Source Serif 4;
-- target headline roughly 44–48 px on large desktop;
-- target total desktop section height roughly 170–200 px;
-- stacked form rather than the current stretched horizontal row;
-- form roughly 420–480 px maximum on desktop;
-- input and CTA same width;
-- hero CTA is exactly `Subscribe free`;
-- CTA uses Portfilo blue with white text;
-- small free/unsubscribe note below;
-- one restrained blue structural rule/accent is allowed;
-- mobile stacks naturally.
+- warm-white top newsletter area with one restrained blue structural rule;
+- Source Serif 4 hero headline at a restrained editorial display scale;
+- hero form constrained to roughly 30 rem maximum and stacked input/button layout;
+- hero CTA changed from `Send me the news` to exact approved `Subscribe free`;
+- corrected Latest strip preserved with black `Latest` label and light headline rail;
+- Feature composition constrained to 88 rem maximum rather than consuming the full 100 rem page width;
+- Feature/story and newsletter-card columns changed to a more balanced approximately 63/37 relationship;
+- full Feature image remains uncropped with natural aspect ratio;
+- Feature headline reduced to the approved editorial range;
+- contextual blue newsletter card retains side-by-side desktop placement and mobile stacking;
+- contextual card headline changed to exact approved `There's more to it than the headline.`;
+- unresolved contextual-card support sentence is intentionally omitted rather than invented;
+- News and footer structures are otherwise unchanged;
+- no ticker motion;
+- no schema/taxonomy/route migration;
+- no article redesign.
+
+## Newsletter copy and behavior
 
 Approved primary acquisition copy remains:
 
@@ -165,74 +167,15 @@ Get ahead in business and tech in 7 minutes.
 The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.
 ```
 
-The 7-minute and three-times-per-week statements remain public operating promises.
+Homepage hero action label is now:
 
-## Latest strip
+`Subscribe free`
 
-Approved static treatment:
+Feature-side card founder-approved headline:
 
-- full viewport width;
-- only the `Latest` identifier is near-black/ink;
-- headline rail stays light;
-- blue category labels may remain;
-- no red ticker treatment;
-- no automatic ticker movement in Homepage v3 static implementation.
+`There's more to it than the headline.`
 
-Ticker motion remains the immediate post-static approval task.
-
-## Feature + contextual newsletter card
-
-The current runtime Feature is too large on wide desktop because the story column receives too much width while preserving the full image ratio.
-
-Homepage v3 approved fix:
-
-- constrain the Feature composition rather than crop the image;
-- dedicated module maximum roughly 88–92 rem;
-- desktop ratio roughly 62–65% story / 30–34% newsletter card;
-- gap roughly 32–48 px;
-- target Feature image roughly 800–850 px wide on large desktop;
-- preserve full image composition;
-- no fixed-height `object-fit: cover` crop;
-- image → headline → short dek;
-- headline roughly 40–48 px serif on large desktop;
-- no Feature eyebrow;
-- no `A CLOSER LOOK` title;
-- newsletter card must not be stretched to image height;
-- mobile stacks Feature then card.
-
-Founder-approved contextual card headline:
-
-```text
-There's more to it than the headline.
-```
-
-Exact one-sentence support copy for this card remains **OPEN / NOT YET APPROVED**. Do not copy BackScoop's support wording or silently invent a public claim.
-
-## News and footer
-
-News stays below the Feature area with one plain `News` heading. Do not redesign News during Homepage v3 unless implementation exposes a concrete defect.
-
-The near-black footer endcap remains approved for this pass. Do not redesign it unless QA exposes a defect.
-
-## Current runtime state vs Homepage v3 target
-
-Current runtime still reflects the prior correction pass, including:
-
-- `Latest | Stories` header;
-- warm-white top signup area;
-- hero CTA currently `Send me the news`;
-- hero form currently horizontal;
-- corrected light ticker rail with black `Latest` label;
-- Feature + newsletter card pairing;
-- full uncropped Feature image, currently too large on wide desktop;
-- temporary repeated primary newsletter copy in the Feature-side card;
-- News below Feature;
-- black footer endcap;
-- no ticker motion.
-
-These runtime details are not Homepage v3 authority where they conflict with the approved plan above.
-
-## Newsletter behavior
+Exact one-sentence support copy for the Feature-side card remains **OPEN / NOT YET APPROVED**. Homepage v3 omits it for now.
 
 Underlying newsletter behavior remains:
 
@@ -248,36 +191,67 @@ The coordinated public/email `Portfilo Brief` -> `Newsletter` migration remains 
 
 ## Motion state
 
-Automatic Latest ticker movement is not implemented yet by design.
+Automatic Latest ticker movement remains deliberately unimplemented.
 
-Sequence remains:
+Sequence:
 
-1. approve Homepage v3 static design — COMPLETE;
-2. explicitly authorize Homepage v3 implementation — **ACTIVE NEXT GATE**;
-3. implement only the approved v3 correction;
-4. run `npm run check` and `npm run build`;
+1. Homepage v3 static design approval — COMPLETE;
+2. Homepage v3 implementation authorization — COMPLETE;
+3. Homepage v3 static implementation — COMPLETE;
+4. **fresh `npm run check` + `npm run build` — ACTIVE NEXT VALIDATION STEP**;
 5. desktop/mobile visual QA;
 6. approve/fix static composition;
 7. add ticker movement;
 8. later News/Feature/Stories architecture and taxonomy work.
 
+Planned ticker motion after static approval:
+
+- slow continuous horizontal movement;
+- pause on hover/focus where applicable;
+- touch-safe mobile behavior;
+- stationary/manual `prefers-reduced-motion` fallback;
+- CSS first;
+- no obsolete `<marquee>`.
+
 ## Exact next task
 
-### Homepage v3 implementation authorization gate
+### Homepage v3 validation + visual QA
 
-No runtime code is authorized by the design approval alone.
+Run locally:
 
-The founder may now explicitly authorize:
+```text
+npm run check
+npm run build
+npm run dev
+```
 
-`Proceed with Homepage v3 implementation.`
+Then inspect at minimum:
 
-Once authorized, implementation is limited to the approved v3 contract. Do not add ticker motion, taxonomy migration, new routes, article redesign, or unrelated visual changes.
+- wide desktop / current normal browser viewport;
+- 1440×900 class desktop;
+- 1366×768 laptop if available;
+- mobile around 390 px width.
+
+Review specifically:
+
+- whether the top signup now feels editorial rather than cheap/plain;
+- hero height and stacked-form balance;
+- `Subscribe free` action prominence without looking like SaaS UI;
+- ticker remains light except for the black `Latest` identifier;
+- Feature image scale no longer dominates the viewport;
+- full Feature image remains visible without cropping;
+- Feature/card balance at wide desktop;
+- contextual card headline hierarchy;
+- News appears soon enough below the Feature;
+- mobile stacking and absence of horizontal overflow.
+
+Do not treat the missing contextual-card support sentence as a defect during this layout QA; it remains a separate open copy gate.
 
 ## Validation authority
 
-No fresh runtime validation was created by this docs-only approval record.
+Fresh `npm run check` and `npm run build` have **not yet been run against Homepage v3**.
 
-The current runtime must not be described as Homepage v3 or as newly validated until implementation occurs and actual `npm run check` / `npm run build` succeed.
+Do not claim a validation pass until those commands actually succeed.
 
 ## Deployment / release boundary
 
