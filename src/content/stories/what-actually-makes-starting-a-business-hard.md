@@ -2,7 +2,7 @@
 title: "What actually makes starting a business hard?"
 dek: "New businesses have to make important decisions with very little information about what is working and what is not."
 contentType: explained
-topic: building
+topic: business
 author: "Portfilo"
 publishedAt: 2026-09-07
 status: published
