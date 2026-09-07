@@ -4,7 +4,7 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE REBUILD AUTHORIZED**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE REBUILD IN PROGRESS**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, technical SEO/performance/accessibility/security work through the prior Phase 4C audit, and one current published Feature are in place.
 
@@ -98,7 +98,7 @@ The published starting-business story remains the real Feature candidate for red
 
 ## Homepage redesign state
 
-Canonical composition contract:
+Canonical composition provenance:
 
 `research/homepage-redesign-v1.md`
 
@@ -109,11 +109,11 @@ HEADER
 Portfilo + Business / Technology / Startup / AI
 Latest | Features | Subscribe free
 
-HERO
+COMPACT NEWSLETTER HERO
 newsletter label
 approved acquisition copy
 email form
-selected architectural hero visual
+no hero image
 
 LATEST STRIP
 
@@ -134,6 +134,19 @@ minimal institutional / legal links
 The previously planned standalone full-width final newsletter CTA is removed.
 
 The founder approved the BackScoop screenshot shared on 2026-09-08 as a **composition reference only** for the editorial-content + newsletter-card pairing. Do not copy BackScoop styling, colors, copy, branding, or proprietary visual identity.
+
+### Hero treatment
+
+On 2026-09-08 the founder explicitly chose a **no-image hero treatment for the first static build**.
+
+The hero is an acquisition area, not a full-screen or oversized marketing hero. It should:
+
+- stay compact enough that editorial content appears quickly;
+- use the approved newsletter copy and email form;
+- rely on typography, spacing, thin rules, and the Portfilo visual system rather than a decorative hero image;
+- reserve substantial imagery for actual News and Feature content.
+
+The previously selected architectural hero image remains historical provenance only. It is **not required for Static Homepage Rebuild v1 and must not block implementation**.
 
 ### Visual direction
 
@@ -206,36 +219,13 @@ This **supersedes the earlier section-specific-copy requirement** recorded in `r
 
 Context-specific copy for the editorial card and footer may be refined later after visual QA. Do not block the static build on that copy refinement.
 
-## Hero image
+## Historical hero image selection
 
-Founder selected generated architectural candidate 2.
-
-Selection/provenance record:
+Founder previously selected generated architectural candidate 2, recorded in:
 
 `research/image-system/homepage-hero-selection-v1.md`
 
-Approved character:
-
-- grayscale / monochrome;
-- premium print-like grain;
-- contemporary architectural/city geometry;
-- no embedded text or logos;
-- no documentary claim;
-- small live HTML disclosure such as `AI-generated editorial image`.
-
-Exact selected source asset:
-
-- filename: `cinematic_monochrome_city_architecture.png`;
-- dimensions: `1586 × 992`;
-- SHA-256: `855e089805034e0b4bb37fc701164a09cd3e3431e39af51350e9d49e540b7f56`.
-
-Prepared WebP derivative:
-
-- filename: `homepage-hero-v1-selected.webp`;
-- dimensions: `1586 × 992`;
-- SHA-256: `8759dcd49c3757ba014e439009e0818c8fff7e37e61b8ff25a6e581db19fc1a0`.
-
-**The exact selected binary is still not committed to the repository. Do not regenerate or silently substitute it.**
+That record remains useful for provenance, but the selected image is **not part of the current no-image homepage hero treatment**. Do not regenerate, substitute, or add it to Static Homepage Rebuild v1 unless the founder explicitly reopens the hero-image decision later.
 
 ## Newsletter infrastructure state
 
@@ -257,10 +247,10 @@ Existing public/email surfaces still use the operational name `Portfilo Brief` i
 ## Current implementation sequence
 
 1. Homepage redesign / visual direction — COMPLETE.
-2. Hero visual selection — COMPLETE.
+2. Hero visual exploration — COMPLETE; current v1 treatment is no image.
 3. Homepage newsletter copy — COMPLETE.
 4. Homepage acquisition placement — COMPLETE.
-5. **Static Homepage Rebuild v1 — AUTHORIZED / BLOCKED ONLY ON EXACT HERO ASSET.**
+5. **Static Homepage Rebuild v1 — IN PROGRESS.**
 6. Desktop / large-tablet / mobile visual QA and correction pass.
 7. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
 8. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
@@ -277,17 +267,16 @@ Do not skip ahead because a later task is easier or more interesting.
 
 ### Static Homepage Rebuild v1
 
-**IMPLEMENTATION AUTHORIZED. CURRENT BLOCKER: REQUIRED HERO BINARY.**
+**IMPLEMENTATION AUTHORIZED. NO HERO-ASSET BLOCKER.**
 
-Before editing runtime code, obtain the exact approved hero image and verify its hash when practical. If it is unavailable, ask the founder to upload/provide the approved image. Do not regenerate, recreate, reinterpret, or substitute another visual.
-
-Once the asset is available:
+Implementation requirements:
 
 - rebuild `src/pages/index.astro` from the approved composition rather than patching the rejected layout into shape;
+- keep the newsletter hero compact and typography/form-led, with no hero image;
 - reuse sound underlying newsletter/content/brand behavior where helpful;
 - implement the hero + Latest strip + The Latest + Featured/A Closer Look + editorial-paired signup card + compact footer signup;
 - use the approved hero copy in all three signup placements for this first build;
-- preserve the selected hero-image disclosure;
+- reserve imagery for real News/Feature editorial content rather than the newsletter hero;
 - no motion;
 - no taxonomy/schema migration;
 - no article/route redesign;
@@ -325,11 +314,11 @@ Remaining final-launch items include:
 
 ## Validation authority
 
-Latest recorded local validation before the current documentation-only decision updates:
+Latest recorded local validation before the current homepage implementation:
 
 - `npm run check`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes;
 - `npm run build`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes.
 
 Do not infer a later build pass that was not run.
 
-The current homepage composition and authorization updates are documentation/workflow-only and do not themselves create a new runtime validation result.
+The no-image hero decision is documentation/product-state reconciliation and does not itself create a new runtime validation result.
