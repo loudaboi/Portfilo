@@ -24,6 +24,10 @@
     color: #fff;
   }
 
+  :global(body.home-page) .site-footer {
+    padding-inline: max(var(--shell-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
   .site-footer__brand {
     width: 5.8rem;
     display: block;
@@ -72,6 +76,10 @@
       grid-template-columns: 1fr;
       align-items: start;
       padding-inline: var(--gutter);
+    }
+
+    :global(body.home-page) .site-footer {
+      padding-inline: var(--shell-gutter);
     }
 
     .site-footer__nav,
