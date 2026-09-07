@@ -29,8 +29,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state. As of 2026-09-08 it records the founder-approved **compact no-image homepage hero**, the revised newsletter placements, and Static Homepage Rebuild v1 as the active implementation/validation task.
-- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. Its older line describing one standalone final newsletter signup is superseded by the later homepage placement decision in `docs/PROJECT_STATE.md` until the scope file is synchronized.
+- `docs/PROJECT_STATE.md` — current phase, current target vs runtime, exact next task, validation state. As of 2026-09-08 it records **Homepage v2 implemented / local validation + visual QA pending**.
+- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. Its homepage surface list is broad inventory; exact current ordering lives in `docs/PROJECT_STATE.md` and `research/homepage-redesign-v1.md`.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -47,25 +47,25 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `research/STYLE_RESEARCH_TEMPLATE.md`
 - `research/STYLE_BRIEF_TEMPLATE.md`
 
-`docs/CONTENT_PLANNING.md` remains canonical for its planning gates, reader needs, evidence/feasibility checks, and assignment workflow. Its 2026-09-06 internal geography thesis and old five-topic public taxonomy are **superseded by the 2026-09-07 product decision recorded in `docs/PROJECT_STATE.md`**. Do not use those stale clauses to reintroduce a Philippines-first product promise or `Building` as an intended public coverage label. Full planning-taxonomy synchronization belongs to the later News/Feature architecture migration.
+`docs/CONTENT_PLANNING.md` remains canonical for its planning gates, reader needs, evidence/feasibility checks, and assignment workflow. Its old geography thesis and five-topic public taxonomy are superseded by later product decisions in `docs/PROJECT_STATE.md`. Do not use those stale clauses to reintroduce a Philippines-first product promise or `Building` as an intended public coverage label. Full planning-taxonomy synchronization belongs to the later News/Feature architecture migration.
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current visual principles. Its old homepage-composition and selected-hero-image clauses are superseded where they conflict with the later founder decisions in `docs/PROJECT_STATE.md`: Static Homepage Rebuild v1 uses a compact **no-image** newsletter hero, a Feature/newsletter paired module, and a compact footer signup.
+- `docs/DESIGN_DIRECTION.md` — **CURRENT** visual principles, updated for Homepage v2: smaller header, light-blue newsletter band, full-width static ticker, Feature before News, no decorative eyebrow system, and black footer endcap.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
-- `research/homepage-redesign-v1.md` — founder-approved redesign provenance. Its original hero-image requirement, standalone final newsletter CTA, and old active-task section are superseded by the 2026-09-08 decisions recorded in `docs/PROJECT_STATE.md`.
-- `research/image-system/homepage-hero-image-brief-v1.md` — historical brief/provenance for the architectural hero concept; no longer an active implementation requirement for Homepage Rebuild v1.
-- `research/image-system/homepage-hero-selection-v1.md` — **HISTORICAL SELECTION / PROVENANCE ONLY FOR THE CURRENT REBUILD**. The exact selected image must not be regenerated or silently substituted, but the founder has chosen not to use a hero image in Static Homepage Rebuild v1.
-- `research/image-system/homepage-featured-cover-decision.md` — current/historical authority for the older Feature-panel image, which remains eligible for its approved Feature job.
+- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE COMPOSITION CONTRACT**. Updated on 2026-09-08 for Homepage v2 after founder review of the first static rebuild.
+- `research/image-system/homepage-hero-image-brief-v1.md` — historical brief/provenance for the architectural hero concept; no longer an active Homepage v2 implementation requirement.
+- `research/image-system/homepage-hero-selection-v1.md` — **HISTORICAL SELECTION / PROVENANCE ONLY** for the current no-image homepage hero. Do not regenerate or silently substitute the selected image; also do not reintroduce it unless the founder reopens the decision.
+- `research/image-system/homepage-featured-cover-decision.md` — current/historical authority for the existing Feature image used by the homepage Feature treatment.
 
 ### Product-model / newsletter research and copy
 
-- `research/newsletter-copy-reference-corpus-v1.md` — current research corpus only; it grants no Portfilo copy authority by itself.
-- `research/portfilo-product-model-research-v1.md` — research record whose model recommendation remains useful internally. `Briefing` may describe an internal archetype in that research, but it is rejected as public homepage/newsletter acquisition language at the current boundary.
-- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design. Its in-file `awaiting founder approval` status is stale. The pilot is parked until the core redesigned site is built and now validates whether the approved 7-minute / three-times-per-week promise can be sustained operationally.
-- `research/homepage-copy-evidence-matrix-v1.md` — research/provenance record. Its former Architecture A hero selection is superseded for actual hero wording/structure by the founder's later acquisition-copy decision.
-- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE HERO COPY AUTHORITY**. It records the exact hero copy, the `latest news` acquisition promise, the 7-minute reading-time promise, the three-times-per-week cadence, and rejection of `briefing` as public acquisition language. Its earlier section-specific lower-signup rule is superseded for the first static build by the founder's explicit approval to reuse the hero copy in all three signup placements.
+- `research/newsletter-copy-reference-corpus-v1.md` — research corpus only; it grants no Portfilo copy authority by itself.
+- `research/portfilo-product-model-research-v1.md` — useful internal product-model research. `Briefing` may describe a historical/internal archetype but is rejected as public homepage/newsletter acquisition language.
+- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design, parked until the core site is built; later used to validate the approved 7-minute / three-times-per-week promise operationally.
+- `research/homepage-copy-evidence-matrix-v1.md` — research/provenance record. Its former Architecture A final-hero structure is superseded by later founder copy decisions.
+- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE ACQUISITION COPY AUTHORITY** for the headline/support line and newsletter promises. Homepage v2 additionally authorizes `Send me the news` as the homepage form action label.
 
 ### Brand
 
@@ -80,13 +80,13 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. `Portfilo Brief` still exists as the operational name on current runtime/email surfaces. The approved redesign direction is a later **coordinated** public naming migration to `Newsletter`; do not perform a piecemeal migration.
+The email infrastructure remains current. `Portfilo Brief` still exists as the operational name on current runtime/email surfaces. The approved redesign direction is a later **coordinated** public naming migration to `Newsletter`; do not perform a piecemeal migration during homepage work.
 
 ### Audience / distribution
 
 - `docs/SOCIAL_DISTRIBUTION.md` remains current strategy.
 
-Its former position as the immediate next project task is superseded. Social Visual System work is deferred until the redesigned website is stable.
+Social Visual System work remains deferred until the redesigned website is stable.
 
 ## Rejected / historical records with zero current decision authority
 
@@ -94,13 +94,11 @@ Its former position as the immediate next project task is superseded. Social Vis
 
 `research/homepage-copy-v1.md` is **REJECTED / HISTORICAL / ZERO AUTHORITY**.
 
-Do not use its Candidate A/B/C wording or lightly paraphrase it into the current homepage-copy work. This includes the rejected directions around `keep up`, `latest` used generically without the now-approved concrete promise, `business and technology, by email`, `news and deeper stories`, and `Get Portfilo in your inbox`.
-
 `research/homepage-copy-v2.md` is also **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**. Do not restore its briefing-led headline:
 
 `A briefing on business and technology, with original reporting from Portfilo.`
 
-The current hero authority is `research/homepage-hero-copy-v3.md`.
+The current acquisition-copy authority is `research/homepage-hero-copy-v3.md` plus the later Homepage v2 button-label decision in `research/homepage-redesign-v1.md` and `docs/PROJECT_STATE.md`.
 
 ### Historical copy/navigation records
 
@@ -116,34 +114,48 @@ Their old navigation, fixture-era copy, approval status, or `next task` language
 
 ### Removed duplicate plan
 
-`docs/EXECUTION_PLAN.md` was created during the 2026-09-07 redesign discussion but duplicated the existing project-state authority model. It is intentionally removed during state reconciliation. Its useful current decisions were reconciled into `docs/PROJECT_STATE.md`; it must not be recreated as a second current-phase authority.
+`docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated as a second current-phase authority.
 
-## Current runtime vs redesign target
+## Current runtime vs approved target
 
-Static Homepage Rebuild v1 has now replaced the rejected first homepage composition in `src/pages/index.astro` on the working branch.
+Homepage v2 is now implemented in `src/pages/index.astro` on `build/portfilo-v0` but remains **unvalidated locally and not yet founder-approved visually**.
 
-The current rebuild implements:
+Current Homepage v2 runtime includes:
 
-- compact no-image newsletter hero;
-- static Latest strip;
-- development-only News fixtures for hierarchy testing;
-- current Feature treatment using the approved existing Feature image;
-- Feature + newsletter-card pairing;
-- compact footer newsletter signup.
-
-`src/components/NewsletterSignup.astro` now supplies compact hero/card/footer variants while preserving the existing subscription behavior.
-
-`src/components/SiteHeader.astro` now exposes the intended `Business / Technology / Startup / AI` coverage labels as presentation text without performing the later schema/taxonomy migration.
+- smaller Portfilo header wordmark;
+- `Business / Technology / Startup / AI` presentation labels on wider screens;
+- `Features` as the primary editorial header link;
+- no header `Latest` link;
+- no header subscribe CTA;
+- compact light-blue no-image newsletter band;
+- `Send me the news` homepage signup action label;
+- full-width static Latest ticker with red label accent;
+- Feature immediately after the ticker with no section eyebrow or `A CLOSER LOOK` title;
+- News below the Feature with one plain `News` heading;
+- black footer newsletter endcap and dark site footer;
+- no automatic ticker movement yet;
+- no route/schema/taxonomy migration.
 
 The current content schema still uses:
 
 `business / technology / startups / ai / building`
 
-The approved target public coverage set is:
+The approved target public coverage set remains:
 
 `Business / Technology / Startup / AI`
 
-Do not confuse header presentation with an already completed schema migration.
+Do not confuse presentation labels with an already completed schema migration.
+
+## Homepage information architecture authority
+
+Current interpretation:
+
+- `News` = current/day-to-day content layer;
+- `Features` = deeper editorial layer;
+- `Latest` = chronological view, not a content type;
+- `Stories` = current technical route terminology, not intended reader-facing product naming.
+
+Do not create or migrate routes during Homepage v2 visual QA. The later News/Feature architecture gate owns that work.
 
 ## Homepage image authority
 
@@ -154,7 +166,7 @@ Current repository assets:
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-These remain valid for the Feature job and are used by the current static homepage Feature treatment.
+These remain valid for the Feature job and are used by Homepage v2.
 
 ### Historical architectural hero image
 
@@ -162,25 +174,30 @@ Founder previously selected generated architectural candidate 2. See:
 
 `research/image-system/homepage-hero-selection-v1.md`
 
-The current homepage hero deliberately uses **no image**. The historical selection remains preserved but is not an implementation dependency. Do not add or regenerate it unless the founder explicitly reopens that decision.
+Homepage v2 deliberately uses **no hero image**. The historical selection remains preserved but is not an implementation dependency.
+
+## Motion authority
+
+Ticker movement remains deliberately deferred until Homepage v2 static desktop/mobile composition is founder-approved.
+
+The immediate later motion pass may add slow CSS-based horizontal ticker movement with pause/focus behavior and a reduced-motion stationary/manual fallback.
 
 ## Validation authority
 
 Do not infer a current pass from an old record saying QA passed or was pending.
 
-Current validation state is recorded only in:
+Fresh Homepage v2 validation state is recorded only in:
 
 `docs/PROJECT_STATE.md`
 
-The current static homepage runtime changes require fresh validation. Documentation updates do not create a check/build pass.
+Homepage v2 requires actual `npm run check` and `npm run build` before a pass can be claimed.
 
 ## Maintenance rule
 
 When a later decision supersedes an older record:
 
-- preserve historical material when it is useful for provenance;
+- preserve historical material when useful for provenance;
 - update this status map if the older record could plausibly mislead later work;
 - update the governing canonical standard when the rule itself changed;
 - update `docs/PROJECT_STATE.md` whenever the current phase or exact next task changes;
-- do not duplicate current state across multiple new planning documents;
-- do not edit old history merely to make every old status line read as current when a clear status map is sufficient.
+- do not duplicate current state across new planning documents.
