@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: SUBJECT-LED SCOPE / CONTEXT DIRECTION APPROVED / DEK WORDING NOT YET APPROVED_
+_Status: DEK APPROVED / DESCRIPTION NOT YET APPROVED_
 
 ## Approved headline
 
@@ -160,11 +160,15 @@ For this article, candidate deks should:
 4. avoid trying to sound memorable by itself;
 5. leave the weak-sales explanation and the article's final lesson to the body.
 
-## Candidate gate
+## Approved dek
 
-No wording is approved yet.
+Founder/editor approved on 2026-09-07:
 
-Candidate generation may proceed within the researched subject-led scope/context behavior above. AI-generated wording remains proposal-only and has zero stylistic authority until founder/editor approval.
+> **New businesses have to make important decisions with very little information about what is working and what is not.**
+
+This wording is approved as the dek paired with the approved headline.
+
+The earlier version containing `often` is not the approved wording. The tighter version above removes the hedge and is the canonical dek unless explicitly reopened by the founder/editor.
 
 ## Boundary
 
