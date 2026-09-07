@@ -61,6 +61,21 @@ const tickerItems =
         title: story.data.title,
         href: `/stories/${story.id}`,
       }));
+
+const railNews =
+  devNews.length > 0
+    ? {
+        title: devNews[0].title,
+        dek: devNews[0].dek,
+      }
+    : storiesByDate
+        .filter((story) => story.id !== featureStory?.id)
+        .map((story) => ({
+          title: story.data.title,
+          dek: story.data.dek,
+        }))[0];
+
+const railNewsCtaHref = devNews.length > 0 ? "#news" : "#latest";
 ---
 
 <!doctype html>
@@ -132,10 +147,13 @@ const tickerItems =
                   href={`/stories/${featureStory.id}`}
                   aria-label={`Read ${featureStory.data.title}`}
                 >
-                  <span class="feature-image-placeholder" aria-hidden="true">
-                    <span>Feature image</span>
-                    <small>Development layout only</small>
-                  </span>
+                  <img
+                    src="/images/homepage-feature-image.webp"
+                    alt=""
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <span class="featured-story__disclosure">AI-generated editorial image</span>
                 </a>
 
                 <div class="featured-story__copy">
@@ -146,8 +164,8 @@ const tickerItems =
                 </div>
               </article>
 
-              <aside class="feature-rail" aria-label="Portfilo newsletter and brand visual">
-                <div class="feature-newsletter">
+              <aside class="feature-rail" aria-label="Portfilo newsletter and latest news">
+                <div class="feature-rail__signup">
                   <NewsletterSignup
                     id="home-feature-newsletter"
                     heading="There's more to it than the headline."
@@ -157,10 +175,16 @@ const tickerItems =
                   />
                 </div>
 
-                <div class="feature-brand-visual" aria-label="Portfilo brand visual placeholder">
-                  <img src="/brand/portfilo-wordmark-ink.svg" alt="Portfilo" />
-                  <span>Homepage visual placeholder</span>
-                </div>
+                {
+                  railNews && (
+                    <div class="feature-rail__latest">
+                      <p class="feature-rail__latest-label">Latest</p>
+                      <h3>{railNews.title}</h3>
+                      <p>{railNews.dek}</p>
+                      <a href={railNewsCtaHref}>See the latest news <span aria-hidden="true">→</span></a>
+                    </div>
+                  )
+                }
               </aside>
             </div>
           </section>
@@ -169,7 +193,7 @@ const tickerItems =
 
       {
         devNews.length > 0 && (
-          <section class="news-section" aria-labelledby="news-section-title">
+          <section class="news-section" id="news" aria-labelledby="news-section-title">
             <header class="news-section__heading">
               <h2 id="news-section-title">News</h2>
               <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
@@ -260,6 +284,7 @@ const tickerItems =
         --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
         --gutter: var(--shell-gutter);
         --grid-gap: clamp(1rem, 1.8vw, 1.75rem);
+        --signup-control-max: 28rem;
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --mono: "IBM Plex Mono", "Courier New", monospace;
@@ -294,7 +319,6 @@ const tickerItems =
       .newsletter-band {
         width: 100%;
         background: var(--paper);
-        border-bottom: 1px solid var(--line);
       }
 
       .newsletter-band__inner,
@@ -306,11 +330,13 @@ const tickerItems =
       }
 
       .newsletter-band__inner {
-        padding: clamp(1.55rem, 2.2vw, 2rem) 0;
+        padding: clamp(1.45rem, 2vw, 1.85rem) 0;
         display: grid;
         grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
-        gap: clamp(2.25rem, 3.4vw, 3.5rem);
+        gap: clamp(2.5rem, 3.2vw, 3.5rem);
         align-items: center;
+        border-top: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
       }
 
       .newsletter-band__copy h1 {
@@ -329,7 +355,7 @@ const tickerItems =
       }
 
       .newsletter-band__form {
-        width: min(100%, 31rem);
+        width: min(100%, var(--signup-control-max));
         min-width: 0;
         justify-self: end;
       }
@@ -421,7 +447,7 @@ const tickerItems =
         display: grid;
         grid-template-columns: minmax(0, 1.9fr) minmax(19rem, 1fr);
         gap: clamp(2rem, 2.7vw, 2.5rem);
-        align-items: start;
+        align-items: stretch;
       }
 
       .featured-story {
@@ -429,34 +455,30 @@ const tickerItems =
       }
 
       .featured-story__media {
+        position: relative;
         display: block;
-        aspect-ratio: 16 / 9;
-        background: var(--paper-soft);
-        color: var(--muted);
-        text-decoration: none;
         overflow: hidden;
-      }
-
-      .feature-image-placeholder {
-        width: 100%;
-        height: 100%;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         border-top: 3px solid var(--accent);
+        background: var(--paper-soft);
+        line-height: 0;
       }
 
-      .feature-image-placeholder > span {
-        color: var(--ink);
-        font: 620 clamp(1.3rem, 1.8vw, 1.8rem) / 1 var(--sans);
-        letter-spacing: -0.025em;
+      .featured-story__media img {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: grayscale(1);
       }
 
-      .feature-image-placeholder small {
-        font: 540 0.65rem/1.2 var(--sans);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+      .featured-story__disclosure {
+        position: absolute;
+        right: 0.65rem;
+        bottom: 0.6rem;
+        padding: 0.27rem 0.36rem;
+        background: rgba(23, 22, 20, 0.78);
+        color: #fff;
+        font: 520 0.57rem/1 var(--sans);
+        letter-spacing: 0.035em;
       }
 
       .featured-story__copy {
@@ -470,8 +492,8 @@ const tickerItems =
 
       .featured-story__copy h2 {
         max-width: 24ch;
-        font: 560 clamp(2rem, 2.45vw, 2.75rem) / 1 var(--serif);
-        letter-spacing: -0.035em;
+        font: 660 clamp(2rem, 2.45vw, 2.75rem) / 1 var(--sans);
+        letter-spacing: -0.04em;
       }
 
       .featured-story__copy h2 a {
@@ -488,50 +510,72 @@ const tickerItems =
         max-width: 48rem;
         margin-top: 0.5rem;
         color: var(--muted);
-        font: 420 clamp(0.92rem, 1vw, 1rem) / 1.48 var(--serif);
+        font: 420 clamp(0.92rem, 1vw, 1rem) / 1.48 var(--sans);
       }
 
       .feature-rail {
         min-width: 0;
-        display: grid;
-        gap: 1rem;
-        align-content: start;
-      }
-
-      .feature-newsletter {
-        min-width: 0;
+        min-height: 100%;
         padding: clamp(1.35rem, 2vw, 1.8rem);
+        display: flex;
+        flex-direction: column;
         background: var(--accent);
         color: #fff;
       }
 
-      .feature-newsletter :global(.newsletter-signup__copy h2) {
+      .feature-rail__signup {
+        min-width: 0;
+      }
+
+      .feature-rail :global(.newsletter-signup__copy h2) {
         color: #fff;
       }
 
-      .feature-brand-visual {
-        position: relative;
-        aspect-ratio: 1;
-        display: grid;
-        place-items: center;
-        border: 1px solid var(--line);
-        background: var(--paper-soft);
-        overflow: hidden;
+      .feature-rail__latest {
+        margin-top: auto;
+        padding-top: clamp(1.35rem, 2vw, 1.8rem);
+        border-top: 1px solid rgba(255, 255, 255, 0.34);
       }
 
-      .feature-brand-visual img {
-        width: min(52%, 11rem);
-        height: auto;
+      .feature-rail__latest-label,
+      .feature-rail__latest h3,
+      .feature-rail__latest p {
+        margin: 0;
       }
 
-      .feature-brand-visual span {
-        position: absolute;
-        right: 0.75rem;
-        bottom: 0.7rem;
-        color: var(--muted);
-        font: 520 0.58rem/1.2 var(--sans);
-        letter-spacing: 0.05em;
+      .feature-rail__latest-label {
+        color: rgba(255, 255, 255, 0.72);
+        font: 650 0.66rem/1 var(--sans);
+        letter-spacing: 0.06em;
         text-transform: uppercase;
+      }
+
+      .feature-rail__latest h3 {
+        max-width: 24ch;
+        margin-top: 0.55rem;
+        font: 650 clamp(1.2rem, 1.45vw, 1.5rem) / 1.08 var(--sans);
+        letter-spacing: -0.025em;
+      }
+
+      .feature-rail__latest > p:not(.feature-rail__latest-label) {
+        max-width: 34rem;
+        margin-top: 0.55rem;
+        color: rgba(255, 255, 255, 0.76);
+        font: 420 0.84rem/1.48 var(--sans);
+      }
+
+      .feature-rail__latest a {
+        display: inline-flex;
+        gap: 0.35rem;
+        margin-top: 0.9rem;
+        color: #fff;
+        font: 620 0.8rem/1.2 var(--sans);
+        text-decoration: none;
+      }
+
+      .feature-rail__latest a:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
       }
 
       .news-section {
@@ -712,7 +756,11 @@ const tickerItems =
         }
 
         .feature-rail {
-          width: min(100%, 30rem);
+          min-height: 0;
+        }
+
+        .feature-rail__latest {
+          margin-top: clamp(1.5rem, 4vw, 2rem);
         }
 
         .fixture-warning {
@@ -731,7 +779,7 @@ const tickerItems =
         }
 
         .newsletter-band__form {
-          width: min(100%, 31rem);
+          width: min(100%, var(--signup-control-max));
           justify-self: start;
         }
       }
@@ -771,6 +819,10 @@ const tickerItems =
 
         .featured-story__copy h2 {
           font-size: clamp(2rem, 9vw, 2.6rem);
+        }
+
+        .feature-rail {
+          padding: 1.25rem;
         }
 
         .news-section__heading {
