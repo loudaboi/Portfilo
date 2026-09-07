@@ -1,12 +1,12 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-06_
+_Last updated: 2026-09-07_
 
 ## Current phase
 
 **Portfilo v0 / Product Finalization - PHASE 4C TRACK 6 RELEASE READINESS OPEN / VISION ALIGNMENT V1 COMPLETE / PORTFILO TEST METHODOLOGY V0 COMPLETE / TEST EXECUTION DEFERRED / AUDIENCE & SOCIAL DISTRIBUTION V0 COMPLETE**
 
-Portfilo's publishing system, editorial/research/writing standards, three published launch stories, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, Portfilo Test Methodology v0, and Audience & Social Distribution Strategy v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
+Portfilo's publishing system, editorial/research/writing standards, four published story entries on the working branch, newsletter foundation, core visual direction, universal homepage feature image, v0 brand asset system, Phase 4C engineering/SEO/performance/accessibility/security/release-integrity work through Track 5, the approved Vision Alignment v1, Portfilo Test Methodology v0, and Audience & Social Distribution Strategy v0 are in place. Portfilo Test execution is intentionally deferred until there is an audience and/or a specific high-value Test candidate.
 
 Current parallel sequence:
 
@@ -124,13 +124,16 @@ Current global navigation:
 
 The wordmark links Home. The earlier `Latest` global-navigation contract is historical.
 
-### Published launch stories
+### Published stories
 
-Status: **COMPLETE / DEPLOYED USER REVIEW PASS**
+Status: **FOUR PUBLISHED CONTENT ENTRIES ON WORKING BRANCH / FIRST THREE DEPLOYED USER REVIEW PASS**
 
 1. `src/content/stories/build-things-that-make-the-next-thing-easier.md`
 2. `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`
 3. `src/content/stories/what-actually-changed.md`
+4. `src/content/stories/what-actually-makes-starting-a-business-hard.md`
+
+The fourth story completed its editorial, pre-publication runtime, and founder-editor visual QA workflow on 2026-09-07 and is marked `published` on `build/portfilo-v0`. The publication metadata change was not followed by a new local post-publication build; that caveat is retained in `research/stories/starting-a-business/prepublication-qa.md` and may be rechecked during a later release-readiness build.
 
 Story research packets and final reviews remain authoritative for story-specific evidence.
 
@@ -595,15 +598,18 @@ Newsletter state:
 | Vision Alignment v1 | PASS / FOUNDER APPROVED / DOCS ALIGNED |
 | Portfilo Test Methodology v0 | PASS / FOUNDER APPROVED / IMPLEMENTED / EXECUTION DEFERRED / NO SPECIFIC TEST AUTHORIZED |
 | Audience & Social Distribution Strategy v0 | PASS / FOUNDER APPROVED / CANONICAL |
-| Latest recorded `npm run check` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS / PRE-LOCKFILE-SYNC |
-| Latest recorded `npm run build` | PASS / USER-REPORTED / 2026-09-05 / PRE-VISION-DOCS / PRE-LOCKFILE-SYNC |
+| Starting-a-business article workflow | CLOSED / PUBLISHED ON WORKING BRANCH / PRE-PUBLICATION RUNTIME + VISUAL QA PASS / POST-PUBLICATION BUILD NOT RE-RUN |
+| Latest recorded `npm run check` | PASS / USER-REPORTED / 2026-09-07 / 0 ERRORS / 0 WARNINGS / 0 HINTS / BEFORE PUBLICATION-METADATA CHANGE |
+| Latest recorded `npm run build` | PASS / USER-REPORTED / 2026-09-07 / STATIC BUILD COMPLETE / 11 PAGES / BEFORE PUBLICATION-METADATA CHANGE |
 | Brand asset system | PASS / PHASE 4B CLOSED |
 | Default social preview | PASS / 1200 x 630 / OG METADATA + FACEBOOK + DISCORD VALIDATED |
 | Apple touch icon | PASS / CORRECTED + USER APPROVED + IMPLEMENTED |
 | Track 6 final production/release readiness | OPEN / DOMAIN-DEPENDENT ITEMS PENDING |
 | Final-domain configuration | PENDING DOMAIN |
 
-The Portfilo Test Methodology v0 implementation and Audience & Social Distribution Strategy v0 are documentation-only. They change no runtime code, dependencies, content schema, routes, navigation, design, or public Test/social output. No new `npm run check` or `npm run build` result is inferred from these documentation changes.
+The Portfilo Test Methodology v0 implementation and Audience & Social Distribution Strategy v0 are documentation-only. They change no runtime code, dependencies, content schema, routes, navigation, design, or public Test/social output.
+
+The 2026-09-07 local validation was run after the repository and editorial-system changes then present locally, but before the starting-a-business story's final `status: published` / `publishedAt` metadata change. Do not infer a post-publication build pass that was not executed.
 
 ## Exact next tasks
 
@@ -632,9 +638,9 @@ Portfilo Test execution remains deferred unless a later specific Test candidate 
 
 Current actionable items before the domain exists:
 
-1. if not already run locally after the lockfile metadata sync, run and record fresh `npm run check` and `npm run build` results;
-2. enable/verify Cloudflare Web Analytics on the temporary Pages deployment;
-3. continue temporary-production QA where useful.
+1. enable/verify Cloudflare Web Analytics on the temporary Pages deployment;
+2. continue temporary-production QA where useful;
+3. at a later release-readiness build, recheck the published starting-a-business route if fresh post-publication production-build evidence is required.
 
 Domain-dependent items remain deferred until the final public domain exists:
 
@@ -647,4 +653,4 @@ Domain-dependent items remain deferred until the final public domain exists:
 
 Do not merge to `main` merely because local checks pass. Final release still requires the environment-dependent Track 6 checks and explicit release approval.
 
-Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, Vision Alignment v1, Portfilo Test Methodology v0, or Audience & Social Distribution Strategy v0 unless a concrete implementation defect or new evidence justifies a new decision.
+Do not reopen approved Phase 4A image design, Phase 4B brand design, Track 5 institutional copy, Vision Alignment v1, Portfilo Test Methodology v0, Audience & Social Distribution Strategy v0, or the closed starting-a-business article workflow unless a concrete implementation defect or new evidence justifies a new decision.
