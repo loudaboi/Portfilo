@@ -22,9 +22,9 @@ Current founder-approved homepage contract:
 
 `research/homepage-redesign-v1.md`
 
-`docs/PROJECT_STATE.md` owns the current phase and implementation gate.
+`docs/PROJECT_STATE.md` owns the current phase and exact next task.
 
-The previously implemented Homepage v3 composition was visually rejected. The current authority is the later follow-up homepage correction plan.
+The previously implemented Homepage v3 composition was visually rejected. The current authority is the later founder-approved follow-up correction, now implemented on the working branch.
 
 ## Core visual principles
 
@@ -63,7 +63,7 @@ Do not use oversized empty marketing regions to signal premium design. Portfilo 
 The homepage has a hard alignment invariant:
 
 - header inner content, hero inner content, Feature area, News, and footer inner content share one common shell;
-- current large-desktop shell target is 84rem / 1344 px maximum;
+- current large-desktop shell is 84rem / 1344 px maximum;
 - individual homepage sections must not invent independent global max-width/centering rules;
 - internal grids may vary inside the shell;
 - **only the Latest ticker is full-bleed**.
@@ -86,7 +86,7 @@ Blue is the primary functional/editorial accent.
 
 Red is rare and intentional. Do not mechanically balance blue and red across page regions.
 
-Approved blue structural devices on the homepage now include:
+Approved blue structural devices on the homepage include:
 
 - thin blue rule above and below the top newsletter acquisition area;
 - thin 2–3 px blue rule at the top edge of Feature and News imagery;
@@ -104,7 +104,7 @@ Responsiveness is a hard completion requirement for every visual pass.
 
 ## Current homepage visual contract
 
-Approved structure:
+Implemented structure:
 
 ```text
 SHARED CONTENT SHELL
@@ -149,7 +149,7 @@ Use:
 
 ### Top newsletter acquisition area
 
-The top signup should behave like a compact publication acquisition unit:
+The top signup behaves as a compact publication acquisition unit:
 
 `[content] [signup]`
 
@@ -169,7 +169,7 @@ Use:
 - no vertical divider;
 - no gradient, shadow, card shell, or decorative icon.
 
-Hero and Feature-rail forms should share the same control system: height, border thickness, typography, padding, square geometry, and vertical rhythm. Exact widths may differ because the parent columns differ.
+Hero and Feature-rail forms share the same component/control system: height, border rhythm, typography, padding, square geometry, validation, and submission states. Exact widths may differ because the parent columns differ.
 
 ### Latest strip
 
@@ -187,7 +187,7 @@ Do not use the whole strip as a black bar and do not use red as the ticker treat
 
 Feature column:
 
-- use the existing homepage Feature image for the next visual pass;
+- use the existing homepage Feature image;
 - preserve its natural aspect ratio responsively;
 - no fixed-height crop;
 - add a 2–3 px Portfilo-blue top rule to the image only;
@@ -198,22 +198,22 @@ Feature column:
 
 Blue rail:
 
-- remove the square Portfilo brand placeholder;
+- no square Portfilo brand placeholder;
 - use one continuous blue panel;
 - contextual signup comes first;
 - then a thin internal divider;
 - then one current-news teaser with a short description;
-- then a clear latest-news link such as `See the latest news →`;
+- then `See the latest news →`;
 - no nested card inside the rail;
 - rail content stays top-aligned;
-- desktop/tablet rail may stretch to approximately the bottom of the full Feature module;
+- desktop/tablet rail may stretch with the Feature module;
 - mobile rail becomes content-height and must not preserve desktop equal-height behavior.
 
 Approved contextual signup headline:
 
 `There's more to it than the headline.`
 
-A one-sentence support description remains required, but exact final wording is a separate copy gate.
+A one-sentence support description remains required, but exact final wording is a separate copy gate. Runtime temporarily reuses the already-approved primary newsletter support line rather than inventing a new public claim.
 
 ### Editorial image-top rule
 
@@ -280,7 +280,7 @@ Preferred modes when the editorial job supports them:
 
 The current top acquisition area uses no hero image.
 
-The existing Feature image is again the approved visual/layout asset for the next homepage pass. It should remain responsive and uncropped.
+The existing Feature image is the current homepage visual/layout asset and remains responsive and uncropped.
 
 ## Responsive contract
 
@@ -305,7 +305,7 @@ Required behavior:
 
 Motion remains subordinate to static composition.
 
-The corrected static homepage must be implemented and visually approved before automatic ticker motion is added.
+The corrected static homepage must be validated and visually approved before automatic ticker motion is added.
 
 Later ticker motion should use:
 
