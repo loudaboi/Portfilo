@@ -1,223 +1,229 @@
 # Portfilo Working Instructions
 
+_Last updated: 2026-09-07_
+
 These instructions apply to any AI or human contributor working in this repository.
 
 ## 1. Repository authority
 
-The repository is the source of truth.
+The repository is the durable source of truth. Chat is a working session, not project memory.
 
-Before making changes, read:
+Read current authority in this order:
 
-1. `docs/PROJECT_STATE.md`
-2. `docs/V0_SCOPE.md`
-3. the relevant canonical standard
-4. nearby implementation files before editing them
+1. `AGENTS.md` — contributor, approval, and execution rules;
+2. `docs/PROJECT_STATE.md` — current phase, validated state, and **exact next task**;
+3. `docs/DOCUMENT_STATUS.md` — current vs historical/superseded document map;
+4. `docs/V0_SCOPE.md` — current v0 product boundaries;
+5. the canonical standard and approved decision record relevant to the task;
+6. current source code for actual runtime behavior.
 
-Do not rely on remembered chat context when repository files are available.
+Research records support decisions. They do not become current-phase authority merely because they are newer than an old implementation note. `docs/DOCUMENT_STATUS.md` records which research decisions have been promoted.
 
-## 2. Scope discipline
+Do **not** create a second execution-plan, roadmap, phase-state, or other file that competes with `docs/PROJECT_STATE.md` for the current phase or next task. If the sequence changes, update `docs/PROJECT_STATE.md` and the status map instead.
 
-Portfilo v0 is a publication, not a platform.
+When a current founder decision conflicts with a canonical file, reconcile the repository before relying on chat memory in a later session.
 
-Do not implement items from `BACKLOG.md` unless they are explicitly promoted into the current scope.
+## 2. Approval scope
 
-Do not add a dependency, service, framework, database, or abstraction merely because it may be useful later.
+Human approval applies only to the artifact, decision, or gate explicitly awaiting approval.
 
-Before adding a dependency, ask:
+A short response such as `I approve`, `yes`, or `go ahead` advances only that immediately pending gate unless the message explicitly authorizes additional named actions.
 
-- What current requirement needs it?
-- Can the requirement be met clearly with the existing stack?
-- What maintenance or runtime cost does it introduce?
-- Is the added complexity reversible?
+Do not infer authorization for:
 
-Prefer the simplest implementation that preserves a clean migration path.
+- drafting from research approval;
+- implementation from copy or design research approval;
+- image generation from image-brief approval;
+- publication from drafting or QA approval;
+- newsletter sending from template approval;
+- taxonomy migration from homepage approval;
+- deployment from local validation;
+- merge to `main` from publication or release readiness.
 
-### Human approval scope
+Publishing and release remain separate explicit boundaries. `main` is the release boundary.
 
-A human approval applies only to the artifact, decision, or gate explicitly awaiting approval.
+When uncertain, stop at the current gate.
 
-Do not treat approval of the current gate as authorization for a later workflow stage that has not yet been presented.
+## 3. Mandatory anti-slop decision gate
 
-Advance at most one human-controlled gate from a single approval unless the human message explicitly authorizes multiple named gates or actions.
+Before the first **nontrivial discretionary** Portfilo recommendation in a task or conversation, read and apply:
 
-A short response such as `I approve`, `yes`, or `go ahead` inherits only the immediately pending approval scope. It does not silently authorize downstream generation, publication, sending, deployment, deletion, or another consequential side effect.
+`skills/portfilo-anti-slop/SKILL.md`
 
-## 3. Current architecture rules
+Apply the skill again whenever the decision job or artifact class changes materially.
 
-For v0:
+This includes significant decisions about:
 
-- Astro + TypeScript
-- build-time Astro Content Collections
-- Markdown for stories
-- custom CSS
-- no frontend framework by default
-- no database
-- no authentication
-- no custom CMS
-- no custom newsletter backend beyond the approved single-purpose beehiiv subscription proxy in `functions/api/subscribe.js`
-- static deployment first
+- product direction;
+- information architecture;
+- homepage structure;
+- public copy and positioning;
+- newsletter product/format;
+- naming;
+- design direction;
+- imagery and visual concepts;
+- social creative systems;
+- editorial packaging;
+- other public-facing choices where several plausible answers exist.
 
-The newsletter proxy exists only so Portfilo can render its own accessible signup UI while beehiiv remains responsible for subscriber storage, confirmation, delivery, unsubscribe handling, and newsletter operations. Do not expand the proxy into a newsletter platform, subscriber database, account system, or general API layer without a new validated requirement.
+The skill is not a reason to add ceremony to literal maintenance, factual retrieval, or narrow bug fixes. But implementation of an approved contract may not silently introduce new material choices.
 
-React, Vue, Svelte, server rendering, database infrastructure, and application state libraries require a specific current need, not hypothetical scale.
+Core rule:
 
-## 4. Editorial integrity
+> **Do not generate the answer first and rationalize it afterward.**
 
-Do not fabricate journalism, quotes, interviews, statistics, sources, or placeholder findings.
+If the evidence is insufficient, leave the gate open instead of filling the space with plausible AI output.
 
-Design fixtures may use clearly labeled fictional structure, but must not look like real reported claims.
+## 4. Current technical architecture
 
-Any publishable factual story must follow:
+For v0, unless `docs/PROJECT_STATE.md` records an explicitly approved change:
 
-- `docs/EDITORIAL_STANDARD.md`
-- `docs/RESEARCH_STANDARD.md`
-- `docs/WRITING_SYSTEM.md`
-- `docs/STYLE_RESEARCH_STANDARD.md`
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`
-- `docs/PUBLISHING_STANDARD.md`
+- Astro + TypeScript;
+- static-first output;
+- Astro Content Collections;
+- local Markdown;
+- custom CSS;
+- minimal client-side JavaScript;
+- no frontend framework by default;
+- no database;
+- no authentication;
+- no custom CMS;
+- no custom newsletter backend beyond the existing narrow beehiiv subscription proxy in `functions/api/subscribe.js`;
+- Cloudflare Pages deployment;
+- beehiiv owns subscriber confirmation, storage, delivery, and unsubscribe handling.
 
-AI is an assistant for research organization, analysis, challenge, drafting, and editing. AI output is not evidence.
+Do not add a dependency, service, framework, database, abstraction, or runtime layer for hypothetical scale.
 
-AI output also has zero stylistic authority. Do not let a model silently invent a story form, institutional position, house voice, or rhetorical style and then treat the generated prose as precedent.
+Before adding a dependency, establish:
 
-Before Draft 1 of every substantial story:
+- the current requirement;
+- why the existing stack cannot meet it cleanly;
+- maintenance/runtime cost;
+- reversibility.
 
-- research the subject and evidence first;
-- identify and record the primary reader need and audience assumptions;
-- research the appropriate professional writing form;
-- review 2-4 relevant human-edited exemplars by default, chosen because they solve a similar writing problem rather than because they are famous or cover the same topic;
-- create `style-research.md` using `research/STYLE_RESEARCH_TEMPLATE.md`;
-- use exemplars to study transferable editorial decisions such as lead behavior, thesis timing, paragraph development, evidence handling, transitions, person, counterargument, and ending;
-- do not imitate distinctive wording, cadence, metaphors, jokes, branded terminology, or another publication's institutional voice;
-- create or revise `style-brief.md` using `research/STYLE_BRIEF_TEMPLATE.md`;
-- approve the style brief before drafting.
+## 5. Editorial and research integrity
 
-The sequence is:
+Do not fabricate journalism, quotes, interviews, statistics, sources, screenshots, documents, or findings.
 
-`subject research -> evidence -> story decision -> reader need -> form research -> human-edited style research -> style-research.md -> style-brief.md -> approval -> draft`
+For substantial publishable factual work, follow the applicable standards:
 
-Do not skip from an approved idea or structure directly to generated prose.
+- `docs/CONTENT_PLANNING.md`;
+- `docs/EDITORIAL_STANDARD.md`;
+- `docs/RESEARCH_STANDARD.md`;
+- `docs/WRITING_SYSTEM.md`;
+- `docs/STYLE_RESEARCH_STANDARD.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
+- `docs/PUBLISHING_STANDARD.md`.
 
-For story packaging, follow `docs/EDITORIAL_PACKAGING_STANDARD.md`. Treat **headline + dek** as the complete reader-facing editorial package. The same dek should travel with the headline across the story page, homepage, and Stories archive. Do not manufacture a third visible story-summary sentence merely because metadata exists. A story may use optional `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline; otherwise metadata should fall back to the dek. When the packaging job is materially different from the body-writing job, research relevant human-edited headline/dek or headline/standfirst examples before proposing wording.
+AI output has zero evidentiary authority.
 
-Existing published Portfilo prose is not automatically an approved style exemplar. It must first pass the current writing-system audit.
+Prefer primary sources, record evidence before drafting, search for contradictory evidence, distinguish fact/claim/estimate/inference/opinion, preserve material caveats, and do not strengthen a headline beyond the evidence.
 
-If a story is materially reframed, re-research the writing approach rather than forcing the old style packet onto the new assignment.
+If evidence is insufficient, say so, continue research, narrow the claim, or do not publish it.
 
-## 5. Research integrity
+## 6. Writing and public copy
 
-For factual work:
+AI output has zero automatic stylistic, structural, or institutional authority.
 
-- prefer primary sources;
-- record evidence before drafting;
-- distinguish fact, reported claim, estimate, inference, and opinion;
-- search for contradictory evidence;
-- verify material claims against sources;
-- preserve meaningful caveats;
-- never strengthen a headline beyond the evidence.
+For significant public copy, follow:
 
-If evidence is insufficient, say so or do not publish the claim.
-
-## 6. Design and copy discipline
-
-Follow `docs/DESIGN_DIRECTION.md`.
-
-Public-facing copy must follow:
-
+- `skills/portfilo-anti-slop/SKILL.md`;
 - `docs/COPY_STYLE.md`;
 - `docs/WRITING_SYSTEM.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` for story headlines, deks, and optional metadata-description overrides;
-- `docs/STYLE_RESEARCH_STANDARD.md` when a copy task involves meaningful editorial discretion.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` where story packaging is involved.
 
-Do not default to generic SaaS components, card grids, gradients, glassmorphism, or decorative motion.
+For substantial stories, use the style-research and style-brief workflow before Draft 1.
 
-Prefer typography, composition, photography, data, whitespace, and evidence as the visual language.
+For significant homepage, newsletter, About, positioning, campaign, or other institutional copy, do not jump directly from strategy to polished prose. Research the communication problem, separate approved Portfilo claims from reference patterns, obtain the required direction approval, then draft.
 
-Mobile is a first-class layout, not a compressed desktop design.
+Existing Portfilo copy is not precedent merely because it is committed or deployed. Rejected copy has zero authority and must not be lightly paraphrased back into a later draft.
 
-For public copy:
+## 7. Design and imagery
 
-- use familiar interface labels before branded alternatives;
-- keep internal project language out of production surfaces;
-- prefer clear, concrete, useful language over promotional or AI-shaped phrasing;
-- express Filipino specificity through real context rather than decorative slang or clichés;
-- do not invent what Portfilo `believes`, `wants`, `cares about`, `is interested in`, or `exists to do` without canonical or explicit human authority;
-- classify nontrivial institutional copy by functional, operational, editorial/institutional, legal/privacy, or promotional provenance before approval;
-- for significant About, Standards, Subscribe, newsletter, or other discretionary copy rewrites, research comparable professional examples and content-design guidance before drafting;
-- small literal maintenance copy whose wording is dictated by actual behavior does not require an artificial multi-exemplar exercise.
+Follow:
 
-### Editorial image generation
+- `skills/portfilo-anti-slop/SKILL.md` for discretionary visual/product decisions;
+- `docs/DESIGN_DIRECTION.md`;
+- `docs/IMAGE_SYSTEM.md`;
+- the current approved design/image records named in `docs/DOCUMENT_STATUS.md`.
 
-Generated editorial imagery must follow `docs/IMAGE_SYSTEM.md`.
+Do not default to generic SaaS layout, card soup, gradients, glassmorphism, glow, rounded-everything UI, fake newspaper styling, decorative motion, or generic business/AI imagery.
 
-> **Research the visual problem before asking AI to generate the image.**
+Mobile is a first-class layout.
 
-> **AI output has zero visual authority.**
+Generated editorial imagery is illustration, not documentary evidence. For substantial generated imagery:
 
-For substantial story imagery:
+1. establish the image job;
+2. research/extract the visual problem;
+3. select a concept;
+4. create/approve the brief;
+5. prepare the exact generator instruction;
+6. obtain separate explicit generation authorization;
+7. generate candidates;
+8. audit physical logic, factual implication, crop, artifacts, disclosure, and system fit;
+9. require human image selection;
+10. implement only after the relevant implementation gate.
 
-- do not begin with an image prompt;
-- perform the image-necessity gate and story/evidence extraction first;
-- develop 2-3 concept candidates from approved editorial material;
-- require human concept selection;
-- create `research/stories/<story-slug>/image-brief.md` using `research/IMAGE_BRIEF_TEMPLATE.md`;
-- obtain explicit human approval of the image brief;
-- derive generator instructions from the approved brief rather than letting the model invent scene, symbolism, subject, palette, or factual implications;
-- present the derived generator instruction for human inspection before generation;
-- obtain separate explicit human authorization to generate candidates;
-- never invoke image generation in the same turn that the human approves the image brief unless that same human message explicitly approves the brief **and** explicitly authorizes image generation;
-- before any image-generation call, verify that the approved brief exists, the generator instruction has already been presented, and the current human message explicitly authorizes generation or directly answers yes to the immediately preceding question asking whether to generate;
-- treat generated imagery as editorial illustration, never documentary evidence;
-- do not generate real-person likenesses, fake screenshots, fake source documents, fake logos, or invented documentary scenes for v0 editorial heroes;
-- audit candidates for factual implication, brief compliance, visual artifacts, crop behavior, accessibility role, disclosure, and color compliance;
-- require human final image selection before implementation.
+Do not silently regenerate or substitute an approved image when the exact selected asset is missing. Ask for the asset.
 
-Brief approval and generation authorization are separate gates. Do not infer the second from the first.
+## 8. Implementation discipline
 
-A generated image is not approved merely because it looks good. The first generated Portfilo image also does not become visual precedent merely because it was first.
+Before editing runtime code:
 
-## 7. Implementation discipline
-
-Before editing:
-
-- inspect the current code;
-- understand the existing pattern;
+- verify the current branch/HEAD;
+- read the current phase and exact task;
+- inspect nearby implementation;
+- identify which decisions are already locked;
 - modify only what the task requires.
 
-After editing:
+An approved design/copy/product contract is not an invitation for implementation-time creative improvisation.
 
-- run the relevant build/type checks;
-- inspect the affected pages;
-- fix errors introduced by the change;
-- update `docs/PROJECT_STATE.md` at meaningful phase boundaries.
+If a material choice is missing, surface the gap instead of inventing it.
 
-Never claim validation passed unless it was actually run.
+After runtime edits:
 
-## 8. Chat handoffs
+- run the relevant checks;
+- inspect the affected pages/behavior;
+- fix regressions introduced by the change;
+- record validation accurately.
 
-A new ChatGPT conversation should not need the previous transcript.
+Never claim a check passed unless it actually ran. Documentation-only work does not create a new runtime validation pass.
 
-At a phase boundary:
+## 9. Scope discipline
+
+Do not implement items from `BACKLOG.md` unless they are explicitly promoted into current scope.
+
+Do not reopen completed decisions merely because a later task is difficult. Reopen only when:
+
+- the founder explicitly changes the decision;
+- implementation exposes a concrete contradiction/defect;
+- new evidence materially changes the basis of the decision.
+
+Keep historical records for provenance when useful, but mark them clearly so they cannot override current authority.
+
+## 10. Chat handoffs
+
+A new conversation should be able to continue from the repository without the previous transcript.
+
+At a meaningful boundary:
 
 1. commit stable work;
-2. update `docs/PROJECT_STATE.md`;
-3. record unresolved issues;
-4. record the exact next task;
-5. optionally create `portfilo-context.zip` from the stable commit.
+2. update `docs/PROJECT_STATE.md` if current phase/next task changed;
+3. update `docs/DOCUMENT_STATUS.md` when authority changed;
+4. record unresolved issues and required assets;
+5. provide a handoff prompt that names the exact next task and approval boundary.
 
-Suggested new-chat instruction:
+The new chat should verify branch/HEAD before any write.
 
-> Continue Portfilo from this repository snapshot. Read `AGENTS.md` and `docs/PROJECT_STATE.md` completely first, then read `docs/V0_SCOPE.md` and the canonical documents relevant to the current phase. Inspect the repository before proposing or changing implementation. Treat repository files as authoritative.
+## 11. Definition of done
 
-## 9. Definition of done
+A task is done only when:
 
-A task is not done because code exists or prose exists.
-
-It is done when:
-
-- the requested behavior or editorial job is implemented;
-- scope has not silently expanded;
-- relevant validation passes;
-- obvious regressions have been checked;
-- writing has passed the applicable evidence, reader-need, style-research, form, provenance, structure, human-language, and slop gates;
-- documentation/state is updated when necessary.
+- the requested job is actually complete;
+- scope did not silently expand;
+- discretionary decisions passed the anti-slop/evidence gate;
+- relevant validation was actually performed;
+- obvious regressions were checked;
+- documentation/state is synchronized when necessary;
+- the next gate is explicit;
+- no publication, send, deployment, or release boundary was crossed without the required approval.
