@@ -16,8 +16,6 @@ When documents disagree, use this order:
 6. current source code for actual runtime behavior;
 7. historical research/decision records for provenance only.
 
-A current founder decision should be reconciled into the proper canonical file before a later chat relies on it.
-
 Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the active sequence.
 
 ## Current canonical documents
@@ -29,8 +27,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT AUTHORITY** for the latest homepage correction pass, current runtime target, exact next task, open Feature-card copy gate, and validation state.
-- `docs/V0_SCOPE.md` — current v0 target product and technical boundaries. Exact homepage ordering and the latest visual corrections live in `docs/PROJECT_STATE.md`.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND HOMEPAGE AUTHORITY**. As of 2026-09-08 it records the latest corrected homepage state: `Latest | Stories` header, no topic labels/header Subscribe CTA, warm-neutral newsletter area, ink-only Latest ticker label with light headline rail, uncropped Feature image, Feature + newsletter-card pairing, News below Feature, and black footer endcap.
+- `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Where its homepage ordering/presentation differs from `PROJECT_STATE`, the newer founder-approved homepage state wins until scope synchronization.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -43,31 +41,27 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `docs/PUBLISHING_STANDARD.md`
 - `docs/COPY_STYLE.md`
 - `docs/PORTFILO_TEST_STANDARD.md`
-- `research/README.md`
-- `research/STYLE_RESEARCH_TEMPLATE.md`
-- `research/STYLE_BRIEF_TEMPLATE.md`
-
-`docs/CONTENT_PLANNING.md` remains canonical for its planning gates, reader needs, evidence/feasibility checks, and assignment workflow. Its old geography thesis and five-topic public taxonomy are superseded by later product decisions in `docs/PROJECT_STATE.md`. Full planning-taxonomy synchronization belongs to the later News/Feature architecture migration.
+- `docs/CONTENT_PLANNING.md` — canonical for planning gates, but its old geography thesis and old five-topic public taxonomy are superseded by later product decisions in `PROJECT_STATE`.
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Its Homepage v2-specific smaller-header/topic-header/red-ticker clauses are **superseded where they conflict with the latest founder review recorded in `docs/PROJECT_STATE.md`**.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Any homepage-specific clauses that conflict with the latest `PROJECT_STATE` are superseded by the later founder review.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
-- `research/homepage-redesign-v1.md` — homepage redesign provenance and earlier composition contract. Its Homepage v2 details are **partially superseded by the latest 2026-09-08 founder visual review in `docs/PROJECT_STATE.md`**, specifically header scale/content, ticker color, hero blue treatment, and restoration of the Feature-side newsletter card.
-- `research/image-system/homepage-hero-image-brief-v1.md` — historical brief/provenance for the architectural hero concept; no longer an active homepage implementation requirement.
-- `research/image-system/homepage-hero-selection-v1.md` — historical selection/provenance only for the current no-image homepage hero.
-- `research/image-system/homepage-featured-cover-decision.md` — authority for the existing Feature image used by the homepage Feature treatment.
+- `research/homepage-redesign-v1.md` — redesign provenance and prior approved composition record. Later founder QA corrections in `PROJECT_STATE` supersede stale clauses within this research file.
+- `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
+- `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current homepage hero uses no image.
+- `research/image-system/homepage-featured-cover-decision.md` — current/historical authority for the existing Feature image used by the homepage.
 
 ### Product-model / newsletter research and copy
 
-- `research/newsletter-copy-reference-corpus-v1.md` — research corpus only; no automatic Portfilo copy authority.
-- `research/portfilo-product-model-research-v1.md` — useful internal product-model research. `Briefing` remains rejected as public homepage/newsletter acquisition language.
-- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot design, parked until the core site is built.
-- `research/homepage-copy-evidence-matrix-v1.md` — research/provenance record; former Architecture A final-hero structure is superseded by later founder decisions.
-- `research/homepage-hero-copy-v3.md` — **CURRENT APPROVED PRIMARY HOMEPAGE NEWSLETTER COPY AUTHORITY** for the headline/support line and newsletter promises.
-- `Send me the news` is the current approved homepage form action label.
-- The restored Feature-side newsletter card needs a **different contextual message**; exact card headline/support copy is still open. The working founder idea `There's more to it than the headline.` is not yet final authority.
+- `research/newsletter-copy-reference-corpus-v1.md` — research corpus only; no copy authority by itself.
+- `research/portfilo-product-model-research-v1.md` — useful internal product-model research; `briefing` is rejected as public acquisition language.
+- `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot, parked until core site completion.
+- `research/homepage-copy-evidence-matrix-v1.md` — research/provenance only; superseded for exact public hero wording.
+- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED PRIMARY HOMEPAGE ACQUISITION COPY** and operating promises.
+
+Feature-side newsletter card copy is **not yet final**. The working idea around `There's more to it than the headline.` is a direction only. Current runtime temporarily reuses the approved primary acquisition copy for that card.
 
 ### Brand
 
@@ -82,35 +76,18 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. `Portfilo Brief` still exists as the operational name on current runtime/email surfaces. The approved redesign direction remains a later coordinated public naming migration to `Newsletter`; do not perform it piecemeal during homepage work.
+The email infrastructure remains current. `Portfilo Brief` still exists operationally in places. The later public naming migration to `Newsletter` must be coordinated, not piecemeal.
 
 ### Audience / distribution
 
-- `docs/SOCIAL_DISTRIBUTION.md` remains current strategy.
-
-Social Visual System work remains deferred until the redesigned website is stable.
+- `docs/SOCIAL_DISTRIBUTION.md` remains current strategy, but Social Visual System work is deferred until the redesigned website is stable.
 
 ## Rejected / historical records with zero current decision authority
 
 ### Rejected homepage copy
 
-- `research/homepage-copy-v1.md` — REJECTED / HISTORICAL / ZERO AUTHORITY.
-- `research/homepage-copy-v2.md` — REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY.
-
-Do not restore the briefing-led line:
-
-`A briefing on business and technology, with original reporting from Portfilo.`
-
-### Rejected latest visual choices
-
-The following Homepage v2 implementation choices were explicitly rejected by the founder on 2026-09-08 and must not return as precedent:
-
-- undersized header wordmark/proportions;
-- `Business / Technology / Startup / AI` labels displayed in the header;
-- over-indented centered Feature treatment;
-- red Latest ticker treatment;
-- overly pale newsletter hero background;
-- removal of the Feature-side newsletter signup card.
+- `research/homepage-copy-v1.md` — **REJECTED / HISTORICAL / ZERO AUTHORITY**.
+- `research/homepage-copy-v2.md` — **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**. Do not restore its briefing-led headline.
 
 ### Historical copy/navigation records
 
@@ -124,91 +101,77 @@ The following remain for provenance only:
 
 ### Removed duplicate plan
 
-`docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated as a second current-phase authority.
+`docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
 ## Current runtime vs approved target
 
-The latest focused homepage correction pass is implemented in the working branch but remains **unvalidated locally and not yet founder-approved visually**.
+Current working branch homepage implements:
 
-Current runtime includes:
-
-- restored earlier/larger restrained Portfilo header proportions;
+- earlier/larger restrained Portfilo wordmark scale;
+- `Latest | Stories` header navigation;
 - no topic/category labels in the header;
-- `Features` as the explicit editorial header link;
 - no header Subscribe CTA;
-- muted/light Portfilo blue newsletter band using `#8fc7ff`;
-- white hero signup CTA;
-- full-width near-black Latest ticker with light text and blue category accents;
-- Feature immediately after ticker;
-- Feature image + headline/dek on the left and restored newsletter signup card on the right for desktop;
-- Feature card stacks after the Feature story on mobile;
+- warm near-white newsletter acquisition area;
+- normal white email field + blue `Send me the news` CTA;
+- full-width static Latest strip where **only the Latest label is ink/black** and the headline rail remains light;
+- Feature + newsletter-card pairing on desktop, stacked on mobile;
+- Feature image rendered without the rejected fixed-height `object-fit: cover` crop;
+- Feature headline/dek directly below the image;
 - News below Feature;
 - black footer newsletter endcap and dark site footer;
-- no ticker auto-motion yet;
+- no automatic ticker movement yet;
 - no route/schema/taxonomy migration.
 
-The Feature-side newsletter card currently reuses already-approved primary newsletter copy **temporarily**. Do not mistake that temporary copy reuse for final card-copy approval.
-
-The current content schema still uses:
+Current content schema still uses:
 
 `business / technology / startups / ai / building`
 
-The approved target public coverage set remains:
+Target public taxonomy remains:
 
 `Business / Technology / Startup / AI`
 
-## Homepage information architecture authority
+Do not confuse target taxonomy with completed migration.
 
-Current interpretation:
+## Information architecture authority
 
-- `News` = current/day-to-day content layer;
-- `Features` = deeper editorial layer;
-- `Latest` = chronological view/ticker concept, not a content type;
-- `Stories` = current technical route terminology, not intended reader-facing product naming.
+The earlier removal of `Latest` / `Stories` from the header was based on an exploratory question and is superseded.
 
-Do not create or migrate routes during homepage visual QA. The later News/Feature architecture gate owns that work.
+Current header presentation is:
 
-## Homepage image authority
+`Latest | Stories`
+
+The eventual relationship among News, Features, Stories, and Latest remains a later architecture decision. Do not infer a route/schema migration from the current header wording.
+
+## Image authority
 
 ### Feature image
 
-Current repository assets:
+Current assets:
 
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-These remain valid for the Feature job and are used by the homepage.
+The current homepage must show the Feature image composition without the rejected aggressive crop.
 
-### Historical architectural hero image
+### Historical architectural hero
 
-Founder previously selected generated architectural candidate 2. See:
-
-`research/image-system/homepage-hero-selection-v1.md`
-
-The homepage deliberately uses no hero image. The historical selection remains preserved but is not an implementation dependency.
+The prior selected architectural image remains provenance only. Current homepage hero uses no image.
 
 ## Motion authority
 
-Ticker movement remains deliberately deferred until the corrected static desktop/mobile composition is founder-approved.
-
-The immediate later motion pass may add slow CSS-based horizontal ticker movement with pause/focus behavior and a reduced-motion stationary/manual fallback.
+Ticker movement remains deliberately deferred until the corrected static desktop/mobile composition is founder-approved. The later motion pass may add slow CSS-based movement with hover/focus pause and reduced-motion fallback.
 
 ## Validation authority
 
-Do not infer a current pass from an old record saying QA passed or was pending.
+Current fresh validation state lives only in `docs/PROJECT_STATE.md`.
 
-Fresh validation state is recorded only in:
-
-`docs/PROJECT_STATE.md`
-
-The correction pass requires actual `npm run check` and `npm run build` before a pass can be claimed.
+The latest correction pass requires actual `npm run check` and `npm run build` before a pass can be claimed.
 
 ## Maintenance rule
 
-When a later decision supersedes an older record:
+When a later founder decision supersedes an older record:
 
-- preserve historical material when useful for provenance;
-- update this status map if the older record could plausibly mislead later work;
-- update the governing canonical standard when the rule itself changed;
+- preserve useful history;
+- update this status map when stale material could mislead later work;
 - update `docs/PROJECT_STATE.md` whenever the current phase or exact next task changes;
 - do not duplicate current state across new planning documents.
