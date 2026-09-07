@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-08_
 
-_Status: HOMEPAGE V3 PLAN FOUNDER-APPROVED / IMPLEMENTATION NOT YET AUTHORIZED_
+_Status: HOMEPAGE V3 PLAN FOUNDER-APPROVED / STATIC IMPLEMENTATION COMPLETE / VALIDATION + VISUAL QA PENDING_
 
 ## Purpose
 
@@ -105,7 +105,7 @@ Ticker motion remains a separate post-static approval task.
 
 ## Feature + contextual newsletter card
 
-The current Feature is too large on wide desktop because the story column receives too much of the `100rem` page width while preserving the full image aspect ratio.
+The prior Feature was too large on wide desktop because the story column received too much of the `100rem` page width while preserving the full image aspect ratio.
 
 Homepage v3 solves this by constraining the module rather than cropping the image.
 
@@ -141,7 +141,7 @@ Open item:
 
 Do not copy BackScoop's supporting wording. The support sentence must state a concrete Portfilo value using approved claims.
 
-Until that sentence is approved, do not treat temporary runtime copy as final authority.
+Homepage v3 static implementation intentionally omits that support sentence rather than inventing one. The omission is temporary until a later copy gate approves the exact sentence.
 
 ## News
 
@@ -182,19 +182,17 @@ Expected order:
 
 No horizontal page overflow. No desktop equal-height assumptions. Preserve the Feature image composition.
 
-## Implementation boundary
+## Implementation state
 
-This Homepage v3 design plan is founder-approved as of 2026-09-08.
+The founder explicitly authorized Homepage v3 implementation on 2026-09-08.
 
-Approval of this plan does **not** by itself authorize runtime implementation.
-
-If the founder explicitly opens Homepage v3 implementation, the implementation may change only what this contract requires:
+Static implementation is complete on `build/portfilo-v0` and is limited to the approved v3 contract:
 
 - top newsletter acquisition composition and `Subscribe free` CTA;
 - Feature module width/ratio/type scale;
 - contextual newsletter-card placement/headline;
 - responsive behavior required by those changes.
 
-Do not silently redesign the header, ticker, News section, footer, taxonomy, routes, article surfaces, or motion.
+The implementation does not add ticker motion, taxonomy migration, new routes, article redesign, or unrelated visual changes.
 
-After runtime changes, run actual `npm run check` and `npm run build`, then stop for desktop/mobile visual QA before ticker motion.
+Fresh `npm run check` and `npm run build` are still required before validation can be claimed. After validation, stop for desktop/mobile visual QA before ticker motion.
