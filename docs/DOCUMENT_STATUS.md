@@ -27,8 +27,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND HOMEPAGE AUTHORITY**. As of 2026-09-08 it records the latest corrected homepage state: `Latest | Stories` header, no topic labels/header Subscribe CTA, warm-neutral newsletter area, ink-only Latest ticker label with light headline rail, uncropped Feature image, Feature + newsletter-card pairing, News below Feature, and black footer endcap.
-- `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Where its homepage ordering/presentation differs from `PROJECT_STATE`, the newer founder-approved homepage state wins until scope synchronization.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, Homepage v3 design is founder-approved and runtime implementation still requires explicit authorization.
+- `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Homepage-specific presentation clauses are subordinate to the newer Homepage v3 contract where they differ.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -41,27 +41,33 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 - `docs/PUBLISHING_STANDARD.md`
 - `docs/COPY_STYLE.md`
 - `docs/PORTFILO_TEST_STANDARD.md`
-- `docs/CONTENT_PLANNING.md` — canonical for planning gates, but its old geography thesis and old five-topic public taxonomy are superseded by later product decisions in `PROJECT_STATE`.
+- `docs/CONTENT_PLANNING.md` — canonical for planning gates, with older geography/taxonomy clauses superseded by later product decisions in `PROJECT_STATE`.
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Any homepage-specific clauses that conflict with the latest `PROJECT_STATE` are superseded by the later founder review.
+- `research/homepage-redesign-v1.md` — **CURRENT FOUNDER-APPROVED HOMEPAGE V3 DESIGN CONTRACT**. Despite the filename, its current in-file status governs Homepage v3. It records the editorial white signup treatment, `Subscribe free` hero CTA, smaller constrained Feature composition, contextual newsletter-card headline, and implementation boundary.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Its older Homepage v2-specific examples are superseded where they conflict with `PROJECT_STATE` or the current `research/homepage-redesign-v1.md` contract.
 - `docs/IMAGE_SYSTEM.md` — general editorial image rules.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
-- `research/homepage-redesign-v1.md` — redesign provenance and prior approved composition record. Later founder QA corrections in `PROJECT_STATE` supersede stale clauses within this research file.
 - `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
-- `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current homepage hero uses no image.
-- `research/image-system/homepage-featured-cover-decision.md` — current/historical authority for the existing Feature image used by the homepage.
+- `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current homepage top acquisition area uses no image.
+- `research/image-system/homepage-featured-cover-decision.md` — authority for the existing Feature image used by the homepage.
 
 ### Product-model / newsletter research and copy
 
 - `research/newsletter-copy-reference-corpus-v1.md` — research corpus only; no copy authority by itself.
-- `research/portfilo-product-model-research-v1.md` — useful internal product-model research; `briefing` is rejected as public acquisition language.
+- `research/portfilo-product-model-research-v1.md` — useful internal research; `briefing` is rejected as public acquisition language.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot, parked until core site completion.
 - `research/homepage-copy-evidence-matrix-v1.md` — research/provenance only; superseded for exact public hero wording.
-- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED PRIMARY HOMEPAGE ACQUISITION COPY** and operating promises.
+- `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED PRIMARY ACQUISITION WORDING AND OPERATING PROMISES**.
 
-Feature-side newsletter card copy is **not yet final**. The working idea around `There's more to it than the headline.` is a direction only. Current runtime temporarily reuses the approved primary acquisition copy for that card.
+Homepage v3 additionally approves the hero CTA label `Subscribe free`.
+
+Feature-side newsletter card headline is founder-approved as:
+
+`There's more to it than the headline.`
+
+Its exact one-sentence support copy remains open and must not be invented during implementation.
 
 ### Brand
 
@@ -87,7 +93,21 @@ The email infrastructure remains current. `Portfilo Brief` still exists operatio
 ### Rejected homepage copy
 
 - `research/homepage-copy-v1.md` — **REJECTED / HISTORICAL / ZERO AUTHORITY**.
-- `research/homepage-copy-v2.md` — **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**. Do not restore its briefing-led headline.
+- `research/homepage-copy-v2.md` — **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**.
+
+### Superseded homepage implementation choices
+
+The following recent runtime/design choices are explicitly superseded by Homepage v3 and must not be treated as precedent:
+
+- muted/light-blue full top newsletter band;
+- `Send me the news` as the hero CTA;
+- stretched horizontal hero form;
+- oversized wide-screen Feature treatment;
+- aggressive fixed-height Feature crop;
+- removing `Latest | Stories` from the header;
+- topic labels in the homepage header;
+- red ticker treatment;
+- entire ticker rendered black.
 
 ### Historical copy/navigation records
 
@@ -103,24 +123,33 @@ The following remain for provenance only:
 
 `docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
-## Current runtime vs approved target
+## Current runtime vs Homepage v3 target
 
-Current working branch homepage implements:
+Current runtime is still the prior correction pass, not Homepage v3.
 
-- earlier/larger restrained Portfilo wordmark scale;
+It currently includes:
+
 - `Latest | Stories` header navigation;
-- no topic/category labels in the header;
-- no header Subscribe CTA;
-- warm near-white newsletter acquisition area;
-- normal white email field + blue `Send me the news` CTA;
-- full-width static Latest strip where **only the Latest label is ink/black** and the headline rail remains light;
-- Feature + newsletter-card pairing on desktop, stacked on mobile;
-- Feature image rendered without the rejected fixed-height `object-fit: cover` crop;
-- Feature headline/dek directly below the image;
+- no topic labels/header Subscribe CTA;
+- warm near-white acquisition area;
+- horizontal hero form with `Send me the news`;
+- Latest strip with black identifier and light rail;
+- Feature + newsletter-card pairing;
+- full uncropped Feature image that is too large on wide desktop;
+- temporary repeated primary acquisition copy in the side card;
 - News below Feature;
-- black footer newsletter endcap and dark site footer;
-- no automatic ticker movement yet;
-- no route/schema/taxonomy migration.
+- black footer endcap;
+- no ticker motion.
+
+Homepage v3 target changes only the approved items in `research/homepage-redesign-v1.md` and `docs/PROJECT_STATE.md`.
+
+## Information architecture authority
+
+Current header presentation remains:
+
+`Latest | Stories`
+
+The eventual relationship among News, Features, Stories, and Latest remains a later architecture decision. Do not infer route/schema migration from the current header wording.
 
 Current content schema still uses:
 
@@ -132,16 +161,6 @@ Target public taxonomy remains:
 
 Do not confuse target taxonomy with completed migration.
 
-## Information architecture authority
-
-The earlier removal of `Latest` / `Stories` from the header was based on an exploratory question and is superseded.
-
-Current header presentation is:
-
-`Latest | Stories`
-
-The eventual relationship among News, Features, Stories, and Latest remains a later architecture decision. Do not infer a route/schema migration from the current header wording.
-
 ## Image authority
 
 ### Feature image
@@ -151,21 +170,21 @@ Current assets:
 - `public/images/homepage-feature-image.png`
 - `public/images/homepage-feature-image.webp`
 
-The current homepage must show the Feature image composition without the rejected aggressive crop.
+Homepage v3 keeps the full Feature image composition but reduces its rendered scale by constraining the overall module width.
 
 ### Historical architectural hero
 
-The prior selected architectural image remains provenance only. Current homepage hero uses no image.
+The prior selected architectural image remains provenance only. Homepage v3 top acquisition area uses no hero image.
 
 ## Motion authority
 
-Ticker movement remains deliberately deferred until the corrected static desktop/mobile composition is founder-approved. The later motion pass may add slow CSS-based movement with hover/focus pause and reduced-motion fallback.
+Ticker movement remains deliberately deferred until Homepage v3 static desktop/mobile composition is implemented and founder-approved.
 
 ## Validation authority
 
-Current fresh validation state lives only in `docs/PROJECT_STATE.md`.
+No fresh runtime validation was created by the Homepage v3 docs-only approval record.
 
-The latest correction pass requires actual `npm run check` and `npm run build` before a pass can be claimed.
+The current runtime requires actual implementation plus `npm run check` and `npm run build` before a Homepage v3 validation pass can be claimed.
 
 ## Maintenance rule
 
