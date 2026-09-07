@@ -1,5 +1,7 @@
 # Portfilo Publishing Standard
 
+_Last updated: 2026-09-07_
+
 ## Principle
 
 The website publishes journalism. It does not generate journalism.
@@ -43,7 +45,7 @@ STRUCTURE / EDITORIAL PASS
   ↓
 AI-SLOP / HUMAN-LANGUAGE PASS
   ↓
-HEADLINE / DEK / DESCRIPTION AUDIT
+HEADLINE / DEK / METADATA AUDIT
   ↓
 PUBLISH
   ↓
@@ -55,7 +57,8 @@ CORRECT / UPDATE WHEN NEEDED
 The writing gates are governed by:
 
 - `docs/WRITING_SYSTEM.md`;
-- `docs/STYLE_RESEARCH_STANDARD.md`.
+- `docs/STYLE_RESEARCH_STANDARD.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`.
 
 ## Two operating speeds
 
@@ -231,7 +234,8 @@ The brief must establish:
 - lead, paragraph, middle, transition, limitation/counterevidence, and ending jobs;
 - evidence/example handling;
 - first/second person and rhetorical-device limits;
-- headline, dek, and description jobs;
+- headline and dek jobs;
+- whether a concrete metadata problem justifies an optional `metaDescription` override;
 - assignment-specific AI-slop risks.
 
 The form is selected from the material, reader need, professional practice, and researched examples. AI may assist with alternatives but has zero automatic structural or stylistic authority.
@@ -326,7 +330,7 @@ At minimum:
 
 AI-shaped prose is not fixed merely by replacing a few adjectives. Rewrite or delete the underlying pattern.
 
-## Stage 12 - Headline, dek, and description audit
+## Stage 12 - Headline, dek, and metadata audit
 
 The headline must:
 
@@ -336,13 +340,15 @@ The headline must:
 - avoid fake certainty;
 - avoid causal claims the evidence cannot establish.
 
-The dek must add editorial information rather than simply restate the headline.
+The dek must add useful editorial information rather than simply restate the headline.
 
-The compact description/summary must serve cards, indexes, SEO, and social metadata without being forced to carry the rhetorical job of the dek.
+Headline + dek are the complete reader-facing story package. They should be evaluated together on the story page and card/index surfaces.
 
-Headline, dek, and description may require their own reference research when the writing job is materially different from the body.
+The story's default metadata description is the dek.
 
-Do not generate them by merely compressing the article or copying each other.
+Add an optional `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline. Do not create a third sentence merely because metadata exists, and do not generate an override by mechanically compressing the body.
+
+Headline/dek may require their own reference research when the writing job is materially different from the body. Metadata-specific research is needed only when a real metadata conflict exists.
 
 ## Stage 13 - Prepare content entry
 
@@ -351,7 +357,7 @@ The v0 content schema is implemented in Astro. At minimum a publishable story su
 ```yaml
 title:
 dek:
-description:
+metaDescription: # optional; defaults to dek for story metadata
 contentType:
 topic:
 author:
@@ -474,14 +480,15 @@ Before changing a story to `published`:
 - [ ] institutional claims have provenance;
 - [ ] headline audited;
 - [ ] dek audited;
-- [ ] description/summary audited for its actual job;
+- [ ] headline + dek reviewed together on reader-facing surfaces;
+- [ ] optional `metaDescription` override audited and justified if present;
 - [ ] content type is accurate;
 - [ ] methodology included when useful;
 - [ ] commercial disclosure included when relevant;
 - [ ] article renders correctly;
 - [ ] links work;
 - [ ] mobile layout checked;
-- [ ] metadata/description set;
+- [ ] story metadata resolves correctly from `metaDescription ?? dek`;
 - [ ] explicit publication approval obtained when the workflow requires it.
 
 For a fast factual item distributed outside the full story workflow:

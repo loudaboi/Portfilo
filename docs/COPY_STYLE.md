@@ -1,6 +1,6 @@
 # Portfilo Copy Style
 
-_Last updated: 2026-09-05_
+_Last updated: 2026-09-07_
 
 ## Purpose
 
@@ -16,7 +16,7 @@ This standard applies to:
 - newsletter copy;
 - story headlines and deks, together with the stricter editorial standards that govern journalism.
 
-For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, or `PUBLISHING_STANDARD.md`.
+For factual journalism, this document does not replace `EDITORIAL_STANDARD.md`, `RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, `EDITORIAL_PACKAGING_STANDARD.md`, or `PUBLISHING_STANDARD.md`.
 
 ## Writing-system rule
 
@@ -374,9 +374,9 @@ Question headlines are allowed but should not become a default template.
 
 Avoid empty curiosity gaps and generic `Here's why` framing when the actual subject can be named.
 
-## Headline, dek, and description
+## Headline and dek
 
-These are separate editorial jobs even though the current Astro schema still uses `description` for multiple surfaces.
+For stories, the complete reader-facing package is **headline + dek**. Follow `docs/EDITORIAL_PACKAGING_STANDARD.md`.
 
 ### Headline
 
@@ -384,27 +384,31 @@ Names the development, finding, question, tension, or argument.
 
 ### Dek
 
-Adds information rather than translating the headline into a second sentence.
+Adds useful information rather than translating the headline into a second sentence.
 
 Useful additions include:
 
-- what was examined;
+- the clearest defensible answer;
+- what was examined when that matters;
 - what changed;
-- what the reader will understand;
+- a meaningful finding;
 - a material limitation;
-- the specific scope of the story.
+- the specific scope of the story;
+- why the subject matters now.
 
 One or two sentences is usually enough.
 
-### Description / summary
+The same approved dek should travel with the headline across the story page, homepage, and Stories archive. Do not create a different visible summary merely because the surface is a card or index.
 
-A compact summary for story cards, indexes, SEO, and social metadata.
+### Metadata description
 
-It should be literal, short, and specific. It does not need to sound like article prose.
+Story metadata defaults to the dek.
 
-Do not force one generated string to perform all three jobs.
+A story may use optional `metaDescription` only when the approved dek has a concrete problem when separated from the headline on metadata surfaces. The override is not reader-facing card copy.
 
-Splitting `dek` and `description` in the content schema is approved for the subsequent site-copy/content-schema phase, not this writing-system phase.
+Do not manufacture a third sentence because metadata exists. Do not use `This article explores`, `This story looks at`, or `This explainer shows` as generic scaffolding for a summary that the reader does not need.
+
+Do not add a metadata override merely to satisfy an imagined character target or SEO formula.
 
 ## Homepage copy
 
@@ -542,6 +546,8 @@ The original content-first architecture was adopted after reviewing the failed P
 
 The current writing system adds professional content-design and editorial-form guidance from Poynter, GOV.UK, Microsoft, and other form-specific references recorded in `docs/WRITING_SYSTEM.md`.
 
+Editorial Packaging Architecture v1 additionally separates the visible headline/dek package from metadata infrastructure. Its research and decision record is `research/editorial-packaging/architecture-v1-decision.md`.
+
 The 2026 vision-alignment pass adds current evidence about the scale of the Philippine digital economy, uneven AI adoption and labor exposure, publisher movement toward original reporting/explanation and specialist distribution, and platform pressure against generic/automated content. Those findings inform internal strategy; they do not automatically create public copy.
 
 The key lesson is not to copy wording. Professional examples and guides can establish useful **forms, sequencing decisions, and editing tests**. They do not grant authority to imitate another publication's voice.
@@ -549,4 +555,5 @@ The key lesson is not to copy wording. Professional examples and guides can esta
 See:
 
 - `docs/WRITING_SYSTEM.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
 - `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`.

@@ -1,6 +1,6 @@
 # Portfilo Writing System
 
-_Last updated: 2026-09-03_
+_Last updated: 2026-09-07_
 
 ## Purpose
 
@@ -13,7 +13,8 @@ Portfilo already separates evidence from AI output. This document adds the equiv
 It applies to:
 
 - story structure and drafting;
-- headlines, deks, and story summaries;
+- headlines and deks;
+- optional story metadata-description overrides;
 - homepage and section copy;
 - About, Standards, Subscribe, confirmation, privacy, and error surfaces;
 - newsletter and distribution copy;
@@ -23,10 +24,11 @@ It does not replace:
 
 - `docs/EDITORIAL_STANDARD.md`;
 - `docs/RESEARCH_STANDARD.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
 - `docs/PUBLISHING_STANDARD.md`;
 - `docs/COPY_STYLE.md`.
 
-Those documents govern evidence, editorial integrity, publication, and copy. This document governs **how a writing form is selected and how prose is allowed to be produced**.
+Those documents govern evidence, editorial integrity, story packaging, publication, and copy. This document governs **how a writing form is selected and how prose is allowed to be produced**.
 
 ## Rule zero
 
@@ -175,7 +177,8 @@ The brief records:
 - lead job;
 - middle logic;
 - ending job;
-- headline/dek/description jobs;
+- headline and dek jobs;
+- whether an optional metadata-description override is justified;
 - specific AI-slop risks for the assignment.
 
 If the writer cannot explain the structure before drafting, the story is not ready to draft.
@@ -507,9 +510,11 @@ Default: reject unless there is a specific approved reason and support for the c
 
 During the site-copy audit, record the class and provenance for every nontrivial public line.
 
-## Headline, dek, and description are different jobs
+## Story packaging: headline + dek
 
-Do not force one string to do all three jobs editorially.
+For stories, the complete reader-facing editorial package is **headline + dek**. `docs/EDITORIAL_PACKAGING_STANDARD.md` governs the detailed workflow.
+
+Do not force a third reader-facing story-summary sentence into the package merely because metadata exists.
 
 ### Headline
 
@@ -517,25 +522,30 @@ Names the development, finding, question, tension, or argument.
 
 ### Dek
 
-Adds editorial information that the headline does not carry, such as:
+Adds useful editorial information that the headline does not carry, such as:
 
-- what the story examined;
+- the clearest defensible answer;
+- what the story examined when that matters;
 - the answer's scope;
 - a meaningful finding;
 - a material limitation;
 - why the question matters now.
 
-A dek is visible article copy and may be longer than metadata.
+The same approved dek should travel with the headline across the story page, homepage, and Stories archive.
 
-### Description / summary
+### Metadata description
 
-Serves cards, indexes, SEO, social metadata, and other compact contexts.
+Story metadata defaults to the dek.
 
-It should be short, literal, and specific.
+A separate `metaDescription` is optional and metadata-only. Use it only when the approved dek has a concrete problem when separated from the headline on search, social, or structured-data surfaces.
 
-It does not need the cadence or rhetorical work of a dek.
+Do not create a metadata override merely because:
 
-The current content schema still uses one `description` field for multiple jobs. Splitting `dek` from `description` is approved as a **planned implementation change**, but it belongs to the subsequent site-copy/content-schema phase, not this writing-system phase.
+- a third sentence feels expected;
+- SEO folklore suggests a target character count;
+- the writer wants to summarize the body again.
+
+If the dek works as metadata, stop.
 
 ## Drafting contract
 
@@ -652,8 +662,8 @@ Before a public story or significant public-copy revision is approved:
 4. **Structure gate** — sections progress without filler or duplication.
 5. **Human-language gate** — the copy survives read-aloud and deletion checks.
 6. **Slop gate** — no repeated AI-shaped rhetorical pattern dominates the piece.
-7. **Headline/dek gate** — each adds information and does not outrun the evidence.
-8. **Description gate** — compact summary is literal and appropriate to metadata/index use.
+7. **Headline/dek gate** — the two-field reader-facing package is accurate, useful, non-duplicative, and works in the actual layout.
+8. **Metadata gate** — the dek works as default metadata, or a separate `metaDescription` override has a documented concrete reason.
 9. **Visual gate** — the writing works in the actual layout on desktop and mobile.
 10. **Human approval gate** — publication or major institutional positioning requires explicit approval at the relevant phase boundary.
 
