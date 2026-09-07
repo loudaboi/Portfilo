@@ -5,6 +5,7 @@ interface Props {
   copy?: string;
   variant?: "hero" | "inline" | "card" | "footer";
   showCopy?: boolean;
+  buttonLabel?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   copy = "The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.",
   variant = "inline",
   showCopy = true,
+  buttonLabel = "Subscribe free",
 } = Astro.props;
 
 const emailId = `${id}-email`;
@@ -51,8 +53,8 @@ const titleId = `${id}-title`;
           aria-describedby={statusId}
           data-newsletter-email
         />
-        <button type="submit" data-newsletter-submit>
-          <span data-submit-label>Subscribe free</span>
+        <button type="submit" data-newsletter-submit data-default-label={buttonLabel}>
+          <span data-submit-label>{buttonLabel}</span>
         </button>
       </div>
       <p class="newsletter-signup__note">Free newsletter. Unsubscribe anytime.</p>
@@ -90,9 +92,10 @@ const titleId = `${id}-title`;
 
     const setSubmitting = (isSubmitting) => {
       if (!(submitButton instanceof HTMLButtonElement) || !(submitLabel instanceof HTMLElement)) return;
+      const defaultLabel = submitButton.dataset.defaultLabel || "Subscribe free";
       submitButton.disabled = isSubmitting;
       submitButton.setAttribute("aria-busy", String(isSubmitting));
-      submitLabel.textContent = isSubmitting ? "Submitting…" : "Subscribe free";
+      submitLabel.textContent = isSubmitting ? "Submitting…" : defaultLabel;
     };
 
     form.addEventListener("submit", async (event) => {
