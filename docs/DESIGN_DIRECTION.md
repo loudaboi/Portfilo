@@ -24,7 +24,7 @@ Current founder-approved homepage contract:
 
 `docs/PROJECT_STATE.md` owns the current phase and implementation gate.
 
-The previously implemented Homepage v3 composition was visually rejected. The current design authority is the later post-v3 correction plan.
+The previously implemented Homepage v3 composition was visually rejected. The current authority is the later follow-up homepage correction plan.
 
 ## Core visual principles
 
@@ -44,7 +44,11 @@ Prefer:
 - compact utility/metadata typography;
 - natural variation in scale based on editorial importance.
 
-For the current homepage correction, the hero returns to **Instrument Sans**. The rejected Source Serif 4 hero treatment is not precedent.
+For the current homepage:
+
+- hero uses **Instrument Sans**;
+- Feature headline and dek use **Instrument Sans**;
+- Source Serif 4 remains available for long-form reading and selective deeper editorial contrast, not the current homepage Feature presentation.
 
 Do not use repeated eyebrows, index labels, or typography tricks merely to make the page feel designed.
 
@@ -56,11 +60,10 @@ Do not use oversized empty marketing regions to signal premium design. Portfilo 
 
 ### 4. One global homepage shell
 
-The current homepage has a hard alignment invariant:
+The homepage has a hard alignment invariant:
 
 - header inner content, hero inner content, Feature area, News, and footer inner content share one common shell;
-- preferred large-desktop working width is roughly **1280–1360 px**;
-- the Feature placeholder edge is the canonical visual content edge;
+- current large-desktop shell target is 84rem / 1344 px maximum;
 - individual homepage sections must not invent independent global max-width/centering rules;
 - internal grids may vary inside the shell;
 - **only the Latest ticker is full-bleed**.
@@ -83,13 +86,21 @@ Blue is the primary functional/editorial accent.
 
 Red is rare and intentional. Do not mechanically balance blue and red across page regions.
 
-The current homepage correction rejects a large light-blue hero surface and a red ticker treatment.
+Approved blue structural devices on the homepage now include:
+
+- thin blue rule above and below the top newsletter acquisition area;
+- thin 2–3 px blue rule at the top edge of Feature and News imagery;
+- the continuous blue editorial/newsletter rail beside the Feature.
+
+Do not turn these into boxed card systems or decorative color spam.
 
 ### 6. Mobile is first-class
 
 Mobile is not a shrunken desktop composition.
 
 Preserve readable line lengths, editorial order, usable form controls, accessible tap targets, and no horizontal page overflow.
+
+Responsiveness is a hard completion requirement for every visual pass.
 
 ## Current homepage visual contract
 
@@ -103,19 +114,20 @@ HEADER
 Portfilo | Latest | Stories | Subscribe free
 
 TOP NEWSLETTER SIGNUP
+blue rule above
 [content] [signup]
 Instrument Sans
 hero CTA: Send me the news
-warm paper surface
+blue rule below
 
 LATEST STRIP
 black Latest label only
 light headline rail
 full viewport width
 
-FEATURE + STACKED RIGHT RAIL
-left: development Feature image placeholder + headline + dek
-right: blue contextual signup + square Portfilo brand placeholder
+FEATURE + CONTINUOUS BLUE RAIL
+left: existing Feature image + headline + dek
+right: contextual signup + one latest-news teaser + latest-news link
 
 NEWS
 lead current item + supporting items
@@ -128,11 +140,11 @@ compact signup + minimal links
 
 Use:
 
-- current approved Portfilo wordmark asset at the earlier restrained scale;
+- approved Portfilo wordmark asset at the restrained scale;
 - `Latest | Stories` navigation;
 - `Subscribe free` CTA button;
 - no topic labels;
-- shared shell alignment;
+- shared-shell alignment;
 - no unrelated header redesign.
 
 ### Top newsletter acquisition area
@@ -147,18 +159,17 @@ Use:
 - Instrument Sans headline/support/UI;
 - approved headline `Get ahead in business and tech in 7 minutes.`;
 - approved support line;
-- roughly 52–55% content / 45–48% signup internally on large desktop;
-- roughly 40–56 px internal gap;
 - hero CTA `Send me the news`;
+- blue rule above and below the hero unit;
 - free/unsubscribe note close to the form;
 - no hero image;
 - no `NEWSLETTER` eyebrow;
 - no huge independent hero container;
 - no colored full-section background block;
-- no serif hero experiment;
+- no vertical divider;
 - no gradient, shadow, card shell, or decorative icon.
 
-The header CTA remains `Subscribe free`; the in-page hero CTA remains `Send me the news`.
+Hero and Feature-rail forms should share the same control system: height, border thickness, typography, padding, square geometry, and vertical rhythm. Exact widths may differ because the parent columns differ.
 
 ### Latest strip
 
@@ -172,38 +183,51 @@ Use:
 
 Do not use the whole strip as a black bar and do not use red as the ticker treatment.
 
-### Feature + stacked right rail
-
-For the next layout pass, geometry is more important than final imagery.
+### Feature + continuous blue rail
 
 Feature column:
 
-- use a development image placeholder instead of the current Feature artwork;
-- landscape proportion around 16:9 or slightly wider;
-- roughly 64% of the shared module;
-- placeholder -> headline -> short dek;
+- use the existing homepage Feature image for the next visual pass;
+- preserve its natural aspect ratio responsively;
+- no fixed-height crop;
+- add a 2–3 px Portfilo-blue top rule to the image only;
+- use Instrument Sans for Feature headline and dek;
+- image -> headline -> short dek;
 - no Feature eyebrow;
-- no `A CLOSER LOOK` heading;
-- keep Feature prominent without letting it dominate the viewport.
+- no `A CLOSER LOOK` heading.
 
-Right rail:
+Blue rail:
 
-- roughly 32% of the shared module;
-- roughly 32–40 px gap from the Feature;
-- stack a blue contextual signup block above a square brand/editorial placeholder;
-- square placeholder may center the approved ink/black Portfilo wordmark;
-- do not generate/source final artwork during layout approval;
-- do not stretch the newsletter block to match Feature height.
+- remove the square Portfilo brand placeholder;
+- use one continuous blue panel;
+- contextual signup comes first;
+- then a thin internal divider;
+- then one current-news teaser with a short description;
+- then a clear latest-news link such as `See the latest news →`;
+- no nested card inside the rail;
+- rail content stays top-aligned;
+- desktop/tablet rail may stretch to approximately the bottom of the full Feature module;
+- mobile rail becomes content-height and must not preserve desktop equal-height behavior.
 
 Approved contextual signup headline:
 
 `There's more to it than the headline.`
 
-A one-sentence support description is required structurally, but exact wording remains a separate copy gate.
+A one-sentence support description remains required, but exact final wording is a separate copy gate.
+
+### Editorial image-top rule
+
+Use a restrained 2–3 px Portfilo-primary-blue rule at the top edge of Feature and News imagery when appropriate.
+
+The line:
+
+- follows the responsive image width;
+- does not extend to the other three edges;
+- should not be applied to non-editorial visuals by default.
 
 ### News and footer
 
-News remains below the Feature/right-rail composition with its current plain `News` heading and development hierarchy.
+News remains below the Feature/rail composition with its current plain `News` heading and development hierarchy.
 
 The near-black footer endcap remains. Its inner content uses the same shared shell.
 
@@ -238,7 +262,7 @@ Avoid by default:
 Baseline:
 
 1. `Instrument Sans` for homepage interface/navigation/metadata and current homepage display work;
-2. `Source Serif 4` for long-form reading and selective deeper editorial contrast, not the current hero;
+2. `Source Serif 4` for long-form reading and selective deeper editorial contrast;
 3. `IBM Plex Mono` only for true utility/data/source/timestamp roles.
 
 Avoid excessive monospace and repeated eyebrow systems.
@@ -254,11 +278,28 @@ Preferred modes when the editorial job supports them:
 - data/document/evidence visuals;
 - typography-led/no-image treatment.
 
-The current correction uses no hero image.
+The current top acquisition area uses no hero image.
 
-The existing Feature image remains a valid repository asset, but the next homepage layout pass deliberately uses a development placeholder so geometry can be judged independently of artwork.
+The existing Feature image is again the approved visual/layout asset for the next homepage pass. It should remain responsive and uncropped.
 
-The right-rail square visual is also a placeholder during the layout pass; final imagery is not authorized yet.
+## Responsive contract
+
+Every visual change must work across wide desktop, standard desktop/laptop, tablet, and mobile.
+
+Required behavior:
+
+- shared shell scales fluidly;
+- hero remains two-column while space permits, then stacks;
+- hero blue rules remain aligned to the shared shell;
+- ticker remains the only full-bleed element;
+- Feature + blue rail remain side-by-side only while readable;
+- tablet/mobile stack Feature then rail;
+- images use responsive width and natural height;
+- blue image-top rule follows image width;
+- blue rail becomes content-height on mobile;
+- forms fill available width without overflow;
+- header CTA remains usable on narrow screens;
+- no horizontal page scrolling.
 
 ## Motion
 
@@ -294,6 +335,6 @@ Accessibility is part of completion, not later polish.
 
 ## Development fixture rule
 
-Synthetic content and image placeholders may be used to test hierarchy, wrapping, density, and responsive structure only when clearly synthetic, clearly labeled, and excluded from production.
+Synthetic content may be used to test hierarchy, wrapping, density, and responsive structure only when clearly synthetic, clearly labeled, and excluded from production.
 
 Do not fabricate realistic company/news claims merely to make a layout look populated.
