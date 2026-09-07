@@ -4,11 +4,11 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — HOMEPAGE FINALIZATION**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE REBUILD AUTHORIZED**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, technical SEO/performance/accessibility/security work through the prior Phase 4C audit, and one current published Feature are in place.
 
-The active product priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
+The active priority remains: **finish the redesigned Portfilo website before Social Visual System work and before running the four-issue newsletter pilot.**
 
 The current homepage implementation on `build/portfilo-v0` is transitional and visually rejected. It may contain reusable behavior, but it is **not design or copy precedent**.
 
@@ -43,7 +43,7 @@ Founder-approved at this boundary:
 
 - brand: **Portfilo**;
 - product category: business and technology media product;
-- internal working model may still be described in research as focused business/technology briefing + original reporting, but **`briefing` is rejected as public homepage/newsletter acquisition language**;
+- internal research may still describe the model as focused business/technology briefing + original reporting, but **`briefing` is rejected as public homepage/newsletter acquisition language**;
 - newsletter/email acquisition is a primary conversion and recurring-reader relationship;
 - **News** is the intended current/day-to-day editorial layer;
 - **Features** are the deeper editorial layer;
@@ -54,45 +54,31 @@ Founder-approved at this boundary:
 - do not impose a Philippines-first, Southeast-Asia-first, or other geographic positioning requirement;
 - geography can still be material to individual reporting;
 - Portfilo remains free in v0;
-- the newsletter now has a founder-approved public acquisition promise of **latest news**, a **7-minute** reading-time target, and delivery **three times per week**;
-- exact newsletter send days and times are not yet approved;
-- the four-issue newsletter pilot remains a later validation exercise and is **parked until the core site is built**, but it must validate the sustainability of the 7-minute / three-times-per-week promise before the first recurring public newsletter run and before final launch readiness is declared.
+- public newsletter acquisition now promises **latest news**, a **7-minute** read, and delivery **three times per week**;
+- exact newsletter send days and times remain open;
+- the four-issue newsletter pilot remains parked until the core site is built, then validates whether the 7-minute / three-times-per-week promise is sustainable before recurring public sends and final launch readiness.
 
-Approved internal selection lens for later newsletter/product validation:
+Approved internal selection lens:
 
 > Portfilo covers business and technology developments that materially change how companies, products, markets, infrastructure, or work operate.
 
 This is internal only. It is not homepage copy or a tagline.
 
-Research basis:
-
-- `research/newsletter-copy-reference-corpus-v1.md`;
-- `research/portfilo-product-model-research-v1.md`;
-- `research/editorial-lens-four-issue-pilot-v1.md`;
-- `research/homepage-copy-evidence-matrix-v1.md`;
-- `research/homepage-hero-copy-v3.md`.
-
 ## Current implementation vs approved target
-
-The repository is deliberately between the old product and the approved redesign.
-
-### Current runtime facts
 
 Current `src/content.config.ts` still uses topics:
 
 `business / technology / startups / ai / building`
 
-The target taxonomy migration to:
+Target public taxonomy:
 
 `Business / Technology / Startup / AI`
 
-is **approved as product direction but not yet implemented**. Schema/content/route migration requires its own later plan and approval.
+The taxonomy direction is approved but **not yet migrated**. Schema/content/route migration requires its own later plan and approval.
 
 Current `SiteHeader.astro` on the working branch renders:
 
 `Latest / Features / Subscribe free`
-
-Current homepage code contains the rejected first redesign attempt and rejected generated copy. It remains only until the clean static rebuild replaces it.
 
 Development News fixtures are guarded by `import.meta.env.DEV` and are not public production journalism.
 
@@ -108,7 +94,7 @@ Withdrawn to draft and retained for possible rework/abandonment:
 - `src/content/stories/what-higher-value-work-means-in-philippine-it-bpm.md`;
 - `src/content/stories/what-actually-changed.md`.
 
-The published starting-business story remains the current real Feature candidate for redesign QA.
+The published starting-business story remains the real Feature candidate for redesign QA.
 
 ## Homepage redesign state
 
@@ -116,18 +102,18 @@ Canonical composition contract:
 
 `research/homepage-redesign-v1.md`
 
-Founder-approved static architecture:
+Founder-approved composition as of 2026-09-08:
 
 ```text
-COMPACT HEADER
+HEADER
 Portfilo + Business / Technology / Startup / AI
 Latest | Features | Subscribe free
 
-COMPACT NEWSLETTER HERO
+HERO
 newsletter label
-approved hero copy
+approved acquisition copy
 email form
-selected grainy architectural hero visual
+selected architectural hero visual
 
 LATEST STRIP
 
@@ -135,23 +121,19 @@ THE LATEST
 lead current item
 supporting current items / compact feed as justified
 
-A CLOSER LOOK
-one deeper Feature
+FEATURED / A CLOSER LOOK
+one deeper Feature / featured editorial story
+newsletter signup card paired beside it on desktop
+newsletter card follows it on mobile
 
-FINAL NEWSLETTER SIGNUP
-section-specific copy still open
-
-MINIMAL FOOTER
+FOOTER
+compact newsletter signup
+minimal institutional / legal links
 ```
 
-Hard desktop/large-tablet rule for side-by-side text/image modules:
+The previously planned standalone full-width final newsletter CTA is removed.
 
-- top edges align;
-- bottom edges align;
-- one shared rectangular composition;
-- do not fix imbalance with arbitrary spacer blocks.
-
-Mobile stacking is exempt from equal-height alignment.
+The founder approved the BackScoop screenshot shared on 2026-09-08 as a **composition reference only** for the editorial-content + newsletter-card pairing. Do not copy BackScoop styling, colors, copy, branding, or proprietary visual identity.
 
 ### Visual direction
 
@@ -177,7 +159,7 @@ Avoid:
 - generic SaaS hero composition;
 - gradients/glow/glass;
 - default shadows;
-- rounded-card systems and pill-heavy UI;
+- rounded-card and pill-heavy systems;
 - card soup;
 - fake newspaper styling;
 - decorative black panels;
@@ -187,38 +169,15 @@ Avoid:
 - generic AI imagery;
 - decorative motion before static approval.
 
-The current typography baseline remains Instrument Sans + Source Serif 4 + IBM Plex Mono for true utility roles. Typography can be reopened only after the first faithful static composition exposes a concrete problem.
+Typography baseline remains Instrument Sans + Source Serif 4 + IBM Plex Mono only for true utility roles.
 
-### Hero image
+## Approved newsletter copy
 
-Founder approved Concept A, authorized candidate generation, and selected **candidate 2** from the generated architectural set.
-
-Selection/provenance record:
-
-`research/image-system/homepage-hero-selection-v1.md`
-
-Approved character:
-
-- grayscale/monochrome;
-- premium print-like grain;
-- contemporary architectural/city geometry;
-- no embedded text or logos;
-- no documentary claim;
-- small live HTML disclosure such as `AI-generated editorial image`.
-
-The exact selected binary is not yet committed to the repository. **Do not regenerate or silently substitute it.** At implementation, obtain the approved binary and verify the recorded hash when practical.
-
-The older `public/images/homepage-feature-image.*` assets remain valid historical/current-runtime Feature assets. They are not the selected new hero.
-
-## Homepage copy state
-
-**HERO COPY APPROVED. FINAL SECTION-SPECIFIC SIGNUP COPY STILL OPEN.**
-
-Current approved hero decision record:
+Canonical hero copy record:
 
 `research/homepage-hero-copy-v3.md`
 
-Exact approved hero marketing copy:
+Exact approved copy:
 
 ```text
 NEWSLETTER
@@ -228,48 +187,55 @@ Get ahead in business and tech in 7 minutes.
 The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.
 ```
 
-The email form retains its functional behavior:
+Form behavior remains:
 
 - email input;
 - `Subscribe free` action;
 - double-opt-in confirmation;
 - unsubscribe support.
 
-This founder approval intentionally changes the prior product constraint. The 7-minute read and three-times-per-week cadence are now public operating commitments, not merely candidate copy.
+### Signup reuse decision
 
-Exact send days/times remain open.
+On 2026-09-08 the founder explicitly chose speed over another copy gate and approved **reusing the hero copy for the first static build** in:
 
-The founder also established a homepage copy rule: **signup copy should differ by section and should be written for the context around that signup.** Do not repeat the hero headline/support line in the final lower-page signup.
+1. the hero signup;
+2. the editorial-paired newsletter card;
+3. the compact footer signup.
 
-The final homepage signup appears after the editorial modules / `A CLOSER LOOK` area, so its copy must be written for that later-page context.
+This **supersedes the earlier section-specific-copy requirement** recorded in `research/homepage-hero-copy-v3.md` for the first static build.
 
-### Superseded copy research
+Context-specific copy for the editorial card and footer may be refined later after visual QA. Do not block the static build on that copy refinement.
 
-`research/homepage-copy-evidence-matrix-v1.md` remains useful research/provenance, but its earlier selection of Architecture A as the final hero structure is superseded by the founder's later preference for a stronger BackScoop/Morning Brew-style reader-facing acquisition structure.
+## Hero image
 
-`research/homepage-copy-v2.md` is **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**. Its briefing-led hero must not be restored.
+Founder selected generated architectural candidate 2.
 
-`research/homepage-copy-v1.md` also remains **REJECTED / HISTORICAL / ZERO AUTHORITY**.
+Selection/provenance record:
 
-Rejected generated directions include, among others:
+`research/image-system/homepage-hero-selection-v1.md`
 
-- `A clearer picture of what's next.`;
-- `A briefing on business and technology, with original reporting from Portfilo.`;
-- `Keep up with business and technology.`;
-- `Business and technology, by email.`;
-- `Follow the latest in business and technology.`;
-- `News and deeper stories from Portfilo.`;
-- `Get Portfilo in your inbox.`;
-- `The important moves...`;
-- `...with the context to understand what they mean.`;
-- invented Philippines/SEA positioning;
-- generic newsroom-format language used instead of describing what subscribers receive.
+Approved character:
 
-Substantial homepage/newsletter copy must continue to use:
+- grayscale / monochrome;
+- premium print-like grain;
+- contemporary architectural/city geometry;
+- no embedded text or logos;
+- no documentary claim;
+- small live HTML disclosure such as `AI-generated editorial image`.
 
-- `skills/portfilo-anti-slop/SKILL.md`;
-- `docs/COPY_STYLE.md`;
-- `docs/WRITING_SYSTEM.md`.
+Exact selected source asset:
+
+- filename: `cinematic_monochrome_city_architecture.png`;
+- dimensions: `1586 × 992`;
+- SHA-256: `855e089805034e0b4bb37fc701164a09cd3e3431e39af51350e9d49e540b7f56`.
+
+Prepared WebP derivative:
+
+- filename: `homepage-hero-v1-selected.webp`;
+- dimensions: `1586 × 992`;
+- SHA-256: `8759dcd49c3757ba014e439009e0818c8fff7e37e61b8ff25a6e581db19fc1a0`.
+
+**The exact selected binary is still not committed to the repository. Do not regenerate or silently substitute it.**
 
 ## Newsletter infrastructure state
 
@@ -286,80 +252,48 @@ Technical baseline remains valid:
 - sender: `Portfilo`;
 - Reply-To: `portfilo.ph@gmail.com`.
 
-Existing public/email surfaces still use the operational name `Portfilo Brief` in places. The approved redesign direction is to use **Newsletter** publicly, but the naming migration is intentionally deferred until it can be performed consistently across site + beehiiv-facing copy. Do not migrate piecemeal.
-
-## Four-issue newsletter pilot
-
-Status: **DESIGN APPROVED / PARKED UNTIL CORE SITE IS BUILT**
-
-Canonical pilot record:
-
-`research/editorial-lens-four-issue-pilot-v1.md`
-
-The founder has now approved a 7-minute reading-time promise and three-times-per-week cadence before the pilot. Therefore the pilot no longer decides whether those promises may exist; it validates whether Portfilo can reliably sustain them before recurring public sends and final launch readiness.
-
-The pilot may still refine:
-
-- exact issue construction;
-- operational workflow;
-- exact send days/times;
-- what must be cut or compressed to stay within the 7-minute promise;
-- whether the three-times-per-week schedule is operationally sustainable enough for launch.
-
-It does **not** block static homepage construction.
-
-## Social distribution
-
-Audience & Social Distribution Strategy v0 remains valid.
-
-**Social Visual System work is deferred until the redesigned website is stable** so social inherits the actual final website system.
-
-Do not let social work interrupt the current website redesign.
+Existing public/email surfaces still use the operational name `Portfilo Brief` in places. The approved redesign direction is to use **Newsletter** publicly, but the naming migration is intentionally deferred until it can be performed consistently across site + beehiiv-facing copy. Do not migrate piecemeal during the homepage rebuild.
 
 ## Current implementation sequence
 
-This sequence is the current active roadmap. Update this section when the phase changes rather than creating another plan file.
-
-1. Homepage newsletter copy research / evidence work — COMPLETE.
-2. Hero acquisition direction selection — COMPLETE.
-3. **Homepage hero copy — FOUNDER APPROVED** in `research/homepage-hero-copy-v3.md`.
-4. **Final section-specific homepage signup copy — ACTIVE NEXT GATE.**
-5. Founder approves the final lower-page signup copy so the homepage copy package is complete.
-6. **Static Homepage Rebuild v1** from the approved composition, approved hero copy, contextual final signup copy, and selected hero asset. No motion.
-7. Desktop / large-tablet / mobile visual QA and correction pass.
-8. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
-9. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
-10. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
-11. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
-12. Four-issue newsletter pilot to validate the approved 7-minute / three-times-per-week operating promise before recurring public sends and final launch readiness.
-13. Motion pass: Latest ticker + approved micro-interactions only.
-14. Full QA, domain/release readiness, then intentional `main` release review.
-15. Resume Social Visual System v0.
+1. Homepage redesign / visual direction — COMPLETE.
+2. Hero visual selection — COMPLETE.
+3. Homepage newsletter copy — COMPLETE.
+4. Homepage acquisition placement — COMPLETE.
+5. **Static Homepage Rebuild v1 — AUTHORIZED / BLOCKED ONLY ON EXACT HERO ASSET.**
+6. Desktop / large-tablet / mobile visual QA and correction pass.
+7. News/Feature content architecture + taxonomy migration plan, separate approval, implementation, validation.
+8. News/Feature reading surfaces, `/latest`, and Features archive/presentation.
+9. Subscribe/Standards simplification and About retirement only if dependencies are safely resolved.
+10. Coordinated `Portfilo Brief` -> `Newsletter` public/email naming migration.
+11. Four-issue newsletter pilot to validate the approved 7-minute / three-times-per-week operating promise before recurring public sends and final launch readiness.
+12. Motion pass: Latest ticker + approved micro-interactions only.
+13. Full QA, domain/release readiness, then intentional `main` release review.
+14. Resume Social Visual System v0.
 
 Do not skip ahead because a later task is easier or more interesting.
 
 ## Exact next task
 
-### Final homepage newsletter signup — section-specific copy gate
+### Static Homepage Rebuild v1
 
-**No runtime code change. No implementation authorization yet.**
+**IMPLEMENTATION AUTHORIZED. CURRENT BLOCKER: REQUIRED HERO BINARY.**
 
-The hero copy is approved and must not be reopened unless the founder explicitly changes it.
+Before editing runtime code, obtain the exact approved hero image and verify its hash when practical. If it is unavailable, ask the founder to upload/provide the approved image. Do not regenerate, recreate, reinterpret, or substitute another visual.
 
-The next copy decision is only the final newsletter signup after the editorial content / `A CLOSER LOOK` area.
+Once the asset is available:
 
-Requirements:
-
-- do not repeat `Get ahead in business and tech in 7 minutes.`;
-- do not repeat the hero support sentence verbatim;
-- write for the reader who has already seen the homepage's News and Feature content;
-- keep the now-approved 7-minute / three-times-per-week promises consistent if referenced;
-- do not use `briefing` as public acquisition language;
-- do not fall back to generic `reporting / Features / deeper stories / insights` language;
-- keep form behavior functional and familiar;
-- stop for founder approval before Static Homepage Rebuild v1.
-
-After that exact lower-page copy is approved, the next gate is Static Homepage Rebuild v1. At implementation, the exact selected hero binary remains a required input. If it is unavailable, ask the founder for the approved image rather than regenerating or substituting it.
+- rebuild `src/pages/index.astro` from the approved composition rather than patching the rejected layout into shape;
+- reuse sound underlying newsletter/content/brand behavior where helpful;
+- implement the hero + Latest strip + The Latest + Featured/A Closer Look + editorial-paired signup card + compact footer signup;
+- use the approved hero copy in all three signup placements for this first build;
+- preserve the selected hero-image disclosure;
+- no motion;
+- no taxonomy/schema migration;
+- no article/route redesign;
+- no site-wide `Portfilo Brief` -> `Newsletter` migration;
+- run actual `npm run check` and `npm run build` before claiming validation;
+- stop after implementation for desktop / large-tablet / mobile visual QA.
 
 ## Deployment / release readiness
 
@@ -391,11 +325,11 @@ Remaining final-launch items include:
 
 ## Validation authority
 
-Latest recorded local validation before this state-reconciliation cleanup:
+Latest recorded local validation before the current documentation-only decision updates:
 
 - `npm run check`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes;
 - `npm run build`: PASS, user-reported 2026-09-07, before the final publication/withdrawal metadata changes.
 
 Do not infer a later build pass that was not run.
 
-The repository-state cleanup and copy/product-decision documentation updates are documentation/workflow-only and do not themselves create a new runtime validation result.
+The current homepage composition and authorization updates are documentation/workflow-only and do not themselves create a new runtime validation result.
