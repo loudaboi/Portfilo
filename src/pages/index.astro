@@ -71,7 +71,7 @@ const tickerItems =
       description="The latest news on companies, startups, products, markets, AI, and technology."
     />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <SiteHeader />
 
@@ -91,7 +91,7 @@ const tickerItems =
               id="home-hero-newsletter"
               variant="hero"
               showCopy={false}
-              buttonLabel="Subscribe free"
+              buttonLabel="Send me the news"
             />
           </div>
         </div>
@@ -132,13 +132,10 @@ const tickerItems =
                   href={`/stories/${featureStory.id}`}
                   aria-label={`Read ${featureStory.data.title}`}
                 >
-                  <img
-                    src="/images/homepage-feature-image.webp"
-                    alt=""
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <span class="featured-story__disclosure">AI-generated editorial image</span>
+                  <span class="feature-image-placeholder" aria-hidden="true">
+                    <span>Feature image</span>
+                    <small>Development layout only</small>
+                  </span>
                 </a>
 
                 <div class="featured-story__copy">
@@ -149,14 +146,21 @@ const tickerItems =
                 </div>
               </article>
 
-              <aside class="feature-newsletter" aria-label="Subscribe to the Portfilo newsletter">
-                <NewsletterSignup
-                  id="home-feature-newsletter"
-                  heading="There's more to it than the headline."
-                  copy=""
-                  variant="card"
-                  buttonLabel="Send me the news"
-                />
+              <aside class="feature-rail" aria-label="Portfilo newsletter and brand visual">
+                <div class="feature-newsletter">
+                  <NewsletterSignup
+                    id="home-feature-newsletter"
+                    heading="There's more to it than the headline."
+                    copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
+                    variant="card"
+                    buttonLabel="Subscribe"
+                  />
+                </div>
+
+                <div class="feature-brand-visual" aria-label="Portfilo brand visual placeholder">
+                  <img src="/brand/portfilo-wordmark-ink.svg" alt="Portfilo" />
+                  <span>Homepage visual placeholder</span>
+                </div>
               </aside>
             </div>
           </section>
@@ -203,13 +207,15 @@ const tickerItems =
       }
 
       <section class="footer-newsletter" aria-label="Subscribe to the Portfilo newsletter">
-        <NewsletterSignup
-          id="home-footer-newsletter"
-          heading="Get ahead in business and tech in 7 minutes."
-          copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
-          variant="footer"
-          buttonLabel="Send me the news"
-        />
+        <div class="footer-newsletter__inner">
+          <NewsletterSignup
+            id="home-footer-newsletter"
+            heading="Get ahead in business and tech in 7 minutes."
+            copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
+            variant="footer"
+            buttonLabel="Send me the news"
+          />
+        </div>
       </section>
     </main>
 
@@ -250,7 +256,9 @@ const tickerItems =
         --accent: #0050a4;
         --correction: #b42318;
         --page-max: 100rem;
-        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
+        --content-max: 84rem;
+        --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
+        --gutter: var(--shell-gutter);
         --grid-gap: clamp(1rem, 1.8vw, 1.75rem);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
@@ -286,42 +294,42 @@ const tickerItems =
       .newsletter-band {
         width: 100%;
         background: var(--paper);
-        border-top: 3px solid var(--accent);
         border-bottom: 1px solid var(--line);
       }
 
       .newsletter-band__inner,
       .featured-section,
-      .news-section {
-        width: min(100%, var(--page-max));
+      .news-section,
+      .footer-newsletter__inner {
+        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
         margin-inline: auto;
       }
 
       .newsletter-band__inner {
-        padding: clamp(1.25rem, 1.9vw, 1.75rem) var(--gutter);
+        padding: clamp(1.55rem, 2.2vw, 2rem) 0;
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.92fr);
-        gap: clamp(2rem, 4.5vw, 4.5rem);
+        grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
+        gap: clamp(2.25rem, 3.4vw, 3.5rem);
         align-items: center;
       }
 
       .newsletter-band__copy h1 {
         max-width: 17ch;
         margin: 0;
-        font: 560 clamp(2.35rem, 2.9vw, 3rem) / 0.98 var(--serif);
-        letter-spacing: -0.035em;
+        font: 680 clamp(2.15rem, 2.65vw, 2.8rem) / 0.98 var(--sans);
+        letter-spacing: -0.045em;
         text-wrap: balance;
       }
 
       .newsletter-band__copy p {
-        max-width: 44rem;
+        max-width: 43rem;
         margin: 0.65rem 0 0;
         color: var(--muted);
         font: 440 clamp(0.9rem, 1vw, 1rem) / 1.45 var(--sans);
       }
 
       .newsletter-band__form {
-        width: min(100%, 30rem);
+        width: min(100%, 31rem);
         min-width: 0;
         justify-self: end;
       }
@@ -406,15 +414,13 @@ const tickerItems =
       }
 
       .featured-section {
-        padding: clamp(1.4rem, 2.5vw, 2.35rem) var(--gutter) clamp(2.35rem, 4vw, 3.75rem);
+        padding: clamp(1.5rem, 2.7vw, 2.35rem) 0 clamp(2.4rem, 4vw, 3.75rem);
       }
 
       .featured-pair {
-        width: min(100%, 88rem);
-        margin-inline: auto;
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(19rem, 1fr);
-        gap: clamp(2rem, 3vw, 3rem);
+        grid-template-columns: minmax(0, 1.9fr) minmax(19rem, 1fr);
+        gap: clamp(2rem, 2.7vw, 2.5rem);
         align-items: start;
       }
 
@@ -423,30 +429,34 @@ const tickerItems =
       }
 
       .featured-story__media {
-        position: relative;
         display: block;
-        overflow: hidden;
+        aspect-ratio: 16 / 9;
         background: var(--paper-soft);
-        line-height: 0;
+        color: var(--muted);
+        text-decoration: none;
+        overflow: hidden;
       }
 
-      .featured-story__media img {
-        display: block;
+      .feature-image-placeholder {
         width: 100%;
-        height: auto;
-        object-fit: contain;
-        filter: grayscale(1);
+        height: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 3px solid var(--accent);
       }
 
-      .featured-story__disclosure {
-        position: absolute;
-        right: 0.65rem;
-        bottom: 0.6rem;
-        padding: 0.27rem 0.36rem;
-        background: rgba(23, 22, 20, 0.78);
-        color: #fff;
-        font: 520 0.57rem/1 var(--sans);
-        letter-spacing: 0.035em;
+      .feature-image-placeholder > span {
+        color: var(--ink);
+        font: 620 clamp(1.3rem, 1.8vw, 1.8rem) / 1 var(--sans);
+        letter-spacing: -0.025em;
+      }
+
+      .feature-image-placeholder small {
+        font: 540 0.65rem/1.2 var(--sans);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
       .featured-story__copy {
@@ -460,7 +470,7 @@ const tickerItems =
 
       .featured-story__copy h2 {
         max-width: 24ch;
-        font: 560 clamp(2.1rem, 2.7vw, 3rem) / 1 var(--serif);
+        font: 560 clamp(2rem, 2.45vw, 2.75rem) / 1 var(--serif);
         letter-spacing: -0.035em;
       }
 
@@ -481,9 +491,16 @@ const tickerItems =
         font: 420 clamp(0.92rem, 1vw, 1rem) / 1.48 var(--serif);
       }
 
+      .feature-rail {
+        min-width: 0;
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+      }
+
       .feature-newsletter {
         min-width: 0;
-        padding: clamp(1.35rem, 2.2vw, 1.9rem);
+        padding: clamp(1.35rem, 2vw, 1.8rem);
         background: var(--accent);
         color: #fff;
       }
@@ -492,8 +509,33 @@ const tickerItems =
         color: #fff;
       }
 
+      .feature-brand-visual {
+        position: relative;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        background: var(--paper-soft);
+        overflow: hidden;
+      }
+
+      .feature-brand-visual img {
+        width: min(52%, 11rem);
+        height: auto;
+      }
+
+      .feature-brand-visual span {
+        position: absolute;
+        right: 0.75rem;
+        bottom: 0.7rem;
+        color: var(--muted);
+        font: 520 0.58rem/1.2 var(--sans);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
       .news-section {
-        padding: clamp(2.5rem, 4.7vw, 4.7rem) var(--gutter) clamp(3.25rem, 6vw, 6rem);
+        padding: clamp(2.5rem, 4.7vw, 4.7rem) 0 clamp(3.25rem, 6vw, 6rem);
         border-top: 1px solid var(--line);
       }
 
@@ -615,10 +657,13 @@ const tickerItems =
 
       .footer-newsletter {
         width: 100%;
-        padding: clamp(2.2rem, 4vw, 3.8rem) max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter)));
         background: var(--ink);
         color: #fff;
         border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .footer-newsletter__inner {
+        padding: clamp(2.2rem, 4vw, 3.8rem) 0;
       }
 
       .footer-newsletter :global(.newsletter-signup__copy h2) {
@@ -660,24 +705,14 @@ const tickerItems =
         }
       }
 
-      @media (max-width: 48rem) {
-        .newsletter-band__inner,
+      @media (max-width: 52rem) {
         .featured-pair,
         .news-grid {
           grid-template-columns: 1fr;
         }
 
-        .newsletter-band__inner {
-          gap: 1.2rem;
-        }
-
-        .newsletter-band__form {
-          width: 100%;
-          justify-self: stretch;
-        }
-
-        .feature-newsletter {
-          min-height: 0;
+        .feature-rail {
+          width: min(100%, 30rem);
         }
 
         .fixture-warning {
@@ -689,21 +724,31 @@ const tickerItems =
         }
       }
 
+      @media (max-width: 48rem) {
+        .newsletter-band__inner {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+
+        .newsletter-band__form {
+          width: min(100%, 31rem);
+          justify-self: start;
+        }
+      }
+
       @media (max-width: 36rem) {
-        .newsletter-band__inner,
-        .featured-section,
-        .news-section {
-          --gutter: 1.1rem;
+        :global(:root) {
+          --shell-gutter: 1.1rem;
         }
 
         .newsletter-band__inner {
-          padding-top: 1.15rem;
-          padding-bottom: 1.2rem;
+          padding-top: 1.25rem;
+          padding-bottom: 1.35rem;
         }
 
         .newsletter-band__copy h1 {
           max-width: 18ch;
-          font-size: clamp(2rem, 10vw, 2.6rem);
+          font-size: clamp(2rem, 9vw, 2.5rem);
         }
 
         .latest-strip__label {
@@ -725,7 +770,7 @@ const tickerItems =
         }
 
         .featured-story__copy h2 {
-          font-size: clamp(2rem, 9vw, 2.65rem);
+          font-size: clamp(2rem, 9vw, 2.6rem);
         }
 
         .news-section__heading {
@@ -735,19 +780,11 @@ const tickerItems =
         .fixture-warning {
           font-size: 0.62rem;
         }
-
-        .footer-newsletter {
-          --gutter: 1.1rem;
-          padding-inline: var(--gutter);
-        }
       }
 
       @media (max-width: 23rem) {
-        .newsletter-band__inner,
-        .featured-section,
-        .news-section,
-        .footer-newsletter {
-          --gutter: 1rem;
+        :global(:root) {
+          --shell-gutter: 1rem;
         }
       }
     </style>
