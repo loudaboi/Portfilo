@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-07_
 
-_Status: FOUNDER-EDITOR APPROVED / IMPLEMENTATION AUTHORIZED_
+_Status: FOUNDER-EDITOR APPROVED / IMPLEMENTED / LOCALLY VALIDATED_
 
 ## Question
 
@@ -81,7 +81,8 @@ The same dek should be used consistently with the headline on:
 - story page;
 - homepage feature;
 - homepage latest-story list;
-- Stories archive.
+- Stories archive;
+- series story listings.
 
 ### Metadata
 
@@ -109,7 +110,7 @@ This does not remove generic `description` props or fields used for other purpos
 
 - it matches the actual reader-facing hierarchy already used on Portfilo story pages;
 - it removes the need to manufacture a third editorial sentence;
-- it makes homepage/archive packaging consistent with the story page;
+- it makes homepage/archive/series packaging consistent with the story page;
 - it separates editorial packaging from metadata infrastructure;
 - it keeps metadata override capability without adding routine work;
 - it is simpler and more resistant to generic AI summary prose.
@@ -138,7 +139,7 @@ No body wording is reopened by this decision.
 
 ## Earlier withdrawn stories
 
-The three earlier withdrawn story files should also migrate away from the retired `description` field so the content collection uses one consistent schema.
+The three earlier withdrawn story files also migrated away from the retired `description` field so the content collection uses one consistent schema.
 
 Their draft status does not change by virtue of this architecture decision.
 
@@ -149,7 +150,7 @@ The founder-editor approved the following narrow implementation:
 - revise `docs/EDITORIAL_PACKAGING_STANDARD.md`;
 - update story-writing research/brief templates;
 - update the Astro story schema;
-- render `dek` on homepage and Stories archive story packages;
+- render `dek` on homepage, Stories archive, and series story packages;
 - use `metaDescription ?? dek` for story metadata;
 - remove retired `description` fields from existing story entries;
 - synchronize directly conflicting repository instructions where required;
@@ -157,9 +158,48 @@ The founder-editor approved the following narrow implementation:
 
 No article body, approved headline, or approved dek is changed by this decision.
 
+## Implementation record
+
+Primary implementation commit:
+
+`ed6de3bbd77208b87c1869de3ba5b1e8f56e5642`
+
+Standards-alignment commit:
+
+`f422cc266baa7d13d01617ba2c6b76e134881f75`
+
+A first local post-migration `npm run check` exposed one missed story-level reference in the Series template:
+
+`src/pages/series/[slug].astro`
+
+That remaining `story.data.description` reference was replaced with `story.data.dek` in:
+
+`06b8e031e11a2394595e8ab22048941b89359cd1`
+
+The failure was treated as a migration regression rather than ignored or reclassified.
+
+## Validation
+
+Founder-editor reported the post-fix local rerun as **PASS** on 2026-09-07.
+
+Validated commands:
+
+```text
+npm run check
+npm run build
+```
+
+Result:
+
+- Packaging Architecture v1 passes local Astro diagnostics after the Series-template fix;
+- the production build passes after the complete migration;
+- the architecture is now considered implemented and locally validated on `build/portfilo-v0`.
+
+This validation does not merge to `main` and does not substitute for the later environment-dependent Phase 4C Track 6 release review.
+
 ## Approval boundary
 
-Architecture and implementation are approved.
+Architecture, implementation, and local validation are complete.
 
 This decision does not authorize:
 
