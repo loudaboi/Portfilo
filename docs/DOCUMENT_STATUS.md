@@ -27,8 +27,8 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F was reopened by founder rendered review, the revised centered-header + conditional Stories section-rail implementation is now on the working branch, visible article bylines have been removed by founder decision, and F still requires local technical checks plus founder rendered validation before G begins.
-- `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, or ticker motion as future gates are subordinate to `PROJECT_STATE` where they conflict.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. F passed founder rendered review plus user-reported local `npm run check` and `npm run build` against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`. G is active at the `/subscribe` design/copy gate; no `/subscribe` runtime redesign is authorized until that gate is approved.
+- `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -44,6 +44,8 @@ Current:
 - `docs/COPY_STYLE.md`
 - `docs/PORTFILO_TEST_STANDARD.md`
 - `docs/CONTENT_PLANNING.md` — canonical for planning gates, with older geography/taxonomy clauses superseded by later product decisions in `PROJECT_STATE`.
+
+`docs/COPY_STYLE.md` remains current for process and voice, but its older statement that no public newsletter cadence or reading-time promise is approved is superseded by the later founder-approved `7-minute / three-times-per-week` commitments recorded in `PROJECT_STATE` and `research/homepage-hero-copy-v3.md`.
 
 ### Design and imagery
 
@@ -66,7 +68,7 @@ Current homepage Feature asset remains `public/images/homepage-feature-16x9.png`
 - `research/portfilo-product-model-research-v1.md` — supporting evidence for the approved current-News + deeper-Stories model.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot, parked until core site completion.
 - `research/homepage-copy-evidence-matrix-v1.md` — research/provenance only.
-- `research/homepage-hero-copy-v3.md` — current founder-approved primary acquisition wording and operating promises.
+- `research/homepage-hero-copy-v3.md` — current founder-approved homepage hero acquisition wording and authority for the public latest-news / 7-minute / three-times-per-week operating promises. Its exact wording remains hero-scoped and is not automatic authority for `/subscribe` wording.
 
 Current CTA authority:
 
@@ -110,7 +112,7 @@ Current:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. Older `Portfilo Brief` wording still exists on some deferred surfaces and must not be opportunistically changed before the G utility-page work reaches those pages.
+The email infrastructure remains current. Legacy `Portfilo Brief` wording on `/subscribe` is now inside the active G1 scope and has no authority over the current public newsletter product direction. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
 
 ### Audience / distribution
 
@@ -184,7 +186,9 @@ The current founder-approved article contract is:
 - the content `author` field remains required/internal and continues to feed article structured data/SEO where applicable;
 - header maximum width 54rem;
 - headline uses the full 54rem frame with a restrained desktop maximum around 4.35rem;
-- optional restrained 16:9 hero maximum width 54rem with blue top rule;
+- optional restrained 16:9 hero maximum width 54rem;
+- independent thin neutral divider between the header package and hero when a hero exists;
+- blue hero top rule remains separate from that neutral divider;
 - image credit and generated-image disclosure preserved;
 - centered 41.5rem reading measure;
 - shared heading/link/list/blockquote/code/media spacing;
@@ -215,9 +219,21 @@ Stories section-navigation behavior:
 - below 56rem the rail is hidden and the body returns to centered single-column reading;
 - no article headings are invented to force the rail to appear.
 
-The published `what-actually-makes-starting-a-business-hard` Story has no `h2` headings, so it intentionally does not show the rail. It also has no Updated or Series metadata, so after the founder byline decision it should render no visible metadata rule/block beneath the dek. The DEV-visible draft `what-higher-value-work-means-in-philippine-it-bpm` has six `h2` headings and is the current rail QA case.
+The published `what-actually-makes-starting-a-business-hard` Story has no `h2` headings, so it intentionally does not show the rail. The DEV-visible draft `what-higher-value-work-means-in-philippine-it-bpm` has six `h2` headings and remains the rail QA case.
 
 The earlier E statement excluding a table of contents is superseded only to the extent of this later founder-approved Stories section rail. The earlier visible-author article treatment is likewise superseded by the later founder decision to omit bylines from article presentation while retaining author metadata internally. Neither change authorizes copying the OpenAI article UI wholesale or adding audio, sharing, or other adjacent features.
+
+### `/subscribe`
+
+Current runtime is legacy and **not** the approved final G1 presentation.
+
+Known current-state problems now inside the active G1 gate:
+
+- public `Portfilo Brief` naming is stale/rejected for the current newsletter acquisition direction;
+- `No fixed schedule yet` conflicts with the later approved three-times-per-week promise;
+- the page duplicates newsletter form JavaScript/markup instead of using the current shared `NewsletterSignup.astro` behavior;
+- older 100rem/oversized/mono-scaffolded utility-page geometry predates the current publication system;
+- `/subscribe` correctly remains excluded from shared footer acquisition, which should be preserved unless a later explicit decision changes it.
 
 ## Current validation authority
 
@@ -230,9 +246,14 @@ Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before 
 - local `npm run build`: **PASS**;
 - source review: **PASS after one narrow D fix**.
 
-F article runtime has been repeatedly source-inspected and founder-reviewed, but the current centered-header + section-rail + resilient-headline + no-visible-byline revision has **not yet** received a recorded local `npm run check`, `npm run build`, or final founder rendered pass. Do not describe F as validated until those checks actually pass.
+F shared article implementation is now validated against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`:
 
-Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. Do not fabricate production or DEV article content solely for visual QA.
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the latest branch;
+- local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
+- the final founder-reviewed article state includes centered header geometry, resilient headline scale, no visible byline, independent neutral header/hero divider, 54rem 16:9 hero treatment, narrow reading body and conditional Stories section rail.
+
+Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
 
 The later dedicated multi-width full-site responsive audit remains sequence H and is not complete.
 
@@ -257,7 +278,8 @@ Shared article runtime:
 - `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
 - `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — Story heading plumbing for the rail;
 - `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — visible News author removal;
-- `94effd0f89efd675dad82aba2d88f5ead983656f` — visible Story author removal.
+- `94effd0f89efd675dad82aba2d88f5ead983656f` — visible Story author removal;
+- `7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — independent neutral header/hero divider.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
