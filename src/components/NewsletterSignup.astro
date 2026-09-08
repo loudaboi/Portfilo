@@ -277,10 +277,20 @@ const titleId = `${id}-title`;
 
   .newsletter-signup--hero {
     display: block;
+    width: 100%;
   }
 
+  .newsletter-signup--hero .newsletter-signup__form,
+  .newsletter-signup--hero .newsletter-signup__field,
   .newsletter-signup--hero .newsletter-signup__row {
+    width: 100%;
     max-width: none;
+  }
+
+  :global(.home-page .newsletter-band__form) {
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
   }
 
   .newsletter-signup--inline {
