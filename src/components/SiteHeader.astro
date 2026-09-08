@@ -20,7 +20,7 @@ const { current } = Astro.props;
       class="site-nav__link site-nav__cta"
       href="/subscribe"
       aria-current={current === "subscribe" ? "page" : undefined}
-    >Subscribe free</a>
+    >SUBSCRIBE FREE</a>
   </nav>
 </header>
 
@@ -64,6 +64,7 @@ const { current } = Astro.props;
   .site-nav__link {
     position: relative;
     padding-block: 0.25rem;
+    color: inherit;
     font: 550 clamp(0.74rem, 0.82vw, 0.82rem) / 1 var(--sans);
     text-decoration: none;
     white-space: nowrap;
@@ -93,10 +94,6 @@ const { current } = Astro.props;
     border: 1px solid var(--accent);
     background: var(--accent);
     color: #fff;
-  }
-
-  :global(body.home-page) .site-nav__cta {
-    text-transform: uppercase;
   }
 
   .site-nav__cta::after {
