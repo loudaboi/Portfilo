@@ -4,6 +4,7 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 const entries = await getCollection(
   "stories",
@@ -18,7 +19,11 @@ const stories = entries
   );
 
 const leadStory = stories[0];
-const supportingStories = stories.slice(1);
+const leadImage = leadStory?.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
+const supportingStories = stories.slice(1).map((story) => ({
+  story,
+  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
+}));
 
 const dateFormatter = new Intl.DateTimeFormat("en-PH", {
   day: "numeric",
@@ -51,17 +56,17 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       {
         leadStory ? (
           <section class="lead-story" aria-label="Lead story">
-            {leadStory.data.image && (
+            {leadImage && (
               <a class="lead-story__image" href={`/stories/${leadStory.id}`} aria-label={`Read ${leadStory.data.title}`}>
                 <img
-                  src={leadStory.data.image.src}
-                  alt={leadStory.data.image.alt}
+                  src={leadImage.src}
+                  alt={leadImage.alt}
                   width="1600"
                   height="900"
                   loading="eager"
                   decoding="async"
                 />
-                {leadStory.data.image.generated && (
+                {leadImage.generated && (
                   <span class="image-disclosure">AI-generated editorial image</span>
                 )}
               </a>
@@ -96,7 +101,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       {
         leadStory && (
           <section class="story-stream" id="stories-list" tabindex="-1" aria-label="More stories">
-            {supportingStories.map((story) => (
+            {supportingStories.map(({ story, image }) => (
               <article class="story-row">
                 <div class="story-row__package">
                   <p class="story-meta">
@@ -110,17 +115,17 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
                   <p class="story-author">{story.data.author}</p>
                 </div>
 
-                {story.data.image && (
+                {image && (
                   <a class="story-row__image" href={`/stories/${story.id}`} aria-label={`Read ${story.data.title}`}>
                     <img
-                      src={story.data.image.src}
-                      alt={story.data.image.alt}
+                      src={image.src}
+                      alt={image.alt}
                       width="1600"
                       height="900"
                       loading="lazy"
                       decoding="async"
                     />
-                    {story.data.image.generated && (
+                    {image.generated && (
                       <span class="image-disclosure">AI-generated editorial image</span>
                     )}
                   </a>

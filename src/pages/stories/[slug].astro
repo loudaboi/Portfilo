@@ -4,6 +4,7 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 export async function getStaticPaths() {
   const stories = await getCollection(
@@ -48,6 +49,7 @@ const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined;
 const pageDescription = metaDescription ?? dek;
+const displayImage = image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
 ---
 
 <!doctype html>
@@ -101,13 +103,13 @@ const pageDescription = metaDescription ?? dek;
           </dl>
         </header>
 
-        {image && (
+        {displayImage && (
           <figure class="story-hero">
             <div class="story-hero__media">
-              <img src={image.src} alt={image.alt} width="1600" height="900" decoding="async" />
-              {image.generated && <span class="image-disclosure">AI-generated editorial image</span>}
+              <img src={displayImage.src} alt={displayImage.alt} width="1600" height="900" decoding="async" />
+              {displayImage.generated && <span class="image-disclosure">AI-generated editorial image</span>}
             </div>
-            {image.credit && <figcaption>{image.credit}</figcaption>}
+            {displayImage.credit && <figcaption>{displayImage.credit}</figcaption>}
           </figure>
         )}
 

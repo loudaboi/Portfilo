@@ -4,6 +4,7 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 import { DEV_NEWS_FIXTURES } from "../../data/devNewsFixtures";
 
 const publishedNews = await getCollection(
@@ -32,7 +33,7 @@ const realItems = newsByDate.map((story) => ({
   time: formatDate(story.data.publishedAt),
   title: story.data.title,
   dek: story.data.dek,
-  image: story.data.image,
+  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
   fixture: false as const,
 }));
 
