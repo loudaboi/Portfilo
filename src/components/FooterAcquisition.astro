@@ -1,0 +1,109 @@
+---
+import NewsletterSignup from "./NewsletterSignup.astro";
+---
+
+<section class="footer-acquisition" aria-label="Subscribe to the Portfilo newsletter">
+  <div class="footer-acquisition__inner">
+    <div class="footer-acquisition__copy">
+      <h2>Get ahead in business and tech in 7 minutes.</h2>
+      <p>
+        The latest news on companies, startups, products, markets, AI, and technology.
+        Three times a week, straight to your inbox.
+      </p>
+    </div>
+
+    <div class="footer-acquisition__form">
+      <NewsletterSignup
+        id="site-footer-newsletter"
+        variant="hero"
+        showCopy={false}
+        buttonLabel="Send me the news"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .footer-acquisition {
+    width: 100%;
+    background: #171614;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .footer-acquisition__inner {
+    width: min(calc(100% - (2 * clamp(1.25rem, 2.6vw, 2rem))), 84rem);
+    margin-inline: auto;
+    padding: clamp(2.2rem, 4vw, 3.8rem) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
+    gap: clamp(2rem, 2.7vw, 2.5rem);
+    align-items: center;
+  }
+
+  .footer-acquisition__copy h2,
+  .footer-acquisition__copy p { margin: 0; }
+
+  .footer-acquisition__copy h2 {
+    max-width: 17ch;
+    color: #fff;
+    font: 650 clamp(1.55rem, 2vw, 2.15rem) / 1 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
+    letter-spacing: -0.04em;
+  }
+
+  .footer-acquisition__copy p {
+    max-width: 44rem;
+    margin-top: 0.65rem;
+    color: rgba(255, 255, 255, 0.68);
+    font: 430 clamp(0.92rem, 1vw, 1rem) / 1.5 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
+  }
+
+  .footer-acquisition__form { min-width: 0; }
+
+  .footer-acquisition__form :global(.newsletter-signup__row) {
+    width: 100%;
+    max-width: none;
+  }
+
+  .footer-acquisition__form :global(.newsletter-signup input) {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+  }
+
+  .footer-acquisition__form :global(.newsletter-signup input::placeholder) {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .footer-acquisition__form :global(.newsletter-signup__note),
+  .footer-acquisition__form :global(.newsletter-signup__status) {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .footer-acquisition__form :global(.newsletter-signup__status[data-state="success"]) { color: #8fc7ff; }
+  .footer-acquisition__form :global(.newsletter-signup__status[data-state="error"]) { color: #ffc2b8; }
+
+  .footer-acquisition__form :global(.newsletter-signup input:focus-visible),
+  .footer-acquisition__form :global(.newsletter-signup button:focus-visible) {
+    outline-color: #8fc7ff;
+  }
+
+  @media (max-width: 64rem) {
+    .footer-acquisition__inner {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    .footer-acquisition__inner {
+      width: min(calc(100% - 2.2rem), 84rem);
+    }
+  }
+
+  @media (max-width: 23rem) {
+    .footer-acquisition__inner {
+      width: min(calc(100% - 2rem), 84rem);
+    }
+  }
+</style>

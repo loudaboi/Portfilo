@@ -1,3 +1,12 @@
+---
+import FooterAcquisition from "./FooterAcquisition.astro";
+
+const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const showAcquisition = !["/subscribe", "/confirmed", "/404"].includes(pathname);
+---
+
+{showAcquisition && <FooterAcquisition />}
+
 <footer class="site-footer">
   <a class="site-footer__brand" href="/" aria-label="Portfilo home">
     <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
@@ -13,20 +22,21 @@
 </footer>
 
 <style>
+  :global(body.home-page .footer-newsletter),
+  :global(body.editorial-page .article-newsletter) {
+    display: none;
+  }
+
   .site-footer {
+    --footer-shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
     width: 100%;
-    padding: 1.2rem max(var(--gutter), calc((100vw - var(--page-max)) / 2 + var(--gutter))) 1.55rem;
+    padding: 1.2rem max(var(--footer-shell-gutter), calc((100vw - 84rem) / 2)) 1.55rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: clamp(1.2rem, 3vw, 3rem);
     align-items: center;
-    background: var(--ink);
+    background: var(--ink, #171614);
     color: #fff;
-  }
-
-  :global(body.home-page) .site-footer,
-  :global(body.editorial-page) .site-footer {
-    padding-inline: max(var(--shell-gutter), calc((100vw - var(--content-max)) / 2));
   }
 
   .site-footer__brand {
@@ -47,7 +57,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem 1.25rem;
-    font: 500 0.72rem/1.2 var(--sans);
+    font: 500 0.72rem/1.2 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
   }
 
   .site-footer__nav a {
@@ -55,15 +65,13 @@
     text-decoration: none;
   }
 
-  .site-footer__nav a:hover {
-    color: #fff;
-  }
+  .site-footer__nav a:hover { color: #fff; }
 
   .site-footer__meta {
     margin: 0;
     justify-self: end;
     color: rgba(255, 255, 255, 0.5);
-    font: 430 0.68rem/1.4 var(--sans);
+    font: 430 0.68rem/1.4 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
     text-align: right;
   }
 
@@ -76,12 +84,7 @@
     .site-footer {
       grid-template-columns: 1fr;
       align-items: start;
-      padding-inline: var(--gutter);
-    }
-
-    :global(body.home-page) .site-footer,
-    :global(body.editorial-page) .site-footer {
-      padding-inline: var(--shell-gutter);
+      padding-inline: var(--footer-shell-gutter);
     }
 
     .site-footer__nav,
@@ -93,6 +96,6 @@
   }
 
   @media (max-width: 23rem) {
-    .site-footer { --gutter: 1rem; }
+    .site-footer { --footer-shell-gutter: 1rem; }
   }
 </style>
