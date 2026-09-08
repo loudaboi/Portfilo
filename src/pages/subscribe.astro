@@ -92,9 +92,12 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       :global(body.subscribe-page) {
-        margin: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        height: 100svh;
         min-width: 0;
         min-height: 100svh;
+        margin: 0;
         background: var(--paper);
       }
 
@@ -121,13 +124,16 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       .skip-link:focus { transform: translateY(0); }
 
       main {
+        display: grid;
+        place-items: center;
         width: 100%;
-        padding: clamp(2.5rem, 4.8vw, 5rem) var(--shell-gutter) clamp(3.5rem, 6vw, 6rem);
+        min-height: 0;
+        padding: clamp(2.5rem, 7.4svh, 5rem) var(--shell-gutter) clamp(2.5rem, 8.9svh, 6rem);
         background: var(--paper);
       }
 
       .subscribe-campaign {
-        width: min(100%, var(--content-max));
+        width: min(100%, var(--content-max), calc(148.8svh - 6.75rem));
         margin-inline: auto;
       }
 
@@ -255,7 +261,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       .subscribe-message h1 {
-        margin: clamp(2.25rem, 2.5vw, 2.5rem) 0 0;
+        margin: clamp(2.2rem, 2.5vw, 2.5rem) 0 0;
         color: #fff;
         font: 590 clamp(1.55rem, 2.15vw, 2.25rem) / 1.03 var(--sans);
         letter-spacing: -0.045em;
@@ -318,8 +324,20 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       @media (max-width: 32rem) {
+        main {
+          padding-bottom: 1.5rem;
+        }
+
+        .subscribe-campaign {
+          width: 100%;
+          height: 100%;
+        }
+
         .subscribe-campaign__visual {
           --campaign-inset: 1rem;
+          width: 100%;
+          height: 100%;
+          aspect-ratio: auto;
         }
 
         .subscribe-campaign__image {
