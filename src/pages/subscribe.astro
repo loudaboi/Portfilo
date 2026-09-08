@@ -10,7 +10,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
   <head>
     <SiteHead
       title="Subscribe | Portfilo"
-      description="Subscribe to Portfilo’s free business and technology newsletter. The latest news in a 7-minute read, three times a week."
+      description="Subscribe to Portfilo’s free business and technology newsletter. Business and tech in 7 minutes, three times a week."
     />
   </head>
   <body class="subscribe-page">
@@ -19,22 +19,43 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
     <SiteHeader current="subscribe" />
 
     <main id="main-content" tabindex="-1">
-      <section class="subscribe-band" aria-labelledby="subscribe-title">
-        <div class="subscribe-band__inner">
-          <div class="subscribe-band__copy">
-            <h1 id="subscribe-title">Business and tech, three times a week.</h1>
-            <p>
-              The latest news on companies, startups, products, markets, AI, and technology in a
-              7-minute read.
-            </p>
+      <section class="subscribe-stage" aria-labelledby="subscribe-message">
+        <img
+          class="subscribe-stage__image"
+          src="/images/subscribe-16x9.png"
+          alt=""
+          width="1672"
+          height="941"
+          loading="eager"
+          decoding="async"
+          aria-hidden="true"
+        />
+        <div class="subscribe-stage__shade" aria-hidden="true"></div>
+
+        <div class="subscribe-stage__content">
+          <div class="subscribe-message">
+            <img
+              class="subscribe-message__wordmark"
+              src="/brand/portfilo-wordmark-light.svg"
+              alt="Portfilo"
+            />
+            <h1 id="subscribe-message">
+              <span>Some changes look small,</span>
+              <span>until they reshape everything.</span>
+              <span>We look closer.</span>
+            </h1>
           </div>
 
-          <div class="subscribe-band__form">
+          <div class="subscribe-form-block">
+            <p class="subscribe-form-block__label">GET THE NEWSLETTER</p>
+            <p class="subscribe-form-block__copy">
+              Business and tech in 7 minutes, three times a week.
+            </p>
             <NewsletterSignup
               id="subscribe-page-newsletter"
               variant="hero"
               showCopy={false}
-              buttonLabel="Subscribe free"
+              buttonLabel="SUBSCRIBE FREE"
             />
           </div>
         </div>
@@ -61,7 +82,9 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         --accent: #0050a4;
         --correction: #b42318;
         --content-max: 84rem;
+        --page-max: 84rem;
         --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
+        --gutter: var(--shell-gutter);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
       }
 
@@ -77,7 +100,17 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       :global(body.subscribe-page) {
         margin: 0;
         min-width: 0;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        background: var(--ink);
+      }
+
+      :global(body.subscribe-page .site-header) {
+        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
+        padding-inline: 0;
         background: var(--paper);
+        color: var(--ink);
       }
 
       :global(body.subscribe-page a) { color: inherit; }
@@ -93,8 +126,8 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         top: 0.75rem;
         left: 0.75rem;
         padding: 0.7rem 0.85rem;
-        background: var(--ink);
-        color: var(--paper);
+        background: var(--paper);
+        color: var(--ink);
         font: 550 0.75rem/1 var(--sans);
         text-decoration: none;
         transform: translateY(-200%);
@@ -102,100 +135,198 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
 
       .skip-link:focus { transform: translateY(0); }
 
-      .subscribe-band {
+      main {
+        flex: 1 1 auto;
+        min-height: 0;
         width: 100%;
-        background: var(--accent);
-        color: #fff;
-      }
-
-      .subscribe-band__inner {
-        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
-        margin-inline: auto;
-        padding: clamp(4.5rem, 8vw, 7rem) 0;
         display: grid;
-        grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
-        gap: clamp(2rem, 2.7vw, 2.5rem);
-        align-items: center;
+        place-items: center;
+        padding: clamp(1rem, 2vw, 1.5rem) var(--shell-gutter);
+        background: var(--ink);
       }
 
-      .subscribe-band__copy h1 {
-        max-width: 16ch;
-        margin: 0;
+      .subscribe-stage {
+        position: relative;
+        isolation: isolate;
+        width: min(
+          100%,
+          var(--content-max),
+          calc((100svh - 11.5rem) * 16 / 9)
+        );
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
         color: #fff;
-        font: 680 clamp(3rem, 4.6vw, 4.8rem) / 0.96 var(--sans);
-        letter-spacing: -0.05em;
-        text-wrap: balance;
       }
 
-      .subscribe-band__copy p {
-        max-width: 45rem;
-        margin: 1rem 0 0;
-        color: rgba(255, 255, 255, 0.8);
-        font: 440 clamp(1rem, 1.2vw, 1.15rem) / 1.5 var(--sans);
-      }
-
-      .subscribe-band__form {
+      .subscribe-stage__image,
+      .subscribe-stage__shade {
+        position: absolute;
+        inset: 0;
         width: 100%;
-        max-width: none;
-        min-width: 0;
-        justify-self: stretch;
+        height: 100%;
       }
 
-      .subscribe-band__form :global(.newsletter-signup__row) {
+      .subscribe-stage__image {
+        z-index: -2;
+        display: block;
+        object-fit: cover;
+      }
+
+      .subscribe-stage__shade {
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.46);
+      }
+
+      .subscribe-stage__content {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(19rem, 0.72fr);
+        gap: clamp(2.5rem, 6vw, 6.5rem);
+        align-items: center;
+        padding: clamp(2.25rem, 5vw, 5.25rem);
+      }
+
+      .subscribe-message,
+      .subscribe-form-block {
+        min-width: 0;
+      }
+
+      .subscribe-message__wordmark {
+        display: block;
+        width: clamp(8.5rem, 12vw, 11rem);
+        height: auto;
+      }
+
+      .subscribe-message h1 {
+        max-width: 15ch;
+        margin: clamp(1.4rem, 2.5vw, 2.2rem) 0 0;
+        color: #fff;
+        font: 650 clamp(2.25rem, 3.6vw, 4rem) / 0.98 var(--sans);
+        letter-spacing: -0.045em;
+      }
+
+      .subscribe-message h1 span {
+        display: block;
+      }
+
+      .subscribe-form-block {
+        align-self: center;
+      }
+
+      .subscribe-form-block__label,
+      .subscribe-form-block__copy {
+        margin: 0;
+      }
+
+      .subscribe-form-block__label {
+        color: #fff;
+        font: 650 0.72rem/1 var(--sans);
+        letter-spacing: 0.08em;
+      }
+
+      .subscribe-form-block__copy {
+        max-width: 27rem;
+        margin-top: 0.8rem;
+        color: rgba(255, 255, 255, 0.82);
+        font: 460 clamp(1rem, 1.15vw, 1.12rem) / 1.45 var(--sans);
+      }
+
+      .subscribe-form-block :global(.newsletter-signup) {
+        margin-top: 1.35rem;
+      }
+
+      .subscribe-form-block :global(.newsletter-signup__row) {
         grid-template-columns: 1fr;
         gap: 0.55rem;
         max-width: none;
       }
 
-      .subscribe-band__form :global(.newsletter-signup input) {
-        border: 1px solid rgba(255, 255, 255, 0.42);
-        background: rgba(255, 255, 255, 0.08);
+      .subscribe-form-block :global(.newsletter-signup input) {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.2);
         color: #fff;
       }
 
-      .subscribe-band__form :global(.newsletter-signup input::placeholder) {
+      .subscribe-form-block :global(.newsletter-signup input::placeholder) {
         color: rgba(255, 255, 255, 0.68);
       }
 
-      .subscribe-band__form :global(.newsletter-signup button) {
+      .subscribe-form-block :global(.newsletter-signup button) {
         width: 100%;
         border-color: var(--paper);
         background: var(--paper);
-        color: var(--accent);
+        color: var(--ink);
       }
 
-      .subscribe-band__form :global(.newsletter-signup button:hover) {
+      .subscribe-form-block :global(.newsletter-signup button:hover) {
         filter: none;
         background: rgba(248, 246, 241, 0.9);
       }
 
-      .subscribe-band__form :global(.newsletter-signup input:focus-visible),
-      .subscribe-band__form :global(.newsletter-signup button:focus-visible) {
+      .subscribe-form-block :global(.newsletter-signup input:focus-visible),
+      .subscribe-form-block :global(.newsletter-signup button:focus-visible) {
         outline-color: #fff;
       }
 
-      .subscribe-band__form :global(.newsletter-signup__note),
-      .subscribe-band__form :global(.newsletter-signup__status) {
-        color: rgba(255, 255, 255, 0.72);
+      .subscribe-form-block :global(.newsletter-signup__note),
+      .subscribe-form-block :global(.newsletter-signup__status) {
+        color: rgba(255, 255, 255, 0.68);
       }
 
-      .subscribe-band__form :global(.newsletter-signup__status[data-state="success"]) {
+      .subscribe-form-block :global(.newsletter-signup__status[data-state="success"]) {
         color: #fff;
       }
 
-      .subscribe-band__form :global(.newsletter-signup__status[data-state="error"]) {
+      .subscribe-form-block :global(.newsletter-signup__status[data-state="error"]) {
         color: #ffe1dc;
       }
 
       @media (max-width: 56rem) {
-        .subscribe-band__inner {
-          grid-template-columns: 1fr;
-          gap: 2.25rem;
-          padding-block: clamp(3.5rem, 8vw, 5rem);
+        main {
+          display: block;
+          padding-block: 1rem;
         }
 
-        .subscribe-band__copy h1 { max-width: 14ch; }
-        .subscribe-band__form { max-width: 36rem; }
+        .subscribe-stage {
+          width: 100%;
+          min-height: clamp(38rem, 100svh, 46rem);
+          aspect-ratio: auto;
+        }
+
+        .subscribe-stage__image {
+          object-position: 44% center;
+        }
+
+        .subscribe-stage__content {
+          grid-template-columns: 1fr;
+          align-content: center;
+          gap: clamp(3rem, 9vw, 5rem);
+          padding: clamp(2rem, 7vw, 3.75rem);
+        }
+
+        .subscribe-message h1 {
+          max-width: 14ch;
+          font-size: clamp(2.35rem, 8vw, 3.6rem);
+        }
+
+        .subscribe-form-block {
+          max-width: 34rem;
+        }
+      }
+
+      @media (max-width: 32rem) {
+        .subscribe-stage__content {
+          padding-inline: clamp(1.35rem, 6vw, 2rem);
+        }
+
+        .subscribe-message__wordmark {
+          width: 8.5rem;
+        }
+
+        .subscribe-message h1 {
+          font-size: clamp(2.1rem, 10vw, 3rem);
+        }
       }
 
       @media (max-width: 23rem) {
