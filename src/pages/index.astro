@@ -609,8 +609,8 @@ const railStory =
       .newsletter-band__inner {
         padding: clamp(1.45rem, 2vw, 1.85rem) 0;
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
-        gap: clamp(2.5rem, 3.2vw, 3.5rem);
+        grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
+        gap: clamp(2rem, 2.7vw, 2.5rem);
         align-items: center;
       }
 
@@ -631,9 +631,10 @@ const railStory =
       }
 
       .newsletter-band__form {
-        width: min(100%, var(--signup-control-max));
+        width: 100%;
+        max-width: none;
         min-width: 0;
-        justify-self: end;
+        justify-self: stretch;
       }
 
       .newsletter-band__form :global(.newsletter-signup__row) {
