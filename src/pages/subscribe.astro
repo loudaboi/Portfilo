@@ -240,6 +240,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         display: block;
         width: clamp(13rem, 18vw, 17rem);
         height: auto;
+        transform: translate(-0.4rem, -0.4rem);
       }
 
       .subscribe-message h1 {
@@ -252,6 +253,14 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       .subscribe-message h1 span {
         display: block;
         white-space: nowrap;
+      }
+
+      @media (min-width: 32.01rem) {
+        .subscribe-form-block :global(.newsletter-signup input),
+        .subscribe-form-block :global(.newsletter-signup button) {
+          height: 2.75rem;
+          min-height: 2.75rem;
+        }
       }
 
       @media (max-width: 62rem) {
