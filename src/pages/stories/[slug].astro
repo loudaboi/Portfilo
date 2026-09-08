@@ -59,7 +59,6 @@ const classification = [
 ];
 
 const metadata = [
-  { label: "Author", value: author, href: authorHref },
   ...(updatedAt ? [{ label: "Updated", value: formatDate(updatedAt) }] : []),
   ...(series
     ? [{
