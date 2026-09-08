@@ -2,6 +2,7 @@
 import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import NewsletterSignup from "../components/NewsletterSignup.astro";
 ---
 
 <!doctype html>
@@ -9,190 +10,38 @@ import SiteFooter from "../components/SiteFooter.astro";
   <head>
     <SiteHead
       title="Subscribe | Portfilo"
-      description="Subscribe to Portfilo Brief for new Portfilo stories, sent by email."
+      description="Subscribe to Portfilo’s free business and technology newsletter. The latest news in a 7-minute read, three times a week."
     />
   </head>
-  <body>
+  <body class="subscribe-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <SiteHeader current="subscribe" />
 
     <main id="main-content" tabindex="-1">
-      <section class="subscribe-hero" aria-labelledby="subscribe-title">
-        <p class="subscribe-kicker">Portfilo Brief / Email</p>
-        <h1 id="subscribe-title">Portfilo Brief</h1>
-        <p class="subscribe-intro">New Portfilo stories by email.</p>
-      </section>
-
-      <section class="signup-section" aria-labelledby="signup-title">
-        <div class="signup-section__label">
-          <p>01 / Subscribe</p>
-          <p>Email signup</p>
-        </div>
-
-        <div class="signup-section__main">
-          <div class="signup-section__copy">
-            <h2 id="signup-title">Subscribe</h2>
-            <p>Enter your email. We’ll send a confirmation link.</p>
+      <section class="subscribe-band" aria-labelledby="subscribe-title">
+        <div class="subscribe-band__inner">
+          <div class="subscribe-band__copy">
+            <h1 id="subscribe-title">Business and tech, three times a week.</h1>
+            <p>
+              The latest news on companies, startups, products, markets, AI, and technology in a
+              7-minute read.
+            </p>
           </div>
 
-          <form
-            class="subscribe-form"
-            id="subscribe-form"
-            action="/api/subscribe"
-            method="post"
-            novalidate
-          >
-            <div class="subscribe-form__field">
-              <label for="subscribe-email">Email address</label>
-              <div class="subscribe-form__row">
-                <input
-                  id="subscribe-email"
-                  name="email"
-                  type="email"
-                  inputmode="email"
-                  autocomplete="email"
-                  maxlength="320"
-                  placeholder="you@example.com"
-                  required
-                  aria-describedby="subscribe-hint subscribe-status"
-                />
-                <button type="submit">
-                  <span data-submit-label>Subscribe</span>
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-              <p class="subscribe-form__hint" id="subscribe-hint">
-                No fixed schedule yet. Unsubscribe any time. <a href="/privacy">Privacy</a>.
-              </p>
-              <p
-                class="subscribe-form__status"
-                id="subscribe-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-            </div>
-
-            <div class="subscribe-form__honeypot" aria-hidden="true">
-              <label for="subscribe-company">Company</label>
-              <input
-                id="subscribe-company"
-                name="company"
-                type="text"
-                tabindex="-1"
-                autocomplete="off"
-              />
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section class="brief-section" aria-labelledby="brief-title">
-        <div class="brief-section__inner">
-          <p class="brief-section__index">02 / Portfilo Brief</p>
-
-          <div class="brief-section__statement">
-            <h2 id="brief-title">Subscription details</h2>
+          <div class="subscribe-band__form">
+            <NewsletterSignup
+              id="subscribe-page-newsletter"
+              variant="hero"
+              showCopy={false}
+              buttonLabel="Subscribe free"
+            />
           </div>
-
-          <dl class="brief-section__rules">
-            <div>
-              <dt>Schedule</dt>
-              <dd>No fixed schedule yet.</dd>
-            </div>
-            <div>
-              <dt>Confirmation</dt>
-              <dd>Required before the subscription is active.</dd>
-            </div>
-            <div>
-              <dt>Unsubscribe</dt>
-              <dd>Any time.</dd>
-            </div>
-          </dl>
         </div>
       </section>
     </main>
 
     <SiteFooter />
-
-    <script is:inline>
-      const subscribeForm = document.querySelector("#subscribe-form");
-      const emailInput = document.querySelector("#subscribe-email");
-      const statusMessage = document.querySelector("#subscribe-status");
-      const submitButton = subscribeForm?.querySelector('button[type="submit"]');
-      const submitLabel = subscribeForm?.querySelector("[data-submit-label]");
-
-      function setStatus(message, state = "") {
-        if (!statusMessage) return;
-        statusMessage.textContent = message;
-        statusMessage.dataset.state = state;
-      }
-
-      function setSubmitting(isSubmitting) {
-        if (!submitButton || !submitLabel) return;
-        submitButton.disabled = isSubmitting;
-        submitButton.setAttribute("aria-busy", String(isSubmitting));
-        submitLabel.textContent = isSubmitting ? "Submitting…" : "Subscribe";
-      }
-
-      subscribeForm?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        if (!(emailInput instanceof HTMLInputElement)) return;
-
-        emailInput.removeAttribute("aria-invalid");
-        setStatus("");
-
-        if (!emailInput.value.trim() || !emailInput.checkValidity()) {
-          emailInput.setAttribute("aria-invalid", "true");
-          setStatus("Enter a valid email address.", "error");
-          emailInput.focus();
-          return;
-        }
-
-        const formData = new FormData(subscribeForm);
-        const payload = {
-          email: String(formData.get("email") || "").trim(),
-          company: String(formData.get("company") || "").trim(),
-        };
-
-        setSubmitting(true);
-
-        try {
-          const response = await fetch("/api/subscribe", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          const result = await response.json().catch(() => null);
-
-          if (!response.ok || !result?.ok) {
-            throw new Error(
-              result?.message || "We could not submit your email. Please try again.",
-            );
-          }
-
-          subscribeForm.reset();
-          setStatus(
-            "Check your inbox. Confirm your email to finish subscribing to Portfilo Brief.",
-            "success",
-          );
-        } catch (error) {
-          setStatus(
-            error instanceof Error
-              ? error.message
-              : "We could not submit your email. Please try again.",
-            "error",
-          );
-        } finally {
-          setSubmitting(false);
-        }
-      });
-    </script>
 
     <style>
       @font-face {
@@ -202,307 +51,155 @@ import SiteFooter from "../components/SiteFooter.astro";
         font-weight: 400 700;
         src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
       }
-      @font-face {
-        font-family: "Source Serif 4";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2");
-      }
 
       :global(:root) {
-        --paper: #f4f0e8;
+        --paper: #f8f6f1;
         --ink: #171614;
-        --muted: #69655e;
-        --line: #cbc5bb;
+        --muted: #68645e;
+        --line: #d4cfc6;
+        --line-strong: #aaa39a;
         --accent: #0050a4;
-        --accent-on-ink: #8fc7ff;
         --correction: #b42318;
-        --page-max: 100rem;
-        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
-        --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
+        --content-max: 84rem;
+        --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-        --serif: "Source Serif 4", Georgia, serif;
-        --mono: "IBM Plex Mono", "Courier New", monospace;
       }
 
       :global(*) { box-sizing: border-box; }
-      :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; }
-      :global(body) { margin: 0; min-width: 0; background: var(--paper); }
-      :global(a) { color: inherit; }
-      :global(a:focus-visible),
-      .subscribe-form input:focus-visible,
-      .subscribe-form button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-      :global(#main-content:focus) { outline: none; }
+
+      :global(html) {
+        background: var(--ink);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-synthesis: none;
+      }
+
+      :global(body.subscribe-page) {
+        margin: 0;
+        min-width: 0;
+        background: var(--paper);
+      }
+
+      :global(body.subscribe-page a) { color: inherit; }
+      :global(body.subscribe-page a:focus-visible) {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      :global(body.subscribe-page main:focus) { outline: none; }
 
       .skip-link {
         position: fixed;
-        z-index: 20;
+        z-index: 50;
         top: 0.75rem;
         left: 0.75rem;
-        padding: 0.65rem 0.8rem;
+        padding: 0.7rem 0.85rem;
         background: var(--ink);
         color: var(--paper);
-        font: 400 0.75rem/1 var(--mono);
+        font: 550 0.75rem/1 var(--sans);
         text-decoration: none;
         transform: translateY(-200%);
       }
+
       .skip-link:focus { transform: translateY(0); }
 
-      .subscribe-hero,
-      .signup-section,
-      .brief-section__inner,
-      .privacy-note {
-        width: min(100%, var(--page-max));
-        margin-inline: auto;
-      }
-
-      .subscribe-hero {
-        padding: clamp(4rem, 7vw, 7.5rem) var(--gutter) clamp(4.5rem, 8vw, 8rem);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        column-gap: var(--grid-gap);
-        row-gap: clamp(2rem, 4vw, 4rem);
-      }
-      .subscribe-kicker {
-        grid-column: 1 / 4;
-        margin: 0.55rem 0 0;
-        color: var(--accent);
-        font: 400 0.67rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-      .subscribe-hero h1 {
-        grid-column: 3 / 13;
-        max-width: 11ch;
-        margin: 0;
-        font: 500 clamp(4rem, 8vw, 8.3rem) / 0.88 var(--sans);
-        letter-spacing: -0.072em;
-        text-wrap: balance;
-      }
-      .subscribe-intro {
-        grid-column: 5 / 11;
-        max-width: 42rem;
-        margin: 0;
-        font: 400 clamp(1.3rem, 1.75vw, 1.72rem) / 1.5 var(--serif);
-      }
-
-      .signup-section {
-        padding: 0 var(--gutter) clamp(5.5rem, 9vw, 9rem);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        column-gap: var(--grid-gap);
-      }
-      .signup-section__label {
-        grid-column: 1 / 4;
-        padding-top: 0.75rem;
-        border-top: 1px solid var(--ink);
-        font: 400 0.64rem/1.5 var(--mono);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .signup-section__label p { margin: 0 0 0.4rem; }
-      .signup-section__label p:last-child { color: var(--muted); }
-      .signup-section__main { grid-column: 5 / 13; min-width: 0; }
-      .signup-section__copy h2 {
-        max-width: 12ch;
-        margin: 0;
-        font: 500 clamp(3rem, 5.6vw, 5.8rem) / 0.92 var(--sans);
-        letter-spacing: -0.06em;
-      }
-      .signup-section__copy p {
-        max-width: 39rem;
-        margin: clamp(1.6rem, 2.7vw, 2.5rem) 0 0;
-        color: var(--muted);
-        font: 400 clamp(1.08rem, 1.35vw, 1.28rem) / 1.6 var(--serif);
-      }
-
-      .subscribe-form {
-        position: relative;
-        margin-top: clamp(2.75rem, 5vw, 4.75rem);
-        padding-top: clamp(1.15rem, 1.8vw, 1.5rem);
-        border-top: 3px solid var(--accent);
-      }
-      .subscribe-form__field > label {
-        display: block;
-        margin-bottom: 0.75rem;
-        font: 400 0.65rem/1.4 var(--mono);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .subscribe-form__row {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        border-bottom: 1px solid var(--ink);
-      }
-      .subscribe-form input[type="email"] {
-        min-width: 0;
-        height: clamp(4.15rem, 5.2vw, 5.15rem);
-        padding: 0 clamp(1rem, 1.8vw, 1.5rem) 0 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-        color: var(--ink);
-        font: 500 clamp(1.5rem, 2.4vw, 2.35rem) / 1 var(--sans);
-        letter-spacing: -0.035em;
-        appearance: none;
-      }
-      .subscribe-form input[type="email"]::placeholder { color: var(--muted); opacity: 1; }
-      .subscribe-form input[type="email"]:focus-visible { position: relative; z-index: 1; outline-offset: -1px; }
-      .subscribe-form input[aria-invalid="true"] { box-shadow: inset 0 -3px 0 var(--correction); }
-      .subscribe-form button {
-        min-width: clamp(9.5rem, 13vw, 12.5rem);
-        min-height: clamp(4.15rem, 5.2vw, 5.15rem);
-        padding: 0 clamp(1.1rem, 2vw, 1.65rem);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-        border: 0;
-        border-radius: 0;
+      .subscribe-band {
+        width: 100%;
         background: var(--accent);
-        color: white;
-        font: 600 clamp(1rem, 1.2vw, 1.14rem) / 1 var(--sans);
-        cursor: pointer;
-      }
-      .subscribe-form button span:last-child { font-size: 1.25em; }
-      .subscribe-form button:hover { background: var(--ink); }
-      .subscribe-form button:disabled { cursor: wait; opacity: 0.62; }
-      .subscribe-form__hint,
-      .subscribe-form__status { max-width: 42rem; font: 400 0.67rem/1.55 var(--mono); }
-      .subscribe-form__hint { margin: 0.8rem 0 0; color: var(--muted); }
-      .subscribe-form__status { min-height: 1.1em; margin: 1rem 0 0; }
-      .subscribe-form__status:empty { margin-top: 0; }
-      .subscribe-form__status[data-state="success"] { color: var(--accent); }
-      .subscribe-form__status[data-state="error"] { color: var(--correction); }
-      .subscribe-form__honeypot {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip-path: inset(50%);
-        white-space: nowrap;
+        color: #fff;
       }
 
-      .brief-section { width: 100%; background: var(--ink); color: var(--paper); }
-      .brief-section__inner {
-        padding: clamp(4.5rem, 8vw, 8rem) var(--gutter);
+      .subscribe-band__inner {
+        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
+        margin-inline: auto;
+        padding: clamp(4.5rem, 8vw, 7rem) 0;
         display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
+        grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
+        gap: clamp(2rem, 2.7vw, 2.5rem);
+        align-items: center;
       }
-      .brief-section__index {
-        grid-column: 1 / 3;
+
+      .subscribe-band__copy h1 {
+        max-width: 16ch;
         margin: 0;
-        color: var(--accent-on-ink);
-        font: 400 0.64rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-      .brief-section__statement { grid-column: 4 / 10; }
-      .brief-section__statement h2 {
-        max-width: 14ch;
-        margin: 0;
-        font: 500 clamp(3rem, 5.4vw, 5.6rem) / 0.94 var(--sans);
-        letter-spacing: -0.06em;
+        color: #fff;
+        font: 680 clamp(3rem, 4.6vw, 4.8rem) / 0.96 var(--sans);
+        letter-spacing: -0.05em;
         text-wrap: balance;
       }
-      .brief-section__rules {
-        grid-column: 10 / 13;
-        margin: 0;
-        align-self: end;
-        border-top: 1px solid #55524d;
-        font: 400 0.67rem/1.55 var(--mono);
-      }
-      .brief-section__rules > div { padding: 0.8rem 0; border-bottom: 1px solid #55524d; }
-      .brief-section__rules dt {
-        margin-bottom: 0.3rem;
-        color: var(--accent-on-ink);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-      .brief-section__rules dd { margin: 0; color: #d7d2c9; }
 
-      .privacy-note {
-        padding: clamp(3.5rem, 6vw, 6rem) var(--gutter);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
-        border-bottom: 1px solid var(--ink);
+      .subscribe-band__copy p {
+        max-width: 45rem;
+        margin: 1rem 0 0;
+        color: rgba(255, 255, 255, 0.8);
+        font: 440 clamp(1rem, 1.2vw, 1.15rem) / 1.5 var(--sans);
       }
-      .privacy-note > p {
-        grid-column: 1 / 4;
-        margin: 0;
+
+      .subscribe-band__form {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        justify-self: stretch;
+      }
+
+      .subscribe-band__form :global(.newsletter-signup__row) {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        max-width: none;
+      }
+
+      .subscribe-band__form :global(.newsletter-signup input) {
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+
+      .subscribe-band__form :global(.newsletter-signup input::placeholder) {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .subscribe-band__form :global(.newsletter-signup button) {
+        width: 100%;
+        border-color: var(--paper);
+        background: var(--paper);
         color: var(--accent);
-        font: 400 0.64rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-      .privacy-note > div { grid-column: 5 / 11; }
-      .privacy-note h2 {
-        margin: 0;
-        font: 500 clamp(1.6rem, 2.4vw, 2.5rem) / 1 var(--sans);
-        letter-spacing: -0.04em;
-      }
-      .privacy-note div > p {
-        max-width: 42rem;
-        margin: 1.4rem 0 0;
-        font: 400 clamp(1.05rem, 1.25vw, 1.2rem) / 1.62 var(--serif);
       }
 
-      @media (max-width: 64rem) {
-        .subscribe-hero h1 { grid-column: 2 / 13; }
-        .subscribe-intro { grid-column: 4 / 11; }
-        .signup-section__main { grid-column: 4 / 13; }
-        .brief-section__statement { grid-column: 3 / 10; }
-        .privacy-note > div { grid-column: 4 / 11; }
+      .subscribe-band__form :global(.newsletter-signup button:hover) {
+        filter: none;
+        background: rgba(248, 246, 241, 0.9);
       }
 
-      @media (max-width: 50rem) {
-        .subscribe-hero { display: block; padding-top: 3.6rem; padding-bottom: 4.5rem; }
-        .subscribe-kicker { margin: 0 0 1.35rem; }
-        .subscribe-hero h1 { max-width: none; font-size: clamp(3.35rem, 14vw, 5.3rem); line-height: 0.91; text-wrap: pretty; }
-        .subscribe-intro { max-width: 36rem; margin-top: 2rem; font-size: 1.26rem; }
+      .subscribe-band__form :global(.newsletter-signup input:focus-visible),
+      .subscribe-band__form :global(.newsletter-signup button:focus-visible) {
+        outline-color: #fff;
+      }
 
-        .signup-section { display: block; padding-bottom: 5rem; }
-        .signup-section__label { max-width: 24rem; margin-bottom: 2.5rem; }
-        .signup-section__copy h2 { max-width: none; font-size: clamp(2.8rem, 12vw, 4.5rem); }
-        .signup-section__copy p { font-size: 1.08rem; }
-        .subscribe-form { margin-top: 2.8rem; }
-        .subscribe-form__row { grid-template-columns: 1fr; border-bottom: 0; }
-        .subscribe-form input[type="email"] {
-          height: 4.25rem;
-          padding-right: 0;
-          border-bottom: 1px solid var(--ink);
-          font-size: clamp(1.35rem, 6vw, 1.85rem);
+      .subscribe-band__form :global(.newsletter-signup__note),
+      .subscribe-band__form :global(.newsletter-signup__status) {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .subscribe-band__form :global(.newsletter-signup__status[data-state="success"]) {
+        color: #fff;
+      }
+
+      .subscribe-band__form :global(.newsletter-signup__status[data-state="error"]) {
+        color: #ffe1dc;
+      }
+
+      @media (max-width: 56rem) {
+        .subscribe-band__inner {
+          grid-template-columns: 1fr;
+          gap: 2.25rem;
+          padding-block: clamp(3.5rem, 8vw, 5rem);
         }
-        .subscribe-form button { width: 100%; min-height: 3.85rem; margin-top: 1rem; padding-inline: 1.15rem; }
 
-        .brief-section__inner { display: block; padding-top: 4.5rem; padding-bottom: 4.5rem; }
-        .brief-section__index { margin-bottom: 2rem; }
-        .brief-section__statement h2 { max-width: none; font-size: clamp(2.8rem, 11.5vw, 4.5rem); text-wrap: pretty; }
-        .brief-section__rules { margin-top: 3rem; }
-
-        .privacy-note { display: block; padding-top: 3.5rem; padding-bottom: 3.5rem; }
-        .privacy-note > p { margin-bottom: 1.5rem; }
-        .privacy-note h2 { font-size: clamp(1.7rem, 7vw, 2.5rem); }
-        .privacy-note div > p { font-size: 1.1rem; }
+        .subscribe-band__copy h1 { max-width: 14ch; }
+        .subscribe-band__form { max-width: 36rem; }
       }
 
-      @media (max-width: 28rem) {
-        .subscribe-hero h1 { font-size: clamp(3rem, 15vw, 4.15rem); }
-        .subscribe-form input[type="email"] { font-size: 1.3rem; }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        :global(*) { scroll-behavior: auto !important; }
+      @media (max-width: 23rem) {
+        :global(:root) { --shell-gutter: 1rem; }
       }
     </style>
   </body>
