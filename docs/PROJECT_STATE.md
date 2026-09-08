@@ -10,7 +10,7 @@ Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is act
 
 Current unvalidated runtime HEAD before this documentation update:
 
-`a873c55ccbf3678ecfbddd1f7e61030acd715075` — `Uppercase homepage subscribe CTA`
+`c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0` — `Preserve shared header link colors on subscribe page`
 
 Last fully validated runtime HEAD:
 
@@ -388,6 +388,7 @@ Implementation:
 - asset commit `b66910b0e52e6eb93556985d38ca532e0513bdfb` added `public/images/subscribe-16x9.png`;
 - runtime commit `f860085e7cef614a3c594a403af91bd8f1e2525f` rebuilt only `src/pages/subscribe.astro` around the locked image and approved two-block overlay composition;
 - runtime commit `a873c55ccbf3678ecfbddd1f7e61030acd715075` makes only the homepage header CTA render visually as `SUBSCRIBE FREE`; the shared label remains `Subscribe free` elsewhere;
+- runtime correction `c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0` removes an over-broad subscribe-page anchor color override so shared header link/CTA colors remain authoritative;
 - the shared `NewsletterSignup.astro` remains unchanged and continues to own form behavior;
 - no dependency, schema, API, archive, article, Standards or Privacy runtime changes were made by the revision.
 
