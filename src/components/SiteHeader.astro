@@ -8,7 +8,7 @@ interface Props {
 const { current } = Astro.props;
 ---
 
-<header class="site-header">
+<header class="site-header" transition:persist="portfilo-site-header">
   <a class="wordmark" href="/" aria-label="Portfilo home">
     <img src="/brand/portfilo-wordmark-color.svg" alt="Portfilo" />
   </a>
@@ -23,6 +23,31 @@ const { current } = Astro.props;
     >SUBSCRIBE FREE</a>
   </nav>
 </header>
+
+<script>
+  const syncPrimaryNavigation = () => {
+    const header = document.querySelector(".site-header");
+    if (!(header instanceof HTMLElement)) return;
+
+    const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+    const links = header.querySelectorAll(".site-nav__link");
+
+    links.forEach((link) => {
+      if (!(link instanceof HTMLAnchorElement)) return;
+      const href = link.getAttribute("href");
+      const isCurrent =
+        (href === "/news" && (pathname === "/news" || pathname.startsWith("/news/"))) ||
+        (href === "/stories" && (pathname === "/stories" || pathname.startsWith("/stories/"))) ||
+        (href === "/subscribe" && pathname === "/subscribe");
+
+      if (isCurrent) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  document.addEventListener("astro:page-load", syncPrimaryNavigation);
+  syncPrimaryNavigation();
+</script>
 
 <style>
   .site-header {
