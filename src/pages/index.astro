@@ -306,7 +306,7 @@ const railStory =
 
     <SiteFooter />
 
-    <script is:inline>
+    <script is:inline data-astro-rerun>
       (() => {
         const rail = document.querySelector("[data-latest-rail]");
         const track = rail?.querySelector("[data-latest-track]");
@@ -315,8 +315,11 @@ const railStory =
         if (
           !(rail instanceof HTMLElement) ||
           !(track instanceof HTMLElement) ||
-          !(group instanceof HTMLElement)
+          !(group instanceof HTMLElement) ||
+          rail.dataset.tickerBound === "true"
         ) return;
+
+        rail.dataset.tickerBound = "true";
 
         const SPEED_PX_PER_SECOND = 30;
         const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -488,23 +491,28 @@ const railStory =
           { passive: true },
         );
 
-        window.addEventListener("resize", () => {
+        const handleResize = () => {
           cancelAnimationFrame(resizeFrame);
           resizeFrame = requestAnimationFrame(setupTicker);
-        });
+        };
+
+        const cleanupTicker = () => {
+          clearResumeTimer();
+          cancelAnimationFrame(resizeFrame);
+          tickerAnimation?.cancel();
+          tickerAnimation = null;
+          window.removeEventListener("resize", handleResize);
+          motionQuery.removeEventListener?.("change", setupTicker);
+          document.removeEventListener("astro:before-swap", cleanupTicker);
+          window.removeEventListener("pagehide", cleanupTicker);
+        };
+
+        window.addEventListener("resize", handleResize);
         motionQuery.addEventListener?.("change", setupTicker);
+        document.addEventListener("astro:before-swap", cleanupTicker, { once: true });
+        window.addEventListener("pagehide", cleanupTicker, { once: true });
 
         setupTicker();
-
-        window.addEventListener(
-          "pagehide",
-          () => {
-            clearResumeTimer();
-            cancelAnimationFrame(resizeFrame);
-            tickerAnimation?.cancel();
-          },
-          { once: true },
-        );
       })();
     </script>
 
