@@ -4,15 +4,21 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — NEWS + STORIES IMPLEMENTED / FRESH TECHNICAL + RENDERED QA PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — HOMEPAGE ALIGNMENT + DEV MEDIA + ARCHIVE SIGNUPS + TICKER MOTION IMPLEMENTED / FRESH TECHNICAL + RENDERED QA PENDING**
 
-The founder reported the final static-homepage validation and rendered review as passing before this phase. The static homepage remains frozen unless a concrete regression is found.
+The founder previously approved the News + Stories content architecture, approved the News + Stories visual system, and separately authorized its runtime implementation.
 
-The founder approved the News + Stories content architecture, approved the News + Stories visual system, and then separately authorized the decision-complete runtime implementation scope. That implementation is now committed on `build/portfilo-v0` at:
+During the first rendered review of that implementation, the founder identified a concrete homepage alignment defect and requested a bounded correction pass before judging News and Stories. The founder then explicitly authorized that correction pass, including ticker motion.
 
-`f1e4b634d3675f99cec8e121b442509e28874c08`
+Current runtime correction commits on `build/portfilo-v0`:
 
-No fresh `npm run check`, `npm run build`, development rendered QA, or production-equivalent preview has yet been recorded against this implementation commit. No ticker motion, deployment, merge to `main`, or release has been authorized.
+- `6e19872d70575609542003a4813f1a93d1f79c1c` — homepage editorial alignment, DEV editorial imagery, archive signup units, contextual Feature copy, and ticker motion;
+- `4ae88632629596738f627866b32f4b64dea4ea73` — keeps DEV editorial-image fallback presentation-only rather than changing the content schema;
+- `1070c480dc013367ae9d646a395b30039e67a739` — fixes the DEV editorial-image fixture typing so optional image credit remains type-safe on article routes.
+
+Fresh `npm run check`, `npm run build`, development rendered QA, and production-equivalent preview have **not** yet been recorded against the current correction tree.
+
+No deployment, merge to `main`, or release is authorized.
 
 ## Repository authority
 
@@ -61,32 +67,45 @@ Approved internal selection lens:
 
 This is internal only.
 
-## Frozen homepage contract
+## Homepage contract after the approved correction pass
 
-Do not reopen the composition during QA unless the implementation exposed a concrete defect.
+The homepage composition remains frozen except for the founder-approved corrections listed here. Do not reopen unrelated layout, type, color, copy, or navigation decisions during QA.
 
-Frozen visual system includes:
+Current system includes:
 
 - shared 84rem / 1344px homepage shell;
 - matched 5.8rem header/footer wordmarks;
 - full Portfilo-blue newsletter hero;
 - Instrument Sans homepage direction;
 - square newsletter controls;
-- static/manual full-bleed Latest-news ticker with black fixed label, light rail and blue metadata;
+- stacked hero signup expands to the full shared-shell width at the stacked breakpoint so its left and right edges align with the editorial shell;
+- full-bleed Latest-news ticker with fixed black `Latest news` label, light headline rail and blue metadata;
+- automatic ticker movement at approximately 30 px/sec when there is enough inventory to form a meaningful loop;
+- ticker pauses on hover, focus and active manual interaction, retains manual horizontal scrolling, and disables automatic movement under `prefers-reduced-motion`;
+- ticker duplicate sequence is loop mechanics only and is hidden from accessibility semantics;
+- insufficient ticker inventory remains static;
 - approved 16:9 monochrome Feature image with 3px blue top rule and AI-image disclosure;
-- Feature + blue Stories rail composition, stacking at 64rem / 1024px and below;
-- homepage News one-lead-plus-supporting hierarchy;
-- canonical 16:9 News lead imagery;
-- development-only News fixtures and no fabricated production journalism;
-- black footer endcap with `Stories | Standards | Privacy`.
+- Feature + blue Stories rail composition;
+- Feature and homepage News now use the same desktop editorial grid: 52rem primary column, same right-column start and same gap;
+- Feature and News both stack at 64rem / 1024px and below;
+- homepage News remains one lead plus supporting items;
+- development-only News fixtures remain clearly synthetic;
+- production never fabricates News;
+- black footer endcap remains `Stories | Standards | Privacy`.
 
-News/Stories implementation was allowed to change homepage **data sourcing and links only**. Homepage layout, spacing, typography, newsletter copy, Feature/rail composition, and ticker visual treatment remain frozen.
+Founder-approved contextual Feature signup copy is now:
+
+**Headline:** `There's more to it than the headline.`
+
+**Support:** `Who made the move, what changed, and the details behind it.`
+
+CTA remains `Subscribe`.
 
 ## Implemented News + Stories architecture
 
 ### Collection model
 
-The existing Astro editorial collection remains one collection and now requires:
+The existing Astro editorial collection remains one collection and requires:
 
 ```yaml
 section: news | stories
@@ -94,11 +113,11 @@ section: news | stories
 
 `section`, `contentType`, and `topic` remain separate dimensions.
 
-Current topic values are now:
+Current topic values:
 
 `business / technology / startup / ai`
 
-The optional shared editorial image metadata is now:
+Optional shared editorial image metadata:
 
 ```yaml
 image:
@@ -108,9 +127,9 @@ image:
   generated: true    # optional, defaults false
 ```
 
-Schema safeguards now enforce:
+Schema safeguards enforce:
 
-- `section` is required;
+- `section` required;
 - published entries require `publishedAt`;
 - `updatedAt` cannot precede `publishedAt`;
 - `seriesOrder` requires `series`;
@@ -119,17 +138,13 @@ Schema safeguards now enforce:
 
 ### Existing-content migration
 
-Existing genuine editorial content was kept in `section: stories`.
+Existing genuine editorial content remains in `section: stories` unless explicitly classified otherwise.
 
-The published Story `What actually makes starting a business hard?` remains at its existing `/stories/...` route. Its already-selected homepage Feature image is now represented through the shared image metadata and retains generated-image disclosure.
+The published Story `What actually makes starting a business hard?` remains at its existing `/stories/...` route and retains its selected 16:9 generated editorial image through real image metadata.
 
-Legacy `building` topics were audited individually:
+Legacy `building` topics were audited individually during the architecture implementation.
 
-- `Build things that make the next thing easier` -> `technology`;
-- `What actually changed?` -> `technology`;
-- the synthetic series-ordering fixture using `building` -> `technology`.
-
-The draft-filtering synthetic fixture was explicitly classified as a **draft News fixture** so development can verify `/news/[slug]` routing while production draft filtering remains testable. It does not create production News inventory.
+The draft-filtering synthetic fixture remains a development-only News route fixture and does not create production News inventory.
 
 ### Routes and page families
 
@@ -140,59 +155,69 @@ Implemented:
 - `/stories`
 - `/stories/[slug]`
 
-`/news` is dense, chronological and sans-led. Production shows a factual empty state when no published News exists. Development uses the shared synthetic News fixtures when real published News inventory is absent.
+`/news` remains the denser chronological News surface. `/stories` remains the deeper editorial archive. News article body copy remains Instrument Sans; Story long-form body copy remains Source Serif 4.
 
-`/stories` now uses the approved deeper-editorial archive treatment and no longer uses the old giant-number/experimental archive layout.
+The dedicated visual review of News and Stories is **not yet complete**. The founder explicitly deferred judgment until the homepage alignment/media correction could be reviewed first.
 
-News articles use the compact Instrument Sans reading mode. Story articles use Instrument Sans display/dek and Source Serif 4 for sustained long-form body reading. Old sticky metadata rails, duplicated metadata blocks, numbered body-heading decoration, and report-like article scaffolding were removed from these routes.
+### Archive newsletter acquisition
 
-Both article families support optional 16:9 editorial imagery, optional credits, generated-image disclosure, methodology/correction modules when present, and one post-article signup using the existing newsletter component and approved newsletter wording.
+One contextual signup unit now appears after the lead package and before the remaining archive on both editorial archive pages.
 
-### Header and shared shell
+News archive copy:
 
-The shared header now reads:
+- heading: `Get Portfilo news in your inbox.`
+- support: `The latest news on companies, startups, products, markets, AI, and technology. Three times a week.`
+
+Stories archive copy:
+
+- heading: `Get Portfilo stories in your inbox.`
+- support: `Deeper reporting, explainers, and analysis on business and technology.`
+
+Both reuse the existing `NewsletterSignup` behavior, square controls, free/unsubscribe microcopy, validation and double-opt-in success state.
+
+### Development editorial imagery
+
+For visual QA only, the existing approved 16:9 asset is reused as a DEV fixture:
+
+`/images/homepage-feature-16x9.png`
+
+DEV fixture imagery is presentation-only and does not modify production story metadata or the content schema.
+
+In development it fills existing image-capable slots when real metadata is absent:
+
+- homepage News lead through shared synthetic News fixtures;
+- `/news` lead;
+- `/news/[slug]` hero;
+- `/stories` lead;
+- supporting Story image slots;
+- `/stories/[slug]` hero.
+
+The homepage Feature continues to use its real selected image metadata.
+
+Supporting News rows remain text-only because no supporting-thumbnail slot was added.
+
+Production still shows an image only when a real editorial entry contains image metadata. No generic production fallback image is allowed.
+
+### Header and homepage sourcing
+
+Header remains:
 
 `Portfilo | News | Stories | Subscribe free`
 
-`News` links to `/news` and receives the active-page state on News surfaces.
-
-News and Stories pages use the same 84rem / 1344px outer publication shell and responsive gutter logic as the frozen homepage. The existing SiteFooter alignment rule now recognizes these editorial pages as well.
-
-### Homepage data wiring
-
-Homepage sourcing now follows the approved separation:
+Homepage sourcing remains:
 
 - Feature: published Stories only;
 - blue rail: Stories only;
 - homepage News: published News only;
 - Latest-news ticker: News only, linking to `/news/[slug]`;
-- development News fixtures are centralized and reused by homepage and `/news`;
-- no production News is fabricated.
+- no Stories fallback into News/ticker.
 
-At the current inventory level there are **no published News entries**. Therefore production is expected to show the factual News empty state and no News-derived ticker items until real News is published. Development continues to expose clearly synthetic fixtures for layout QA.
-
-## Approved News + Stories visual system
-
-The implemented editorial surfaces inherit:
-
-- 84rem / 1344px outer shell;
-- Instrument Sans display/interface language;
-- Source Serif 4 only for Stories long-form body reading;
-- IBM Plex Mono only for genuine utility/code roles;
-- Portfilo blue / ink / paper palette;
-- square geometry and flat surfaces;
-- restrained thin rules and 3px blue image-top rule;
-- optional imagery with no fabricated production fallback;
-- responsive-first single-column collapse on narrow screens;
-- no generic card grid, rounded SaaS treatment, gradients, glow, giant index numbers, or decorative mono scaffolding.
-
-The previous `/stories` archive/article visual implementation has no forward authority.
+At the current inventory level there are **no published News entries**. Production therefore retains the factual News empty state and no ticker until real News is published. Development uses clearly synthetic News fixtures for layout and motion QA.
 
 ## Deferred items
 
-Not included in the implementation commit:
+Not included in the current correction pass:
 
-- ticker motion;
 - `/latest`;
 - pagination;
 - topic filters;
@@ -201,44 +226,34 @@ Not included in the implementation commit:
 - `/subscribe` redesign;
 - `/standards` redesign;
 - `/privacy` redesign;
+- dedicated News/Stories visual corrections beyond the approved DEV imagery and archive signup additions;
 - deployment;
 - merge to `main`;
 - release.
 
-## Ticker motion
-
-Ticker motion remains the next narrow product pass **only after the current News + Stories implementation passes fresh technical and rendered QA**.
-
-Approved later behavior remains:
-
-- fixed `Latest news` label;
-- slow constant headline-rail velocity;
-- seamless loop;
-- pause on hover/focus/manual interaction;
-- manual scrolling retained;
-- no automatic movement under `prefers-reduced-motion`;
-- no marquee element, snapping, fades, parallax or entrance animation.
-
 ## Remaining sequence
 
-1. static homepage validation — **FOUNDER-REPORTED PASS**;
-2. static homepage freeze — **COMPLETE**;
-3. News + Stories content architecture — **FOUNDER-APPROVED**;
-4. News + Stories visual/system plan — **FOUNDER-APPROVED**;
-5. News + Stories implementation authorization — **FOUNDER-APPROVED**;
-6. News + Stories runtime/schema implementation — **IMPLEMENTED**;
-7. **fresh technical + rendered QA — ACTIVE NEXT TASK**;
-8. ticker motion narrow pass after QA approval;
-9. rework `/subscribe`;
-10. rework `/standards`;
-11. rework `/privacy`;
-12. site-wide desktop/tablet/mobile/accessibility/runtime QA;
-13. release-readiness review;
-14. Social Visual System / distribution work after core site completion.
+1. static homepage foundation — **FOUNDER-REPORTED PASS / PREVIOUSLY FROZEN**;
+2. News + Stories architecture + visual system — **FOUNDER-APPROVED**;
+3. News + Stories implementation — **IMPLEMENTED**;
+4. homepage alignment + stacked-signup correction — **IMPLEMENTED / QA PENDING**;
+5. DEV 16:9 editorial imagery across existing slots — **IMPLEMENTED / QA PENDING**;
+6. contextual Feature support copy — **IMPLEMENTED / QA PENDING**;
+7. News/Stories archive signup units — **IMPLEMENTED / QA PENDING**;
+8. ticker motion — **IMPLEMENTED / QA PENDING**;
+9. **fresh technical + rendered QA — ACTIVE NEXT TASK**;
+10. founder homepage review of alignment, imagery and ticker motion;
+11. founder News + Stories visual review, then a separate bounded correction plan if needed;
+12. rework `/subscribe`;
+13. rework `/standards`;
+14. rework `/privacy`;
+15. site-wide desktop/tablet/mobile/accessibility/runtime QA;
+16. release-readiness review;
+17. Social Visual System / distribution work after core site completion.
 
 ## Exact next task
 
-### Validate and visually review the News + Stories implementation
+### Validate and visually review the approved correction pass
 
 Pull the current branch and run:
 
@@ -250,15 +265,47 @@ npm run dev
 
 Development QA must inspect at minimum:
 
-- homepage at 1440, 1366, 1024, approximately 390, 375 and 320px to confirm the frozen composition did not regress;
-- `/news` at desktop, tablet and mobile using the clearly labeled synthetic fixtures;
-- `/news/portfilo-draft-filtering-test` in development to verify the compact News article template;
-- `/stories` at desktop, tablet and mobile;
-- `/stories/what-actually-makes-starting-a-business-hard` at desktop, tablet and mobile;
-- keyboard focus and header active states;
-- post-article newsletter units;
-- generated-image disclosure and alt behavior;
-- no horizontal page overflow.
+### Homepage
+
+- 1440px;
+- 1366px;
+- 1024px;
+- approximately 390px;
+- 375px;
+- 320px.
+
+Confirm:
+
+- Feature and News lead image left/right edges align on desktop;
+- supporting News begins on the same right-column edge as the blue Feature rail;
+- Feature and News both stack at 1024px and below;
+- stacked hero signup spans the shared shell rather than remaining width-capped;
+- the homepage News placeholder is gone and the real 16:9 DEV fixture is visible;
+- Feature contextual support says `Who made the move, what changed, and the details behind it.`;
+- ticker moves smoothly at a restrained constant speed;
+- fixed `Latest news` label does not move;
+- hover/focus/manual interaction pauses movement;
+- manual horizontal scrolling still works;
+- reduced-motion mode leaves the ticker static;
+- no horizontal page overflow appears.
+
+### News and Stories
+
+Inspect:
+
+- `/news`;
+- `/news/portfilo-draft-filtering-test`;
+- `/stories`;
+- `/stories/what-actually-makes-starting-a-business-hard`.
+
+Confirm:
+
+- the approved 16:9 DEV image appears in every existing image-capable slot when real metadata is absent;
+- News supporting rows remain text-only;
+- News archive signup appears between lead and archive stream;
+- Stories archive signup appears between lead and archive stream;
+- article hero DEV fixtures appear without altering real production metadata;
+- keyboard focus, active navigation, newsletter forms and generated-image disclosure remain usable.
 
 Then run:
 
@@ -268,23 +315,22 @@ npm run preview
 
 Production-equivalent review must confirm:
 
-- development News fixtures are absent;
+- synthetic News fixtures are absent;
+- DEV-only fallback imagery is absent where no real image metadata exists;
+- the real published Story image still renders through its real metadata;
 - `/news` remains present with a factual empty state;
 - draft News does not generate a production route;
 - homepage News remains present with a factual empty state;
-- the ticker does not fall back to Stories;
-- Stories archive contains only published Stories;
-- the existing published Story URL remains valid;
+- ticker does not fall back to Stories;
+- no fabricated production journalism appears;
 - no legacy `Building` or plural taxonomy value leaks through editorial metadata;
 - no production-only layout regression appears.
 
-If these checks pass, the next gate is founder approval of the implemented News + Stories system before ticker motion begins.
-
 ## Validation authority
 
-Fresh validation against implementation commit `f1e4b634d3675f99cec8e121b442509e28874c08` has **not** yet been recorded as passing.
+Fresh validation against the current correction tree has **not** yet been recorded as passing.
 
-The prior homepage validation applies to the pre-implementation tree and does not constitute a pass for this changed tree.
+The founder-reported earlier homepage validation applies to the pre-correction tree and does not constitute a pass for this changed tree.
 
 ## Deployment / release boundary
 
