@@ -4,20 +4,13 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — SHARED ARTICLE TEMPLATE IMPLEMENTED / VALIDATION PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — REVISED SHARED ARTICLE TEMPLATE IMPLEMENTED / VALIDATION PENDING**
 
-Sequence items A–E are complete on `build/portfilo-v0`. Sequence item F is implemented in runtime and awaits its required technical + founder rendered validation before G begins.
+Sequence items A–E are complete on `build/portfilo-v0`. Sequence item F remains active because founder rendered review reopened the article composition after the first implementation. The revised F runtime is now implemented and must pass local technical checks plus founder rendered validation before G begins.
 
 Current runtime HEAD before this documentation update:
 
-`dff79cd039de478c47583a06b5aecd5810e38c67` — `Remove obsolete article newsletter suppression`
-
-F runtime commits:
-
-- `ca853921ae19d36d08188090ac29a916d8584b1e` — `Add shared editorial article template`;
-- `d3606dfbcb8f97357084b6e98dea3974aaedfcb8` — `Migrate News articles to shared template`;
-- `87e9b2b083622b80f9a66652806e5f8ed4a5d924` — `Migrate Story articles to shared template`;
-- `dff79cd039de478c47583a06b5aecd5810e38c67` — `Remove obsolete article newsletter suppression`.
+`f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — `Feed Story headings into article navigation`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -49,7 +42,7 @@ Authoritative working branch:
 ## Approved product direction
 
 - Brand: **Portfilo**.
-- Product: business and technology media product.
+- Product: business and technology publication.
 - **News** is the current/day-to-day editorial layer.
 - **Stories** is the deeper editorial layer.
 - Header: `Portfilo | News | Stories | Subscribe free`.
@@ -71,7 +64,7 @@ This is internal only.
 
 ### Homepage
 
-The homepage remains the visual reference for the rest of the site. Current approved characteristics include:
+The homepage remains the visual reference for broad publication surfaces. Current approved characteristics include:
 
 - shared 84rem / 1344px shell;
 - matched 5.8rem header/footer wordmarks;
@@ -101,7 +94,7 @@ section: news | stories
 
 `section`, `contentType`, and `topic` remain separate dimensions.
 
-Current topics:
+Current public topics:
 
 `business / technology / startup / ai`
 
@@ -138,13 +131,13 @@ Both archives share:
 - metadata-slot geometry;
 - supporting-row geometry;
 - spacing/dividers;
-- optional supporting-image slot;
+- optional supporting image slot;
 - breakpoint behavior;
 - full-width blue archive acquisition band.
 
 News and Stories retain section-specific data and metadata values without separate layout systems.
 
-The full-blue archive signup uses approved section-specific copy.
+Approved archive acquisition copy remains:
 
 News:
 
@@ -171,8 +164,6 @@ Production empty-archive behavior intentionally keeps the contextual blue archiv
 
 The component uses the 84rem shell and the same 52rem-primary/right-column desktop grid as the publication system. Controls remain square and the layout stacks at narrower widths.
 
-The compact SiteFooter remains visually separate and aligned to the same 84rem publication shell.
-
 ## D — Archive/acquisition technical + rendered QA
 
 **COMPLETE.**
@@ -191,70 +182,104 @@ The later dedicated full-site responsive audit is still separate and has not bee
 
 ## E — Shared article-template design gate
 
-**COMPLETE. FOUNDER APPROVED.**
+**COMPLETE, THEN AMENDED BY FOUNDER REVIEW DURING F.**
 
-Approved decision job:
+The original E decision established one shared article system for News and Stories, an optional restrained 16:9 hero, narrow reading measure, shared notes/corrections, legitimate News-vs-Stories reading-font differences, and no parallel article CSS systems.
 
-> choose one shared Portfilo article geometry that supports both fast News and deeper Stories without maintaining two parallel article design systems.
+The original E scope excluded a table of contents. During rendered F review, the founder explicitly reopened the article composition because the left-aligned header continued to feel visually unbalanced. The founder supplied the current OpenAI article treatment as a structural reference and explicitly approved this later correction:
 
-Approved structure:
+- center the article classification/headline/dek/metadata package;
+- keep the restrained 54rem 16:9 hero;
+- keep the body around 41–42rem;
+- add a Stories-only in-page section navigation when enough real `h2` sections exist;
+- keep News simpler without that rail;
+- defer article audio/listen functionality rather than adding it to F.
 
-1. article header inside the 84rem shell;
-2. compact classification row;
-3. large Instrument Sans headline;
-4. dek immediately below;
-5. compact author/date metadata below the dek;
-6. optional restrained 16:9 hero with blue top rule, credit, and generated-image disclosure where applicable;
-7. centered narrow reading shell around the existing 42–44rem range;
-8. News body may use Instrument Sans while Stories may use Source Serif 4;
-9. one shared methodology/correction geometry;
-10. no legacy inline article newsletter, using the already-approved shared dark footer acquisition once;
-11. no new related-content, popularity, comments, author-bio, share-toolbar, table-of-contents, reading-time, custom-motion, or special one-off feature system in this pass.
+This later founder decision supersedes the original E exclusion of table-of-contents navigation. It does not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
 
-The approved plan was informed by repository constraints and structural patterns in current The Verge, WIRED, and Rest of World article experiences. References were used for information order and tradeoffs, not visual copying.
-
-## F — Shared article-template implementation
+## F — Revised shared article-template implementation
 
 **IMPLEMENTED. VALIDATION PENDING.**
 
-`src/components/EditorialArticle.astro` now owns article presentation for both `/news/[slug]` and `/stories/[slug]`.
+`src/components/EditorialArticle.astro` remains the single article presentation component for `/news/[slug]` and `/stories/[slug]`.
 
-Shared implementation includes:
+Current shared article contract:
 
-- one 84rem article shell;
-- one classification/headline/dek/metadata hierarchy;
-- one optional 16:9 hero implementation;
-- one image-credit and generated-image-disclosure implementation;
-- one 44rem reading measure;
-- one shared heading/link/list/blockquote/code/media spacing contract;
-- one methodology/correction system;
-- one responsive header/hero/body implementation;
-- shared dark footer acquisition from `SiteFooter.astro`.
+- centered classification row;
+- centered Instrument Sans headline;
+- centered dek;
+- centered metadata group within the article header;
+- article header max width: 54rem;
+- optional 16:9 hero max width: 54rem;
+- thin Portfilo-blue hero top rule;
+- image credit and generated-image disclosure preserved;
+- reading measure: 41.5rem;
+- News uses Instrument Sans reading mode;
+- Stories use Source Serif 4 reading mode;
+- shared headings, links, lists, blockquotes, code/media spacing, methodology and correction treatment;
+- one shared dark footer acquisition at the article end;
+- no route-local article CSS and no inline article newsletter block.
 
-Section-specific route files retain only legitimate data differences:
+### Stories in-page section navigation
 
-News:
+Stories now receive Markdown headings from Astro `render()`.
 
-- `News / Topic / Published` classification values;
-- author and optional Updated metadata;
-- Instrument Sans reading mode.
+The shared component renders the `In this story` rail only when:
 
-Stories:
+- `mode === "stories"`; and
+- the article has at least three real level-2 (`h2`) headings.
 
-- `Content type / Topic / Published` classification values;
-- author, optional Updated, and optional Series metadata;
-- Source Serif 4 reading mode.
+Behavior:
 
-Both route files continue to own:
+- desktop: left in-page navigation + narrow main reading column;
+- rail links are generated from existing Markdown heading slugs/text;
+- rail is sticky while the article is read on sufficiently wide screens;
+- below 56rem the rail is hidden and the reading column returns to the centered single-column layout;
+- no headings are invented solely to make the navigation appear.
 
-- `getStaticPaths` collection filtering;
-- SEO/page metadata passed to `SiteHead`;
-- section-specific metadata normalization;
-- rendered Markdown content.
+The published Story `/stories/what-actually-makes-starting-a-business-hard` contains no `h2` headings and therefore intentionally shows no rail.
 
-The old route-local article CSS and inline newsletter blocks have been removed. The obsolete SiteFooter rule that existed only to hide those old blocks has also been removed.
+The existing DEV-visible draft `/stories/what-higher-value-work-means-in-philippine-it-bpm` contains six `h2` headings and is the current rendered test case for the rail.
 
-No dependency, schema, framework, CMS, database, route, production-content, archive, homepage, or utility-page changes were made by F.
+### Explicitly deferred from F
+
+Do not add in this pass:
+
+- listen-to-article / TTS / audio generation;
+- audio player;
+- share toolbar;
+- related stories;
+- most-popular modules;
+- comments;
+- author biography system;
+- reading-time calculation;
+- custom article motion;
+- special one-off feature templates;
+- new dependencies.
+
+Audio was discussed during founder review and intentionally deferred because player UI is simple but reliable article audio requires a separate source/generation and publishing workflow decision.
+
+### F runtime commits
+
+Initial shared article implementation:
+
+- `ca853921ae19d36d08188090ac29a916d8584b1e` — shared article component;
+- `d3606dfbcb8f97357084b6e98dea3974aaedfcb8` — News route migration;
+- `87e9b2b083622b80f9a66652806e5f8ed4a5d924` — Stories route migration;
+- `dff79cd039de478c47583a06b5aecd5810e38c67` — obsolete article-newsletter suppression cleanup.
+
+Founder-review geometry corrections:
+
+- `52eed7f71fab1ebed46ee0545ff270b167f2dde6` — tighten article geometry;
+- `5d8ca03d8aa2fa8141d0e1387a45bae1d836222a` — align header and hero frame;
+- `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — balance internal header widths.
+
+Current structural correction:
+
+- `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
+- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — feed Astro Story headings into the shared article component.
+
+No dependency, schema, framework, CMS, database, production-content, archive, homepage, utility-page, or News-route feature changes were made by this correction.
 
 ## Remaining sequence
 
@@ -266,9 +291,9 @@ C. shared site-wide footer acquisition + homepage migration — **COMPLETE**;
 
 D. archive/acquisition technical + rendered QA — **COMPLETE**;
 
-E. shared article-template design gate — **COMPLETE / APPROVED**;
+E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**;
 
-F. shared article-template implementation — **IMPLEMENTED / VALIDATION PENDING**;
+F. revised shared article-template implementation — **IMPLEMENTED / VALIDATION PENDING**;
 
 G. simplify `/subscribe`, then `/standards`, then `/privacy` — **NOT STARTED**;
 
@@ -278,24 +303,27 @@ I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Validate F before starting G.
+Validate the revised F implementation before starting G.
 
 Required:
 
 1. pull the latest `build/portfilo-v0`;
 2. run `npm run check`;
 3. run `npm run build`;
-4. render and inspect at least one real `/stories/[slug]` page on desktop and mobile;
-5. verify headline/dek/metadata hierarchy, 16:9 hero behavior where present, narrow reading measure, Source Serif Story body, methodology/correction rendering where content exists, and exactly one shared dark footer acquisition;
-6. if a real or existing DEV News content entry provides a `/news/[slug]` route, inspect it too; do not fabricate a News article solely for visual QA;
-7. report any F regression before beginning G.
+4. render `/stories/what-actually-makes-starting-a-business-hard` and verify the centered header, 54rem hero treatment, narrow body, and absence of a false/empty section rail;
+5. in DEV, render `/stories/what-higher-value-work-means-in-philippine-it-bpm` and verify the `In this story` rail uses the real `h2` headings, links to them correctly, stays restrained/sticky on desktop, and disappears below the 56rem breakpoint;
+6. verify exactly one shared dark footer acquisition remains;
+7. inspect a representative mobile Story for centered header/readability/no horizontal overflow;
+8. report any F regression before beginning G.
 
-Because there are currently no published News entries, absence of a production News article route is expected and is not itself a defect. Astro check/build plus the shared-component architecture provide technical coverage until real News article inventory exists.
+Because there are currently no published News entries, absence of a production News article route is expected and is not itself a defect. Do not fabricate News solely for visual QA.
 
-Do not begin G until the F checks and founder rendered review pass.
+Do not describe F as validated until the local checks and founder rendered review actually pass.
 
 ## Deferred / not authorized now
 
+- article audio/listen system;
+- share toolbar;
 - `/subscribe` redesign before F validation;
 - `/standards` redesign before its G sub-gate;
 - `/privacy` redesign before its G sub-gate;
