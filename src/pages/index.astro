@@ -129,7 +129,7 @@ const railStory =
               data-latest-rail
               data-auto-ticker={tickerItems.length > 1 ? "true" : "false"}
             >
-              <div class="latest-strip__track">
+              <div class="latest-strip__track" data-latest-track>
                 <div class="latest-strip__group" data-latest-group>
                   {tickerItems.map((item) =>
                     item.href ? (
@@ -321,99 +321,200 @@ const railStory =
     <script is:inline>
       (() => {
         const rail = document.querySelector("[data-latest-rail]");
+        const track = rail?.querySelector("[data-latest-track]");
         const group = rail?.querySelector("[data-latest-group]");
 
-        if (!(rail instanceof HTMLElement) || !(group instanceof HTMLElement)) return;
+        if (
+          !(rail instanceof HTMLElement) ||
+          !(track instanceof HTMLElement) ||
+          !(group instanceof HTMLElement)
+        ) return;
 
+        const SPEED_PX_PER_SECOND = 30;
         const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         const canRequestLoop = rail.dataset.autoTicker === "true";
-        let frameId = 0;
-        let lastTime = 0;
+
+        let tickerAnimation = null;
+        let resumeTimer = 0;
+        let resizeFrame = 0;
         let isHovering = false;
         let isFocused = false;
         let isPointerDown = false;
-        let resumeAt = 0;
 
-        const setResumeDelay = (milliseconds = 1200) => {
-          resumeAt = performance.now() + milliseconds;
+        const clearResumeTimer = () => {
+          if (resumeTimer) window.clearTimeout(resumeTimer);
+          resumeTimer = 0;
         };
 
-        const evaluateLoop = () => {
+        const getAnimationDuration = () => {
+          const timing = tickerAnimation?.effect?.getComputedTiming?.();
+          return typeof timing?.duration === "number" ? timing.duration : 0;
+        };
+
+        const getVisualOffset = () => {
+          const width = group.scrollWidth;
+          const duration = getAnimationDuration();
+          const currentTime = Number(tickerAnimation?.currentTime ?? 0);
+
+          if (!tickerAnimation || width <= 0 || duration <= 0) {
+            return rail.scrollLeft;
+          }
+
+          const phase = ((currentTime % duration) / duration) * width;
+          return phase + rail.scrollLeft;
+        };
+
+        const pauseTicker = () => {
+          tickerAnimation?.pause();
+        };
+
+        const normalizeAndPlay = () => {
+          if (
+            !tickerAnimation ||
+            motionQuery.matches ||
+            isHovering ||
+            isFocused ||
+            isPointerDown
+          ) return;
+
+          const width = group.scrollWidth;
+          const duration = getAnimationDuration();
+          if (width <= 0 || duration <= 0) return;
+
+          const offset = ((getVisualOffset() % width) + width) % width;
+          tickerAnimation.pause();
+          rail.scrollLeft = 0;
+          tickerAnimation.currentTime = (offset / width) * duration;
+          tickerAnimation.play();
+        };
+
+        const scheduleResume = (delay = 900) => {
+          clearResumeTimer();
+          resumeTimer = window.setTimeout(() => {
+            resumeTimer = 0;
+            normalizeAndPlay();
+          }, delay);
+        };
+
+        const setupTicker = () => {
+          clearResumeTimer();
+          const previousOffset = getVisualOffset();
+
+          tickerAnimation?.cancel();
+          tickerAnimation = null;
+          rail.classList.remove("is-looping");
+          track.style.transform = "";
+
+          const width = group.scrollWidth;
           const canLoop =
             canRequestLoop &&
             !motionQuery.matches &&
-            group.scrollWidth > rail.clientWidth;
+            width > rail.clientWidth;
 
-          rail.classList.toggle("is-looping", canLoop);
-          if (!canLoop) rail.scrollLeft = 0;
-          lastTime = 0;
-        };
-
-        const shouldPause = (time) =>
-          !rail.classList.contains("is-looping") ||
-          isHovering ||
-          isFocused ||
-          isPointerDown ||
-          time < resumeAt;
-
-        const tick = (time) => {
-          if (!lastTime) lastTime = time;
-          const elapsed = Math.min(time - lastTime, 64);
-          lastTime = time;
-
-          if (!shouldPause(time)) {
-            rail.scrollLeft += elapsed * 0.03;
-            const loopWidth = group.scrollWidth;
-
-            if (loopWidth > 0 && rail.scrollLeft >= loopWidth) {
-              rail.scrollLeft -= loopWidth;
-            }
+          if (!canLoop) {
+            rail.scrollLeft = 0;
+            return;
           }
 
-          frameId = requestAnimationFrame(tick);
+          rail.classList.add("is-looping");
+          const duration = Math.max(1, (width / SPEED_PX_PER_SECOND) * 1000);
+          const offset = ((previousOffset % width) + width) % width;
+
+          tickerAnimation = track.animate(
+            [
+              { transform: "translate3d(0, 0, 0)" },
+              { transform: `translate3d(-${width}px, 0, 0)` },
+            ],
+            {
+              duration,
+              iterations: Infinity,
+              easing: "linear",
+            },
+          );
+
+          rail.scrollLeft = 0;
+          tickerAnimation.currentTime = (offset / width) * duration;
+
+          if (isHovering || isFocused || isPointerDown) {
+            tickerAnimation.pause();
+          }
         };
 
         rail.addEventListener("mouseenter", () => {
           isHovering = true;
+          clearResumeTimer();
+          pauseTicker();
         });
 
         rail.addEventListener("mouseleave", () => {
           isHovering = false;
-          setResumeDelay(350);
+          scheduleResume(350);
         });
 
         rail.addEventListener("focusin", () => {
           isFocused = true;
+          clearResumeTimer();
+          pauseTicker();
         });
 
         rail.addEventListener("focusout", () => {
           requestAnimationFrame(() => {
             isFocused = rail.contains(document.activeElement);
-            if (!isFocused) setResumeDelay(500);
+            if (!isFocused) scheduleResume(500);
           });
         });
 
         rail.addEventListener("pointerdown", () => {
           isPointerDown = true;
+          clearResumeTimer();
+          pauseTicker();
         });
 
         const releasePointer = () => {
           isPointerDown = false;
-          setResumeDelay(1400);
+          scheduleResume(1400);
         };
 
         rail.addEventListener("pointerup", releasePointer);
         rail.addEventListener("pointercancel", releasePointer);
-        rail.addEventListener("wheel", () => setResumeDelay(1400), { passive: true });
-        window.addEventListener("resize", evaluateLoop);
-        motionQuery.addEventListener?.("change", evaluateLoop);
+        rail.addEventListener(
+          "wheel",
+          () => {
+            pauseTicker();
+            scheduleResume(1400);
+          },
+          { passive: true },
+        );
+        rail.addEventListener(
+          "scroll",
+          () => {
+            if (
+              tickerAnimation?.playState === "paused" &&
+              !isHovering &&
+              !isFocused &&
+              !isPointerDown
+            ) {
+              scheduleResume(900);
+            }
+          },
+          { passive: true },
+        );
 
-        evaluateLoop();
-        frameId = requestAnimationFrame(tick);
+        window.addEventListener("resize", () => {
+          cancelAnimationFrame(resizeFrame);
+          resizeFrame = requestAnimationFrame(setupTicker);
+        });
+        motionQuery.addEventListener?.("change", setupTicker);
+
+        setupTicker();
 
         window.addEventListener(
           "pagehide",
-          () => cancelAnimationFrame(frameId),
+          () => {
+            clearResumeTimer();
+            cancelAnimationFrame(resizeFrame);
+            tickerAnimation?.cancel();
+          },
           { once: true },
         );
       })();
@@ -459,6 +560,7 @@ const railStory =
         --gutter: var(--shell-gutter);
         --grid-gap: clamp(1rem, 1.8vw, 1.75rem);
         --signup-control-max: 28rem;
+        --home-editorial-headline-size: clamp(2rem, 2.45vw, 2.75rem);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --mono: "IBM Plex Mono", "Courier New", monospace;
@@ -586,8 +688,7 @@ const railStory =
         width: 100%;
         min-height: 2.35rem;
         margin: 0 0 1rem;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        display: flex;
         background: var(--paper);
         color: var(--ink);
         border-bottom: 1px solid var(--line);
@@ -595,6 +696,9 @@ const railStory =
       }
 
       .latest-strip__label {
+        position: relative;
+        z-index: 2;
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
         padding: 0.56rem clamp(0.9rem, 1.9vw, 1.35rem);
@@ -603,13 +707,16 @@ const railStory =
         font: 680 0.61rem/1 var(--sans);
         letter-spacing: 0.075em;
         text-transform: uppercase;
+        white-space: nowrap;
       }
 
       .latest-strip__rail {
+        flex: 1 1 auto;
         min-width: 0;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
         scrollbar-width: none;
+        scroll-behavior: auto;
       }
       .latest-strip__rail::-webkit-scrollbar { display: none; }
       .latest-strip__rail:focus-visible { outline-offset: -3px; }
@@ -619,6 +726,11 @@ const railStory =
         min-width: 100%;
         display: flex;
         align-items: stretch;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .latest-strip__rail.is-looping .latest-strip__track {
+        will-change: transform;
       }
 
       .latest-strip__group {
@@ -677,9 +789,7 @@ const railStory =
         align-items: stretch;
       }
 
-      .featured-story {
-        min-width: 0;
-      }
+      .featured-story { min-width: 0; }
 
       .featured-story__media {
         position: relative;
@@ -711,24 +821,18 @@ const railStory =
         letter-spacing: 0.035em;
       }
 
-      .featured-story__copy {
-        padding-top: 0.78rem;
-      }
+      .featured-story__copy { padding-top: 0.78rem; }
 
       .featured-story__copy h2,
-      .featured-story__copy p {
-        margin: 0;
-      }
+      .featured-story__copy p { margin: 0; }
 
       .featured-story__copy h2 {
         max-width: 24ch;
-        font: 660 clamp(2rem, 2.45vw, 2.75rem) / 1 var(--sans);
+        font: 660 var(--home-editorial-headline-size) / 1 var(--sans);
         letter-spacing: -0.04em;
       }
 
-      .featured-story__copy h2 a {
-        text-decoration: none;
-      }
+      .featured-story__copy h2 a { text-decoration: none; }
 
       .featured-story__copy h2 a:hover {
         text-decoration: underline;
@@ -753,13 +857,8 @@ const railStory =
         color: #fff;
       }
 
-      .feature-rail__signup {
-        min-width: 0;
-      }
-
-      .feature-rail :global(.newsletter-signup__copy h2) {
-        color: #fff;
-      }
+      .feature-rail__signup { min-width: 0; }
+      .feature-rail :global(.newsletter-signup__copy h2) { color: #fff; }
 
       .feature-rail__latest {
         margin-top: clamp(1.35rem, 2vw, 1.8rem);
@@ -769,9 +868,7 @@ const railStory =
 
       .feature-rail__latest-label,
       .feature-rail__latest h3,
-      .feature-rail__latest p {
-        margin: 0;
-      }
+      .feature-rail__latest p { margin: 0; }
 
       .feature-rail__latest-label {
         color: rgba(255, 255, 255, 0.72);
@@ -823,13 +920,11 @@ const railStory =
       }
 
       .news-section__heading h2,
-      .fixture-warning {
-        margin: 0;
-      }
+      .fixture-warning { margin: 0; }
 
       .news-section__heading h2 {
-        font: 680 clamp(2rem, 3.1vw, 3.35rem) / 0.96 var(--sans);
-        letter-spacing: -0.045em;
+        font: 680 var(--home-editorial-headline-size) / 1 var(--sans);
+        letter-spacing: -0.04em;
       }
 
       .fixture-warning {
@@ -858,9 +953,7 @@ const railStory =
       .news-list__item h3,
       .lead-news p,
       .news-list__item p,
-      .news-meta {
-        margin: 0;
-      }
+      .news-meta { margin: 0; }
 
       .news-image {
         position: relative;
@@ -889,21 +982,17 @@ const railStory =
         text-transform: uppercase;
       }
 
-      .news-meta span:first-child {
-        color: var(--accent);
-      }
+      .news-meta span:first-child { color: var(--accent); }
 
       .lead-news h3 {
-        max-width: 20ch;
+        max-width: 24ch;
         margin-top: 0.55rem;
-        font: 670 clamp(2rem, 3.3vw, 3.55rem) / 0.98 var(--sans);
-        letter-spacing: -0.048em;
+        font: 660 var(--home-editorial-headline-size) / 1 var(--sans);
+        letter-spacing: -0.04em;
       }
 
       .lead-news h3 a,
-      .news-list__item h3 a {
-        text-decoration: none;
-      }
+      .news-list__item h3 a { text-decoration: none; }
 
       .lead-news h3 a:hover,
       .news-list__item h3 a:hover {
@@ -919,9 +1008,7 @@ const railStory =
         font: 420 clamp(0.95rem, 1.1vw, 1.06rem) / 1.55 var(--sans);
       }
 
-      .news-list {
-        border-top: 1px solid var(--line);
-      }
+      .news-list { border-top: 1px solid var(--line); }
 
       .news-list__item {
         padding: 1rem 0 1.15rem;
@@ -952,9 +1039,7 @@ const railStory =
         padding: clamp(2.2rem, 4vw, 3.8rem) 0;
       }
 
-      .footer-newsletter :global(.newsletter-signup__copy h2) {
-        color: #fff;
-      }
+      .footer-newsletter :global(.newsletter-signup__copy h2) { color: #fff; }
 
       .footer-newsletter :global(.newsletter-signup__copy p),
       .footer-newsletter :global(.newsletter-signup__note),
@@ -982,12 +1067,17 @@ const railStory =
 
       @media (max-width: 64rem) {
         .newsletter-band__inner {
-          grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.85fr);
-          gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
         }
 
         .newsletter-band__copy h1 {
           font-size: clamp(1.95rem, 3.6vw, 2.3rem);
+        }
+
+        .newsletter-band__form {
+          width: 100%;
+          justify-self: stretch;
         }
 
         .featured-pair,
@@ -995,9 +1085,7 @@ const railStory =
           grid-template-columns: 1fr;
         }
 
-        .feature-rail {
-          min-height: 0;
-        }
+        .feature-rail { min-height: 0; }
 
         .feature-rail__latest {
           margin-top: clamp(1.5rem, 4vw, 2rem);
@@ -1005,17 +1093,10 @@ const railStory =
       }
 
       @media (max-width: 52rem) {
-        .fixture-warning {
-          max-width: 14rem;
-        }
+        .fixture-warning { max-width: 14rem; }
       }
 
       @media (max-width: 48rem) {
-        .newsletter-band__inner {
-          grid-template-columns: 1fr;
-          gap: 1.2rem;
-        }
-
         .newsletter-band__copy h1 {
           font-size: clamp(1.85rem, 5.4vw, 2.05rem);
         }
@@ -1023,17 +1104,10 @@ const railStory =
         .newsletter-band__copy p {
           font-size: clamp(0.85rem, 2.1vw, 0.9rem);
         }
-
-        .newsletter-band__form {
-          width: 100%;
-          justify-self: stretch;
-        }
       }
 
       @media (max-width: 36rem) {
-        :global(:root) {
-          --shell-gutter: 1.1rem;
-        }
+        :global(:root) { --shell-gutter: 1.1rem; }
 
         .newsletter-band__inner {
           padding-top: 1.25rem;
@@ -1045,48 +1119,24 @@ const railStory =
           font-size: clamp(1.75rem, 7.7vw, 2rem);
         }
 
-        .latest-strip {
-          margin-bottom: 0.75rem;
-        }
-
-        .latest-strip__label {
-          padding-inline: 0.76rem;
-        }
+        .latest-strip { margin-bottom: 0.75rem; }
+        .latest-strip__label { padding-inline: 0.76rem; }
 
         .latest-strip__item {
           max-width: 84vw;
           padding-inline: 0.82rem;
         }
 
-        .latest-strip__item > strong {
-          max-width: 62vw;
-        }
+        .latest-strip__item > strong { max-width: 62vw; }
 
-        .featured-section {
-          padding-top: 0;
-        }
-
-        .featured-story__copy h2 {
-          font-size: clamp(2rem, 9vw, 2.6rem);
-        }
-
-        .feature-rail {
-          padding: 1.25rem;
-        }
-
-        .news-section__heading {
-          align-items: start;
-        }
-
-        .fixture-warning {
-          font-size: 0.62rem;
-        }
+        .featured-section { padding-top: 0; }
+        .feature-rail { padding: 1.25rem; }
+        .news-section__heading { align-items: start; }
+        .fixture-warning { font-size: 0.62rem; }
       }
 
       @media (max-width: 23rem) {
-        :global(:root) {
-          --shell-gutter: 1rem;
-        }
+        :global(:root) { --shell-gutter: 1rem; }
       }
     </style>
   </body>
