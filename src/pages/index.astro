@@ -302,18 +302,6 @@ const railStory =
           )
         }
       </section>
-
-      <section class="footer-newsletter" aria-label="Subscribe to the Portfilo newsletter">
-        <div class="footer-newsletter__inner">
-          <NewsletterSignup
-            id="home-footer-newsletter"
-            heading="Get ahead in business and tech in 7 minutes."
-            copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
-            variant="footer"
-            buttonLabel="Send me the news"
-          />
-        </div>
-      </section>
     </main>
 
     <SiteFooter />
@@ -600,8 +588,7 @@ const railStory =
 
       .newsletter-band__inner,
       .featured-section,
-      .news-section,
-      .footer-newsletter__inner {
+      .news-section {
         width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
         margin-inline: auto;
       }
@@ -1027,43 +1014,6 @@ const railStory =
         margin-top: 0.55rem;
         color: var(--muted);
         font: 420 0.84rem/1.5 var(--sans);
-      }
-
-      .footer-newsletter {
-        width: 100%;
-        background: var(--ink);
-        color: #fff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      }
-
-      .footer-newsletter__inner {
-        padding: clamp(2.2rem, 4vw, 3.8rem) 0;
-      }
-
-      .footer-newsletter :global(.newsletter-signup__copy h2) { color: #fff; }
-
-      .footer-newsletter :global(.newsletter-signup__copy p),
-      .footer-newsletter :global(.newsletter-signup__note),
-      .footer-newsletter :global(.newsletter-signup__status) {
-        color: rgba(255, 255, 255, 0.68);
-      }
-
-      .footer-newsletter :global(.newsletter-signup input) {
-        border-color: rgba(255, 255, 255, 0.45);
-        background: rgba(255, 255, 255, 0.07);
-        color: #fff;
-      }
-
-      .footer-newsletter :global(.newsletter-signup input::placeholder) {
-        color: rgba(255, 255, 255, 0.55);
-      }
-
-      .footer-newsletter :global(.newsletter-signup__status[data-state="success"]) {
-        color: #8fc7ff;
-      }
-
-      .footer-newsletter :global(.newsletter-signup__status[data-state="error"]) {
-        color: #ffc2b8;
       }
 
       @media (max-width: 64rem) {
