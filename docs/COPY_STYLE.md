@@ -92,6 +92,8 @@ The entire candidate set in `research/homepage-copy-v1.md` is rejected historica
 
 Rejected output has zero authority.
 
+A page may use a founder-approved campaign or institutional statement when that exact surface has passed the required copy gate. Such a line remains page-scoped unless separately promoted into a broader brand role. The current G1 `/subscribe` statement `Some changes look small, until they reshape everything. We look closer.` is approved only for that page and is **not** a permanent Portfilo tagline.
+
 ## Geography
 
 Portfilo has **no geographic product-positioning promise**.
@@ -174,6 +176,8 @@ Avoid copy whose main job is to explain:
 - geographic permission;
 - editorial architecture;
 - implementation phases.
+
+A narrowly scoped campaign statement can be an exception only after explicit founder approval. It does not override the general preference for product clarity or become reusable institutional authority by default.
 
 ## Institutional-copy provenance
 
@@ -315,7 +319,17 @@ Current safe operational facts include:
 
 `Portfilo Brief` is rejected as current public newsletter acquisition language. Legacy occurrences are stale and should be removed when their surface reaches its approved active scope.
 
-Do not use subscribe copy to explain Portfilo's worldview.
+Default to product clarity. A subscribe surface may carry a short campaign or institutional statement only after it passes the full message-architecture and founder-copy approval gate, and that statement remains scoped to the approved surface.
+
+Current revised G1 `/subscribe` copy authority:
+
+- page-scoped statement: `Some changes look small, until they reshape everything. We look closer.`;
+- signup label: `GET THE NEWSLETTER`;
+- factual support: `Business and tech in 7 minutes, three times a week.`;
+- CTA: `SUBSCRIBE FREE`;
+- shared note: `Free newsletter. Unsubscribe anytime.`
+
+The page-scoped statement is not a masthead tagline, homepage slogan, newsletter title, or reusable editorial line.
 
 Avoid default newsletter clichés such as:
 
