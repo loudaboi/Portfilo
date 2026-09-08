@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. F passed founder rendered review plus user-reported local `npm run check` and `npm run build` against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`. G is active. The first G1 blue-band `/subscribe` implementation was rejected in founder rendered review; the revised image-led G1 implementation is current and validation is pending before `/standards` begins.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G2 `/standards` is next and begins at inspection/planning, not implementation.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -45,11 +45,11 @@ Current:
 - `docs/PORTFILO_TEST_STANDARD.md`
 - `docs/CONTENT_PLANNING.md` — canonical for planning gates, with older geography/taxonomy clauses superseded by later product decisions in `PROJECT_STATE`.
 
-`docs/COPY_STYLE.md` is synchronized to the current newsletter commitments, records the founder-approved rule that Portfilo public copy does not use em dashes, and records the revised G1 `/subscribe` statement as page-scoped copy rather than a permanent tagline.
+`docs/COPY_STYLE.md` is synchronized to the current newsletter commitments, records the founder-approved rule that Portfilo public copy does not use em dashes, and records the final G1 `/subscribe` statement as page-scoped copy rather than a permanent tagline.
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, or current shared article runtime are subordinate to `PROJECT_STATE` and current source.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, current shared article runtime, or final G1 subscribe runtime are subordinate to `PROJECT_STATE` and current source.
 - `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 
@@ -74,11 +74,10 @@ Current G1 `/subscribe` visual asset is `public/images/subscribe-16x9.png`. It i
 
 Current CTA authority:
 
-- shared header CTA label: `Subscribe free`;
-- homepage header CTA presentation: `SUBSCRIBE FREE`;
-- hero CTA: `Send me the news`;
+- shared header CTA: `SUBSCRIBE FREE`;
+- homepage hero CTA: `Send me the news`;
 - contextual Feature-rail CTA: `Subscribe`;
-- `/subscribe` CTA: `SUBSCRIBE FREE`.
+- `/subscribe` CTA: `SUBSCRIBE`.
 
 Current founder-approved Feature-rail copy:
 
@@ -97,15 +96,14 @@ Stories:
 - `Get Portfilo stories in your inbox.`
 - `Deeper reporting, explainers, and analysis on business and technology.`
 
-Current founder-approved `/subscribe` copy:
+Current founder-approved visible `/subscribe` copy:
 
-- left statement: `Some changes look small, until they reshape everything. We look closer.`;
-- right label: `GET THE NEWSLETTER`;
-- right support: `Business and tech in 7 minutes, three times a week.`;
-- CTA: `SUBSCRIBE FREE`;
-- shared note: `Free newsletter. Unsubscribe anytime.`
+- campaign statement: `Some changes look small, until they reshape everything. We look closer.`;
+- CTA: `SUBSCRIBE`.
 
-The left statement is page-scoped campaign/institutional copy. It is not a permanent Portfilo tagline and should not be reused automatically on the homepage, masthead, newsletter, social surfaces, or editorial packaging.
+The final page intentionally shows no `GET THE NEWSLETTER` label, no visible cadence support line, and no visible `Free newsletter. Unsubscribe anytime.` note. The shared component may retain its default note internally, but the `/subscribe` page hides it.
+
+The campaign statement is page-scoped campaign/institutional copy. It is not a permanent Portfilo tagline and should not be reused automatically on the homepage, masthead, newsletter, social surfaces, or editorial packaging.
 
 ### Brand
 
@@ -116,7 +114,7 @@ Current:
 - `research/brand-system/social-preview.md`
 - canonical assets under `public/brand/` and `public/social/`.
 
-Shared header/footer wordmark presentation remains 5.8rem.
+Shared header/footer wordmark presentation remains 5.8rem where those shared components are rendered.
 
 ### Email / deployment
 
@@ -126,7 +124,7 @@ Current:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. The G1 `/subscribe` implementation uses the shared newsletter component and does not reintroduce stale `Portfilo Brief` wording or duplicate form logic. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
+The email infrastructure remains current. The final G1 `/subscribe` implementation uses the shared newsletter component and does not reintroduce stale `Portfilo Brief` wording or duplicate form logic. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
 
 ### Audience / distribution
 
@@ -138,7 +136,7 @@ The email infrastructure remains current. The G1 `/subscribe` implementation use
 
 Current approved/implemented behavior includes:
 
-- header `Portfilo | News | Stories | Subscribe free` with the homepage CTA rendered visually as `SUBSCRIBE FREE`;
+- header `Portfilo | News | Stories | SUBSCRIBE FREE`;
 - full Portfilo-blue newsletter hero;
 - shared 52rem-primary/right-column publication geometry;
 - Latest-news ticker with restrained automatic movement when inventory supports it;
@@ -149,7 +147,7 @@ Current approved/implemented behavior includes:
 - shared dark `FooterAcquisition.astro` before the compact SiteFooter;
 - footer `Stories | Standards | Privacy` with 5.8rem wordmark.
 
-The homepage hero CTA remains `Send me the news`; the G1 work did not replace it with `SUBSCRIBE FREE`.
+The homepage hero CTA remains `Send me the news`.
 
 ### News + Stories archives
 
@@ -189,6 +187,8 @@ News keeps current-news data and DEV fixture behavior. Stories keeps deeper-edit
 - aligns the footer endcap to the 84rem publication shell.
 
 Production empty `/news` intentionally shows the contextual blue archive acquisition without immediately repeating the generic dark footer acquisition.
+
+The final `/subscribe` page does not render `SiteFooter.astro` at all. That page-level exception is founder-approved and does not change shared-footer behavior elsewhere.
 
 ### Shared article implementation
 
@@ -243,25 +243,31 @@ The earlier E statement excluding a table of contents is superseded only to the 
 
 The first G1 `/subscribe` runtime at `adaabb4ab6ad4a37e67095363df7b1146a89bd96` used a full-width blue acquisition band and was rejected in founder rendered review. That composition is historical only.
 
-The current revised G1 runtime is founder-approved at the design/copy gate and remains validation-pending.
+The final revised G1 runtime is founder-approved and validated.
 
 Current contract:
 
 - locked visual asset `public/images/subscribe-16x9.png`;
-- standard SiteHeader, centered image-led stage, compact SiteFooter;
-- no generic shared footer acquisition on `/subscribe`;
-- desktop stage remains 16:9 and is sized to fit normal viewport height where practical;
-- mobile may use a taller crop of the same source image and scroll when needed;
+- standard shared SiteHeader above the centered image-led stage;
+- no SiteFooter and no generic shared footer acquisition on `/subscribe`;
+- paper body with natural scrolling;
+- current stage remains 16:9;
 - one restrained solid dark image overlay for legibility;
 - no gradient, glass panel, rounded card, or decorative overlay container;
-- two direct overlay blocks;
-- left: light Portfilo wordmark plus `Some changes look small, until they reshape everything. We look closer.`;
-- right: `GET THE NEWSLETTER`, `Business and tech in 7 minutes, three times a week.`, shared email input, `SUBSCRIBE FREE`, shared free/unsubscribe note;
-- shared `NewsletterSignup.astro` owns validation, honeypot, `/api/subscribe`, confirmation and error states;
+- exactly two direct overlay blocks;
+- top-left: light Portfilo wordmark plus `Some changes look small, until they reshape everything. We look closer.`;
+- bottom-right: shared email input + `SUBSCRIBE` CTA;
+- both blocks use one shared geometric campaign inset;
+- the wordmark alone receives a narrow optical translation to cancel transparent SVG padding so visible edge spacing matches the form corner;
+- page CTA is 8.5rem / 136px wide in the approved desktop treatment, explicitly centered, with weight 650;
+- form controls above 32rem use the approved 2.75rem / 44px height;
+- no visible newsletter label, cadence support line, or free/unsubscribe note;
+- shared `NewsletterSignup.astro` owns validation, honeypot, `/api/subscribe`, confirmation, and error states;
 - no `Portfilo Brief` naming;
 - no `No fixed schedule yet` copy;
 - no numbered mono scaffolding or separate subscription-details section;
-- no route-local duplicate newsletter submission script.
+- no route-local duplicate newsletter submission script;
+- dedicated multi-width laptop/tablet/mobile visual tuning is deferred to H.
 
 ## Current validation authority
 
@@ -281,11 +287,16 @@ F shared article implementation is validated against runtime HEAD `7ffc3021c93a8
 - local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
 - the final founder-reviewed article state includes centered header geometry, resilient headline scale, no visible byline, independent neutral header/hero divider, 54rem 16:9 hero treatment, narrow reading body and conditional Stories section rail.
 
-The revised G1 `/subscribe` has not yet received a recorded local `npm run check`, `npm run build`, or founder rendered PASS against runtime HEAD `c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0`. Do not describe G1 as validated until those checks pass.
+G1 `/subscribe` is validated against runtime HEAD `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3`:
+
+- founder rendered desktop visual review: **PASS**;
+- final visible spacing, block placement, button treatment, and no-footer composition: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the final runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
+- source review confirms the shared newsletter form implementation remains in use;
+- dedicated multi-width laptop/tablet/mobile visual QA remains sequence H.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
-
-The later dedicated multi-width full-site responsive audit remains sequence H and is not complete.
 
 ## Current implementation commits
 
@@ -315,9 +326,13 @@ G utility runtime:
 
 - `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — first simplified blue-band `/subscribe`; rejected in founder rendered review and historical only;
 - `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
-- `f860085e7cef614a3c594a403af91bd8f1e2525f` — revised image-led `/subscribe` runtime;
-- `a873c55ccbf3678ecfbddd1f7e61030acd715075` — homepage-only uppercase header subscribe presentation;
-- `c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0` — preserve shared header link/CTA colors on `/subscribe`.
+- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — remove visible newsletter label and keep the smaller campaign-message scale;
+- `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove `/subscribe` footer and set message hierarchy;
+- `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set `SUBSCRIBE` CTA and strengthen its weight;
+- `972cbf96b21be699c35550f96c68355fe3f62148` — swap overlay blocks vertically;
+- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish the shared campaign inset and tighten form width;
+- `bd419eac0886696022da359f77df9b214e0f3895` — set 8.5rem CTA width and explicit centering;
+- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optical wordmark alignment and 44px form-control treatment.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -351,6 +366,9 @@ Do not reintroduce:
 - repeated/decorative mono scaffolding;
 - legacy `/subscribe` numbered scaffold and subscription-details section;
 - first G1 full-width blue-band `/subscribe` composition;
+- visible `GET THE NEWSLETTER` label on the final G1 composition;
+- visible cadence support line or shared note on the final G1 composition;
+- footer on the final G1 `/subscribe` composition;
 - fabricated production News;
 - generic production fallback imagery;
 - implementation-time global design changes without approval.
