@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 interface ArticleMeta {
   author: string;
   authorUrl?: string;
@@ -112,6 +114,7 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 <meta name="theme-color" content="#f4f0e8" />
 {robots && <meta name="robots" content={robots} />}
 <title>{title}</title>
+<ClientRouter fallback="swap" />
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
