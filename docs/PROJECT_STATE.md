@@ -4,11 +4,15 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — F COMPLETE / G1 SUBSCRIBE DESIGN GATE ACTIVE**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — F COMPLETE / G1 SUBSCRIBE IMPLEMENTED / VALIDATION PENDING**
 
-Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is now active, beginning with the `/subscribe` utility page. No `/subscribe` runtime implementation is authorized until its current design/copy gate is founder-approved.
+Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` has been founder-approved and implemented, but it must pass local technical checks plus founder rendered review before G2 `/standards` begins.
 
-Current validated runtime HEAD before this documentation update:
+Current unvalidated runtime HEAD before this documentation update:
+
+`adaabb4ab6ad4a37e67095363df7b1146a89bd96` — `Simplify subscribe page`
+
+Last fully validated runtime HEAD:
 
 `7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — `Restore article header divider`
 
@@ -311,7 +315,7 @@ The later dedicated multi-width full-site responsive audit remains sequence H an
 
 ## G — Utility/editorial page simplification
 
-**ACTIVE — G1 `/subscribe` DESIGN/COPY GATE.**
+**ACTIVE — G1 `/subscribe` IMPLEMENTED / VALIDATION PENDING.**
 
 Sequence inside G:
 
@@ -319,13 +323,53 @@ Sequence inside G:
 2. `/standards`;
 3. `/privacy`.
 
-Current `/subscribe` is a legacy surface and is not approved as the final v0 presentation. It still contains stale public `Portfilo Brief` naming, `No fixed schedule yet` copy that conflicts with the later approved three-times-per-week promise, a separate bespoke signup implementation, and older oversized/mono-scaffolded utility-page geometry.
+### G1 `/subscribe`
 
-The `/subscribe` route remains a focused utility landing page for direct links, social bios, QR codes and campaigns. It should not become a second homepage or a multi-section marketing site.
+Founder-approved direction:
 
-The current shared `NewsletterSignup.astro` is the preferred existing form/behavior primitive unless the design gate establishes a concrete reason it cannot meet the page requirement. `/subscribe` must remain excluded from the shared footer acquisition to avoid duplicate signup prompts.
+- one focused utility landing page rather than a second homepage;
+- one full-width Portfilo-blue acquisition section;
+- existing 84rem publication shell;
+- desktop relationship based on the established 52rem primary column plus right-side form area;
+- one page-specific headline and one concise support sentence;
+- shared `NewsletterSignup.astro` for form behavior;
+- `Subscribe free` CTA;
+- compact SiteFooter only, with the shared footer acquisition still suppressed on `/subscribe`;
+- remove legacy `Portfilo Brief` naming, numbered mono scaffolding, duplicated form JavaScript, separate subscription-details section and `No fixed schedule yet` copy.
 
-The exact `/subscribe` message architecture and final wording are not yet founder-approved. The homepage hero wording in `research/homepage-hero-copy-v3.md` is evidence for approved newsletter facts and operating promises, but its exact wording is explicitly hero-scoped and must not be silently copied onto `/subscribe`.
+Founder-approved exact `/subscribe` public copy:
+
+Headline:
+
+`Business and tech, three times a week.`
+
+Support:
+
+`The latest news on companies, startups, products, markets, AI, and technology in a 7-minute read.`
+
+CTA:
+
+`Subscribe free`
+
+Form note remains the shared component wording:
+
+`Free newsletter. Unsubscribe anytime.`
+
+Meta title:
+
+`Subscribe | Portfilo`
+
+Meta description:
+
+`Subscribe to Portfilo’s free business and technology newsletter. The latest news in a 7-minute read, three times a week.`
+
+Implementation:
+
+- runtime commit `adaabb4ab6ad4a37e67095363df7b1146a89bd96` rewrote only `src/pages/subscribe.astro`;
+- the bespoke `/subscribe` form and inline submit script were removed;
+- the shared `NewsletterSignup.astro` now owns validation, honeypot, `/api/subscribe` submission, confirmation messaging and error states on this page;
+- no dependency, schema, API, homepage, archive, article, Standards or Privacy runtime changes were made;
+- `docs/COPY_STYLE.md` now records the founder rule that Portfilo public copy does not use em dashes and synchronizes the current newsletter facts.
 
 ## Remaining sequence
 
@@ -341,7 +385,7 @@ E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**
 
 F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: `/subscribe` DESIGN/COPY GATE**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: `/subscribe` VALIDATION PENDING**;
 
 H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NOT STARTED**;
 
@@ -349,18 +393,18 @@ I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Complete the G1 `/subscribe` design/copy gate before editing runtime code.
+Validate G1 `/subscribe` before beginning `/standards`.
 
 Required:
 
-1. inspect the existing `/subscribe` implementation, `NewsletterSignup.astro`, current acquisition system, `COPY_STYLE.md`, and current approved newsletter claim authority;
-2. use strong current newsletter/publication signup references for structural evidence rather than inventing a utility-page composition from scratch;
-3. define the smallest one-purpose `/subscribe` information architecture and identify what legacy material should be deleted;
-4. separate approved newsletter facts from exact wording, because the existing homepage hero copy is hero-only;
-5. obtain founder approval for the `/subscribe` structure/message direction before implementation;
-6. after direction approval, draft/approve any new page-specific public wording required by that structure;
-7. only then implement `/subscribe`, preserving the existing `/api/subscribe` behavior and avoiding duplicate form logic where the shared component already covers it;
-8. validate `/subscribe` before beginning `/standards`.
+1. pull the latest `build/portfilo-v0`;
+2. run `npm run check`;
+3. run `npm run build`;
+4. render `/subscribe` on desktop and verify the single blue acquisition section, approved copy, shared form, compact footer and absence of legacy `Portfilo Brief` / numbered scaffolding / subscription-details content;
+5. verify `/subscribe` shows no generic dark footer acquisition above the compact footer;
+6. test an invalid email state and confirm the shared form surfaces its normal error state;
+7. inspect a representative mobile width for stacking, readable headline/support copy, full-width form controls and no horizontal overflow;
+8. report any G1 regression before beginning `/standards`.
 
 Do not begin `/standards` or `/privacy` while `/subscribe` is still open.
 
