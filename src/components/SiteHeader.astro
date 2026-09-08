@@ -1,5 +1,5 @@
 ---
-type CurrentPage = "stories" | "standards" | "about" | "subscribe";
+type CurrentPage = "news" | "stories" | "standards" | "about" | "subscribe";
 
 interface Props {
   current?: CurrentPage;
@@ -14,7 +14,7 @@ const { current } = Astro.props;
   </a>
 
   <nav class="site-nav" aria-label="Primary">
-    <a class="site-nav__link" href="/#latest">Latest</a>
+    <a class="site-nav__link" href="/news" aria-current={current === "news" ? "page" : undefined}>News</a>
     <a class="site-nav__link" href="/stories" aria-current={current === "stories" ? "page" : undefined}>Stories</a>
     <a
       class="site-nav__link site-nav__cta"
@@ -36,7 +36,8 @@ const { current } = Astro.props;
     border-bottom: 1px solid var(--line);
   }
 
-  :global(body.home-page) .site-header {
+  :global(body.home-page) .site-header,
+  :global(body.editorial-page) .site-header {
     width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
     padding-inline: 0;
   }

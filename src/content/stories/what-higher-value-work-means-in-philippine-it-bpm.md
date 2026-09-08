@@ -1,6 +1,7 @@
 ---
 title: "What 'higher-value work' means in Philippine IT-BPM"
 dek: "The same industry phrase can point to credit analysis, clinical informatics or workforce planning."
+section: stories
 contentType: explained
 topic: business
 author: "Portfilo"

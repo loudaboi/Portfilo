@@ -1,7 +1,7 @@
 ---
 title: "Portfilo Content Architecture Test: A Deliberately Long Fixture Title for Validating Structured Story Metadata and Routing"
 dek: "A synthetic development fixture used only to validate Portfilo's content schema, optional metadata, Markdown rendering, and static story route."
-description: "A synthetic development fixture used only to validate Portfilo's content schema, optional metadata, Markdown rendering, and static story route."
+section: stories
 contentType: explained
 topic: business
 author: Portfilo

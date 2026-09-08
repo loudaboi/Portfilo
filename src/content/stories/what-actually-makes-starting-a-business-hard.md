@@ -1,12 +1,17 @@
 ---
 title: "What actually makes starting a business hard?"
 dek: "New businesses have to make important decisions with very little information about what is working and what is not."
+section: stories
 contentType: explained
 topic: business
 author: "Portfilo"
 publishedAt: 2026-09-07
 status: published
 featured: false
+image:
+  src: "/images/homepage-feature-16x9.png"
+  alt: "A person holding a newspaper in a concrete architectural setting beside a coffee cup."
+  generated: true
 ---
 
 Low sales are an easy example. They tell the owner that not enough sales happened. They do not say whether the price is wrong, the offer is weak, the wrong people are seeing it, too few people know about it, or demand is simply lower than expected.

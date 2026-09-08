@@ -2,6 +2,8 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
+const sections = ["news", "stories"] as const;
+
 const contentTypes = [
   "reported",
   "explained",
@@ -13,7 +15,14 @@ const contentTypes = [
   "partner",
 ] as const;
 
-const topics = ["business", "technology", "startups", "ai", "building"] as const;
+const topics = ["business", "technology", "startup", "ai"] as const;
+
+const imageSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  credit: z.string().min(1).optional(),
+  generated: z.boolean().default(false),
+});
 
 const stories = defineCollection({
   loader: glob({
@@ -25,6 +34,7 @@ const stories = defineCollection({
       title: z.string().min(1),
       dek: z.string().min(1),
       metaDescription: z.string().min(1).optional(),
+      section: z.enum(sections),
       contentType: z.enum(contentTypes),
       topic: z.enum(topics),
       author: z.string().min(1),
@@ -32,6 +42,7 @@ const stories = defineCollection({
       updatedAt: z.coerce.date().optional(),
       status: z.enum(["draft", "published"]),
       featured: z.boolean().default(false),
+      image: imageSchema.optional(),
       series: z
         .string()
         .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
@@ -71,6 +82,30 @@ const stories = defineCollection({
           code: "custom",
           path: ["updatedAt"],
           message: "updatedAt cannot be earlier than publishedAt.",
+        });
+      }
+
+      if (story.section === "news" && story.featured) {
+        context.addIssue({
+          code: "custom",
+          path: ["featured"],
+          message: "Only Stories entries may be featured.",
+        });
+      }
+
+      if (story.section === "news" && story.series) {
+        context.addIssue({
+          code: "custom",
+          path: ["series"],
+          message: "News entries cannot belong to a series.",
+        });
+      }
+
+      if (story.section === "news" && story.seriesOrder !== undefined) {
+        context.addIssue({
+          code: "custom",
+          path: ["seriesOrder"],
+          message: "News entries cannot define seriesOrder.",
         });
       }
     }),

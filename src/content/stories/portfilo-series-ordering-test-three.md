@@ -1,9 +1,9 @@
 ---
 title: "Portfilo Series Ordering Test: Third Synthetic Entry"
 dek: "A synthetic development fixture used only to confirm the end of an ordered series list and responsive story metadata."
-description: "A synthetic development fixture used only to confirm the end of an ordered series list and responsive story metadata."
+section: stories
 contentType: guide
-topic: building
+topic: technology
 author: Portfilo
 publishedAt: 2026-09-02
 status: draft

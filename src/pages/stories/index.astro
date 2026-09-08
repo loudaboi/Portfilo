@@ -4,15 +4,20 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 
-const publishedStories = await getCollection(
+const entries = await getCollection(
   "stories",
-  ({ data }) => data.status === "published",
+  ({ data }) => data.section === "stories" && (data.status === "published" || import.meta.env.DEV),
 );
 
-const stories = [...publishedStories].sort(
-  (a, b) =>
-    (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
-);
+const stories = entries
+  .filter((story) => !story.id.startsWith("portfilo-"))
+  .sort(
+    (a, b) =>
+      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+  );
+
+const leadStory = stories[0];
+const supportingStories = stories.slice(1);
 
 const dateFormatter = new Intl.DateTimeFormat("en-PH", {
   day: "numeric",
@@ -23,7 +28,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 
 const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
 const formatLabel = (value: string) => value.replaceAll("-", " ");
-const storyCountLabel = `${stories.length} ${stories.length === 1 ? "story" : "stories"}`;
 ---
 
 <!doctype html>
@@ -31,95 +35,113 @@ const storyCountLabel = `${stories.length} ${stories.length === 1 ? "story" : "s
   <head>
     <SiteHead
       title="Stories | Portfilo"
-      description="Published Portfilo stories about business, technology, startups, AI, and building."
+      description="Deeper Portfilo stories about business, technology, startups, and AI."
     />
   </head>
-  <body>
+  <body class="editorial-page">
     <a class="skip-link" href="#stories-list">Skip to stories</a>
-
     <SiteHeader current="stories" />
 
     <main id="main-content">
-      <section class="stories-hero" aria-labelledby="stories-title">
-        <p class="stories-kicker">Stories</p>
-        <h1 id="stories-title">Stories</h1>
-        <p class="stories-count">{storyCountLabel}</p>
-      </section>
+      <header class="page-header">
+        <h1>Stories</h1>
+      </header>
 
-      <section class="stories-index" id="stories-list" tabindex="-1" aria-label="Published stories">
-        {
-          stories.length > 0 ? (
-            <ol class="story-list">
-              {stories.map((story, index) => (
-                <li class="story-item">
-                  <p class="story-item__number">{String(index + 1).padStart(2, "0")}</p>
+      {
+        leadStory ? (
+          <section class="lead-story" aria-label="Lead story">
+            {leadStory.data.image && (
+              <a class="lead-story__image" href={`/stories/${leadStory.id}`} aria-label={`Read ${leadStory.data.title}`}>
+                <img
+                  src={leadStory.data.image.src}
+                  alt={leadStory.data.image.alt}
+                  width="1600"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                />
+                {leadStory.data.image.generated && (
+                  <span class="image-disclosure">AI-generated editorial image</span>
+                )}
+              </a>
+            )}
 
-                  <div class="story-item__meta">
+            <div class="lead-story__package">
+              <p class="story-meta">
+                <span>{formatLabel(leadStory.data.contentType)}</span>
+                <span>{formatLabel(leadStory.data.topic)}</span>
+                {leadStory.data.publishedAt && <time datetime={leadStory.data.publishedAt.toISOString()}>{formatDate(leadStory.data.publishedAt)}</time>}
+                {import.meta.env.DEV && leadStory.data.status === "draft" && <span>Draft</span>}
+              </p>
+              <h2><a href={`/stories/${leadStory.id}`}>{leadStory.data.title}</a></h2>
+              <p class="lead-story__dek">{leadStory.data.dek}</p>
+              <p class="story-author">{leadStory.data.author}</p>
+            </div>
+          </section>
+        ) : (
+          <p class="empty-state" id="stories-list">No published stories yet.</p>
+        )
+      }
+
+      {
+        leadStory && (
+          <section class="story-stream" id="stories-list" tabindex="-1" aria-label="More stories">
+            {supportingStories.map((story) => (
+              <article class="story-row">
+                <div class="story-row__package">
+                  <p class="story-meta">
                     <span>{formatLabel(story.data.contentType)}</span>
                     <span>{formatLabel(story.data.topic)}</span>
-                    {story.data.publishedAt && (
-                      <time datetime={story.data.publishedAt.toISOString()}>
-                        {formatDate(story.data.publishedAt)}
-                      </time>
+                    {story.data.publishedAt && <time datetime={story.data.publishedAt.toISOString()}>{formatDate(story.data.publishedAt)}</time>}
+                    {import.meta.env.DEV && story.data.status === "draft" && <span>Draft</span>}
+                  </p>
+                  <h2><a href={`/stories/${story.id}`}>{story.data.title}</a></h2>
+                  <p class="story-row__dek">{story.data.dek}</p>
+                  <p class="story-author">{story.data.author}</p>
+                </div>
+
+                {story.data.image && (
+                  <a class="story-row__image" href={`/stories/${story.id}`} aria-label={`Read ${story.data.title}`}>
+                    <img
+                      src={story.data.image.src}
+                      alt={story.data.image.alt}
+                      width="1600"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    {story.data.image.generated && (
+                      <span class="image-disclosure">AI-generated editorial image</span>
                     )}
-                  </div>
-
-                  <div class="story-item__copy">
-                    <h2>
-                      <a href={`/stories/${story.id}`}>{story.data.title}</a>
-                    </h2>
-                    <p>{story.data.dek}</p>
-                    <p class="story-item__author">{story.data.author}</p>
-                  </div>
-
-                  <a class="story-item__action" href={`/stories/${story.id}`}>
-                    Read story <span aria-hidden="true">↗</span>
                   </a>
-                </li>
-              ))}
-            </ol>
-          ) : (
-            <p class="stories-empty">No published stories yet.</p>
-          )
-        }
-      </section>
+                )}
+              </article>
+            ))}
+          </section>
+        )
+      }
     </main>
 
     <SiteFooter />
 
     <style>
-      @font-face {
-        font-family: "Instrument Sans";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400 700;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "Source Serif 4";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2");
-      }
+      @font-face { font-family: "Instrument Sans"; font-style: normal; font-display: swap; font-weight: 400 700; src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations"); }
+      @font-face { font-family: "Source Serif 4"; font-style: normal; font-display: swap; font-weight: 200 900; src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations"); }
+      @font-face { font-family: "IBM Plex Mono"; font-style: normal; font-display: swap; font-weight: 400; src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2"); }
 
       :global(:root) {
-        --paper: #f4f0e8;
+        --paper: #f8f6f1;
+        --paper-soft: #efebe3;
         --ink: #171614;
-        --muted: #69655e;
-        --line: #cbc5bb;
+        --muted: #68645e;
+        --line: #d4cfc6;
+        --line-strong: #aaa39a;
         --accent: #0050a4;
         --correction: #b42318;
-        --page-max: 100rem;
-        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
-        --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
+        --page-max: 84rem;
+        --content-max: 84rem;
+        --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
+        --gutter: var(--shell-gutter);
         --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
         --serif: "Source Serif 4", Georgia, serif;
         --mono: "IBM Plex Mono", "Courier New", monospace;
@@ -134,221 +156,219 @@ const storyCountLabel = `${stories.length} ${stories.length === 1 ? "story" : "s
 
       .skip-link {
         position: fixed;
-        z-index: 20;
+        z-index: 50;
         top: 0.75rem;
         left: 0.75rem;
-        padding: 0.65rem 0.8rem;
+        padding: 0.7rem 0.85rem;
         background: var(--ink);
         color: var(--paper);
-        font: 400 0.75rem/1 var(--mono);
+        font: 550 0.75rem/1 var(--sans);
         text-decoration: none;
         transform: translateY(-200%);
       }
       .skip-link:focus { transform: translateY(0); }
 
-      .stories-hero,
-      .stories-index {
-        width: min(100%, var(--page-max));
+      .page-header,
+      .lead-story,
+      .story-stream,
+      .empty-state {
+        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
         margin-inline: auto;
       }
 
-      .stories-hero {
-        padding: clamp(3.8rem, 7vw, 7.5rem) var(--gutter) clamp(3.5rem, 6vw, 6rem);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
-        align-items: end;
+      .page-header {
+        padding: clamp(3.2rem, 6vw, 5.8rem) 0 clamp(1.4rem, 2.6vw, 2.25rem);
+        border-bottom: 1px solid var(--ink);
       }
 
-      .stories-kicker {
-        grid-column: 1 / 3;
-        margin: 0 0 0.55rem;
-        color: var(--accent);
-        font: 400 0.67rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-
-      .stories-hero h1 {
-        grid-column: 3 / 11;
+      .page-header h1 {
         margin: 0;
-        font: 500 clamp(4.2rem, 8vw, 8rem) / 0.88 var(--sans);
-        letter-spacing: -0.075em;
+        font: 680 clamp(3rem, 6vw, 5.6rem) / 0.92 var(--sans);
+        letter-spacing: -0.055em;
       }
 
-      .stories-count {
-        grid-column: 11 / 13;
-        margin: 0 0 0.45rem;
-        text-align: right;
-        color: var(--muted);
-        font: 400 0.68rem/1.4 var(--mono);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .stories-index {
-        padding: 0 var(--gutter) clamp(5rem, 9vw, 9rem);
-      }
-
-      .story-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        border-top: 1px solid var(--ink);
-      }
-
-      .story-item {
-        min-width: 0;
-        padding: clamp(2.6rem, 4.5vw, 4.7rem) 0;
+      .lead-story {
+        padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(3rem, 5vw, 4.75rem);
         display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
+        grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.8fr);
+        gap: clamp(1.5rem, 3vw, 3rem);
+        align-items: start;
         border-bottom: 1px solid var(--line);
       }
 
-      .story-item__number {
-        grid-column: 1 / 3;
-        margin: 0;
-        color: var(--accent);
-        font: 500 clamp(4rem, 6.5vw, 6.7rem) / 0.78 var(--sans);
-        letter-spacing: -0.08em;
-      }
-
-      .story-item__meta {
-        grid-column: 3 / 5;
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-        align-self: start;
-        color: var(--muted);
-        font: 400 0.63rem/1.45 var(--mono);
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-      }
-
-      .story-item__meta span + span::before,
-      .story-item__meta time::before {
-        content: "/";
-        margin-right: 0.45rem;
-        color: var(--accent);
-      }
-
-      .story-item__copy {
-        grid-column: 5 / 11;
-        min-width: 0;
-      }
-
-      .story-item__copy h2 {
-        max-width: 20ch;
-        margin: 0;
-        font: 500 clamp(2rem, 3.1vw, 3.35rem) / 1 var(--sans);
-        letter-spacing: -0.05em;
-        text-wrap: balance;
-        overflow-wrap: break-word;
-      }
-
-      .story-item__copy h2 a { text-decoration: none; }
-      .story-item__copy h2 a:hover { color: var(--accent); }
-
-      .story-item__copy > p:not(.story-item__author) {
-        max-width: 39rem;
-        margin: 1.35rem 0 0;
-        color: var(--muted);
-        font: 400 1.06rem/1.58 var(--serif);
-      }
-
-      .story-item__author {
-        margin: 1.4rem 0 0;
-        color: var(--muted);
-        font: 400 0.65rem/1.45 var(--mono);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .story-item__action {
-        grid-column: 11 / 13;
-        align-self: end;
-        justify-self: stretch;
-        padding: 0.85rem 0 0.7rem;
+      .lead-story__image,
+      .story-row__image {
+        position: relative;
+        display: block;
+        overflow: hidden;
         border-top: 3px solid var(--accent);
-        border-bottom: 1px solid var(--ink);
-        font: 500 clamp(1rem, 1.35vw, 1.2rem) / 1.2 var(--sans);
+        background: var(--paper-soft);
+        line-height: 0;
+      }
+
+      .lead-story__image img,
+      .story-row__image img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-disclosure {
+        position: absolute;
+        right: 0.55rem;
+        bottom: 0.5rem;
+        padding: 0.27rem 0.36rem;
+        background: rgba(23, 22, 20, 0.78);
+        color: #fff;
+        font: 520 0.57rem/1 var(--sans);
+        letter-spacing: 0.035em;
+      }
+
+      .lead-story__package {
+        padding-top: 0.1rem;
+      }
+
+      .story-meta,
+      .story-author,
+      .lead-story__dek,
+      .story-row__dek,
+      .lead-story h2,
+      .story-row h2 {
+        margin: 0;
+      }
+
+      .story-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.75rem;
+        color: var(--muted);
+        font: 560 0.64rem/1.3 var(--sans);
+        letter-spacing: 0.045em;
+        text-transform: uppercase;
+      }
+
+      .story-meta span:first-child,
+      .story-meta span:nth-child(2) {
+        color: var(--accent);
+      }
+
+      .story-meta > * + *::before {
+        content: "/";
+        margin-right: 0.75rem;
+        color: var(--line-strong);
+      }
+
+      .lead-story h2 {
+        max-width: 18ch;
+        margin-top: 0.7rem;
+        font: 670 clamp(2.2rem, 3.5vw, 3.8rem) / 0.98 var(--sans);
+        letter-spacing: -0.048em;
+        text-wrap: balance;
+      }
+
+      h2 a {
         text-decoration: none;
       }
-      .story-item__action span { color: var(--accent); }
-      .story-item__action:hover { color: var(--accent); }
 
-      .stories-empty {
-        margin: 0;
-        padding: 3rem 0;
+      h2 a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.14em;
+      }
+
+      .lead-story__dek {
+        max-width: 38rem;
+        margin-top: 0.8rem;
         color: var(--muted);
-        font: 400 1.1rem/1.55 var(--serif);
-        border-top: 1px solid var(--ink);
+        font: 430 clamp(1rem, 1.2vw, 1.12rem) / 1.52 var(--sans);
+      }
+
+      .story-author {
+        margin-top: 1rem;
+        color: var(--muted);
+        font: 540 0.67rem/1.3 var(--sans);
+      }
+
+      .story-stream {
+        padding-bottom: clamp(4rem, 7vw, 7rem);
+      }
+
+      .story-row {
+        padding: clamp(1.75rem, 3vw, 2.75rem) 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(13rem, 20rem);
+        gap: clamp(1.5rem, 3vw, 3rem);
+        align-items: start;
         border-bottom: 1px solid var(--line);
+      }
+
+      .story-row:not(:has(.story-row__image)) .story-row__package {
+        max-width: 54rem;
+      }
+
+      .story-row h2 {
+        max-width: 25ch;
+        margin-top: 0.55rem;
+        font: 660 clamp(1.55rem, 2.35vw, 2.55rem) / 1.02 var(--sans);
+        letter-spacing: -0.04em;
+      }
+
+      .story-row__dek {
+        max-width: 43rem;
+        margin-top: 0.65rem;
+        color: var(--muted);
+        font: 425 clamp(0.92rem, 1vw, 1rem) / 1.52 var(--sans);
+      }
+
+      .empty-state {
+        padding: 2rem 0 clamp(5rem, 8vw, 8rem);
+        color: var(--muted);
+        font: 430 0.95rem/1.55 var(--sans);
       }
 
       @media (max-width: 64rem) {
-        .stories-hero h1 { grid-column: 2 / 10; }
-        .stories-count { grid-column: 10 / 13; }
-        .story-item__number { grid-column: 1 / 2; }
-        .story-item__meta { grid-column: 2 / 5; }
-        .story-item__copy { grid-column: 5 / 10; }
-        .story-item__action { grid-column: 10 / 13; }
-      }
-
-      @media (max-width: 50rem) {
-        .stories-hero {
-          display: block;
-          padding-top: 3.6rem;
-          padding-bottom: 3.8rem;
-        }
-        .stories-kicker { margin-bottom: 1.2rem; }
-        .stories-hero h1 {
-          font-size: clamp(3.5rem, 16vw, 5.5rem);
-          line-height: 0.9;
-        }
-        .stories-count {
-          margin-top: 1.7rem;
-          text-align: left;
-        }
-        .story-item {
-          display: block;
-          padding-top: 2.75rem;
-          padding-bottom: 3rem;
-        }
-        .story-item__number {
-          font-size: clamp(3.6rem, 17vw, 5.2rem);
-          line-height: 0.8;
-        }
-        .story-item__meta {
-          margin-top: 1.5rem;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 0.45rem 0.7rem;
-        }
-        .story-item__copy { margin-top: 1.7rem; }
-        .story-item__copy h2 {
-          max-width: none;
-          font-size: clamp(2rem, 8.7vw, 3rem);
-          text-wrap: pretty;
-        }
-        .story-item__copy > p:not(.story-item__author) { font-size: 1.05rem; }
-        .story-item__action {
-          display: block;
-          max-width: 15rem;
-          margin-top: 2rem;
+        .lead-story {
+          grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.75fr);
+          gap: 1.75rem;
         }
       }
 
-      @media (max-width: 28rem) {
-        .story-item__meta { display: block; }
-        .story-item__meta span,
-        .story-item__meta time { display: block; margin-top: 0.35rem; }
-        .story-item__meta span:first-child { margin-top: 0; }
+      @media (max-width: 48rem) {
+        .lead-story,
+        .story-row {
+          grid-template-columns: 1fr;
+        }
+
+        .lead-story__image {
+          order: 0;
+        }
+
+        .lead-story__package {
+          order: 1;
+        }
+
+        .story-row__image {
+          order: -1;
+          max-width: 36rem;
+        }
+
+        .lead-story h2 {
+          max-width: 22ch;
+        }
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        .skip-link { transition: none; }
+      @media (max-width: 36rem) {
+        :global(:root) { --shell-gutter: 1.1rem; }
+        .page-header { padding-top: 2.75rem; }
+        .page-header h1 { font-size: clamp(2.8rem, 15vw, 4.25rem); }
+        .lead-story { padding-top: 1.15rem; }
+        .lead-story h2 { font-size: clamp(2rem, 9.5vw, 2.8rem); }
+        .story-row { padding-block: 1.6rem; }
+        .story-row h2 { font-size: clamp(1.55rem, 7.5vw, 2.1rem); }
+      }
+
+      @media (max-width: 23rem) {
+        :global(:root) { --shell-gutter: 1rem; }
       }
     </style>
   </body>

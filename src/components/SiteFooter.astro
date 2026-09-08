@@ -24,7 +24,8 @@
     color: #fff;
   }
 
-  :global(body.home-page) .site-footer {
+  :global(body.home-page) .site-footer,
+  :global(body.editorial-page) .site-footer {
     padding-inline: max(var(--shell-gutter), calc((100vw - var(--content-max)) / 2));
   }
 
@@ -78,7 +79,8 @@
       padding-inline: var(--gutter);
     }
 
-    :global(body.home-page) .site-footer {
+    :global(body.home-page) .site-footer,
+    :global(body.editorial-page) .site-footer {
       padding-inline: var(--shell-gutter);
     }
 

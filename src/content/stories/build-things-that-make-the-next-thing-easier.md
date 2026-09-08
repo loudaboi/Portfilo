@@ -1,8 +1,9 @@
 ---
 title: "Build things that make the next thing easier"
 dek: "An early project should leave you with more than a story about what you learned."
+section: stories
 contentType: perspective
-topic: building
+topic: technology
 author: "Louda Tuppal"
 publishedAt: 2026-09-03
 status: draft

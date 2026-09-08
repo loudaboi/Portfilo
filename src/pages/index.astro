@@ -4,56 +4,67 @@ import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
+import { DEV_NEWS_FIXTURES } from "../data/devNewsFixtures";
 
-const publishedStories = await getCollection(
+const publishedEntries = await getCollection(
   "stories",
   ({ data }) => data.status === "published",
 );
 
-const storiesByDate = [...publishedStories].sort(
-  (a, b) =>
-    (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
-);
+const storiesByDate = publishedEntries
+  .filter(({ data }) => data.section === "stories")
+  .sort(
+    (a, b) =>
+      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+  );
+
+const newsByDate = publishedEntries
+  .filter(({ data }) => data.section === "news")
+  .sort(
+    (a, b) =>
+      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+  );
 
 const featureStory =
   storiesByDate.find(({ data }) => data.featured) ?? storiesByDate[0];
 
 const formatLabel = (value: string) => value.replaceAll("-", " ");
+const dateFormatter = new Intl.DateTimeFormat("en-PH", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
 
-const devNews = import.meta.env.DEV
-  ? [
-      {
-        topic: "business",
-        time: "8 min ago",
-        title: "A payments platform introduces same-day settlement for small merchants",
-        dek: "Synthetic layout copy used only in local development to test the lead News treatment and longer business copy.",
-      },
-      {
-        topic: "technology",
-        time: "21 min ago",
-        title: "A local telco expands 5G coverage across more provincial cities",
-        dek: "Synthetic technology copy for testing headline wrapping and supporting-item density.",
-      },
-      {
-        topic: "startup",
-        time: "34 min ago",
-        title: "A logistics startup adds cold-chain delivery for neighborhood retailers",
-        dek: "Synthetic startup copy for testing a medium-length supporting update.",
-      },
-      {
-        topic: "ai",
-        time: "47 min ago",
-        title: "A BPO operator pilots AI-assisted support across two service teams",
-        dek: "Synthetic AI copy for testing a compact current-news treatment.",
-      },
-      {
-        topic: "business",
-        time: "1 hr ago",
-        title: "A major bank rolls out a new digital credit product for small businesses",
-        dek: "Synthetic business copy for testing the final News slot.",
-      },
-    ]
+const realNews = newsByDate.map((story) => ({
+  topic: story.data.topic,
+  time: formatDate(story.data.publishedAt),
+  title: story.data.title,
+  dek: story.data.dek,
+  href: `/news/${story.id}`,
+  image: story.data.image,
+  fixture: false as const,
+}));
+
+const devNews = import.meta.env.DEV && realNews.length === 0
+  ? DEV_NEWS_FIXTURES.map((item) => ({
+      ...item,
+      href: undefined,
+      image: undefined,
+      fixture: true as const,
+    }))
   : [];
+
+const newsItems = realNews.length > 0 ? realNews : devNews;
+const leadNews = newsItems[0];
+const usingDevNews = devNews.length > 0;
+
+const tickerItems = newsItems.map((item) => ({
+  label: item.topic,
+  title: item.title,
+  href: item.href,
+}));
 
 const devStory = import.meta.env.DEV
   ? {
@@ -61,21 +72,6 @@ const devStory = import.meta.env.DEV
       dek: "Development-only story teaser used to test the deeper Stories rail and headline hierarchy.",
     }
   : undefined;
-
-const leadDevNews = devNews[0];
-
-const tickerItems =
-  devNews.length > 0
-    ? devNews.map((item) => ({
-        label: item.topic,
-        title: item.title,
-        href: undefined,
-      }))
-    : storiesByDate.map((story) => ({
-        label: story.data.topic,
-        title: story.data.title,
-        href: `/stories/${story.id}`,
-      }));
 
 const railStory =
   devStory ??
@@ -151,21 +147,25 @@ const railStory =
           <section class="featured-section" aria-label="Featured story">
             <div class="featured-pair">
               <article class="featured-story">
-                <a
-                  class="featured-story__media"
-                  href={`/stories/${featureStory.id}`}
-                  aria-label={`Read ${featureStory.data.title}`}
-                >
-                  <img
-                    src="/images/homepage-feature-16x9.png"
-                    width="1672"
-                    height="941"
-                    alt=""
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <span class="featured-story__disclosure">AI-generated editorial image</span>
-                </a>
+                {featureStory.data.image && (
+                  <a
+                    class="featured-story__media"
+                    href={`/stories/${featureStory.id}`}
+                    aria-label={`Read ${featureStory.data.title}`}
+                  >
+                    <img
+                      src={featureStory.data.image.src}
+                      width="1600"
+                      height="900"
+                      alt={featureStory.data.image.alt}
+                      loading="eager"
+                      decoding="async"
+                    />
+                    {featureStory.data.image.generated && (
+                      <span class="featured-story__disclosure">AI-generated editorial image</span>
+                    )}
+                  </a>
+                )}
 
                 <div class="featured-story__copy">
                   <h2>
@@ -209,35 +209,51 @@ const railStory =
       <section class="news-section" id="news" aria-labelledby="news-section-title">
         <header class="news-section__heading">
           <h2 id="news-section-title">News</h2>
-          {leadDevNews && (
+          {usingDevNews && (
             <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
           )}
         </header>
 
         {
-          leadDevNews ? (
+          leadNews ? (
             <div class="news-grid">
               <article class="lead-news">
-                <div class="news-image-placeholder" aria-hidden="true">
-                  <span>News image</span>
-                  <small>Development layout only</small>
-                </div>
+                {leadNews.fixture ? (
+                  <div class="news-image-placeholder" aria-hidden="true">
+                    <span>News image</span>
+                    <small>Development layout only</small>
+                  </div>
+                ) : leadNews.image ? (
+                  <a class="news-image" href={leadNews.href} aria-label={`Read ${leadNews.title}`}>
+                    <img
+                      src={leadNews.image.src}
+                      alt={leadNews.image.alt}
+                      width="1600"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    {leadNews.image.generated && (
+                      <span class="news-image__disclosure">AI-generated editorial image</span>
+                    )}
+                  </a>
+                ) : null}
                 <div class="news-meta">
-                  <span>{leadDevNews.topic}</span>
-                  <span>{leadDevNews.time}</span>
+                  <span>{leadNews.topic}</span>
+                  <span>{leadNews.time}</span>
                 </div>
-                <h3>{leadDevNews.title}</h3>
-                <p>{leadDevNews.dek}</p>
+                <h3>{leadNews.href ? <a href={leadNews.href}>{leadNews.title}</a> : leadNews.title}</h3>
+                <p>{leadNews.dek}</p>
               </article>
 
               <div class="news-list">
-                {devNews.slice(1).map((item) => (
+                {newsItems.slice(1, 5).map((item) => (
                   <article class="news-list__item">
                     <div class="news-meta">
                       <span>{item.topic}</span>
                       <span>{item.time}</span>
                     </div>
-                    <h3>{item.title}</h3>
+                    <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
                     <p>{item.dek}</p>
                   </article>
                 ))}
@@ -525,7 +541,8 @@ const railStory =
         filter: grayscale(1);
       }
 
-      .featured-story__disclosure {
+      .featured-story__disclosure,
+      .news-image__disclosure {
         position: absolute;
         right: 0.65rem;
         bottom: 0.6rem;
@@ -687,16 +704,33 @@ const railStory =
         margin: 0;
       }
 
-      .news-image-placeholder {
+      .news-image-placeholder,
+      .news-image {
         aspect-ratio: 16 / 9;
         margin-bottom: 1rem;
+        background: var(--paper-soft);
+        border-top: 3px solid var(--accent);
+      }
+
+      .news-image-placeholder {
         padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: var(--paper-soft);
-        border-top: 3px solid var(--accent);
         color: var(--muted);
+      }
+
+      .news-image {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .news-image img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       .news-image-placeholder span {
@@ -730,6 +764,18 @@ const railStory =
         margin-top: 0.55rem;
         font: 670 clamp(2rem, 3.3vw, 3.55rem) / 0.98 var(--sans);
         letter-spacing: -0.048em;
+      }
+
+      .lead-news h3 a,
+      .news-list__item h3 a {
+        text-decoration: none;
+      }
+
+      .lead-news h3 a:hover,
+      .news-list__item h3 a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.14em;
       }
 
       .lead-news > p {

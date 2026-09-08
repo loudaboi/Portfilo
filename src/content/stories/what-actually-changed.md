@@ -1,8 +1,9 @@
 ---
 title: "What actually changed?"
 dek: "A business or technology development can mean something different once it changes what someone has to do or decide."
+section: stories
 contentType: perspective
-topic: building
+topic: technology
 author: "Louda Tuppal"
 publishedAt: 2026-09-04
 status: draft
@@ -13,7 +14,7 @@ A company announces that it is adopting AI. That can be useful information on it
 
 Once software enters a workflow, the subject is no longer only the technology. It can change a process, a product, a cost, or someone's responsibility. The same decision can therefore create business and operational questions without becoming several unrelated stories.
 
-Portfilo covers Business, Technology, Startups, AI, and Building because changes in one area can alter decisions in another. A technology change can affect how a company operates. Capital can change what a startup can afford to build and how long it can keep operating. The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.
+Portfilo covers Business, Technology, Startup, and AI because changes in one area can alter decisions in another. A technology change can affect how a company operates. Capital can change what a startup can afford to build and how long it can keep operating. The meaning of a development often becomes clearer when it is followed into the choices and constraints it creates.
 
 Consider a startup raising money. The amount and investors are legitimate news. The next part of the story, when it matters, is what the capital changes: the company's runway, hiring plan, product work, or ability to enter another market. Those consequences do not make the funding round more or less successful by themselves. They explain what the new resources make possible and what decisions now follow from them.
 
