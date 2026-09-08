@@ -4,15 +4,15 @@ _Last updated: 2026-09-08_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE FROZEN / NEWS + STORIES ARCHITECTURE DECISION ACTIVE**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — STATIC HOMEPAGE FROZEN / NEWS + STORIES ARCHITECTURE APPROVED / VISUAL-SYSTEM PLANNING ACTIVE**
 
 Portfilo's publishing foundation, editorial/research/writing standards, newsletter signup infrastructure, brand assets, and technical v0 foundation remain in place.
 
-The founder reported that the final static-homepage local validation and rendered review passed and explicitly instructed the project to proceed. The static homepage is therefore treated as frozen unless a later concrete regression is found.
+The founder reported that the final static-homepage local validation and rendered review passed. The static homepage is frozen unless a later concrete regression is found.
 
-The next substantive product task is to settle the smallest clean **News + Stories content architecture** before any route/schema implementation.
+The founder has now approved the News + Stories content architecture. The active next task is to plan the new News and Stories visual/system treatment before any schema, route, homepage-source, or header implementation.
 
-No News/Stories schema migration, `/news` implementation, ticker motion, deployment, merge to `main`, or release has been authorized by this phase change alone.
+No News/Stories runtime implementation, ticker motion, deployment, merge to `main`, or release has been authorized by this architecture approval alone.
 
 ## Repository authority
 
@@ -37,7 +37,7 @@ Authoritative working branch:
 
 `build/portfilo-v0`
 
-Current known branch state includes the matched header/footer wordmark-size correction. `main` remains the release boundary. No merge to `main` without intentional release review.
+Current branch includes the matched 5.8rem header/footer wordmark-size correction. `main` remains the release boundary. No merge to `main` without intentional release review.
 
 ## Approved product direction
 
@@ -47,7 +47,7 @@ Current known branch state includes the matched header/footer wordmark-size corr
 - **News** is the current/day-to-day editorial layer.
 - **Stories** is the public deeper-editorial layer.
 - Header target after the News route exists: `Portfilo | News | Stories | Subscribe free`.
-- `News` must be a first-class browsing destination, not merely a homepage anchor.
+- `News` is a first-class browsing destination, not a homepage anchor.
 - The homepage ticker remains labeled **Latest news**.
 - Intended public coverage taxonomy: `Business / Technology / Startup / AI`.
 - Portfilo has no geographic product promise.
@@ -65,7 +65,7 @@ This is internal only.
 
 ## Static homepage freeze
 
-The current static homepage composition is frozen. Do not reopen it during News/Stories architecture work unless implementation exposes a concrete contradiction.
+The current static homepage composition is frozen. Do not reopen it during News/Stories work unless implementation exposes a concrete contradiction.
 
 Frozen system includes:
 
@@ -88,60 +88,159 @@ Current runtime header still says:
 
 `Portfilo | Latest | Stories | Subscribe free`
 
-This remains intentional until `/news` actually exists. Do not change the label to `News` before the route is implemented.
+This remains intentional until `/news` exists. Do not change the label to `News` before the route is implemented.
 
-## Current content architecture
+## Approved News + Stories content architecture
 
-Current `src/content.config.ts` has one `stories` collection using:
+The founder approved the following architecture contract.
 
-- `title`;
-- `dek`;
-- optional `metaDescription`;
-- `contentType`;
-- `topic`;
-- `author`;
-- publish/update dates;
-- draft/published state;
-- `featured`;
-- optional series relationship;
-- optional methodology;
-- optional correction metadata.
+### One collection, explicit section discriminator
 
-Current topics still permit:
+Keep one Astro editorial collection rather than splitting News and Stories into duplicate technical collections.
 
-`business / technology / startups / ai / building`
+Add an explicit field:
 
-Target public taxonomy remains:
+```yaml
+section: news | stories
+```
 
-`Business / Technology / Startup / AI`
+Keep `contentType` and `topic` as separate concepts:
 
-Current reader-facing story package remains `headline + dek`; metadata defaults to `metaDescription ?? dek` under `docs/EDITORIAL_PACKAGING_STANDARD.md`.
+- `section` = product destination / News-vs-Stories distinction;
+- `contentType` = editorial form such as reported, explained, analysis, perspective;
+- `topic` = subject classification.
 
-## News + Stories architecture gate
+### News
 
-The architecture decision must settle, before runtime implementation:
+Target routes:
 
-1. the smallest clean News-vs-Stories distinction in the content model;
-2. whether to keep one collection with an explicit discriminator or split into separate collections;
-3. `/news` archive behavior;
-4. `/news/[slug]` article routing;
-5. `/stories` archive inclusion rules;
-6. `/stories/[slug]` route preservation for deeper Stories;
-7. homepage Feature sourcing rules;
-8. homepage Stories-rail sourcing rules;
-9. homepage News sourcing rules;
-10. Latest-news ticker sourcing/linking rules;
-11. target taxonomy migration from legacy `startups / building`;
-12. treatment of existing published/draft/test content during migration;
-13. whether `/latest` should be implemented in this pass or remain a later low-volume archive task;
-14. v0 pagination/filtering requirements;
-15. the minimum shared article primitives needed without redesigning every editorial page at once.
+- `/news`
+- `/news/[slug]`
 
-Architecture approval does not itself authorize implementation. Runtime/schema changes require a separate implementation gate.
+Behavior:
+
+- reverse chronological;
+- current/day-to-day developments;
+- no pagination or filters until real volume justifies them;
+- no fabricated production inventory;
+- factual empty state when no published News exists.
+
+### Stories
+
+Routes remain:
+
+- `/stories`
+- `/stories/[slug]`
+
+Behavior:
+
+- deeper reporting, explainers, analysis, perspectives, and other longer editorial work;
+- preserve existing published `/stories/[slug]` URLs;
+- reader-facing package remains headline + dek;
+- metadata behavior remains `metaDescription ?? dek`.
+
+### Homepage sourcing
+
+Homepage Feature:
+
+- Stories only;
+- `featured: true` may only apply to Stories;
+- fallback is newest published Story, never a News item.
+
+Blue Stories rail:
+
+- newest additional published Story;
+- excludes the homepage Feature;
+- never sources News.
+
+Homepage News:
+
+- published `section: news` items only;
+- newest item becomes lead;
+- subsequent items become supporting News;
+- development fixtures remain development-only until real News inventory exists.
+
+Latest-news ticker:
+
+- News entries only;
+- links to `/news/[slug]`;
+- label remains `Latest news`;
+- Stories do not enter the ticker merely because they are recent.
+
+### Header
+
+After `/news` exists, target header becomes:
+
+`Portfilo | News | Stories | Subscribe free`
+
+`News` links to `/news` and `Stories` links to `/stories`.
+
+### Taxonomy migration
+
+Target topic values:
+
+`business / technology / startup / ai`
+
+Migration rules:
+
+- `startups` -> `startup`;
+- `building` entries are audited individually instead of blindly remapped;
+- remove legacy `building` and `startups` from the schema only after content migration is complete.
+
+### Existing content migration
+
+- existing genuine deeper editorial pieces default to `section: stories` unless there is a clear reason otherwise;
+- the currently published `What actually makes starting a business hard?` remains a Story and keeps its `/stories/...` URL;
+- drafts are not reclassified as News merely to populate `/news`;
+- test/fixture content is handled explicitly and must not become accidental production inventory.
+
+### Schema safeguards
+
+Implementation should enforce:
+
+- every editorial entry requires `section`;
+- `featured: true` is legal only for `section: stories`;
+- `series` and `seriesOrder` are legal only for `section: stories`;
+- current publication-date, correction, and series-order validation remains intact.
+
+### `/latest`
+
+Do not implement `/latest` in the current pass. Revisit only when combined News + Stories volume makes a cross-stream archive useful.
+
+### Pagination / filters
+
+Do not add pagination, topic filters, or search in v0 without actual inventory pressure.
+
+## Approved visual-system direction for the next planning task
+
+News and Stories must adopt the **new Portfilo design system** rather than preserve or clone the older current `/stories` page styling.
+
+The planning baseline is:
+
+- Instrument Sans as the primary display/UI face;
+- current Portfilo blue / ink / paper palette;
+- current header/footer system;
+- matched 5.8rem wordmarks;
+- square geometry;
+- restrained blue editorial rules;
+- tighter homepage-derived spacing discipline;
+- responsive behavior treated as first-class;
+- no oversized experimental typography;
+- no random mono-heavy design scaffolding;
+- no generic rounded cards, gradients, glow, or SaaS visual language.
+
+The page families may differ by job while clearly belonging to one publication:
+
+- `/news` should be denser and more current-oriented;
+- `/stories` can provide more breathing room for deeper editorial packages;
+- `/news/[slug]` should support concise factual/current reading;
+- `/stories/[slug]` should support longer-form reading.
+
+The current old Stories archive/article presentation has no forward visual authority merely because it exists in runtime.
 
 ## Ticker motion
 
-Ticker motion remains deferred until after the News/Stories content architecture is implemented, so motion can operate on the real News stream rather than development fixtures.
+Ticker motion remains deferred until after News/Stories architecture implementation, so it can run on the real News stream rather than development fixtures.
 
 Approved motion direction remains:
 
@@ -155,39 +254,43 @@ Approved motion direction remains:
 
 ## Remaining site sequence
 
-Current intended sequence:
-
 1. static homepage final validation / rendered QA — **FOUNDER-REPORTED PASS**;
 2. static homepage freeze — **COMPLETE**;
-3. **News + Stories architecture decision — ACTIVE NEXT TASK**;
-4. News + Stories schema/routes/homepage wiring implementation after separate approval;
-5. ticker motion narrow pass;
-6. rework `/subscribe`;
-7. rework `/stories` presentation as needed after architecture implementation;
-8. rework `/standards`;
-9. rework `/privacy`;
-10. site-wide desktop/tablet/mobile/accessibility/runtime QA;
-11. release-readiness review;
-12. Social Visual System / distribution work after the core site is finished.
+3. News + Stories content architecture — **FOUNDER-APPROVED**;
+4. **News + Stories visual/system planning — ACTIVE NEXT TASK**;
+5. schema/routes/header/homepage-source implementation after separate approval and authorization;
+6. ticker motion narrow pass;
+7. rework `/subscribe`;
+8. finish/refine Stories presentation as required by the approved editorial system;
+9. rework `/standards`;
+10. rework `/privacy`;
+11. site-wide desktop/tablet/mobile/accessibility/runtime QA;
+12. release-readiness review;
+13. Social Visual System / distribution work after the core site is finished.
 
 ## Exact next task
 
-### Decide the News + Stories content architecture
+### Plan the News + Stories visual/system treatment
 
-Inspect the current schema, existing content, routing, V0 scope, editorial packaging rules, and prior product-model research.
+Inspect the frozen homepage system, current `/stories` archive and article page, image system, design direction, relevant publication references already in repo, and any additional strong real editorial references needed under the anti-slop gate.
 
-Produce a narrow architecture recommendation covering:
+Produce a decision-complete plan for:
 
-- data model;
-- routes;
-- homepage/ticker sourcing;
-- taxonomy migration;
-- existing-content migration;
-- `/latest` decision;
-- pagination/filtering decision;
-- implementation boundaries and risks.
+- `/news` archive composition;
+- `/news/[slug]` article composition;
+- `/stories` archive composition;
+- `/stories/[slug]` article composition;
+- shared editorial primitives across the four surfaces;
+- typography roles;
+- spacing/shell behavior;
+- imagery treatment;
+- metadata treatment;
+- responsive behavior;
+- empty/development states;
+- what old runtime styling must be discarded rather than copied;
+- implementation boundaries that preserve the frozen homepage.
 
-Do **not** modify runtime/schema/routes until the founder approves the architecture and separately authorizes implementation.
+Do **not** modify schema, routes, header labels, homepage sourcing, or editorial page runtime until the visual/system plan is approved and implementation is separately authorized.
 
 ## Validation authority
 
