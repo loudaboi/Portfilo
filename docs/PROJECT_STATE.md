@@ -4,13 +4,13 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — REVISED SHARED ARTICLE TEMPLATE IMPLEMENTED / VALIDATION PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — F COMPLETE / G1 SUBSCRIBE DESIGN GATE ACTIVE**
 
-Sequence items A–E are complete on `build/portfilo-v0`. Sequence item F remains active because founder rendered review reopened the article composition after the first implementation. The revised F runtime is now implemented and must pass local technical checks plus founder rendered validation before G begins.
+Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is now active, beginning with the `/subscribe` utility page. No `/subscribe` runtime implementation is authorized until its current design/copy gate is founder-approved.
 
-Current runtime HEAD before this documentation update:
+Current validated runtime HEAD before this documentation update:
 
-`94effd0f89efd675dad82aba2d88f5ead983656f` — `Remove visible Story author metadata`
+`7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — `Restore article header divider`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -197,11 +197,13 @@ The original E scope excluded a table of contents. During rendered F review, the
 
 During the same rendered F review, the founder later removed visible article bylines because the author block created awkward header positioning. This is a presentation decision only: the canonical content `author` field remains internal editorial metadata and continues to feed article structured data/SEO where applicable.
 
-This later founder decision supersedes the original E exclusion of table-of-contents navigation and visible author metadata in the article header. It does not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
+The founder also approved a dedicated thin neutral divider between the article header package and an optional hero image. The divider is independent of author/update/series metadata and does not replace the hero's existing blue top rule.
+
+These later founder decisions supersede the original E exclusion of table-of-contents navigation and visible author metadata in the article header. They do not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
 
 ## F — Revised shared article-template implementation
 
-**IMPLEMENTED. VALIDATION PENDING.**
+**COMPLETE.**
 
 `src/components/EditorialArticle.astro` remains the single article presentation component for `/news/[slug]` and `/stories/[slug]`.
 
@@ -216,6 +218,7 @@ Current shared article contract:
 - article header max width: 54rem;
 - headline max width: 54rem with a restrained desktop maximum around 4.35rem for more resilient multi-line titles;
 - optional 16:9 hero max width: 54rem;
+- thin neutral structural divider between header package and hero when a hero is present;
 - thin Portfilo-blue hero top rule;
 - image credit and generated-image disclosure preserved;
 - reading measure: 41.5rem;
@@ -227,7 +230,7 @@ Current shared article contract:
 
 ### Stories in-page section navigation
 
-Stories now receive Markdown headings from Astro `render()`.
+Stories receive Markdown headings from Astro `render()`.
 
 The shared component renders the `In this story` rail only when:
 
@@ -244,11 +247,11 @@ Behavior:
 
 The published Story `/stories/what-actually-makes-starting-a-business-hard` contains no `h2` headings and therefore intentionally shows no rail.
 
-The existing DEV-visible draft `/stories/what-higher-value-work-means-in-philippine-it-bpm` contains six `h2` headings and is the current rendered test case for the rail.
+The existing DEV-visible draft `/stories/what-higher-value-work-means-in-philippine-it-bpm` contains six `h2` headings and remains the current rendered test case for the rail.
 
 ### Explicitly deferred from F
 
-Do not add in this pass:
+Do not add without a later approved requirement:
 
 - listen-to-article / TTS / audio generation;
 - audio player;
@@ -285,11 +288,44 @@ Current structural correction:
 - `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
 - `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — feed Astro Story headings into the shared article component;
 - `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — remove visible News author metadata;
-- `94effd0f89efd675dad82aba2d88f5ead983656f` — remove visible Story author metadata.
+- `94effd0f89efd675dad82aba2d88f5ead983656f` — remove visible Story author metadata;
+- `7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — restore the independent neutral header/hero divider.
 
 The byline removal changed only article presentation. It did not remove the `author` field from content, schema, structured metadata, or editorial provenance.
 
 No dependency, schema, framework, CMS, database, production-content, archive, homepage, or utility-page changes were made by these corrections.
+
+### F validation
+
+**PASS.**
+
+Recorded against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`:
+
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the latest branch;
+- local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
+- article geometry, headline wrapping, visible-byline removal, independent divider, 16:9 hero treatment and reading composition were founder-approved through rendered review;
+- no published News article was fabricated solely for QA.
+
+The later dedicated multi-width full-site responsive audit remains sequence H and is not complete.
+
+## G — Utility/editorial page simplification
+
+**ACTIVE — G1 `/subscribe` DESIGN/COPY GATE.**
+
+Sequence inside G:
+
+1. `/subscribe`;
+2. `/standards`;
+3. `/privacy`.
+
+Current `/subscribe` is a legacy surface and is not approved as the final v0 presentation. It still contains stale public `Portfilo Brief` naming, `No fixed schedule yet` copy that conflicts with the later approved three-times-per-week promise, a separate bespoke signup implementation, and older oversized/mono-scaffolded utility-page geometry.
+
+The `/subscribe` route remains a focused utility landing page for direct links, social bios, QR codes and campaigns. It should not become a second homepage or a multi-section marketing site.
+
+The current shared `NewsletterSignup.astro` is the preferred existing form/behavior primitive unless the design gate establishes a concrete reason it cannot meet the page requirement. `/subscribe` must remain excluded from the shared footer acquisition to avoid duplicate signup prompts.
+
+The exact `/subscribe` message architecture and final wording are not yet founder-approved. The homepage hero wording in `research/homepage-hero-copy-v3.md` is evidence for approved newsletter facts and operating promises, but its exact wording is explicitly hero-scoped and must not be silently copied onto `/subscribe`.
 
 ## Remaining sequence
 
@@ -303,9 +339,9 @@ D. archive/acquisition technical + rendered QA — **COMPLETE**;
 
 E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**;
 
-F. revised shared article-template implementation — **IMPLEMENTED / VALIDATION PENDING**;
+F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **NOT STARTED**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: `/subscribe` DESIGN/COPY GATE**;
 
 H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NOT STARTED**;
 
@@ -313,31 +349,28 @@ I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Validate the revised F implementation before starting G.
+Complete the G1 `/subscribe` design/copy gate before editing runtime code.
 
 Required:
 
-1. pull the latest `build/portfilo-v0`;
-2. run `npm run check`;
-3. run `npm run build`;
-4. render `/stories/what-actually-makes-starting-a-business-hard` and verify the centered header, resilient headline wrapping, absence of a visible byline/empty metadata rule, 54rem hero treatment, narrow body, and absence of a false/empty section rail;
-5. in DEV, render `/stories/what-higher-value-work-means-in-philippine-it-bpm` and verify the `In this story` rail uses the real `h2` headings, links to them correctly, stays restrained/sticky on desktop, and disappears below the 56rem breakpoint;
-6. verify exactly one shared dark footer acquisition remains;
-7. inspect a representative mobile Story for centered header/readability/no horizontal overflow;
-8. report any F regression before beginning G.
+1. inspect the existing `/subscribe` implementation, `NewsletterSignup.astro`, current acquisition system, `COPY_STYLE.md`, and current approved newsletter claim authority;
+2. use strong current newsletter/publication signup references for structural evidence rather than inventing a utility-page composition from scratch;
+3. define the smallest one-purpose `/subscribe` information architecture and identify what legacy material should be deleted;
+4. separate approved newsletter facts from exact wording, because the existing homepage hero copy is hero-only;
+5. obtain founder approval for the `/subscribe` structure/message direction before implementation;
+6. after direction approval, draft/approve any new page-specific public wording required by that structure;
+7. only then implement `/subscribe`, preserving the existing `/api/subscribe` behavior and avoiding duplicate form logic where the shared component already covers it;
+8. validate `/subscribe` before beginning `/standards`.
 
-Because there are currently no published News entries, absence of a production News article route is expected and is not itself a defect. Do not fabricate News solely for visual QA.
-
-Do not describe F as validated until the local checks and founder rendered review actually pass.
+Do not begin `/standards` or `/privacy` while `/subscribe` is still open.
 
 ## Deferred / not authorized now
 
 - article audio/listen system;
 - share toolbar;
-- `/subscribe` redesign before F validation;
-- `/standards` redesign before its G sub-gate;
+- `/standards` redesign before `/subscribe` is complete;
 - `/privacy` redesign before its G sub-gate;
-- deep site-wide responsive typography audit;
+- deep site-wide responsive typography audit before H;
 - `/latest`;
 - pagination;
 - topic filters;
@@ -351,4 +384,4 @@ Do not describe F as validated until the local checks and founder rendered revie
 
 ## Deployment / release boundary
 
-Cloudflare Pages project remains `portfilo-app` with `build/portfilo-v0` recorded as the production branch. No explicit deployment action, domain finalization, public newsletter sending, merge to `main`, or release is authorized by A–F.
+Cloudflare Pages project remains `portfilo-app` with `build/portfilo-v0` recorded as the production branch. No explicit deployment action, domain finalization, public newsletter sending, merge to `main`, or release is authorized by A–G.
