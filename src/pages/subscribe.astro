@@ -33,6 +33,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
           <div class="subscribe-campaign__shade" aria-hidden="true"></div>
 
           <div class="subscribe-form-block">
+            <p class="subscribe-form-block__label">GET THE NEWSLETTER</p>
             <NewsletterSignup
               id="subscribe-page-newsletter"
               variant="hero"
@@ -163,6 +164,14 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         right: var(--campaign-inset);
         bottom: var(--campaign-inset);
         width: clamp(21.5rem, 25.5vw, 24.5rem);
+      }
+
+      .subscribe-form-block__label {
+        margin: 0 0 clamp(0.9rem, 1.2vw, 1.15rem);
+        color: #fff;
+        font: 590 clamp(1.1rem, 1.35vw, 1.35rem) / 1.03 var(--sans);
+        letter-spacing: -0.045em;
+        white-space: nowrap;
       }
 
       .subscribe-form-block :global(.newsletter-signup__row) {
