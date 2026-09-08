@@ -1,8 +1,13 @@
 ---
 import FooterAcquisition from "./FooterAcquisition.astro";
 
+interface Props {
+  showAcquisition?: boolean;
+}
+
 const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
-const showAcquisition = !["/subscribe", "/confirmed", "/404"].includes(pathname);
+const routeShowsAcquisition = !["/subscribe", "/confirmed", "/404"].includes(pathname);
+const { showAcquisition = routeShowsAcquisition } = Astro.props;
 ---
 
 {showAcquisition && <FooterAcquisition />}
