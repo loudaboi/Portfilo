@@ -229,6 +229,11 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 }
 
 <style is:global>
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
   .feature-panel a:focus-visible,
   .institution a:focus-visible {
     outline-color: var(--accent-on-ink);
