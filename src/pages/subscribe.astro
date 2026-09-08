@@ -163,10 +163,12 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         position: absolute;
         right: var(--campaign-inset);
         bottom: var(--campaign-inset);
-        width: clamp(21.5rem, 25.5vw, 24.5rem);
+        width: fit-content;
+        max-width: calc(100% - (2 * var(--campaign-inset)));
       }
 
       .subscribe-form-block__label {
+        width: fit-content;
         margin: 0 0 clamp(0.9rem, 1.2vw, 1.15rem);
         color: #fff;
         font: 590 clamp(1.55rem, 2.15vw, 2.25rem) / 1.03 var(--sans);
@@ -277,10 +279,6 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
           --campaign-inset: clamp(2rem, 4vw, 3rem);
         }
 
-        .subscribe-form-block {
-          width: clamp(20rem, 30vw, 22rem);
-        }
-
         .subscribe-message__wordmark {
           width: clamp(11.5rem, 20vw, 13.5rem);
         }
@@ -299,10 +297,6 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
 
         .subscribe-campaign__visual {
           --campaign-inset: clamp(1.25rem, 4vw, 1.75rem);
-        }
-
-        .subscribe-form-block {
-          width: min(21rem, calc(100% - (2 * var(--campaign-inset))));
         }
 
         .subscribe-message {
