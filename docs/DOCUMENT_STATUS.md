@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. F passed founder rendered review plus user-reported local `npm run check` and `npm run build` against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`. G is active at the `/subscribe` design/copy gate; no `/subscribe` runtime redesign is authorized until that gate is approved.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. F passed founder rendered review plus user-reported local `npm run check` and `npm run build` against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`. G is active. `/subscribe` has been founder-approved and implemented at runtime commit `adaabb4ab6ad4a37e67095363df7b1146a89bd96`, with validation pending before `/standards` begins.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -45,7 +45,7 @@ Current:
 - `docs/PORTFILO_TEST_STANDARD.md`
 - `docs/CONTENT_PLANNING.md` — canonical for planning gates, with older geography/taxonomy clauses superseded by later product decisions in `PROJECT_STATE`.
 
-`docs/COPY_STYLE.md` remains current for process and voice, but its older statement that no public newsletter cadence or reading-time promise is approved is superseded by the later founder-approved `7-minute / three-times-per-week` commitments recorded in `PROJECT_STATE` and `research/homepage-hero-copy-v3.md`.
+`docs/COPY_STYLE.md` is synchronized to the current newsletter commitments and now records the founder-approved rule that Portfilo public copy does not use em dashes.
 
 ### Design and imagery
 
@@ -68,13 +68,14 @@ Current homepage Feature asset remains `public/images/homepage-feature-16x9.png`
 - `research/portfilo-product-model-research-v1.md` — supporting evidence for the approved current-News + deeper-Stories model.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot, parked until core site completion.
 - `research/homepage-copy-evidence-matrix-v1.md` — research/provenance only.
-- `research/homepage-hero-copy-v3.md` — current founder-approved homepage hero acquisition wording and authority for the public latest-news / 7-minute / three-times-per-week operating promises. Its exact wording remains hero-scoped and is not automatic authority for `/subscribe` wording.
+- `research/homepage-hero-copy-v3.md` — current founder-approved homepage hero acquisition wording and authority for the public latest-news / 7-minute / three-times-per-week operating promises. Its exact wording remains hero-scoped and is not automatic authority for other acquisition surfaces.
 
 Current CTA authority:
 
 - header CTA: `Subscribe free`;
 - hero CTA: `Send me the news`;
-- contextual Feature-rail CTA: `Subscribe`.
+- contextual Feature-rail CTA: `Subscribe`;
+- `/subscribe` CTA: `Subscribe free`.
 
 Current founder-approved Feature-rail copy:
 
@@ -92,6 +93,13 @@ Stories:
 
 - `Get Portfilo stories in your inbox.`
 - `Deeper reporting, explainers, and analysis on business and technology.`
+
+Current founder-approved `/subscribe` copy:
+
+- headline: `Business and tech, three times a week.`;
+- support: `The latest news on companies, startups, products, markets, AI, and technology in a 7-minute read.`;
+- CTA: `Subscribe free`;
+- shared note: `Free newsletter. Unsubscribe anytime.`
 
 ### Brand
 
@@ -112,7 +120,7 @@ Current:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. Legacy `Portfilo Brief` wording on `/subscribe` is now inside the active G1 scope and has no authority over the current public newsletter product direction. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
+The email infrastructure remains current. The G1 `/subscribe` implementation removed its stale public `Portfilo Brief` wording and duplicated form logic. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
 
 ### Audience / distribution
 
@@ -225,15 +233,21 @@ The earlier E statement excluding a table of contents is superseded only to the 
 
 ### `/subscribe`
 
-Current runtime is legacy and **not** the approved final G1 presentation.
+G1 `/subscribe` is founder-approved and implemented at runtime commit `adaabb4ab6ad4a37e67095363df7b1146a89bd96`. Validation is still pending.
 
-Known current-state problems now inside the active G1 gate:
+Current contract:
 
-- public `Portfilo Brief` naming is stale/rejected for the current newsletter acquisition direction;
-- `No fixed schedule yet` conflicts with the later approved three-times-per-week promise;
-- the page duplicates newsletter form JavaScript/markup instead of using the current shared `NewsletterSignup.astro` behavior;
-- older 100rem/oversized/mono-scaffolded utility-page geometry predates the current publication system;
-- `/subscribe` correctly remains excluded from shared footer acquisition, which should be preserved unless a later explicit decision changes it.
+- one full-width Portfilo-blue acquisition section;
+- 84rem shell with the established 52rem-primary/right-form desktop relationship;
+- approved page-specific headline and support copy;
+- shared `NewsletterSignup.astro` with `Subscribe free` CTA;
+- shared free/unsubscribe note;
+- compact SiteFooter only;
+- no generic shared footer acquisition on `/subscribe`;
+- no `Portfilo Brief` naming;
+- no `No fixed schedule yet` copy;
+- no numbered mono scaffolding or separate subscription-details section;
+- no route-local duplicate newsletter submission script.
 
 ## Current validation authority
 
@@ -246,12 +260,14 @@ Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before 
 - local `npm run build`: **PASS**;
 - source review: **PASS after one narrow D fix**.
 
-F shared article implementation is now validated against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`:
+F shared article implementation is validated against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`:
 
 - founder rendered visual review: **PASS**;
 - local `npm run check`: **PASS**, reported by the founder after pulling the latest branch;
 - local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
 - the final founder-reviewed article state includes centered header geometry, resilient headline scale, no visible byline, independent neutral header/hero divider, 54rem 16:9 hero treatment, narrow reading body and conditional Stories section rail.
+
+G1 `/subscribe` has not yet received a recorded local `npm run check`, `npm run build`, or founder rendered PASS against its new runtime. Do not describe G1 as validated until those checks pass.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
 
@@ -280,6 +296,10 @@ Shared article runtime:
 - `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — visible News author removal;
 - `94effd0f89efd675dad82aba2d88f5ead983656f` — visible Story author removal;
 - `7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — independent neutral header/hero divider.
+
+G utility runtime:
+
+- `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — simplified `/subscribe` using the shared signup component.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -311,6 +331,7 @@ Do not reintroduce:
 - legacy article-local inline newsletter blocks;
 - paper-background archive signup with only a blue top line;
 - repeated/decorative mono scaffolding;
+- legacy `/subscribe` numbered scaffold and subscription-details section;
 - fabricated production News;
 - generic production fallback imagery;
 - implementation-time global design changes without approval.
