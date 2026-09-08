@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F shared article implementation is on the working branch and must pass local technical checks plus founder rendered review before G begins.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F was reopened by founder rendered review, the revised centered-header + conditional Stories section-rail implementation is now on the working branch, and F still requires local technical checks plus founder rendered validation before G begins.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, or ticker motion as future gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -47,7 +47,7 @@ Current:
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, or shared article runtime are subordinate to `PROJECT_STATE` and current source.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, or current shared article runtime are subordinate to `PROJECT_STATE` and current source.
 - `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 
@@ -174,40 +174,46 @@ Production empty `/news` intentionally shows the contextual blue archive acquisi
 
 ### Shared article implementation
 
-`src/components/EditorialArticle.astro` is now the canonical article presentation for both `/news/[slug]` and `/stories/[slug]`.
+`src/components/EditorialArticle.astro` is the canonical article presentation for both `/news/[slug]` and `/stories/[slug]`.
 
-The founder-approved article contract is implemented as one shared system:
+The current founder-approved article contract is:
 
-- 84rem article shell;
-- compact classification row;
-- large Instrument Sans headline;
-- dek below the headline;
-- compact metadata row;
-- optional restrained 16:9 hero with blue top rule;
+- centered classification/headline/dek/metadata header;
+- header maximum width 54rem;
+- optional restrained 16:9 hero maximum width 54rem with blue top rule;
 - image credit and generated-image disclosure preserved;
-- centered 44rem reading measure;
+- centered 41.5rem reading measure;
 - shared heading/link/list/blockquote/code/media spacing;
 - shared methodology/correction geometry;
 - existing shared dark footer acquisition once at the article end;
-- no sticky rail, inline article signup, related-content module, comments, author bio, share toolbar, table of contents, reading-time widget, or custom article motion.
+- no inline article signup, related-content module, comments, author bio, share toolbar, reading-time widget, custom article motion, or audio/listen system.
 
-Legitimate section differences remain data/read-mode differences rather than separate page systems:
+Legitimate section differences remain data/read-mode differences rather than separate article systems:
 
 News:
 
 - classification values include News, topic, and published date when present;
 - author and optional Updated metadata;
-- Instrument Sans body reading mode.
+- Instrument Sans body reading mode;
+- no in-page section rail in the current contract.
 
 Stories:
 
 - classification values include content type, topic, and published date when present;
 - author, optional Updated, and optional Series metadata;
-- Source Serif 4 body reading mode.
+- Source Serif 4 body reading mode;
+- Astro-rendered `h2` headings feed an `In this story` in-page navigation only when at least three real `h2` sections exist.
 
-The slug route files retain collection filtering, SEO/page metadata, data normalization, and rendered Markdown only. Their previous duplicated article CSS and page-local newsletter blocks are removed.
+Stories section-navigation behavior:
 
-The former SiteFooter rule used only to hide `.article-newsletter` is also removed because that legacy source block no longer exists.
+- desktop: left sticky section rail + narrow body;
+- links use the existing generated Markdown heading IDs/text;
+- below 56rem the rail is hidden and the body returns to centered single-column reading;
+- no article headings are invented to force the rail to appear.
+
+The published `what-actually-makes-starting-a-business-hard` Story has no `h2` headings, so it intentionally does not show the rail. The DEV-visible draft `what-higher-value-work-means-in-philippine-it-bpm` has six `h2` headings and is the current rail QA case.
+
+The earlier E statement excluding a table of contents is superseded only to the extent of this later founder-approved Stories section rail. It does not authorize copying the OpenAI article UI wholesale or adding audio, sharing, or other adjacent features.
 
 ## Current validation authority
 
@@ -220,7 +226,7 @@ Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before 
 - local `npm run build`: **PASS**;
 - source review: **PASS after one narrow D fix**.
 
-F article runtime has been source-inspected for scope and architecture but has **not yet** received a recorded local `npm run check`, `npm run build`, or founder rendered review. Do not describe F as validated until those checks actually pass.
+F article runtime has been repeatedly source-inspected and founder-reviewed, but the current centered-header + section-rail revision has **not yet** received a recorded local `npm run check`, `npm run build`, or final founder rendered pass. Do not describe F as validated until those checks actually pass.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. Do not fabricate production or DEV article content solely for visual QA.
 
@@ -239,7 +245,12 @@ Shared article runtime:
 - `ca853921ae19d36d08188090ac29a916d8584b1e` — shared article component;
 - `d3606dfbcb8f97357084b6e98dea3974aaedfcb8` — News route migration;
 - `87e9b2b083622b80f9a66652806e5f8ed4a5d924` — Stories route migration;
-- `dff79cd039de478c47583a06b5aecd5810e38c67` — obsolete article-newsletter suppression cleanup.
+- `dff79cd039de478c47583a06b5aecd5810e38c67` — obsolete article-newsletter suppression cleanup;
+- `52eed7f71fab1ebed46ee0545ff270b167f2dde6` — tighter article geometry;
+- `5d8ca03d8aa2fa8141d0e1387a45bae1d836222a` — header/hero frame alignment;
+- `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — internal header-width correction;
+- `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
+- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — Story heading plumbing for the rail.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
