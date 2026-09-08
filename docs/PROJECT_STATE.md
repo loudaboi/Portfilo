@@ -4,13 +4,13 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — F COMPLETE / G1 SUBSCRIBE IMPLEMENTED / VALIDATION PENDING**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — F COMPLETE / G1 SUBSCRIBE REVISED / VALIDATION PENDING**
 
-Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` has been founder-approved and implemented, but it must pass local technical checks plus founder rendered review before G2 `/standards` begins.
+Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` was reopened after founder rendered review rejected the first blue-band implementation. The revised image-led G1 direction is now founder-approved and implemented, but it must pass local technical checks plus founder rendered review before G2 `/standards` begins.
 
 Current unvalidated runtime HEAD before this documentation update:
 
-`adaabb4ab6ad4a37e67095363df7b1146a89bd96` — `Simplify subscribe page`
+`a873c55ccbf3678ecfbddd1f7e61030acd715075` — `Uppercase homepage subscribe CTA`
 
 Last fully validated runtime HEAD:
 
@@ -84,7 +84,8 @@ The homepage remains the visual reference for broad publication surfaces. Curren
 - development-only synthetic News fixtures when real published News is absent;
 - production never fabricates News;
 - one shared dark footer-acquisition section before the compact SiteFooter;
-- compact SiteFooter: wordmark | Stories | Standards | Privacy | copyright.
+- compact SiteFooter: wordmark | Stories | Standards | Privacy | copyright;
+- homepage header `Subscribe free` CTA renders visually as `SUBSCRIBE FREE`; the shared header label remains `Subscribe free` on other routes.
 
 Do not reopen unrelated homepage design during later page work.
 
@@ -315,7 +316,7 @@ The later dedicated multi-width full-site responsive audit remains sequence H an
 
 ## G — Utility/editorial page simplification
 
-**ACTIVE — G1 `/subscribe` IMPLEMENTED / VALIDATION PENDING.**
+**ACTIVE — G1 `/subscribe` REVISED / VALIDATION PENDING.**
 
 Sequence inside G:
 
@@ -325,31 +326,50 @@ Sequence inside G:
 
 ### G1 `/subscribe`
 
-Founder-approved direction:
+The first G1 implementation at `adaabb4ab6ad4a37e67095363df7b1146a89bd96` used a full-width Portfilo-blue acquisition band. Founder rendered review rejected that visual direction. It has zero current visual authority and must not be used as precedent for G1.
 
-- one focused utility landing page rather than a second homepage;
-- one full-width Portfilo-blue acquisition section;
-- existing 84rem publication shell;
-- desktop relationship based on the established 52rem primary column plus right-side form area;
-- one page-specific headline and one concise support sentence;
-- shared `NewsletterSignup.astro` for form behavior;
-- `Subscribe free` CTA;
-- compact SiteFooter only, with the shared footer acquisition still suppressed on `/subscribe`;
-- remove legacy `Portfilo Brief` naming, numbered mono scaffolding, duplicated form JavaScript, separate subscription-details section and `No fixed schedule yet` copy.
+Current founder-approved direction:
+
+- focused utility landing page using the locked `public/images/subscribe-16x9.png` asset as the central visual stage;
+- standard `SiteHeader` above the stage and compact `SiteFooter` below it;
+- no generic shared footer acquisition on `/subscribe`;
+- desktop stage remains centered and 16:9, sized to fit normal viewport height where practical rather than becoming a full-browser wallpaper;
+- mobile may crop the same source image into a taller stage and scroll when needed instead of forcing an unusable 16:9 layout;
+- one restrained solid dark overlay for legibility, with no gradient, glass panel, rounded card or decorative container;
+- two direct overlay content blocks rather than card UI;
+- left block: light Portfilo wordmark plus the approved page-specific statement;
+- right block: newsletter label, one factual support line, email input, all-caps CTA and shared free/unsubscribe note;
+- shared `NewsletterSignup.astro` continues to own validation, honeypot, `/api/subscribe` submission, confirmation messaging and error states;
+- the page should fit without normal desktop scrolling when the viewport reasonably accommodates the header, 16:9 stage and compact footer;
+- the approved statement is page-scoped campaign/institutional copy, not a permanent Portfilo tagline and not automatic authority for other surfaces.
+
+Locked asset:
+
+`public/images/subscribe-16x9.png`
 
 Founder-approved exact `/subscribe` public copy:
 
-Headline:
+Left statement:
 
-`Business and tech, three times a week.`
+`Some changes look small, until they reshape everything. We look closer.`
 
-Support:
+The runtime intentionally presents that sentence across three visual lines:
 
-`The latest news on companies, startups, products, markets, AI, and technology in a 7-minute read.`
+- `Some changes look small,`
+- `until they reshape everything.`
+- `We look closer.`
+
+Right label:
+
+`GET THE NEWSLETTER`
+
+Right support:
+
+`Business and tech in 7 minutes, three times a week.`
 
 CTA:
 
-`Subscribe free`
+`SUBSCRIBE FREE`
 
 Form note remains the shared component wording:
 
@@ -361,15 +381,15 @@ Meta title:
 
 Meta description:
 
-`Subscribe to Portfilo’s free business and technology newsletter. The latest news in a 7-minute read, three times a week.`
+`Subscribe to Portfilo’s free business and technology newsletter. Business and tech in 7 minutes, three times a week.`
 
 Implementation:
 
-- runtime commit `adaabb4ab6ad4a37e67095363df7b1146a89bd96` rewrote only `src/pages/subscribe.astro`;
-- the bespoke `/subscribe` form and inline submit script were removed;
-- the shared `NewsletterSignup.astro` now owns validation, honeypot, `/api/subscribe` submission, confirmation messaging and error states on this page;
-- no dependency, schema, API, homepage, archive, article, Standards or Privacy runtime changes were made;
-- `docs/COPY_STYLE.md` now records the founder rule that Portfilo public copy does not use em dashes and synchronizes the current newsletter facts.
+- asset commit `b66910b0e52e6eb93556985d38ca532e0513bdfb` added `public/images/subscribe-16x9.png`;
+- runtime commit `f860085e7cef614a3c594a403af91bd8f1e2525f` rebuilt only `src/pages/subscribe.astro` around the locked image and approved two-block overlay composition;
+- runtime commit `a873c55ccbf3678ecfbddd1f7e61030acd715075` makes only the homepage header CTA render visually as `SUBSCRIBE FREE`; the shared label remains `Subscribe free` elsewhere;
+- the shared `NewsletterSignup.astro` remains unchanged and continues to own form behavior;
+- no dependency, schema, API, archive, article, Standards or Privacy runtime changes were made by the revision.
 
 ## Remaining sequence
 
@@ -385,7 +405,7 @@ E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**
 
 F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: `/subscribe` VALIDATION PENDING**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: REVISED `/subscribe` VALIDATION PENDING**;
 
 H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NOT STARTED**;
 
@@ -393,18 +413,20 @@ I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Validate G1 `/subscribe` before beginning `/standards`.
+Validate the revised G1 `/subscribe` before beginning `/standards`.
 
 Required:
 
 1. pull the latest `build/portfilo-v0`;
 2. run `npm run check`;
 3. run `npm run build`;
-4. render `/subscribe` on desktop and verify the single blue acquisition section, approved copy, shared form, compact footer and absence of legacy `Portfilo Brief` / numbered scaffolding / subscription-details content;
+4. render `/subscribe` on desktop and verify the centered image-led stage, locked asset, left wordmark/message block, right signup block, compact footer and absence of the rejected blue-band composition;
 5. verify `/subscribe` shows no generic dark footer acquisition above the compact footer;
-6. test an invalid email state and confirm the shared form surfaces its normal error state;
-7. inspect a representative mobile width for stacking, readable headline/support copy, full-width form controls and no horizontal overflow;
-8. report any G1 regression before beginning `/standards`.
+6. verify the page fits without normal desktop scrolling at a representative desktop viewport where the header, stage and footer have sufficient vertical room;
+7. test an invalid email state and confirm the shared form surfaces its normal error state;
+8. inspect a representative mobile width for stacked content, readable copy, usable full-width form controls, sensible image crop and no horizontal overflow;
+9. inspect the homepage and verify only its header `Subscribe free` CTA is visually uppercased to `SUBSCRIBE FREE`, while the homepage hero CTA remains `Send me the news`;
+10. report any G1 regression before beginning `/standards`.
 
 Do not begin `/standards` or `/privacy` while `/subscribe` is still open.
 
