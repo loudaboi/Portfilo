@@ -33,21 +33,21 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         <div class="subscribe-stage__shade" aria-hidden="true"></div>
 
         <div class="subscribe-stage__content">
-          <img
-            class="subscribe-message__wordmark"
-            src="/brand/portfilo-wordmark-light.svg"
-            alt="Portfilo"
-          />
-
-          <p class="subscribe-form-block__title">GET THE NEWSLETTER</p>
-
-          <h1 id="subscribe-message" class="subscribe-message__title">
-            <span>SOME CHANGES LOOK SMALL,</span>
-            <span>UNTIL THEY RESHAPE EVERYTHING.</span>
-            <span>WE LOOK CLOSER.</span>
-          </h1>
+          <div class="subscribe-message">
+            <img
+              class="subscribe-message__wordmark"
+              src="/brand/portfilo-wordmark-light.svg"
+              alt="Portfilo"
+            />
+            <h1 id="subscribe-message">
+              <span>SOME CHANGES LOOK SMALL,</span>
+              <span>UNTIL THEY RESHAPE EVERYTHING.</span>
+              <span>WE LOOK CLOSER.</span>
+            </h1>
+          </div>
 
           <div class="subscribe-form-block">
+            <p class="subscribe-form-block__title">GET THE NEWSLETTER</p>
             <NewsletterSignup
               id="subscribe-page-newsletter"
               variant="hero"
@@ -99,13 +99,6 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         min-width: 0;
         min-height: 100svh;
         background: var(--paper);
-      }
-
-      :global(body.subscribe-page .site-header) {
-        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
-        padding-inline: 0;
-        background: var(--paper);
-        color: var(--ink);
       }
 
       :global(body.subscribe-page a:focus-visible) {
@@ -166,56 +159,67 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       .subscribe-stage__content {
-        --stage-inline: clamp(6.75rem, 8.4vw, 8rem);
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        grid-template-areas:
-          "wordmark title"
-          "message form";
-        column-gap: clamp(2.25rem, 3vw, 3.25rem);
-        row-gap: clamp(3rem, 4vw, 3.75rem);
-        align-content: center;
-        align-items: start;
-        padding: clamp(2.5rem, 4vw, 4rem) var(--stage-inline);
+        grid-template-columns: minmax(0, 1fr) minmax(20rem, 25.5rem);
+        gap: clamp(4.5rem, 6vw, 6.5rem);
+        align-items: center;
+        padding: clamp(3.5rem, 7.5vw, 6.5rem);
+      }
+
+      .subscribe-message,
+      .subscribe-form-block {
+        min-width: 0;
+      }
+
+      .subscribe-message {
+        width: max-content;
+        max-width: 100%;
+        justify-self: start;
       }
 
       .subscribe-message__wordmark {
-        grid-area: wordmark;
         display: block;
-        width: clamp(13.5rem, 16.5vw, 16rem);
+        width: clamp(14rem, 18vw, 17rem);
         height: auto;
-        align-self: end;
+        margin-inline: auto;
       }
 
-      .subscribe-form-block__title,
-      .subscribe-message__title {
-        margin: 0;
+      .subscribe-message h1,
+      .subscribe-form-block__title {
         color: #fff;
-        font: 650 clamp(1.65rem, 1.95vw, 2.05rem) / 1.06 var(--sans);
+        font: 650 clamp(1.65rem, 2vw, 2.05rem) / 1.08 var(--sans);
         letter-spacing: -0.035em;
       }
 
-      .subscribe-form-block__title {
-        grid-area: title;
-        align-self: end;
-        white-space: nowrap;
+      .subscribe-message h1 {
+        margin: clamp(3rem, 3.6vw, 3.6rem) 0 0;
       }
 
-      .subscribe-message__title {
-        grid-area: message;
-      }
-
-      .subscribe-message__title span {
+      .subscribe-message h1 span {
         display: block;
         white-space: nowrap;
       }
 
       .subscribe-form-block {
-        grid-area: form;
         width: 100%;
-        min-width: 0;
+        max-width: 25.5rem;
+        justify-self: end;
+      }
+
+      .subscribe-form-block__title {
+        min-height: clamp(3.55rem, 4vw, 4.3rem);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .subscribe-form-block :global(.newsletter-signup) {
+        margin-top: clamp(3rem, 3.6vw, 3.6rem);
       }
 
       .subscribe-form-block :global(.newsletter-signup__row) {
@@ -264,46 +268,29 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         color: #ffe1dc;
       }
 
-      @media (min-width: 44.01rem) {
-        :global(body.subscribe-page) {
-          height: 100svh;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        :global(body.subscribe-page .site-header),
-        :global(body.subscribe-page .site-footer) {
-          flex: 0 0 auto;
-        }
-
-        main {
-          flex: 1 1 auto;
-          min-height: 0;
-          display: grid;
-          place-items: center;
-          padding-block: clamp(0.75rem, 1.5vh, 1.1rem);
-        }
-
-        .subscribe-stage {
-          width: min(100%, var(--content-max), calc(177.7778svh - 16.8889rem));
-        }
-      }
-
-      @media (max-width: 64rem) and (min-width: 44.01rem) {
+      @media (max-width: 56rem) {
         .subscribe-stage__content {
-          --stage-inline: clamp(3rem, 6vw, 4.5rem);
-          column-gap: clamp(1.5rem, 2.5vw, 2.25rem);
-          row-gap: clamp(2.25rem, 3.5vw, 3rem);
+          grid-template-columns: minmax(0, 1fr) minmax(17rem, 21rem);
+          gap: clamp(2.5rem, 4.5vw, 4rem);
+          padding: clamp(2.5rem, 5vw, 3.75rem);
         }
 
         .subscribe-message__wordmark {
-          width: clamp(11rem, 18vw, 13.5rem);
+          width: clamp(10.5rem, 20vw, 12.5rem);
         }
 
-        .subscribe-form-block__title,
-        .subscribe-message__title {
-          font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+        .subscribe-message h1,
+        .subscribe-form-block__title {
+          font-size: clamp(1.3rem, 2.65vw, 1.7rem);
+        }
+
+        .subscribe-message h1,
+        .subscribe-form-block :global(.newsletter-signup) {
+          margin-top: clamp(2.3rem, 4vw, 3rem);
+        }
+
+        .subscribe-form-block {
+          max-width: 21rem;
         }
       }
 
@@ -322,42 +309,40 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         }
 
         .subscribe-stage__content {
-          --stage-inline: clamp(1.35rem, 7vw, 3rem);
           grid-template-columns: 1fr;
-          grid-template-areas:
-            "wordmark"
-            "message"
-            "title"
-            "form";
-          gap: 0;
           align-content: center;
-          padding: clamp(2rem, 7vw, 3.25rem) var(--stage-inline);
+          gap: clamp(3rem, 10vw, 4.5rem);
+          padding: clamp(2rem, 7vw, 3.25rem);
+        }
+
+        .subscribe-message {
+          width: 100%;
         }
 
         .subscribe-message__wordmark {
-          width: clamp(10.5rem, 36vw, 13rem);
+          width: clamp(10rem, 34vw, 12rem);
+          margin-inline: 0;
         }
 
-        .subscribe-message__title {
-          margin-top: clamp(2.4rem, 8vw, 3.25rem);
+        .subscribe-message h1,
+        .subscribe-form-block__title {
+          font-size: clamp(1.55rem, 6.2vw, 2rem);
+        }
+
+        .subscribe-message h1 span,
+        .subscribe-form-block__title {
+          white-space: normal;
         }
 
         .subscribe-form-block__title {
-          margin-top: clamp(3.5rem, 12vw, 5rem);
+          min-height: 0;
+          justify-content: flex-start;
+          text-align: left;
         }
 
         .subscribe-form-block {
-          margin-top: clamp(2.4rem, 8vw, 3.25rem);
-        }
-
-        .subscribe-form-block__title,
-        .subscribe-message__title {
-          font-size: clamp(1.5rem, 6.2vw, 1.95rem);
-        }
-
-        .subscribe-message__title span,
-        .subscribe-form-block__title {
-          white-space: normal;
+          max-width: 34rem;
+          justify-self: start;
         }
       }
 
