@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F was reopened by founder rendered review, the revised centered-header + conditional Stories section-rail implementation is now on the working branch, and F still requires local technical checks plus founder rendered validation before G begins.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F was reopened by founder rendered review, the revised centered-header + conditional Stories section-rail implementation is now on the working branch, visible article bylines have been removed by founder decision, and F still requires local technical checks plus founder rendered validation before G begins.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, or ticker motion as future gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -156,7 +156,7 @@ Shared archive contract:
 - same dividers, spacing and breakpoints;
 - full-width blue archive acquisition band.
 
-News keeps current-news data and DEV fixture behavior. Stories keeps deeper-editorial metadata and author display. These differences do not create separate layout systems.
+News keeps current-news data and DEV fixture behavior. Stories keeps deeper-editorial metadata and author display on archive surfaces. These differences do not create separate layout systems.
 
 ### Shared footer acquisition
 
@@ -178,8 +178,12 @@ Production empty `/news` intentionally shows the contextual blue archive acquisi
 
 The current founder-approved article contract is:
 
-- centered classification/headline/dek/metadata header;
+- centered classification/headline/dek header;
+- visible author/byline omitted from article presentation;
+- supplemental metadata appears only when genuinely present, such as Updated or Series;
+- the content `author` field remains required/internal and continues to feed article structured data/SEO where applicable;
 - header maximum width 54rem;
+- headline uses the full 54rem frame with a restrained desktop maximum around 4.35rem;
 - optional restrained 16:9 hero maximum width 54rem with blue top rule;
 - image credit and generated-image disclosure preserved;
 - centered 41.5rem reading measure;
@@ -193,14 +197,14 @@ Legitimate section differences remain data/read-mode differences rather than sep
 News:
 
 - classification values include News, topic, and published date when present;
-- author and optional Updated metadata;
+- optional Updated metadata only in the visible supplemental metadata group;
 - Instrument Sans body reading mode;
 - no in-page section rail in the current contract.
 
 Stories:
 
 - classification values include content type, topic, and published date when present;
-- author, optional Updated, and optional Series metadata;
+- optional Updated and optional Series metadata only in the visible supplemental metadata group;
 - Source Serif 4 body reading mode;
 - Astro-rendered `h2` headings feed an `In this story` in-page navigation only when at least three real `h2` sections exist.
 
@@ -211,9 +215,9 @@ Stories section-navigation behavior:
 - below 56rem the rail is hidden and the body returns to centered single-column reading;
 - no article headings are invented to force the rail to appear.
 
-The published `what-actually-makes-starting-a-business-hard` Story has no `h2` headings, so it intentionally does not show the rail. The DEV-visible draft `what-higher-value-work-means-in-philippine-it-bpm` has six `h2` headings and is the current rail QA case.
+The published `what-actually-makes-starting-a-business-hard` Story has no `h2` headings, so it intentionally does not show the rail. It also has no Updated or Series metadata, so after the founder byline decision it should render no visible metadata rule/block beneath the dek. The DEV-visible draft `what-higher-value-work-means-in-philippine-it-bpm` has six `h2` headings and is the current rail QA case.
 
-The earlier E statement excluding a table of contents is superseded only to the extent of this later founder-approved Stories section rail. It does not authorize copying the OpenAI article UI wholesale or adding audio, sharing, or other adjacent features.
+The earlier E statement excluding a table of contents is superseded only to the extent of this later founder-approved Stories section rail. The earlier visible-author article treatment is likewise superseded by the later founder decision to omit bylines from article presentation while retaining author metadata internally. Neither change authorizes copying the OpenAI article UI wholesale or adding audio, sharing, or other adjacent features.
 
 ## Current validation authority
 
@@ -226,7 +230,7 @@ Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before 
 - local `npm run build`: **PASS**;
 - source review: **PASS after one narrow D fix**.
 
-F article runtime has been repeatedly source-inspected and founder-reviewed, but the current centered-header + section-rail revision has **not yet** received a recorded local `npm run check`, `npm run build`, or final founder rendered pass. Do not describe F as validated until those checks actually pass.
+F article runtime has been repeatedly source-inspected and founder-reviewed, but the current centered-header + section-rail + resilient-headline + no-visible-byline revision has **not yet** received a recorded local `npm run check`, `npm run build`, or final founder rendered pass. Do not describe F as validated until those checks actually pass.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. Do not fabricate production or DEV article content solely for visual QA.
 
@@ -249,8 +253,11 @@ Shared article runtime:
 - `52eed7f71fab1ebed46ee0545ff270b167f2dde6` — tighter article geometry;
 - `5d8ca03d8aa2fa8141d0e1387a45bae1d836222a` — header/hero frame alignment;
 - `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — internal header-width correction;
+- `98ee5dfdb20d01735485a34031138730ef021ce9` — reduced headline scale and full 54rem headline frame;
 - `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
-- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — Story heading plumbing for the rail.
+- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — Story heading plumbing for the rail;
+- `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — visible News author removal;
+- `94effd0f89efd675dad82aba2d88f5ead983656f` — visible Story author removal.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -276,6 +283,7 @@ Do not reintroduce:
 - old `Latest` header navigation;
 - old giant-number Stories archive treatment;
 - old sticky article metadata rail;
+- visible article byline/author block;
 - separate News/Stories archive CSS systems;
 - separate News/Stories article geometry;
 - legacy article-local inline newsletter blocks;
