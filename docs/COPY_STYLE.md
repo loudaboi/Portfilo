@@ -66,7 +66,8 @@ At this boundary:
 - Portfilo has **no geographic product promise**;
 - Portfilo remains free in v0;
 - the approved newsletter promise is a 7-minute read, three times per week;
-- exact newsletter send days and times remain unapproved.
+- exact newsletter send days and times remain unapproved;
+- the shared header CTA currently renders as `SUBSCRIBE FREE` on all routes.
 
 These facts are inputs. They are not automatically homepage sentences.
 
@@ -247,6 +248,8 @@ Prefer ordinary labels such as:
 - Privacy
 - Back to home
 
+Presentation casing may be stronger where founder-approved. The current shared header CTA is `SUBSCRIBE FREE`; the final `/subscribe` form CTA is `SUBSCRIBE`.
+
 Do not brand a control merely to make it distinctive.
 
 ### Do not claim qualities the work can prove
@@ -321,13 +324,12 @@ Current safe operational facts include:
 
 Default to product clarity. A subscribe surface may carry a short campaign or institutional statement only after it passes the full message-architecture and founder-copy approval gate, and that statement remains scoped to the approved surface.
 
-Current revised G1 `/subscribe` copy authority:
+Final G1 `/subscribe` visible copy authority:
 
 - page-scoped statement: `Some changes look small, until they reshape everything. We look closer.`;
-- signup label: `GET THE NEWSLETTER`;
-- factual support: `Business and tech in 7 minutes, three times a week.`;
-- CTA: `SUBSCRIBE FREE`;
-- shared note: `Free newsletter. Unsubscribe anytime.`
+- CTA: `SUBSCRIBE`.
+
+The final page intentionally has no visible `GET THE NEWSLETTER` label, no visible cadence support line, and no visible `Free newsletter. Unsubscribe anytime.` note. The shared `NewsletterSignup.astro` may retain its default note internally, but `/subscribe` hides it page-locally. The current meta description may still state the approved 7-minute / three-times-per-week operational promise because that claim remains valid.
 
 The page-scoped statement is not a masthead tagline, homepage slogan, newsletter title, or reusable editorial line.
 
