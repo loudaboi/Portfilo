@@ -51,7 +51,6 @@ const devNews = import.meta.env.DEV && realNews.length === 0
   ? DEV_NEWS_FIXTURES.map((item) => ({
       ...item,
       href: undefined,
-      image: undefined,
       fixture: true as const,
     }))
   : [];
@@ -123,20 +122,48 @@ const railStory =
             <div class="latest-strip__label">
               <strong>Latest news</strong>
             </div>
-            <div class="latest-strip__rail" tabindex="0" aria-label="Latest news headlines">
-              {tickerItems.map((item) =>
-                item.href ? (
-                  <a class="latest-strip__item" href={item.href}>
-                    <span>{formatLabel(item.label)}</span>
-                    <strong>{item.title}</strong>
-                  </a>
-                ) : (
-                  <span class="latest-strip__item">
-                    <span>{formatLabel(item.label)}</span>
-                    <strong>{item.title}</strong>
-                  </span>
-                ),
-              )}
+            <div
+              class="latest-strip__rail"
+              tabindex="0"
+              aria-label="Latest news headlines"
+              data-latest-rail
+              data-auto-ticker={tickerItems.length > 1 ? "true" : "false"}
+            >
+              <div class="latest-strip__track">
+                <div class="latest-strip__group" data-latest-group>
+                  {tickerItems.map((item) =>
+                    item.href ? (
+                      <a class="latest-strip__item" href={item.href}>
+                        <span>{formatLabel(item.label)}</span>
+                        <strong>{item.title}</strong>
+                      </a>
+                    ) : (
+                      <span class="latest-strip__item">
+                        <span>{formatLabel(item.label)}</span>
+                        <strong>{item.title}</strong>
+                      </span>
+                    ),
+                  )}
+                </div>
+
+                {tickerItems.length > 1 && (
+                  <div class="latest-strip__group latest-strip__group--duplicate" aria-hidden="true">
+                    {tickerItems.map((item) =>
+                      item.href ? (
+                        <a class="latest-strip__item" href={item.href} tabindex="-1">
+                          <span>{formatLabel(item.label)}</span>
+                          <strong>{item.title}</strong>
+                        </a>
+                      ) : (
+                        <span class="latest-strip__item">
+                          <span>{formatLabel(item.label)}</span>
+                          <strong>{item.title}</strong>
+                        </span>
+                      ),
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </section>
         )
@@ -180,7 +207,7 @@ const railStory =
                   <NewsletterSignup
                     id="home-feature-newsletter"
                     heading="There's more to it than the headline."
-                    copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox."
+                    copy="Who made the move, what changed, and the details behind it."
                     variant="card"
                     buttonLabel="Subscribe"
                   />
@@ -218,26 +245,37 @@ const railStory =
           leadNews ? (
             <div class="news-grid">
               <article class="lead-news">
-                {leadNews.fixture ? (
-                  <div class="news-image-placeholder" aria-hidden="true">
-                    <span>News image</span>
-                    <small>Development layout only</small>
-                  </div>
-                ) : leadNews.image ? (
-                  <a class="news-image" href={leadNews.href} aria-label={`Read ${leadNews.title}`}>
-                    <img
-                      src={leadNews.image.src}
-                      alt={leadNews.image.alt}
-                      width="1600"
-                      height="900"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    {leadNews.image.generated && (
-                      <span class="news-image__disclosure">AI-generated editorial image</span>
-                    )}
-                  </a>
-                ) : null}
+                {leadNews.image && (
+                  leadNews.href ? (
+                    <a class="news-image" href={leadNews.href} aria-label={`Read ${leadNews.title}`}>
+                      <img
+                        src={leadNews.image.src}
+                        alt={leadNews.image.alt}
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {leadNews.image.generated && (
+                        <span class="news-image__disclosure">AI-generated editorial image</span>
+                      )}
+                    </a>
+                  ) : (
+                    <div class="news-image">
+                      <img
+                        src={leadNews.image.src}
+                        alt={leadNews.image.alt}
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {leadNews.image.generated && (
+                        <span class="news-image__disclosure">AI-generated editorial image</span>
+                      )}
+                    </div>
+                  )
+                )}
                 <div class="news-meta">
                   <span>{leadNews.topic}</span>
                   <span>{leadNews.time}</span>
@@ -279,6 +317,107 @@ const railStory =
     </main>
 
     <SiteFooter />
+
+    <script is:inline>
+      (() => {
+        const rail = document.querySelector("[data-latest-rail]");
+        const group = rail?.querySelector("[data-latest-group]");
+
+        if (!(rail instanceof HTMLElement) || !(group instanceof HTMLElement)) return;
+
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const canRequestLoop = rail.dataset.autoTicker === "true";
+        let frameId = 0;
+        let lastTime = 0;
+        let isHovering = false;
+        let isFocused = false;
+        let isPointerDown = false;
+        let resumeAt = 0;
+
+        const setResumeDelay = (milliseconds = 1200) => {
+          resumeAt = performance.now() + milliseconds;
+        };
+
+        const evaluateLoop = () => {
+          const canLoop =
+            canRequestLoop &&
+            !motionQuery.matches &&
+            group.scrollWidth > rail.clientWidth;
+
+          rail.classList.toggle("is-looping", canLoop);
+          if (!canLoop) rail.scrollLeft = 0;
+          lastTime = 0;
+        };
+
+        const shouldPause = (time) =>
+          !rail.classList.contains("is-looping") ||
+          isHovering ||
+          isFocused ||
+          isPointerDown ||
+          time < resumeAt;
+
+        const tick = (time) => {
+          if (!lastTime) lastTime = time;
+          const elapsed = Math.min(time - lastTime, 64);
+          lastTime = time;
+
+          if (!shouldPause(time)) {
+            rail.scrollLeft += elapsed * 0.03;
+            const loopWidth = group.scrollWidth;
+
+            if (loopWidth > 0 && rail.scrollLeft >= loopWidth) {
+              rail.scrollLeft -= loopWidth;
+            }
+          }
+
+          frameId = requestAnimationFrame(tick);
+        };
+
+        rail.addEventListener("mouseenter", () => {
+          isHovering = true;
+        });
+
+        rail.addEventListener("mouseleave", () => {
+          isHovering = false;
+          setResumeDelay(350);
+        });
+
+        rail.addEventListener("focusin", () => {
+          isFocused = true;
+        });
+
+        rail.addEventListener("focusout", () => {
+          requestAnimationFrame(() => {
+            isFocused = rail.contains(document.activeElement);
+            if (!isFocused) setResumeDelay(500);
+          });
+        });
+
+        rail.addEventListener("pointerdown", () => {
+          isPointerDown = true;
+        });
+
+        const releasePointer = () => {
+          isPointerDown = false;
+          setResumeDelay(1400);
+        };
+
+        rail.addEventListener("pointerup", releasePointer);
+        rail.addEventListener("pointercancel", releasePointer);
+        rail.addEventListener("wheel", () => setResumeDelay(1400), { passive: true });
+        window.addEventListener("resize", evaluateLoop);
+        motionQuery.addEventListener?.("change", evaluateLoop);
+
+        evaluateLoop();
+        frameId = requestAnimationFrame(tick);
+
+        window.addEventListener(
+          "pagehide",
+          () => cancelAnimationFrame(frameId),
+          { once: true },
+        );
+      })();
+    </script>
 
     <style>
       @font-face {
@@ -468,14 +607,33 @@ const railStory =
 
       .latest-strip__rail {
         min-width: 0;
-        display: flex;
-        align-items: stretch;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
         scrollbar-width: none;
       }
       .latest-strip__rail::-webkit-scrollbar { display: none; }
       .latest-strip__rail:focus-visible { outline-offset: -3px; }
+
+      .latest-strip__track {
+        width: max-content;
+        min-width: 100%;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .latest-strip__group {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .latest-strip__group--duplicate {
+        display: none;
+      }
+
+      .latest-strip__rail.is-looping .latest-strip__group--duplicate {
+        display: flex;
+      }
 
       .latest-strip__item {
         flex: 0 0 auto;
@@ -684,8 +842,8 @@ const railStory =
       .news-grid {
         padding-top: clamp(1.25rem, 2.4vw, 2.2rem);
         display: grid;
-        grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
-        gap: clamp(1.5rem, 3.5vw, 3.5rem);
+        grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
+        gap: clamp(2rem, 2.7vw, 2.5rem);
         align-items: start;
       }
 
@@ -704,26 +862,14 @@ const railStory =
         margin: 0;
       }
 
-      .news-image-placeholder,
-      .news-image {
-        aspect-ratio: 16 / 9;
-        margin-bottom: 1rem;
-        background: var(--paper-soft);
-        border-top: 3px solid var(--accent);
-      }
-
-      .news-image-placeholder {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: var(--muted);
-      }
-
       .news-image {
         position: relative;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 1rem;
         display: block;
         overflow: hidden;
+        background: var(--paper-soft);
+        border-top: 3px solid var(--accent);
         line-height: 0;
       }
 
@@ -731,18 +877,6 @@ const railStory =
         display: block;
         width: 100%;
         height: auto;
-      }
-
-      .news-image-placeholder span {
-        color: var(--ink);
-        font: 620 clamp(1.3rem, 2vw, 2rem) / 1 var(--sans);
-        letter-spacing: -0.025em;
-      }
-
-      .news-image-placeholder small {
-        font: 540 0.65rem/1.2 var(--sans);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
       }
 
       .news-meta {
@@ -856,7 +990,8 @@ const railStory =
           font-size: clamp(1.95rem, 3.6vw, 2.3rem);
         }
 
-        .featured-pair {
+        .featured-pair,
+        .news-grid {
           grid-template-columns: 1fr;
         }
 
@@ -870,10 +1005,6 @@ const railStory =
       }
 
       @media (max-width: 52rem) {
-        .news-grid {
-          grid-template-columns: 1fr;
-        }
-
         .fixture-warning {
           max-width: 14rem;
         }
@@ -894,8 +1025,8 @@ const railStory =
         }
 
         .newsletter-band__form {
-          width: min(100%, var(--signup-control-max));
-          justify-self: start;
+          width: 100%;
+          justify-self: stretch;
         }
       }
 

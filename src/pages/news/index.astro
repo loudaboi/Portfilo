@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { DEV_NEWS_FIXTURES } from "../../data/devNewsFixtures";
 
 const publishedNews = await getCollection(
@@ -36,7 +37,7 @@ const realItems = newsByDate.map((story) => ({
 }));
 
 const fixtureItems = import.meta.env.DEV && realItems.length === 0
-  ? DEV_NEWS_FIXTURES.map((item) => ({ ...item, id: undefined, image: undefined, fixture: true as const }))
+  ? DEV_NEWS_FIXTURES.map((item) => ({ ...item, id: undefined, fixture: true as const }))
   : [];
 
 const items = realItems.length > 0 ? realItems : fixtureItems;
@@ -65,9 +66,9 @@ const usingFixtures = fixtureItems.length > 0;
 
       {
         leadItem ? (
-          <>
-            <section class="lead-news" aria-label="Latest news">
-              {leadItem.image && leadItem.id && (
+          <section class="lead-news" aria-label="Latest news">
+            {leadItem.image && (
+              leadItem.id ? (
                 <a class="lead-news__image" href={`/news/${leadItem.id}`} aria-label={`Read ${leadItem.title}`}>
                   <img
                     src={leadItem.image.src}
@@ -81,39 +82,66 @@ const usingFixtures = fixtureItems.length > 0;
                     <span class="image-disclosure">AI-generated editorial image</span>
                   )}
                 </a>
-              )}
+              ) : (
+                <div class="lead-news__image">
+                  <img
+                    src={leadItem.image.src}
+                    alt={leadItem.image.alt}
+                    width="1600"
+                    height="900"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  {leadItem.image.generated && (
+                    <span class="image-disclosure">AI-generated editorial image</span>
+                  )}
+                </div>
+              )
+            )}
 
-              <div class="lead-news__package">
-                <p class="news-meta">
-                  <span>{formatLabel(leadItem.topic)}</span>
-                  <span>{leadItem.time}</span>
-                </p>
-                <h2>
-                  {leadItem.id ? <a href={`/news/${leadItem.id}`}>{leadItem.title}</a> : leadItem.title}
-                </h2>
-                <p class="lead-news__dek">{leadItem.dek}</p>
-              </div>
-            </section>
-
-            <section class="news-stream" id="news-list" tabindex="-1" aria-label="News archive">
-              {supportingItems.map((item) => (
-                <article class="news-row">
-                  <p class="news-meta">
-                    <span>{formatLabel(item.topic)}</span>
-                    <span>{item.time}</span>
-                  </p>
-                  <div class="news-row__copy">
-                    <h2>
-                      {item.id ? <a href={`/news/${item.id}`}>{item.title}</a> : item.title}
-                    </h2>
-                    <p>{item.dek}</p>
-                  </div>
-                </article>
-              ))}
-            </section>
-          </>
+            <div class="lead-news__package">
+              <p class="news-meta">
+                <span>{formatLabel(leadItem.topic)}</span>
+                <span>{leadItem.time}</span>
+              </p>
+              <h2>
+                {leadItem.id ? <a href={`/news/${leadItem.id}`}>{leadItem.title}</a> : leadItem.title}
+              </h2>
+              <p class="lead-news__dek">{leadItem.dek}</p>
+            </div>
+          </section>
         ) : (
           <p class="empty-state" id="news-list">No published News items yet.</p>
+        )
+      }
+
+      <section class="archive-newsletter" aria-label="Subscribe to Portfilo news">
+        <NewsletterSignup
+          id="news-archive-newsletter"
+          heading="Get Portfilo news in your inbox."
+          copy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week."
+          variant="inline"
+        />
+      </section>
+
+      {
+        leadItem && (
+          <section class="news-stream" id="news-list" tabindex="-1" aria-label="News archive">
+            {supportingItems.map((item) => (
+              <article class="news-row">
+                <p class="news-meta">
+                  <span>{formatLabel(item.topic)}</span>
+                  <span>{item.time}</span>
+                </p>
+                <div class="news-row__copy">
+                  <h2>
+                    {item.id ? <a href={`/news/${item.id}`}>{item.title}</a> : item.title}
+                  </h2>
+                  <p>{item.dek}</p>
+                </div>
+              </article>
+            ))}
+          </section>
         )
       }
     </main>
@@ -167,7 +195,8 @@ const usingFixtures = fixtureItems.length > 0;
       .page-header,
       .lead-news,
       .news-stream,
-      .empty-state {
+      .empty-state,
+      .archive-newsletter {
         width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
         margin-inline: auto;
       }
@@ -287,6 +316,11 @@ const usingFixtures = fixtureItems.length > 0;
         font: 425 clamp(0.95rem, 1.1vw, 1.05rem) / 1.52 var(--sans);
       }
 
+      .archive-newsletter {
+        padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(1.8rem, 3.5vw, 2.75rem);
+        border-top: 3px solid var(--accent);
+      }
+
       .news-stream {
         padding-bottom: clamp(4rem, 7vw, 7rem);
       }
@@ -313,7 +347,7 @@ const usingFixtures = fixtureItems.length > 0;
       }
 
       .empty-state {
-        padding: 1.8rem 0 clamp(5rem, 8vw, 8rem);
+        padding: 1.8rem 0 2rem;
         color: var(--muted);
         font: 430 0.95rem/1.55 var(--sans);
       }

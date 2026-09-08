@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { DEV_EDITORIAL_IMAGE } from "./data/devEditorialImage";
 
 const sections = ["news", "stories"] as const;
 
@@ -24,6 +25,10 @@ const imageSchema = z.object({
   generated: z.boolean().default(false),
 });
 
+const editorialImageField = imageSchema
+  .optional()
+  .transform((image) => image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined));
+
 const stories = defineCollection({
   loader: glob({
     base: "./src/content/stories",
@@ -42,7 +47,7 @@ const stories = defineCollection({
       updatedAt: z.coerce.date().optional(),
       status: z.enum(["draft", "published"]),
       featured: z.boolean().default(false),
-      image: imageSchema.optional(),
+      image: editorialImageField,
       series: z
         .string()
         .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)

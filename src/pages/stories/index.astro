@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
 
 const entries = await getCollection(
   "stories",
@@ -82,6 +83,15 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
           <p class="empty-state" id="stories-list">No published stories yet.</p>
         )
       }
+
+      <section class="archive-newsletter" aria-label="Subscribe to Portfilo stories">
+        <NewsletterSignup
+          id="stories-archive-newsletter"
+          heading="Get Portfilo stories in your inbox."
+          copy="Deeper reporting, explainers, and analysis on business and technology."
+          variant="inline"
+        />
+      </section>
 
       {
         leadStory && (
@@ -171,7 +181,8 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       .page-header,
       .lead-story,
       .story-stream,
-      .empty-state {
+      .empty-state,
+      .archive-newsletter {
         width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
         margin-inline: auto;
       }
@@ -289,6 +300,11 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
         font: 540 0.67rem/1.3 var(--sans);
       }
 
+      .archive-newsletter {
+        padding: clamp(1.5rem, 3vw, 2.25rem) 0 clamp(1.8rem, 3.5vw, 2.75rem);
+        border-top: 3px solid var(--accent);
+      }
+
       .story-stream {
         padding-bottom: clamp(4rem, 7vw, 7rem);
       }
@@ -321,7 +337,7 @@ const formatLabel = (value: string) => value.replaceAll("-", " ");
       }
 
       .empty-state {
-        padding: 2rem 0 clamp(5rem, 8vw, 8rem);
+        padding: 2rem 0;
         color: var(--muted);
         font: 430 0.95rem/1.55 var(--sans);
       }
