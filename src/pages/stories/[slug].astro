@@ -36,7 +36,7 @@ const {
   correction,
   status,
 } = story.data;
-const { Content } = await render(story);
+const { Content, headings } = await render(story);
 
 const dateFormatter = new Intl.DateTimeFormat("en-PH", {
   day: "numeric",
@@ -69,6 +69,10 @@ const metadata = [
     : []),
 ];
 
+const tocItems = headings
+  .filter((heading) => heading.depth === 2)
+  .map(({ slug, text }) => ({ slug, text }));
+
 const normalizedCorrection = correction
   ? {
       dateLabel: formatDate(correction.correctedAt),
@@ -100,6 +104,7 @@ const normalizedCorrection = correction
       image={displayImage}
       methodology={methodology}
       correction={normalizedCorrection}
+      tocItems={tocItems}
     >
       <Content />
     </EditorialArticle>
