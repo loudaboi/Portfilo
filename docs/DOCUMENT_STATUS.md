@@ -281,7 +281,7 @@ F shared article implementation is validated against runtime HEAD `7ffc3021c93a8
 - local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
 - the final founder-reviewed article state includes centered header geometry, resilient headline scale, no visible byline, independent neutral header/hero divider, 54rem 16:9 hero treatment, narrow reading body and conditional Stories section rail.
 
-The revised G1 `/subscribe` has not yet received a recorded local `npm run check`, `npm run build`, or founder rendered PASS against runtime HEAD `a873c55ccbf3678ecfbddd1f7e61030acd715075`. Do not describe G1 as validated until those checks pass.
+The revised G1 `/subscribe` has not yet received a recorded local `npm run check`, `npm run build`, or founder rendered PASS against runtime HEAD `c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0`. Do not describe G1 as validated until those checks pass.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
 
@@ -316,7 +316,8 @@ G utility runtime:
 - `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — first simplified blue-band `/subscribe`; rejected in founder rendered review and historical only;
 - `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
 - `f860085e7cef614a3c594a403af91bd8f1e2525f` — revised image-led `/subscribe` runtime;
-- `a873c55ccbf3678ecfbddd1f7e61030acd715075` — homepage-only uppercase header subscribe presentation.
+- `a873c55ccbf3678ecfbddd1f7e61030acd715075` — homepage-only uppercase header subscribe presentation;
+- `c2ba1efd651d4a7fbb4264ff823c10b76dddc2a0` — preserve shared header link/CTA colors on `/subscribe`.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
