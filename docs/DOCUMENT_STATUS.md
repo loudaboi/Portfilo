@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–D are complete; the shared News/Stories article-template design gate is current and implementation is not yet authorized.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–E are complete; F shared article implementation is on the working branch and must pass local technical checks plus founder rendered review before G begins.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, or ticker motion as future gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -47,7 +47,7 @@ Current:
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, or shared acquisition runtime are subordinate to `PROJECT_STATE` and current source.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, or shared article runtime are subordinate to `PROJECT_STATE` and current source.
 - `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 
@@ -110,7 +110,7 @@ Current:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. Older `Portfilo Brief` wording still exists on some deferred surfaces and must not be opportunistically changed during the article gate.
+The email infrastructure remains current. Older `Portfilo Brief` wording still exists on some deferred surfaces and must not be opportunistically changed before the G utility-page work reaches those pages.
 
 ### Audience / distribution
 
@@ -172,39 +172,57 @@ News keeps current-news data and DEV fixture behavior. Stories keeps deeper-edit
 
 Production empty `/news` intentionally shows the contextual blue archive acquisition without immediately repeating the generic dark footer acquisition.
 
-### Article routes
+### Shared article implementation
 
-`/news/[slug]` and `/stories/[slug]` remain temporary article implementations.
+`src/components/EditorialArticle.astro` is now the canonical article presentation for both `/news/[slug]` and `/stories/[slug]`.
 
-The founder has explicitly reset those designs. They have **zero visual-precedent authority** for the replacement article template.
+The founder-approved article contract is implemented as one shared system:
 
-The current E proposal in `docs/PROJECT_STATE.md` recommends one shared article geometry with:
+- 84rem article shell;
+- compact classification row;
+- large Instrument Sans headline;
+- dek below the headline;
+- compact metadata row;
+- optional restrained 16:9 hero with blue top rule;
+- image credit and generated-image disclosure preserved;
+- centered 44rem reading measure;
+- shared heading/link/list/blockquote/code/media spacing;
+- shared methodology/correction geometry;
+- existing shared dark footer acquisition once at the article end;
+- no sticky rail, inline article signup, related-content module, comments, author bio, share toolbar, table of contents, reading-time widget, or custom article motion.
 
-- top-loaded classification/headline/dek/byline/date hierarchy;
-- optional restrained 16:9 hero;
-- narrow reading shell;
-- shared notes/correction geometry;
-- existing shared dark footer acquisition;
-- legitimate News/Stories metadata and reading-font differences without separate page geometry.
+Legitimate section differences remain data/read-mode differences rather than separate page systems:
 
-This proposal is awaiting founder approval. No replacement article implementation is authorized yet.
+News:
+
+- classification values include News, topic, and published date when present;
+- author and optional Updated metadata;
+- Instrument Sans body reading mode.
+
+Stories:
+
+- classification values include content type, topic, and published date when present;
+- author, optional Updated, and optional Series metadata;
+- Source Serif 4 body reading mode.
+
+The slug route files retain collection filtering, SEO/page metadata, data normalization, and rendered Markdown only. Their previous duplicated article CSS and page-local newsletter blocks are removed.
+
+The former SiteFooter rule used only to hide `.article-newsletter` is also removed because that legacy source block no longer exists.
 
 ## Current validation authority
 
 Archive/acquisition sequence A–D is validated.
 
-Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before the documentation-only closeout commits:
+Recorded against runtime HEAD `80349a49d6aa484d320d51b648c1964e2c3f7697` before documentation closeout:
 
 - founder rendered visual review: **PASS**;
 - local `npm run check`: **PASS**;
 - local `npm run build`: **PASS**;
 - source review: **PASS after one narrow D fix**.
 
-D fix:
+F article runtime has been source-inspected for scope and architecture but has **not yet** received a recorded local `npm run check`, `npm run build`, or founder rendered review. Do not describe F as validated until those checks actually pass.
 
-`80349a49d6aa484d320d51b648c1964e2c3f7697` — `Guard empty archive acquisition state`.
-
-GitHub exposes no attached automated CI/status checks for this branch. Do not convert that absence into either a pass or a failure; the recorded local checks are the validation authority.
+Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. Do not fabricate production or DEV article content solely for visual QA.
 
 The later dedicated multi-width full-site responsive audit remains sequence H and is not complete.
 
@@ -215,6 +233,13 @@ Archive/acquisition runtime:
 - `cae3cb6ddf47b09284bf1444d2849e127b01edcd` — shared archive + acquisition foundation;
 - `d58b6f060a24f807651276520745747296d31f54` — homepage migration to shared footer acquisition;
 - `80349a49d6aa484d320d51b648c1964e2c3f7697` — production empty-archive acquisition guard.
+
+Shared article runtime:
+
+- `ca853921ae19d36d08188090ac29a916d8584b1e` — shared article component;
+- `d3606dfbcb8f97357084b6e98dea3974aaedfcb8` — News route migration;
+- `87e9b2b083622b80f9a66652806e5f8ed4a5d924` — Stories route migration;
+- `dff79cd039de478c47583a06b5aecd5810e38c67` — obsolete article-newsletter suppression cleanup.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -239,9 +264,10 @@ Do not reintroduce:
 - topic labels in the header;
 - old `Latest` header navigation;
 - old giant-number Stories archive treatment;
-- old sticky article metadata rail as precedent;
+- old sticky article metadata rail;
 - separate News/Stories archive CSS systems;
-- separate News/Stories replacement article geometry;
+- separate News/Stories article geometry;
+- legacy article-local inline newsletter blocks;
 - paper-background archive signup with only a blue top line;
 - repeated/decorative mono scaffolding;
 - fabricated production News;
