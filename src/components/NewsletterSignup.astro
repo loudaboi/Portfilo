@@ -74,80 +74,85 @@ const titleId = `${id}-title`;
   </form>
 </section>
 
-<script is:inline>
-  document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
-    if (!(form instanceof HTMLFormElement) || form.dataset.newsletterBound) return;
-    form.dataset.newsletterBound = "true";
+<script>
+  const bindNewsletterForms = () => {
+    document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
+      if (!(form instanceof HTMLFormElement) || form.dataset.newsletterBound) return;
+      form.dataset.newsletterBound = "true";
 
-    const emailInput = form.querySelector("[data-newsletter-email]");
-    const statusMessage = form.querySelector("[data-newsletter-status]");
-    const submitButton = form.querySelector("[data-newsletter-submit]");
-    const submitLabel = form.querySelector("[data-submit-label]");
+      const emailInput = form.querySelector("[data-newsletter-email]");
+      const statusMessage = form.querySelector("[data-newsletter-status]");
+      const submitButton = form.querySelector("[data-newsletter-submit]");
+      const submitLabel = form.querySelector("[data-submit-label]");
 
-    const setStatus = (message, state = "") => {
-      if (!(statusMessage instanceof HTMLElement)) return;
-      statusMessage.textContent = message;
-      statusMessage.dataset.state = state;
-    };
-
-    const setSubmitting = (isSubmitting) => {
-      if (!(submitButton instanceof HTMLButtonElement) || !(submitLabel instanceof HTMLElement)) return;
-      const defaultLabel = submitButton.dataset.defaultLabel || "Subscribe free";
-      submitButton.disabled = isSubmitting;
-      submitButton.setAttribute("aria-busy", String(isSubmitting));
-      submitLabel.textContent = isSubmitting ? "Submitting…" : defaultLabel;
-    };
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!(emailInput instanceof HTMLInputElement)) return;
-
-      emailInput.removeAttribute("aria-invalid");
-      setStatus("");
-
-      if (!emailInput.value.trim() || !emailInput.checkValidity()) {
-        emailInput.setAttribute("aria-invalid", "true");
-        setStatus("Enter a valid email address.", "error");
-        emailInput.focus();
-        return;
-      }
-
-      const formData = new FormData(form);
-      const payload = {
-        email: String(formData.get("email") || "").trim(),
-        company: String(formData.get("company") || "").trim(),
+      const setStatus = (message: string, state = "") => {
+        if (!(statusMessage instanceof HTMLElement)) return;
+        statusMessage.textContent = message;
+        statusMessage.dataset.state = state;
       };
 
-      setSubmitting(true);
+      const setSubmitting = (isSubmitting: boolean) => {
+        if (!(submitButton instanceof HTMLButtonElement) || !(submitLabel instanceof HTMLElement)) return;
+        const defaultLabel = submitButton.dataset.defaultLabel || "Subscribe free";
+        submitButton.disabled = isSubmitting;
+        submitButton.setAttribute("aria-busy", String(isSubmitting));
+        submitLabel.textContent = isSubmitting ? "Submitting…" : defaultLabel;
+      };
 
-      try {
-        const response = await fetch("/api/subscribe", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!(emailInput instanceof HTMLInputElement)) return;
 
-        const result = await response.json().catch(() => null);
+        emailInput.removeAttribute("aria-invalid");
+        setStatus("");
 
-        if (!response.ok || !result?.ok) {
-          throw new Error(result?.message || "We could not submit your email. Please try again.");
+        if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+          emailInput.setAttribute("aria-invalid", "true");
+          setStatus("Enter a valid email address.", "error");
+          emailInput.focus();
+          return;
         }
 
-        form.reset();
-        setStatus("Check your inbox. Confirm your email to finish subscribing.", "success");
-      } catch (error) {
-        setStatus(
-          error instanceof Error ? error.message : "We could not submit your email. Please try again.",
-          "error",
-        );
-      } finally {
-        setSubmitting(false);
-      }
+        const formData = new FormData(form);
+        const payload = {
+          email: String(formData.get("email") || "").trim(),
+          company: String(formData.get("company") || "").trim(),
+        };
+
+        setSubmitting(true);
+
+        try {
+          const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json().catch(() => null);
+
+          if (!response.ok || !result?.ok) {
+            throw new Error(result?.message || "We could not submit your email. Please try again.");
+          }
+
+          form.reset();
+          setStatus("Check your inbox. Confirm your email to finish subscribing.", "success");
+        } catch (error) {
+          setStatus(
+            error instanceof Error ? error.message : "We could not submit your email. Please try again.",
+            "error",
+          );
+        } finally {
+          setSubmitting(false);
+        }
+      });
     });
-  });
+  };
+
+  document.addEventListener("astro:page-load", bindNewsletterForms);
+  bindNewsletterForms();
 </script>
 
 <style>
