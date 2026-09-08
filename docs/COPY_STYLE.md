@@ -1,6 +1,6 @@
 # Portfilo Copy Style
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-09_
 
 ## Purpose
 
@@ -58,15 +58,15 @@ Current approved product direction is recorded in `docs/PROJECT_STATE.md`.
 
 At this boundary:
 
-- Portfilo is a business-and-technology media product;
-- working product model: focused business/technology briefing + original reporting;
-- News is the intended current/day-to-day editorial layer;
-- Features are the deeper layer;
-- intended public coverage labels: `Business / Technology / Startup / AI`;
+- Portfilo is a business-and-technology publication;
+- News is the current/day-to-day editorial layer;
+- Stories are the deeper editorial layer;
+- public coverage labels are `Business / Technology / Startup / AI`;
 - newsletter/email acquisition is a primary product conversion;
 - Portfilo has **no geographic product promise**;
 - Portfilo remains free in v0;
-- no public newsletter cadence or reading-time promise is approved.
+- the approved newsletter promise is a 7-minute read, three times per week;
+- exact newsletter send days and times remain unapproved.
 
 These facts are inputs. They are not automatically homepage sentences.
 
@@ -227,14 +227,18 @@ Use the simplest accurate verb.
 
 Do not make one sentence carry subject, audience, geography, mission, benefit, and brand positioning simultaneously.
 
+### Do not use em dashes
+
+Portfilo public copy does not use the em dash character (`—`). Rewrite with a period, comma, colon, parentheses, or a sentence break instead.
+
 ### Use familiar interface language
 
 Prefer ordinary labels such as:
 
-- Latest
-- Features
+- News
+- Stories
 - Subscribe
-- Read Feature
+- Subscribe free
 - Standards
 - Privacy
 - Back to home
@@ -286,22 +290,13 @@ A more confident sentence is not automatically better.
 
 ## Homepage copy
 
-Current homepage copy is an **open gate**.
+The current homepage acquisition copy is founder-approved and implemented. Current authority is recorded in `docs/PROJECT_STATE.md` and `research/homepage-hero-copy-v3.md`.
 
 Do not use the rejected first coded homepage or `research/homepage-copy-v1.md` as copy precedent.
 
-The current exact process is:
-
-1. build the Homepage Copy Evidence Matrix from the real reference corpus and approved Portfilo facts;
-2. founder selects a structural/reference direction;
-3. only then draft the minimum necessary homepage copy;
-4. trace each material line to its authority;
-5. founder approves the exact package;
-6. only then implement it in the static rebuild.
-
 The homepage should show the product quickly. It does not need a large institutional manifesto.
 
-No subscriber count, cadence, reading-time claim, quality claim, or geographic identity may be invented to make the hero stronger.
+Do not invent subscriber counts, quality claims, geographic identity, or any operating promise that has not been explicitly approved.
 
 ## Newsletter / subscribe copy
 
@@ -312,11 +307,13 @@ State only product behavior that is actually established.
 Current safe operational facts include:
 
 - subscription is free;
+- the public newsletter promise is a 7-minute read;
+- cadence is three times per week;
+- exact send days and times remain unapproved;
 - double opt-in confirmation is required;
-- unsubscribe is available;
-- no public fixed cadence has been approved.
+- unsubscribe is available.
 
-Existing runtime/email surfaces still use `Portfilo Brief` in places. The approved redesign direction is a later coordinated public naming migration to **Newsletter**. Do not perform or imply a piecemeal migration from a single copy edit.
+`Portfilo Brief` is rejected as current public newsletter acquisition language. Legacy occurrences are stale and should be removed when their surface reaches its approved active scope.
 
 Do not use subscribe copy to explain Portfilo's worldview.
 
