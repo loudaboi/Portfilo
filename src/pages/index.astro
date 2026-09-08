@@ -407,6 +407,13 @@ const railStory =
         background: rgba(248, 246, 241, 0.9);
       }
 
+      .newsletter-band__form :global(.newsletter-signup input:focus-visible),
+      .newsletter-band__form :global(.newsletter-signup button:focus-visible),
+      .feature-rail :global(.newsletter-signup input:focus-visible),
+      .feature-rail :global(.newsletter-signup button:focus-visible) {
+        outline-color: #fff;
+      }
+
       .newsletter-band__form :global(.newsletter-signup__note),
       .newsletter-band__form :global(.newsletter-signup__status) {
         color: rgba(255, 255, 255, 0.72);
@@ -486,7 +493,7 @@ const railStory =
       }
 
       .featured-section {
-        padding: 0 0 clamp(2.4rem, 4vw, 3.75rem);
+        padding: 0 0 clamp(1.5rem, 2.5vw, 2.25rem);
       }
 
       .featured-pair {
@@ -681,7 +688,7 @@ const railStory =
       }
 
       .news-image-placeholder {
-        aspect-ratio: 16 / 8.6;
+        aspect-ratio: 16 / 9;
         margin-bottom: 1rem;
         padding: 1rem;
         display: flex;
@@ -804,13 +811,6 @@ const railStory =
         }
 
         .featured-pair {
-          grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.8fr);
-        }
-      }
-
-      @media (max-width: 52rem) {
-        .featured-pair,
-        .news-grid {
           grid-template-columns: 1fr;
         }
 
@@ -821,13 +821,15 @@ const railStory =
         .feature-rail__latest {
           margin-top: clamp(1.5rem, 4vw, 2rem);
         }
+      }
+
+      @media (max-width: 52rem) {
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
 
         .fixture-warning {
           max-width: 14rem;
-        }
-
-        .news-image-placeholder {
-          aspect-ratio: 16 / 9;
         }
       }
 
@@ -885,7 +887,6 @@ const railStory =
 
         .featured-section {
           padding-top: 0;
-          padding-bottom: 2rem;
         }
 
         .featured-story__copy h2 {
