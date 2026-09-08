@@ -18,6 +18,11 @@ interface ArticleCorrection {
   note: string;
 }
 
+interface ArticleTocItem {
+  slug: string;
+  text: string;
+}
+
 interface Props {
   mode: "news" | "stories";
   title: string;
@@ -27,6 +32,7 @@ interface Props {
   image?: ArticleImage;
   methodology?: string;
   correction?: ArticleCorrection;
+  tocItems?: ArticleTocItem[];
   bodyId?: string;
 }
 
@@ -39,8 +45,11 @@ const {
   image,
   methodology,
   correction,
+  tocItems = [],
   bodyId = "article-body",
 } = Astro.props;
+
+const showToc = mode === "stories" && tocItems.length >= 3;
 ---
 
 <main id="main-content">
@@ -84,34 +93,58 @@ const {
       </figure>
     )}
 
-    <div class="article-body" id={bodyId} tabindex="-1">
-      <slot />
-    </div>
+    <div
+      class:list={{
+        "article-content": true,
+        "article-content--with-toc": showToc,
+      }}
+    >
+      {showToc && (
+        <aside class="article-toc" aria-labelledby={`${bodyId}-toc-title`}>
+          <div class="article-toc__inner">
+            <p class="article-toc__title" id={`${bodyId}-toc-title`}>In this story</p>
+            <nav aria-label="Story sections">
+              <ol>
+                {tocItems.map((item) => (
+                  <li><a href={`#${item.slug}`}>{item.text}</a></li>
+                ))}
+              </ol>
+            </nav>
+          </div>
+        </aside>
+      )}
 
-    {(methodology || correction) && (
-      <div class="article-notes">
-        {methodology && (
-          <section class="article-note" aria-labelledby={`${bodyId}-methodology-title`}>
-            <h2 id={`${bodyId}-methodology-title`}>Methodology</h2>
-            <p>{methodology}</p>
-          </section>
-        )}
+      <div class="article-reading">
+        <div class="article-body" id={bodyId} tabindex="-1">
+          <slot />
+        </div>
 
-        {correction && (
-          <aside
-            class="article-note article-note--correction"
-            aria-labelledby={`${bodyId}-correction-title`}
-          >
-            <h2 id={`${bodyId}-correction-title`}>Correction</h2>
-            <p>
-              <time datetime={correction.iso}>{correction.dateLabel}</time>
-              <span aria-hidden="true"> · </span>
-              {correction.note}
-            </p>
-          </aside>
+        {(methodology || correction) && (
+          <div class="article-notes">
+            {methodology && (
+              <section class="article-note" aria-labelledby={`${bodyId}-methodology-title`}>
+                <h2 id={`${bodyId}-methodology-title`}>Methodology</h2>
+                <p>{methodology}</p>
+              </section>
+            )}
+
+            {correction && (
+              <aside
+                class="article-note article-note--correction"
+                aria-labelledby={`${bodyId}-correction-title`}
+              >
+                <h2 id={`${bodyId}-correction-title`}>Correction</h2>
+                <p>
+                  <time datetime={correction.iso}>{correction.dateLabel}</time>
+                  <span aria-hidden="true"> · </span>
+                  {correction.note}
+                </p>
+              </aside>
+            )}
+          </div>
         )}
       </div>
-    )}
+    </div>
   </article>
 </main>
 
@@ -154,6 +187,8 @@ const {
     --article-header-max: 54rem;
     --article-hero-max: 54rem;
     --article-reading-max: 41.5rem;
+    --article-content-max: 61rem;
+    --article-toc-max: 12rem;
     --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
     --gutter: var(--shell-gutter);
     --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
@@ -200,21 +235,22 @@ const {
 
   .article-header,
   .article-hero,
-  .article-body,
-  .article-notes {
+  .article-content {
     width: calc(100% - (2 * var(--shell-gutter)));
     margin-inline: auto;
   }
 
   .article-header {
     max-width: var(--article-header-max);
-    padding: clamp(2.8rem, 5vw, 4.75rem) 0 clamp(2rem, 3.4vw, 3rem);
+    padding: clamp(3.2rem, 5.5vw, 5.4rem) 0 clamp(2.2rem, 3.8vw, 3.3rem);
+    text-align: center;
   }
 
   .article-classification {
-    margin: 0 0 0.85rem;
+    margin: 0 0 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.45rem 0.7rem;
     color: var(--muted);
     font: 570 0.65rem/1.3 var(--sans);
@@ -235,29 +271,32 @@ const {
 
   .article-header h1 {
     max-width: 50rem;
-    margin: 0;
-    font: 680 clamp(2.85rem, 5.4vw, 5.4rem) / 0.95 var(--sans);
+    margin: 0 auto;
+    font: 680 clamp(2.85rem, 5.1vw, 5.1rem) / 0.96 var(--sans);
     letter-spacing: -0.055em;
     text-wrap: balance;
     overflow-wrap: break-word;
   }
 
   .article-dek {
-    max-width: 45rem;
-    margin: clamp(1.15rem, 2vw, 1.7rem) 0 0;
+    max-width: 44rem;
+    margin: clamp(1.2rem, 2vw, 1.75rem) auto 0;
     color: var(--muted);
     font: 440 clamp(1.06rem, 1.35vw, 1.28rem) / 1.5 var(--sans);
+    text-wrap: balance;
   }
 
   .article-meta {
-    max-width: 54rem;
-    margin: clamp(1.35rem, 2.4vw, 2rem) 0 0;
-    padding-top: 0.8rem;
+    width: 100%;
+    margin: clamp(1.5rem, 2.5vw, 2.1rem) auto 0;
+    padding-top: 0.9rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem clamp(1.2rem, 2.2vw, 2rem);
+    justify-content: center;
+    gap: 0.75rem clamp(1.25rem, 2.2vw, 2rem);
     border-top: 1px solid var(--line);
     font: 520 0.68rem/1.4 var(--sans);
+    text-align: left;
   }
 
   .article-meta div { min-width: 0; }
@@ -273,7 +312,7 @@ const {
 
   .article-hero {
     max-width: var(--article-hero-max);
-    margin-bottom: clamp(2.35rem, 4.5vw, 4rem);
+    margin-bottom: clamp(2.7rem, 5vw, 4.4rem);
   }
 
   .article-hero__media {
@@ -311,10 +350,63 @@ const {
     font: 480 0.65rem/1.4 var(--sans);
   }
 
-  .article-body,
-  .article-notes {
-    max-width: var(--article-reading-max);
+  .article-content {
+    max-width: var(--article-content-max);
   }
+
+  .article-content--with-toc {
+    display: grid;
+    grid-template-columns: minmax(9rem, var(--article-toc-max)) minmax(0, var(--article-reading-max));
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  .article-reading {
+    width: 100%;
+    max-width: var(--article-reading-max);
+    min-width: 0;
+  }
+
+  .article-content:not(.article-content--with-toc) .article-reading {
+    margin-inline: auto;
+  }
+
+  .article-toc {
+    min-width: 0;
+    padding-top: 0.2rem;
+    font-family: var(--sans);
+  }
+
+  .article-toc__inner {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .article-toc__title {
+    margin: 0 0 0.9rem;
+    color: var(--ink);
+    font: 650 0.68rem/1.3 var(--sans);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .article-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .article-toc li + li { margin-top: 0.72rem; }
+
+  .article-toc a {
+    display: block;
+    color: var(--muted);
+    font: 470 0.72rem/1.42 var(--sans);
+    text-decoration: none;
+  }
+
+  .article-toc a:hover { color: var(--ink); }
 
   .article-body {
     padding-bottom: clamp(3rem, 5vw, 4.5rem);
@@ -340,6 +432,7 @@ const {
     margin: 3rem 0 1rem;
     font: 660 clamp(1.75rem, 2.3vw, 2.25rem) / 1.08 var(--sans);
     letter-spacing: -0.04em;
+    scroll-margin-top: 1.5rem;
   }
 
   .article-body :global(h3) {
@@ -425,17 +518,29 @@ const {
 
   .article-note--correction { border-top-color: var(--correction); }
 
+  @media (max-width: 56rem) {
+    .article-content--with-toc {
+      display: block;
+    }
+
+    .article-content--with-toc .article-reading {
+      margin-inline: auto;
+    }
+
+    .article-toc {
+      display: none;
+    }
+  }
+
   @media (max-width: 48rem) {
-    .article-header { padding-top: 2.6rem; }
+    .article-header { padding-top: 2.8rem; }
     .article-header h1 { max-width: 18ch; }
-    .article-dek,
-    .article-meta { max-width: none; }
   }
 
   @media (max-width: 36rem) {
     :global(:root) { --shell-gutter: 1.1rem; }
-    .article-header { padding-top: 2.4rem; }
-    .article-header h1 { font-size: clamp(2.4rem, 11vw, 3.35rem); }
+    .article-header { padding-top: 2.5rem; }
+    .article-header h1 { font-size: clamp(2.35rem, 10.8vw, 3.25rem); }
     .article-dek { font-size: 1.02rem; }
     .article-meta { gap: 0.7rem 1.15rem; }
     .article-body { font-size: 1.07rem; }
