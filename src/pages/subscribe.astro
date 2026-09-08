@@ -308,17 +308,25 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       @media (max-width: 32rem) {
-        .subscribe-campaign__visual {
-          aspect-ratio: 4 / 5;
-        }
-
         .subscribe-campaign__image {
           object-position: 42% center;
         }
 
+        .subscribe-message {
+          left: 1rem;
+          bottom: 1rem;
+          width: calc(100% - 2rem);
+        }
+
+        .subscribe-message__wordmark {
+          width: clamp(6.5rem, 28vw, 8rem);
+        }
+
         .subscribe-message h1 {
-          max-width: 16ch;
-          font-size: clamp(1.7rem, 7.5vw, 2.25rem);
+          max-width: none;
+          margin-top: 0.75rem;
+          font-size: clamp(1.05rem, 4.9vw, 1.45rem);
+          line-height: 1;
         }
 
         .subscribe-interface__form :global(.newsletter-signup__row) {
