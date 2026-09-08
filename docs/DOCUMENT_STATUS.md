@@ -23,12 +23,12 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 ### Contributor / decision control
 
 - `AGENTS.md` — repository authority, scope, approvals, implementation discipline.
-- `skills/portfilo-anti-slop/SKILL.md` — mandatory evidence-first gate for nontrivial discretionary product/copy/design decisions.
+- `skills/portfilo-anti-slop/SKILL.md` — mandatory evidence-first decision gate for nontrivial discretionary product/copy/design decisions.
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. The static homepage is founder-reported as validated and frozen. News + Stories content architecture and visual system are founder-approved. Runtime implementation is awaiting a separate explicit authorization.
-- `docs/V0_SCOPE.md` — current v0 product and technical boundaries. Older clauses that conflict with the newer founder-approved News + Stories architecture or visual system in `PROJECT_STATE` are subordinate to `PROJECT_STATE`.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. As of 2026-09-08, the News + Stories architecture and visual system are founder-approved, the implementation is committed, and fresh technical/rendered QA is the active next task.
+- `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture as a future gate, legacy taxonomy values, or `/latest` as an active target are subordinate to the newer approved and implemented contract in `PROJECT_STATE`.
 - `BACKLOG.md` — valid ideas outside current scope.
 
 ### Editorial, research, writing
@@ -45,18 +45,18 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. The founder-approved News + Stories visual contract is now recorded in `PROJECT_STATE` and is the implementation authority for `/news`, `/news/[slug]`, `/stories`, and `/stories/[slug]`.
-- `docs/IMAGE_SYSTEM.md` — canonical editorial-image workflow and constraints. Canonical v0 primary story-image ratio remains 16:9 landscape.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific wording that still describes the pre-News navigation or earlier rail terminology is subordinate to the frozen runtime and `PROJECT_STATE`.
+- `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; canonical v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
-- `research/homepage-redesign-v1.md` — historical/provenance record for the homepage redesign process; frozen homepage runtime + `PROJECT_STATE` own active homepage authority where they differ.
+- `research/homepage-redesign-v1.md` — historical/provenance record for the homepage redesign process. Current frozen runtime and `PROJECT_STATE` own active homepage authority where they differ.
 - `research/image-system/homepage-hero-image-brief-v1.md` — historical hero concept provenance only.
-- `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only; current acquisition hero uses no image.
-- `research/image-system/homepage-featured-cover-decision.md` — historical provenance for the prior Feature artwork; current homepage uses `public/images/homepage-feature-16x9.png`.
+- `research/image-system/homepage-hero-selection-v1.md` — historical hero selection/provenance only.
+- `research/image-system/homepage-featured-cover-decision.md` — historical provenance for the homepage Feature artwork; current asset remains `public/images/homepage-feature-16x9.png`.
 
 ### Product-model / newsletter research and copy
 
-- `research/portfilo-product-model-research-v1.md` — supporting research for the approved current-News + deeper-Stories model; research is not runtime authority by itself.
-- `research/newsletter-copy-reference-corpus-v1.md` — research corpus only.
+- `research/newsletter-copy-reference-corpus-v1.md` — research corpus only; no copy authority by itself.
+- `research/portfilo-product-model-research-v1.md` — supporting evidence for the approved current-News + deeper-Stories model; `briefing` remains rejected as public acquisition language.
 - `research/editorial-lens-four-issue-pilot-v1.md` — founder-approved pilot, parked until core site completion.
 - `research/homepage-copy-evidence-matrix-v1.md` — research/provenance only; superseded for exact public hero wording.
 - `research/homepage-hero-copy-v3.md` — **CURRENT FOUNDER-APPROVED PRIMARY ACQUISITION WORDING AND OPERATING PROMISES**.
@@ -71,7 +71,7 @@ Founder-approved contextual headline:
 
 `There's more to it than the headline.`
 
-Exact final contextual support wording remains open. Current runtime temporarily reuses approved primary newsletter support copy rather than inventing a new claim.
+Exact final contextual support wording remains open. Current runtime reuses the already-approved primary newsletter support copy rather than inventing another public claim.
 
 ### Brand
 
@@ -80,7 +80,7 @@ Exact final contextual support wording remains open. Current runtime temporarily
 - `research/brand-system/social-preview.md`
 - canonical assets under `public/brand/` and `public/social/`.
 
-Current shared wordmark presentation is 5.8rem in both header and footer across the current responsive system.
+Current shared header/footer wordmark presentation remains 5.8rem.
 
 ### Email / deployment
 
@@ -88,98 +88,101 @@ Current shared wordmark presentation is 5.8rem in both header and footer across 
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-Email infrastructure remains current. `Portfilo Brief` still exists operationally in places. The later public naming migration to `Newsletter` must be coordinated, not piecemeal.
+The email infrastructure remains current. `Portfilo Brief` still exists operationally in older surfaces. The later public naming migration to `Newsletter` remains a coordinated future task rather than a piecemeal change during News/Stories implementation.
 
 ### Audience / distribution
 
-- `docs/SOCIAL_DISTRIBUTION.md` remains current strategy, but Social Visual System work is deferred until the redesigned website is stable.
+- `docs/SOCIAL_DISTRIBUTION.md` remains current strategy, but Social Visual System work is deferred until the redesigned core site is stable.
 
-## Approved News + Stories authority
+## Current News + Stories authority
 
-`docs/PROJECT_STATE.md` is the canonical implementation contract for the founder-approved News + Stories architecture and visual system.
+The founder-approved content architecture and visual-system contract are recorded in `docs/PROJECT_STATE.md` and are now implemented in runtime.
 
-### Content architecture
-
-Approved model:
+Current implemented model:
 
 - one Astro editorial collection;
-- explicit `section: news | stories`;
-- `contentType` and `topic` remain separate dimensions;
-- News routes: `/news`, `/news/[slug]`;
-- Stories routes: `/stories`, `/stories/[slug]`;
-- Feature and blue Stories rail source Stories only;
-- homepage News and Latest-news ticker source News only;
-- target header after `/news` exists: `News | Stories | Subscribe free`;
-- target topics: `business / technology / startup / ai`;
-- `startups` migrates to `startup`;
-- `building` entries are audited individually;
-- `/latest`, pagination, filters and search remain deferred.
+- required `section: news | stories`;
+- separate `contentType` and `topic` dimensions;
+- public topic values `business / technology / startup / ai`;
+- News routes `/news` and `/news/[slug]`;
+- Stories routes `/stories` and `/stories/[slug]`;
+- existing published Story URLs preserved;
+- homepage Feature + blue rail source Stories only;
+- homepage News + Latest-news ticker source News only;
+- header is now `News | Stories | Subscribe free`;
+- `/latest`, pagination, filters and search remain deferred;
+- optional shared editorial-image metadata supports source, alt, optional credit and generated-image disclosure;
+- old Stories archive/article visuals are superseded and have zero forward design authority.
 
-### Visual system
+Implementation commit:
 
-Approved model:
+`f1e4b634d3675f99cec8e121b442509e28874c08`
 
-- all four editorial surfaces inherit the frozen homepage publication language rather than the current old Stories styling;
-- shared 84rem outer shell and responsive gutter discipline;
-- Instrument Sans for display/UI and News body;
-- Source Serif 4 for sustained Stories long-form body reading;
-- IBM Plex Mono only for real utility/data/timestamp roles;
-- Portfilo blue / ink / paper palette, square geometry, thin rules and flat surfaces;
-- News archive = dense, chronological, text-forward, optional lead image;
-- Stories archive = more breathing room, optional approved imagery, stronger lead package;
-- News article = compact sans-led current-reading mode;
-- Story article = long-form reading mode with serif body and sans display hierarchy;
-- no old giant archive numbers, sticky metadata rails, duplicated metadata scaffolding, decorative mono indexing, card soup, gradients, glow or SaaS styling;
-- primary editorial imagery remains optional 16:9; no production placeholder/fallback is manufactured;
-- implementation may add only the approved minimal optional image metadata object: `src`, `alt`, optional `credit`, optional `generated`;
-- both article families use one post-article newsletter acquisition unit with existing approved copy/behavior;
-- responsive mobile becomes a single editorial column with no horizontal overflow.
-
-Approval of this visual system does **not** authorize runtime implementation by itself.
+Fresh technical and rendered QA against that commit is pending.
 
 ## Current runtime authority
 
-The frozen homepage currently implements:
+### Homepage
 
-- shared 84rem / 1344px shell;
-- only Latest-news ticker is full-bleed;
-- runtime header remains `Portfilo | Latest | Stories | Subscribe free` until `/news` exists;
-- full blue newsletter hero;
-- static/manual Latest-news ticker;
-- selected `public/images/homepage-feature-16x9.png` Feature asset;
-- 16:9 Feature presentation and 3px blue image-top rule;
-- continuous blue newsletter/Stories rail;
-- Feature + rail stack at 64rem / 1024px and below;
-- homepage News hierarchy with 16:9 lead imagery;
-- development-only News fixtures and production factual empty state;
-- footer `Stories | Standards | Privacy`;
-- matched 5.8rem header/footer wordmarks;
-- no ticker motion;
-- no News/Stories schema or route migration yet.
+The homepage visual composition remains frozen. News/Stories implementation changed data sourcing and links only.
 
-The current `/stories` archive and article runtime remain transitional old presentation. They must not be copied or preserved merely because they exist.
+Current homepage behavior:
 
-## Rejected / historical records with zero current decision authority
+- header `Portfilo | News | Stories | Subscribe free`;
+- full Portfilo-blue newsletter hero;
+- static/manual `Latest news` ticker sourced from News only;
+- current Feature sourced from Stories only;
+- continuous blue Stories/newsletter rail sourced from Stories only;
+- homepage News sourced from News only;
+- clearly synthetic shared News fixtures appear in development when real published News inventory is absent;
+- production never fabricates News;
+- there is currently no published News inventory, so production should retain the factual News empty state and no News-derived ticker items;
+- footer remains `Stories | Standards | Privacy`;
+- matched 5.8rem wordmarks remain.
 
-The following remain rejected/superseded:
+### News
 
-- old Homepage v3 composition;
-- Source Serif 4 homepage hero/Feature treatment;
-- independently centered/narrowed Feature shell;
-- oversized/tall Feature presentation;
-- rail bottom-push with `margin-top:auto`;
-- synthetic Feature placeholder as current target;
-- square Portfilo rail placeholder;
+`/news` and `/news/[slug]` now implement the compact, chronological, sans-led News mode.
+
+The draft `portfilo-draft-filtering-test` is intentionally classified as a synthetic News fixture for development route QA and remains excluded from production.
+
+### Stories
+
+`/stories` and `/stories/[slug]` now implement the approved deeper-editorial system. The old giant-number archive, sticky metadata rail, duplicated article metadata, decorative numbered body headings, and old report-like scaffolding are superseded.
+
+The currently published Story `What actually makes starting a business hard?` remains the only published Story and retains its existing route. Its existing homepage Feature image is represented through shared image metadata with generated-image disclosure.
+
+## Rejected / historical work with zero current decision authority
+
+### Rejected homepage copy
+
+- `research/homepage-copy-v1.md` — **REJECTED / HISTORICAL / ZERO AUTHORITY**.
+- `research/homepage-copy-v2.md` — **REJECTED / HISTORICAL / ZERO CURRENT HERO AUTHORITY**.
+
+### Rejected visual/implementation patterns
+
+Do not reintroduce:
+
+- Source Serif 4 homepage hero or Feature treatment;
+- prior Homepage v3 composition;
+- independently centered/narrowed homepage Feature shell;
+- oversized/arbitrary-tall Feature rendering;
+- blue-rail content bottom-pushed with `margin-top:auto`;
+- square Portfilo right-rail placeholder;
 - muted/light-blue hero;
 - red normal-state ticker;
-- whole ticker black;
-- topic labels in homepage header;
-- implementation-time global gutter changes without approval;
-- hiding News in production because fixtures are absent;
+- entire ticker black;
+- topic labels in the header;
+- old `Latest` header navigation now that `/news` exists;
+- old giant-number Stories archive treatment;
+- old sticky article metadata rail;
+- old repeated/decorative mono scaffolding;
 - fabricated production News;
-- old Stories archive giant numbered rows and experimental page scaffolding as forward design authority.
+- implementation-time global design changes without approval.
 
-Historical copy/navigation records remain provenance only:
+### Historical copy/navigation records
+
+The following remain for provenance only:
 
 - `docs/COPY_REPLACEMENT_CANDIDATE.md`;
 - `docs/NAVIGATION_RESEARCH.md`;
@@ -187,19 +190,21 @@ Historical copy/navigation records remain provenance only:
 - `docs/SITE_COPY_IMPLEMENTATION.md`;
 - `docs/POSITIONING_ARCHITECTURE_EXPLORATION.md`.
 
-`docs/EXECUTION_PLAN.md` must not be recreated; `PROJECT_STATE.md` owns active execution state.
+### Removed duplicate plan
 
-## Validation authority
-
-The founder reported the final static-homepage `npm run check`, `npm run build`, development rendered review and production-equivalent preview as passing.
-
-This is user-reported local validation. The remote session did not independently execute those commands.
-
-Any News/Stories runtime implementation requires fresh validation against the changed tree.
+`docs/EXECUTION_PLAN.md` was removed because it duplicated `docs/PROJECT_STATE.md`. It must not be recreated.
 
 ## Motion authority
 
-Ticker movement remains deferred until the News/Stories runtime architecture exists so it can operate on the real News stream.
+Ticker movement remains deferred until the current News + Stories implementation passes fresh QA and receives founder approval.
+
+## Validation authority
+
+The founder-reported static-homepage validation applies to the pre-News/Stories implementation tree.
+
+Fresh `npm run check`, `npm run build`, development rendered QA and production-equivalent preview have not yet been recorded as passing against implementation commit `f1e4b634d3675f99cec8e121b442509e28874c08`.
+
+Do not describe the News + Stories implementation as validated until those checks actually run and the required views are inspected.
 
 ## Maintenance rule
 
@@ -208,4 +213,4 @@ When a later founder decision supersedes an older record:
 - preserve useful history;
 - update this status map when stale material could mislead later work;
 - update `docs/PROJECT_STATE.md` whenever the current phase or exact next task changes;
-- do not duplicate current state across a new execution-plan document.
+- do not duplicate current state across a new execution-plan file.
