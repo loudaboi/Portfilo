@@ -131,6 +131,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       .subscribe-campaign__visual {
+        --campaign-inset: clamp(2.5rem, 5vw, 4.75rem);
         position: relative;
         isolation: isolate;
         aspect-ratio: 16 / 9;
@@ -159,13 +160,13 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
 
       .subscribe-form-block {
         position: absolute;
-        right: clamp(2.5rem, 5vw, 4.75rem);
-        bottom: clamp(2.5rem, 5vw, 4.75rem);
-        width: clamp(22rem, 27vw, 26rem);
+        right: var(--campaign-inset);
+        bottom: var(--campaign-inset);
+        width: clamp(21.5rem, 25.5vw, 24.5rem);
       }
 
       .subscribe-form-block :global(.newsletter-signup__row) {
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 1fr) 7.25rem;
         gap: 0;
         max-width: none;
       }
@@ -182,6 +183,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       .subscribe-form-block :global(.newsletter-signup button) {
+        min-width: 7.25rem;
         border-color: var(--paper);
         background: var(--paper);
         color: var(--ink);
@@ -224,9 +226,9 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
 
       .subscribe-message {
         position: absolute;
-        top: clamp(2.75rem, 6vw, 5.75rem);
-        left: clamp(2.5rem, 6vw, 5.75rem);
-        width: min(54rem, calc(100% - clamp(5rem, 12vw, 11.5rem)));
+        top: var(--campaign-inset);
+        left: var(--campaign-inset);
+        width: min(54rem, calc(100% - (2 * var(--campaign-inset))));
       }
 
       .subscribe-message__wordmark {
@@ -248,10 +250,12 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       @media (max-width: 62rem) {
+        .subscribe-campaign__visual {
+          --campaign-inset: clamp(2rem, 4vw, 3rem);
+        }
+
         .subscribe-form-block {
-          right: clamp(2rem, 4vw, 3rem);
-          bottom: clamp(2rem, 4vw, 3rem);
-          width: clamp(20rem, 32vw, 23rem);
+          width: clamp(20rem, 30vw, 22rem);
         }
 
         .subscribe-message__wordmark {
@@ -269,16 +273,16 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
           padding-bottom: 3.5rem;
         }
 
+        .subscribe-campaign__visual {
+          --campaign-inset: clamp(1.25rem, 4vw, 1.75rem);
+        }
+
         .subscribe-form-block {
-          right: clamp(1.25rem, 4vw, 1.75rem);
-          bottom: clamp(1.25rem, 4vw, 1.75rem);
-          width: min(21rem, calc(100% - clamp(2.5rem, 8vw, 3.5rem)));
+          width: min(21rem, calc(100% - (2 * var(--campaign-inset))));
         }
 
         .subscribe-message {
-          top: clamp(1.6rem, 6vw, 2.6rem);
-          left: clamp(1.5rem, 6vw, 2.5rem);
-          width: calc(100% - clamp(3rem, 12vw, 5rem));
+          width: calc(100% - (2 * var(--campaign-inset)));
         }
 
         .subscribe-message__wordmark {
@@ -292,14 +296,16 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       @media (max-width: 32rem) {
+        .subscribe-campaign__visual {
+          --campaign-inset: 1rem;
+        }
+
         .subscribe-campaign__image {
           object-position: 42% center;
         }
 
         .subscribe-form-block {
-          right: 1rem;
-          bottom: 1rem;
-          left: 1rem;
+          left: var(--campaign-inset);
           width: auto;
         }
 
@@ -314,9 +320,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         }
 
         .subscribe-message {
-          top: 1rem;
-          left: 1rem;
-          width: calc(100% - 2rem);
+          width: calc(100% - (2 * var(--campaign-inset)));
         }
 
         .subscribe-message__wordmark {
