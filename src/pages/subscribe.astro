@@ -165,7 +165,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         position: absolute;
         top: clamp(2.5rem, 5vw, 4.75rem);
         right: clamp(2.5rem, 5vw, 4.75rem);
-        width: clamp(26rem, 31vw, 31rem);
+        width: clamp(22rem, 27vw, 26rem);
       }
 
       .subscribe-form-block :global(.newsletter-signup__row) {
@@ -175,24 +175,25 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
       }
 
       .subscribe-form-block :global(.newsletter-signup input) {
-        border: 1px solid rgba(255, 255, 255, 0.48);
+        border: 1px solid rgba(255, 255, 255, 0.52);
         border-right: 0;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.22);
         color: #fff;
       }
 
       .subscribe-form-block :global(.newsletter-signup input::placeholder) {
-        color: rgba(255, 255, 255, 0.68);
+        color: rgba(255, 255, 255, 0.7);
       }
 
       .subscribe-form-block :global(.newsletter-signup button) {
-        border-color: var(--accent);
-        background: var(--accent);
-        color: #fff;
+        border-color: var(--paper);
+        background: var(--paper);
+        color: var(--ink);
       }
 
       .subscribe-form-block :global(.newsletter-signup button:hover) {
-        filter: brightness(0.95);
+        filter: none;
+        background: rgba(248, 246, 241, 0.9);
       }
 
       .subscribe-form-block :global(.newsletter-signup input:focus-visible),
@@ -261,7 +262,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         .subscribe-form-block {
           top: clamp(2rem, 4vw, 3rem);
           right: clamp(2rem, 4vw, 3rem);
-          width: clamp(22rem, 36vw, 25rem);
+          width: clamp(20rem, 32vw, 23rem);
         }
 
         .subscribe-message h1 {
@@ -278,7 +279,7 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         .subscribe-form-block {
           top: clamp(1.25rem, 4vw, 1.75rem);
           right: clamp(1.25rem, 4vw, 1.75rem);
-          width: min(22rem, calc(100% - clamp(2.5rem, 8vw, 3.5rem)));
+          width: min(21rem, calc(100% - clamp(2.5rem, 8vw, 3.5rem)));
         }
 
         .subscribe-form-block__title {
