@@ -10,7 +10,7 @@ Sequence items A–E are complete on `build/portfilo-v0`. Sequence item F remain
 
 Current runtime HEAD before this documentation update:
 
-`f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — `Feed Story headings into article navigation`
+`94effd0f89efd675dad82aba2d88f5ead983656f` — `Remove visible Story author metadata`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -188,14 +188,16 @@ The original E decision established one shared article system for News and Stori
 
 The original E scope excluded a table of contents. During rendered F review, the founder explicitly reopened the article composition because the left-aligned header continued to feel visually unbalanced. The founder supplied the current OpenAI article treatment as a structural reference and explicitly approved this later correction:
 
-- center the article classification/headline/dek/metadata package;
+- center the article classification/headline/dek package and any remaining supplemental metadata;
 - keep the restrained 54rem 16:9 hero;
 - keep the body around 41–42rem;
 - add a Stories-only in-page section navigation when enough real `h2` sections exist;
 - keep News simpler without that rail;
 - defer article audio/listen functionality rather than adding it to F.
 
-This later founder decision supersedes the original E exclusion of table-of-contents navigation. It does not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
+During the same rendered F review, the founder later removed visible article bylines because the author block created awkward header positioning. This is a presentation decision only: the canonical content `author` field remains internal editorial metadata and continues to feed article structured data/SEO where applicable.
+
+This later founder decision supersedes the original E exclusion of table-of-contents navigation and visible author metadata in the article header. It does not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
 
 ## F — Revised shared article-template implementation
 
@@ -208,8 +210,11 @@ Current shared article contract:
 - centered classification row;
 - centered Instrument Sans headline;
 - centered dek;
-- centered metadata group within the article header;
+- visible article author/byline omitted;
+- supplemental article metadata renders only when genuinely present, such as Updated or Series;
+- internal `author` content metadata remains retained and continues to feed `SiteHead` article metadata;
 - article header max width: 54rem;
+- headline max width: 54rem with a restrained desktop maximum around 4.35rem for more resilient multi-line titles;
 - optional 16:9 hero max width: 54rem;
 - thin Portfilo-blue hero top rule;
 - image credit and generated-image disclosure preserved;
@@ -272,14 +277,19 @@ Founder-review geometry corrections:
 
 - `52eed7f71fab1ebed46ee0545ff270b167f2dde6` — tighten article geometry;
 - `5d8ca03d8aa2fa8141d0e1387a45bae1d836222a` — align header and hero frame;
-- `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — balance internal header widths.
+- `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — balance internal header widths;
+- `98ee5dfdb20d01735485a34031138730ef021ce9` — reduce headline scale and use full 54rem title frame.
 
 Current structural correction:
 
 - `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
-- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — feed Astro Story headings into the shared article component.
+- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — feed Astro Story headings into the shared article component;
+- `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — remove visible News author metadata;
+- `94effd0f89efd675dad82aba2d88f5ead983656f` — remove visible Story author metadata.
 
-No dependency, schema, framework, CMS, database, production-content, archive, homepage, utility-page, or News-route feature changes were made by this correction.
+The byline removal changed only article presentation. It did not remove the `author` field from content, schema, structured metadata, or editorial provenance.
+
+No dependency, schema, framework, CMS, database, production-content, archive, homepage, or utility-page changes were made by these corrections.
 
 ## Remaining sequence
 
@@ -310,7 +320,7 @@ Required:
 1. pull the latest `build/portfilo-v0`;
 2. run `npm run check`;
 3. run `npm run build`;
-4. render `/stories/what-actually-makes-starting-a-business-hard` and verify the centered header, 54rem hero treatment, narrow body, and absence of a false/empty section rail;
+4. render `/stories/what-actually-makes-starting-a-business-hard` and verify the centered header, resilient headline wrapping, absence of a visible byline/empty metadata rule, 54rem hero treatment, narrow body, and absence of a false/empty section rail;
 5. in DEV, render `/stories/what-higher-value-work-means-in-philippine-it-bpm` and verify the `In this story` rail uses the real `h2` headings, links to them correctly, stays restrained/sticky on desktop, and disappears below the 56rem breakpoint;
 6. verify exactly one shared dark footer acquisition remains;
 7. inspect a representative mobile Story for centered header/readability/no horizontal overflow;
