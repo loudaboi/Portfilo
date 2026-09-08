@@ -62,7 +62,8 @@ const { current } = Astro.props;
   }
 
   :global(body.home-page) .site-header,
-  :global(body.editorial-page) .site-header {
+  :global(body.editorial-page) .site-header,
+  :global(body.subscribe-page) .site-header {
     width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
     padding-inline: 0;
   }
