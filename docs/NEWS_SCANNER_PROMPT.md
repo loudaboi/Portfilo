@@ -56,9 +56,10 @@ Startup signals explicitly include funding, accelerator or Y Combinator acceptan
 
 Use this distinction:
 - News: What changed?
-- Stories: What is changing underneath? Why is this happening? How does this work? What does it reveal?
+- Why: Why is this happening? How does this work? What is changing underneath?
+- Hustle: Who is building or operating it, and how was it built, grown, survived, pivoted, or run?
 
-Do not force every News item to become a Story. Story ideas may come from anywhere.
+Do not force every News item to become a deeper piece. Story ideas may come from anywhere. STORY IDEA remains a private scanner label; if promoted, the public section may become Why or Hustle after editorial planning.
 
 AI output, search snippets, and summaries have zero evidentiary authority. They are discovery aids only.
 
@@ -67,7 +68,7 @@ Return only the strongest retained signals in a compact table:
 
 Then include only when useful:
 - Watch triggers
-- Possible Story questions
+- Possible deeper reporting questions
 - Coverage notes about meaningful gaps, misses, or noise
 
 Do not dump dozens of headlines. If nothing is strong enough, say so.
@@ -105,6 +106,8 @@ The pilot confirmed that the workflow could:
 - retain major global AI/startup developments without forcing a Philippine angle;
 - avoid inventing a Philippine startup signal when none surfaced strongly in the scan window;
 - keep output selective rather than headline-driven.
+
+The 2026-09-10 public-section migration from Stories to Why/Hustle did not change the scanner's discovery or evidence model. It only changes how promoted deeper work is routed publicly.
 
 Do not casually expand this prompt. Change it only when repeated operating evidence shows a concrete failure that cannot be solved by updating the canonical standards or source map.
 
