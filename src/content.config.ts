@@ -2,7 +2,7 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const sections = ["news", "stories"] as const;
+const sections = ["news", "why", "hustle"] as const;
 
 const contentTypes = [
   "reported",
@@ -76,7 +76,7 @@ const stories = defineCollection({
           context.addIssue({
             code: "custom",
             path: ["featured"],
-            message: "Only Stories entries may be featured.",
+            message: "News entries cannot be featured.",
           });
         }
       }),
