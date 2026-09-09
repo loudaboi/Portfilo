@@ -4,7 +4,7 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**NEWS / WHY / HUSTLE SECTION MIGRATION IMPLEMENTED / VALIDATION PENDING**
+**NEWS / WHY / HUSTLE SECTION MIGRATION IMPLEMENTED / CI PASS / VISUAL QA PENDING**
 
 The corrected and performance-optimized Portfilo v0 production release remains founder-approved and closed on `main`.
 
@@ -242,6 +242,26 @@ The contextual rail can identify another Why/Hustle item without reintroducing S
 
 Why and Hustle preserve the long-form Source Serif reading treatment and optional section rail/table-of-contents behavior without duplicating components.
 
+## Continuous integration
+
+A minimal GitHub Actions workflow now exists at:
+
+`.github/workflows/ci.yml`
+
+It runs on pushes to and pull requests targeting:
+
+- `build/portfilo-v0`;
+- `main`.
+
+The workflow uses the repository `.node-version`, installs from the lockfile with `npm ci`, then runs:
+
+```text
+npm run check
+npm run build
+```
+
+It does not deploy or publish anything.
+
 ## Supporting editorial stack
 
 ### ChatGPT News Scanner
@@ -272,13 +292,22 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**MIGRATION IMPLEMENTATION COMPLETE / FRESH RUNTIME VALIDATION NOT YET CLAIMED.**
+**AUTOMATED RUNTIME VALIDATION PASS / VISUAL QA PENDING.**
 
-The current environment used for repository writes does not provide a runnable checkout with installed Node dependencies, and the connected GitHub repository exposes no CI workflow/status for these commits.
+GitHub Actions CI run `#1` on commit `ae929ffef88c0e6e3b50fe9a1e5e0c73aef5ad82` completed successfully on 2026-09-10.
 
-Therefore do **not** claim `npm run check`, `npm run build`, or responsive preview QA passed for the News/Why/Hustle migration until those checks actually run against the current working-branch state.
+Verified by CI:
 
-The previous production release validation remains historical evidence for the pre-migration site only.
+- checkout/setup: PASS;
+- `npm ci`: PASS;
+- `npm run check`: PASS;
+- `npm run build`: PASS.
+
+This establishes that the current News/Why/Hustle working-branch state installs cleanly, passes Astro checks, and builds successfully under the repository Node version.
+
+CI does **not** establish visual correctness, responsive behavior, Cloudflare redirect behavior, or browser-level interaction. Those remain a manual preview QA gate.
+
+The previous production release validation remains historical evidence for the pre-migration production site only.
 
 ## Active work plan
 
@@ -291,21 +320,15 @@ The previous production release validation remains historical evidence for the p
 7. **Shared long-form article-mode migration** - implemented.
 8. **Legacy Stories redirects/internal-link migration** - implemented.
 9. **Canonical documentation reconciliation** - implemented.
-10. **Fresh local check/build + preview QA** - exact next task.
-11. **Release decision / merge to `main`** - separate future gate only after validation and founder approval.
+10. **Minimal GitHub Actions CI** - implemented / PASS.
+11. **Preview visual/responsive QA** - exact next task.
+12. **Release decision / merge to `main`** - separate future gate only after validation and founder approval.
 
 ## Exact next task
 
-**Validate the News / Why / Hustle migration on the working branch.**
+**Run preview visual/responsive QA for the News / Why / Hustle migration.**
 
-Required validation:
-
-```text
-npm run check
-npm run build
-```
-
-Then inspect at minimum:
+Inspect at minimum:
 
 - homepage;
 - `/news`;
@@ -319,7 +342,7 @@ Then inspect at minimum:
 - sitemap/canonical behavior for the new public routes;
 - no horizontal overflow at the existing responsive checkpoints.
 
-If validation exposes a concrete defect, fix only that defect without reopening the approved News/Why/Hustle architecture.
+If QA exposes a concrete defect, fix only that defect without reopening the approved News/Why/Hustle architecture.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
