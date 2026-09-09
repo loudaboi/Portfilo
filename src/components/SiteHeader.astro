@@ -162,6 +162,21 @@ const { current } = Astro.props;
   }
 
   @media (max-width: 23rem) {
-    .site-header { --gutter: 1rem; }
+    .site-header {
+      --gutter: 1rem;
+      gap: 0.65rem;
+    }
+
+    .wordmark {
+      width: 5.35rem;
+    }
+
+    .site-nav {
+      gap: 0.45rem;
+    }
+
+    .site-nav__cta {
+      padding-inline: 0.48rem;
+    }
   }
 </style>
