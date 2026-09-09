@@ -8,7 +8,7 @@ publishedAt: 2026-09-07
 status: published
 featured: false
 image:
-  src: "/images/homepage-feature-16x9.png"
+  src: "../../assets/editorial/homepage-feature-16x9.png"
   alt: "A person holding a newspaper in a concrete architectural setting beside a coffee cup."
   generated: true
 ---
