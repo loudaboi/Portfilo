@@ -1,6 +1,6 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 This file prevents historical implementation notes and research records from being mistaken for current authority.
 
@@ -18,6 +18,18 @@ When documents disagree, use:
 
 `docs/PROJECT_STATE.md` owns the current phase and exact next task. Do not create a competing execution plan.
 
+## Current phase
+
+Current primary workstream:
+
+**Editorial Direction + News Intelligence v0**
+
+Canonical upstream operating contract:
+
+`docs/EDITORIAL_INTELLIGENCE.md`
+
+The previous Editorial Packaging Standard Refinement task is deferred, not canceled.
+
 ## Current canonical documents
 
 ### Contributor and decision control
@@ -27,29 +39,63 @@ When documents disagree, use:
 
 ### Product and implementation state
 
-- `docs/PROJECT_STATE.md` — current phase, validation state, and exact next task.
+- `docs/PROJECT_STATE.md` — current phase, validated state, conflict audit, active work plan, and exact next task.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundaries.
 - `docs/DESIGN_DIRECTION.md` — current visual/responsive contract.
 - `README.md` — current repository overview.
 - `BACKLOG.md` — ideas outside current scope only.
 
-### Editorial, research, writing, packaging, publishing
+### Editorial direction, intelligence, research, writing, packaging, publishing
 
 Current:
 
-- `docs/CONTENT_PLANNING.md`
-- `docs/EDITORIAL_STANDARD.md`
-- `docs/RESEARCH_STANDARD.md`
-- `docs/WRITING_SYSTEM.md`
-- `docs/STYLE_RESEARCH_STANDARD.md`
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`
-- `docs/PUBLISHING_STANDARD.md`
-- `docs/COPY_STYLE.md`
-- `docs/PORTFILO_TEST_STANDARD.md`
+- `docs/EDITORIAL_INTELLIGENCE.md` — upstream News discovery, signal handling, minimal operating routine, automation boundary, and handoff into existing editorial systems.
+- `docs/CONTENT_PLANNING.md` — substantial editorial candidate selection and prioritization.
+- `docs/EDITORIAL_STANDARD.md` — editorial integrity and coverage principles.
+- `docs/RESEARCH_STANDARD.md` — evidence, source hierarchy, contradiction search, research packets, and verification.
+- `docs/WRITING_SYSTEM.md` — writing-form selection and structural/stylistic authority.
+- `docs/STYLE_RESEARCH_STANDARD.md` — story-specific professional form research.
+- `docs/EXPLAINED_STANDARD.md` — founder-approved Explained direction; no universal Explainer structure is canonical.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` — current headline/dek/metadata architecture.
+- `docs/PUBLISHING_STANDARD.md` — substantial and fast-factual publication paths.
+- `docs/COPY_STYLE.md` — public copy rules and institutional-copy provenance.
+- `docs/PORTFILO_TEST_STANDARD.md` — Portfilo Test methodology.
 
-`docs/EDITORIAL_PACKAGING_STANDARD.md` remains canonical v1 authority for headline/dek/metadata packaging until the founder approves the next refinement.
+### Relationship between intelligence and reporting standards
 
-When an older clause conflicts with the current route model, taxonomy, author policy, newsletter acquisition model, responsive contract, or current packaging architecture, `PROJECT_STATE`, `V0_SCOPE`, the relevant current standard, and runtime source take precedence.
+Use the layers in this order:
+
+```text
+EDITORIAL INTELLIGENCE
+source -> signal -> original-source check -> News / Watch / Ignore
+                                   ↘ possible Story question
+
+CONTENT PLANNING
+idea/question -> editorial gate -> priority -> assignment
+
+RESEARCH + WRITING + PUBLISHING
+research packet -> evidence -> story decision -> form -> draft -> verification -> package -> publish
+```
+
+`docs/EDITORIAL_INTELLIGENCE.md` does not create a second evidence hierarchy. `docs/RESEARCH_STANDARD.md` remains the authority for evidentiary source tiers and claim verification.
+
+Story ideas do not have to originate in the News pipeline.
+
+### Public taxonomy
+
+Current public topic taxonomy remains:
+
+`Business / Technology / Startup / AI`
+
+Runtime values remain:
+
+`business / technology / startup / ai`
+
+The founder-approved internal editorial direction is broader and is recorded in `docs/PROJECT_STATE.md` and `docs/EDITORIAL_INTELLIGENCE.md`.
+
+A public taxonomy change is a separate gate because it affects documentation, content frontmatter, and `src/content.config.ts`.
+
+Do not infer a taxonomy migration from approval of the editorial-direction workstream.
 
 ### Design and imagery
 
@@ -59,13 +105,9 @@ Current:
 - `docs/IMAGE_SYSTEM.md`
 - `docs/PHOTO_TREATMENT.md`
 
-The current approved editorial source asset is under:
+Astro's native image pipeline remains the current runtime authority for editorial image rendering.
 
-`src/assets/editorial/homepage-feature-16x9.png`
-
-The old unprocessed `public/images/homepage-feature-16x9.png` path is retired.
-
-Astro's native image pipeline is the current runtime authority for editorial image rendering. Whether published News/Stories should normally require an image is intentionally still open and belongs to the next Editorial Packaging Standard Refinement gate.
+Whether published News/Stories should normally require an image remains intentionally open and belongs to the deferred Editorial Packaging Standard Refinement task.
 
 ### Email and deployment
 
@@ -78,15 +120,23 @@ Current:
 Important boundary:
 
 - website-facing acquisition language uses `Portfilo newsletter`, not `Portfilo Brief`;
-- `docs/BEEHIIV_EMAIL_SETUP.md` may still record provider-side historical `Portfilo Brief` naming;
-- repository edits do not imply provider-side beehiiv settings were changed;
-- any provider-side naming migration is a separate operational action.
+- provider-side beehiiv records may still contain historical naming;
+- repository edits do not imply provider-side beehiiv settings were changed.
 
-Cloudflare production behavior was verified by the founder on 2026-09-09:
+Cloudflare production behavior remains:
 
-- Production branch: `main`
-- automatic deployments: enabled
-- `build/portfilo-v0` remains the preview/test working branch
+- production branch: `main`;
+- automatic deployments: enabled;
+- `build/portfilo-v0` remains the preview/test working branch.
+
+## Known adjacent authority hygiene issues
+
+The 2026-09-10 conflict audit identified two stale documentation issues that do not block the active editorial-intelligence workstream:
+
+1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, and runtime source takes precedence.
+2. `docs/SOCIAL_DISTRIBUTION.md` still contains legacy `Portfilo Brief` naming. Current newsletter public naming authority is `Portfilo newsletter`.
+
+Treat these as maintenance/reconciliation items. Do not use the stale clauses to reopen the already-approved route, header, or newsletter-name decisions.
 
 ## Current runtime authority
 
@@ -98,7 +148,7 @@ Current masthead:
 
 `Portfilo | News | Stories`
 
-There is no persistent Subscribe CTA and no ClientRouter/persisted-header navigation machinery.
+There is no persistent Subscribe CTA.
 
 ### Public route set
 
@@ -116,77 +166,41 @@ Current editorial/institutional routes:
 
 Retired routes:
 
-- `/subscribe` -> `/#newsletter` via Cloudflare `_redirects`
-- `/about` -> `/` via Cloudflare `_redirects`
+- `/subscribe` -> `/#newsletter` via Cloudflare redirects
+- `/about` -> `/`
 - `/series/[slug]` removed from v0
 
-### Newsletter
+### Content schema
 
-`src/components/NewsletterSignup.astro` is the canonical signup UI/behavior.
+`src/content.config.ts` currently owns:
 
-Every visible form submits through:
+```text
+section: news | stories
+contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
+topic: business | technology | startup | ai
+status: draft | published
+```
 
-`/api/subscribe`
+No taxonomy or schema change is authorized by the active intelligence workstream.
 
-The homepage `/#newsletter` section is the direct signup destination.
+### Archives and articles
 
-### Archives
+`src/components/EditorialArchive.astro` owns shared News/Stories archive presentation.
 
-`src/components/EditorialArchive.astro` owns both News and Stories archive presentation.
+`src/components/EditorialArticle.astro` owns shared News/Stories article presentation.
 
-Current contract includes:
+The current implementation already supports separate News/Stories modes and displays content classification supplied by the routes. No runtime redesign is required for Editorial Intelligence v0.
 
-- one 84rem shared shell;
-- explicit image and image-less lead/supporting states;
-- contextual acquisition;
-- supporting archive imagery without repeated blue top rules;
-- laptop/tablet preservation of the desktop-family composition while viable;
-- phone as the primary structural simplification point.
+## Current validation status
 
-### Articles
+The corrected and performance-optimized website v0 release remains founder-approved and production-verified.
 
-`src/components/EditorialArticle.astro` owns News and Stories article presentation.
+Current Editorial Direction + News Intelligence changes are documentation-only unless a later explicit gate authorizes runtime changes.
 
-Current contract includes:
-
-- centered classification/headline/dek package;
-- no visible individual author/byline;
-- Portfilo Organization as structured author/publisher identity;
-- optional 54rem 16:9 primary hero with thin blue top rule;
-- 41.5rem reading measure;
-- News using Instrument Sans reading mode;
-- Stories using Source Serif 4;
-- optional Stories in-page section rail when enough real `h2` sections exist;
-- methodology/corrections preserved.
-
-### Shared foundation
-
-`src/styles/global.css` owns the shared font loading, palette, shell variables, responsive gutter, base box sizing/body/link/focus/skip-link behavior.
-
-Core publication pages should not recreate competing root palettes, font-face declarations, or shell definitions.
-
-### Responsive contract
-
-Acceptance widths:
-
-`1440 / 1366 / 1024 / 768 / 390 / 375 / 320`
-
-Interpretation:
-
-- desktop/laptop/tablet form one family;
-- 1024 keeps compact-desktop structure and deliberate side breathing room;
-- 768 uses selective reflow rather than blanket mobile stacking;
-- phone is the main structural simplification point;
-- stacked forms remain measure-constrained until narrow phone widths.
+Do not claim a new local build/check validation pass unless it was actually run against the relevant state.
 
 ## Historical/provenance records
 
 Files under `research/` and older implementation/copy records remain useful for provenance only unless explicitly promoted by a current canonical document.
 
-Rejected or superseded designs/copy do not become precedent merely because they remain in Git history or research files.
-
-## Current validation status
-
-The corrected and performance-optimized v0 release is founder-approved and production-verified.
-
-Do not use older pending-validation language to reopen the closed release. `docs/PROJECT_STATE.md` now owns the next gate: Editorial Packaging Standard Refinement.
+Rejected or superseded designs, copy, strategies, and generated outputs do not become precedent merely because they remain in Git history or research files.
