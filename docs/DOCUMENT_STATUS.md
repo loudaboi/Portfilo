@@ -22,7 +22,7 @@ When documents disagree, use:
 
 Current primary workstream:
 
-**Editorial Direction + News Intelligence v0 / ChatGPT News Scanner Pilot**
+**Editorial Direction + News Intelligence v0 / News-Why-Hustle section migration**
 
 Canonical upstream operating contract:
 
@@ -36,7 +36,13 @@ Canonical reusable scanner prompt:
 
 `docs/NEWS_SCANNER_PROMPT.md`
 
-The previous Editorial Packaging Standard Refinement task is deferred, not canceled.
+The public editorial architecture is now:
+
+`News / Why / Hustle`
+
+`Stories` is retired as a public section name. The generic journalistic word `story` may still appear internally where it describes an editorial artifact, research packet, or writing job rather than a public navigation section.
+
+The previous Editorial Packaging Standard Refinement task remains deferred, not canceled.
 
 ## Current canonical documents
 
@@ -48,7 +54,7 @@ The previous Editorial Packaging Standard Refinement task is deferred, not cance
 ### Product and implementation state
 
 - `docs/PROJECT_STATE.md` - current phase, validated state, active work plan, and exact next task.
-- `docs/V0_SCOPE.md` - current v0 product/technical boundaries.
+- `docs/V0_SCOPE.md` - current v0 product/technical boundaries and News/Why/Hustle public section contract.
 - `docs/DESIGN_DIRECTION.md` - current visual/responsive contract.
 - `README.md` - current repository overview.
 - `BACKLOG.md` - ideas outside current scope only.
@@ -60,14 +66,14 @@ Current:
 - `docs/EDITORIAL_INTELLIGENCE.md` - upstream News discovery, ChatGPT-led scanner model, signal handling, automation boundary, and handoff into existing editorial systems.
 - `docs/EDITORIAL_SOURCE_MAP.md` - starting source universe, monitoring priority, optional supporting inputs, and source-map review rules.
 - `docs/NEWS_SCANNER_PROMPT.md` - short reusable prompt for a dedicated ChatGPT News-scanner conversation; substantive authority remains in the canonical standards.
-- `docs/CONTENT_PLANNING.md` - substantial editorial candidate selection and prioritization.
-- `docs/EDITORIAL_STANDARD.md` - editorial integrity and coverage principles.
+- `docs/CONTENT_PLANNING.md` - substantial Why/Hustle candidate selection and prioritization.
+- `docs/EDITORIAL_STANDARD.md` - editorial integrity, coverage principles, and public News/Why/Hustle distinction.
 - `docs/RESEARCH_STANDARD.md` - evidence, source hierarchy, contradiction search, research packets, and verification.
 - `docs/WRITING_SYSTEM.md` - writing-form selection and structural/stylistic authority.
 - `docs/STYLE_RESEARCH_STANDARD.md` - story-specific professional form research.
 - `docs/EXPLAINED_STANDARD.md` - founder-approved Explained direction; no universal Explainer structure is canonical.
 - `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture.
-- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths.
+- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths plus current `section: news | why | hustle` schema contract.
 - `docs/COPY_STYLE.md` - public copy rules and institutional-copy provenance.
 - `docs/PORTFILO_TEST_STANDARD.md` - Portfilo Test methodology.
 
@@ -80,11 +86,13 @@ EDITORIAL INTELLIGENCE
 source map + current web -> signal -> original-source check -> News / Watch / Story Idea / Ignore
 
 CONTENT PLANNING
-idea/question -> editorial gate -> priority -> assignment
+idea/question -> editorial gate -> priority -> Why / Hustle assignment
 
 RESEARCH + WRITING + PUBLISHING
 research packet -> evidence -> story decision -> form -> draft -> verification -> package -> publish
 ```
+
+`STORY IDEA` remains a private scanner/Sheet label, not a public section.
 
 `docs/EDITORIAL_INTELLIGENCE.md` does not create a second evidence hierarchy. `docs/RESEARCH_STANDARD.md` remains the authority for evidentiary source tiers and claim verification.
 
@@ -92,9 +100,9 @@ research packet -> evidence -> story decision -> form -> draft -> verification -
 
 `docs/NEWS_SCANNER_PROMPT.md` is an invocation contract, not a substitute for repository authority.
 
-Story ideas do not have to originate in the News pipeline.
+Deeper editorial ideas do not have to originate in the News pipeline.
 
-### Public taxonomy
+### Public topic taxonomy
 
 Current public topic taxonomy remains:
 
@@ -104,11 +112,11 @@ Runtime values remain:
 
 `business / technology / startup / ai`
 
-The founder-approved internal editorial direction is broader and is recorded in `docs/PROJECT_STATE.md` and `docs/EDITORIAL_INTELLIGENCE.md`.
+This topic taxonomy is separate from the public section architecture:
 
-A public taxonomy change is a separate gate because it affects documentation, content frontmatter, and `src/content.config.ts`.
+`News / Why / Hustle`
 
-Do not infer a taxonomy migration from approval of the editorial-intelligence workstream.
+Do not infer a topic-taxonomy migration from the section migration.
 
 ### Design and imagery
 
@@ -120,7 +128,7 @@ Current:
 
 Astro's native image pipeline remains the current runtime authority for editorial image rendering.
 
-Whether published News/Stories should normally require an image remains intentionally open and belongs to the deferred Editorial Packaging Standard Refinement task.
+Whether published News/Why/Hustle work should normally require an image remains intentionally open and belongs to the deferred Editorial Packaging Standard Refinement task.
 
 ### Email and deployment
 
@@ -144,12 +152,12 @@ Cloudflare production behavior remains:
 
 ## Known adjacent authority hygiene issues
 
-The 2026-09-10 conflict audit identified two stale documentation issues that do not block the active editorial-intelligence workstream:
+The 2026-09-10 conflict audit identified two stale documentation issues that do not block the current workstream:
 
-1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, and runtime source takes precedence.
+1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, `DESIGN_DIRECTION`, and runtime source takes precedence.
 2. `docs/SOCIAL_DISTRIBUTION.md` still contains legacy `Portfilo Brief` naming. Current newsletter public naming authority is `Portfilo newsletter`.
 
-Treat these as maintenance/reconciliation items. Do not use the stale clauses to reopen the already-approved route, header, or newsletter-name decisions.
+Treat these as maintenance/reconciliation items. Do not use the stale clauses to reopen already-approved product decisions.
 
 ## Current runtime authority
 
@@ -159,7 +167,7 @@ Treat these as maintenance/reconciliation items. Do not use the stale clauses to
 
 Current masthead:
 
-`Portfilo | News | Stories`
+`Portfilo | News | Why | Hustle`
 
 There is no persistent Subscribe CTA.
 
@@ -170,8 +178,10 @@ Current editorial/institutional routes:
 - `/`
 - `/news`
 - `/news/[slug]`
-- `/stories`
-- `/stories/[slug]`
+- `/why`
+- `/why/[slug]`
+- `/hustle`
+- `/hustle/[slug]`
 - `/standards`
 - `/privacy`
 - `/confirmed`
@@ -179,7 +189,9 @@ Current editorial/institutional routes:
 
 Retired routes:
 
-- `/subscribe` -> `/#newsletter` via Cloudflare redirects
+- `/stories` -> `/why` via Cloudflare redirect
+- `/stories/*` -> `/why/:splat` via Cloudflare redirect
+- `/subscribe` -> `/#newsletter` via Cloudflare redirect
 - `/about` -> `/`
 - `/series/[slug]` removed from v0
 
@@ -188,29 +200,33 @@ Retired routes:
 `src/content.config.ts` currently owns:
 
 ```text
-section: news | stories
+section: news | why | hustle
 contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
 topic: business | technology | startup | ai
 status: draft | published
 ```
 
-No taxonomy or schema change is authorized by the active intelligence workstream.
+The internal Astro collection remains named `stories`. That collection name is implementation plumbing, not public navigation.
+
+All four existing non-News content entries have been reclassified to `section: why`. There is no synthetic Hustle content.
 
 ### Archives and articles
 
-`src/components/EditorialArchive.astro` owns shared News/Stories archive presentation.
+`src/components/EditorialArchive.astro` owns shared News/Why/Hustle archive presentation.
 
-`src/components/EditorialArticle.astro` owns shared News/Stories article presentation.
+`src/components/EditorialArticle.astro` owns shared article presentation with `news` and `longform` rendering modes. Why and Hustle use the shared long-form mode.
 
-The current implementation already supports separate News/Stories modes and displays content classification supplied by the routes. No runtime redesign is required for Editorial Intelligence v0.
+The homepage keeps one primary long-form Feature that may draw from Why or Hustle inventory. It does not add separate homepage section blocks merely because the public navigation has three editorial destinations.
 
 ## Current validation status
 
-The corrected and performance-optimized website v0 release remains founder-approved and production-verified.
+The previous corrected and performance-optimized website v0 release remains founder-approved and production-verified.
 
-Current Editorial Direction + News Intelligence changes are documentation/operations-only unless a later explicit gate authorizes runtime changes.
+The News/Why/Hustle migration changes runtime code and therefore requires a fresh `npm run check`, `npm run build`, and preview/responsive inspection before it can be considered validated for release.
 
-Do not claim a new local build/check validation pass unless it was actually run against the relevant state.
+Do not claim those checks passed until they actually run against the migration state.
+
+No merge to `main` is authorized by the migration implementation gate.
 
 ## Historical/provenance records
 
