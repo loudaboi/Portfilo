@@ -4,7 +4,7 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**EDITORIAL DIRECTION + NEWS INTELLIGENCE V0 ACTIVE / CHATGPT NEWS SCANNER PILOT**
+**EDITORIAL DIRECTION + NEWS INTELLIGENCE V0 OPERATIONAL / NORMAL SCANNER USE**
 
 The corrected and performance-optimized Portfilo v0 website release remains founder-approved and closed.
 
@@ -161,7 +161,7 @@ The Inoreader experiment was useful but exposed unnecessary integration and sour
 - Inoreader's ChatGPT integration was not reliable enough to make the workflow depend on it;
 - the canonical source map remains useful regardless of collection mechanism.
 
-Therefore Inoreader is retained only as an optional reading surface for the feeds already configured. The primary workflow is now supervised ChatGPT-led source scanning plus original-source tracing.
+Therefore Inoreader is retained only as an optional reading surface for the feeds already configured. The primary workflow is supervised ChatGPT-led source scanning plus original-source tracing.
 
 This is a workflow simplification, not a change to research or publishing standards.
 
@@ -218,9 +218,7 @@ Monitoring labels `CORE / WATCH / TARGETED` describe attention frequency only. T
 
 Primary v0 discovery surface.
 
-Reusable prompt:
-
-`docs/NEWS_SCANNER_PROMPT.md`
+`docs/NEWS_SCANNER_PROMPT.md` is founder-approved and frozen for operational v0 use.
 
 ### Private signal list
 
@@ -244,7 +242,7 @@ Automatic filters are not assumed or required.
 
 The founder completed a first-pass Inoreader setup with useful feeds where available.
 
-It is now optional supporting infrastructure only. Do not make the workflow depend on its integration, folder state, or coverage.
+It is optional supporting infrastructure only. Do not make the workflow depend on its integration, folder state, or coverage.
 
 ### Alerts
 
@@ -252,18 +250,28 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Pilot history
 
+### Manual pilot
+
 A first manual News pilot was completed on 2026-09-10 and retained five signals to exercise the triage model.
 
-It demonstrated that:
+It demonstrated that startup funding and accelerator participation are valid signals, original sources should replace discovery articles where practical, not every launch deserves News, and Philippine AI/infrastructure developments can generate both News and deeper Story questions.
 
-1. Philippine AI/infrastructure policy can produce both current News and larger Story patterns.
-2. listed-company/financial disclosures can surface major fintech/company developments;
-3. major global AI launches belong when they materially affect approved beats, but generic product recaps remain weak;
-4. startup funding and YC/accelerator participation are valid Portfilo News signals;
-5. not every startup/app launch deserves News;
-6. original sources should replace secondary discovery articles whenever practical before promotion.
+### ChatGPT News Scanner pilot
 
-The pilot did not authorize publication of any candidate.
+A live ChatGPT-led scanner pilot was completed on 2026-09-10 against the canonical source map plus selective broader web search.
+
+The pilot passed the approved checks:
+
+- it surfaced a fresh Philippine business/technology transaction through PSE EDGE and traced it to primary disclosure evidence;
+- it surfaced the current Philippine AI+ Infrastructure Masterplan and traced the development to authoritative reporting with the DICT masterplan source identified;
+- it surfaced a major global AI/startup funding development and traced it to the company's own announcement plus independent reporting;
+- it retained global developments without inventing a Philippine angle;
+- it did not fabricate a fresh Philippine startup/funding signal when none surfaced strongly within the scan window;
+- output could remain selective rather than becoming a headline dump.
+
+No pilot candidate was authorized for publication by the scanner test itself.
+
+The scanner prompt is therefore frozen as operational v0.
 
 ## Current production/staging facts
 
@@ -301,33 +309,39 @@ Do not claim `npm run check` or `npm run build` passed for documentation commits
 2. **Canonical editorial-direction and intelligence documentation** - complete.
 3. **Initial source map** - complete and refined from pilot evidence.
 4. **Gmail signal label + private signal sheet** - activated.
-5. **First manual News pilot** - complete.
-6. **Inoreader first-pass setup** - founder-completed; retained as optional support only.
+5. **Manual News pilot** - complete.
+6. **Inoreader first-pass setup** - founder-completed; optional support only.
 7. **ChatGPT-led workflow reconciliation** - complete.
-8. **Reusable News Scanner prompt** - created for pilot.
-9. **Run and evaluate one real ChatGPT News Scanner scan** - exact next task.
-10. **If the scan passes, freeze scanner prompt and continue normal use.**
+8. **Reusable News Scanner prompt** - founder-approved and frozen.
+9. **Live ChatGPT News Scanner pilot** - complete / PASS.
+10. **Normal scanner operation** - active.
 11. **Review real friction after repeated use** - change sources or tooling only from observed failure.
 
 ## Exact next task
 
-**Run One Real ChatGPT News Scanner Pilot**
+**Use the Portfilo News Scanner in Normal Operation**
 
-Use `docs/NEWS_SCANNER_PROMPT.md` and current canonical authority.
+Start or maintain a dedicated scanner conversation using `docs/NEWS_SCANNER_PROMPT.md`.
 
-Evaluate the pilot on:
+Normal invocation:
 
-- useful current developments found;
-- original-source tracing;
-- Philippine business/technology coverage;
+```text
+Run the Portfilo News scan.
+```
+
+For retained `NEWS` candidates, explicitly choose whether to move the item into deeper research or the fast factual path under `docs/PUBLISHING_STANDARD.md`.
+
+Use `Portfilo Signals` only for retained signals worth remembering.
+
+After repeated real scans expose a pattern, review:
+
+- missed developments;
+- weak/noisy source families;
 - startup/funding/accelerator coverage;
-- sensible `NEWS / WATCH / STORY IDEA / IGNORE` judgment;
-- output compactness and noise;
-- material source-map gaps.
+- whether Watch items are being revisited;
+- whether any alert or paid capability has a measurable recurring benefit.
 
-Do not draft or publish any candidate merely because it passes scanner triage.
-
-If the scanner pilot succeeds, the next decision is to mark `docs/NEWS_SCANNER_PROMPT.md` as frozen/operational and use the scanner as Portfilo's normal v0 News-discovery routine.
+Do not change the scanner prompt or source map from one-off search results alone.
 
 No paid upgrade, scraper, News API, autonomous agent, custom dashboard, automated ranking, n8n/Zapier/Make workflow, or database is authorized.
 
