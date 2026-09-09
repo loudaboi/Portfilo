@@ -8,11 +8,11 @@ _Last updated: 2026-09-10_
 
 The corrected and performance-optimized Portfilo v0 website release remains founder-approved and closed.
 
-The founder has now approved Editorial Direction + News Intelligence v0 as the primary Portfilo workstream.
+The founder has approved Editorial Direction + News Intelligence v0 as the primary Portfilo workstream.
 
 This supersedes `Editorial Packaging Standard Refinement` as the immediate next task. The packaging refinement remains a valid deferred editorial task and is not canceled.
 
-The active workstream is documentation and editorial operations first. It does **not** authorize a taxonomy migration, runtime redesign, CMS, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
+The active workstream is editorial operations first. It does **not** authorize a taxonomy migration, runtime redesign, CMS, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
 
 ## Repository authority
 
@@ -164,17 +164,21 @@ The following existing systems remain valid and should not be rebuilt:
 - the current News/Stories route and article/archive implementation does not need redesign for this workstream.
 - `BACKLOG.md` already keeps custom CMS, internal source database, editorial workflow UI, and other newsroom tooling out of v0 unless proven necessary.
 
-### Conflicts that require authority reconciliation
+### Reconciled during this phase
 
-- the previous `PROJECT_STATE.md` still named Editorial Packaging Standard Refinement as the exact next task;
-- `docs/CONTENT_PLANNING.md` begins its planning diagram at `Signal -> Story question`, which can wrongly imply that all Story ideas originate in News discovery;
-- `docs/EDITORIAL_STANDARD.md` contains older mission language centered on `ambitious Filipinos`, which is narrower than the approved Philippines-primary/not-Philippines-only reporting direction;
-- `docs/EDITORIAL_STANDARD.md` refers to `Business, Startups, or Building` as classification choices even though the runtime schema currently allows only `business / technology / startup / ai`;
+- the previous exact-next-task authority was replaced with Editorial Direction + News Intelligence v0;
+- `docs/CONTENT_PLANNING.md` now explicitly allows Story ideas to originate from observation, curiosity, experience, conversations, data, News signals, or other worthwhile questions rather than requiring a News signal;
+- `docs/EDITORIAL_STANDARD.md` now uses the approved Philippines-primary/not-Philippines-only reporting direction rather than the narrower old `ambitious Filipinos` mission language;
+- `docs/EDITORIAL_STANDARD.md` no longer treats `Building` as a runtime/public topic value;
+- `docs/REFERENCE_SOURCES.md` now distinguishes decision-reference sources from the future operational newsroom source map and records the re-check rule for changing free-tool limits.
+
+### Known dependencies / deferred hygiene
+
 - one current draft Story explicitly describes Portfilo through the current four public topics. Any later taxonomy change must therefore audit content copy as well as schema/docs;
 - `docs/COPY_STYLE.md` contains stale route/header facts from an earlier Subscribe-page state even though current route authority has retired `/subscribe` and the persistent header Subscribe CTA;
 - `docs/SOCIAL_DISTRIBUTION.md` contains legacy `Portfilo Brief` naming even though current newsletter authority uses `Portfilo newsletter`.
 
-The last two items are adjacent authority-hygiene issues. They do not block Editorial Intelligence v0, but later maintenance should reconcile them without reopening the underlying product decisions.
+The last two items are adjacent authority-hygiene issues. They do not block Editorial Intelligence v0. Later maintenance should reconcile them without reopening the underlying product decisions.
 
 ## Current production/staging facts
 
@@ -222,8 +226,8 @@ Do not claim `npm run check` or `npm run build` passed for documentation commits
 ## Active work plan
 
 1. **Repository conflict audit** — complete.
-2. **Canonical editorial-direction and intelligence documentation** — active reconciliation.
-3. **Initial source map** — next operational task after documentation sync.
+2. **Canonical editorial-direction and intelligence documentation** — complete.
+3. **Initial source map** — exact next task.
 4. **Free gathering setup** — use one main RSS/feed surface, Gmail filtering, optional alerts, and one lightweight private signal list.
 5. **Manual News pilot** — operate with real developments before adding automation.
 6. **Review real friction** — remove noisy sources, add missing sources, and identify repeated manual problems.
@@ -233,7 +237,7 @@ Do not claim `npm run check` or `npm run build` passed for documentation commits
 
 **Initial Editorial Source Map + Manual News Gathering Setup**
 
-After documentation synchronization, build a deliberately small first source universe, roughly 25-40 useful sources as a starting range rather than a quota.
+Build a deliberately small first source universe, roughly 25-40 useful sources as a starting range rather than a quota.
 
 The source map should prioritize the approved editorial attention areas and distinguish discovery from evidence. It should not create a second evidentiary hierarchy because `docs/RESEARCH_STANDARD.md` already owns source tiers for reporting.
 
