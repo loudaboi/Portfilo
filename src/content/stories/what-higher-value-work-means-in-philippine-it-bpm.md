@@ -4,7 +4,6 @@ dek: "The same industry phrase can point to credit analysis, clinical informatic
 section: stories
 contentType: explained
 topic: business
-author: "Portfilo"
 publishedAt: 2026-09-03
 status: draft
 featured: false
