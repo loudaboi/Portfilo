@@ -4,15 +4,21 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**EDITORIAL DIRECTION + NEWS INTELLIGENCE V0 OPERATIONAL / NORMAL SCANNER USE**
+**NEWS / WHY / HUSTLE SECTION MIGRATION IMPLEMENTED / VALIDATION PENDING**
 
-The corrected and performance-optimized Portfilo v0 website release remains founder-approved and closed.
+The corrected and performance-optimized Portfilo v0 production release remains founder-approved and closed on `main`.
 
-The founder has approved Editorial Direction + News Intelligence v0 as the primary Portfilo workstream.
+The founder has now approved and implemented a public editorial section migration on the working branch from:
+
+`Portfilo | News | Stories`
+
+to:
+
+`Portfilo | News | Why | Hustle`
+
+This is a public information-architecture and schema migration. It does not authorize a topic-taxonomy change, CMS, database, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
 
 `Editorial Packaging Standard Refinement` remains deferred, not canceled.
-
-The active workstream is editorial operations first. It does **not** authorize a taxonomy migration, runtime redesign, CMS, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
 
 ## Repository authority
 
@@ -41,33 +47,60 @@ Release boundary:
 
 `main`
 
-Verified Cloudflare model:
+Verified Cloudflare model from the closed website release:
 
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The documentation/operations work in this phase does not imply a production release.
+The current migration remains on the working branch. No merge to `main` is authorized by the implementation approval.
 
 ## Approved product direction
 
-- Portfilo is a business and technology publication.
-- News is the current/day-to-day editorial layer.
-- Stories is the deeper editorial layer.
-- Public topics remain `Business / Technology / Startup / AI` **for now**.
-- Portfilo remains free in v0.
-- Newsletter acquisition is important but must not dominate publication identity.
-- Approved newsletter promise: latest news, a 7-minute read, three times per week.
-- Exact send days/times remain open.
-- `briefing` and `Portfilo Brief` are not current public acquisition language.
-- No individual public author/byline system is part of v0.
+Portfilo is a business and technology publication.
 
-A change to the public topic taxonomy is a separate decision because the taxonomy is encoded in documentation, content frontmatter, and `src/content.config.ts`.
+Public editorial sections are now:
 
-Do not migrate topic values without an explicit taxonomy gate.
+### News
+
+> **What changed?**
+
+Current/day-to-day reporting and verified developments.
+
+### Why
+
+> **Why is this happening? How does this work? What is changing underneath?**
+
+Question-led deeper work about mechanisms, systems, industries, patterns, causes, consequences, and contradictions.
+
+### Hustle
+
+> **Who is building or operating it, and how?**
+
+People-led reported work about founders, operators, and business owners. Hustle should examine real decisions, constraints, operations, failures, pivots, growth, and outcomes. It is not a motivation feed, promotional success-story section, or hustle-culture product.
+
+`Stories` is retired as a public section name. The generic journalistic word `story` remains valid internally when it refers to an editorial artifact, research packet, or reporting process rather than navigation or public routing.
+
+Public topics remain unchanged:
+
+`Business / Technology / Startup / AI`
+
+Runtime topic values remain:
+
+`business / technology / startup / ai`
+
+Section and topic are separate dimensions. Do not infer a topic-taxonomy migration from this section change.
+
+Portfilo remains free in v0.
+
+Newsletter acquisition remains important but must not dominate publication identity.
+
+Approved newsletter promise remains: latest news, a 7-minute read, three times per week. Exact send days/times remain open.
+
+No individual public author/byline system is part of v0.
 
 ## Approved internal editorial direction
 
-Portfilo's strongest areas of editorial attention are:
+Portfilo's strongest areas of editorial attention remain:
 
 ### AI + Work
 
@@ -77,8 +110,6 @@ AI products, deployment, workflows, jobs, economics, governance, and practical c
 
 Startups, founders, accelerators, funding, products, distribution, sales, pricing, hiring, operations, business models, expansion, acquisitions, failure, and the mechanics of building companies.
 
-This is not limited to startups. Established companies belong when a development or operating question is materially useful.
-
 ### Digital Economy + Infrastructure
 
 Payments, fintech, IT-BPM, cloud, data centers, connectivity, cybersecurity, platforms, digital regulation, and other systems underneath technology and business activity.
@@ -87,34 +118,11 @@ Payments, fintech, IT-BPM, cloud, data centers, connectivity, cybersecurity, pla
 
 A material development outside the priority lanes can still belong when it changes companies, products, markets, infrastructure, work, or the process of building businesses.
 
-These are attention priorities, not quotas or public navigation labels.
-
 Geographic rule:
 
 > **The Philippines is Portfilo's primary reporting ground, not an artificial boundary.**
 
 Use Philippine context when geography materially affects the subject. Global developments can belong without a manufactured Philippine angle.
-
-This internal emphasis is not a public geographic positioning promise.
-
-## News and Stories operating model
-
-```text
-NEWS
-What changed?
-
-STORIES
-What is changing underneath?
-Why is this happening?
-How does this work?
-What does this reveal?
-```
-
-News is primarily event-driven and uses the fast factual or deeper reporting path depending on what the development requires.
-
-Stories are primarily question-driven. Story ideas may come from observation, curiosity, experience, conversations, data, repeated News signals, or anywhere else a worthwhile question emerges.
-
-The News discovery pipeline is not the exclusive source of Story ideas.
 
 ## Editorial intelligence v0
 
@@ -146,204 +154,174 @@ HUMAN EDITORIAL REVIEW
 NEWS / WATCH / STORY IDEA / IGNORE
 ```
 
-ChatGPT is the primary v0 discovery surface. It may locate, organize, summarize, compare, and surface possible signals, but AI output has zero evidentiary authority.
+`STORY IDEA` remains a private scanner/Sheet label. If promoted into substantial reporting, the public section is chosen later as Why or Hustle based on the actual editorial job.
 
-Human editorial judgment remains responsible for significance, verification, routing, and publication decisions.
+ChatGPT remains the primary v0 discovery surface. AI output has zero evidentiary authority.
 
-RSS/Inoreader, Gmail, alerts, and direct manual checks are optional supporting inputs rather than required infrastructure.
+RSS/Inoreader, Gmail, alerts, and direct manual checks remain optional supporting inputs.
 
-## Why the operating model changed
+## Current section/runtime migration state
 
-The Inoreader experiment was useful but exposed unnecessary integration and source-availability friction:
+The founder-approved migration has been implemented on `build/portfilo-v0`.
 
-- many important official and startup sources do not expose useful RSS;
-- forcing non-RSS pages into paid or custom monitoring would violate the v0 anti-overengineering direction;
-- Inoreader's ChatGPT integration was not reliable enough to make the workflow depend on it;
-- the canonical source map remains useful regardless of collection mechanism.
+### Content schema
 
-Therefore Inoreader is retained only as an optional reading surface for the feeds already configured. The primary workflow is supervised ChatGPT-led source scanning plus original-source tracing.
+`src/content.config.ts` now owns:
 
-This is a workflow simplification, not a change to research or publishing standards.
+```text
+section: news | why | hustle
+contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
+topic: business | technology | startup | ai
+status: draft | published
+```
 
-## Repository conflict/reconciliation state
+The internal Astro collection remains named `stories`. That implementation name is not a public section.
 
-### Already aligned and unchanged
+News entries cannot be `featured`; Why/Hustle entries may be featured when editorially justified.
 
-- `docs/RESEARCH_STANDARD.md` owns evidentiary source hierarchy, source maps for assigned stories, evidence ledgers, contradiction search, interviews, verification, and story outcomes.
-- `docs/PUBLISHING_STANDARD.md` owns the substantial and fast-factual publishing paths.
-- `docs/WRITING_SYSTEM.md` keeps form dependent on reader need and evidence rather than a universal Story template.
-- `docs/EXPLAINED_STANDARD.md` rejects a universal explainer structure.
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` remains valid for headline/dek/metadata behavior.
-- the current News/Stories route and article/archive implementation does not need redesign for this workstream.
-- `BACKLOG.md` keeps custom CMS, internal source database, editorial workflow UI, and other newsroom tooling out of v0 unless proven necessary.
+### Existing content migration
 
-### Reconciled during Editorial Intelligence v0
+All four existing non-News entries were reclassified from `section: stories` to `section: why`.
 
-- Editorial Direction + News Intelligence replaced Packaging Refinement as the immediate workstream;
-- Story ideas are explicitly allowed to originate outside News discovery;
-- the Editorial Standard now uses the approved Philippines-primary/not-Philippines-only direction;
-- invalid `Building` runtime-topic wording was removed;
-- `docs/REFERENCE_SOURCES.md` is distinguished from the operational source map;
-- `docs/EDITORIAL_SOURCE_MAP.md` owns the monitored source universe and monitoring priority;
-- the primary discovery method is now ChatGPT-led source scanning rather than RSS/Inoreader;
-- `docs/NEWS_SCANNER_PROMPT.md` provides the reusable scanner invocation while deferring substantive authority to the canonical standards.
+Current Why inventory therefore contains:
 
-### Known adjacent authority hygiene
+- one published article;
+- three draft previews.
 
-- one current draft Story explicitly describes Portfilo through the current four public topics. Any later taxonomy change must audit content copy as well as schema/docs;
-- `docs/COPY_STYLE.md` contains stale route/header facts from an earlier Subscribe-page state;
-- `docs/SOCIAL_DISTRIBUTION.md` contains legacy `Portfilo Brief` naming.
+There is currently no Hustle inventory. `/hustle` is intentionally allowed to render an honest empty state rather than synthetic founder/business-owner content.
 
-These do not block Editorial Intelligence v0.
+### Public routes
 
-## Current source-map state
+Current target route set:
 
-The operating source map contains 32 fixed starting sources across:
+- `/`
+- `/news`
+- `/news/[slug]`
+- `/why`
+- `/why/[slug]`
+- `/hustle`
+- `/hustle/[slug]`
+- `/standards`
+- `/privacy`
+- `/confirmed`
+- `/404`
 
-- Philippine primary/official sources;
-- Philippine secondary discovery sources;
-- startup/venture discovery sources;
-- global AI primary sources;
-- global secondary discovery sources.
+Retired routes are redirected:
 
-The startup layer explicitly includes Y Combinator, Kaya Founders, and Kickstart Ventures to catch signals such as accelerator acceptance, batch participation, Philippine startup funding, and ecosystem developments.
+- `/stories` -> `/why`
+- `/stories/*` -> `/why/:splat`
+- `/subscribe` -> `/#newsletter`
+- `/about` -> `/`
 
-Company/startup official channels remain on-demand rather than permanent inventory.
+### Navigation
 
-Monitoring labels `CORE / WATCH / TARGETED` describe attention frequency only. They do not replace evidentiary tiers in `docs/RESEARCH_STANDARD.md`.
+Current masthead implementation:
 
-## Current supporting stack
+`Portfilo | News | Why | Hustle`
+
+Footer navigation now exposes Why and Hustle instead of Stories.
+
+### Homepage
+
+The existing homepage composition is preserved.
+
+There are **not** separate Why and Hustle homepage blocks.
+
+The existing primary long-form Feature now draws from published Why/Hustle inventory and generates its route from the entry's section.
+
+The contextual rail can identify another Why/Hustle item without reintroducing Stories as a public destination.
+
+### Shared archive/article system
+
+`src/components/EditorialArchive.astro` remains the shared archive implementation.
+
+`src/components/EditorialArticle.astro` now uses:
+
+- `news` mode for News;
+- `longform` mode for Why/Hustle.
+
+Why and Hustle preserve the long-form Source Serif reading treatment and optional section rail/table-of-contents behavior without duplicating components.
+
+## Supporting editorial stack
 
 ### ChatGPT News Scanner
 
-Primary v0 discovery surface.
-
-`docs/NEWS_SCANNER_PROMPT.md` is founder-approved and frozen for operational v0 use.
+Primary v0 discovery surface. The scanner prompt remains founder-approved and operational, with Why/Hustle routing reconciled.
 
 ### Private signal list
 
-A private Google Sheet named `Portfilo Signals` exists outside the repository.
-
-Current columns:
+The private Google Sheet `Portfilo Signals` remains outside the repository with:
 
 `Date / Signal / Source URL / Decision / Note or Watch trigger`
 
-Decision values:
+Decision values remain:
 
 `NEWS / WATCH / STORY IDEA / IGNORE`
 
 ### Gmail
 
-The external label `Portfilo / Signals` exists.
-
-Automatic filters are not assumed or required.
+The external label `Portfilo / Signals` exists. Automatic filters are not assumed or required.
 
 ### Inoreader
 
-The founder completed a first-pass Inoreader setup with useful feeds where available.
-
-It is optional supporting infrastructure only. Do not make the workflow depend on its integration, folder state, or coverage.
+First-pass feed setup exists but remains optional supporting infrastructure only.
 
 ### Alerts
 
 No broad alert set is currently required. Add an alert only when repeated scanner use demonstrates a specific gap.
 
-## Pilot history
-
-### Manual pilot
-
-A first manual News pilot was completed on 2026-09-10 and retained five signals to exercise the triage model.
-
-It demonstrated that startup funding and accelerator participation are valid signals, original sources should replace discovery articles where practical, not every launch deserves News, and Philippine AI/infrastructure developments can generate both News and deeper Story questions.
-
-### ChatGPT News Scanner pilot
-
-A live ChatGPT-led scanner pilot was completed on 2026-09-10 against the canonical source map plus selective broader web search.
-
-The pilot passed the approved checks:
-
-- it surfaced a fresh Philippine business/technology transaction through PSE EDGE and traced it to primary disclosure evidence;
-- it surfaced the current Philippine AI+ Infrastructure Masterplan and traced the development to authoritative reporting with the DICT masterplan source identified;
-- it surfaced a major global AI/startup funding development and traced it to the company's own announcement plus independent reporting;
-- it retained global developments without inventing a Philippine angle;
-- it did not fabricate a fresh Philippine startup/funding signal when none surfaced strongly within the scan window;
-- output could remain selective rather than becoming a headline dump.
-
-No pilot candidate was authorized for publication by the scanner test itself.
-
-The scanner prompt is therefore frozen as operational v0.
-
-## Current production/staging facts
-
-### News
-
-Until real News inventory replaces them, existing synthetic News fixtures may render only as clearly labeled, non-clickable layout placeholders.
-
-They must not create fake article routes or Article metadata and must be replaced before broad-audience launch.
-
-### Stories
-
-The current Story inventory remains one published Story and three draft Story previews.
-
-Draft status is not silently changed to published. Draft routes remain `noindex, nofollow` and omit published-story canonical/social/article metadata.
-
-Existing Story drafts are separate editorial artifacts. This workstream does not automatically rewrite or publish them.
-
-### Editorial imagery
-
-The production image system supports image and image-less archive/article states.
-
-Whether published News and Stories should normally require an editorial image remains an open packaging decision deferred with Editorial Packaging Standard Refinement.
-
 ## Validation status
 
-**WEBSITE RELEASE REMAINS CLOSED / PRODUCTION FOUNDER-APPROVED.**
+**MIGRATION IMPLEMENTATION COMPLETE / FRESH RUNTIME VALIDATION NOT YET CLAIMED.**
 
-Current scanner/source-map work is documentation/operations-only. No new runtime validation pass is implied.
+The current environment used for repository writes does not provide a runnable checkout with installed Node dependencies, and the connected GitHub repository exposes no CI workflow/status for these commits.
 
-Do not claim `npm run check` or `npm run build` passed for documentation commits unless those commands were actually run against that state.
+Therefore do **not** claim `npm run check`, `npm run build`, or responsive preview QA passed for the News/Why/Hustle migration until those checks actually run against the current working-branch state.
+
+The previous production release validation remains historical evidence for the pre-migration site only.
 
 ## Active work plan
 
-1. **Repository conflict audit** - complete.
-2. **Canonical editorial-direction and intelligence documentation** - complete.
-3. **Initial source map** - complete and refined from pilot evidence.
-4. **Gmail signal label + private signal sheet** - activated.
-5. **Manual News pilot** - complete.
-6. **Inoreader first-pass setup** - founder-completed; optional support only.
-7. **ChatGPT-led workflow reconciliation** - complete.
-8. **Reusable News Scanner prompt** - founder-approved and frozen.
-9. **Live ChatGPT News Scanner pilot** - complete / PASS.
-10. **Normal scanner operation** - active.
-11. **Review real friction after repeated use** - change sources or tooling only from observed failure.
+1. **News scanner/source-map system** - operational.
+2. **News / Why / Hustle architecture decision** - founder-approved.
+3. **Repository impact audit** - complete.
+4. **Schema/frontmatter migration** - implemented.
+5. **Why + Hustle route migration** - implemented.
+6. **Header/footer/homepage migration** - implemented.
+7. **Shared long-form article-mode migration** - implemented.
+8. **Legacy Stories redirects/internal-link migration** - implemented.
+9. **Canonical documentation reconciliation** - implemented.
+10. **Fresh local check/build + preview QA** - exact next task.
+11. **Release decision / merge to `main`** - separate future gate only after validation and founder approval.
 
 ## Exact next task
 
-**Use the Portfilo News Scanner in Normal Operation**
+**Validate the News / Why / Hustle migration on the working branch.**
 
-Start or maintain a dedicated scanner conversation using `docs/NEWS_SCANNER_PROMPT.md`.
-
-Normal invocation:
+Required validation:
 
 ```text
-Run the Portfilo News scan.
+npm run check
+npm run build
 ```
 
-For retained `NEWS` candidates, explicitly choose whether to move the item into deeper research or the fast factual path under `docs/PUBLISHING_STANDARD.md`.
+Then inspect at minimum:
 
-Use `Portfilo Signals` only for retained signals worth remembering.
+- homepage;
+- `/news`;
+- `/why`;
+- one published `/why/[slug]` article;
+- `/hustle` empty state;
+- header at desktop and narrow mobile widths;
+- footer navigation;
+- `/stories` redirect to `/why`;
+- one legacy `/stories/[slug]` redirect to the corresponding `/why/[slug]` route;
+- sitemap/canonical behavior for the new public routes;
+- no horizontal overflow at the existing responsive checkpoints.
 
-After repeated real scans expose a pattern, review:
+If validation exposes a concrete defect, fix only that defect without reopening the approved News/Why/Hustle architecture.
 
-- missed developments;
-- weak/noisy source families;
-- startup/funding/accelerator coverage;
-- whether Watch items are being revisited;
-- whether any alert or paid capability has a measurable recurring benefit.
-
-Do not change the scanner prompt or source map from one-off search results alone.
-
-No paid upgrade, scraper, News API, autonomous agent, custom dashboard, automated ranking, n8n/Zapier/Make workflow, or database is authorized.
+Do not merge to `main` without a separate explicit founder release approval.
 
 ## Deferred / separate workstreams
 
@@ -351,7 +329,8 @@ Remain separate unless explicitly promoted:
 
 - Editorial Packaging Standard Refinement, including the editorial-image requirement question;
 - individual News reporting and publication;
-- individual Story development and publication;
+- individual Why development and publication;
+- individual Hustle reporting and publication;
 - distribution execution and platform posting;
 - provider-side newsletter naming/template changes;
 - final custom-domain cutover;
