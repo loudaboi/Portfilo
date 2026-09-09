@@ -1,12 +1,18 @@
 # Portfilo Publishing Standard
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-09_
 
 ## Principle
 
 The website publishes journalism. It does not generate journalism.
 
 Publishing is the final part of a research, reader-need, style-research, writing-form, verification, and editorial process.
+
+The writing gates are governed by:
+
+- `docs/WRITING_SYSTEM.md`;
+- `docs/STYLE_RESEARCH_STANDARD.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`.
 
 ## Pipeline
 
@@ -15,21 +21,13 @@ IDEA
   ↓
 RESEARCH BRIEF
   ↓
-SOURCE MAP
+SOURCE MAP / PRIMARY + SECONDARY RESEARCH
   ↓
-PRIMARY / SECONDARY RESEARCH
-  ↓
-EVIDENCE LEDGER
-  ↓
-CONTRADICTION SEARCH
+EVIDENCE LEDGER / CONTRADICTION SEARCH
   ↓
 STORY DECISION
   ↓
-READER NEED / AUDIENCE ASSUMPTIONS
-  ↓
-PROFESSIONAL FORM + HUMAN-EDITED STYLE RESEARCH
-  ↓
-STYLE-RESEARCH.MD
+READER NEED + STYLE RESEARCH
   ↓
 WRITING FORM / STYLE BRIEF
   ↓
@@ -37,13 +35,9 @@ HUMAN APPROVAL
   ↓
 DRAFT
   ↓
-ADVERSARIAL REVIEW
+ADVERSARIAL REVIEW / CLAIM AUDIT
   ↓
-CLAIM AUDIT
-  ↓
-STRUCTURE / EDITORIAL PASS
-  ↓
-AI-SLOP / HUMAN-LANGUAGE PASS
+STRUCTURE + HUMAN-LANGUAGE PASS
   ↓
 HEADLINE / DEK / METADATA AUDIT
   ↓
@@ -54,25 +48,17 @@ DISTRIBUTE
 CORRECT / UPDATE WHEN NEEDED
 ```
 
-The writing gates are governed by:
-
-- `docs/WRITING_SYSTEM.md`;
-- `docs/STYLE_RESEARCH_STANDARD.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`.
-
 ## Two operating speeds
 
 Portfilo supports two editorial speeds without creating two standards of evidence.
 
 ### Substantial work
 
-Reported stories, explainers, analysis, guides, profiles, perspectives, field notes, datasets, and other work that requires meaningful research or interpretation continue to use the full publishing pipeline in this document.
+Reported stories, explainers, analysis, guides, profiles, perspectives, field notes, datasets, and other work requiring meaningful research or interpretation use the full pipeline.
 
 ### Fast factual work
 
-A narrow update may use a lighter path when the value is establishing a verified development rather than producing analysis.
-
-The lightweight path is:
+A narrow update may use a lighter path when the value is establishing a verified development rather than producing analysis:
 
 ```text
 SIGNAL
@@ -92,169 +78,78 @@ PUBLISH OR DISTRIBUTE
 CORRECT / UPDATE WHEN NEEDED
 ```
 
-Fast does not mean speculative. The lighter path is appropriate only when:
+Fast does not mean speculative. Use this path only when the development itself is verifiable, the evidence is authoritative/direct, the scope is narrow, and Portfilo does not infer consequences that have not been researched.
 
-- the development itself is verifiable;
-- the source is authoritative or the evidence is direct;
-- the scope is narrow;
-- Portfilo does not infer consequences that have not been researched;
-- uncertainty and missing information are stated where material.
+`AI Update` may be used internally for a fast factual item about a material AI model, product, company, policy, research, or market development. It is not a public topic or Astro `contentType`.
 
-`AI Update` may be used internally for a fast factual item about a material AI model, product, company, policy, research, or market development. It is not a new public topic or Astro `contentType`.
+An AI Update may live only on a social or newsletter surface when a website story would add no meaningful value. If the development requires explanation, testing, comparison, or consequential interpretation, create a separate assignment and use the deeper path.
 
-An AI Update may live only on a social surface or in Portfilo Brief when a website story would add no meaningful value. If the development requires explanation, testing, comparison, or consequential interpretation, create a separate assignment and use the appropriate deeper path.
+## Portfilo Test
 
-### Portfilo Test
-
-`Portfilo Test` is Portfilo's approved internal format for an original product, model, agent, workflow, or comparison test intended to establish what Portfilo actually observed rather than repeat vendor claims.
+`Portfilo Test` is the approved internal format for an original product, model, agent, workflow, or comparison test intended to establish what Portfilo actually observed rather than repeat vendor claims.
 
 The governing methodology is:
 
 `docs/PORTFILO_TEST_STANDARD.md`
 
-Methodology approval does **not** authorize a specific Test or publication. Every Portfilo Test must still:
+Methodology approval does not authorize a specific Test or publication. Every Test must still pass the normal planning, evidence, contradiction, writing, claim-audit, and publication gates.
 
-- pass the normal planning/assignment gate;
-- create a Test packet from `research/PORTFILO_TEST_TEMPLATE.md`;
-- freeze the test protocol before final scored runs;
-- retain valid final evidence, including failures;
-- follow the normal research, contradiction, writing, claim-audit, and publication gates;
-- obtain explicit publication approval when required.
-
-Do not convert a vendor demo, casual prompting session, subjective first impression, cherry-picked screenshot, or one-off successful run into a Portfilo Test merely by adding the label.
-
-`AI Showcase` is not a separate evidence standard. A showcase, video, carousel, screenshot sequence, social post, or newsletter item may present evidence from a completed Portfilo Test only as a derivative format under the rules in `docs/PORTFILO_TEST_STANDARD.md`.
-
-## Stage 1 - Idea
+## Research and story decision
 
 An idea is not an assignment and not a headline.
 
-Record the question worth investigating.
-
-## Stage 2 - Research brief
-
-Create a research packet and define:
+For substantial work, create the appropriate research packet and define:
 
 - question;
 - reader payoff;
-- hypothesis;
-- disproof condition;
+- hypothesis where relevant;
+- disproof condition where relevant;
 - scope;
-- potential sources;
-- potential interviews.
+- potential sources/interviews.
 
-For a Portfilo Test, use the more specific Test packet and frozen-brief requirements in `docs/PORTFILO_TEST_STANDARD.md`.
+Follow `docs/RESEARCH_STANDARD.md`.
 
-## Stage 3 - Research
-
-Follow `RESEARCH_STANDARD.md`.
-
-Do not begin long-form drafting simply because enough material exists to produce plausible prose.
-
-## Stage 4 - Story decision
-
-Select one:
+Then select one:
 
 - publish;
 - reframe;
 - continue research;
 - kill.
 
-Record the decision and reasoning in the research packet.
+Do not begin long-form drafting simply because enough material exists to produce plausible prose.
 
-## Stage 5 - Reader need and style research
+## Reader need and style research
 
 Before choosing final prose mechanics, follow `docs/STYLE_RESEARCH_STANDARD.md`.
 
-Every substantial story must identify:
+For substantial stories, record:
 
 - primary reader need;
-- what the intended reader can reasonably be expected to know already;
-- what requires explanation;
-- which audience-interest assumptions are established, researched, or merely editorial hypotheses;
-- the actual shape of the evidence.
-
-Then research the writing problem.
-
-Create:
-
-`style-research.md`
-
-using:
-
-`research/STYLE_RESEARCH_TEMPLATE.md`
-
-The research must include:
-
+- audience assumptions;
+- evidence shape;
 - professional guidance appropriate to the form;
-- by default 2-4 relevant human-edited exemplars chosen because they solve a similar writing problem;
-- observed lead behavior;
-- answer/thesis timing;
-- paragraph development;
-- evidence/example handling;
-- transitions;
-- first/second person use;
-- rhetorical-question use;
-- subhead/section behavior;
-- limitation/counterargument handling;
-- ending behavior;
-- vocabulary/assumed knowledge;
+- relevant human-edited exemplars chosen for the writing problem;
+- lead, paragraph, transition, evidence/example, limitation, and ending behavior;
 - patterns notably absent;
 - explicit no-imitation boundaries.
 
-The purpose is to study transferable editorial decisions, not to imitate a writer or publication.
+The purpose is to study transferable editorial decisions, not to imitate another writer or publication.
 
-Do not copy distinctive wording, cadence, metaphors, jokes, branded terminology, rhetorical quirks, or another publication's institutional voice.
+Create `style-research.md`, then an approved `style-brief.md` using the repository templates where required.
 
-Do not instruct AI to `write like` a named writer.
+AI may assist with alternatives but has zero automatic structural or stylistic authority.
 
-## Stage 6 - Writing form and style brief
+## Draft
 
-After `style-research.md` exists, follow `WRITING_SYSTEM.md` and convert the research into an editorial decision.
-
-For substantial stories, create or revise:
-
-`style-brief.md`
-
-using:
-
-`research/STYLE_BRIEF_TEMPLATE.md`
-
-The brief must establish:
-
-- content type;
-- primary reader need;
-- writing job;
-- audience assumptions;
-- evidence shape;
-- findings from `style-research.md` actually used;
-- selected Portfilo recipe;
-- why that form fits;
-- deviations;
-- lead, paragraph, middle, transition, limitation/counterevidence, and ending jobs;
-- evidence/example handling;
-- first/second person and rhetorical-device limits;
-- headline and dek jobs;
-- whether a concrete metadata problem justifies an optional `metaDescription` override;
-- assignment-specific AI-slop risks.
-
-The form is selected from the material, reader need, professional practice, and researched examples. AI may assist with alternatives but has zero automatic structural or stylistic authority.
-
-Draft 1 is not authorized until `style-research.md` exists and the style brief is explicitly approved.
-
-## Stage 7 - Draft
-
-The draft may only rely on verified/qualified claims from the research packet or, for a Perspective, the approved premise plus supported factual material.
+The draft may rely only on verified/qualified claims from the research packet or, for a Perspective, the approved premise plus supported factual material.
 
 If a new factual assertion is needed, return to research.
 
-If a new institutional position about Portfilo is needed, return to the canonical institutional source or explicit editor/founder approval.
+If a new institutional position about Portfilo is needed, return to canonical institutional authority or explicit founder/editor approval.
 
-If a new writing device or prose pattern materially changes the approved approach, return to the style research/brief rather than allowing generated prose to become its own justification.
+Do not let generated prose silently redefine the approved structure.
 
-Do not let Draft 1 silently redefine the approved structure merely because generated prose flows differently.
-
-## Stage 8 - Adversarial review
+## Adversarial review and claim audit
 
 Challenge:
 
@@ -267,251 +162,170 @@ Challenge:
 - headline strength;
 - whether the selected form distorts the evidence;
 - whether audience assumptions are being presented as facts;
-- whether generated rhetoric creates claims or implications the evidence/brief did not authorize;
-- whether the prose has drifted toward the style of one researched exemplar.
-
-For a Portfilo Test, also challenge:
-
-- whether the task set answers the stated question;
-- whether setup differences confound the comparison;
-- whether valid failures were retained;
-- whether non-determinism/sample size weakens the conclusion;
-- whether an infrastructure failure was misclassified as a model failure or vice versa;
-- whether the article generalizes beyond the tested conditions.
-
-Resolve material findings before publication.
-
-## Stage 9 - Claim audit
+- whether generated rhetoric creates unsupported claims or implications.
 
 Trace consequential factual assertions back to evidence.
 
 No source or evidence:
+
 - source it;
 - qualify it;
 - remove it.
 
 Also trace consequential institutional statements about Portfilo back to approved institutional authority.
 
-## Stage 10 - Structure and editorial pass
+For Portfilo Tests, separately challenge protocol fit, confounds, reruns, valid failures, sample size/non-determinism, infrastructure failures, and whether conclusions extend beyond tested conditions.
+
+## Structure and human-language pass
 
 After facts are stable:
 
 - verify the selected form still fits the material and reader need;
 - compare the draft with the approved style brief;
 - ensure each section has a distinct job;
-- ensure examples are developed in the way the style research justified rather than merely listed;
-- move caveats/counterevidence to the position where readers need them;
-- remove repetition;
-- remove generic AI language;
-- sharpen explanations;
-- preserve caveats;
-- improve transitions only when the reader actually needs one;
+- move caveats/counterevidence where readers need them;
+- remove repetition and generic AI language;
+- preserve material limitations;
+- use transitions only when needed;
 - ensure Philippine context is relevant rather than decorative.
 
 Do not trade accuracy for style.
 
-Do not line-edit around a structural failure. Fix the architecture first.
+Do not line-edit around a structural failure.
 
-If the draft repeatedly fights the selected form, re-research the writing problem rather than forcing the draft through.
-
-## Stage 11 - AI-slop and human-language pass
-
-Follow the audit in `WRITING_SYSTEM.md` and the assignment-specific risks in the approved style brief.
-
-At minimum:
+At minimum, the AI-slop/human-language pass should:
 
 - read only headings/subheads;
-- read only the first sentence of each paragraph;
+- read only first sentences of paragraphs;
 - read the piece aloud;
-- delete sentences that only explain the strategy behind the previous sentence;
-- scan for repeated rhetorical patterns and institutional self-description;
-- compare the draft against `style-research.md` for unauthorized cadence or imitation;
-- test whether a generic AI publication could publish the line unchanged.
+- remove sentences that merely explain the strategy behind previous sentences;
+- scan for repeated rhetorical templates and institutional self-description;
+- test whether generic AI publishing could reuse the wording unchanged.
 
-AI-shaped prose is not fixed merely by replacing a few adjectives. Rewrite or delete the underlying pattern.
+## Headline, dek, and metadata
 
-## Stage 12 - Headline, dek, and metadata audit
+The headline must reflect the actual story, preserve important scope, avoid fake certainty, and avoid causal claims the evidence cannot establish.
 
-The headline must:
+The dek must add useful editorial information rather than restate the headline.
 
-- reflect the actual story;
-- preserve important scope;
-- avoid false universality;
-- avoid fake certainty;
-- avoid causal claims the evidence cannot establish.
+Headline + dek form the reader-facing story package.
 
-The dek must add useful editorial information rather than simply restate the headline.
+Default metadata behavior:
 
-Headline + dek are the complete reader-facing story package. They should be evaluated together on the story page and card/index surfaces.
-
-The story's default metadata description is the dek.
-
-Add an optional `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline. Do not create a third sentence merely because metadata exists, and do not generate an override by mechanically compressing the body.
-
-Headline/dek may require their own reference research when the writing job is materially different from the body. Metadata-specific research is needed only when a real metadata conflict exists.
-
-## Stage 13 - Prepare content entry
-
-The v0 content schema is implemented in Astro. At minimum a publishable story supports:
-
-```yaml
-title:
-dek:
-metaDescription: # optional; defaults to dek for story metadata
-contentType:
-topic:
-author:
-publishedAt:
-updatedAt:
-status:
-featured:
-series:
-seriesOrder:
-methodology:
-correction:
+```text
+metaDescription ?? dek
 ```
 
-The exact current schema is defined in `src/content.config.ts`.
+Add `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline.
+
+`docs/EDITORIAL_PACKAGING_STANDARD.md` owns the detailed packaging rules.
+
+## Prepare content entry
+
+The exact implemented schema is defined in `src/content.config.ts`.
+
+Current v0 story fields are:
+
+```yaml
+title: required
+dek: required
+metaDescription: optional
+section: news | stories
+contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
+topic: business | technology | startup | ai
+publishedAt: required when published
+updatedAt: optional
+status: draft | published
+featured: optional
+image: optional
+methodology: optional
+correction: optional
+```
+
+There is no individual author field and no Series metadata in the current v0 schema.
 
 ## Status rules
 
 ### draft
 
-Not public.
-
-May contain unfinished prose but should not contain fabricated placeholder reporting.
+Not public. May contain unfinished prose but should not contain fabricated placeholder reporting.
 
 ### published
 
-Eligible for production routes and indexes.
+Eligible for production routes and indexes. Must have passed the required editorial/research/writing checks for its content type and must have `publishedAt`.
 
-Must have passed the required editorial/research/writing checks for its content type.
-
-### archived
-
-Optional future state if needed. Do not implement unless required.
-
-Scheduled publishing is not a v0 requirement.
-
-## Series
-
-A series is metadata, not a separate hardcoded site.
-
-A story may optionally reference:
-
-- series identifier;
-- series order.
-
-The website should assemble series pages from structured content.
-
-The first real Portfilo series will be selected through separate Editorial Launch Research, not during the website build.
+Scheduled publishing and an archived state are not v0 requirements.
 
 ## Publishing operation in v0
 
-Initial authoring is repository-based.
+Initial authoring is repository-based:
 
-Expected workflow:
-
-1. create/edit research packet;
-2. create/edit `style-research.md`;
-3. create/edit and approve `style-brief.md`;
+1. create/edit research packet where required;
+2. create/edit `style-research.md` where required;
+3. create/edit and approve `style-brief.md` where required;
 4. create/edit Markdown content;
 5. validate locally;
 6. commit;
-7. push;
-8. Cloudflare Pages builds/deploys.
+7. push to the working branch;
+8. inspect preview/test output;
+9. merge to `main` only after explicit release approval.
 
 No admin dashboard or CMS is required for v0.
 
-## Distribution rule
+A working-branch push must not be treated as authorization for production release.
+
+## Distribution
 
 Research once, publish many.
 
-Derivative formats such as newsletter, social posts, video scripts, carousels, and excerpts must derive from the same verified research packet and approved writing position.
+Newsletter, social posts, video scripts, carousels, excerpts, and other derivatives must derive from the same verified research/evidence position.
 
-Do not allow downstream social content to introduce unsupported factual claims or new institutional promises simply because it is shorter or more promotional.
+Do not let downstream content introduce unsupported factual claims or new institutional promises merely because it is shorter or more promotional.
 
-A derivative format with a materially different audience need or writing job may require its own lightweight style research rather than blindly copying the article's prose style.
+A derivative with a materially different audience need or writing job may require its own lightweight style research.
 
-Fast factual items may originate from direct authoritative evidence rather than a substantial story packet, but the supporting source/evidence, publication date, and scope must remain recoverable. Do not manufacture fast posts merely to satisfy a content calendar.
-
-If a Portfilo Test produces social/video/showcase derivatives, those derivatives must preserve the approved test setup, material limitations, representativeness of highlighted runs, and distinction between vendor claims and observed results.
+Fast factual items may originate from direct authoritative evidence rather than a substantial story packet, but source/evidence, date/version, and scope must remain recoverable.
 
 ## Corrections and updates
 
-Material factual correction:
+For a material factual correction:
 
 - correct the story;
 - add a visible correction note;
 - include correction date and what changed.
 
-Meaningful factual update:
+For a meaningful factual update:
 
 - update `updatedAt`;
-- note the update if readers would reasonably need to know the story materially changed.
+- note the update if readers reasonably need to know the story materially changed.
 
 Do not silently erase the history of a consequential error.
 
-A later style rewrite that does not change factual meaning does not require a correction note, but it must not silently alter material claims or conclusions.
-
-A later product/model version does not silently invalidate a historical Portfilo Test. The original Test remains evidence of its recorded test window. A meaningful retest should be dated and treated as new evidence.
-
 ## Publication checklist
 
-Before changing a story to `published`:
+Before changing a Story or News item to `published`:
 
-- [ ] central question answered fairly;
+- [ ] central question/job is handled fairly;
 - [ ] research packet exists when required;
-- [ ] consequential claims verified;
-- [ ] important caveats retained;
-- [ ] contradictions considered;
-- [ ] quotations checked;
-- [ ] numbers checked;
-- [ ] primary reader need and audience assumptions recorded;
-- [ ] `style-research.md` exists for substantial stories;
-- [ ] professional form research completed;
-- [ ] relevant human-edited exemplars reviewed by default;
-- [ ] no-imitation boundaries recorded;
-- [ ] `style-brief.md` exists and is approved;
-- [ ] selected writing form still fits the material;
-- [ ] draft matches the researched writing mechanics unless a documented editorial change was approved;
-- [ ] structure pass completed;
-- [ ] AI-slop/human-language pass completed;
+- [ ] consequential claims are verified;
+- [ ] important caveats and contradictions are retained;
+- [ ] quotations and numbers are checked;
+- [ ] reader need/audience assumptions are recorded where required;
+- [ ] style research and style brief are complete where required;
+- [ ] selected writing form still fits the evidence;
+- [ ] structure pass is complete;
+- [ ] AI-slop/human-language pass is complete;
 - [ ] institutional claims have provenance;
-- [ ] headline audited;
-- [ ] dek audited;
-- [ ] headline + dek reviewed together on reader-facing surfaces;
-- [ ] optional `metaDescription` override audited and justified if present;
-- [ ] content type is accurate;
-- [ ] methodology included when useful;
-- [ ] commercial disclosure included when relevant;
+- [ ] headline and dek are audited together;
+- [ ] optional `metaDescription` is justified if present;
+- [ ] schema values are correct;
+- [ ] methodology/commercial disclosure is present when relevant;
 - [ ] article renders correctly;
 - [ ] links work;
-- [ ] mobile layout checked;
-- [ ] story metadata resolves correctly from `metaDescription ?? dek`;
-- [ ] explicit publication approval obtained when the workflow requires it.
+- [ ] responsive/mobile layout is checked;
+- [ ] metadata resolves correctly;
+- [ ] explicit publication approval is obtained when required.
 
-For a fast factual item distributed outside the full story workflow:
+For fast factual work, also retain the authoritative/direct source, material date/version, narrow scope, and distinction between vendor claims and Portfilo statements.
 
-- [ ] authoritative/direct source retained;
-- [ ] material date/version captured;
-- [ ] scope kept narrow;
-- [ ] vendor claim distinguished from Portfilo statement;
-- [ ] no unsupported consequence or prediction added;
-- [ ] human editorial approval obtained.
-
-For a Portfilo Test:
-
-- [ ] `docs/PORTFILO_TEST_STANDARD.md` was followed;
-- [ ] the Test passed the normal assignment gate;
-- [ ] the Test brief was frozen before final scored runs;
-- [ ] test evidence is retained, including valid failures;
-- [ ] trial/rerun rules were followed;
-- [ ] evaluation method matches the frozen protocol;
-- [ ] infrastructure anomalies are resolved or disclosed;
-- [ ] vendor claims are separated from Portfilo observations;
-- [ ] cost/timing are reported when material;
-- [ ] privacy/safety conditions are satisfied;
-- [ ] limitations and failure cases are disclosed where material;
-- [ ] highlighted showcase/derivative runs are not presented as representative unless they are;
-- [ ] no conclusion is broader than the tested conditions.
+For Portfilo Tests, also follow every required protocol/evidence/limitation check in `docs/PORTFILO_TEST_STANDARD.md`.
