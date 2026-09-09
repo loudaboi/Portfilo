@@ -4,21 +4,27 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**CORRECTED + PERFORMANCE-OPTIMIZED V0 RELEASED TO `main` / PRODUCTION VERIFICATION PENDING**
+**V0 RELEASE CLOSED / EDITORIAL PACKAGING STANDARD REFINEMENT NEXT**
 
-The founder approved the responsive typography repair, archive corrections, homepage Story-inventory behavior, whole-site performance pass, and homepage ticker spacing on the deployed build-branch preview.
+The corrected and performance-optimized Portfilo v0 release is founder-approved and closed.
 
-The validated working state was fast-forwarded to `main` on 2026-09-09.
+Production verification completed in Cloudflare on 2026-09-09:
 
-Latest runtime-changing commit:
+- Production branch is `main`;
+- automatic deployments are enabled;
+- the released site was smoke-tested by the founder;
+- responsive typography, archive/footer corrections, optimized editorial images, navigation performance, and homepage ticker spacing were accepted;
+- no new runtime defect was reported during final production review.
+
+The founder explicitly approved closing this release and moving to Editorial Packaging Standard Refinement.
+
+Latest runtime-changing commit in the closed release:
 
 `9afec05851c130d3b4cb135dae591edb94f620b8` — `Pass optimized News image URL to metadata`
 
-Release boundary commit before this documentation sync:
+Release/documentation boundary before this phase transition:
 
-`e126165028e77f1103c98ea4376ac09b7f43db78` — `Record performance pass validation gate`
-
-`main` and `build/portfilo-v0` should remain aligned after this documentation sync. Do not infer Cloudflare Production branch behavior from repository intent alone; verify it in Cloudflare.
+`1b7d8fd93571b6b4e7752b81f777071c730702c6`
 
 ## Repository authority
 
@@ -35,6 +41,8 @@ Mandatory discretionary-decision gate:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
+The repository is the durable source of truth. Do not override current canonical decisions with assumptions from previous chats.
+
 ## Branch and release boundary
 
 Working branch:
@@ -45,21 +53,21 @@ Release boundary:
 
 `main`
 
-Intended Cloudflare model:
+Verified Cloudflare model:
 
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-Cloudflare branch behavior appeared inconsistent earlier in this release cycle. Re-verify that the effective Production branch is `main` and that the latest `main` deployment succeeds.
+`main` remains the production release boundary for future runtime changes.
 
 ## Approved product direction
 
 - Portfilo is a business and technology publication.
 - News is the current/day-to-day editorial layer.
 - Stories is the deeper editorial layer.
-- Public topics: `Business / Technology / Startup / AI`.
+- Public topics are `Business / Technology / Startup / AI`.
 - Portfilo remains free in v0.
-- Newsletter acquisition remains important but must not dominate publication identity.
+- Newsletter acquisition is important but must not dominate publication identity.
 - Approved newsletter promise: latest news, a 7-minute read, three times per week.
 - Exact send days/times remain open.
 - `briefing` is rejected as public acquisition language.
@@ -71,223 +79,133 @@ Approved internal selection lens:
 
 This is internal only.
 
-## Temporary pre-audience content policy
+## Current production/staging facts
 
 ### News
 
-Until real News inventory exists, the existing synthetic News fixtures may render strictly as layout placeholders.
+Until real News inventory replaces them, the existing synthetic News fixtures may render strictly as clearly labeled, non-clickable layout placeholders.
 
-Requirements:
-
-- visibly identify them as sample content, not Portfilo reporting;
-- keep them non-clickable;
-- do not create fake `/news/[slug]` routes;
-- do not create Article metadata for fixtures;
-- real published News replaces them automatically;
-- replace them before broad audience launch.
+They must not create fake article routes or Article metadata and must be replaced before broad-audience launch.
 
 ### Stories
 
-The founder has approved temporarily exposing the existing Story drafts so the Stories archive uses the Story inventory already in the repository.
+The current Story inventory is one published Story and three draft Story previews.
 
 Draft handling remains explicit:
 
-- `status: draft` is not silently changed to `published`;
-- draft items are visibly labeled `Draft`;
-- draft Story routes use `noindex, nofollow`;
-- draft routes omit published-story canonical/social/article metadata;
-- published Stories keep normal metadata behavior.
+- draft status is not silently changed to published;
+- draft items are visibly labeled;
+- draft routes remain `noindex, nofollow`;
+- draft routes omit published-story canonical/social/article metadata.
 
-Current Story inventory is four files: one published Story and three draft Story previews.
+The homepage primary Feature remains published-only. The adjacent Stories rail prefers real Story inventory before any synthetic fallback.
 
-The homepage primary Feature remains published-only. The adjacent Stories rail prefers an existing real Story, including an explicitly labeled draft during this pre-audience period, before falling back to a synthetic sample Story.
+### Editorial imagery
 
-## Current public route model
+The production image system supports both image and image-less archive/article states.
 
-Keep:
+The current approved editorial source asset is stored under:
 
-- `/`
-- `/news`
-- `/news/[slug]`
-- `/stories`
-- `/stories/[slug]`
-- `/standards`
-- `/privacy`
-- `/confirmed`
-- `/404`
-- `/robots.txt`
-- `/api/subscribe`
+`src/assets/editorial/`
 
-Retired:
+Astro's native image pipeline is now the canonical runtime path for editorial images.
 
-- `/subscribe` as a standalone page; redirect target `/#newsletter`.
-- `/about`; redirect target `/`.
-- public `/series/[slug]`.
+Whether published News and Stories should normally require an editorial image is **not yet a locked publishing rule**. That question belongs to the next Editorial Packaging Standard Refinement task.
 
-## Released correction state
+## Closed release state
 
-### Archive acquisition and footer
+The released v0 includes the founder-approved:
 
-Canonical archive structure is restored:
+- shared News/Stories archive system;
+- shared News/Stories article system;
+- responsive typography repair;
+- archive acquisition/footer corrections;
+- temporary real Story draft staging behavior;
+- homepage real-Story rail preference;
+- Astro native editorial-image optimization;
+- targeted Home/News/Stories prefetch;
+- Astro default CSS handling;
+- narrow immutable caching for fingerprinted `/_astro/*` assets;
+- homepage ticker attached directly beneath the blue newsletter band with breathing room below.
 
-1. editorial lead;
-2. contextual archive acquisition in Portfilo blue;
-3. supporting archive rows when they exist;
-4. normal shared footer acquisition;
-5. compact institutional footer.
+No React/framework migration, SPA router, service worker, external image CDN, performance package, broad cache layer, CMS, database, or other speculative infrastructure was added.
 
-`EditorialArchive.astro` renders the supporting stream only when supporting items exist, preventing dead empty space.
+## Validation status
 
-### Responsive typography
+**RELEASE CLOSED / PRODUCTION FOUNDER-APPROVED.**
 
-The founder visually approved the repaired responsive typography state.
+Do not reopen the closed visual/performance release without one of:
 
-Continuous fluid scaling now governs:
+- an explicit founder change request;
+- a concrete production defect;
+- material new evidence that invalidates an approved decision.
 
-- News/Stories archive titles;
-- archive lead and supporting headlines;
-- article titles and article-header spacing;
-- Standards and Privacy titles;
-- Confirmed and 404 titles.
-
-Article body typography, reading measure, hero composition, Story TOC behavior, homepage editorial headline typography, masthead, newsletter typography, and footer typography were not redesigned.
-
-### Homepage Story rail
-
-- primary Feature selection remains published-only;
-- the secondary Stories rail uses existing Story inventory first;
-- an existing draft can appear during the approved pre-audience period and is labeled `Draft story`;
-- the synthetic Story teaser is a last fallback only.
-
-### News and Stories staging
-
-- sample News fixtures remain clearly labeled and non-clickable when there are zero real News items;
-- real News replaces fixtures automatically;
-- `/stories` includes the four existing Story entries during pre-audience staging;
-- draft Story pages remain noindex/nofollow and without published-story social/canonical metadata.
-
-## Released performance pass
-
-### Astro CSS behavior
-
-The custom `build.inlineStylesheets = "always"` override was removed. Portfilo now uses Astro's default CSS handling. No custom Vite chunking or additional CSS tooling was added.
-
-### Targeted primary-navigation prefetch
-
-Astro built-in prefetch is enabled only for the persistent primary header destinations using `data-astro-prefetch="viewport"`:
-
-- Portfilo wordmark -> `/`
-- News -> `/news`
-- Stories -> `/stories`
-
-There is no `prefetchAll`, article-grid prefetching, custom prefetch JavaScript, or `ClientRouter`.
-
-### Native Astro editorial-image pipeline
-
-The approved editorial source asset is now:
-
-`src/assets/editorial/homepage-feature-16x9.png`
-
-The old unprocessed public copy was removed.
-
-The Content Collection image schema uses Astro's native `image()` helper, and current editorial renderers use `astro:assets` `<Image />` for:
-
-- homepage Feature;
-- homepage lower News image;
-- archive lead images;
-- archive supporting images;
-- article heroes.
-
-Lead/LCP candidates use priority; lower/supporting images keep lazy/default loading behavior. No external image service, new dependency, custom responsive-image abstraction, or manual output-size matrix was added.
-
-### Fingerprinted-asset caching
-
-`public/_headers` applies long-lived immutable browser caching only to:
-
-`/_astro/*`
-
-No broad cache rule was added for HTML, public routes, redirects, or `/api/subscribe`.
-
-### Homepage ticker spacing
-
-The ticker has zero top margin and preserves bottom breathing room.
-
-Approved composition:
-
-`blue newsletter band -> ticker -> breathing room -> Feature`
-
-Ticker height, animation, content, typography, and interaction behavior were not changed.
-
-## Explicitly not added
-
-This pass did not add:
-
-- React or another frontend framework;
-- SPA routing / `ClientRouter`;
-- a service worker;
-- Cloudflare Images or another image CDN;
-- a performance or caching library;
-- custom lazy-loading JavaScript;
-- self-hosted font migration;
-- broad Cloudflare Cache Rules;
-- speculative article-link prefetching;
-- analytics or RUM solely for this optimization.
-
-If future slowness is observed, inspect a real deployed network waterfall before introducing another mechanism.
-
-## Validation evidence
-
-Founder-reported/observed validation before release includes:
-
-- earlier `npm run check`: PASS baseline;
-- earlier `npm run build`: PASS baseline;
-- homepage responsive QA: accepted;
-- News / Stories / Story article / Standards / Privacy / Confirmed / 404 rendered QA: accepted;
-- responsive typography correction: founder visually approved;
-- archive/footer corrections: founder visually approved;
-- performance + ticker state on the deployed build-branch preview: founder reported `everything looks good so far` and explicitly passed the state;
-- deployed `/api/subscribe` real email -> beehiiv: PASS from the earlier release cycle;
-- `/subscribe` -> `/#newsletter`: PASS from the earlier release cycle;
-- `/about` -> `/`: PASS from the earlier release cycle.
-
-The current performance pass was source-audited before release. A separate current local `npm run check` / `npm run build` result was not reported in chat, so do not claim one beyond the successful deployed preview observed by the founder.
-
-## Current validation status
-
-**FOUNDER-APPROVED BUILD PREVIEW / FAST-FORWARDED TO `main` / PRODUCTION DEPLOYMENT + SMOKE VERIFICATION PENDING.**
-
-The GitHub fast-forward to `main` succeeded without force.
+Historical local `npm run check` and `npm run build` results should only be claimed for the specific state in which they were actually run. The released state was successfully deployed and visually/smoke validated in production by the founder.
 
 ## Exact next task
 
-1. Verify in Cloudflare that Production branch is `main`.
-2. Confirm the latest `main` deployment succeeds.
-3. Smoke-test production:
-   - `/`
-   - `/news`
-   - `/stories`
-   - one published Story
-   - one draft Story preview
-   - newsletter signup
-   - `/subscribe`
-   - `/about`
-4. Confirm on production:
-   - ticker remains directly below the blue newsletter band;
-   - archive typography/footer corrections remain intact;
-   - optimized editorial images render correctly;
-   - primary navigation feels responsive;
-   - no visible regression from the approved build preview.
-5. Record only production checks actually performed.
+**Editorial Packaging Standard Refinement**
 
-If production differs from the approved preview, treat it as a concrete deployment/runtime defect. Do not reopen the visual direction or add another optimization by guess.
+This is initially an inspection, research, and planning gate. Do not implement runtime changes yet.
+
+First inspect the current canonical sources, especially:
+
+- `AGENTS.md`
+- `docs/PROJECT_STATE.md`
+- `docs/DOCUMENT_STATUS.md`
+- `docs/V0_SCOPE.md`
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`
+- `docs/PUBLISHING_STANDARD.md`
+- `docs/IMAGE_SYSTEM.md`
+- `docs/PHOTO_TREATMENT.md`
+- `docs/COPY_STYLE.md`
+- `docs/WRITING_SYSTEM.md`
+- `src/content.config.ts`
+- `src/components/EditorialArchive.astro`
+- `src/components/EditorialArticle.astro`
+- current Story frontmatter examples
+
+Then research and evaluate the smallest durable refinement needed for Portfilo's editorial packaging system.
+
+The refinement should specifically decide:
+
+1. what belongs to a complete News or Story package before publication;
+2. whether editorial imagery should normally be required for published News and/or Stories;
+3. when image-less publication is acceptable;
+4. image role and reuse rules across homepage, archive, article hero, social metadata, and newsletter/distribution surfaces;
+5. 16:9 source/crop expectations where relevant;
+6. alt text, credit, disclosure, provenance, and AI-generated-image requirements;
+7. whether image requirements belong in editorial packaging, publishing gates, schema validation, or a combination of those layers;
+8. how to avoid forcing decorative or low-quality imagery merely to satisfy a rule;
+9. what should remain optional so Portfilo does not overengineer its publishing workflow.
+
+Research strong human-edited digital publications for comparable packaging decisions, but use examples to understand editorial systems rather than imitate wording, visual style, or institutional voice.
+
+After inspection and research, produce:
+
+- findings;
+- concrete problems in the current standard, if any;
+- recommended refined contract;
+- explicit non-goals;
+- exact files that would need documentation or runtime changes;
+- an approval gate before any implementation.
+
+Do not redesign the site, rewrite existing articles, publish drafts, create News inventory, build a CMS, add dependencies, change distribution strategy, or implement unrelated editorial systems in this task.
+
+## Separate workstreams
+
+The founder will handle article development, News development, broader editorial-system work, and distribution strategy in separate chat sessions.
+
+This next task should refine the **packaging standard and its publication contract only**, then stop at the appropriate approval gate.
 
 ## Still separate
 
-This release does not imply:
+This phase transition does not imply:
 
 - final custom-domain cutover;
 - beehiiv provider-side naming/template changes;
 - public newsletter send;
-- replacing sample News with real reporting;
-- changing draft Story status to `published` without a separate editorial publication decision;
-- broad audience launch.
+- replacement of sample News with real reporting;
+- publication of current draft Stories;
+- broad-audience launch;
+- search, filters, accounts, CMS, community, analytics infrastructure, or other post-v0 product expansion.
