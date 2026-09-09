@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83` with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G2 `/standards` is next and begins at inspection/planning, not implementation.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`. G2 `/standards` is complete and validated against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`, with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G3 `/privacy` is next and begins at inspection/planning, not implementation.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -49,7 +49,7 @@ Current:
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, current shared article runtime, or final G1 subscribe runtime are subordinate to `PROJECT_STATE` and current source.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, current shared article runtime, final G1 subscribe runtime, or final G2 Standards runtime are subordinate to `PROJECT_STATE` and current source.
 - `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 
@@ -275,6 +275,28 @@ Current contract:
 - no route-local duplicate newsletter submission script;
 - dedicated multi-width laptop/tablet/mobile visual tuning is deferred to H.
 
+### `/standards`
+
+The founder-approved G2 runtime is the restrained text-led Standards page implemented at `b7c764647d8b583ceb64d54aca1ee1b99df3027c`.
+
+Current contract:
+
+- current 84rem publication shell and shared header alignment;
+- standard shared SiteHeader and SiteFooter behavior, including the normal shared footer acquisition;
+- existing substantive Standards copy, meta title, and meta description preserved;
+- unnumbered `On this page` jump links for Sources, Verification, AI use, Corrections, and Commercial independence;
+- one consistent editorial section system rather than separate microsite-style treatments;
+- Instrument Sans hierarchy and Source Serif 4 substantive reading copy;
+- narrow editorial reading measure;
+- supporting source, verification, AI, correction, and commercial-independence principles retained inline;
+- no numbered `01 / 02 / 03` presentation scaffold;
+- no giant numeric marker;
+- no five-cell boxed index;
+- no black AI takeover section;
+- no red correction card;
+- no decorative sidebars or card-like note system;
+- no new dependency, framework, schema, shared-component, archive, article, homepage, Subscribe, or Privacy changes.
+
 ## Current validation authority
 
 Archive/acquisition sequence A–D is validated.
@@ -301,6 +323,15 @@ G1 `/subscribe` is validated against runtime HEAD `9e2348763a0d6c811a095767beeb5
 - local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
 - source review confirms the shared newsletter form implementation remains in use;
 - dedicated multi-width laptop/tablet/mobile visual QA remains sequence H.
+
+G2 `/standards` is validated against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`:
+
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the G2 runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the G2 runtime;
+- source/diff review confirms the runtime commit changed only `src/pages/standards.astro`;
+- substantive institutional standards were preserved rather than materially rewritten;
+- dedicated multi-width site-wide responsive QA remains sequence H.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
 
@@ -344,7 +375,8 @@ G utility runtime:
 - `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match signup-block width to the newsletter heading;
 - `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten wordmark-to-message spacing;
 - `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted correction; historical only;
-- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition.
+- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition;
+- `b7c764647d8b583ceb64d54aca1ee1b99df3027c` — simplify `/standards` into the founder-approved restrained editorial page.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -381,6 +413,10 @@ Do not reintroduce:
 - visible cadence support line or shared note on the final G1 composition;
 - footer on the final G1 `/subscribe` composition;
 - no-scroll `/subscribe` experiment that changed the approved shell/alignment behavior;
+- old G2 Standards 100rem / 12-column microsite composition;
+- numbered five-cell Standards index and repeated `01 / 02 / 03` presentation scaffold;
+- giant numeric AI marker and black AI takeover treatment on Standards;
+- red correction-card and decorative sidebar treatments on Standards;
 - fabricated production News;
 - generic production fallback imagery;
 - implementation-time global design changes without approval.
