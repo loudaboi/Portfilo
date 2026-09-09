@@ -6,13 +6,14 @@ _Last updated: 2026-09-10_
 
 The website publishes journalism. It does not generate journalism.
 
-Publishing is the final part of a research, reader-need, style-research, writing-form, verification, and editorial process.
+Publishing is the final part of a research, reader-need, style-research, writing-form, verification, editorial-packaging, and editorial process.
 
-The writing gates are governed by:
+The writing and packaging gates are governed by:
 
 - `docs/WRITING_SYSTEM.md`;
 - `docs/STYLE_RESEARCH_STANDARD.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
+- `docs/IMAGE_SYSTEM.md` where imagery is used.
 
 ## Pipeline
 
@@ -39,7 +40,7 @@ ADVERSARIAL REVIEW / CLAIM AUDIT
   ↓
 STRUCTURE + HUMAN-LANGUAGE PASS
   ↓
-HEADLINE / DEK / METADATA AUDIT
+HEADLINE / DEK / METADATA / IMAGE-NECESSITY AUDIT
   ↓
 PUBLISH
   ↓
@@ -71,7 +72,7 @@ DEFINE NARROW READER NEED + SCOPE
   ↓
 HUMAN EDITORIAL APPROVAL
   ↓
-CLAIM / COPY CHECK
+CLAIM / COPY / IMAGE-NECESSITY CHECK
   ↓
 PUBLISH OR DISTRIBUTE
   ↓
@@ -92,7 +93,7 @@ The governing methodology is:
 
 `docs/PORTFILO_TEST_STANDARD.md`
 
-Methodology approval does not authorize a specific Test or publication. Every Test must still pass the normal planning, evidence, contradiction, writing, claim-audit, and publication gates.
+Methodology approval does not authorize a specific Test or publication. Every Test must still pass the normal planning, evidence, contradiction, writing, claim-audit, packaging, and publication gates.
 
 ## Research and story decision
 
@@ -202,13 +203,13 @@ At minimum, the AI-slop/human-language pass should:
 - scan for repeated rhetorical templates and institutional self-description;
 - test whether generic AI publishing could reuse the wording unchanged.
 
-## Headline, dek, and metadata
+## Headline, dek, metadata, and image decision
 
 The headline must reflect the actual story, preserve important scope, avoid fake certainty, and avoid causal claims the evidence cannot establish.
 
 The dek must add useful editorial information rather than restate the headline.
 
-Headline + dek form the reader-facing story package.
+Headline + dek form the reader-facing textual package.
 
 Default metadata behavior:
 
@@ -217,6 +218,22 @@ metaDescription ?? dek
 ```
 
 Add `metaDescription` only when the approved dek has a concrete metadata problem when separated from the headline.
+
+Imagery is a separate visual-presentation decision. It is optional at the publication level for News, Why, and Hustle.
+
+A piece must not be blocked from publication solely because no suitable image is available.
+
+Section preferences remain:
+
+- News: image optional;
+- Why: image preferred when it performs a real explanatory, documentary, or conceptual job, but not required;
+- Hustle: authentic subject/operating-context imagery strongly preferred when available, but not required.
+
+If an image is used, verify that its type, provenance, rights, factual implication, crop, alt text, credit, and disclosure follow `docs/EDITORIAL_PACKAGING_STANDARD.md`, `docs/IMAGE_SYSTEM.md`, and `docs/PHOTO_TREATMENT.md` as applicable.
+
+Never manufacture a decorative image, generated likeness, fake documentary scene, fake screenshot, fake source document, or generic business/AI visual merely to fill an image slot.
+
+`NO IMAGE` is a valid editorial outcome.
 
 `docs/EDITORIAL_PACKAGING_STANDARD.md` owns the detailed packaging rules.
 
@@ -248,6 +265,8 @@ There is no individual author field and no Series metadata in the current v0 sch
 
 News entries cannot be featured. Why and Hustle entries may be featured when editorially justified.
 
+The `image` field remains optional for every section. Do not convert section-level image preferences into hard schema or publication requirements.
+
 ## Status rules
 
 ### draft
@@ -256,7 +275,9 @@ Not public by default. During the current pre-audience staging period, draft Why
 
 ### published
 
-Eligible for production routes and indexes. Must have passed the required editorial/research/writing checks for its content type and must have `publishedAt`.
+Eligible for production routes and indexes. Must have passed the required editorial/research/writing/packaging checks for its content type and must have `publishedAt`.
+
+Lack of a suitable image alone does not make an otherwise publication-ready entry ineligible for `published` status.
 
 Scheduled publishing and an archived state are not v0 requirements.
 
@@ -268,11 +289,12 @@ Initial authoring is repository-based:
 2. create/edit `style-research.md` where required;
 3. create/edit and approve `style-brief.md` where required;
 4. create/edit Markdown content;
-5. validate locally;
-6. commit;
-7. push to the working branch;
-8. inspect preview/test output;
-9. merge to `main` only after explicit release approval.
+5. complete headline/dek/metadata and image-necessity decisions;
+6. validate locally;
+7. commit;
+8. push to the working branch;
+9. inspect preview/test output;
+10. merge to `main` only after explicit release approval.
 
 No admin dashboard or CMS is required for v0.
 
@@ -289,6 +311,8 @@ Do not let downstream content introduce unsupported factual claims or new instit
 A derivative with a materially different audience need or writing job may require its own lightweight style research.
 
 Fast factual items may originate from direct authoritative evidence rather than a substantial story packet, but source/evidence, date/version, and scope must remain recoverable.
+
+Where a story has an approved visual identity, the same approved image or crop-safe derivative may be reused across article, homepage/archive, social-preview, and structured-data surfaces. Do not generate unrelated alternate art merely to avoid visual repetition.
 
 ## Corrections and updates
 
@@ -323,6 +347,11 @@ Before changing a News, Why, or Hustle item to `published`:
 - [ ] institutional claims have provenance;
 - [ ] headline and dek are audited together;
 - [ ] optional `metaDescription` is justified if present;
+- [ ] image-necessity decision is complete;
+- [ ] if no suitable image exists, the no-image state is intentional and does not block publication;
+- [ ] if an image is present, provenance/rights/factual implication are acceptable;
+- [ ] if an image is present, alt text is correct;
+- [ ] if an image is present, required credit/disclosure is visible and accurate;
 - [ ] schema values are correct;
 - [ ] methodology/commercial disclosure is present when relevant;
 - [ ] article renders correctly;
