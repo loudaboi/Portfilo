@@ -163,23 +163,33 @@ A substantial Portfilo story should contain at least one meaningful contribution
 
 Rewriting existing articles is not enough.
 
-## News and Stories
+## News, Why, and Hustle
 
-The default operating distinction is:
+The public editorial architecture is:
 
 ```text
 NEWS
 What changed?
 
-STORIES
+WHY
+Why is this happening?
+How does this work?
 What is changing underneath?
+
+HUSTLE
+Who is building or operating it?
+How was it built, grown, survived, pivoted, or run?
 ```
 
 News can be concise current reporting when a development itself is the useful thing to establish.
 
-Stories can examine mechanisms, causes, consequences, patterns, contradictions, people, companies, systems, or questions that require deeper reporting or interpretation.
+Why is question-led deeper work. It can examine mechanisms, causes, consequences, patterns, contradictions, systems, markets, technologies, or other questions that require deeper reporting or interpretation.
 
-Story ideas do not have to originate in News discovery. `docs/CONTENT_PLANNING.md` governs substantial Story selection.
+Hustle is people-led reported work about founders, operators, and business owners. It should examine real decisions, constraints, operations, failures, pivots, growth, and outcomes rather than functioning as promotional success-story content or hustle-culture motivation.
+
+The public section is separate from `contentType`. For example, an `explained`, `analysis`, `perspective`, or `reported` piece may belong under Why, while a `profile` or `reported` piece may belong under Hustle when that section job fits.
+
+Story ideas do not have to originate in News discovery. `docs/CONTENT_PLANNING.md` governs substantial editorial selection.
 
 ## AI coverage
 
