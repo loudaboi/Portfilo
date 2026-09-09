@@ -4,13 +4,13 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**CLIENT-SIDE NAVIGATION ENHANCEMENT COMPLETE / VALIDATED**
+**NEWSLETTER ACQUISITION COPY IMPLEMENTED / VALIDATION PENDING**
 
-The News / Why / Hustle section migration is complete and founder-validated on `build/portfilo-v0`.
+The News / Why / Hustle section migration and the client-side navigation enhancement are complete and founder-validated on `build/portfilo-v0`.
 
-Before the release decision, the founder approved and validated one additional pre-release UX enhancement: use Astro's built-in client-side router so internal page navigation no longer presents as a full document reload while preserving the existing static-first architecture and restrained publication design.
+Before the release decision, the founder approved one additional pre-release copy refinement: retire the 7-minute reading-time promise, strengthen the general newsletter acquisition message, and make the News / Why / Hustle archive acquisition copy reflect the editorial job of each section.
 
-This enhancement does not authorize a frontend-framework migration, custom SPA architecture, decorative transition system, deployment, publication, or merge to `main`.
+The approved copy has now been implemented on the working branch. This copy refinement does not authorize deployment, publication, provider-side beehiiv template changes, or merge to `main`.
 
 `Editorial Packaging Standard Refinement` remains deferred, not canceled.
 
@@ -46,7 +46,7 @@ Verified Cloudflare model from the closed website release:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The current validated migration and navigation enhancement remain on the working branch. Validation does not authorize merge to `main`.
+The current validated migration/navigation work and the new acquisition-copy refinement remain on the working branch. Validation does not authorize merge to `main`.
 
 ## Approved product direction
 
@@ -88,9 +88,53 @@ Portfilo remains free in v0.
 
 Newsletter acquisition remains important but must not dominate publication identity.
 
-Approved newsletter promise remains: latest news, a 7-minute read, three times per week. Exact send days/times remain open.
+The former 7-minute reading-time promise is retired. The approved newsletter cadence remains three times per week; exact send days/times remain open.
 
 No individual public author/byline system is part of v0.
+
+## Approved newsletter acquisition copy
+
+### General
+
+Heading:
+
+`Get ahead in business and tech.`
+
+Description:
+
+`Reporting on what changed, why it’s happening, and how companies are built and run. Three times a week, straight to your inbox.`
+
+### News
+
+Heading:
+
+`Stay on top of what’s changing.`
+
+Description:
+
+`Current reporting on the developments moving companies, technology, work, and the digital economy.`
+
+### Why
+
+Heading:
+
+`Understand what’s underneath.`
+
+Description:
+
+`The forces, systems, incentives, and decisions behind changes in business and technology.`
+
+### Hustle
+
+Heading:
+
+`See how businesses actually get built.`
+
+Description:
+
+`Reported stories about the decisions, constraints, pivots, and operating work behind founders and companies.`
+
+The News, Why, and Hustle messages are contextual acquisition copy for the same Portfilo newsletter. They do not create separate section newsletters or separate delivery promises. The general acquisition surface carries the three-times-per-week cadence; the contextual archive banners do not repeat it.
 
 ## Approved internal editorial direction
 
@@ -264,6 +308,20 @@ Implemented behavior:
 
 Founder browser QA passed for the navigation lifecycle, including navigation across the main sections, return navigation, homepage ticker behavior, and newsletter-form behavior after internal navigation.
 
+## Newsletter acquisition copy implementation
+
+Implemented on the working branch:
+
+- `NewsletterSignup.astro` default copy now uses the approved general acquisition message;
+- homepage acquisition uses the approved general message;
+- shared footer acquisition uses the approved general message;
+- News archive acquisition uses the approved News-specific message;
+- Why archive acquisition uses the approved Why-specific message;
+- Hustle archive acquisition uses the approved Hustle-specific message;
+- `docs/V0_SCOPE.md` and `docs/COPY_STYLE.md` retire the 7-minute promise and record the contextual acquisition model.
+
+No layout redesign, new signup component, separate section newsletter, or new delivery promise was introduced.
+
 ## Continuous integration
 
 A minimal GitHub Actions workflow exists at:
@@ -314,22 +372,22 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**AUTOMATED RUNTIME VALIDATION PASS / CLIENT-NAVIGATION VISUAL QA PASS.**
+**PREVIOUS MIGRATION / NAVIGATION VALIDATION PASS. NEWSLETTER ACQUISITION COPY VALIDATION PENDING.**
 
-The News / Why / Hustle migration and short-page footer correction previously passed founder preview QA.
+The News / Why / Hustle migration, short-page footer correction, and client-side navigation enhancement previously passed CI and founder preview QA.
 
-Client-navigation CI run `#8` on commit `49abdcea27069581b5e05ba6e8a5f715a4838aeb` completed successfully on 2026-09-10.
+The newly implemented newsletter acquisition copy changes require fresh CI and preview inspection before they can be included in the release candidate.
 
-Verified by CI:
+Required validation for this copy refinement:
 
-- checkout/setup: PASS;
-- `npm ci`: PASS;
-- `npm run check`: PASS;
-- `npm run build`: PASS.
-
-Follow-up state-tracking CI run `#9` on commit `c8c64910e6b6222f7f7b10434a4809be9b908f47` also completed successfully.
-
-Founder preview QA is PASS for the client-side navigation enhancement. This closes the browser-navigation lifecycle gate in addition to the previously completed News / Why / Hustle visual QA.
+- `npm run check` PASS;
+- `npm run build` PASS;
+- homepage general acquisition copy renders correctly;
+- shared footer acquisition copy renders correctly;
+- News / Why / Hustle contextual archive acquisition copy renders correctly;
+- responsive wrapping remains acceptable on desktop and phone;
+- signup behavior remains unchanged and functional;
+- no retired 7-minute acquisition promise remains on current website surfaces.
 
 ## Active work plan
 
@@ -346,15 +404,16 @@ Founder preview QA is PASS for the client-side navigation enhancement. This clos
 11. **Preview visual/responsive QA** - complete / founder PASS.
 12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
 13. **Client-side navigation enhancement** - COMPLETE / VALIDATED.
-14. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
+14. **Newsletter acquisition copy refinement** - implemented / validation pending.
+15. **Release decision / merge to `main`** - separate future gate only after copy validation and explicit founder release approval.
 
 ## Exact next task
 
-**Decide whether to release the validated working-branch state to `main`.**
+**Validate the newsletter acquisition copy refinement.**
 
-The release candidate now includes both the validated News / Why / Hustle migration and the validated client-side navigation enhancement.
+Run CI against the current working-branch state, then inspect the homepage, shared footer, and News / Why / Hustle archive acquisition blocks on desktop and phone. Confirm the new copy wraps cleanly, remains contextually correct, and does not affect signup behavior.
 
-If release is approved, preserve `main` as the production boundary and merge only the validated working-branch state. Confirm CI on the release state and verify the production deployment after the merge.
+If validation passes, close the copy-refinement gate. Only then return to the separate release decision.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
