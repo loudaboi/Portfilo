@@ -1,6 +1,6 @@
 # Portfilo Copy Style
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Purpose
 
@@ -60,12 +60,14 @@ At this boundary:
 
 - Portfilo is a business-and-technology publication;
 - News is the current/day-to-day editorial layer;
-- Stories are the deeper editorial layer;
+- Why is the question-led deeper editorial layer;
+- Hustle is the people-led reported layer about founders, operators, and business owners;
 - public coverage labels are `Business / Technology / Startup / AI`;
 - newsletter/email acquisition is a primary product conversion;
 - Portfilo has **no geographic product promise**;
 - Portfilo remains free in v0;
-- the approved newsletter promise is a 7-minute read, three times per week;
+- the former 7-minute reading-time promise is retired;
+- the approved newsletter cadence remains three times per week;
 - exact newsletter send days and times remain unapproved;
 - the shared header CTA currently renders as `SUBSCRIBE FREE` on all routes.
 
@@ -241,7 +243,8 @@ Portfilo public copy does not use the em dash character (`—`). Rewrite with a 
 Prefer ordinary labels such as:
 
 - News
-- Stories
+- Why
+- Hustle
 - Subscribe
 - Subscribe free
 - Standards
@@ -314,25 +317,67 @@ State only product behavior that is actually established.
 Current safe operational facts include:
 
 - subscription is free;
-- the public newsletter promise is a 7-minute read;
 - cadence is three times per week;
+- there is no current reading-time promise;
 - exact send days and times remain unapproved;
 - double opt-in confirmation is required;
 - unsubscribe is available.
+
+The founder-approved website acquisition system is:
+
+### General acquisition
+
+Heading:
+
+`Get ahead in business and tech.`
+
+Description:
+
+`Reporting on what changed, why it’s happening, and how companies are built and run. Three times a week, straight to your inbox.`
+
+### News archive acquisition
+
+Heading:
+
+`Stay on top of what’s changing.`
+
+Description:
+
+`Current reporting on the developments moving companies, technology, work, and the digital economy.`
+
+### Why archive acquisition
+
+Heading:
+
+`Understand what’s underneath.`
+
+Description:
+
+`The forces, systems, incentives, and decisions behind changes in business and technology.`
+
+### Hustle archive acquisition
+
+Heading:
+
+`See how businesses actually get built.`
+
+Description:
+
+`Reported stories about the decisions, constraints, pivots, and operating work behind founders and companies.`
+
+The News, Why, and Hustle messages are contextual acquisition copy for one Portfilo newsletter. They do not create section-specific newsletters or separate delivery promises. Cadence belongs on the general acquisition surface and does not need to be repeated in every archive banner.
 
 `Portfilo Brief` is rejected as current public newsletter acquisition language. Legacy occurrences are stale and should be removed when their surface reaches its approved active scope.
 
 Default to product clarity. A subscribe surface may carry a short campaign or institutional statement only after it passes the full message-architecture and founder-copy approval gate, and that statement remains scoped to the approved surface.
 
-Final G1 `/subscribe` visible copy authority:
+Historical G1 `/subscribe` visible copy authority:
 
 - page-scoped statement: `Some changes look small, until they reshape everything. We look closer.`;
 - functional signup heading: `GET THE NEWSLETTER`;
 - CTA: `SUBSCRIBE`.
 
-The page-scoped statement remains sentence case. `GET THE NEWSLETTER` is an all-caps functional form heading, not a tagline, and its presentation uses the same typography values as the campaign statement at the corresponding breakpoint. The final page has no visible cadence support line and no visible `Free newsletter. Unsubscribe anytime.` note. The shared `NewsletterSignup.astro` may retain its default note internally, but `/subscribe` hides it page-locally. The current meta description may still state the approved 7-minute / three-times-per-week operational promise because that claim remains valid.
-
-The page-scoped statement is not a masthead tagline, homepage slogan, newsletter title, or reusable editorial line.
+The standalone `/subscribe` route is retired and redirects to `/#newsletter`. Its historical page-scoped statement remains provenance only and is not a masthead tagline, homepage slogan, newsletter title, or reusable editorial line.
 
 Avoid default newsletter clichés such as:
 
