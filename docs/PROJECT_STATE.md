@@ -4,13 +4,13 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` NEXT**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` COMPLETE / G3 `/privacy` NEXT**
 
-Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` was reopened after founder rendered review rejected the first blue-band implementation, then iterated through a founder-approved image-led composition. The final G1 runtime is founder-approved and locally validated. G2 `/standards` is now the exact next task.
+Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` and G2 `/standards` are founder-approved and locally validated. G3 `/privacy` is now the exact next task.
 
 Current and last fully validated runtime HEAD:
 
-`9e2348763a0d6c811a095767beeb5bc6e5962f83` — `Revert subscribe no-scroll experiment`
+`b7c764647d8b583ceb64d54aca1ee1b99df3027c` — `Simplify standards editorial page`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -314,13 +314,13 @@ The later dedicated multi-width full-site responsive audit remains sequence H an
 
 ## G — Utility/editorial page simplification
 
-**ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` NEXT.**
+**ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` COMPLETE / G3 `/privacy` NEXT.**
 
 Sequence inside G:
 
 1. `/subscribe` — **COMPLETE**;
-2. `/standards` — **NEXT**;
-3. `/privacy` — **NOT STARTED**.
+2. `/standards` — **COMPLETE**;
+3. `/privacy` — **NEXT**.
 
 ### G1 `/subscribe`
 
@@ -418,7 +418,44 @@ Recorded against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`:
 - source review confirms `/subscribe` continues to use the shared `NewsletterSignup.astro` submission/validation implementation;
 - the dedicated multi-width laptop/tablet/mobile visual audit remains intentionally deferred to H.
 
-G1 is closed. Do not reopen it during G2 unless a concrete regression or founder decision requires it.
+G1 is closed. Do not reopen it during later G work unless a concrete regression or founder decision requires it.
+
+### G2 `/standards`
+
+The previous Standards runtime used a bespoke 100rem / 12-column microsite treatment with numbered section scaffolding, oversized display typography, a five-cell numbered index, a black AI takeover section, a special red correction treatment, and sidebar/card-like notes. That visual system is superseded by the founder-approved G2 simplification.
+
+The final founder-approved G2 contract is:
+
+- one restrained text-led editorial/utility page inside the current 84rem publication shell;
+- standard shared `SiteHeader` and normal shared `SiteFooter` behavior, including the shared footer acquisition;
+- current page title, introduction, substantive standards copy, metadata title, and metadata description preserved;
+- simple unnumbered `On this page` jump links for Sources, Verification, AI use, Corrections, and Commercial independence;
+- one consistent section system rather than separate visual treatments for each topic;
+- Instrument Sans for hierarchy and utility text;
+- Source Serif 4 for substantive reading copy;
+- narrow reading measure aligned with the current editorial reading system;
+- supporting principles and process information preserved inline rather than deleted merely because their old containers were removed;
+- no giant numeric markers, numbered presentation scaffold, black AI takeover, red correction card, decorative sidebars, cards, gradients, or new graphics;
+- no dependency, framework, schema, shared-header, shared-footer, archive, article, homepage, Subscribe, or Privacy changes.
+
+Implementation:
+
+- `b7c764647d8b583ceb64d54aca1ee1b99df3027c` — simplify `/standards` into the approved restrained editorial page.
+
+### G2 validation
+
+**PASS.**
+
+Recorded against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`:
+
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the G2 runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the G2 runtime;
+- source/diff review confirms only `src/pages/standards.astro` changed in the G2 runtime commit;
+- the substantive institutional standards were preserved rather than materially rewritten;
+- dedicated multi-width site-wide responsive QA remains sequence H.
+
+G2 is closed. Do not reopen it during G3 unless a concrete regression or founder decision requires it.
 
 ## Remaining sequence
 
@@ -434,7 +471,7 @@ E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**
 
 F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: G1 COMPLETE / G2 NEXT**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: G1 COMPLETE / G2 COMPLETE / G3 NEXT**;
 
 H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NOT STARTED**;
 
@@ -442,26 +479,27 @@ I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Begin G2 `/standards` at the **inspection and design/copy planning gate**, not implementation.
+Begin G3 `/privacy` at the **inspection and design/copy/data-flow planning gate**, not implementation.
 
 Required first step:
 
 1. verify the current branch/HEAD;
-2. inspect the current `/standards` source and rendered structure;
-3. inspect the canonical editorial/research/publishing standards that the public page is supposed to represent;
-4. read/apply `skills/portfilo-anti-slop/SKILL.md` before making any nontrivial public-copy or visual recommendation;
-5. identify what is stale, redundant, visually inconsistent, or unsupported on the current page without changing unrelated site surfaces;
-6. propose a restrained G2 simplification contract using the existing publication system where appropriate;
-7. separate content/copy decisions from implementation details;
-8. stop for founder approval before editing `/standards` runtime or public copy.
+2. inspect the current `/privacy` source and rendered structure;
+3. inspect the actual current data flow relevant to Privacy, including newsletter form submission, the `/api/subscribe` proxy, beehiiv-facing configuration, analytics behavior, and any other runtime collection or third-party processing that the page claims to describe;
+4. inspect the current canonical privacy/email/deployment documents relevant to those flows;
+5. read/apply `skills/portfilo-anti-slop/SKILL.md` before making any nontrivial public-copy or visual recommendation;
+6. identify stale, redundant, unsupported, or missing privacy statements without inventing legal assurances or data practices;
+7. propose a restrained G3 utility-page simplification using the existing publication system where appropriate;
+8. separate factual/data-flow or legal-copy decisions from implementation details;
+9. stop for founder approval before editing `/privacy` runtime or public copy.
 
-Do not begin `/privacy` while G2 `/standards` is open.
+Do not begin sequence H while G3 `/privacy` is open.
 
 ## Deferred / not authorized now
 
 - article audio/listen system;
 - share toolbar;
-- `/privacy` redesign before its G sub-gate;
+- G3 `/privacy` implementation before founder approval of its inspection/copy/design plan;
 - deep site-wide responsive typography audit before H;
 - `/latest`;
 - pagination;
