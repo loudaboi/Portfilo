@@ -1,6 +1,6 @@
 # Portfilo Design Direction
 
-_Last updated: 2026-09-08_
+_Last updated: 2026-09-09_
 
 ## Objective
 
@@ -10,355 +10,205 @@ Current direction:
 
 > **Premium editorial restraint + digital immediacy**
 
-The design should make current News easy to scan, deeper editorial work pleasant to read, and newsletter acquisition easy to act on without turning the site into a marketing funnel with journalism underneath it.
+The design should make current News easy to scan, deeper Stories pleasant to read, and newsletter acquisition easy to act on without turning the site into a marketing funnel with journalism underneath it.
 
-For nontrivial discretionary visual/product decisions, apply:
+For nontrivial discretionary visual/product decisions, apply `skills/portfilo-anti-slop/SKILL.md`.
 
-`skills/portfilo-anti-slop/SKILL.md`
+## Core principles
 
-## Current homepage authority
+### Editorial hierarchy before components
 
-Current founder-approved homepage contract:
+Use scale, typography, image treatment, placement, and whitespace to express importance. Avoid equal-card grids and component repetition unless a real information problem requires them.
 
-`research/homepage-redesign-v1.md`
+### Typography carries the identity
 
-`docs/PROJECT_STATE.md` owns the current phase and exact next task.
+- Instrument Sans leads hierarchy and interface.
+- Source Serif 4 supports deeper long-form reading.
+- IBM Plex Mono is reserved for utility/data/source roles where justified.
+- Type must scale progressively across desktop, laptop, tablet, and phone.
 
-The previously implemented Homepage v3 composition was visually rejected. The current authority is the later founder-approved production-safety correction implemented on the working branch.
+Do not use repeated eyebrows, oversized display type, or typographic tricks merely to make a page feel designed.
 
-## Core visual principles
+### Whitespace is structural
 
-### 1. Editorial hierarchy before components
+Whitespace separates editorial jobs and protects reading rhythm. It should not become oversized marketing emptiness.
 
-Use scale, typography, image treatment, placement, and whitespace to express editorial importance.
+The site should feel intentionally dense enough to read as a publication.
 
-Avoid equal-card grids as the default. Cards are allowed only when they solve a real information problem.
+### One publication shell
 
-### 2. Typography carries most of the identity
+The primary publication shell is 84rem / 1344px maximum.
 
-Prefer:
+Header, homepage modules, archives, institutional pages, footer acquisition, and footer align to the shared shell and shared responsive gutter unless a section is deliberately full bleed.
 
-- strong sans-led publication hierarchy;
-- disciplined reading typography;
-- serif contrast only where it creates a meaningful reading/editorial mode;
-- compact utility/metadata typography;
-- natural variation in scale based on editorial importance.
+The Latest News ticker is the main approved full-bleed exception.
 
-For the current homepage:
-
-- hero uses **Instrument Sans**;
-- Feature headline and dek use **Instrument Sans**;
-- Source Serif 4 remains available for long-form reading and selective deeper editorial contrast, not the current homepage Feature presentation.
-
-Do not use repeated eyebrows, index labels, or typography tricks merely to make the page feel designed.
-
-### 3. Whitespace is structural, not ornamental
-
-Use deliberate whitespace to separate editorial jobs and protect reading rhythm.
-
-The Latest strip now has explicit paper breathing room above and below it so the hero blue rule, ticker, and Feature read as three distinct layers.
-
-Target rhythm:
-
-- approximately 24 px above and below the ticker on desktop;
-- approximately 16 px on narrow mobile.
-
-Do not use oversized empty marketing regions to signal premium design. Portfilo should feel intentionally dense enough to read as a publication.
-
-### 4. One global homepage shell
-
-The homepage has a hard alignment invariant:
-
-- header inner content, hero inner content, Feature area, News, and footer inner content share one common shell;
-- current large-desktop shell is 84rem / 1344 px maximum;
-- individual homepage sections must not invent independent global max-width/centering rules;
-- internal grids may vary inside the shell;
-- **only the Latest ticker is full-bleed**.
-
-This rule exists to prevent repeated gutter/indent drift.
-
-### 5. Brand color is structural, not decorative
+### Brand color is structural
 
 Current palette:
 
-- paper/off-white: `#f4f0e8` baseline, with restrained near-white variation allowed;
-- ink: `#171614`;
-- muted neutral: `#69655e`;
-- line neutral: `#cbc5bb`;
-- Portfilo blue: `#0050a4`;
-- light blue: `#8fc7ff` as a brand reference/accent where justified;
-- Portfilo red: `#b42318`.
+- paper: `#f4f0e8`
+- ink: `#171614`
+- muted: `#69655e`
+- line: `#cbc5bb`
+- Portfilo blue: `#0050a4`
+- light blue: `#8fc7ff`
+- Portfilo red: `#b42318`
 
-Blue is the primary functional/editorial accent.
+Blue is the primary structural/editorial accent. Red remains rare and intentional.
 
-Red is rare and intentional. Do not mechanically balance blue and red across page regions.
+Do not mechanically repeat blue rules on every image.
 
-Approved blue structural devices on the homepage include:
+Approved image-rule hierarchy:
 
-- thin blue rule above and below the top newsletter acquisition area;
-- thin 2–3 px blue rule at the top edge of Feature and News imagery;
-- the continuous blue editorial/newsletter rail beside the Feature.
+- homepage primary Feature image: thin blue top rule;
+- primary News/Stories article hero: thin blue top rule;
+- supporting News/Stories archive/list/secondary images: **no blue top rule**.
 
-Do not turn these into boxed card systems or decorative color spam.
+### Responsive behavior
 
-### 6. Mobile is first-class
+Desktop, laptop, and tablet belong to one layout family.
 
-Mobile is not a shrunken desktop composition.
+- 1440 / 1366: full desktop composition.
+- 1024: compact desktop/laptop. Preserve desktop structure and increase side breathing room rather than collapsing prematurely.
+- 768: tablet still derives from desktop. Selectively reflow only where readability or fit requires it.
+- 390 / 375 / 320: phone is the major structural simplification point.
 
-Preserve readable line lengths, editorial order, usable form controls, accessible tap targets, and no horizontal page overflow.
+A stacked layout does not imply unlimited width. Newsletter forms and other controls should remain sensibly constrained, especially on tablet.
 
-Responsiveness is a hard completion requirement for every visual pass.
+Mobile remains first-class: readable line lengths, intentional order, usable controls, accessible tap targets, and no horizontal page overflow.
 
-## Current homepage visual contract
+## Header
 
-Implemented structure:
+Final masthead:
+
+`Portfilo | News | Stories`
+
+No persistent Subscribe CTA and no hamburger by default.
+
+A hamburger is justified only if real narrow-width testing shows the simplified three-part masthead cannot fit accessibly.
+
+## Homepage
+
+Current composition:
 
 ```text
-SHARED CONTENT SHELL
-Header / Hero / Feature / News / Footer-inner
-
 HEADER
-Portfilo | Latest | Stories | Subscribe free
+Portfilo | News | Stories
 
 TOP NEWSLETTER SIGNUP
-blue rule above
-[content] [signup]
-Instrument Sans
-hero CTA: Send me the news
-blue rule below
+blue acquisition band
+message + working signup
 
 PAPER SPACE
 
-LATEST STRIP
-black Latest label only
-light headline rail
-full viewport width
+LATEST NEWS STRIP
+full bleed when inventory exists
 
 PAPER SPACE
 
-FEATURE + CONTINUOUS BLUE RAIL
-left: restrained 16:9 Feature image + headline + dek
-right: contextual signup + divider + Latest block in normal top-down flow
+FEATURE + CONTEXTUAL BLUE RAIL
+left: primary 16:9 Story image + headline + dek
+right: contextual newsletter signup + Stories item
 
 NEWS
-plain News heading
-local development hierarchy when fixtures exist
-production-safe empty state when real News inventory does not yet exist
+lead News + supporting News hierarchy
 
-BLACK FOOTER ENDCAP
-compact signup + minimal links
+DARK FOOTER ACQUISITION
+
+COMPACT FOOTER
+Stories | Standards | Privacy
 ```
 
-### Header
+### Newsletter acquisition
 
-Use:
+The homepage is the direct newsletter destination. `/subscribe` is retired and redirects to `/#newsletter`.
 
-- approved Portfilo wordmark asset at the restrained scale;
-- `Latest | Stories` navigation;
-- `Subscribe free` CTA button;
-- no topic labels;
-- shared-shell alignment;
-- no unrelated header redesign.
+All visible signup forms use the shared form/backend behavior.
 
-### Top newsletter acquisition area
+Avoid giant tablet-width fields. When a form stacks, its measure should remain deliberately constrained until phone widths justify full-width controls.
 
-The top signup behaves as a compact publication acquisition unit:
+### Latest News strip
 
-`[content] [signup]`
+Use deliberate paper space above and below the ticker so the acquisition band, ticker, and Feature remain distinct layers.
 
-Use:
+Motion is restrained and only justified when inventory supports an actual moving rail. Reduced-motion and manual interaction must remain respected.
 
-- warm paper background;
-- Instrument Sans headline/support/UI;
-- approved headline `Get ahead in business and tech in 7 minutes.`;
-- approved support line;
-- hero CTA `Send me the news`;
-- blue rule above and below the hero unit;
-- free/unsubscribe note close to the form;
-- no hero image;
-- no `NEWSLETTER` eyebrow;
-- no huge independent hero container;
-- no colored full-section background block;
-- no vertical divider;
-- no gradient, shadow, card shell, or decorative icon.
+### Feature
 
-Hero and Feature-rail forms share the same component/control system: height, border rhythm, typography, padding, square geometry, validation, and submission states. Exact widths may differ because the parent columns differ.
+- canonical 16:9 landscape image;
+- primary image may retain the thin blue top rule;
+- Instrument Sans headline/dek;
+- no decorative eyebrow required;
+- no arbitrary tall crop or fixed-height image repair;
+- desktop/laptop/tablet should preserve the Feature + rail relationship while space remains viable;
+- phone may stack deliberately.
 
-### Latest strip
+### News
 
-Use:
+Real published News is clickable and routes to `/news/[slug]`.
 
-- full viewport width;
-- near-black `Latest` identifier only;
-- light headline rail;
-- blue category accents where useful;
-- static behavior until the corrected homepage is visually approved;
-- deliberate paper space above and below it.
+Development-only News fixtures are clearly synthetic and non-clickable.
 
-Do not use the whole strip as a black bar and do not use red as the ticker treatment.
+Supporting News imagery should be quiet: no repeated blue image rules.
 
-### Feature + continuous blue rail
+## Archives
 
-Feature column:
+News and Stories use one shared archive system.
 
-- use `public/images/homepage-feature-16x9.png`;
-- homepage Feature presentation uses the canonical **16:9 landscape** format already defined by `docs/IMAGE_SYSTEM.md`;
-- large-desktop media should not exceed roughly 52rem / 832 px;
-- scale fluidly downward on smaller widths;
-- do not display arbitrary tall source ratios on the homepage;
-- do not use a fixed-height crop to repair a badly chosen source asset;
-- add a 2–3 px Portfilo-blue top rule to the image only;
-- use Instrument Sans for Feature headline and dek;
-- image -> headline -> short dek;
-- no Feature eyebrow;
-- no `A CLOSER LOOK` heading.
+- 84rem shared shell;
+- lead item + supporting stream;
+- optional 16:9 imagery;
+- explicit image-less states;
+- contextual newsletter acquisition;
+- supporting images without blue top rules;
+- laptop/tablet preserve desktop-family composition as long as it remains readable;
+- phone uses deliberate single-column stacking.
 
-Blue rail:
+## Articles
 
-- no square Portfilo brand placeholder;
-- use one continuous blue panel;
-- contextual signup comes first;
-- then a thin internal divider;
-- then one Latest block;
-- show a real teaser title + short description when eligible inventory exists;
-- otherwise keep the block present with a restrained factual empty state rather than fabricating news;
-- then `See the latest news →`;
-- no nested card inside the rail;
-- content stays in normal top-to-bottom document flow;
-- **do not use `margin-top:auto` or any device that pushes Latest content to the bottom because the Feature image is tall**;
-- desktop/tablet rail may stretch with the Feature module, but content must remain top-flowing;
-- mobile rail becomes content-height and must not preserve desktop equal-height behavior.
+One shared article component serves News and Stories.
 
-Approved contextual signup headline:
+Preserve:
 
-`There's more to it than the headline.`
+- centered classification/headline/dek package;
+- header/hero max width around 54rem;
+- reading measure around 41.5rem;
+- News uses Instrument Sans reading mode;
+- Stories use Source Serif 4 reading mode;
+- optional Stories section rail when enough real `h2` headings exist;
+- methodology/corrections;
+- optional 16:9 hero.
 
-A one-sentence support description remains required, but exact final wording is a separate copy gate. Runtime temporarily reuses the already-approved primary newsletter support line rather than inventing a new public claim.
+Current hero treatment:
 
-### Editorial image-top rule
+- no neutral divider between article header and hero;
+- deliberate whitespace connects the header package to the image;
+- primary hero retains its thin blue top rule.
 
-Use a restrained 2–3 px Portfilo-primary-blue rule at the top edge of Feature and News imagery when appropriate.
+No public individual author/byline system.
 
-The line:
+## Institutional and utility pages
 
-- follows the responsive image width;
-- does not extend to the other three edges;
-- should not be applied to non-editorial visuals by default.
+Standards and Privacy remain restrained text-led editorial pages inside the same shared shell.
 
-### News and footer
+Confirmed and 404 are compact utility pages using the same foundation rather than a separate oversized visual system.
 
-News remains below the Feature/rail composition with its plain `News` heading.
+About and standalone Subscribe are retired in v0.
 
-Development fixtures may test the News hierarchy locally only. They must remain excluded from production. Production must not hide the entire News section simply because no real News inventory exists yet; use a restrained factual empty state until the later News/Feature architecture is implemented and populated.
+## Anti-patterns
 
-The near-black footer endcap remains. Its inner content uses the same shared shell.
+Do not introduce without a demonstrated requirement:
 
-Do not redesign either section unless the approved shell exposes a concrete defect.
-
-## Geometry and surfaces
-
-Default toward:
-
-- square or nearly square geometry;
-- thin rules rather than heavy borders;
-- flat surfaces;
-- composition and spacing rather than shadows;
-- image scale based on editorial importance;
-- tighter publication density rather than oversized landing-page whitespace.
-
-Avoid by default:
-
-- rounded newsletter cards;
-- pill-heavy navigation;
+- SaaS card soup;
+- rounded newsletter cards as a default;
+- gradients;
 - glassmorphism;
-- default shadows;
 - glow;
-- decorative black panels in the page body;
-- gradient blocks;
-- `01 / 02 / 03` decoration;
-- fake terminal styling;
-- faux-print/newsprint texture on the UI itself.
-
-## Typography
-
-Baseline:
-
-1. `Instrument Sans` for homepage interface/navigation/metadata and current homepage display work;
-2. `Source Serif 4` for long-form reading and selective deeper editorial contrast;
-3. `IBM Plex Mono` only for true utility/data/source/timestamp roles.
-
-Avoid excessive monospace and repeated eyebrow systems.
-
-## Images
-
-Editorial imagery follows `docs/IMAGE_SYSTEM.md`.
-
-Preferred modes when the editorial job supports them:
-
-- owned/licensed/verified photography;
-- approved generated editorial illustration;
-- data/document/evidence visuals;
-- typography-led/no-image treatment.
-
-The current top acquisition area uses no hero image.
-
-The homepage Feature now uses the approved 16:9 asset rather than the previous tall natural-ratio rendering. The canonical v0 story-image ratio remains 16:9 landscape; article-body imagery may still vary when the editorial job requires it.
-
-## Responsive contract
-
-Every visual change must work across wide desktop, standard desktop/laptop, tablet, and mobile.
-
-Required behavior:
-
-- shared shell scales fluidly;
-- hero remains two-column while space permits, then stacks;
-- hero blue rules remain aligned to the shared shell;
-- ticker remains the only full-bleed element;
-- ticker breathing room reduces appropriately on mobile;
-- Feature + blue rail remain side-by-side only while readable;
-- Feature media is capped on large desktop instead of expanding arbitrarily;
-- tablet/mobile stack Feature then rail;
-- 16:9 Feature image scales responsively;
-- blue image-top rule follows image width;
-- blue rail becomes content-height on mobile;
-- forms fill available width without overflow;
-- header CTA remains usable on narrow screens;
-- no horizontal page scrolling.
-
-## Motion
-
-Motion remains subordinate to static composition.
-
-The corrected static homepage must be validated and visually approved before automatic ticker motion is added.
-
-Later ticker motion should use:
-
-- slow horizontal movement;
-- pause behavior on hover/focus where applicable;
-- stationary/manual reduced-motion fallback;
-- touch-safe mobile behavior;
-- CSS first;
-- no obsolete `<marquee>`.
-
-Avoid scroll-jacking, decorative parallax, fade-up on every section, or motion that delays reading.
-
-## Accessibility
-
-Required:
-
-- semantic document structure;
-- keyboard navigation;
-- visible focus;
-- sufficient contrast;
-- meaningful link text;
-- appropriate alt text;
-- reduced-motion behavior;
-- responsive text/layout without horizontal overflow.
-
-Accessibility is part of completion, not later polish.
-
-## Development fixture rule
-
-Synthetic content may be used to test hierarchy, wrapping, density, and responsive structure only when clearly synthetic, clearly labeled, and excluded from production.
-
-Do not fabricate realistic company/news claims merely to make a layout look populated.
+- shadows as decoration;
+- fake terminal UI;
+- faux newspaper styling;
+- decorative numbers/indexes;
+- repeated color rules on every module;
+- unnecessary animation;
+- a new component/design framework.
