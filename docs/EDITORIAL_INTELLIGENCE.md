@@ -85,7 +85,7 @@ A significant global development can belong without a manufactured Philippine an
 
 This internal reporting emphasis is not a public geographic product promise or tagline.
 
-## News and Stories
+## News, Why, and Hustle
 
 Use this simple distinction as the default mental model.
 
@@ -109,17 +109,23 @@ Examples of possible News signals include:
 
 A development is not automatically News merely because it is new.
 
-### Stories
+### Why
 
-> **What is changing underneath?**
+> **Why is this happening? How does this work? What is changing underneath?**
 
-Stories may ask why something is happening, how it works, what a pattern means, what a company or industry is doing differently, or what a development reveals.
+Why is question-led deeper work. It may examine mechanisms, systems, industries, patterns, contradictions, causes, consequences, or what several developments reveal.
 
-Story ideas are deliberately open-ended. They may come from observation, curiosity, lived experience, conversations, interviews, data, recurring patterns, News signals, or any worthwhile question.
+### Hustle
 
-The News pipeline is **not** the exclusive source of Story ideas.
+> **Who is building or operating it, and how?**
 
-When an idea becomes a substantial Story candidate, convert it into an answerable question and use `docs/CONTENT_PLANNING.md`.
+Hustle is people-led reported work about founders, operators, and business owners. It should examine what was actually built or operated, the decisions and constraints involved, and what the reporting can establish rather than functioning as promotional success-story content.
+
+Story ideas remain deliberately open-ended. They may come from observation, curiosity, lived experience, conversations, interviews, data, recurring patterns, News signals, or any worthwhile question.
+
+The News pipeline is **not** the exclusive source of deeper editorial ideas.
+
+When an idea becomes a substantial candidate, convert it into an answerable reporting question and use `docs/CONTENT_PLANNING.md`. The eventual public section may be Why or Hustle depending on the actual editorial job.
 
 ## Signal definition
 
@@ -179,7 +185,9 @@ Every Watch item should state what would change the decision, such as final regu
 
 ### STORY IDEA
 
-The signal exposes a deeper question, mechanism, contradiction, pattern, or consequence worth considering through `docs/CONTENT_PLANNING.md`.
+The signal exposes a deeper question, mechanism, contradiction, pattern, person/company path, or consequence worth considering through `docs/CONTENT_PLANNING.md`.
+
+`STORY IDEA` remains a private scanner/Sheet label. It is not a public section. A promoted candidate may become Why or Hustle after editorial planning.
 
 A Story Idea is not an assignment and does not need to originate in News.
 
@@ -279,7 +287,7 @@ Once a week, review briefly:
 - sources producing useful signals;
 - noisy or low-value inputs;
 - important developments Portfilo discovered late or missed;
-- possible Story questions created by repeated signals.
+- possible deeper reporting questions created by repeated signals.
 
 Do not create publishing quotas from this review.
 
@@ -303,7 +311,7 @@ Automate only a repeated manual problem that has actually appeared in use.
 
 Raw searches, routine feed items, newsletters, and the ordinary signal inbox do not belong in the repository.
 
-Once a substantial Story is promoted, its formal research belongs in the existing `research/stories/<slug>/` packet structure.
+Once a substantial assignment is promoted, its formal research belongs in the existing `research/stories/<slug>/` packet structure. The internal research path name does not define the public section.
 
 Fast factual News must retain enough source/date/scope information to recover its evidence position under `docs/PUBLISHING_STANDARD.md`.
 
