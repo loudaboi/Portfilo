@@ -6,7 +6,7 @@ _Status: INITIAL OPERATING SOURCE MAP / v0_
 
 ## Purpose
 
-This is Portfilo's deliberately small source universe for current News discovery.
+This is Portfilo's deliberately small starting universe for current News discovery.
 
 It supports `docs/EDITORIAL_INTELLIGENCE.md` and does not replace the evidentiary hierarchy in `docs/RESEARCH_STANDARD.md`.
 
@@ -16,22 +16,25 @@ The source map answers:
 
 It does not answer whether a claim is true. Discovery source and evidentiary weight remain separate questions.
 
+The primary v0 scanner uses this map as a starting universe, not a closed whitelist. Broader current web search is allowed when it catches a material development, traces a secondary report to an original source, corroborates a consequential claim, or finds context the fixed list does not provide.
+
 ## Operating rules
 
-1. Start small. This list is intentionally below the available free-tool ceiling.
+1. Start small. Do not expand the list to simulate completeness.
 2. Prefer primary Philippine sources for developments they directly control or record.
 3. Use strong secondary reporting for discovery, context, corroboration, and leads.
 4. A company, regulator, industry association, investor, accelerator, or AI lab is primary evidence for what it announced or recorded. It is not independent proof of every claim it makes.
 5. Add a source only when it repeatedly produces useful signals or fills a demonstrated gap.
 6. Remove or de-emphasize sources that mostly create noise.
 7. Do not create a second source-credibility tier system here. `docs/RESEARCH_STANDARD.md` owns evidentiary tiers.
-8. Do not force every source into RSS. If a useful source has no public feed, keep it as a manual `WATCH` or `TARGETED` source rather than paying for monitoring or building a scraper.
+8. Do not require RSS availability. Direct pages and current web search are valid discovery paths.
+9. Do not mechanically open all 32 sources on every scan. `CORE / WATCH / TARGETED` controls attention frequency.
 
 ## Monitoring labels
 
 These labels describe **how often Portfilo should look**, not how credible the source is.
 
-- `CORE` - high-frequency source worth scanning in the normal News routine.
+- `CORE` - high-frequency source worth prioritizing in normal scans.
 - `WATCH` - useful source checked periodically or when its subject becomes active.
 - `TARGETED` - consult when a specific company, policy, filing, procurement, batch, or question makes it relevant.
 
@@ -39,146 +42,117 @@ These labels describe **how often Portfilo should look**, not how credible the s
 
 ### Philippine primary and official sources
 
-| Source | Monitoring | Main use | Collection default |
-|---|---|---|---|
-| PSE EDGE - https://edge.pse.com.ph/ | CORE | Listed-company material disclosures, transactions, acquisitions, press releases, financial and corporate events | Public feed if detected; otherwise direct/manual search |
-| Bangko Sentral ng Pilipinas Media & Research - https://www.bsp.gov.ph/SitePages/MediaAndResearch/MediaList.aspx?TabId=1 | CORE | Banking, payments, monetary/financial developments, official surveys and releases | Public feed if detected; otherwise direct page |
-| Philippine Statistics Authority Press Releases - https://psa.gov.ph/press-releases | WATCH | Labor, prices, trade, household, demographic and economic data | Public feed if detected; otherwise periodic page scan |
-| Securities and Exchange Commission - https://www.sec.gov.ph/ | WATCH | Corporate regulation, advisories, securities and company-regulatory developments | Public feed if detected; otherwise periodic page scan |
-| Philippine Competition Commission News - https://www.phcc.gov.ph/news | WATCH | Mergers, competition rules, market concentration and antitrust developments | Public feed if detected; otherwise periodic page scan |
-| National Privacy Commission Advisories & Circulars - https://privacy.gov.ph/pips-and-pics/advisories-circulars/ | WATCH | Privacy, AI/data processing, cybersecurity-adjacent regulation | Public feed if detected; otherwise periodic page scan |
-| Energy Regulatory Commission Press Releases - https://www.erc.gov.ph/Press-Releases | WATCH | Electricity regulation, power costs, market rules and infrastructure constraints | Public feed if detected; otherwise periodic page scan |
-| Department of Energy News & Updates - https://doe.gov.ph/news | WATCH | Energy policy, grid/infrastructure, auctions and energy conditions relevant to digital infrastructure | Public feed if detected; otherwise periodic page scan |
-| Board of Investments - https://boi.gov.ph/ | WATCH | Approved investments, strategic sectors, AI/data-center/industrial investment signals | Public feed if detected; otherwise periodic page scan |
-| Philippine Economic Zone Authority Press Releases - https://www.peza.gov.ph/press-releases | WATCH | Ecozone investments, IT-BPM, manufacturing and expansion projects | Public feed if detected; otherwise periodic page scan |
-| DOST-PCIEERD News - https://pcieerd.dost.gov.ph/news/ | WATCH | Startups, R&D, commercialization, emerging technology and innovation programs | Public feed if detected; otherwise periodic page scan |
-| PhilGEPS Open Opportunities - https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashOpenOpportunitiesUI.aspx?ClickFrom=OpenOpp&men= | TARGETED | Government technology, software, cloud, cybersecurity and infrastructure procurement signals | Manual targeted search |
-| IPOPHL News - https://www.ipophil.gov.ph/news/ | WATCH | Intellectual property, innovation, digital/AI copyright and commercialization signals | Public feed if detected; otherwise periodic page scan |
-| Fiscal Incentives Review Board - https://firb.gov.ph/ | WATCH | Tax incentives and investment-policy changes affecting high-value technology/infrastructure projects | Public feed if detected; otherwise periodic page scan |
-| Department of Information and Communications Technology - https://dict.gov.ph/ | WATCH | National digital policy, connectivity, cybersecurity, AI and e-government developments | Direct official-site check; use official government releases/documents as a verification fallback when the DICT newsroom is difficult to access |
-| IBPAP Knowledge Hub - https://ibpap.org/knowledge-hub | WATCH | IT-BPM workforce, industry data, AI/work and sector operating signals | Periodic direct check; treat association claims as interested industry evidence |
+| Source | Monitoring | Main use |
+|---|---|---|
+| PSE EDGE - https://edge.pse.com.ph/ | CORE | Listed-company material disclosures, transactions, acquisitions, press releases, financial and corporate events |
+| Bangko Sentral ng Pilipinas Media & Research - https://www.bsp.gov.ph/SitePages/MediaAndResearch/MediaList.aspx?TabId=1 | CORE | Banking, payments, monetary/financial developments, official surveys and releases |
+| Philippine Statistics Authority Press Releases - https://psa.gov.ph/press-releases | WATCH | Labor, prices, trade, household, demographic and economic data |
+| Securities and Exchange Commission - https://www.sec.gov.ph/ | WATCH | Corporate regulation, advisories, securities and company-regulatory developments |
+| Philippine Competition Commission News - https://www.phcc.gov.ph/news | WATCH | Mergers, competition rules, market concentration and antitrust developments |
+| National Privacy Commission Advisories & Circulars - https://privacy.gov.ph/pips-and-pics/advisories-circulars/ | WATCH | Privacy, AI/data processing and cybersecurity-adjacent regulation |
+| Energy Regulatory Commission Press Releases - https://www.erc.gov.ph/Press-Releases | WATCH | Electricity regulation, power costs, market rules and infrastructure constraints |
+| Department of Energy News & Updates - https://doe.gov.ph/news | WATCH | Energy policy, grid/infrastructure, auctions and conditions relevant to digital infrastructure |
+| Board of Investments - https://boi.gov.ph/ | WATCH | Approved investments, strategic sectors and AI/data-center/industrial investment signals |
+| Philippine Economic Zone Authority Press Releases - https://www.peza.gov.ph/press-releases | WATCH | Ecozone investments, IT-BPM, manufacturing and expansion projects |
+| DOST-PCIEERD News - https://pcieerd.dost.gov.ph/news/ | WATCH | Startups, R&D, commercialization, emerging technology and innovation programs |
+| PhilGEPS Open Opportunities - https://notices.philgeps.gov.ph/GEPSNONPILOT/Tender/SplashOpenOpportunitiesUI.aspx?ClickFrom=OpenOpp&men= | TARGETED | Government technology, software, cloud, cybersecurity and infrastructure procurement signals |
+| IPOPHL News - https://www.ipophil.gov.ph/news/ | WATCH | Intellectual property, innovation, digital/AI copyright and commercialization signals |
+| Fiscal Incentives Review Board - https://firb.gov.ph/ | WATCH | Tax incentives and investment-policy changes affecting high-value technology/infrastructure projects |
+| Department of Information and Communications Technology - https://dict.gov.ph/ | WATCH | National digital policy, connectivity, cybersecurity, AI and e-government developments |
+| IBPAP Knowledge Hub - https://ibpap.org/knowledge-hub | WATCH | IT-BPM workforce, industry data, AI/work and sector operating signals |
 
 ### Philippine secondary discovery sources
 
-| Source | Monitoring | Main use | Collection default |
-|---|---|---|---|
-| BusinessWorld Technology - https://www.bworldonline.com/technology/ | CORE | Philippine technology, enterprise IT, AI, telecom and infrastructure discovery | RSS/feed if available |
-| BusinessWorld BW Launchpad - https://www.bworldonline.com/bw-launchpad/ | CORE | Philippine startups, founders, funding, MSMEs and company-building signals | RSS/feed if available |
-| Newsbytes.PH - https://newsbytes.ph/ | CORE | Specialist Philippine technology, cybersecurity, startups, digital policy and product/company developments | RSS/feed if available |
+| Source | Monitoring | Main use |
+|---|---|---|
+| BusinessWorld Technology - https://www.bworldonline.com/technology/ | CORE | Philippine technology, enterprise IT, AI, telecom and infrastructure discovery |
+| BusinessWorld BW Launchpad - https://www.bworldonline.com/bw-launchpad/ | CORE | Philippine startups, founders, funding, MSMEs and company-building signals |
+| Newsbytes.PH - https://newsbytes.ph/ | CORE | Specialist Philippine technology, cybersecurity, startups, digital policy and product/company developments |
 
-Secondary reporting is a discovery and context layer. Trace material claims to primary evidence when the story requires it.
+Secondary reporting is a discovery and context layer. Trace material claims to primary evidence when the item requires it.
 
 ### Startup and venture discovery
 
-The first manual pilot showed that startup funding, accelerator acceptance, and batch/company discovery deserve an explicit source layer rather than being left implicit.
+The first manual pilot showed that funding, accelerator acceptance, and batch/company discovery deserve an explicit layer.
 
-| Source | Monitoring | Main use | Collection default |
-|---|---|---|---|
-| Y Combinator Startup Directory / Launch YC / Demo Day - https://www.ycombinator.com/companies / https://www.ycombinator.com/launches / https://www.ycombinator.com/demoday | WATCH | YC batch membership, new launches, accelerator acceptance, startup discovery, and identifying Filipino/Philippine-linked companies | Public feed if detected; otherwise periodic or batch-date check |
-| Kaya Founders Insights + Portfolio - https://www.kayafounders.com/insights / https://www.kayafounders.com/portfolio | WATCH | Philippine and Southeast Asian startup funding, portfolio developments, investment themes, and startup-sector signals | Public feed/newsletter if useful; otherwise periodic direct check |
-| Kickstart Ventures Insights - https://kickstart.ph/insights | WATCH | Philippine and Southeast Asian startup funding, venture trends, corporate-startup activity, and portfolio/ecosystem signals | Public feed/newsletter if useful; otherwise periodic direct check |
+| Source | Monitoring | Main use |
+|---|---|---|
+| Y Combinator Startup Directory / Launch YC / Demo Day - https://www.ycombinator.com/companies / https://www.ycombinator.com/launches / https://www.ycombinator.com/demoday | WATCH | YC batch membership, launches, accelerator acceptance and Filipino/Philippine-linked startup discovery |
+| Kaya Founders Insights + Portfolio - https://www.kayafounders.com/insights / https://www.kayafounders.com/portfolio | WATCH | Philippine and Southeast Asian startup funding, portfolio developments, investment themes and startup-sector signals |
+| Kickstart Ventures Insights - https://kickstart.ph/insights | WATCH | Philippine and Southeast Asian startup funding, venture trends, corporate-startup activity and ecosystem signals |
 
-These are discovery sources with interested institutional perspectives. A VC portfolio page or accelerator directory can establish portfolio/batch status and what the organization says, but consequential company claims should still be traced to the company, filing, transaction evidence, or independent reporting where needed.
-
-Do not add a permanent feed for every portfolio company. When a startup becomes active, switch to its primary sources under the on-demand rule below.
+These are interested institutional sources. They can establish their own portfolio/batch status and statements, but consequential company claims should still be traced to company, filing, transaction evidence, or independent reporting where needed.
 
 ### Global AI primary sources
 
-| Source | Monitoring | Main use | Collection default |
-|---|---|---|---|
-| OpenAI News - https://openai.com/news/ | CORE | Material model/product, adoption, company, safety and engineering developments | RSS/feed if available |
-| Anthropic Newsroom - https://www.anthropic.com/news | CORE | Claude/model, product, company, policy and safety developments | RSS/feed if available |
-| Google DeepMind News - https://deepmind.google/blog/ | CORE | Gemini/model, research, product and safety developments | RSS/feed if available |
-| Microsoft Official Blog - https://blogs.microsoft.com/ | WATCH | Enterprise AI, cloud, infrastructure, security and business adoption | RSS/feed if available |
-| Meta AI - https://ai.meta.com/ | WATCH | Meta model/product, agent and AI-platform developments | RSS/feed if available |
-| NVIDIA Newsroom - https://nvidianews.nvidia.com/ | WATCH | AI compute, chips, infrastructure, data-center economics and platform developments | RSS/feed if available |
-| Hugging Face Blog - https://huggingface.co/blog | WATCH | Open-model ecosystem, tooling and technical/open-source signals | RSS/feed if available; prioritize official/team material over arbitrary community posts |
+| Source | Monitoring | Main use |
+|---|---|---|
+| OpenAI News - https://openai.com/news/ | CORE | Material model/product, adoption, company, safety and engineering developments |
+| Anthropic Newsroom - https://www.anthropic.com/news | CORE | Claude/model, product, company, policy and safety developments |
+| Google DeepMind News - https://deepmind.google/blog/ | CORE | Gemini/model, research, product and safety developments |
+| Microsoft Official Blog - https://blogs.microsoft.com/ | WATCH | Enterprise AI, cloud, infrastructure, security and business adoption |
+| Meta AI - https://ai.meta.com/ | WATCH | Meta model/product, agent and AI-platform developments |
+| NVIDIA Newsroom - https://nvidianews.nvidia.com/ | WATCH | AI compute, chips, infrastructure, data-center economics and platform developments |
+| Hugging Face Blog - https://huggingface.co/blog | WATCH | Open-model ecosystem, tooling and technical/open-source signals |
 
-Vendor and lab channels are primary evidence for their own releases and claims. Performance, adoption, safety and business-impact claims may require independent evidence before Portfilo states them as established fact.
+Vendor and lab channels are primary evidence for their releases and claims. Performance, adoption, safety and business-impact claims may require independent evidence before Portfilo states them as established fact.
 
 ### Global secondary discovery sources
 
-| Source | Monitoring | Main use | Collection default |
-|---|---|---|---|
-| Reuters Technology - https://www.reuters.com/technology/ | CORE | High-value company, AI, chips, deals, regulation and global technology reporting | RSS/feed if available |
-| Rest of World Asia - https://restofworld.org/region/asia/ | WATCH | Technology, labor, AI, platforms and infrastructure outside a US-only frame, including Philippine reporting | RSS/feed if available |
-| TechCrunch AI Startups - https://techcrunch.com/tag/ai-startups/ | WATCH | Startup funding, products, venture and AI-company discovery | RSS/feed if available |
+| Source | Monitoring | Main use |
+|---|---|---|
+| Reuters Technology - https://www.reuters.com/technology/ | CORE | High-value company, AI, chips, deals, regulation and global technology reporting |
+| Rest of World Asia - https://restofworld.org/region/asia/ | WATCH | Technology, labor, AI, platforms and infrastructure outside a US-only frame, including Philippine reporting |
+| TechCrunch AI Startups - https://techcrunch.com/tag/ai-startups/ | WATCH | Startup funding, products, venture and AI-company discovery |
 
 ## On-demand company and startup sources
 
 Do not maintain a giant permanent company list in v0.
 
-When a company or startup becomes active in reporting, temporarily add or directly check:
+When a company or startup becomes active in reporting, directly check as relevant:
 
-- its official newsroom/blog;
-- investor-relations page where relevant;
+- official newsroom/blog;
+- investor-relations page;
 - product changelog/release notes;
-- official LinkedIn or other verified company account for leads;
+- verified company account for leads;
 - PSE EDGE if listed;
 - relevant regulator/filing source.
 
-Examples of companies worth watching only when they become active include major Philippine telecom, fintech, payments, cloud, retail, platform, data-center and technology operators.
+This keeps the fixed source map from becoming a PR firehose.
 
-This keeps the default feed from becoming a PR firehose.
+## Primary discovery method
 
-## Free gathering setup
+The primary v0 discovery method is the dedicated ChatGPT News Scanner governed by:
 
-### 1. Inoreader Free - main feed surface
+- `docs/EDITORIAL_INTELLIGENCE.md`;
+- `docs/NEWS_SCANNER_PROMPT.md`;
+- this source map.
 
-Use one Inoreader account as the main RSS surface.
+A normal scan should prioritize `CORE`, selectively check active `WATCH` sources, and use `TARGETED` sources only when the subject requires them.
 
-As reviewed on 2026-09-10, the Free plan supports up to 150 RSS subscriptions and Google News alerts. It does not include the Pro web-feed/track-change feature for arbitrary sites without RSS.
+The scanner may use broader web search to improve discovery or source tracing. Search results and AI summaries remain leads, not evidence.
 
-Start with folders:
+## Optional supporting inputs
 
-```text
-PH - Primary
-PH - News
-AI - Primary
-Global - News
-```
+### Inoreader / RSS
 
-Do not create a folder for every beat or organization. Startup sources can live in `PH - News` or `Global - News` depending on their job rather than creating another folder immediately.
+The existing Inoreader setup may remain as an optional reading surface for useful feeds that were easy to configure.
 
-For each source above:
+Do not make Portfilo's News workflow depend on it. Do not force non-RSS sites into paid web feeds or spend time maintaining folders merely for completeness.
 
-1. paste the source/page URL into Inoreader;
-2. subscribe only when Inoreader detects a public feed worth following;
-3. if no feed is available, leave the source in this map as manual `WATCH` or `TARGETED` rather than paying or building around it.
+### Gmail
 
-Do not use multiple RSS readers.
+Use the existing `Portfilo / Signals` label for newsletters or press mail that prove useful. Do not subscribe to large volumes merely to increase coverage.
 
-### 2. Gmail - newsletters and press mail
+### Alerts
 
-Use one label:
+Add an alert only when repeated scanner use shows a recurring discovery gap. Do not create broad alerts by default.
 
-`Portfilo / Signals`
+## Private signal list
 
-Route only newsletters or press mail that repeatedly produce useful developments.
+The private `Portfilo Signals` Sheet stays outside the repository.
 
-Do not subscribe to dozens of newsletters just to make the inbox feel comprehensive.
-
-No newsletter needs to be mirrored into Inoreader in v0.
-
-### 3. Gap alerts
-
-Use Google Alerts or Inoreader's Google News alert support only when the fixed source map misses a recurring class of development.
-
-If a small starting set is useful, begin with no more than three broad gaps:
-
-- `Philippines artificial intelligence`
-- `Philippines startup funding`
-- `Philippines data center`
-
-Delete or narrow any alert that produces mostly noise.
-
-Do not treat an alert result as evidence. Open the underlying source.
-
-### 4. Private signal list
-
-The signal list stays outside the repository.
-
-Only capture items that survive the first scan.
+Only capture items worth retaining after first-pass triage.
 
 Minimum fields:
 
@@ -190,49 +164,38 @@ Minimum fields:
 | Decision | `NEWS`, `WATCH`, `STORY IDEA`, or `IGNORE` |
 | Note / trigger | Why it matters, why it was rejected, or what Portfilo is waiting for |
 
-Do not log every ignored feed item. `IGNORE` is useful only when recording the rejection teaches something about the pilot or prevents repeated reconsideration.
+Do not log every weak item. `IGNORE` is worth retaining only when the rejection teaches something or prevents repeated reconsideration.
 
 ## Normal operating routine
 
-### Daily / normal News scan
-
-Scan the `CORE` sources through the main feed surface.
-
-For anything interesting:
+When the editor requests a scan:
 
 ```text
-OPEN ITEM
+SOURCE MAP + CURRENT WEB
   ↓
-FIND ORIGINAL / AUTHORITATIVE SOURCE
+FIRST RELEVANCE FILTER
+  ↓
+TRACE SERIOUS CANDIDATES TO ORIGINAL SOURCE
   ↓
 WHAT ACTUALLY CHANGED?
   ↓
-NEWS / WATCH / IGNORE
-       ↘
-        POSSIBLE STORY QUESTION
+NEWS / WATCH / STORY IDEA / IGNORE
 ```
 
-Record only surviving signals in the private signal list.
+No headline quota. No requirement to prove every source was opened. No requirement to fill every decision category.
 
-No feed inbox-zero requirement.
+## Periodic source review
 
-### Periodic source sweep
+Review periodically:
 
-Review `WATCH` sources periodically, especially when a beat is active.
+- open Watch triggers;
+- repeated developments forming patterns;
+- sources that consistently generate useful signals;
+- noisy or low-value sources;
+- important developments discovered late or missed;
+- source families under-covered by the scanner.
 
-The purpose is to catch official releases that do not flow cleanly into RSS, not to manually browse every source every day.
-
-For accelerator/batch sources such as YC, increase attention around known batch and Demo Day periods rather than checking them every day year-round.
-
-### Weekly review
-
-Review:
-
-- open Watch items and their triggers;
-- repeated developments that may form a pattern;
-- possible Story questions;
-- noisy sources to remove;
-- missed developments and which source would have caught them earlier.
+For accelerator/batch sources such as YC, increase attention around relevant batch and Demo Day periods rather than checking them every day year-round.
 
 Change the source map only from observed usefulness or failure.
 
@@ -240,26 +203,25 @@ Change the source map only from observed usefulness or failure.
 
 Do not add by default:
 
-- Feedly alongside Inoreader;
+- a second RSS reader;
 - paid Inoreader Pro;
 - web-scraping services;
 - News APIs;
-- Meltwater, Factiva or other enterprise monitoring;
+- enterprise monitoring platforms;
 - n8n, Zapier or Make;
-- automated ranking;
-- AI-generated daily briefings as editorial authority;
+- automated editorial ranking;
 - a database or newsroom dashboard;
 - a permanent feed for every startup or company;
-- social listening infrastructure.
+- social-listening infrastructure.
 
 ## Review trigger
 
-Revisit the source map after real manual use shows one of these:
+Revisit the source map after real use shows one of these:
 
 - an important development class is repeatedly missed;
 - a source produces mostly noise;
 - one beat is materially under-covered;
-- a manual non-RSS check becomes a repeated burden;
+- a manual check becomes a repeated burden;
 - a paid capability has a measurable recurring benefit;
 - Portfilo's editorial capacity changes.
 
@@ -268,7 +230,8 @@ Until then, the smallest working system wins.
 ## Relationship to other authority
 
 - `docs/EDITORIAL_INTELLIGENCE.md` owns signal handling and upstream News discovery rules.
-- this file owns the initial monitored source universe and practical collection defaults.
+- `docs/NEWS_SCANNER_PROMPT.md` owns the reusable ChatGPT scanner invocation contract.
+- this file owns the starting source universe and monitoring priority.
 - `docs/CONTENT_PLANNING.md` owns substantial Story selection.
 - `docs/RESEARCH_STANDARD.md` owns evidence, source tiers, contradiction search and verification.
 - `docs/PUBLISHING_STANDARD.md` owns fast factual and substantial publication paths.
