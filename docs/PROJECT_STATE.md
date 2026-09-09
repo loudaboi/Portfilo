@@ -4,13 +4,13 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**NEWSLETTER ACQUISITION COPY COMPLETE / VALIDATED**
+**RELEASED TO `main` / PRODUCTION VERIFICATION PENDING**
 
-The News / Why / Hustle section migration, the client-side navigation enhancement, and the newsletter acquisition copy refinement are complete and founder-validated on `build/portfilo-v0`.
+The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction are complete and founder-validated.
 
-Before the release decision, the founder approved one additional pre-release copy refinement: retire the 7-minute reading-time promise, strengthen the general newsletter acquisition message, and make the News / Why / Hustle archive acquisition copy reflect the editorial job of each section.
+After explicit founder release approval, the validated working-branch state was fast-forwarded to `main`. GitHub Actions release CI passed on the release state. External Cloudflare production verification remains the only open release-closure check.
 
-The approved copy has been implemented and visually validated on the working branch. This validation does not authorize deployment, publication, provider-side beehiiv template changes, or merge to `main`.
+This release does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, or any deferred/post-v0 workstream.
 
 `Editorial Packaging Standard Refinement` remains deferred, not canceled.
 
@@ -46,7 +46,7 @@ Verified Cloudflare model from the closed website release:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The current validated migration, navigation, and acquisition-copy work remain on the working branch. Validation does not authorize merge to `main`.
+The validated release candidate was merged by fast-forward into `main` after explicit founder approval. Further working-branch changes remain preview/test work and do not imply another production release.
 
 ## Approved product direction
 
@@ -200,7 +200,7 @@ RSS/Inoreader, Gmail, alerts, and direct manual checks remain optional supportin
 
 ## Current section/runtime migration state
 
-The founder-approved migration has been implemented and validated on `build/portfilo-v0`.
+The founder-approved migration has been implemented, validated, and released to `main`.
 
 ### Content schema
 
@@ -310,7 +310,7 @@ Founder browser QA passed for the navigation lifecycle, including navigation acr
 
 ## Newsletter acquisition copy implementation
 
-Implemented and founder-validated on the working branch:
+Implemented and founder-validated:
 
 - `NewsletterSignup.astro` default copy uses the approved general acquisition message;
 - homepage acquisition uses the approved general message;
@@ -374,20 +374,24 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**AUTOMATED VALIDATION PASS / NEWSLETTER ACQUISITION COPY VISUAL QA PASS.**
+**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PENDING.**
 
-The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, and newsletter acquisition copy refinement are validated on the working branch.
+The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction passed founder preview QA before release.
 
-Final CI run `#26` on commit `818bf45372a0a01b9673f5c0c1632ecc30fa86e2` completed successfully on 2026-09-10.
+Working-branch CI run `#27` on release candidate commit `36b431e7c8a93974e7c9ca94f37120065eb39af5` completed successfully on 2026-09-10.
 
-Verified by CI:
+After explicit founder release approval, `main` was fast-forwarded from `46859fd932b15769be5a9106c8febc610ff1d5ce` to release candidate commit `36b431e7c8a93974e7c9ca94f37120065eb39af5`.
+
+Release CI run `#28` on `main` completed successfully on the same release state.
+
+Verified by release CI:
 
 - checkout/setup: PASS;
 - `npm ci`: PASS;
 - `npm run check`: PASS;
 - `npm run build`: PASS.
 
-Founder visual QA is PASS for the newsletter acquisition copy refinement and the signup-heading width correction. This closes the copy-refinement gate.
+External Cloudflare production deployment verification remains pending. Do not claim the live Pages deployment is verified until the production URL is actually inspected.
 
 ## Active work plan
 
@@ -405,17 +409,25 @@ Founder visual QA is PASS for the newsletter acquisition copy refinement and the
 12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
 13. **Client-side navigation enhancement** - COMPLETE / VALIDATED.
 14. **Newsletter acquisition copy refinement** - COMPLETE / VALIDATED.
-15. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
+15. **Release decision / merge to `main`** - COMPLETE.
+16. **Production deployment verification** - exact next gate.
 
 ## Exact next task
 
-**Decide whether to release the validated working-branch state to `main`.**
+**Verify the released state on the production Cloudflare Pages deployment.**
 
-The release candidate now includes the validated News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, and newsletter acquisition copy refinement.
+Inspect the current production deployment and confirm that it reflects the released `main` state, especially:
 
-If release is approved, preserve `main` as the production boundary, merge only the validated working-branch state, confirm CI on the release state, and verify production deployment after the merge.
+- `Portfilo | News | Why | Hustle` navigation;
+- client-side internal navigation;
+- homepage, footer, News, Why, and Hustle newsletter acquisition copy;
+- corrected natural signup-heading wrapping;
+- `/stories` and legacy `/stories/*` redirects on actual Pages;
+- no obvious production-only regression.
 
-Do not merge to `main` without a separate explicit founder release approval.
+The current temporary Pages URL recorded by repository deployment authority is `https://portfilo-app.pages.dev` until a final custom domain is intentionally cut over.
+
+Do not treat production verification as authorization for the deferred custom-domain, broad-audience-launch, provider-side email, or editorial publication workstreams.
 
 ## Deferred / separate workstreams
 
