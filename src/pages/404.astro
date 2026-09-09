@@ -15,139 +15,91 @@ import SiteFooter from "../components/SiteFooter.astro";
       social={false}
     />
   </head>
-  <body>
+  <body class="utility-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <SiteHeader />
 
     <main id="main-content" tabindex="-1">
-      <section class="not-found" aria-labelledby="not-found-title">
-        <p class="not-found__kicker">404 / Not found</p>
-
-        <div class="not-found__content">
-          <h1 id="not-found-title">Page not found.</h1>
-          <p>The page may have moved, or the address may be incorrect.</p>
-
-          <a class="not-found__action" href="/stories">
-            Browse stories <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+      <section class="utility-panel" aria-labelledby="not-found-title">
+        <p class="utility-kicker">404 / Not found</p>
+        <h1 id="not-found-title">Page not found.</h1>
+        <p class="utility-copy">The page may have moved, or the address may be incorrect.</p>
+        <a class="utility-action" href="/stories">Browse stories <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
     <SiteFooter />
 
     <style>
-      @font-face {
-        font-family: "Instrument Sans";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400 700;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "Source Serif 4";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2");
-      }
-
-      :global(:root) {
-        --paper: #f4f0e8;
-        --ink: #171614;
-        --muted: #69655e;
-        --line: #cbc5bb;
-        --accent: #0050a4;
-        --correction: #b42318;
-        --page-max: 100rem;
-        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
-        --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-        --serif: "Source Serif 4", Georgia, serif;
-        --mono: "IBM Plex Mono", "Courier New", monospace;
-      }
-
-      :global(*) { box-sizing: border-box; }
-      :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; }
-      :global(body) { margin: 0; min-width: 0; background: var(--paper); }
-      :global(a) { color: inherit; }
-      :global(a:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; }
-      :global(#main-content:focus) { outline: none; }
-
-      .skip-link {
-        position: fixed;
-        z-index: 20;
-        top: 0.75rem;
-        left: 0.75rem;
-        padding: 0.65rem 0.8rem;
-        background: var(--ink);
-        color: var(--paper);
-        font: 400 0.75rem/1 var(--mono);
-        text-decoration: none;
-        transform: translateY(-200%);
-      }
-      .skip-link:focus { transform: translateY(0); }
-
-      .not-found {
-        width: min(100%, var(--page-max));
-        min-height: clamp(32rem, 65vh, 48rem);
+      .utility-panel {
+        width: min(calc(100% - (2 * var(--shell-gutter))), 54rem);
+        min-height: clamp(26rem, 58vh, 38rem);
         margin-inline: auto;
-        padding: clamp(4rem, 8vw, 8rem) var(--gutter);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: clamp(0.8rem, 1.6vw, 1.5rem);
-        align-content: start;
+        padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
-      .not-found__kicker {
-        grid-column: 1 / 4;
+      .utility-kicker,
+      .utility-copy,
+      .utility-panel h1 {
         margin: 0;
+      }
+
+      .utility-kicker {
         color: var(--accent);
-        font: 400 0.66rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
+        font: 600 0.7rem/1.3 var(--sans);
+        letter-spacing: 0.07em;
         text-transform: uppercase;
       }
 
-      .not-found__content { grid-column: 5 / 12; }
-      .not-found h1 {
-        margin: 0;
-        font: 500 clamp(3.4rem, 7vw, 7rem) / 0.92 var(--sans);
-        letter-spacing: -0.065em;
+      .utility-panel h1 {
+        max-width: 13ch;
+        margin-top: 0.85rem;
+        font: 670 clamp(2.7rem, 1.35rem + 3.5vw, 5rem) / 0.95 var(--sans);
+        letter-spacing: -0.055em;
+        text-wrap: balance;
       }
-      .not-found__content > p {
-        max-width: 34rem;
-        margin: clamp(1.75rem, 3vw, 2.8rem) 0 0;
+
+      .utility-copy {
+        max-width: 36rem;
+        margin-top: clamp(1.25rem, 2vw, 1.75rem);
         color: var(--muted);
-        font: 400 clamp(1.1rem, 1.4vw, 1.35rem) / 1.58 var(--serif);
+        font: 400 clamp(1.05rem, 0.95rem + 0.25vw, 1.2rem) / 1.6 var(--serif);
       }
-      .not-found__action {
-        display: block;
-        width: min(100%, 18rem);
-        margin-top: clamp(2.4rem, 4vw, 3.8rem);
-        padding: 0.9rem 0 0.7rem;
-        border-top: 3px solid var(--accent);
+
+      .utility-action {
+        width: fit-content;
+        min-height: 2.75rem;
+        margin-top: clamp(1.8rem, 3vw, 2.5rem);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
         border-bottom: 1px solid var(--ink);
-        font: 500 clamp(1rem, 1.3vw, 1.2rem) / 1.2 var(--sans);
+        font: 600 0.9rem/1.2 var(--sans);
         text-decoration: none;
       }
-      .not-found__action span { color: var(--accent); }
-      .not-found__action:hover { color: var(--accent); }
 
-      @media (max-width: 50rem) {
-        .not-found { display: block; min-height: 32rem; padding-top: 4rem; }
-        .not-found__kicker { margin-bottom: 2rem; }
-        .not-found h1 { font-size: clamp(3.2rem, 14vw, 5.2rem); }
+      .utility-action span {
+        color: var(--accent);
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        .skip-link { transition: none; }
+      .utility-action:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 40rem) {
+        .utility-panel {
+          min-height: 24rem;
+          padding-block: 3.5rem 4.5rem;
+          justify-content: flex-start;
+        }
+
+        .utility-panel h1 {
+          font-size: clamp(2.45rem, 11vw, 3.35rem);
+        }
       }
     </style>
   </body>
