@@ -1,5 +1,5 @@
 ---
-type CurrentPage = "news" | "stories" | "standards";
+type CurrentPage = "news" | "why" | "hustle" | "standards";
 
 interface Props {
   current?: CurrentPage;
@@ -22,10 +22,16 @@ const { current } = Astro.props;
     >News</a>
     <a
       class="site-nav__link"
-      href="/stories"
-      aria-current={current === "stories" ? "page" : undefined}
+      href="/why"
+      aria-current={current === "why" ? "page" : undefined}
       data-astro-prefetch="viewport"
-    >Stories</a>
+    >Why</a>
+    <a
+      class="site-nav__link"
+      href="/hustle"
+      aria-current={current === "hustle" ? "page" : undefined}
+      data-astro-prefetch="viewport"
+    >Hustle</a>
   </nav>
 </header>
 
