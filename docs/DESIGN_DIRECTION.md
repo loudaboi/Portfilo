@@ -1,6 +1,6 @@
 # Portfilo Design Direction
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Objective
 
@@ -10,7 +10,7 @@ Current direction:
 
 > **Premium editorial restraint + digital immediacy**
 
-The design should make current News easy to scan, deeper Stories pleasant to read, and newsletter acquisition easy to act on without turning the site into a marketing funnel with journalism underneath it.
+The design should make current News easy to scan, deeper Why and Hustle work pleasant to read, and newsletter acquisition easy to act on without turning the site into a marketing funnel with journalism underneath it.
 
 For nontrivial discretionary visual/product decisions, apply `skills/portfilo-anti-slop/SKILL.md`.
 
@@ -23,7 +23,7 @@ Use scale, typography, image treatment, placement, and whitespace to express imp
 ### Typography carries the identity
 
 - Instrument Sans leads hierarchy and interface.
-- Source Serif 4 supports deeper long-form reading.
+- Source Serif 4 supports deeper Why/Hustle long-form reading.
 - IBM Plex Mono is reserved for utility/data/source roles where justified.
 - Type must scale progressively across desktop, laptop, tablet, and phone.
 
@@ -62,8 +62,8 @@ Do not mechanically repeat blue rules on every image.
 Approved image-rule hierarchy:
 
 - homepage primary Feature image: thin blue top rule;
-- primary News/Stories article hero: thin blue top rule;
-- supporting News/Stories archive/list/secondary images: **no blue top rule**.
+- primary News/Why/Hustle article hero: thin blue top rule;
+- supporting News/Why/Hustle archive/list/secondary images: **no blue top rule**.
 
 ### Responsive behavior
 
@@ -80,13 +80,13 @@ Mobile remains first-class: readable line lengths, intentional order, usable con
 
 ## Header
 
-Final masthead:
+Current masthead:
 
-`Portfilo | News | Stories`
+`Portfilo | News | Why | Hustle`
 
 No persistent Subscribe CTA and no hamburger by default.
 
-A hamburger is justified only if real narrow-width testing shows the simplified three-part masthead cannot fit accessibly.
+A hamburger is justified only if real narrow-width testing shows the compact masthead cannot fit accessibly.
 
 ## Homepage
 
@@ -94,7 +94,7 @@ Current composition:
 
 ```text
 HEADER
-Portfilo | News | Stories
+Portfilo | News | Why | Hustle
 
 TOP NEWSLETTER SIGNUP
 blue acquisition band
@@ -108,8 +108,8 @@ full bleed when inventory exists
 PAPER SPACE
 
 FEATURE + CONTEXTUAL BLUE RAIL
-left: primary 16:9 Story image + headline + dek
-right: contextual newsletter signup + Stories item
+left: primary 16:9 Why/Hustle image + headline + dek
+right: contextual newsletter signup + another Why/Hustle item
 
 NEWS
 lead News + supporting News hierarchy
@@ -117,8 +117,10 @@ lead News + supporting News hierarchy
 DARK FOOTER ACQUISITION
 
 COMPACT FOOTER
-Stories | Standards | Privacy
+Why | Hustle | Standards | Privacy
 ```
+
+Do not add separate Why and Hustle homepage sections by default. The existing Feature hierarchy may draw from either section and should remain the primary long-form homepage treatment until inventory proves another need.
 
 ### Newsletter acquisition
 
@@ -142,7 +144,8 @@ Motion is restrained and only justified when inventory supports an actual moving
 - no decorative eyebrow required;
 - no arbitrary tall crop or fixed-height image repair;
 - desktop/laptop/tablet should preserve the Feature + rail relationship while space remains viable;
-- phone may stack deliberately.
+- phone may stack deliberately;
+- the Feature may point to either Why or Hustle based on actual published inventory.
 
 ### News
 
@@ -154,7 +157,7 @@ Supporting News imagery should be quiet: no repeated blue image rules.
 
 ## Archives
 
-News and Stories use one shared archive system.
+News, Why, and Hustle use one shared archive system.
 
 - 84rem shared shell;
 - lead item + supporting stream;
@@ -165,9 +168,11 @@ News and Stories use one shared archive system.
 - laptop/tablet preserve desktop-family composition as long as it remains readable;
 - phone uses deliberate single-column stacking.
 
+An empty Hustle archive is acceptable until real reporting exists. Do not add fake cards or sample founder profiles to fill it.
+
 ## Articles
 
-One shared article component serves News and Stories.
+One shared article component serves News and long-form Why/Hustle pieces.
 
 Preserve:
 
@@ -175,8 +180,8 @@ Preserve:
 - header/hero max width around 54rem;
 - reading measure around 41.5rem;
 - News uses Instrument Sans reading mode;
-- Stories use Source Serif 4 reading mode;
-- optional Stories section rail when enough real `h2` headings exist;
+- Why and Hustle use Source Serif 4 long-form reading mode;
+- optional long-form section rail when enough real `h2` headings exist;
 - methodology/corrections;
 - optional 16:9 hero.
 
@@ -194,7 +199,7 @@ Standards and Privacy remain restrained text-led editorial pages inside the same
 
 Confirmed and 404 are compact utility pages using the same foundation rather than a separate oversized visual system.
 
-About and standalone Subscribe are retired in v0.
+About, standalone Subscribe, and Stories are retired as public destinations in v0.
 
 ## Anti-patterns
 
