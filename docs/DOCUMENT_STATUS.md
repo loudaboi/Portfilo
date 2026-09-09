@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G2 `/standards` is next and begins at inspection/planning, not implementation.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83` with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G2 `/standards` is next and begins at inspection/planning, not implementation.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -99,9 +99,10 @@ Stories:
 Current founder-approved visible `/subscribe` copy:
 
 - campaign statement: `Some changes look small, until they reshape everything. We look closer.`;
+- signup heading: `GET THE NEWSLETTER`;
 - CTA: `SUBSCRIBE`.
 
-The final page intentionally shows no `GET THE NEWSLETTER` label, no visible cadence support line, and no visible `Free newsletter. Unsubscribe anytime.` note. The shared component may retain its default note internally, but the `/subscribe` page hides it.
+The final page intentionally keeps `GET THE NEWSLETTER` to one line above the form, uses the same typography values as the campaign statement at the corresponding breakpoint, and keeps the campaign statement in sentence case. The cadence support line and visible `Free newsletter. Unsubscribe anytime.` note remain omitted. The shared component may retain its default note internally, but the `/subscribe` page hides it.
 
 The campaign statement is page-scoped campaign/institutional copy. It is not a permanent Portfilo tagline and should not be reused automatically on the homepage, masthead, newsletter, social surfaces, or editorial packaging.
 
@@ -256,13 +257,18 @@ Current contract:
 - no gradient, glass panel, rounded card, or decorative overlay container;
 - exactly two direct overlay blocks;
 - top-left: light Portfilo wordmark plus `Some changes look small, until they reshape everything. We look closer.`;
-- bottom-right: shared email input + `SUBSCRIBE` CTA;
+- bottom-right: one-line `GET THE NEWSLETTER` heading above the shared email input + `SUBSCRIBE` CTA;
+- campaign statement remains sentence case; newsletter heading remains all caps;
+- newsletter heading matches the campaign statement's Instrument Sans weight, scale, line-height, and tracking at each existing breakpoint;
+- the signup-block width follows the newsletter heading width, keeping the CTA fixed at 8.5rem / 136px and allowing the email input to take the remaining width;
 - both blocks use one shared geometric campaign inset;
 - the wordmark alone receives a narrow optical translation to cancel transparent SVG padding so visible edge spacing matches the form corner;
+- the wordmark-to-message gap is tightened to roughly 36–40px on desktop while remaining deliberately larger than the newsletter-heading-to-form gap;
 - page CTA is 8.5rem / 136px wide in the approved desktop treatment, explicitly centered, with weight 650;
 - form controls above 32rem use the approved 2.75rem / 44px height;
-- no visible newsletter label, cadence support line, or free/unsubscribe note;
+- no visible cadence support line or free/unsubscribe note;
 - shared `NewsletterSignup.astro` owns validation, honeypot, `/api/subscribe`, confirmation, and error states;
+- natural document scrolling remains approved; the no-scroll experiment was rejected and reverted;
 - no `Portfilo Brief` naming;
 - no `No fixed schedule yet` copy;
 - no numbered mono scaffolding or separate subscription-details section;
@@ -287,10 +293,10 @@ F shared article implementation is validated against runtime HEAD `7ffc3021c93a8
 - local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
 - the final founder-reviewed article state includes centered header geometry, resilient headline scale, no visible byline, independent neutral header/hero divider, 54rem 16:9 hero treatment, narrow reading body and conditional Stories section rail.
 
-G1 `/subscribe` is validated against runtime HEAD `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3`:
+G1 `/subscribe` is validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`:
 
-- founder rendered desktop visual review: **PASS**;
-- final visible spacing, block placement, button treatment, and no-footer composition: **PASS**;
+- founder rendered desktop visual review after the final revert: **PASS**;
+- final visible newsletter heading, matched typography, heading/form width relationship, tightened left lockup spacing, button treatment, natural scrolling, and no-footer composition: **PASS**;
 - local `npm run check`: **PASS**, reported by the founder after pulling the final runtime;
 - local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
 - source review confirms the shared newsletter form implementation remains in use;
@@ -326,13 +332,19 @@ G utility runtime:
 
 - `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — first simplified blue-band `/subscribe`; rejected in founder rendered review and historical only;
 - `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
-- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — remove visible newsletter label and keep the smaller campaign-message scale;
+- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — historical removal of the newsletter label before the later founder-approved restoration;
 - `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove `/subscribe` footer and set message hierarchy;
 - `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set `SUBSCRIBE` CTA and strengthen its weight;
 - `972cbf96b21be699c35550f96c68355fe3f62148` — swap overlay blocks vertically;
-- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish the shared campaign inset and tighten form width;
+- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish the shared campaign inset and tighten the original form width;
 - `bd419eac0886696022da359f77df9b214e0f3895` — set 8.5rem CTA width and explicit centering;
-- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optical wordmark alignment and 44px form-control treatment.
+- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optical wordmark alignment and 44px form-control treatment;
+- `a429bd625a8002305799adc335194184c3747291` — restore visible `GET THE NEWSLETTER`;
+- `eca1af7d4704a2c24c75648adb8c50454a07e6c3` — match newsletter-heading typography to the campaign statement;
+- `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match signup-block width to the newsletter heading;
+- `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten wordmark-to-message spacing;
+- `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted correction; historical only;
+- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -366,9 +378,9 @@ Do not reintroduce:
 - repeated/decorative mono scaffolding;
 - legacy `/subscribe` numbered scaffold and subscription-details section;
 - first G1 full-width blue-band `/subscribe` composition;
-- visible `GET THE NEWSLETTER` label on the final G1 composition;
 - visible cadence support line or shared note on the final G1 composition;
 - footer on the final G1 `/subscribe` composition;
+- no-scroll `/subscribe` experiment that changed the approved shell/alignment behavior;
 - fabricated production News;
 - generic production fallback imagery;
 - implementation-time global design changes without approval.
