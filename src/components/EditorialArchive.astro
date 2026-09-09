@@ -122,7 +122,7 @@ const supportingItems = items.slice(1);
   </section>
 
   {
-    leadItem && (
+    supportingItems.length > 0 && (
       <section class="archive-stream" id={listId} aria-label={streamAriaLabel}>
         {supportingItems.map((item) => (
           <article class:list={{ "archive-row": true, "archive-row--without-image": !item.image }}>
