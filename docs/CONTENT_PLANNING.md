@@ -23,12 +23,13 @@ NEWS DISCOVERY
 Source -> Signal -> Original-source check -> News / Watch / Ignore
                                       ↘ possible Story question
 
-STORY PLANNING
+SUBSTANTIAL EDITORIAL PLANNING
 Idea / observation / signal / question
-  -> Story question
+  -> Reporting question
   -> Editorial gate
   -> Priority
   -> Research assignment
+  -> likely public section: Why / Hustle
 
 RESEARCH + PUBLISHING
 Research brief -> Sources -> Evidence -> Contradictions -> Story decision -> Draft -> Verification -> Publish
@@ -38,7 +39,7 @@ The planning system exists to improve editorial selection, not to create a large
 
 ## Core principle
 
-**The unit of substantial Story planning is a question, not a headline.**
+**The unit of substantial editorial planning is a question, not a headline.**
 
 Weak candidate:
 
@@ -67,11 +68,11 @@ They may come from:
 - an encountered company, product, market, industry, or behavior;
 - an unanswered question the editor wants to understand.
 
-A Story does not need to originate in the News pipeline.
+A substantial story does not need to originate in the News pipeline.
 
-A News signal can become a Story question when it exposes a mechanism, consequence, contradiction, pattern, or unanswered second question worth deeper reporting.
+A News signal can become a deeper reporting question when it exposes a mechanism, consequence, contradiction, pattern, person, company-building path, or unanswered second question worth deeper reporting.
 
-Do not force every News item to produce a Story.
+Do not force every News item to produce a deeper piece.
 
 ## Approved internal editorial focus
 
@@ -113,7 +114,7 @@ Philippine reporting context should be used when geography materially affects th
 
 The internal Philippines-primary reporting emphasis is not a public geographic product promise.
 
-## News and Stories distinction
+## News, Why, and Hustle distinction
 
 Default mental model:
 
@@ -121,18 +122,23 @@ Default mental model:
 NEWS
 What changed?
 
-STORIES
-What is changing underneath?
+WHY
 Why is this happening?
 How does this work?
-What does it reveal?
+What is changing underneath?
+
+HUSTLE
+Who is building or operating it?
+How was it built, grown, survived, pivoted, or run?
 ```
 
 News is primarily event-driven and may use the fast factual path in `PUBLISHING_STANDARD.md` when the development is narrow and directly verifiable.
 
-Stories are primarily question-driven and use this planning gate when substantial reporting or interpretation is required.
+Why is primarily question-driven and uses this planning gate when substantial reporting or interpretation is required.
 
-This distinction is a default operating model, not a rigid form template.
+Hustle is primarily people-led and reported. It should normally have a credible direct-reporting path to the founder, operator, owner, company, customers, records, or other evidence needed to move beyond a flattering profile.
+
+This distinction is a default operating model, not a rigid form template. Public section and `contentType` remain separate decisions.
 
 ## Reader needs
 
@@ -281,7 +287,7 @@ Priority can change at any time. Time already spent is not a reason to publish.
 Keep the planning record compact:
 
 ```text
-STORY QUESTION
+REPORTING QUESTION
 
 Primary topic:
 Business / Technology / Startup / AI
@@ -290,13 +296,13 @@ Strategic lane:
 AI + Work / Startups + Building Companies / Digital Economy + Infrastructure / None
 
 Likely section:
-News / Stories
+Why / Hustle
 
 Likely content type:
 Reported / Explained / Guide / Profile / Analysis / Perspective / Field Notes
 
 Primary reader need:
-Update / Understand / Interpret / Decide
+Understand / Interpret / Decide
 
 Why it matters:
 
@@ -321,6 +327,8 @@ HIGH / MEDIUM / LOW
 Decision:
 PASS / REFRAME / HOLD / KILL
 ```
+
+News uses the separate upstream discovery and fast-factual assignment path rather than this substantial-candidate record unless a News signal becomes a deeper Why/Hustle assignment.
 
 Likely section/content type are provisional. Research determines the final form.
 
@@ -357,7 +365,7 @@ Portfilo v0 begins with limited editorial capacity.
 Default limits:
 
 - maximum one flagship investigation in active production at once;
-- generally no more than three substantial Stories in active research at once.
+- generally no more than three substantial Why/Hustle pieces in active research at once.
 
 These are operating limits, not publishing quotas.
 
@@ -376,9 +384,9 @@ Signal discovery and initial triage are governed by `docs/EDITORIAL_INTELLIGENCE
 
 `AI Update` may be used as an internal operating label for this narrow path. It is not a new public topic or `contentType`.
 
-An AI Update may be distributed through social or the Portfilo newsletter without requiring a website story when a website page would add no meaningful value.
+An AI Update may be distributed through social or the Portfilo newsletter without requiring a website News page when a website page would add no meaningful value.
 
-If the development requires explanation, testing, or consequential interpretation, create a separate candidate and use the normal gate.
+If the development requires explanation, testing, consequential interpretation, or a people-led reported angle, create a separate candidate and use the normal gate for Why/Hustle.
 
 ## Portfilo Test
 
