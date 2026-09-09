@@ -28,6 +28,10 @@ Canonical upstream operating contract:
 
 `docs/EDITORIAL_INTELLIGENCE.md`
 
+Canonical initial operating source registry:
+
+`docs/EDITORIAL_SOURCE_MAP.md`
+
 The previous Editorial Packaging Standard Refinement task is deferred, not canceled.
 
 ## Current canonical documents
@@ -50,6 +54,7 @@ The previous Editorial Packaging Standard Refinement task is deferred, not cance
 Current:
 
 - `docs/EDITORIAL_INTELLIGENCE.md` — upstream News discovery, signal handling, minimal operating routine, automation boundary, and handoff into existing editorial systems.
+- `docs/EDITORIAL_SOURCE_MAP.md` — initial monitored source universe, monitoring priority, free collection defaults, and source-map review rules.
 - `docs/CONTENT_PLANNING.md` — substantial editorial candidate selection and prioritization.
 - `docs/EDITORIAL_STANDARD.md` — editorial integrity and coverage principles.
 - `docs/RESEARCH_STANDARD.md` — evidence, source hierarchy, contradiction search, research packets, and verification.
@@ -78,6 +83,8 @@ research packet -> evidence -> story decision -> form -> draft -> verification -
 ```
 
 `docs/EDITORIAL_INTELLIGENCE.md` does not create a second evidence hierarchy. `docs/RESEARCH_STANDARD.md` remains the authority for evidentiary source tiers and claim verification.
+
+`docs/EDITORIAL_SOURCE_MAP.md` uses `CORE / WATCH / TARGETED` only as monitoring-frequency labels. They are not credibility tiers.
 
 Story ideas do not have to originate in the News pipeline.
 
