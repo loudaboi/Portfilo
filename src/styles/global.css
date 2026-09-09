@@ -108,7 +108,8 @@ body.editorial-page .archive-acquisition .newsletter-signup button {
 }
 
 body.editorial-page .archive-acquisition .newsletter-signup button:hover {
-  background: #00458f;
+  background: var(--accent);
+  filter: brightness(0.93);
 }
 
 @media (prefers-reduced-motion: reduce) {
