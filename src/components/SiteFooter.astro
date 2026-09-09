@@ -10,26 +10,33 @@ const routeShowsAcquisition = !["/confirmed", "/404"].includes(pathname);
 const { showAcquisition = routeShowsAcquisition } = Astro.props;
 ---
 
-{showAcquisition && <FooterAcquisition />}
+<div class="site-footer-stack">
+  {showAcquisition && <FooterAcquisition />}
 
-<footer class="site-footer">
-  <div class="site-footer__inner">
-    <a class="site-footer__brand" href="/" aria-label="Portfilo home">
-      <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
-    </a>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a class="site-footer__brand" href="/" aria-label="Portfilo home">
+        <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
+      </a>
 
-    <nav class="site-footer__nav" aria-label="Footer">
-      <a href="/why">Why</a>
-      <a href="/hustle">Hustle</a>
-      <a href="/standards">Standards</a>
-      <a href="/privacy">Privacy</a>
-    </nav>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="/why">Why</a>
+        <a href="/hustle">Hustle</a>
+        <a href="/standards">Standards</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
 
-    <p class="site-footer__meta">© 2026 Portfilo</p>
-  </div>
-</footer>
+      <p class="site-footer__meta">© 2026 Portfilo</p>
+    </div>
+  </footer>
+</div>
 
 <style>
+  .site-footer-stack {
+    width: 100%;
+    margin-top: auto;
+  }
+
   .site-footer {
     width: 100%;
     background: var(--ink);
