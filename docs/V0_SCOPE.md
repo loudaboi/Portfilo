@@ -18,7 +18,9 @@ Current founder-approved direction:
 - **Hustle** is the people-led reported layer: founders, operators, and business owners, usually examining how something was built, grown, survived, pivoted, or operated.
 - Public topics remain `Business / Technology / Startup / AI`.
 - Newsletter acquisition is important, but it must not make the publication feel like a marketing funnel.
-- Approved newsletter promise: the latest news, a 7-minute read, three times per week.
+- Approved newsletter cadence remains three times per week. The former 7-minute reading-time promise is retired and must not be used in public acquisition copy.
+- General newsletter acquisition describes Portfilo through its editorial jobs: what changed, why it is happening, and how companies are built and run.
+- News, Why, and Hustle archive acquisition may use section-specific copy, but they do not create separate newsletters or separate delivery promises.
 - Exact send days and times remain open.
 - `briefing` is not approved public acquisition language.
 - No individual author/byline system is part of v0. Public editorial identity is Portfilo.
@@ -99,6 +101,14 @@ All visible signup forms use the shared `NewsletterSignup.astro` component and t
 The website does not maintain a separate subscriber database. beehiiv owns double opt-in confirmation, subscriber storage, delivery, and unsubscribe handling.
 
 `/confirmed` remains required as the post-double-opt-in destination.
+
+Current acquisition model:
+
+- general homepage/shared acquisition uses the founder-approved general newsletter message;
+- News, Why, and Hustle archives use founder-approved section-specific acquisition messages;
+- contextual archive copy explains the editorial job of that section without implying a separate section newsletter;
+- cadence is stated on the general acquisition surface rather than repeated in every contextual archive banner;
+- no reading-time promise is part of the current newsletter product.
 
 ## Content system
 
