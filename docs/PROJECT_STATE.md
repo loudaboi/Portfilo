@@ -4,11 +4,11 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**NEWS / WHY / HUSTLE SECTION MIGRATION IMPLEMENTED / CI PASS / VISUAL QA PENDING**
+**NEWS / WHY / HUSTLE SECTION MIGRATION COMPLETE / VALIDATED**
 
 The corrected and performance-optimized Portfilo v0 production release remains founder-approved and closed on `main`.
 
-The founder has now approved and implemented a public editorial section migration on the working branch from:
+The founder has now approved, implemented, and visually validated a public editorial section migration on the working branch from:
 
 `Portfilo | News | Stories`
 
@@ -52,7 +52,7 @@ Verified Cloudflare model from the closed website release:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The current migration remains on the working branch. No merge to `main` is authorized by the implementation approval.
+The current migration remains on the working branch. Validation does not authorize merge to `main`.
 
 ## Approved product direction
 
@@ -162,7 +162,7 @@ RSS/Inoreader, Gmail, alerts, and direct manual checks remain optional supportin
 
 ## Current section/runtime migration state
 
-The founder-approved migration has been implemented on `build/portfilo-v0`.
+The founder-approved migration has been implemented and validated on `build/portfilo-v0`.
 
 ### Content schema
 
@@ -188,7 +188,7 @@ Current Why inventory therefore contains:
 - one published article;
 - three draft previews.
 
-There is currently no Hustle inventory. `/hustle` is intentionally allowed to render an honest empty state rather than synthetic founder/business-owner content.
+There is currently no Hustle inventory. `/hustle` intentionally renders an honest empty state rather than synthetic founder/business-owner content.
 
 ### Public routes
 
@@ -242,9 +242,21 @@ The contextual rail can identify another Why/Hustle item without reintroducing S
 
 Why and Hustle preserve the long-form Source Serif reading treatment and optional section rail/table-of-contents behavior without duplicating components.
 
+### Short-page footer behavior
+
+Preview QA exposed a short-page layout defect on the empty Hustle archive: the footer stack could end above the viewport bottom.
+
+The defect was fixed through the shared page shell rather than a Hustle-specific patch:
+
+- the global `body` now owns the minimum viewport-height flex-column contract;
+- `SiteFooter.astro` groups the existing footer acquisition and compact footer into one shared stack;
+- that stack consumes remaining vertical space on short pages and follows content normally on long pages.
+
+No route-specific fixed height, absolute positioning, JavaScript, new dependency, or alternate Hustle composition was introduced.
+
 ## Continuous integration
 
-A minimal GitHub Actions workflow now exists at:
+A minimal GitHub Actions workflow exists at:
 
 `.github/workflows/ci.yml`
 
@@ -292,9 +304,9 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**AUTOMATED RUNTIME VALIDATION PASS / VISUAL QA PENDING.**
+**AUTOMATED RUNTIME VALIDATION PASS / VISUAL QA PASS.**
 
-GitHub Actions CI run `#1` on commit `ae929ffef88c0e6e3b50fe9a1e5e0c73aef5ad82` completed successfully on 2026-09-10.
+Latest migration/fix CI validation completed successfully on commit `4f4685962636ab5f497451444b272951a65cc535` on 2026-09-10.
 
 Verified by CI:
 
@@ -303,9 +315,9 @@ Verified by CI:
 - `npm run check`: PASS;
 - `npm run build`: PASS.
 
-This establishes that the current News/Why/Hustle working-branch state installs cleanly, passes Astro checks, and builds successfully under the repository Node version.
+Founder preview QA is also PASS for the required News / Why / Hustle migration surface, including the responsive and short-page footer correction.
 
-CI does **not** establish visual correctness, responsive behavior, Cloudflare redirect behavior, or browser-level interaction. Those remain a manual preview QA gate.
+This closes the migration validation gate. CI establishes install/check/build correctness; founder preview QA establishes the accepted browser-level visual/responsive result for this migration.
 
 The previous production release validation remains historical evidence for the pre-migration production site only.
 
@@ -314,35 +326,22 @@ The previous production release validation remains historical evidence for the p
 1. **News scanner/source-map system** - operational.
 2. **News / Why / Hustle architecture decision** - founder-approved.
 3. **Repository impact audit** - complete.
-4. **Schema/frontmatter migration** - implemented.
-5. **Why + Hustle route migration** - implemented.
-6. **Header/footer/homepage migration** - implemented.
-7. **Shared long-form article-mode migration** - implemented.
-8. **Legacy Stories redirects/internal-link migration** - implemented.
-9. **Canonical documentation reconciliation** - implemented.
-10. **Minimal GitHub Actions CI** - implemented / PASS.
-11. **Preview visual/responsive QA** - exact next task.
-12. **Release decision / merge to `main`** - separate future gate only after validation and founder approval.
+4. **Schema/frontmatter migration** - complete.
+5. **Why + Hustle route migration** - complete.
+6. **Header/footer/homepage migration** - complete.
+7. **Shared long-form article-mode migration** - complete.
+8. **Legacy Stories redirects/internal-link migration** - complete.
+9. **Canonical documentation reconciliation** - complete.
+10. **Minimal GitHub Actions CI** - complete / PASS.
+11. **Preview visual/responsive QA** - complete / founder PASS.
+12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
+13. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
 
 ## Exact next task
 
-**Run preview visual/responsive QA for the News / Why / Hustle migration.**
+**Decide whether to release the validated News / Why / Hustle migration to `main`.**
 
-Inspect at minimum:
-
-- homepage;
-- `/news`;
-- `/why`;
-- one published `/why/[slug]` article;
-- `/hustle` empty state;
-- header at desktop and narrow mobile widths;
-- footer navigation;
-- `/stories` redirect to `/why`;
-- one legacy `/stories/[slug]` redirect to the corresponding `/why/[slug]` route;
-- sitemap/canonical behavior for the new public routes;
-- no horizontal overflow at the existing responsive checkpoints.
-
-If QA exposes a concrete defect, fix only that defect without reopening the approved News/Why/Hustle architecture.
+If release is approved, preserve `main` as the production boundary and merge only the validated working-branch state. Confirm CI on the release state and verify the production deployment after the merge.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
