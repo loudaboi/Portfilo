@@ -1,10 +1,10 @@
 # Portfilo v0 Scope
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Objective
 
-Ship the smallest credible Portfilo business-and-technology publication that can publish current News and deeper Stories, build a direct newsletter relationship, and operate cleanly without unnecessary application infrastructure.
+Ship the smallest credible Portfilo business-and-technology publication that can publish current News, deeper Why pieces, and reported Hustle profiles, build a direct newsletter relationship, and operate cleanly without unnecessary application infrastructure.
 
 Portfilo v0 remains free.
 
@@ -13,14 +13,17 @@ Portfilo v0 remains free.
 Current founder-approved direction:
 
 - Portfilo is a business and technology publication.
-- **News** is the current/day-to-day editorial layer.
-- **Stories** is the deeper editorial layer.
-- Public topics are `Business / Technology / Startup / AI`.
+- **News** is the current/day-to-day editorial layer: what changed.
+- **Why** is the question-led deeper layer: why something is happening, how it works, what a pattern means, and what is changing underneath.
+- **Hustle** is the people-led reported layer: founders, operators, and business owners, usually examining how something was built, grown, survived, pivoted, or operated.
+- Public topics remain `Business / Technology / Startup / AI`.
 - Newsletter acquisition is important, but it must not make the publication feel like a marketing funnel.
 - Approved newsletter promise: the latest news, a 7-minute read, three times per week.
 - Exact send days and times remain open.
 - `briefing` is not approved public acquisition language.
 - No individual author/byline system is part of v0. Public editorial identity is Portfilo.
+
+`Stories` is retired as a public section name. The generic journalistic word `story` may still be used internally where it describes an editorial artifact rather than a public navigation section.
 
 ## Public route surface
 
@@ -29,8 +32,10 @@ Keep:
 - `/`
 - `/news`
 - `/news/[slug]`
-- `/stories`
-- `/stories/[slug]`
+- `/why`
+- `/why/[slug]`
+- `/hustle`
+- `/hustle/[slug]`
 - `/standards`
 - `/privacy`
 - `/confirmed`
@@ -40,6 +45,8 @@ Keep:
 
 Retired in v0:
 
+- `/stories` as a public archive; it redirects to `/why`.
+- `/stories/[slug]` as a public article route; legacy links redirect to the corresponding `/why/[slug]` path because all existing Story inventory was reclassified as Why.
 - `/subscribe` as a standalone page. It redirects to `/#newsletter`.
 - `/about`. It redirects to `/`.
 - public Series presentation. Series can return only when real editorial inventory justifies it.
@@ -50,26 +57,36 @@ The homepage is the primary publication and newsletter entry point.
 
 Current structure:
 
-- compact `Portfilo | News | Stories` header;
+- compact `Portfilo | News | Why | Hustle` header;
 - newsletter signup at the top of the page;
 - Latest News strip when inventory exists;
-- one primary Feature/Story treatment with an adjacent contextual newsletter/Stories rail;
+- one primary long-form Feature treatment drawn from published Why/Hustle inventory with an adjacent contextual newsletter/editorial rail;
 - News section;
 - shared footer acquisition and compact institutional footer.
 
+Do not add separate Why and Hustle homepage blocks merely because they are separate public sections. The existing Feature hierarchy remains the v0 homepage model until real inventory proves another need.
+
 Until real News inventory exists, clearly labeled sample News fixtures may render in production strictly as non-clickable layout placeholders. They must be visibly identified as sample content and not Portfilo reporting, must never create fake article routes or Article metadata, and real published News replaces them automatically.
 
-## News and Stories
+## News, Why, and Hustle
 
 ### News
 
 News is concise current reporting. Real published News items route to `/news/[slug]` and are clickable wherever presented.
 
-### Stories
+### Why
 
-Stories are deeper editorial work. The shared article system supports long-form reading, optional hero imagery, methodology/corrections, and a conditional in-page section rail when a Story contains enough real `h2` sections.
+Why is deeper question-led editorial work. It can examine mechanisms, causes, systems, patterns, contradictions, and consequences. Existing explained, analysis, perspective, reported, and other valid content types can live under Why when the section job fits.
 
-During the current pre-audience staging period, existing Story drafts may also render as explicit previews so the Stories archive can use the Story inventory already in the repository. Draft status must remain visible, draft routes must be `noindex, nofollow`, and draft routes must not emit the canonical/social/article metadata reserved for published work. This staging visibility does not change `status: draft` to `published` and does not replace a later editorial publication decision.
+Why routes to `/why/[slug]` and uses the shared long-form article treatment.
+
+During the current pre-audience staging period, existing Why drafts may also render as explicit previews so the Why archive can use the inventory already in the repository. Draft status must remain visible, draft routes must be `noindex, nofollow`, and draft routes must not emit the canonical/social/article metadata reserved for published work. This staging visibility does not change `status: draft` to `published` and does not replace a later editorial publication decision.
+
+### Hustle
+
+Hustle is people-led reported work about founders, operators, and business owners. It should focus on what was actually built or operated, the decisions and constraints involved, and what the reporting can establish. It is not a motivation feed or hustle-culture section.
+
+Hustle routes to `/hustle/[slug]` and uses the same shared long-form article treatment as Why. An empty Hustle archive is acceptable until real reporting exists; do not create synthetic inventory to make the section look populated.
 
 ### Authors
 
@@ -85,18 +102,18 @@ The website does not maintain a separate subscriber database. beehiiv owns doubl
 
 ## Content system
 
-Portfilo uses one Astro Content Collection backed by local Markdown.
+Portfilo uses one Astro Content Collection backed by local Markdown. The collection may remain named `stories` internally; the collection name is implementation plumbing and is not a public section label.
 
 Required editorial dimensions include:
 
 ```yaml
-section: news | stories
+section: news | why | hustle
 contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
 topic: business | technology | startup | ai
 status: draft | published
 ```
 
-Story packaging requires:
+All editorial entries require:
 
 - `title`
 - `dek`
@@ -112,6 +129,8 @@ Optional metadata includes:
 - `correction`
 
 Published entries require `publishedAt`.
+
+News entries cannot be `featured`. Why and Hustle entries may be featured when editorially justified.
 
 Do not add author, Series, CMS, database, or other fields merely to anticipate future scale.
 
@@ -132,11 +151,11 @@ Important typography must scale progressively through desktop, laptop, tablet, a
 
 - 84rem / 1344px publication shell.
 - Instrument Sans for hierarchy and interface.
-- Source Serif 4 for long-form/deeper reading where appropriate.
+- Source Serif 4 for Why/Hustle long-form reading where appropriate.
 - IBM Plex Mono only for utility/data/source use where justified.
 - Portfilo blue is structural, not decorative.
 - The primary homepage Feature and primary article hero may use the approved thin blue top rule.
-- Supporting News/Stories archive and secondary images do not use repeated blue top rules.
+- Supporting News/Why/Hustle archive and secondary images do not use repeated blue top rules.
 - No gradients, glass, glow, rounded card systems, SaaS component soup, faux newspaper styling, or unnecessary decorative motion.
 
 ## Technical architecture
@@ -202,6 +221,6 @@ Before release readiness can be declared:
 - sitemap/robots/canonical/social metadata are correct;
 - retired routes redirect correctly on Cloudflare;
 - any temporary production sample News fixtures are clearly labeled, non-clickable, route-less, and replaced before broad audience launch;
-- any temporarily exposed Story drafts remain visibly labeled and noindex until separately approved for publication;
+- any temporarily exposed Why/Hustle drafts remain visibly labeled and noindex until separately approved for publication;
 - final domain/deployment settings are correct;
 - release receives explicit founder approval before merge to `main`.
