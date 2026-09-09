@@ -1,30 +1,18 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Current phase
 
-**V0 RELEASE CLOSED / EDITORIAL PACKAGING STANDARD REFINEMENT NEXT**
+**EDITORIAL DIRECTION + NEWS INTELLIGENCE V0 ACTIVE**
 
-The corrected and performance-optimized Portfilo v0 release is founder-approved and closed.
+The corrected and performance-optimized Portfilo v0 website release remains founder-approved and closed.
 
-Production verification completed in Cloudflare on 2026-09-09:
+The founder has now approved Editorial Direction + News Intelligence v0 as the primary Portfilo workstream.
 
-- Production branch is `main`;
-- automatic deployments are enabled;
-- the released site was smoke-tested by the founder;
-- responsive typography, archive/footer corrections, optimized editorial images, navigation performance, and homepage ticker spacing were accepted;
-- no new runtime defect was reported during final production review.
+This supersedes `Editorial Packaging Standard Refinement` as the immediate next task. The packaging refinement remains a valid deferred editorial task and is not canceled.
 
-The founder explicitly approved closing this release and moving to Editorial Packaging Standard Refinement.
-
-Latest runtime-changing commit in the closed release:
-
-`9afec05851c130d3b4cb135dae591edb94f620b8` — `Pass optimized News image URL to metadata`
-
-Release/documentation boundary before this phase transition:
-
-`1b7d8fd93571b6b4e7752b81f777071c730702c6`
+The active workstream is documentation and editorial operations first. It does **not** authorize a taxonomy migration, runtime redesign, CMS, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
 
 ## Repository authority
 
@@ -60,24 +48,133 @@ Verified Cloudflare model:
 
 `main` remains the production release boundary for future runtime changes.
 
+The documentation work in this phase does not imply a production release.
+
 ## Approved product direction
 
 - Portfilo is a business and technology publication.
 - News is the current/day-to-day editorial layer.
 - Stories is the deeper editorial layer.
-- Public topics are `Business / Technology / Startup / AI`.
+- Public topics remain `Business / Technology / Startup / AI` **for now**.
 - Portfilo remains free in v0.
 - Newsletter acquisition is important but must not dominate publication identity.
 - Approved newsletter promise: latest news, a 7-minute read, three times per week.
 - Exact send days/times remain open.
-- `briefing` is rejected as public acquisition language.
+- `briefing` and `Portfilo Brief` are not current public acquisition language.
 - No individual public author/byline system is part of v0.
 
-Approved internal selection lens:
+A change to the public topic taxonomy is a separate decision because the taxonomy is encoded in documentation, content frontmatter, and `src/content.config.ts`.
 
-> Portfilo covers business and technology developments that materially change how companies, products, markets, infrastructure, or work operate.
+Do not migrate topic values without an explicit taxonomy gate.
 
-This is internal only.
+## Approved internal editorial direction
+
+Portfilo's strongest areas of editorial attention are:
+
+### AI + Work
+
+AI products, deployment, workflows, jobs, economics, governance, and practical consequences inside companies and industries.
+
+### Startups + Building Companies
+
+Startups, founders, funding, products, distribution, sales, pricing, hiring, operations, business models, expansion, acquisitions, failure, and the mechanics of building companies.
+
+This is not limited to startups. Established companies belong when a development or operating question is materially useful.
+
+### Digital Economy + Infrastructure
+
+Payments, fintech, IT-BPM, cloud, data centers, connectivity, cybersecurity, platforms, digital regulation, and other systems underneath technology and business activity.
+
+### Major business and technology developments
+
+A material development outside the priority lanes can still belong when it changes companies, products, markets, infrastructure, work, or the process of building businesses.
+
+These are attention priorities, not quotas or public navigation labels.
+
+Geographic rule:
+
+> **The Philippines is Portfilo's primary reporting ground, not an artificial boundary.**
+
+Use Philippine context when geography materially affects the subject. Global developments can belong without a manufactured Philippine angle.
+
+This internal emphasis is not a public geographic positioning promise.
+
+## News and Stories operating model
+
+Default mental model:
+
+```text
+NEWS
+What changed?
+
+STORIES
+What is changing underneath?
+Why is this happening?
+How does this work?
+What does it reveal?
+```
+
+News is primarily event-driven and uses the fast factual or deeper reporting path depending on what the development requires.
+
+Stories are primarily question-driven. Story ideas may come from observation, curiosity, experience, conversations, data, repeated News signals, or anywhere else a worthwhile question emerges.
+
+The News discovery pipeline is not the exclusive source of Story ideas.
+
+## Editorial intelligence v0
+
+Canonical upstream operating contract:
+
+`docs/EDITORIAL_INTELLIGENCE.md`
+
+Core flow:
+
+```text
+SOURCES
+  ↓
+AUTOMATIC COLLECTION WHERE PRACTICAL
+  ↓
+HUMAN SCAN
+  ↓
+INTERESTING SIGNAL
+  ↓
+CHECK ORIGINAL / AUTHORITATIVE SOURCE
+  ↓
+NEWS / WATCH / IGNORE
+       ↘
+        POSSIBLE STORY QUESTION
+```
+
+Automation may collect and organize. Human editorial judgment remains responsible for significance, verification, routing, and publication decisions.
+
+Initial v0 should use free or already-available tools and a deliberately small source universe. No custom newsroom infrastructure is authorized.
+
+## Repository conflict audit
+
+A repository-level audit was performed before promoting this workstream.
+
+### Already aligned
+
+The following existing systems remain valid and should not be rebuilt:
+
+- `docs/RESEARCH_STANDARD.md` already owns evidentiary source hierarchy, source maps for assigned stories, evidence ledgers, contradiction search, interviews, verification, and story outcomes.
+- `docs/PUBLISHING_STANDARD.md` already owns the two-speed substantial/fast-factual publishing model.
+- `docs/WRITING_SYSTEM.md` already keeps form dependent on reader need and evidence rather than a universal Story template.
+- `docs/EXPLAINED_STANDARD.md` already rejects a universal explainer structure.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` remains valid for headline/dek/metadata behavior.
+- the current News/Stories route and article/archive implementation does not need redesign for this workstream.
+- `BACKLOG.md` already keeps custom CMS, internal source database, editorial workflow UI, and other newsroom tooling out of v0 unless proven necessary.
+
+### Conflicts that require authority reconciliation
+
+- the previous `PROJECT_STATE.md` still named Editorial Packaging Standard Refinement as the exact next task;
+- `docs/CONTENT_PLANNING.md` begins its planning diagram at `Signal -> Story question`, which can wrongly imply that all Story ideas originate in News discovery;
+- `docs/EDITORIAL_STANDARD.md` contains older mission language centered on `ambitious Filipinos`, which is narrower than the approved Philippines-primary/not-Philippines-only reporting direction;
+- `docs/EDITORIAL_STANDARD.md` refers to `Business, Startups, or Building` as classification choices even though the runtime schema currently allows only `business / technology / startup / ai`;
+- one current draft Story explicitly describes Portfilo through the current four public topics. Any later taxonomy change must therefore audit content copy as well as schema/docs;
+- `docs/COPY_STYLE.md` contains stale route/header facts from an earlier Subscribe-page state even though current route authority has retired `/subscribe` and the persistent header Subscribe CTA;
+- `docs/SOCIAL_DISTRIBUTION.md` contains legacy `Portfilo Brief` naming even though current newsletter authority uses `Portfilo newsletter`.
+
+The last two items are adjacent authority-hygiene issues. They do not block Editorial Intelligence v0, but later maintenance should reconcile them without reopening the underlying product decisions.
 
 ## Current production/staging facts
 
@@ -98,114 +195,69 @@ Draft handling remains explicit:
 - draft routes remain `noindex, nofollow`;
 - draft routes omit published-story canonical/social/article metadata.
 
-The homepage primary Feature remains published-only. The adjacent Stories rail prefers real Story inventory before any synthetic fallback.
+Existing Story drafts are separate editorial artifacts. This workstream does not automatically rewrite or publish them.
 
 ### Editorial imagery
 
 The production image system supports both image and image-less archive/article states.
 
-The current approved editorial source asset is stored under:
+Astro's native image pipeline remains the canonical runtime path for editorial images.
 
-`src/assets/editorial/`
-
-Astro's native image pipeline is now the canonical runtime path for editorial images.
-
-Whether published News and Stories should normally require an editorial image is **not yet a locked publishing rule**. That question belongs to the next Editorial Packaging Standard Refinement task.
+Whether published News and Stories should normally require an editorial image remains an open packaging decision. That question stays deferred with Editorial Packaging Standard Refinement.
 
 ## Closed release state
 
-The released v0 includes the founder-approved:
+The released v0 includes the founder-approved shared News/Stories archive and article systems, responsive typography, newsletter acquisition surfaces, editorial imagery pipeline, navigation/performance work, and final homepage corrections.
 
-- shared News/Stories archive system;
-- shared News/Stories article system;
-- responsive typography repair;
-- archive acquisition/footer corrections;
-- temporary real Story draft staging behavior;
-- homepage real-Story rail preference;
-- Astro native editorial-image optimization;
-- targeted Home/News/Stories prefetch;
-- Astro default CSS handling;
-- narrow immutable caching for fingerprinted `/_astro/*` assets;
-- homepage ticker attached directly beneath the blue newsletter band with breathing room below.
-
-No React/framework migration, SPA router, service worker, external image CDN, performance package, broad cache layer, CMS, database, or other speculative infrastructure was added.
+No React/framework migration, SPA router, service worker, external image CDN, performance package, broad cache layer, CMS, database, or speculative infrastructure was added.
 
 ## Validation status
 
-**RELEASE CLOSED / PRODUCTION FOUNDER-APPROVED.**
+**WEBSITE RELEASE REMAINS CLOSED / PRODUCTION FOUNDER-APPROVED.**
 
-Do not reopen the closed visual/performance release without one of:
+This Editorial Direction + News Intelligence reconciliation is documentation-only unless a later explicit gate authorizes runtime changes.
 
-- an explicit founder change request;
-- a concrete production defect;
-- material new evidence that invalidates an approved decision.
+Do not claim `npm run check` or `npm run build` passed for documentation commits unless those commands were actually run against that state. No runtime validation pass is created by documentation-only work.
 
-Historical local `npm run check` and `npm run build` results should only be claimed for the specific state in which they were actually run. The released state was successfully deployed and visually/smoke validated in production by the founder.
+## Active work plan
+
+1. **Repository conflict audit** — complete.
+2. **Canonical editorial-direction and intelligence documentation** — active reconciliation.
+3. **Initial source map** — next operational task after documentation sync.
+4. **Free gathering setup** — use one main RSS/feed surface, Gmail filtering, optional alerts, and one lightweight private signal list.
+5. **Manual News pilot** — operate with real developments before adding automation.
+6. **Review real friction** — remove noisy sources, add missing sources, and identify repeated manual problems.
+7. **Automate only proven friction** — no speculative newsroom tooling.
 
 ## Exact next task
 
-**Editorial Packaging Standard Refinement**
+**Initial Editorial Source Map + Manual News Gathering Setup**
 
-This is initially an inspection, research, and planning gate. Do not implement runtime changes yet.
+After documentation synchronization, build a deliberately small first source universe, roughly 25-40 useful sources as a starting range rather than a quota.
 
-First inspect the current canonical sources, especially:
+The source map should prioritize the approved editorial attention areas and distinguish discovery from evidence. It should not create a second evidentiary hierarchy because `docs/RESEARCH_STANDARD.md` already owns source tiers for reporting.
 
-- `AGENTS.md`
-- `docs/PROJECT_STATE.md`
-- `docs/DOCUMENT_STATUS.md`
-- `docs/V0_SCOPE.md`
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`
-- `docs/PUBLISHING_STANDARD.md`
-- `docs/IMAGE_SYSTEM.md`
-- `docs/PHOTO_TREATMENT.md`
-- `docs/COPY_STYLE.md`
-- `docs/WRITING_SYSTEM.md`
-- `src/content.config.ts`
-- `src/components/EditorialArchive.astro`
-- `src/components/EditorialArticle.astro`
-- current Story frontmatter examples
+Then define the smallest practical free setup for:
 
-Then research and evaluate the smallest durable refinement needed for Portfilo's editorial packaging system.
+- RSS/feed collection;
+- useful newsletters/press mail;
+- optional gap alerts;
+- one private signal list;
+- daily News scan;
+- weekly Watch/pattern review.
 
-The refinement should specifically decide:
+Do not build a scraper, source database, AI news agent, custom dashboard, automation chain, or paid monitoring stack at this gate.
 
-1. what belongs to a complete News or Story package before publication;
-2. whether editorial imagery should normally be required for published News and/or Stories;
-3. when image-less publication is acceptable;
-4. image role and reuse rules across homepage, archive, article hero, social metadata, and newsletter/distribution surfaces;
-5. 16:9 source/crop expectations where relevant;
-6. alt text, credit, disclosure, provenance, and AI-generated-image requirements;
-7. whether image requirements belong in editorial packaging, publishing gates, schema validation, or a combination of those layers;
-8. how to avoid forcing decorative or low-quality imagery merely to satisfy a rule;
-9. what should remain optional so Portfilo does not overengineer its publishing workflow.
+## Deferred / separate workstreams
 
-Research strong human-edited digital publications for comparable packaging decisions, but use examples to understand editorial systems rather than imitate wording, visual style, or institutional voice.
+Remain separate unless explicitly promoted:
 
-After inspection and research, produce:
-
-- findings;
-- concrete problems in the current standard, if any;
-- recommended refined contract;
-- explicit non-goals;
-- exact files that would need documentation or runtime changes;
-- an approval gate before any implementation.
-
-Do not redesign the site, rewrite existing articles, publish drafts, create News inventory, build a CMS, add dependencies, change distribution strategy, or implement unrelated editorial systems in this task.
-
-## Separate workstreams
-
-The founder will handle article development, News development, broader editorial-system work, and distribution strategy in separate chat sessions.
-
-This next task should refine the **packaging standard and its publication contract only**, then stop at the appropriate approval gate.
-
-## Still separate
-
-This phase transition does not imply:
-
+- Editorial Packaging Standard Refinement, including the open editorial-image requirement question;
+- individual News reporting and publication;
+- individual Story development and publication;
+- distribution execution and platform posting;
+- provider-side newsletter naming/template changes;
 - final custom-domain cutover;
-- beehiiv provider-side naming/template changes;
-- public newsletter send;
-- replacement of sample News with real reporting;
-- publication of current draft Stories;
 - broad-audience launch;
-- search, filters, accounts, CMS, community, analytics infrastructure, or other post-v0 product expansion.
+- topic taxonomy migration;
+- search, filters, accounts, CMS, community, analytics infrastructure, or other post-v0 expansion.
