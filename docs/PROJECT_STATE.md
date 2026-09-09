@@ -4,19 +4,13 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**NEWS / WHY / HUSTLE SECTION MIGRATION COMPLETE / VALIDATED**
+**CLIENT-SIDE NAVIGATION ENHANCEMENT IMPLEMENTED / CI PASS / VISUAL QA PENDING**
 
-The corrected and performance-optimized Portfilo v0 production release remains founder-approved and closed on `main`.
+The News / Why / Hustle section migration is complete and founder-validated on `build/portfilo-v0`.
 
-The founder has now approved, implemented, and visually validated a public editorial section migration on the working branch from:
+Before the release decision, the founder approved one additional pre-release UX enhancement: use Astro's built-in client-side router so internal page navigation no longer presents as a full document reload while preserving the existing static-first architecture and restrained publication design.
 
-`Portfilo | News | Stories`
-
-to:
-
-`Portfilo | News | Why | Hustle`
-
-This is a public information-architecture and schema migration. It does not authorize a topic-taxonomy change, CMS, database, custom newsroom system, paid monitoring stack, automated publishing, or merge to `main`.
+This enhancement does not authorize a frontend-framework migration, custom SPA architecture, decorative transition system, deployment, publication, or merge to `main`.
 
 `Editorial Packaging Standard Refinement` remains deferred, not canceled.
 
@@ -52,7 +46,7 @@ Verified Cloudflare model from the closed website release:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The current migration remains on the working branch. Validation does not authorize merge to `main`.
+The current validated migration and navigation enhancement remain on the working branch. Validation does not authorize merge to `main`.
 
 ## Approved product direction
 
@@ -219,7 +213,7 @@ Current masthead implementation:
 
 `Portfilo | News | Why | Hustle`
 
-Footer navigation now exposes Why and Hustle instead of Stories.
+Footer navigation exposes Why and Hustle instead of Stories.
 
 ### Homepage
 
@@ -227,7 +221,7 @@ The existing homepage composition is preserved.
 
 There are **not** separate Why and Hustle homepage blocks.
 
-The existing primary long-form Feature now draws from published Why/Hustle inventory and generates its route from the entry's section.
+The existing primary long-form Feature draws from published Why/Hustle inventory and generates its route from the entry's section.
 
 The contextual rail can identify another Why/Hustle item without reintroducing Stories as a public destination.
 
@@ -235,7 +229,7 @@ The contextual rail can identify another Why/Hustle item without reintroducing S
 
 `src/components/EditorialArchive.astro` remains the shared archive implementation.
 
-`src/components/EditorialArticle.astro` now uses:
+`src/components/EditorialArticle.astro` uses:
 
 - `news` mode for News;
 - `longform` mode for Why/Hustle.
@@ -248,11 +242,27 @@ Preview QA exposed a short-page layout defect on the empty Hustle archive: the f
 
 The defect was fixed through the shared page shell rather than a Hustle-specific patch:
 
-- the global `body` now owns the minimum viewport-height flex-column contract;
+- the global `body` owns the minimum viewport-height flex-column contract;
 - `SiteFooter.astro` groups the existing footer acquisition and compact footer into one shared stack;
 - that stack consumes remaining vertical space on short pages and follows content normally on long pages.
 
 No route-specific fixed height, absolute positioning, JavaScript, new dependency, or alternate Hustle composition was introduced.
+
+## Client-side navigation enhancement
+
+The founder approved a pre-release navigation enhancement after observing that internal navigation still performed visible full-document reloads.
+
+Implemented behavior:
+
+- `SiteHead.astro` now enables Astro's built-in `ClientRouter` site-wide with `fallback="swap"`;
+- no new dependency or frontend framework was added;
+- pages remain Astro/static-first outputs, with the client router acting as a lightweight navigation layer;
+- no custom slide/wipe/app-style transition system was added;
+- Astro's built-in reduced-motion handling remains authoritative;
+- `NewsletterSignup.astro` rebinds forms on `astro:page-load` and keeps form fallback outside client-router interception;
+- the homepage ticker reruns when the homepage is revisited and cleans its window/media-query listeners on `astro:before-swap` as well as real `pagehide`.
+
+This enhancement must be browser-validated before release, especially repeated navigation into and out of the homepage and newsletter form behavior after navigation.
 
 ## Continuous integration
 
@@ -304,9 +314,11 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**AUTOMATED RUNTIME VALIDATION PASS / VISUAL QA PASS.**
+**AUTOMATED RUNTIME VALIDATION PASS / CLIENT-NAVIGATION VISUAL QA PENDING.**
 
-Latest migration/fix CI validation completed successfully on commit `4f4685962636ab5f497451444b272951a65cc535` on 2026-09-10.
+The News / Why / Hustle migration and short-page footer correction previously passed founder preview QA.
+
+Latest client-navigation CI run `#8` on commit `49abdcea27069581b5e05ba6e8a5f715a4838aeb` completed successfully on 2026-09-10.
 
 Verified by CI:
 
@@ -315,11 +327,7 @@ Verified by CI:
 - `npm run check`: PASS;
 - `npm run build`: PASS.
 
-Founder preview QA is also PASS for the required News / Why / Hustle migration surface, including the responsive and short-page footer correction.
-
-This closes the migration validation gate. CI establishes install/check/build correctness; founder preview QA establishes the accepted browser-level visual/responsive result for this migration.
-
-The previous production release validation remains historical evidence for the pre-migration production site only.
+CI establishes install/check/build correctness. It does not prove browser navigation lifecycle behavior, back/forward behavior, form rebinding, ticker cleanup/reinitialization, or the visual quality of the transition. Those remain the exact preview QA gate.
 
 ## Active work plan
 
@@ -335,13 +343,27 @@ The previous production release validation remains historical evidence for the p
 10. **Minimal GitHub Actions CI** - complete / PASS.
 11. **Preview visual/responsive QA** - complete / founder PASS.
 12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
-13. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
+13. **Client-side navigation enhancement** - implemented / CI PASS / visual QA pending.
+14. **Release decision / merge to `main`** - separate future gate only after navigation QA and explicit founder release approval.
 
 ## Exact next task
 
-**Decide whether to release the validated News / Why / Hustle migration to `main`.**
+**Run preview QA for the client-side navigation enhancement.**
 
-If release is approved, preserve `main` as the production boundary and merge only the validated working-branch state. Confirm CI on the release state and verify the production deployment after the merge.
+Inspect at minimum:
+
+- `/` -> `/news` -> `/why` -> `/hustle` and back to `/`;
+- browser Back and Forward navigation;
+- repeated navigation away from and back to the homepage;
+- homepage Latest News ticker after returning to `/`;
+- newsletter forms after one or more internal navigations;
+- one Why article route and return navigation;
+- scroll restoration/history behavior;
+- desktop and mobile;
+- reduced-motion behavior if available;
+- no regression to existing header/footer/layout behavior.
+
+If QA exposes a concrete defect, fix only that defect without expanding the navigation system.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
