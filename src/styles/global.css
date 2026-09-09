@@ -95,23 +95,6 @@ main:focus,
   transform: translateY(0);
 }
 
-/* Archive pages keep contextual signup copy but use the same dark footer family. */
-body.editorial-page .archive-acquisition {
-  background: var(--ink);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-body.editorial-page .archive-acquisition .newsletter-signup button {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #fff;
-}
-
-body.editorial-page .archive-acquisition .newsletter-signup button:hover {
-  background: var(--accent);
-  filter: brightness(0.93);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
