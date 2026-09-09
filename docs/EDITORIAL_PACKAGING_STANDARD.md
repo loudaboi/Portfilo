@@ -1,6 +1,6 @@
 # Portfilo Editorial Packaging Standard
 
-_Last updated: 2026-09-07_
+_Last updated: 2026-09-09_
 
 _Status: EDITORIAL PACKAGING ARCHITECTURE V1 / FOUNDER-EDITOR APPROVED_
 
@@ -248,7 +248,7 @@ metaDescription: optional
 
 The old required story `description` field is retired.
 
-This change applies to the **stories** collection only. Other content types, such as series or site-level page metadata, may still legitimately use a field or prop named `description` for their own purpose.
+This change applies to the **stories** collection. Site-level page metadata may still legitimately use a prop or field named `description` for its own purpose.
 
 Reader-facing story listings use `dek`.
 
