@@ -40,94 +40,39 @@ const privacySections = [
         <nav class="privacy-index" aria-label="Privacy sections">
           <p>On this page</p>
           <ul>
-            {
-              privacySections.map((item) => (
-                <li><a href={item.href}>{item.label}</a></li>
-              ))
-            }
+            {privacySections.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           </ul>
         </nav>
       </header>
 
       <div class="privacy-sections">
-        <section
-          class="privacy-section"
-          id="information-we-collect"
-          aria-labelledby="information-we-collect-title"
-        >
+        <section class="privacy-section" id="information-we-collect" aria-labelledby="information-we-collect-title">
           <h2 id="information-we-collect-title">Information we collect</h2>
           <div class="privacy-section__body">
-            <p>
-              When you subscribe to the Portfilo newsletter, Portfilo receives the
-              email address you submit.
-            </p>
-            <p>
-              The signup form also contains a hidden anti-spam field. If that field is
-              filled, the submission is treated as automated and is not forwarded to
-              beehiiv.
-            </p>
-            <p>
-              When you visit the website, service providers may process technical
-              information needed to deliver, operate, and secure the site. This can
-              include information such as your IP address, browser or device
-              information, requested URLs, limited referrer information, and the time
-              of a request.
-            </p>
+            <p>When you subscribe to the Portfilo newsletter, Portfilo receives the email address you submit.</p>
+            <p>The signup form also contains a hidden anti-spam field. If that field is filled, the submission is treated as automated and is not forwarded to beehiiv.</p>
+            <p>When you visit the website, service providers may process technical information needed to deliver, operate, and secure the site. This can include information such as your IP address, browser or device information, requested URLs, limited referrer information, and the time of a request.</p>
           </div>
         </section>
 
         <section class="privacy-section" id="newsletter" aria-labelledby="newsletter-title">
           <h2 id="newsletter-title">Newsletter</h2>
           <div class="privacy-section__body">
-            <p>
-              When you submit your email address, Portfilo's Cloudflare Pages Function
-              validates the request and forwards the email address to beehiiv.
-              Portfilo also sends fixed website-attribution information so the signup
-              is identified as coming from the Portfilo website.
-            </p>
-            <p>
-              beehiiv handles double opt-in confirmation, subscriber records,
-              newsletter delivery, and unsubscribe requests.
-            </p>
-            <p>
-              Your subscription is not active until you confirm your email through the
-              double opt-in process.
-            </p>
+            <p>When you submit your email address, Portfilo's Cloudflare Pages Function validates the request and forwards the email address to beehiiv. Portfilo also sends fixed website-attribution information so the signup is identified as coming from the Portfilo website.</p>
+            <p>beehiiv handles double opt-in confirmation, subscriber records, newsletter delivery, and unsubscribe requests.</p>
+            <p>Your subscription is not active until you confirm your email through the double opt-in process.</p>
             <p>Portfilo does not maintain a separate subscriber database.</p>
           </div>
         </section>
 
-        <section
-          class="privacy-section"
-          id="service-providers"
-          aria-labelledby="service-providers-title"
-        >
+        <section class="privacy-section" id="service-providers" aria-labelledby="service-providers-title">
           <h2 id="service-providers-title">Service providers</h2>
           <div class="privacy-section__body">
-            <p>
-              Portfilo currently relies on the following providers for the website and
-              newsletter:
-            </p>
-            <p>
-              <strong>Cloudflare</strong> hosts the website and the newsletter signup
-              endpoint. In providing those services, Cloudflare may process technical
-              network and request information such as IP addresses and traffic data.
-            </p>
-            <p>
-              <strong>beehiiv</strong> processes subscriber information on Portfilo's
-              behalf for subscription confirmation, subscriber management, newsletter
-              delivery, and unsubscribe handling.
-            </p>
-            <p>
-              <strong>jsDelivr</strong> delivers web fonts used by the website. Its
-              content-delivery network may process technical request information such
-              as IP address, browser information, limited referrer information, the
-              requested CDN URL, and request time.
-            </p>
-            <p>
-              These providers process information under their applicable service terms
-              and privacy practices.
-            </p>
+            <p>Portfilo currently relies on the following providers for the website and newsletter:</p>
+            <p><strong>Cloudflare</strong> hosts the website and the newsletter signup endpoint. In providing those services, Cloudflare may process technical network and request information such as IP addresses and traffic data.</p>
+            <p><strong>beehiiv</strong> processes subscriber information on Portfilo's behalf for subscription confirmation, subscriber management, newsletter delivery, and unsubscribe handling.</p>
+            <p><strong>jsDelivr</strong> delivers web fonts used by the website. Its content-delivery network may process technical request information such as IP address, browser information, limited referrer information, the requested CDN URL, and request time.</p>
+            <p>These providers process information under their applicable service terms and privacy practices.</p>
           </div>
         </section>
 
@@ -135,44 +80,17 @@ const privacySections = [
           <h2 id="retention-title">Retention</h2>
           <div class="privacy-section__body">
             <p>Portfilo does not maintain a separate subscriber database.</p>
-            <p>
-              Your email address is held in beehiiv as needed to operate the newsletter
-              and maintain your subscription status. Unsubscribing stops newsletter
-              delivery, but some provider records may be retained when needed to honor
-              your unsubscribe choice, comply with applicable requirements, or
-              maintain the security and operation of the service.
-            </p>
-            <p>
-              Technical request information processed by infrastructure providers may
-              be retained according to their applicable service policies. Portfilo
-              does not maintain a separate application database for this technical
-              request information.
-            </p>
+            <p>Your email address is held in beehiiv as needed to operate the newsletter and maintain your subscription status. Unsubscribing stops newsletter delivery, but some provider records may be retained when needed to honor your unsubscribe choice, comply with applicable requirements, or maintain the security and operation of the service.</p>
+            <p>Technical request information processed by infrastructure providers may be retained according to their applicable service policies. Portfilo does not maintain a separate application database for this technical request information.</p>
           </div>
         </section>
 
-        <section
-          class="privacy-section"
-          id="your-choices-and-rights"
-          aria-labelledby="your-choices-and-rights-title"
-        >
+        <section class="privacy-section" id="your-choices-and-rights" aria-labelledby="your-choices-and-rights-title">
           <h2 id="your-choices-and-rights-title">Your choices and rights</h2>
           <div class="privacy-section__body">
-            <p>
-              Every Portfilo newsletter email includes an unsubscribe link. You can
-              use it at any time to stop receiving the newsletter.
-            </p>
-            <p>
-              For personal data handled by Portfilo, you may have rights under
-              applicable privacy law to request access or correction, object to
-              certain processing, request erasure or blocking where applicable, and
-              exercise other rights provided by law.
-            </p>
-            <p>
-              If you believe your data privacy rights have been violated, you also
-              have the right to file a complaint with the Philippine National Privacy
-              Commission.
-            </p>
+            <p>Every Portfilo newsletter email includes an unsubscribe link. You can use it at any time to stop receiving the newsletter.</p>
+            <p>For personal data handled by Portfilo, you may have rights under applicable privacy law to request access or correction, object to certain processing, request erasure or blocking where applicable, and exercise other rights provided by law.</p>
+            <p>If you believe your data privacy rights have been violated, you also have the right to file a complaint with the Philippine National Privacy Commission.</p>
           </div>
         </section>
 
@@ -181,9 +99,7 @@ const privacySections = [
           <div class="privacy-section__body">
             <p>Portfilo operates this website and the Portfilo newsletter.</p>
             <p>For privacy questions or requests, contact:</p>
-            <p>
-              <a href="mailto:portfilo.ph@gmail.com">portfilo.ph@gmail.com</a>
-            </p>
+            <p><a href="mailto:portfilo.ph@gmail.com">portfilo.ph@gmail.com</a></p>
           </div>
         </section>
       </div>
@@ -194,62 +110,9 @@ const privacySections = [
     <SiteFooter />
 
     <style>
-      @font-face {
-        font-family: "Instrument Sans";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400 700;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-
-      @font-face {
-        font-family: "Source Serif 4";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-
-      :global(:root) {
-        --paper: #f8f6f1;
-        --ink: #171614;
-        --muted: #68645e;
-        --line: #d4cfc6;
-        --accent: #0050a4;
-        --page-max: 100rem;
-        --content-max: 84rem;
-        --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
-        --gutter: var(--shell-gutter);
-        --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-        --serif: "Source Serif 4", Georgia, serif;
-      }
-
-      :global(*) { box-sizing: border-box; }
       :global(html) {
         scroll-behavior: smooth;
-        background: var(--paper);
-        color: var(--ink);
-        font-family: var(--sans);
-        font-synthesis: none;
       }
-      :global(body) { margin: 0; min-width: 0; background: var(--paper); }
-      :global(a) { color: inherit; }
-      :global(a:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; }
-      :global(#main-content:focus) { outline: none; }
-
-      .skip-link {
-        position: fixed;
-        z-index: 50;
-        top: 0.75rem;
-        left: 0.75rem;
-        padding: 0.7rem 0.85rem;
-        background: var(--ink);
-        color: var(--paper);
-        font: 550 0.75rem/1 var(--sans);
-        text-decoration: none;
-        transform: translateY(-200%);
-      }
-      .skip-link:focus { transform: translateY(0); }
 
       .privacy-header,
       .privacy-sections,
@@ -259,7 +122,7 @@ const privacySections = [
       }
 
       .privacy-header {
-        padding: clamp(3.2rem, 6vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+        padding: clamp(2.8rem, 2rem + 2.6vw, 5.4rem) 0 clamp(2.4rem, 2rem + 1.8vw, 4rem);
       }
 
       .privacy-header__copy {
@@ -275,22 +138,24 @@ const privacySections = [
         text-transform: uppercase;
       }
 
-      .privacy-kicker { color: var(--accent); }
+      .privacy-kicker {
+        color: var(--accent);
+      }
 
       .privacy-header h1 {
         margin: 0.85rem 0 0;
-        font: 650 clamp(2.8rem, 5.2vw, 4.7rem) / 0.96 var(--sans);
+        font: 650 clamp(2.55rem, 1.35rem + 3vw, 4.7rem) / 0.96 var(--sans);
         letter-spacing: -0.055em;
       }
 
       .privacy-intro {
         max-width: 43rem;
-        margin: clamp(1.4rem, 2.5vw, 2rem) 0 0;
-        font: 400 clamp(1.08rem, 1.35vw, 1.22rem) / 1.65 var(--serif);
+        margin: clamp(1.3rem, 2.2vw, 1.9rem) 0 0;
+        font: 400 clamp(1.04rem, 0.96rem + 0.25vw, 1.2rem) / 1.65 var(--serif);
       }
 
       .privacy-index {
-        margin-top: clamp(2.4rem, 4vw, 3.5rem);
+        margin-top: clamp(2.2rem, 3.5vw, 3.4rem);
         padding: 0.85rem 0;
         display: grid;
         grid-template-columns: minmax(8rem, 0.3fr) minmax(0, 1fr);
@@ -309,6 +174,9 @@ const privacySections = [
       }
 
       .privacy-index a {
+        min-height: 2.4rem;
+        display: inline-flex;
+        align-items: center;
         font: 550 0.9rem/1.35 var(--sans);
         text-decoration-color: transparent;
         text-underline-offset: 0.18em;
@@ -327,34 +195,38 @@ const privacySections = [
       .privacy-section {
         max-width: 68rem;
         margin-inline: auto;
-        padding: clamp(3rem, 5vw, 4.75rem) 0;
+        padding: clamp(2.8rem, 2.1rem + 2vw, 4.6rem) 0;
         display: grid;
         grid-template-columns: minmax(12rem, 18rem) minmax(0, 41.5rem);
-        gap: clamp(2.5rem, 5vw, 6rem);
+        gap: clamp(2rem, 4.5vw, 5.5rem);
         border-top: 1px solid var(--line);
         scroll-margin-top: 1rem;
       }
 
-      .privacy-section:first-child { border-top-color: var(--ink); }
+      .privacy-section:first-child {
+        border-top-color: var(--ink);
+      }
 
       .privacy-section h2 {
         max-width: 15ch;
         margin: 0;
-        font: 630 clamp(1.75rem, 2.5vw, 2.4rem) / 1.04 var(--sans);
+        font: 630 clamp(1.65rem, 1.2rem + 1.1vw, 2.35rem) / 1.04 var(--sans);
         letter-spacing: -0.04em;
         text-wrap: balance;
       }
 
       .privacy-section__body {
         min-width: 0;
-        font: 400 clamp(1.04rem, 1.18vw, 1.14rem) / 1.72 var(--serif);
+        font: 400 clamp(1.02rem, 0.98rem + 0.12vw, 1.12rem) / 1.72 var(--serif);
       }
 
       .privacy-section__body p {
         margin: 0 0 1.35em;
       }
 
-      .privacy-section__body p:last-child { margin-bottom: 0; }
+      .privacy-section__body p:last-child {
+        margin-bottom: 0;
+      }
 
       .privacy-section__body strong {
         font-family: var(--sans);
@@ -378,14 +250,14 @@ const privacySections = [
         text-transform: uppercase;
       }
 
-      @media (max-width: 48rem) {
+      @media (max-width: 42rem) {
         .privacy-header {
-          padding-top: 2.8rem;
+          padding-top: 2.6rem;
         }
 
         .privacy-index {
           grid-template-columns: 1fr;
-          gap: 0.75rem;
+          gap: 0.65rem;
         }
 
         .privacy-index ul {
@@ -398,14 +270,14 @@ const privacySections = [
         }
 
         .privacy-index a {
-          display: block;
-          padding: 0.65rem 0;
+          min-height: 2.75rem;
+          width: 100%;
         }
 
         .privacy-section {
           grid-template-columns: 1fr;
-          gap: 1.8rem;
-          padding: 2.8rem 0;
+          gap: 1.5rem;
+          padding: 2.6rem 0;
         }
 
         .privacy-section h2 {
@@ -414,20 +286,23 @@ const privacySections = [
       }
 
       @media (max-width: 28rem) {
-        :global(:root) { --shell-gutter: 1rem; }
-
         .privacy-header h1 {
-          font-size: clamp(2.5rem, 12vw, 3.35rem);
+          font-size: clamp(2.4rem, 11vw, 3.2rem);
         }
 
         .privacy-intro {
-          font-size: 1.04rem;
+          font-size: 1.03rem;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        :global(html) { scroll-behavior: auto; }
-        .privacy-index a { transition: none; }
+        :global(html) {
+          scroll-behavior: auto;
+        }
+
+        .privacy-index a {
+          transition: none;
+        }
       }
     </style>
   </body>
