@@ -248,7 +248,7 @@ Prefer ordinary labels such as:
 - Privacy
 - Back to home
 
-Presentation casing may be stronger where founder-approved. The current shared header CTA is `SUBSCRIBE FREE`; the final `/subscribe` form CTA is `SUBSCRIBE`.
+Presentation casing may be stronger where founder-approved. The current shared header CTA is `SUBSCRIBE FREE`; the final `/subscribe` signup heading is `GET THE NEWSLETTER`; the final `/subscribe` form CTA is `SUBSCRIBE`.
 
 Do not brand a control merely to make it distinctive.
 
@@ -327,9 +327,10 @@ Default to product clarity. A subscribe surface may carry a short campaign or in
 Final G1 `/subscribe` visible copy authority:
 
 - page-scoped statement: `Some changes look small, until they reshape everything. We look closer.`;
+- functional signup heading: `GET THE NEWSLETTER`;
 - CTA: `SUBSCRIBE`.
 
-The final page intentionally has no visible `GET THE NEWSLETTER` label, no visible cadence support line, and no visible `Free newsletter. Unsubscribe anytime.` note. The shared `NewsletterSignup.astro` may retain its default note internally, but `/subscribe` hides it page-locally. The current meta description may still state the approved 7-minute / three-times-per-week operational promise because that claim remains valid.
+The page-scoped statement remains sentence case. `GET THE NEWSLETTER` is an all-caps functional form heading, not a tagline, and its presentation uses the same typography values as the campaign statement at the corresponding breakpoint. The final page has no visible cadence support line and no visible `Free newsletter. Unsubscribe anytime.` note. The shared `NewsletterSignup.astro` may retain its default note internally, but `/subscribe` hides it page-locally. The current meta description may still state the approved 7-minute / three-times-per-week operational promise because that claim remains valid.
 
 The page-scoped statement is not a masthead tagline, homepage slogan, newsletter title, or reusable editorial line.
 
