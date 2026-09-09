@@ -22,15 +22,19 @@ When documents disagree, use:
 
 Current primary workstream:
 
-**Editorial Direction + News Intelligence v0**
+**Editorial Direction + News Intelligence v0 / ChatGPT News Scanner Pilot**
 
 Canonical upstream operating contract:
 
 `docs/EDITORIAL_INTELLIGENCE.md`
 
-Canonical initial operating source registry:
+Canonical operating source registry:
 
 `docs/EDITORIAL_SOURCE_MAP.md`
+
+Canonical reusable scanner prompt:
+
+`docs/NEWS_SCANNER_PROMPT.md`
 
 The previous Editorial Packaging Standard Refinement task is deferred, not canceled.
 
@@ -43,28 +47,29 @@ The previous Editorial Packaging Standard Refinement task is deferred, not cance
 
 ### Product and implementation state
 
-- `docs/PROJECT_STATE.md` — current phase, validated state, conflict audit, active work plan, and exact next task.
-- `docs/V0_SCOPE.md` — current v0 product/technical boundaries.
-- `docs/DESIGN_DIRECTION.md` — current visual/responsive contract.
-- `README.md` — current repository overview.
-- `BACKLOG.md` — ideas outside current scope only.
+- `docs/PROJECT_STATE.md` - current phase, validated state, active work plan, and exact next task.
+- `docs/V0_SCOPE.md` - current v0 product/technical boundaries.
+- `docs/DESIGN_DIRECTION.md` - current visual/responsive contract.
+- `README.md` - current repository overview.
+- `BACKLOG.md` - ideas outside current scope only.
 
 ### Editorial direction, intelligence, research, writing, packaging, publishing
 
 Current:
 
-- `docs/EDITORIAL_INTELLIGENCE.md` — upstream News discovery, signal handling, minimal operating routine, automation boundary, and handoff into existing editorial systems.
-- `docs/EDITORIAL_SOURCE_MAP.md` — initial monitored source universe, monitoring priority, free collection defaults, and source-map review rules.
-- `docs/CONTENT_PLANNING.md` — substantial editorial candidate selection and prioritization.
-- `docs/EDITORIAL_STANDARD.md` — editorial integrity and coverage principles.
-- `docs/RESEARCH_STANDARD.md` — evidence, source hierarchy, contradiction search, research packets, and verification.
-- `docs/WRITING_SYSTEM.md` — writing-form selection and structural/stylistic authority.
-- `docs/STYLE_RESEARCH_STANDARD.md` — story-specific professional form research.
-- `docs/EXPLAINED_STANDARD.md` — founder-approved Explained direction; no universal Explainer structure is canonical.
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` — current headline/dek/metadata architecture.
-- `docs/PUBLISHING_STANDARD.md` — substantial and fast-factual publication paths.
-- `docs/COPY_STYLE.md` — public copy rules and institutional-copy provenance.
-- `docs/PORTFILO_TEST_STANDARD.md` — Portfilo Test methodology.
+- `docs/EDITORIAL_INTELLIGENCE.md` - upstream News discovery, ChatGPT-led scanner model, signal handling, automation boundary, and handoff into existing editorial systems.
+- `docs/EDITORIAL_SOURCE_MAP.md` - starting source universe, monitoring priority, optional supporting inputs, and source-map review rules.
+- `docs/NEWS_SCANNER_PROMPT.md` - short reusable prompt for a dedicated ChatGPT News-scanner conversation; substantive authority remains in the canonical standards.
+- `docs/CONTENT_PLANNING.md` - substantial editorial candidate selection and prioritization.
+- `docs/EDITORIAL_STANDARD.md` - editorial integrity and coverage principles.
+- `docs/RESEARCH_STANDARD.md` - evidence, source hierarchy, contradiction search, research packets, and verification.
+- `docs/WRITING_SYSTEM.md` - writing-form selection and structural/stylistic authority.
+- `docs/STYLE_RESEARCH_STANDARD.md` - story-specific professional form research.
+- `docs/EXPLAINED_STANDARD.md` - founder-approved Explained direction; no universal Explainer structure is canonical.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture.
+- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths.
+- `docs/COPY_STYLE.md` - public copy rules and institutional-copy provenance.
+- `docs/PORTFILO_TEST_STANDARD.md` - Portfilo Test methodology.
 
 ### Relationship between intelligence and reporting standards
 
@@ -72,8 +77,7 @@ Use the layers in this order:
 
 ```text
 EDITORIAL INTELLIGENCE
-source -> signal -> original-source check -> News / Watch / Ignore
-                                   ↘ possible Story question
+source map + current web -> signal -> original-source check -> News / Watch / Story Idea / Ignore
 
 CONTENT PLANNING
 idea/question -> editorial gate -> priority -> assignment
@@ -85,6 +89,8 @@ research packet -> evidence -> story decision -> form -> draft -> verification -
 `docs/EDITORIAL_INTELLIGENCE.md` does not create a second evidence hierarchy. `docs/RESEARCH_STANDARD.md` remains the authority for evidentiary source tiers and claim verification.
 
 `docs/EDITORIAL_SOURCE_MAP.md` uses `CORE / WATCH / TARGETED` only as monitoring-frequency labels. They are not credibility tiers.
+
+`docs/NEWS_SCANNER_PROMPT.md` is an invocation contract, not a substitute for repository authority.
 
 Story ideas do not have to originate in the News pipeline.
 
@@ -102,7 +108,7 @@ The founder-approved internal editorial direction is broader and is recorded in 
 
 A public taxonomy change is a separate gate because it affects documentation, content frontmatter, and `src/content.config.ts`.
 
-Do not infer a taxonomy migration from approval of the editorial-direction workstream.
+Do not infer a taxonomy migration from approval of the editorial-intelligence workstream.
 
 ### Design and imagery
 
@@ -202,7 +208,7 @@ The current implementation already supports separate News/Stories modes and disp
 
 The corrected and performance-optimized website v0 release remains founder-approved and production-verified.
 
-Current Editorial Direction + News Intelligence changes are documentation-only unless a later explicit gate authorizes runtime changes.
+Current Editorial Direction + News Intelligence changes are documentation/operations-only unless a later explicit gate authorizes runtime changes.
 
 Do not claim a new local build/check validation pass unless it was actually run against the relevant state.
 
