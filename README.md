@@ -2,7 +2,7 @@
 
 Portfilo is a business and technology publication.
 
-News is the current/day-to-day editorial layer. Stories are the deeper editorial layer. Public topics are `Business / Technology / Startup / AI`. Newsletter acquisition is an important recurring-reader relationship, but the publication remains editorial-first and free in v0.
+News is the current/day-to-day editorial layer. Why is the question-led deeper layer. Hustle is the people-led reported layer focused on founders, operators, and business owners. Public topics are `Business / Technology / Startup / AI`. Newsletter acquisition is an important recurring-reader relationship, but the publication remains editorial-first and free in v0.
 
 ## Repository authority
 
@@ -46,8 +46,10 @@ Keep:
 - `/`
 - `/news`
 - `/news/[slug]`
-- `/stories`
-- `/stories/[slug]`
+- `/why`
+- `/why/[slug]`
+- `/hustle`
+- `/hustle/[slug]`
 - `/standards`
 - `/privacy`
 - `/confirmed`
@@ -55,13 +57,15 @@ Keep:
 
 Retired:
 
+- `/stories` redirects to `/why`;
+- `/stories/[slug]` redirects to the corresponding `/why/[slug]` legacy target;
 - `/subscribe` redirects to `/#newsletter`;
 - `/about` redirects to `/`;
 - public Series presentation is not part of v0.
 
-The final masthead is:
+The current masthead is:
 
-`Portfilo | News | Stories`
+`Portfilo | News | Why | Hustle`
 
 There is no individual public author/byline system in v0.
 
@@ -89,6 +93,7 @@ For v0:
 - Astro + TypeScript;
 - static-first output;
 - Astro Content Collections + local Markdown;
+- one internal collection currently named `stories` with public `section: news | why | hustle`;
 - custom CSS;
 - minimal client-side JavaScript;
 - no frontend framework by default;
