@@ -4,11 +4,11 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**CLIENT-SIDE NAVIGATION ENHANCEMENT IMPLEMENTED / CI PASS / VISUAL QA PENDING**
+**CLIENT-SIDE NAVIGATION ENHANCEMENT COMPLETE / VALIDATED**
 
 The News / Why / Hustle section migration is complete and founder-validated on `build/portfilo-v0`.
 
-Before the release decision, the founder approved one additional pre-release UX enhancement: use Astro's built-in client-side router so internal page navigation no longer presents as a full document reload while preserving the existing static-first architecture and restrained publication design.
+Before the release decision, the founder approved and validated one additional pre-release UX enhancement: use Astro's built-in client-side router so internal page navigation no longer presents as a full document reload while preserving the existing static-first architecture and restrained publication design.
 
 This enhancement does not authorize a frontend-framework migration, custom SPA architecture, decorative transition system, deployment, publication, or merge to `main`.
 
@@ -254,7 +254,7 @@ The founder approved a pre-release navigation enhancement after observing that i
 
 Implemented behavior:
 
-- `SiteHead.astro` now enables Astro's built-in `ClientRouter` site-wide with `fallback="swap"`;
+- `SiteHead.astro` enables Astro's built-in `ClientRouter` site-wide with `fallback="swap"`;
 - no new dependency or frontend framework was added;
 - pages remain Astro/static-first outputs, with the client router acting as a lightweight navigation layer;
 - no custom slide/wipe/app-style transition system was added;
@@ -262,7 +262,7 @@ Implemented behavior:
 - `NewsletterSignup.astro` rebinds forms on `astro:page-load` and keeps form fallback outside client-router interception;
 - the homepage ticker reruns when the homepage is revisited and cleans its window/media-query listeners on `astro:before-swap` as well as real `pagehide`.
 
-This enhancement must be browser-validated before release, especially repeated navigation into and out of the homepage and newsletter form behavior after navigation.
+Founder browser QA passed for the navigation lifecycle, including navigation across the main sections, return navigation, homepage ticker behavior, and newsletter-form behavior after internal navigation.
 
 ## Continuous integration
 
@@ -314,11 +314,11 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**AUTOMATED RUNTIME VALIDATION PASS / CLIENT-NAVIGATION VISUAL QA PENDING.**
+**AUTOMATED RUNTIME VALIDATION PASS / CLIENT-NAVIGATION VISUAL QA PASS.**
 
 The News / Why / Hustle migration and short-page footer correction previously passed founder preview QA.
 
-Latest client-navigation CI run `#8` on commit `49abdcea27069581b5e05ba6e8a5f715a4838aeb` completed successfully on 2026-09-10.
+Client-navigation CI run `#8` on commit `49abdcea27069581b5e05ba6e8a5f715a4838aeb` completed successfully on 2026-09-10.
 
 Verified by CI:
 
@@ -327,7 +327,9 @@ Verified by CI:
 - `npm run check`: PASS;
 - `npm run build`: PASS.
 
-CI establishes install/check/build correctness. It does not prove browser navigation lifecycle behavior, back/forward behavior, form rebinding, ticker cleanup/reinitialization, or the visual quality of the transition. Those remain the exact preview QA gate.
+Follow-up state-tracking CI run `#9` on commit `c8c64910e6b6222f7f7b10434a4809be9b908f47` also completed successfully.
+
+Founder preview QA is PASS for the client-side navigation enhancement. This closes the browser-navigation lifecycle gate in addition to the previously completed News / Why / Hustle visual QA.
 
 ## Active work plan
 
@@ -343,27 +345,16 @@ CI establishes install/check/build correctness. It does not prove browser naviga
 10. **Minimal GitHub Actions CI** - complete / PASS.
 11. **Preview visual/responsive QA** - complete / founder PASS.
 12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
-13. **Client-side navigation enhancement** - implemented / CI PASS / visual QA pending.
-14. **Release decision / merge to `main`** - separate future gate only after navigation QA and explicit founder release approval.
+13. **Client-side navigation enhancement** - COMPLETE / VALIDATED.
+14. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
 
 ## Exact next task
 
-**Run preview QA for the client-side navigation enhancement.**
+**Decide whether to release the validated working-branch state to `main`.**
 
-Inspect at minimum:
+The release candidate now includes both the validated News / Why / Hustle migration and the validated client-side navigation enhancement.
 
-- `/` -> `/news` -> `/why` -> `/hustle` and back to `/`;
-- browser Back and Forward navigation;
-- repeated navigation away from and back to the homepage;
-- homepage Latest News ticker after returning to `/`;
-- newsletter forms after one or more internal navigations;
-- one Why article route and return navigation;
-- scroll restoration/history behavior;
-- desktop and mobile;
-- reduced-motion behavior if available;
-- no regression to existing header/footer/layout behavior.
-
-If QA exposes a concrete defect, fix only that defect without expanding the navigation system.
+If release is approved, preserve `main` as the production boundary and merge only the validated working-branch state. Confirm CI on the release state and verify the production deployment after the merge.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
