@@ -4,17 +4,27 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REMEDIATION IMPLEMENTED — RENDERED QA PASSED / RELEASE-READINESS QA IN PROGRESS**
+**SPARSE-LAUNCH CORRECTION IMPLEMENTED ON BUILD / VALIDATION PENDING**
 
-The founder-approved full-site remediation pass has been implemented on `build/portfilo-v0` at source level.
+The previously approved website remediation passed broad rendered and functional QA, was advanced to `main`, and was then inspected on the deployed site with real production inventory.
 
-The latest runtime-changing commit is:
+That production inspection exposed a concrete sparse-inventory defect: Portfilo currently has no real published News and only one published Story, so the development-only fixtures disappeared and the production composition became visually incomplete.
 
-`0ef0fad49b7eddbcc6a1de0d7808944143ee689d` — `Remove stale blue rule from homepage News image`
+A founder-approved correction is now implemented on `build/portfilo-v0`.
 
-This narrow cleanup removed only the stale blue top rule from the homepage News image treatment. The primary homepage Feature and primary article hero blue rules remain intact.
+Latest runtime-changing commit:
 
-No merge to `main` or release is authorized.
+`48602ee95668b9421d5bc1557e9563e341569e16` — `Keep archive hover within canonical palette`
+
+Current build branch HEAD after the related scope update:
+
+`af3a42d8ce13662d878ba9bf39f0fbdb5d5476ac`
+
+Current `main` remains at the previously released state:
+
+`11c9587123b0812cc8b09316dac50213858f0f01`
+
+The founder has explicitly authorized bringing the corrected state to `main` after this correction passes its deployment/render validation gate.
 
 ## Repository authority
 
@@ -46,7 +56,7 @@ Intended Cloudflare branch model:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-Cloudflare was founder-inspected on 2026-09-09 and currently has `build/portfilo-v0` configured as the Production branch with automatic deployments enabled. This conflicts with the intended release boundary and must be corrected before release. Do not switch Cloudflare to `main` yet because `main` is still the original foundation state rather than the current validated website.
+The founder changed Cloudflare branch control to `main` during the release process. Subsequent dashboard screenshots also showed at least one `build/portfilo-v0` deployment labeled Production, so the effective deployment environment must be re-verified after the corrected state reaches `main`. Do not infer final Cloudflare correctness from branch intent alone.
 
 ## Approved product direction
 
@@ -66,6 +76,21 @@ Approved internal selection lens:
 > Portfilo covers business and technology developments that materially change how companies, products, markets, infrastructure, or work operate.
 
 This is internal only.
+
+## Temporary sparse-launch content policy
+
+Until real News inventory exists, clearly labeled sample News fixtures may render in production strictly as layout placeholders.
+
+Requirements:
+
+- sample items remain non-clickable;
+- sample items do not create `/news/[slug]` routes;
+- sample items do not create Article structured metadata;
+- the homepage and News archive visibly identify the material as sample content and not Portfilo reporting;
+- real published News automatically replaces the sample fixtures;
+- this temporary sample inventory must be replaced before broad audience launch.
+
+The homepage Stories rail may also use one clearly labeled sample Story teaser while only one real Story exists. It is not a published Story route.
 
 ## Current public route model
 
@@ -89,183 +114,81 @@ Retired:
 - `/about`; Cloudflare redirect target is `/`.
 - public `/series/[slug]` presentation.
 
-## Current implementation contract
-
-### Shared foundation
-
-`src/styles/global.css` now owns font loading, current palette, the 84rem shell variables, shared responsive gutter, base focus behavior, and other global foundations.
-
-The shared shell gutter is designed to provide about 32px of breathing room at 1024px while remaining fluid at desktop/tablet/phone widths.
-
-### Header
-
-Final masthead:
-
-`Portfilo | News | Stories`
-
-The persistent Subscribe CTA, ClientRouter, header persistence, and custom route-state synchronization have been removed.
+## Sparse-launch correction implemented
 
 ### Homepage
 
-Current structure remains:
+- Existing sample News fixtures now fill the layout when there are zero real published News items in both development and production.
+- Sample News remains non-clickable.
+- The ticker label changes to `Sample news` while fixtures are active.
+- The News section shows `Sample content for layout testing. Not Portfilo reporting.` while fixtures are active.
+- The existing secondary Story fallback can appear in production while only one real Story exists, and its rail label changes to `Sample story`.
+- Once real News or a second real Story exists, the real editorial inventory takes precedence automatically.
+- The normal populated homepage composition, typography, ticker behavior, Feature treatment, and responsive model were not redesigned.
 
-- top newsletter acquisition;
-- Latest News strip when inventory exists;
-- primary Feature + contextual blue rail;
-- News section;
-- shared footer acquisition and compact footer.
+### News archive
 
-Real published News receives `/news/[slug]` links. Development-only synthetic News remains non-clickable and cannot create fake article routes.
+- The same sample News fixtures render when there are zero real published News items.
+- The fixture notice is explicit that they are sample layout content and not Portfilo reporting.
+- Sample News remains non-clickable and route-less.
+- Real News remains clickable and routes to `/news/[slug]`.
 
-Real secondary Story content now takes precedence over the synthetic development Story rail fallback.
+### Archive footer consistency
 
-The homepage News lead image now follows the approved supporting-image treatment and does not carry a repeated blue top rule. The primary homepage Feature retains its approved blue rule.
+- News and Stories archives keep one contextual archive acquisition block and suppress the second shared acquisition block from `SiteFooter` to avoid duplicate newsletter sections.
+- Archive acquisition now uses the same dark footer visual family as the rest of Portfilo while retaining contextual archive copy.
+- The compact institutional footer remains shared.
 
-### Newsletter forms
+### Shared foundation
 
-All visible newsletter forms continue to use `NewsletterSignup.astro` and `/api/subscribe`.
+`src/styles/global.css` continues to own font loading, palette, shared shell variables, responsive gutter, focus behavior, and the narrow archive-footer visual override.
 
-Forms are measure-constrained so tablet stacking does not produce uncontrolled full-width inputs.
+No new dependency, framework, runtime service, CMS, database, route family, or content schema field was added.
 
-The standalone `/subscribe` page has been removed. The homepage `/#newsletter` section is the direct signup destination.
+## Validation history already completed
 
-A founder-run test on the deployed `portfilo-app.pages.dev` site successfully submitted a real email through the live `/api/subscribe` -> beehiiv path. The Cloudflare Pages Function is deployed and reachable, and the critical production-like signup path is therefore accepted. Source review also confirms the shared component handles frontend validation, POST submission, success/error messaging, and all visible instances through the same component/backend path.
+Before the sparse-launch correction, founder-reported validation included:
 
-### Responsive model
+- `npm run check`: PASS
+- `npm run build`: PASS
+- homepage responsive QA across desktop/laptop/tablet/phone: FOUNDER ACCEPTED
+- `/news`, `/stories`, representative Story article, `/standards`, `/privacy`, `/confirmed`, `/404`: FOUNDER ACCEPTED
+- responsive editorial typography: PASS / FOUNDER ACCEPTED
+- deployed `/api/subscribe` real email -> beehiiv: PASS
+- `/subscribe` -> `/#newsletter`: PASS
+- `/about` -> `/`: PASS
+- source audit: no individual author field or public byline system; Article structured data uses Portfilo Organization
 
-Acceptance widths:
+Those passes remain valid as baseline evidence, but they do not validate the new sparse-launch correction commits.
 
-`1440 / 1366 / 1024 / 768 / 390 / 375 / 320`
+## Current validation status
 
-Approved interpretation:
+**NEW SPARSE-LAUNCH CORRECTION: SOURCE IMPLEMENTED / DEPLOYMENT + RENDER VALIDATION PENDING.**
 
-- desktop, laptop, and tablet are one layout family;
-- 1024 preserves compact-desktop structure with more side breathing room;
-- 768 uses selective reflow instead of blanket mobile stacking;
-- phone is the main structural simplification point;
-- important typography scales progressively rather than waiting for one abrupt mobile breakpoint.
-
-The homepage, shared archives, and footer acquisition now preserve multi-column structure through tablet widths where viable and stack near phone widths instead.
-
-The founder has visually accepted the homepage responsive behavior across desktop, laptop, tablet, and phone. The 84rem shell behavior at 1440, including approximately 48px side margins, is intentional and accepted. 1024 compact-desktop spacing and 768 tablet composition are accepted. Homepage behavior at 390 and lower was founder-inspected and accepted. The Latest News ticker intentionally keeps a stable compact utility scale through desktop/laptop/tablet widths rather than shrinking with editorial headline typography.
-
-### Archives
-
-`EditorialArchive.astro` remains the shared News/Stories archive system.
-
-Current behavior:
-
-- explicit image and image-less lead/supporting states;
-- supporting archive images do **not** use repeated blue top rules;
-- contextual acquisition remains;
-- supporting layouts preserve desktop-family structure through tablet where viable.
-
-### Articles
-
-`EditorialArticle.astro` remains the shared News/Stories article system.
-
-Current behavior:
-
-- centered header package;
-- no visible author/byline;
-- content schema no longer contains an individual `author` field;
-- Article structured data uses Portfilo Organization as author/publisher;
-- no neutral divider between article header and hero;
-- tighter deliberate header-to-image whitespace;
-- primary article hero retains its thin blue top rule;
-- 54rem header/hero geometry and 41.5rem reading measure retained;
-- News remains sans reading mode;
-- Stories remains serif reading mode;
-- conditional Story `In this story` rail remains when at least three real `h2` sections exist;
-- methodology/corrections remain supported;
-- real article hero image now feeds article social/structured metadata when available.
-
-### Institutional and utility pages
-
-- Standards and Privacy now use the shared publication foundation rather than redeclaring a competing root/font system.
-- `/confirmed` uses current `Portfilo newsletter` language and restrained shared utility styling.
-- `/404` uses the same restrained utility family.
-
-### Retired fixtures/assets
-
-Removed:
-
-- public Series route and Series fixture collection;
-- obsolete `portfilo-*` architecture/order fixtures;
-- old homepage source/background image variants;
-- retired Subscribe campaign image.
-
-The approved `public/images/homepage-feature-16x9.png` remains the canonical Feature/Story asset. It is still a large PNG and requires a separate binary optimization step if/when tooling permits without altering the approved visual.
-
-### Node
-
-`.node-version` pins Node `22.12.0` for the current Astro toolchain.
-
-## Validation status
-
-**PRIOR TECHNICAL PASS / RENDERED ROUTE PASS / DEPLOYED NEWSLETTER SIGNUP PASS / RELEASE-READINESS QA IN PROGRESS.**
-
-Founder-reported local validation on 2026-09-09 against the remediation branch before the final one-line homepage News image cleanup:
-
-- `npm run check`: **PASS** — 23 files, 0 errors, 0 warnings, 0 hints;
-- `npm run build`: **PASS** — Astro static build completed successfully;
-- production build generated 8 pages: `/`, `/404`, `/confirmed`, `/news`, `/privacy`, `/standards`, `/stories`, and the published Story route;
-- removed `/subscribe`, `/about`, and Series pages were not generated by the production build.
-
-Because commit `0ef0fad49b7eddbcc6a1de0d7808944143ee689d` changes runtime CSS, those technical PASS results should not be represented as post-fix validation until the affected checks are re-run.
-
-Rendered homepage QA before the final one-line cleanup:
-
-- 1440 desktop shell behavior: **FOUNDER ACCEPTED**;
-- 1024 compact-desktop spacing: **FOUNDER ACCEPTED**;
-- 768 tablet spacing/composition: **FOUNDER ACCEPTED**;
-- 390 and lower phone behavior: **FOUNDER ACCEPTED**;
-- ticker stable utility sizing through desktop/laptop/tablet: **FOUNDER ACCEPTED**.
-
-Rendered route QA:
-
-- `/news`: **FOUNDER ACCEPTED**;
-- `/stories`: **FOUNDER ACCEPTED**;
-- representative Story article: **FOUNDER ACCEPTED**;
-- `/standards`: **FOUNDER ACCEPTED**;
-- `/privacy`: **FOUNDER ACCEPTED**;
-- `/confirmed`: **FOUNDER ACCEPTED**;
-- `/404`: **FOUNDER ACCEPTED**;
-- responsive editorial typography behavior was technically reviewed in source and founder accepted the rendered result.
-
-Newsletter functional QA:
-
-- deployed `/api/subscribe` endpoint reachable: **PASS**;
-- real deployed signup successfully submitted to beehiiv: **FOUNDER-REPORTED PASS**;
-- shared frontend/backend implementation source review: **PASS**;
-- no newsletter implementation rewrite is warranted absent a concrete defect.
-
-The previously known homepage News image blue-rule defect is **IMPLEMENTED / FIXED IN SOURCE**, pending the narrow post-fix technical validation run.
-
-Do not treat the site as release-ready until the narrow post-fix validation and remaining deployment/release-boundary checks are resolved.
+Do not claim `npm run check`, `npm run build`, or rendered PASS for the corrected build until the new deployment/build actually succeeds and is inspected.
 
 ## Exact next task
 
-Complete the remaining release-readiness gate without introducing new product/design changes:
+1. Wait for Cloudflare to finish building the latest `build/portfilo-v0` state.
+2. Confirm the deployment/build succeeds. The Cloudflare build command is expected to run the repository `npm run build` path.
+3. Inspect the corrected homepage and `/news` on that deployment, focusing on:
+   - ticker restored as clearly labeled sample content;
+   - Feature + Story rail composition restored;
+   - homepage News section populated by clearly labeled sample fixtures;
+   - `/news` populated by clearly labeled non-clickable sample fixtures;
+   - archive acquisition and compact footer visually read as one dark footer family;
+   - no duplicate acquisition block.
+4. If those checks pass, fast-forward `main` to the validated build HEAD. This merge/update is already founder-authorized for this correction.
+5. Re-check Cloudflare branch control so `main` is the production branch and `build/portfilo-v0` is preview/test.
+6. Smoke-test production `/`, `/news`, `/stories`, one real Story, newsletter signup, `/subscribe`, and `/about`.
+7. Record only checks that actually ran.
 
-1. pull the latest `build/portfilo-v0` commit locally and re-run `npm run check` and `npm run build` after the one-line homepage News image cleanup;
-2. visually confirm the homepage News image no longer has the blue top rule while the Feature/article hero rules remain intact;
-3. verify production/source excludes drafts/DEV fixtures and DEV-only synthetic News remains non-clickable;
-4. verify real News links route to `/news/[slug]` when real News inventory exists;
-5. verify no public individual author appears and no individual author metadata remains in the runtime/content schema;
-6. on the current Cloudflare deployment, verify `/subscribe` -> `/#newsletter` and `/about` -> `/` redirects;
-7. prepare the release-boundary transition: current `main` is still the original foundation state, so merge/update `main` only after explicit founder approval, then change Cloudflare production branch from `build/portfilo-v0` to `main` as a separate approved release action;
-8. record only checks that actually ran.
+If validation reveals a concrete defect, fix only that defect before advancing `main`.
 
-If validation reveals a concrete defect, fix only that defect and re-run the affected checks.
+## Still separate / not implied by this approval
 
-## Release work not authorized
-
-Do not perform without a separate approval:
-
-- merge/update `main`;
-- Cloudflare production-branch change;
-- final production release/cutover;
-- final-domain cutover;
+- final custom-domain cutover;
 - beehiiv provider-side naming/template changes;
-- public newsletter send.
+- public newsletter send;
+- replacing sample News with real reporting;
+- broader audience launch.
