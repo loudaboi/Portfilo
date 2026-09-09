@@ -95,6 +95,27 @@ main:focus,
   transform: translateY(0);
 }
 
+/* Keep zero-inventory states intentional without changing populated layouts. */
+.home-page .newsletter-band + .featured-section {
+  margin-top: clamp(1rem, 1.4vw, 1.5rem);
+}
+
+.home-page .news-section:has(.news-empty) {
+  display: none;
+}
+
+.home-page .feature-rail:has(.feature-rail__latest-empty) {
+  justify-content: center;
+}
+
+.home-page .feature-rail__latest:has(.feature-rail__latest-empty) {
+  display: none;
+}
+
+.editorial-page main:has(.empty-state) .archive-acquisition {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
