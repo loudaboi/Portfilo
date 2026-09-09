@@ -1,23 +1,34 @@
 # Portfilo Content Planning
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Purpose
 
-This document defines the lightweight v0 system Portfilo uses to decide which ideas deserve reporting time.
+This document defines the lightweight v0 system Portfilo uses to decide which substantial editorial ideas deserve reporting time.
 
 It does not replace:
 
+- `EDITORIAL_INTELLIGENCE.md`;
 - `EDITORIAL_STANDARD.md`;
 - `RESEARCH_STANDARD.md`;
 - `PUBLISHING_STANDARD.md`;
 - `COPY_STYLE.md`.
 
+The upstream News-discovery system is defined in `docs/EDITORIAL_INTELLIGENCE.md`.
+
 Boundary:
 
 ```text
-PLANNING
-Signal -> Story question -> Editorial gate -> Priority -> Research assignment
+NEWS DISCOVERY
+Source -> Signal -> Original-source check -> News / Watch / Ignore
+                                      ↘ possible Story question
+
+STORY PLANNING
+Idea / observation / signal / question
+  -> Story question
+  -> Editorial gate
+  -> Priority
+  -> Research assignment
 
 RESEARCH + PUBLISHING
 Research brief -> Sources -> Evidence -> Contradictions -> Story decision -> Draft -> Verification -> Publish
@@ -27,7 +38,7 @@ The planning system exists to improve editorial selection, not to create a large
 
 ## Core principle
 
-**The unit of planning is a question, not a headline.**
+**The unit of substantial Story planning is a question, not a headline.**
 
 Weak candidate:
 
@@ -39,13 +50,36 @@ Better candidate:
 
 The question must be specific enough to investigate without assuming the conclusion.
 
+## Story-idea origins
+
+Story ideas are deliberately open-ended.
+
+They may come from:
+
+- observation;
+- curiosity;
+- lived experience;
+- conversations;
+- interviews;
+- data;
+- a repeated pattern;
+- one or more News signals;
+- an encountered company, product, market, industry, or behavior;
+- an unanswered question the editor wants to understand.
+
+A Story does not need to originate in the News pipeline.
+
+A News signal can become a Story question when it exposes a mechanism, consequence, contradiction, pattern, or unanswered second question worth deeper reporting.
+
+Do not force every News item to produce a Story.
+
 ## Approved internal editorial focus
 
 Portfilo remains a business and technology publication.
 
 Approved internal editorial thesis:
 
-> **Portfilo focuses on understanding how technology is changing companies, industries, work, and the process of building businesses, with the Philippines as its primary reporting context and AI as its strongest current acquisition and reporting wedge.**
+> **Portfilo focuses on understanding how technology and business changes affect companies, industries, work, infrastructure, and the process of building businesses, with the Philippines as its primary reporting ground and AI as a strong current reporting and audience-acquisition wedge.**
 
 This is internal editorial guidance, not a tagline or automatic authorization to rewrite public institutional copy.
 
@@ -57,25 +91,52 @@ Models, products, adoption, implementation, workflows, jobs, economics, governan
 
 AI is a current reporting/acquisition wedge, not Portfilo's entire identity.
 
-### Digital Economy Infrastructure
+### Startups + Building Companies
 
-Payments, fintech, IT-BPM, cloud, data centers, platforms, cybersecurity, connectivity, and other systems that materially enable or constrain the digital economy.
+Startups, founders, product, distribution, sales, pricing, hiring, funding, operations, business models, expansion, acquisitions, failure, and decisions involved in creating and growing companies.
 
-### Building Companies
+This lane is not limited to startups. Established companies belong when their operating decisions or changes create a worthwhile business/technology question.
 
-Product, distribution, sales, pricing, hiring, funding, operations, business models, and decisions involved in creating and growing companies.
+### Digital Economy + Infrastructure
+
+Payments, fintech, IT-BPM, cloud, data centers, platforms, cybersecurity, connectivity, digital regulation, and other systems that materially enable or constrain technology and business activity.
 
 These strategic lanes do **not** replace the public topic taxonomy:
 
 `Business / Technology / Startup / AI`
 
+A major business or technology development outside the three lanes can still belong when it materially changes companies, products, markets, infrastructure, work, or the process of building businesses.
+
 Strategic fit affects priority only after the normal editorial gate is passed.
 
 Philippine reporting context should be used when geography materially affects the company, market, regulation, infrastructure, workforce, customer, or consequence being examined. Global developments can belong on Portfilo without a manufactured Philippine angle.
 
+The internal Philippines-primary reporting emphasis is not a public geographic product promise.
+
+## News and Stories distinction
+
+Default mental model:
+
+```text
+NEWS
+What changed?
+
+STORIES
+What is changing underneath?
+Why is this happening?
+How does this work?
+What does it reveal?
+```
+
+News is primarily event-driven and may use the fast factual path in `PUBLISHING_STANDARD.md` when the development is narrow and directly verifiable.
+
+Stories are primarily question-driven and use this planning gate when substantial reporting or interpretation is required.
+
+This distinction is a default operating model, not a rigid form template.
+
 ## Reader needs
 
-Every candidate should identify one primary reader need.
+Every substantial candidate should identify one primary reader need.
 
 ### Update
 
@@ -226,7 +287,7 @@ Primary topic:
 Business / Technology / Startup / AI
 
 Strategic lane:
-AI + Work / Digital Economy Infrastructure / Building Companies / None
+AI + Work / Startups + Building Companies / Digital Economy + Infrastructure / None
 
 Likely section:
 News / Stories
@@ -262,6 +323,8 @@ PASS / REFRAME / HOLD / KILL
 ```
 
 Likely section/content type are provisional. Research determines the final form.
+
+The primary topic remains tied to the current public taxonomy until a separate taxonomy gate changes the schema.
 
 ## Copy-style integration
 
@@ -309,6 +372,8 @@ A short factual update may use the faster path when:
 - scope is narrow;
 - Portfilo does not imply consequences that have not been researched.
 
+Signal discovery and initial triage are governed by `docs/EDITORIAL_INTELLIGENCE.md`.
+
 `AI Update` may be used as an internal operating label for this narrow path. It is not a new public topic or `contentType`.
 
 An AI Update may be distributed through social or the Portfilo newsletter without requiring a website story when a website page would add no meaningful value.
@@ -325,9 +390,9 @@ It is governed by `docs/PORTFILO_TEST_STANDARD.md` and does not bypass this plan
 
 ## Editorial launch research
 
-Launch research should determine what Portfilo investigates first rather than assuming a series or any fixed package in advance.
+Launch research determined the first candidate pool and remains historical provenance.
 
-A candidate pool may be broad, but it is not a quota. The evidence can recommend one flagship, several unrelated strong stories, or another coherent launch package.
+A candidate pool is not a quota. The evidence can recommend one flagship, several unrelated strong stories, or another coherent package.
 
 Public Series capability is not part of v0. If repeated real editorial inventory later justifies a Series product, that requires a new explicit product/schema/presentation decision.
 
