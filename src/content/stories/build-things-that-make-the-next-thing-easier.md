@@ -1,7 +1,7 @@
 ---
 title: "Build things that make the next thing easier"
 dek: "An early project should leave you with more than a story about what you learned."
-section: stories
+section: why
 contentType: perspective
 topic: technology
 publishedAt: 2026-09-03
@@ -28,5 +28,3 @@ The idea becomes weak when every failed project qualifies. Once something ends b
 Spending time on something guarantees experience only in the literal sense that time was spent doing it. Useful change requires a higher standard. A later action should be different because of what happened, or the work should have produced something that can be shown, used, or tested. If neither is true, a retrospective lesson should not add much weight to the project's value.
 
 That standard is more useful before the work begins than after it fails. Any value beyond the main outcome should be specific enough to check later. A finished piece of work that another person can inspect is one example. Evidence that changes which problem deserves another attempt is another. `Experience` by itself is too vague to make the tradeoff clear in advance.
-
-The direct outcome remains the main verdict. A failed project deserves credit beyond that result only when the work itself changes a later choice or produces something that can actually be used again. Otherwise there is no reason to improve the verdict simply because a lesson can be invented afterward.
