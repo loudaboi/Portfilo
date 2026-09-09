@@ -4,13 +4,13 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` COMPLETE / G3 `/privacy` NEXT**
+**WEBSITE / PRODUCT REDESIGN ACTIVE — G COMPLETE / H RESPONSIVE AUDIT NEXT**
 
-Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is active. G1 `/subscribe` and G2 `/standards` are founder-approved and locally validated. G3 `/privacy` is now the exact next task.
+Sequence items A–G are complete on `build/portfilo-v0`. G1 `/subscribe`, G2 `/standards`, and G3 `/privacy` are founder-approved and locally validated. Sequence H, the dedicated site-wide responsive typography/layout audit, is now the exact next task.
 
 Current and last fully validated runtime HEAD:
 
-`b7c764647d8b583ceb64d54aca1ee1b99df3027c` — `Simplify standards editorial page`
+`10b3d96b1f90260cb77fbd94414a360e1e365580` — `Simplify privacy notice`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -314,13 +314,13 @@ The later dedicated multi-width full-site responsive audit remains sequence H an
 
 ## G — Utility/editorial page simplification
 
-**ACTIVE — G1 `/subscribe` COMPLETE / G2 `/standards` COMPLETE / G3 `/privacy` NEXT.**
+**COMPLETE.**
 
 Sequence inside G:
 
 1. `/subscribe` — **COMPLETE**;
 2. `/standards` — **COMPLETE**;
-3. `/privacy` — **NEXT**.
+3. `/privacy` — **COMPLETE**.
 
 ### G1 `/subscribe`
 
@@ -389,21 +389,19 @@ Meta description remains:
 Implementation provenance:
 
 - `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
-- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — historical removal of the earlier newsletter label before the founder later restored it;
-- `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove the footer on `/subscribe` and establish the approved message hierarchy;
-- `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set page CTA to `SUBSCRIBE` and strengthen its weight;
-- `972cbf96b21be699c35550f96c68355fe3f62148` — swap the two overlay blocks vertically while preserving their left/right sides;
-- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish one shared campaign inset and tighten the original form width;
-- `bd419eac0886696022da359f77df9b214e0f3895` — set the page CTA to the 8.5rem width and explicit centering;
-- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optically align the wordmark and set the approved 44px control height above 32rem;
-- `a429bd625a8002305799adc335194184c3747291` — restore visible `GET THE NEWSLETTER` above the form;
-- `eca1af7d4704a2c24c75648adb8c50454a07e6c3` — match the newsletter heading typography to the campaign statement;
-- `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match the signup-block width to the newsletter heading while retaining the fixed CTA width;
-- `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten the wordmark-to-message spacing;
-- `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted alignment correction; historical only;
-- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the founder-approved natural-scrolling composition while retaining the approved newsletter-heading/form refinements;
-- the shared `NewsletterSignup.astro` remains behaviorally authoritative for the form;
-- no dependency, schema, API, archive, article, Standards, or Privacy runtime changes were made by the final G1 corrections.
+- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — historical removal of the earlier newsletter label before the later founder-approved restoration;
+- `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove `/subscribe` footer and set message hierarchy;
+- `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set `SUBSCRIBE` CTA and strengthen its weight;
+- `972cbf96b21be699c35550f96c68355fe3f62148` — swap overlay blocks vertically;
+- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish the shared campaign inset and tighten the original form width;
+- `bd419eac0886696022da359f77df9b214e0f3895` — set 8.5rem CTA width and explicit centering;
+- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optical wordmark alignment and 44px form-control treatment;
+- `a429bd625a8002305799adc335194184c3747291` — restore visible `GET THE NEWSLETTER`;
+- `eca1af7d4704a2c24c75648adb8c50454a07e6c3` — match newsletter-heading typography to the campaign statement;
+- `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match signup-block width to the newsletter heading;
+- `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten wordmark-to-message spacing;
+- `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted correction; historical only;
+- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition.
 
 ### G1 validation
 
@@ -416,9 +414,9 @@ Recorded against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`:
 - local `npm run check`: **PASS**, reported by the founder after pulling the final runtime;
 - local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
 - source review confirms `/subscribe` continues to use the shared `NewsletterSignup.astro` submission/validation implementation;
-- the dedicated multi-width laptop/tablet/mobile visual audit remains intentionally deferred to H.
+- dedicated multi-width laptop/tablet/mobile visual audit remains sequence H.
 
-G1 is closed. Do not reopen it during later G work unless a concrete regression or founder decision requires it.
+G1 is closed.
 
 ### G2 `/standards`
 
@@ -455,7 +453,45 @@ Recorded against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`:
 - the substantive institutional standards were preserved rather than materially rewritten;
 - dedicated multi-width site-wide responsive QA remains sequence H.
 
-G2 is closed. Do not reopen it during G3 unless a concrete regression or founder decision requires it.
+G2 is closed.
+
+### G3 `/privacy`
+
+The previous Privacy runtime used the older 100rem / 12-column utility-page system, numbered `01 / 02 / 03` scaffolding, stale `Portfilo Brief` website terminology, and an incomplete three-section notice that did not fully reflect the current data flow.
+
+The final founder-approved G3 contract is:
+
+- one restrained text-led privacy notice inside the current 84rem publication shell;
+- normal shared `SiteHeader` and `SiteFooter` behavior, including the shared footer acquisition;
+- simple unnumbered `On this page` links;
+- Instrument Sans hierarchy and Source Serif 4 substantive reading copy;
+- sections for Information we collect, Newsletter, Service providers, Retention, Your choices and rights, and Contact;
+- public website terminology uses `Portfilo newsletter` rather than the stale `Portfilo Brief` website label;
+- newsletter data-flow copy reflects the actual `/api/subscribe` proxy, double opt-in, beehiiv subscriber storage/delivery/unsubscribe handling, fixed website attribution, honeypot behavior, and the absence of a separate Portfilo subscriber database;
+- service-provider disclosure covers Cloudflare, beehiiv, and jsDelivr based on the current runtime;
+- the notice does not claim Cloudflare Web Analytics is active because the repository still records enablement/verification as unresolved;
+- privacy requests use the founder-approved v0 contact `portfilo.ph@gmail.com`;
+- rights language remains qualified to applicable privacy law and records the Philippine National Privacy Commission complaint route;
+- no invented legal identity, unsupported account-level beehiiv feature claim, cookie-banner requirement, analytics implementation, new provider, dependency, database, or shared-component redesign.
+
+Implementation:
+
+- `10b3d96b1f90260cb77fbd94414a360e1e365580` — simplify `/privacy` and align the public notice to the verified current data flow.
+
+### G3 validation
+
+**PASS.**
+
+Recorded against runtime HEAD `10b3d96b1f90260cb77fbd94414a360e1e365580`:
+
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the G3 runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the G3 runtime;
+- source/diff review confirms only `src/pages/privacy.astro` changed in the G3 runtime commit;
+- the approved Privacy wording and data-flow boundaries were preserved in implementation;
+- dedicated multi-width site-wide responsive QA remains sequence H.
+
+G3 and sequence G are closed. Do not reopen these utility pages during H unless the responsive audit finds a concrete defect or the founder explicitly changes a decision.
 
 ## Remaining sequence
 
@@ -471,36 +507,35 @@ E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**
 
 F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **ACTIVE: G1 COMPLETE / G2 COMPLETE / G3 NEXT**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **COMPLETE**;
 
-H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NOT STARTED**;
+H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NEXT**;
 
 I. final site-wide QA and release-readiness review — **NOT STARTED**.
 
 ## Exact next task
 
-Begin G3 `/privacy` at the **inspection and design/copy/data-flow planning gate**, not implementation.
+Begin sequence H at the **site-wide responsive inspection and audit-planning gate**, not broad redesign or implementation.
 
 Required first step:
 
-1. verify the current branch/HEAD;
-2. inspect the current `/privacy` source and rendered structure;
-3. inspect the actual current data flow relevant to Privacy, including newsletter form submission, the `/api/subscribe` proxy, beehiiv-facing configuration, analytics behavior, and any other runtime collection or third-party processing that the page claims to describe;
-4. inspect the current canonical privacy/email/deployment documents relevant to those flows;
-5. read/apply `skills/portfilo-anti-slop/SKILL.md` before making any nontrivial public-copy or visual recommendation;
-6. identify stale, redundant, unsupported, or missing privacy statements without inventing legal assurances or data practices;
-7. propose a restrained G3 utility-page simplification using the existing publication system where appropriate;
-8. separate factual/data-flow or legal-copy decisions from implementation details;
-9. stop for founder approval before editing `/privacy` runtime or public copy.
+1. verify the current branch/HEAD and the last validated runtime;
+2. inspect the current implemented public routes and shared components that materially affect responsive layout;
+3. audit at minimum the target viewport widths `1440 / 1366 / 1024 / 768 / 390 / 375 / 320`;
+4. include homepage, News archive/empty state, Stories archive, representative News/Stories article states that actually exist, `/subscribe`, `/standards`, `/privacy`, `/confirmed`, `/about`, and `/404` where applicable;
+5. inspect typography wrapping, shell/gutter alignment, horizontal overflow, image ratios/crops, forms, navigation, footer/acquisition behavior, section rails, jump-link layouts, and touch-target/readability issues;
+6. distinguish real responsive defects from already approved intentional behavior;
+7. group findings by shared root cause before proposing route-local patches;
+8. do not redesign approved desktop compositions merely because a narrower breakpoint needs correction;
+9. present the responsive defect list and narrow remediation plan for founder approval before making runtime edits.
 
-Do not begin sequence H while G3 `/privacy` is open.
+Sequence H is a correction/audit gate, not permission to reopen product direction, copy, page architecture, or visual identity without a concrete responsive defect.
 
 ## Deferred / not authorized now
 
 - article audio/listen system;
 - share toolbar;
-- G3 `/privacy` implementation before founder approval of its inspection/copy/design plan;
-- deep site-wide responsive typography audit before H;
+- unrelated desktop redesign during H;
 - `/latest`;
 - pagination;
 - topic filters;
@@ -514,4 +549,4 @@ Do not begin sequence H while G3 `/privacy` is open.
 
 ## Deployment / release boundary
 
-Cloudflare Pages project remains `portfilo-app` with `build/portfilo-v0` recorded as the production branch. No explicit deployment action, domain finalization, public newsletter sending, merge to `main`, or release is authorized by A–G.
+Cloudflare Pages project remains `portfilo-app` with `build/portfilo-v0` recorded as the production branch. No explicit deployment action, domain finalization, public newsletter sending, merge to `main`, or release is authorized by A–H.
