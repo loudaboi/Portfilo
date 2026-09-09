@@ -4,13 +4,13 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**NEWSLETTER ACQUISITION COPY IMPLEMENTED / VALIDATION PENDING**
+**NEWSLETTER ACQUISITION COPY COMPLETE / VALIDATED**
 
-The News / Why / Hustle section migration and the client-side navigation enhancement are complete and founder-validated on `build/portfilo-v0`.
+The News / Why / Hustle section migration, the client-side navigation enhancement, and the newsletter acquisition copy refinement are complete and founder-validated on `build/portfilo-v0`.
 
 Before the release decision, the founder approved one additional pre-release copy refinement: retire the 7-minute reading-time promise, strengthen the general newsletter acquisition message, and make the News / Why / Hustle archive acquisition copy reflect the editorial job of each section.
 
-The approved copy has now been implemented on the working branch. This copy refinement does not authorize deployment, publication, provider-side beehiiv template changes, or merge to `main`.
+The approved copy has been implemented and visually validated on the working branch. This validation does not authorize deployment, publication, provider-side beehiiv template changes, or merge to `main`.
 
 `Editorial Packaging Standard Refinement` remains deferred, not canceled.
 
@@ -46,7 +46,7 @@ Verified Cloudflare model from the closed website release:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The current validated migration/navigation work and the new acquisition-copy refinement remain on the working branch. Validation does not authorize merge to `main`.
+The current validated migration, navigation, and acquisition-copy work remain on the working branch. Validation does not authorize merge to `main`.
 
 ## Approved product direction
 
@@ -310,9 +310,9 @@ Founder browser QA passed for the navigation lifecycle, including navigation acr
 
 ## Newsletter acquisition copy implementation
 
-Implemented on the working branch:
+Implemented and founder-validated on the working branch:
 
-- `NewsletterSignup.astro` default copy now uses the approved general acquisition message;
+- `NewsletterSignup.astro` default copy uses the approved general acquisition message;
 - homepage acquisition uses the approved general message;
 - shared footer acquisition uses the approved general message;
 - News archive acquisition uses the approved News-specific message;
@@ -320,7 +320,9 @@ Implemented on the working branch:
 - Hustle archive acquisition uses the approved Hustle-specific message;
 - `docs/V0_SCOPE.md` and `docs/COPY_STYLE.md` retire the 7-minute promise and record the contextual acquisition model.
 
-No layout redesign, new signup component, separate section newsletter, or new delivery promise was introduced.
+Preview QA exposed one presentation issue inherited from the previous copy: hard `ch`-based heading width caps forced unnecessary line breaks even when the signup column had enough room. The approved correction removed those artificial caps from the homepage, shared footer, shared archive acquisition, and default newsletter heading while preserving the intentionally narrow homepage feature-card treatment.
+
+No copy changes, font-size changes, signup behavior changes, layout redesign, new signup component, separate section newsletter, or new delivery promise were introduced by that correction.
 
 ## Continuous integration
 
@@ -372,22 +374,20 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**PREVIOUS MIGRATION / NAVIGATION VALIDATION PASS. NEWSLETTER ACQUISITION COPY VALIDATION PENDING.**
+**AUTOMATED VALIDATION PASS / NEWSLETTER ACQUISITION COPY VISUAL QA PASS.**
 
-The News / Why / Hustle migration, short-page footer correction, and client-side navigation enhancement previously passed CI and founder preview QA.
+The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, and newsletter acquisition copy refinement are validated on the working branch.
 
-The newly implemented newsletter acquisition copy changes require fresh CI and preview inspection before they can be included in the release candidate.
+Final CI run `#26` on commit `818bf45372a0a01b9673f5c0c1632ecc30fa86e2` completed successfully on 2026-09-10.
 
-Required validation for this copy refinement:
+Verified by CI:
 
-- `npm run check` PASS;
-- `npm run build` PASS;
-- homepage general acquisition copy renders correctly;
-- shared footer acquisition copy renders correctly;
-- News / Why / Hustle contextual archive acquisition copy renders correctly;
-- responsive wrapping remains acceptable on desktop and phone;
-- signup behavior remains unchanged and functional;
-- no retired 7-minute acquisition promise remains on current website surfaces.
+- checkout/setup: PASS;
+- `npm ci`: PASS;
+- `npm run check`: PASS;
+- `npm run build`: PASS.
+
+Founder visual QA is PASS for the newsletter acquisition copy refinement and the signup-heading width correction. This closes the copy-refinement gate.
 
 ## Active work plan
 
@@ -404,16 +404,16 @@ Required validation for this copy refinement:
 11. **Preview visual/responsive QA** - complete / founder PASS.
 12. **News / Why / Hustle migration** - COMPLETE / VALIDATED.
 13. **Client-side navigation enhancement** - COMPLETE / VALIDATED.
-14. **Newsletter acquisition copy refinement** - implemented / validation pending.
-15. **Release decision / merge to `main`** - separate future gate only after copy validation and explicit founder release approval.
+14. **Newsletter acquisition copy refinement** - COMPLETE / VALIDATED.
+15. **Release decision / merge to `main`** - exact next gate; requires separate explicit founder approval.
 
 ## Exact next task
 
-**Validate the newsletter acquisition copy refinement.**
+**Decide whether to release the validated working-branch state to `main`.**
 
-Run CI against the current working-branch state, then inspect the homepage, shared footer, and News / Why / Hustle archive acquisition blocks on desktop and phone. Confirm the new copy wraps cleanly, remains contextually correct, and does not affect signup behavior.
+The release candidate now includes the validated News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, and newsletter acquisition copy refinement.
 
-If validation passes, close the copy-refinement gate. Only then return to the separate release decision.
+If release is approved, preserve `main` as the production boundary, merge only the validated working-branch state, confirm CI on the release state, and verify production deployment after the merge.
 
 Do not merge to `main` without a separate explicit founder release approval.
 
