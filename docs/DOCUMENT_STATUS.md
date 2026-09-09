@@ -20,29 +20,31 @@ When documents disagree, use:
 
 ## Current phase
 
+The latest News / Why / Hustle release is complete and production-verified.
+
 Current primary workstream:
 
-**Editorial Direction + News Intelligence v0 / News-Why-Hustle section migration**
+**Editorial Packaging Standard Refinement / research and decision gate**
 
-Canonical upstream operating contract:
+The packaging-refinement task has been promoted from deferred work after release closure. The current gate is research and recommendation only. No runtime implementation, new image generation, editorial publication, or standard rewrite is authorized until the founder approves the researched decision contract.
+
+Canonical upstream News operating contract remains:
 
 `docs/EDITORIAL_INTELLIGENCE.md`
 
-Canonical operating source registry:
+Canonical operating source registry remains:
 
 `docs/EDITORIAL_SOURCE_MAP.md`
 
-Canonical reusable scanner prompt:
+Canonical reusable scanner prompt remains:
 
 `docs/NEWS_SCANNER_PROMPT.md`
 
-The public editorial architecture is now:
+The public editorial architecture is:
 
 `News / Why / Hustle`
 
 `Stories` is retired as a public section name. The generic journalistic word `story` may still appear internally where it describes an editorial artifact, research packet, or writing job rather than a public navigation section.
-
-The previous Editorial Packaging Standard Refinement task remains deferred, not canceled.
 
 ## Current canonical documents
 
@@ -72,7 +74,7 @@ Current:
 - `docs/WRITING_SYSTEM.md` - writing-form selection and structural/stylistic authority.
 - `docs/STYLE_RESEARCH_STANDARD.md` - story-specific professional form research.
 - `docs/EXPLAINED_STANDARD.md` - founder-approved Explained direction; no universal Explainer structure is canonical.
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture and the primary standard under refinement in the active workstream.
 - `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths plus current `section: news | why | hustle` schema contract.
 - `docs/COPY_STYLE.md` - public copy rules and institutional-copy provenance.
 - `docs/PORTFILO_TEST_STANDARD.md` - Portfilo Test methodology.
@@ -128,7 +130,7 @@ Current:
 
 Astro's native image pipeline remains the current runtime authority for editorial image rendering.
 
-Whether published News/Why/Hustle work should normally require an image remains intentionally open and belongs to the deferred Editorial Packaging Standard Refinement task.
+Whether published News/Why/Hustle work should normally require an image is the primary unresolved decision in the active Editorial Packaging Standard Refinement workstream. Research and decide this before changing runtime or publication requirements.
 
 ### Email and deployment
 
@@ -150,9 +152,11 @@ Cloudflare production behavior remains:
 - automatic deployments: enabled;
 - `build/portfilo-v0` remains the preview/test working branch.
 
+The latest released `main` state is founder production-verified.
+
 ## Known adjacent authority hygiene issues
 
-The 2026-09-10 conflict audit identified two stale documentation issues that do not block the current workstream:
+The 2026-09-10 conflict audit identified two stale documentation issues that do not block the active workstream:
 
 1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, `DESIGN_DIRECTION`, and runtime source takes precedence.
 2. `docs/SOCIAL_DISTRIBUTION.md` still contains legacy `Portfilo Brief` naming. Current newsletter public naming authority is `Portfilo newsletter`.
@@ -220,13 +224,13 @@ The homepage keeps one primary long-form Feature that may draw from Why or Hustl
 
 ## Current validation status
 
-The previous corrected and performance-optimized website v0 release remains founder-approved and production-verified.
+**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS.**
 
-The News/Why/Hustle migration changes runtime code and therefore requires a fresh `npm run check`, `npm run build`, and preview/responsive inspection before it can be considered validated for release.
+The News/Why/Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction were validated before release, released to `main` after explicit founder approval, and verified on the production Cloudflare Pages deployment.
 
-Do not claim those checks passed until they actually run against the migration state.
+The production verification closes that release cycle. Documentation-only release closure does not create a new runtime validation claim.
 
-No merge to `main` is authorized by the migration implementation gate.
+No new runtime or publication change is authorized by the start of the Editorial Packaging Standard Refinement research gate.
 
 ## Historical/provenance records
 
