@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import EditorialArchive from "../../components/EditorialArchive.astro";
+import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
+
+const entries = await getCollection(
+  "stories",
+  ({ data }) => data.section === "why",
+);
+
+const whyEntries = entries
+  .filter((story) => !story.id.startsWith("portfilo-"))
+  .sort(
+    (a, b) =>
+      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+  );
+
+const dateFormatter = new Intl.DateTimeFormat("en-PH", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
+const formatLabel = (value: string) => value.replaceAll("-", " ");
+
+const items = whyEntries.map((story) => ({
+  href: `/why/${story.id}`,
+  title: story.data.title,
+  dek: story.data.dek,
+  meta: [
+    formatLabel(story.data.contentType),
+    formatLabel(story.data.topic),
+    ...(story.data.publishedAt ? [formatDate(story.data.publishedAt)] : []),
+    ...(story.data.status === "draft" ? ["Draft"] : []),
+  ],
+  accentMetaCount: 2,
+  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
+}));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead
+      title="Why | Portfilo"
+      description="Portfilo reporting and analysis on why business and technology change."
+    />
+  </head>
+  <body class="editorial-page">
+    <a class="skip-link" href="#main-content">Skip to Why</a>
+    <SiteHeader current="why" />
+
+    <EditorialArchive
+      title="Why"
+      items={items}
+      listId="why-list"
+      leadAriaLabel="Lead Why article"
+      streamAriaLabel="More Why articles"
+      emptyText="No Why articles yet."
+      signupId="why-archive-newsletter"
+      signupAriaLabel="Subscribe to Portfilo"
+      signupHeading="Get ahead in business and tech in 7 minutes."
+      signupCopy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week."
+    />
+
+    <SiteFooter />
+  </body>
+</html>
