@@ -4,7 +4,6 @@ dek: "New businesses have to make important decisions with very little informati
 section: stories
 contentType: explained
 topic: business
-author: "Portfilo"
 publishedAt: 2026-09-07
 status: published
 featured: false
