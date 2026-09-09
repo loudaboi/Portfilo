@@ -6,37 +6,43 @@ interface Props {
 }
 
 const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
-const routeShowsAcquisition = !["/subscribe", "/confirmed", "/404"].includes(pathname);
+const routeShowsAcquisition = !["/confirmed", "/404"].includes(pathname);
 const { showAcquisition = routeShowsAcquisition } = Astro.props;
 ---
 
 {showAcquisition && <FooterAcquisition />}
 
 <footer class="site-footer">
-  <a class="site-footer__brand" href="/" aria-label="Portfilo home">
-    <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
-  </a>
+  <div class="site-footer__inner">
+    <a class="site-footer__brand" href="/" aria-label="Portfilo home">
+      <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
+    </a>
 
-  <nav class="site-footer__nav" aria-label="Footer">
-    <a href="/stories">Stories</a>
-    <a href="/standards">Standards</a>
-    <a href="/privacy">Privacy</a>
-  </nav>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="/stories">Stories</a>
+      <a href="/standards">Standards</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
 
-  <p class="site-footer__meta">© 2026 Portfilo</p>
+    <p class="site-footer__meta">© 2026 Portfilo</p>
+  </div>
 </footer>
 
 <style>
   .site-footer {
-    --footer-shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
     width: 100%;
-    padding: 1.2rem max(var(--footer-shell-gutter), calc((100vw - 84rem) / 2)) 1.55rem;
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .site-footer__inner {
+    width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
+    margin-inline: auto;
+    padding: 1.2rem 0 1.55rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: clamp(1.2rem, 3vw, 3rem);
     align-items: center;
-    background: var(--ink, #171614);
-    color: #fff;
   }
 
   .site-footer__brand {
@@ -57,34 +63,38 @@ const { showAcquisition = routeShowsAcquisition } = Astro.props;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem 1.25rem;
-    font: 500 0.72rem/1.2 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
+    font: 500 0.72rem/1.2 var(--sans);
   }
 
   .site-footer__nav a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
     color: rgba(255, 255, 255, 0.78);
     text-decoration: none;
   }
 
-  .site-footer__nav a:hover { color: #fff; }
+  .site-footer__nav a:hover {
+    color: #fff;
+  }
 
   .site-footer__meta {
     margin: 0;
     justify-self: end;
     color: rgba(255, 255, 255, 0.5);
-    font: 430 0.68rem/1.4 var(--sans, "Instrument Sans", "Helvetica Neue", Arial, sans-serif);
+    font: 430 0.68rem/1.4 var(--sans);
     text-align: right;
   }
 
   .site-footer a:focus-visible {
-    outline: 3px solid #8fc7ff;
-    outline-offset: 4px;
+    outline-color: var(--accent-light);
   }
 
-  @media (max-width: 50rem) {
-    .site-footer {
+  @media (max-width: 40rem) {
+    .site-footer__inner {
       grid-template-columns: 1fr;
       align-items: start;
-      padding-inline: var(--footer-shell-gutter);
+      gap: 0.85rem;
     }
 
     .site-footer__nav,
@@ -93,9 +103,5 @@ const { showAcquisition = routeShowsAcquisition } = Astro.props;
       justify-content: flex-start;
       text-align: left;
     }
-  }
-
-  @media (max-width: 23rem) {
-    .site-footer { --footer-shell-gutter: 1rem; }
   }
 </style>
