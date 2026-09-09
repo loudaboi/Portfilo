@@ -57,7 +57,7 @@ Current structure:
 - News section;
 - shared footer acquisition and compact institutional footer.
 
-Production must not manufacture News density. Clearly labeled synthetic News fixtures are development-only and must never create fake published article routes.
+Until real News inventory exists, clearly labeled sample News fixtures may render in production strictly as non-clickable layout placeholders. They must be visibly identified as sample content and not Portfilo reporting, must never create fake article routes or Article metadata, and real published News replaces them automatically.
 
 ## News and Stories
 
@@ -199,6 +199,6 @@ Before release readiness can be declared:
 - one real production-configured beehiiv double-opt-in flow is validated;
 - sitemap/robots/canonical/social metadata are correct;
 - retired routes redirect correctly on Cloudflare;
-- production fixtures are excluded;
+- any temporary production sample fixtures are clearly labeled, non-clickable, route-less, and replaced before broad audience launch;
 - final domain/deployment settings are correct;
 - release receives explicit founder approval before merge to `main`.
