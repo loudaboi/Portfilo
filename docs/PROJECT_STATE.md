@@ -4,18 +4,15 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**ARCHIVE REGRESSION CORRECTED ON BUILD / VALIDATION PENDING**
+**RESPONSIVE TYPOGRAPHY REPAIR IMPLEMENTED ON BUILD / VALIDATION PENDING**
 
-The main website remediation was previously released, then sparse production inventory exposed layout problems. A first sparse-state correction introduced two regressions that the founder rejected:
+The main website remediation was previously released, then sparse production inventory exposed layout problems. The archive acquisition/footer regression was corrected on `build/portfilo-v0`, and a follow-up typography audit found a separate systemic responsive defect: several older breakpoint overrides made important headings become larger when the viewport crossed into phone widths.
 
-- the contextual archive newsletter block was forced from Portfilo blue to black;
-- the normal shared footer acquisition was disabled on News and Stories, making archive footers inconsistent.
+The founder approved a narrow system-level repair instead of more screenshot-by-screenshot patches.
 
-Those regressions have now been corrected on `build/portfilo-v0` after a fresh repo audit.
+Latest runtime-changing commit:
 
-Current runtime HEAD:
-
-`623465870fbfc3514ea2cd6ecc32c3e942638849` — `Avoid empty archive stream spacing`
+`ca6c77c651487d8c2c059ebf06d87004127a9610` — `Prefer real Story inventory in homepage rail`
 
 Current `main` remains:
 
@@ -53,7 +50,7 @@ Intended Cloudflare model:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-Cloudflare branch behavior has appeared inconsistent in dashboard screenshots during this release cycle. Re-verify the effective Production branch after the corrected state reaches `main`; do not infer it from intent alone.
+Cloudflare branch behavior appeared inconsistent in dashboard screenshots during this release cycle. Re-verify the effective Production branch after the corrected state reaches `main`; do not infer it from intent alone.
 
 ## Approved product direction
 
@@ -93,7 +90,7 @@ Requirements:
 
 The founder has approved temporarily exposing the existing Story drafts so the Stories archive uses the Story inventory already in the repository.
 
-Draft handling must remain explicit:
+Draft handling remains explicit:
 
 - `status: draft` is not silently changed to `published`;
 - draft items are visibly labeled `Draft` in archive/article classification;
@@ -102,6 +99,8 @@ Draft handling must remain explicit:
 - published Stories keep normal metadata behavior.
 
 Current Story inventory is four files: one published Story and three draft Story previews.
+
+The homepage primary Feature remains published-only. The adjacent Stories rail now prefers an existing real Story, including an explicitly labeled draft during this pre-audience period, before falling back to a synthetic sample Story.
 
 ## Current public route model
 
@@ -137,15 +136,38 @@ Canonical archive structure is restored:
 4. normal shared footer acquisition;
 5. compact institutional footer.
 
-The erroneous global rule that forced `.archive-acquisition` to black has been removed.
+The erroneous global rule that forced `.archive-acquisition` to black is removed.
 
-News and Stories now use the normal `<SiteFooter />` again rather than disabling its acquisition block.
+News and Stories use the normal `<SiteFooter />` again rather than disabling its acquisition block.
 
 ### Archive spacing
 
-`EditorialArchive.astro` now renders the supporting stream only when `supportingItems.length > 0`.
+`EditorialArchive.astro` renders the supporting stream only when `supportingItems.length > 0`.
 
 This prevents a one-item archive from creating an empty stream section with large dead beige space.
+
+### Responsive typography repair
+
+The source audit found reverse-scaling jumps at narrow breakpoints. Important headings could shrink progressively through desktop/tablet, then become larger when crossing an old phone media query.
+
+The approved repair is now implemented:
+
+- News/Stories archive section titles use one continuous fluid scale with a lower phone minimum;
+- archive lead and supporting headlines keep their existing fluid scales without phone-only font-size overrides;
+- article titles use one continuous fluid scale, with article header top spacing also fluid through phone widths;
+- article body text, body `h2`/`h3`, reading measure, hero, and Story TOC behavior were not redesigned;
+- Standards and Privacy page titles no longer use a tiny-screen enlargement override;
+- Confirmed and 404 titles no longer use a phone-only enlargement override;
+- homepage editorial headline typography, masthead, newsletter forms, and footer typography were not retuned.
+
+The layout breakpoints themselves remain where needed for structural reflow. The change removes conflicting type-size overrides rather than removing responsive layout behavior.
+
+### Homepage Story rail
+
+- primary Feature selection remains published-only;
+- the secondary Stories rail now looks across the existing Story inventory;
+- an existing draft can appear there during the approved pre-audience period and is labeled `Draft story`;
+- the synthetic Story teaser is used only if no additional real Story exists.
 
 ### News
 
@@ -156,7 +178,7 @@ This prevents a one-item archive from creating an empty stream section with larg
 
 ### Stories
 
-- `/stories` now includes the existing Story collection regardless of draft/published status for the current pre-audience staging period;
+- `/stories` includes the existing Story collection regardless of draft/published status for the current pre-audience staging period;
 - draft items are labeled `Draft`;
 - draft `/stories/[slug]` routes are generated so the existing stories can be inspected;
 - draft routes are noindex/nofollow and do not publish canonical/social/article metadata;
@@ -164,13 +186,13 @@ This prevents a one-item archive from creating an empty stream section with larg
 
 ### Shared foundation
 
-`src/styles/global.css` is back to the canonical shared foundation only. It no longer contains archive-specific color overrides.
+`src/styles/global.css` remains the canonical shared foundation only. It contains no archive-specific color override.
 
 No dependency, framework, database, CMS, runtime service, route family, or schema field was added.
 
 ## Prior validation evidence
 
-Before this correction, founder-reported validation included:
+Before this latest responsive typography repair, founder-reported validation included:
 
 - `npm run check`: PASS
 - `npm run build`: PASS
@@ -180,30 +202,43 @@ Before this correction, founder-reported validation included:
 - `/subscribe` -> `/#newsletter`: PASS
 - `/about` -> `/`: PASS
 
-Those results are baseline evidence only. They do not validate the current runtime HEAD.
+Those results are baseline evidence only. They do not validate the current runtime-changing commits.
 
 ## Current validation status
 
-**SOURCE AUDIT COMPLETE / CORRECTION IMPLEMENTED / BUILD + RENDER VALIDATION PENDING.**
+**SOURCE IMPLEMENTATION COMPLETE / BUILD + RENDER VALIDATION PENDING.**
 
-Do not claim the current correction passed until the latest branch deployment/build is actually checked.
+Source inspection confirms the old archive/article title enlargement overrides targeted by this repair have been removed. Do not claim the corrected build or rendered layouts pass until the latest branch build is actually checked.
 
 ## Exact next task
 
-1. Let Cloudflare build the latest `build/portfilo-v0` HEAD.
-2. Run or confirm `npm run check` and `npm run build` for the current HEAD.
-3. Inspect `/news` and `/stories` on the latest deployment:
-   - archive acquisition is Portfilo blue, not black;
-   - supporting content follows the blue acquisition;
-   - the normal shared footer acquisition and compact footer appear at the bottom;
-   - no dead empty archive-stream gap;
-   - News sample fixtures remain clearly labeled and non-clickable;
-   - Stories shows all four existing Story entries, with drafts visibly labeled.
-4. Open one draft Story route and confirm it renders correctly with `Draft` classification.
-5. If those checks pass, fast-forward `main` to the validated build HEAD. That action is already founder-authorized for this correction.
-6. Verify Cloudflare Production branch is `main` and the resulting production deployment succeeds.
-7. Smoke-test production `/`, `/news`, `/stories`, one published Story, one draft Story preview, newsletter signup, `/subscribe`, and `/about`.
-8. Record only checks actually performed.
+1. Let Cloudflare build the latest `build/portfilo-v0` state.
+2. Run or confirm `npm run check` and `npm run build` for the current branch state.
+3. Inspect responsive boundary behavior at widths most likely to expose discontinuities:
+   - `1440`
+   - `1024`
+   - `768`
+   - `641`
+   - `640`
+   - `449`
+   - `448`
+   - `390`
+   - `320`
+4. Focus rendered checks on:
+   - `/news` archive title, lead headline, supporting headlines, acquisition, and footer;
+   - `/stories` with all four existing Story entries and visible draft labels;
+   - one published Story article title/dek/body/hero;
+   - one draft Story article title/dek/body and `Draft` classification;
+   - `/standards` and `/privacy` page-title continuity;
+   - `/confirmed` and `/404` title continuity;
+   - homepage Feature remains published, rail uses the existing secondary Story, and homepage headline sizing is unchanged.
+5. Specifically compare `641 -> 640` and `449 -> 448`. Important type must not jump larger when crossing either breakpoint.
+6. If those checks pass, fast-forward `main` to the validated build state. That action is already founder-authorized for this correction.
+7. Verify Cloudflare Production branch is `main` and the resulting production deployment succeeds.
+8. Smoke-test production `/`, `/news`, `/stories`, one published Story, one draft Story preview, newsletter signup, `/subscribe`, and `/about`.
+9. Record only checks actually performed.
+
+If validation reveals a concrete defect, fix only that defect before advancing `main`.
 
 ## Still separate
 
