@@ -4,15 +4,15 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**RELEASED TO `main` / PRODUCTION VERIFICATION PENDING**
+**RELEASE COMPLETE / PRODUCTION VERIFIED**
 
-The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction are complete and founder-validated.
+The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, signup-heading width correction, release to `main`, and external Cloudflare production verification are complete and founder-validated.
 
-After explicit founder release approval, the validated working-branch state was fast-forwarded to `main`. GitHub Actions release CI passed on the release state. External Cloudflare production verification remains the only open release-closure check.
+The validated release state passed GitHub Actions CI on `main` and the founder confirmed the production Pages deployment passed the release verification checklist. This closes the release cycle.
 
-This release does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, or any deferred/post-v0 workstream.
+This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, or other deferred/post-v0 workstreams.
 
-`Editorial Packaging Standard Refinement` remains deferred, not canceled.
+`Editorial Packaging Standard Refinement` is now promoted from deferred work to the **next research and decision gate**. No runtime implementation or publication change is authorized by that promotion.
 
 ## Repository authority
 
@@ -41,12 +41,12 @@ Release boundary:
 
 `main`
 
-Verified Cloudflare model from the closed website release:
+Verified Cloudflare model:
 
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The validated release candidate was merged by fast-forward into `main` after explicit founder approval. Further working-branch changes remain preview/test work and do not imply another production release.
+The validated release candidate was fast-forwarded into `main` after explicit founder approval and the resulting production deployment passed founder verification. Further working-branch changes remain preview/test work and do not imply another production release.
 
 ## Approved product direction
 
@@ -200,7 +200,7 @@ RSS/Inoreader, Gmail, alerts, and direct manual checks remain optional supportin
 
 ## Current section/runtime migration state
 
-The founder-approved migration has been implemented, validated, and released to `main`.
+The founder-approved migration has been implemented, validated, released to `main`, and production-verified.
 
 ### Content schema
 
@@ -374,7 +374,7 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PENDING.**
+**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS.**
 
 The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction passed founder preview QA before release.
 
@@ -382,7 +382,7 @@ Working-branch CI run `#27` on release candidate commit `36b431e7c8a93974e7c9ca9
 
 After explicit founder release approval, `main` was fast-forwarded from `46859fd932b15769be5a9106c8febc610ff1d5ce` to release candidate commit `36b431e7c8a93974e7c9ca94f37120065eb39af5`.
 
-Release CI run `#28` on `main` completed successfully on the same release state.
+Release CI run `#28` on `main` completed successfully on the same release state. Later documentation-only release-state synchronization also passed CI.
 
 Verified by release CI:
 
@@ -391,7 +391,9 @@ Verified by release CI:
 - `npm run check`: PASS;
 - `npm run build`: PASS.
 
-External Cloudflare production deployment verification remains pending. Do not claim the live Pages deployment is verified until the production URL is actually inspected.
+Founder production verification on the Cloudflare Pages deployment is PASS for the released state, including the main navigation and routes, client-side navigation behavior, newsletter acquisition copy and heading wrapping, legacy Stories redirects, and absence of an obvious production-only regression.
+
+The release cycle is closed.
 
 ## Active work plan
 
@@ -410,30 +412,37 @@ External Cloudflare production deployment verification remains pending. Do not c
 13. **Client-side navigation enhancement** - COMPLETE / VALIDATED.
 14. **Newsletter acquisition copy refinement** - COMPLETE / VALIDATED.
 15. **Release decision / merge to `main`** - COMPLETE.
-16. **Production deployment verification** - exact next gate.
+16. **Production deployment verification** - COMPLETE / founder PASS.
+17. **Editorial Packaging Standard Refinement** - exact next task / research and decision gate only.
 
 ## Exact next task
 
-**Verify the released state on the production Cloudflare Pages deployment.**
+**Begin Editorial Packaging Standard Refinement at the research and decision gate.**
 
-Inspect the current production deployment and confirm that it reflects the released `main` state, especially:
+Before proposing or changing the packaging standard, inspect current authority, especially:
 
-- `Portfilo | News | Why | Hustle` navigation;
-- client-side internal navigation;
-- homepage, footer, News, Why, and Hustle newsletter acquisition copy;
-- corrected natural signup-heading wrapping;
-- `/stories` and legacy `/stories/*` redirects on actual Pages;
-- no obvious production-only regression.
+- `AGENTS.md`;
+- `docs/PROJECT_STATE.md`;
+- `docs/DOCUMENT_STATUS.md`;
+- `skills/portfilo-anti-slop/SKILL.md`;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
+- `docs/IMAGE_SYSTEM.md`;
+- `docs/PHOTO_TREATMENT.md`;
+- `docs/EDITORIAL_STANDARD.md`;
+- `docs/RESEARCH_STANDARD.md`;
+- `docs/PUBLISHING_STANDARD.md`;
+- relevant current runtime components only when needed to understand implementation constraints.
 
-The current temporary Pages URL recorded by repository deployment authority is `https://portfilo-app.pages.dev` until a final custom domain is intentionally cut over.
+Research credible business and technology publication packaging patterns before recommending a Portfilo rule. The primary unresolved decision is whether published News, Why, and Hustle work should normally require an editorial image, and whether the answer should differ by section or editorial job.
 
-Do not treat production verification as authorization for the deferred custom-domain, broad-audience-launch, provider-side email, or editorial publication workstreams.
+The refinement should also reconcile any stale public `Stories` terminology in the packaging standard with the current News / Why / Hustle architecture and verify that headline, dek, optional metadata, image/disclosure, and index/article presentation form one coherent system.
+
+Do not implement runtime changes, generate new editorial images, publish content, or rewrite the standard before the founder approves the researched recommendation and decision contract.
 
 ## Deferred / separate workstreams
 
 Remain separate unless explicitly promoted:
 
-- Editorial Packaging Standard Refinement, including the editorial-image requirement question;
 - individual News reporting and publication;
 - individual Why development and publication;
 - individual Hustle reporting and publication;
