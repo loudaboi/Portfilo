@@ -166,7 +166,7 @@ const showToc = mode === "stories" && tocItems.length >= 3;
 
   .article-header {
     max-width: var(--article-header-max);
-    padding: clamp(2.8rem, 2rem + 2.3vw, 5rem) 0 clamp(2.1rem, 1.5rem + 1.5vw, 3.1rem);
+    padding: clamp(2.45rem, 2rem + 2.3vw, 5rem) 0 clamp(2.1rem, 1.5rem + 1.5vw, 3.1rem);
     text-align: center;
   }
 
@@ -200,7 +200,7 @@ const showToc = mode === "stories" && tocItems.length >= 3;
   .article-header h1 {
     max-width: 54rem;
     margin: 0 auto;
-    font: 680 clamp(2.55rem, 0.95rem + 3.3vw, 4.35rem) / 0.96 var(--sans);
+    font: 680 clamp(2.2rem, 0.95rem + 3.3vw, 4.35rem) / 0.96 var(--sans);
     letter-spacing: -0.055em;
     text-wrap: balance;
     overflow-wrap: break-word;
@@ -483,13 +483,8 @@ const showToc = mode === "stories" && tocItems.length >= 3;
   }
 
   @media (max-width: 40rem) {
-    .article-header {
-      padding-top: 2.45rem;
-    }
-
     .article-header h1 {
       max-width: 18ch;
-      font-size: clamp(2.2rem, 9vw, 2.9rem);
     }
 
     .article-dek {
