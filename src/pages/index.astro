@@ -6,17 +6,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { DEV_NEWS_FIXTURES } from "../data/devNewsFixtures";
 
-const publishedEntries = await getCollection(
-  "stories",
-  ({ data }) => data.status === "published",
-);
+const entries = await getCollection("stories");
+const publishedEntries = entries.filter(({ data }) => data.status === "published");
 
-const storiesByDate = publishedEntries
+const storiesByDate = entries
   .filter(({ data }) => data.section === "stories")
   .sort(
     (a, b) =>
       (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
   );
+
+const publishedStoriesByDate = storiesByDate.filter(
+  ({ data }) => data.status === "published",
+);
 
 const newsByDate = publishedEntries
   .filter(({ data }) => data.section === "news")
@@ -26,7 +28,7 @@ const newsByDate = publishedEntries
   );
 
 const featureStory =
-  storiesByDate.find(({ data }) => data.featured) ?? storiesByDate[0];
+  publishedStoriesByDate.find(({ data }) => data.featured) ?? publishedStoriesByDate[0];
 
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 const dateFormatter = new Intl.DateTimeFormat("en-PH", {
@@ -70,16 +72,22 @@ const secondaryStory = storiesByDate
   .map((story) => ({
     title: story.data.title,
     dek: story.data.dek,
+    status: story.data.status,
   }))[0];
 
 const devStory = !secondaryStory
   ? {
       title: "AI was supposed to kill Philippine BPO. So why is it still growing?",
-      dek: "Sample story teaser used to hold the Stories rail until a second published Story exists.",
+      dek: "Sample story teaser used only when no additional Story exists.",
     }
   : undefined;
 
 const railStory = secondaryStory ?? devStory;
+const railLabel = secondaryStory?.status === "draft"
+  ? "Draft story"
+  : devStory
+    ? "Sample story"
+    : "Stories";
 ---
 
 <!doctype html>
@@ -218,7 +226,7 @@ const railStory = secondaryStory ?? devStory;
                 </div>
 
                 <div class="feature-rail__latest">
-                  <p class="feature-rail__latest-label">{devStory ? "Sample story" : "Stories"}</p>
+                  <p class="feature-rail__latest-label">{railLabel}</p>
                   {
                     railStory ? (
                       <>
