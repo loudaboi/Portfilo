@@ -10,7 +10,7 @@ Sequence items A–F are complete on `build/portfilo-v0`. Sequence item G is act
 
 Current and last fully validated runtime HEAD:
 
-`da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — `Optically align subscribe campaign content`
+`9e2348763a0d6c811a095767beeb5bc6e5962f83` — `Revert subscribe no-scroll experiment`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -337,14 +337,19 @@ The final founder-approved G1 contract is:
 - one restrained solid dark image overlay for legibility, with no gradient, glass panel, rounded card, or decorative container;
 - exactly two direct overlay content blocks;
 - top-left block: light Portfilo wordmark plus the approved page-specific statement;
-- bottom-right block: one inline email input + `SUBSCRIBE` CTA;
-- both blocks use one shared campaign inset so their geometric edge spacing is equal;
+- bottom-right block: one-line `GET THE NEWSLETTER` label above one inline email input + `SUBSCRIBE` CTA;
+- the campaign statement remains sentence case while `GET THE NEWSLETTER` remains all caps as a functional signup heading;
+- `GET THE NEWSLETTER` uses the same Instrument Sans weight, scale, line-height, and tracking as the campaign statement at the corresponding breakpoint;
+- the signup block width follows the rendered newsletter-label width, with the 8.5rem / 136px CTA retained and the email input taking the remaining width;
+- both overlay blocks use one shared campaign inset so their geometric edge spacing is equal;
 - the wordmark alone receives a narrow optical correction to compensate for transparent space inside the SVG, while the campaign sentence remains on the geometric inset;
+- the Portfilo wordmark-to-message gap is tightened to roughly 36–40px on desktop, intentionally larger than the newsletter-label-to-form gap;
 - the form CTA is 8.5rem / 136px wide on the current desktop treatment, centered explicitly, and uses weight 650;
 - form/input controls above 32rem use the approved 2.75rem / 44px height treatment;
-- the visible `GET THE NEWSLETTER` label, cadence support line, and shared free/unsubscribe note are intentionally hidden/removed from this page composition;
+- the cadence support line and shared free/unsubscribe note remain intentionally hidden on this page;
 - the shared `NewsletterSignup.astro` still owns validation, honeypot, `/api/subscribe` submission, confirmation messaging, and error states;
 - the approved statement remains page-scoped campaign/institutional copy, not a permanent Portfilo tagline and not automatic authority for other surfaces;
+- natural document scrolling remains the approved behavior; the later no-scroll experiment was rejected and reverted;
 - dedicated laptop/tablet/mobile visual tuning is deferred to sequence H rather than reopening the approved desktop composition now.
 
 Locked asset:
@@ -363,11 +368,15 @@ The runtime intentionally presents that sentence across three visual lines:
 - `until they reshape everything.`
 - `We look closer.`
 
+Signup heading:
+
+`GET THE NEWSLETTER`
+
 CTA:
 
 `SUBSCRIBE`
 
-The page currently has no visible newsletter label, no visible cadence support line, and no visible `Free newsletter. Unsubscribe anytime.` note.
+The page currently has no visible cadence support line and no visible `Free newsletter. Unsubscribe anytime.` note.
 
 Meta title remains:
 
@@ -380,13 +389,19 @@ Meta description remains:
 Implementation provenance:
 
 - `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
-- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — remove visible newsletter label and retain the smaller campaign-message scale;
+- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — historical removal of the earlier newsletter label before the founder later restored it;
 - `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove the footer on `/subscribe` and establish the approved message hierarchy;
 - `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set page CTA to `SUBSCRIBE` and strengthen its weight;
 - `972cbf96b21be699c35550f96c68355fe3f62148` — swap the two overlay blocks vertically while preserving their left/right sides;
-- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish one shared campaign inset and tighten the form width;
+- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish one shared campaign inset and tighten the original form width;
 - `bd419eac0886696022da359f77df9b214e0f3895` — set the page CTA to the 8.5rem width and explicit centering;
 - `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optically align the wordmark and set the approved 44px control height above 32rem;
+- `a429bd625a8002305799adc335194184c3747291` — restore visible `GET THE NEWSLETTER` above the form;
+- `eca1af7d4704a2c24c75648adb8c50454a07e6c3` — match the newsletter heading typography to the campaign statement;
+- `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match the signup-block width to the newsletter heading while retaining the fixed CTA width;
+- `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten the wordmark-to-message spacing;
+- `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted alignment correction; historical only;
+- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the founder-approved natural-scrolling composition while retaining the approved newsletter-heading/form refinements;
 - the shared `NewsletterSignup.astro` remains behaviorally authoritative for the form;
 - no dependency, schema, API, archive, article, Standards, or Privacy runtime changes were made by the final G1 corrections.
 
@@ -394,10 +409,10 @@ Implementation provenance:
 
 **PASS.**
 
-Recorded against runtime HEAD `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3`:
+Recorded against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`:
 
-- founder rendered desktop visual review: **PASS**;
-- founder approval of the final visible spacing, vertical block arrangement, CTA treatment, and no-footer composition: **PASS**;
+- founder rendered desktop visual review after the final revert: **PASS**;
+- founder approval of the final visible newsletter heading, matched typography, matched heading/form width relationship, tightened left lockup spacing, CTA treatment, natural scrolling, and no-footer composition: **PASS**;
 - local `npm run check`: **PASS**, reported by the founder after pulling the final runtime;
 - local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
 - source review confirms `/subscribe` continues to use the shared `NewsletterSignup.astro` submission/validation implementation;
