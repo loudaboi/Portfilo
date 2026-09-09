@@ -1,11 +1,15 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+
+interface ArticleImageMeta {
+  src: string;
+  alt: string;
+}
 
 interface ArticleMeta {
-  author: string;
-  authorUrl?: string;
   publishedAt?: Date;
   updatedAt?: Date;
+  image?: ArticleImageMeta;
 }
 
 interface Props {
@@ -31,17 +35,19 @@ const canonicalUrl = site && canonical
   ? new URL(Astro.url.pathname, site).href
   : undefined;
 const siteRootUrl = site ? new URL("/", site).href : undefined;
-const socialImageUrl = site
+const defaultSocialImageUrl = site
   ? new URL("/social/portfilo-default.png", site).href
   : undefined;
+const articleImageUrl = article?.image?.src && site
+  ? new URL(article.image.src, site).href
+  : undefined;
+const socialImageUrl = articleImageUrl ?? defaultSocialImageUrl;
+const socialImageAlt = article?.image?.alt ?? "Portfilo";
 const brandLogoUrl = site ? new URL("/apple-touch-icon.png", site).href : undefined;
 const sitemapUrl = site ? new URL("/sitemap-index.xml", site).href : undefined;
 const isHomepage = Astro.url.pathname === "/";
 const organizationId = siteRootUrl ? `${siteRootUrl}#organization` : undefined;
 const websiteId = siteRootUrl ? `${siteRootUrl}#website` : undefined;
-const articleAuthorUrl = article?.authorUrl && site
-  ? new URL(article.authorUrl, site).href
-  : undefined;
 
 const publisherStructuredData = siteRootUrl && organizationId
   ? {
@@ -79,23 +85,16 @@ const homepageStructuredData = isHomepage && siteRootUrl && websiteId && publish
     }
   : undefined;
 
-const articleStructuredData = article && canonicalUrl && publisherStructuredData
+const articleStructuredData = article && canonicalUrl && publisherStructuredData && organizationId
   ? {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: title,
       description,
       mainEntityOfPage: canonicalUrl,
-      author: {
-        "@type": article.author === "Portfilo" ? "Organization" : "Person",
-        name: article.author,
-        ...(article.author === "Portfilo" && siteRootUrl
-          ? { url: siteRootUrl }
-          : articleAuthorUrl
-            ? { url: articleAuthorUrl }
-            : {}),
-      },
+      author: { "@id": organizationId },
       publisher: publisherStructuredData,
+      ...(articleImageUrl ? { image: articleImageUrl } : {}),
       ...(article.publishedAt
         ? { datePublished: article.publishedAt.toISOString() }
         : {}),
@@ -114,7 +113,6 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 <meta name="theme-color" content="#f4f0e8" />
 {robots && <meta name="robots" content={robots} />}
 <title>{title}</title>
-<ClientRouter fallback="swap" />
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -135,15 +133,15 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
       <meta property="og:description" content={description} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       {socialImageUrl && <meta property="og:image" content={socialImageUrl} />}
-      {socialImageUrl && <meta property="og:image:width" content="1200" />}
-      {socialImageUrl && <meta property="og:image:height" content="630" />}
-      {socialImageUrl && <meta property="og:image:alt" content="Portfilo" />}
+      {socialImageUrl && <meta property="og:image:alt" content={socialImageAlt} />}
+      {socialImageUrl && !articleImageUrl && <meta property="og:image:width" content="1200" />}
+      {socialImageUrl && !articleImageUrl && <meta property="og:image:height" content="630" />}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
-      {socialImageUrl && <meta name="twitter:image:alt" content="Portfilo" />}
+      {socialImageUrl && <meta name="twitter:image:alt" content={socialImageAlt} />}
     </>
   )
 }
@@ -158,87 +156,7 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
   )
 }
 
-{
-  isHomepage && (
-    <style is:inline set:html={`.feature-panel {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #171614;
-}
-
-.feature-panel::before,
-.feature-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.feature-panel::before {
-  z-index: -2;
-  background: url("/images/homepage-feature-image.webp") center 50% / cover no-repeat;
-}
-
-.feature-panel::after {
-  z-index: -1;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(23, 22, 20, 0.06) 0%,
-      rgba(23, 22, 20, 0.03) 48%,
-      rgba(23, 22, 20, 0.18) 72%,
-      rgba(23, 22, 20, 0.46) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(23, 22, 20, 0.18) 0%,
-      rgba(23, 22, 20, 0.04) 20%,
-      rgba(23, 22, 20, 0) 42%,
-      rgba(23, 22, 20, 0) 58%,
-      rgba(23, 22, 20, 0.04) 80%,
-      rgba(23, 22, 20, 0.18) 100%
-    );
-}
-
-.feature-panel__topline,
-.feature-panel__topic,
-.feature-panel__bottom {
-  position: relative;
-  z-index: 1;
-}
-
-.feature-panel__bottom::before {
-  content: "AI-generated image";
-  position: absolute;
-  left: 0;
-  bottom: calc(100% + 0.65rem);
-  color: rgba(244, 240, 232, 0.72);
-  font: 400 0.54rem/1.3 var(--mono, "IBM Plex Mono", monospace);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-@media (max-width: 50rem) {
-  .feature-panel::before {
-    background-position: center 46%;
-  }
-}`}></style>
-  )
-}
-
 <style is:global>
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
-  }
-
-  .feature-panel a:focus-visible,
-  .institution a:focus-visible {
-    outline-color: var(--accent-on-ink);
-  }
-
   @supports ((-webkit-mask-image: url("")) or (mask-image: url(""))) {
     a > span[aria-hidden="true"] {
       display: inline-block;
