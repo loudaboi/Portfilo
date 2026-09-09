@@ -13,7 +13,6 @@ interface ArchiveItem {
   href?: string;
   meta: string[];
   accentMetaCount?: number;
-  author?: string;
   image?: ArchiveImage;
 }
 
@@ -49,7 +48,7 @@ const leadItem = items[0];
 const supportingItems = items.slice(1);
 ---
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
   <header class="page-header">
     <h1>{title}</h1>
   </header>
@@ -58,7 +57,10 @@ const supportingItems = items.slice(1);
 
   {
     leadItem ? (
-      <section class="lead-item" aria-label={leadAriaLabel}>
+      <section
+        class:list={{ "lead-item": true, "lead-item--without-image": !leadItem.image }}
+        aria-label={leadAriaLabel}
+      >
         {leadItem.image && (
           leadItem.href ? (
             <a class="archive-image lead-item__image" href={leadItem.href} aria-label={`Read ${leadItem.title}`}>
@@ -99,7 +101,6 @@ const supportingItems = items.slice(1);
           </p>
           <h2>{leadItem.href ? <a href={leadItem.href}>{leadItem.title}</a> : leadItem.title}</h2>
           <p class="lead-item__dek">{leadItem.dek}</p>
-          {leadItem.author && <p class="archive-author">{leadItem.author}</p>}
         </div>
       </section>
     ) : (
@@ -122,9 +123,9 @@ const supportingItems = items.slice(1);
 
   {
     leadItem && (
-      <section class="archive-stream" id={listId} tabindex="-1" aria-label={streamAriaLabel}>
+      <section class="archive-stream" id={listId} aria-label={streamAriaLabel}>
         {supportingItems.map((item) => (
-          <article class="archive-row">
+          <article class:list={{ "archive-row": true, "archive-row--without-image": !item.image }}>
             <div class="archive-row__package">
               <p class="archive-meta">
                 {item.meta.map((value, index) => (
@@ -133,7 +134,6 @@ const supportingItems = items.slice(1);
               </p>
               <h2>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h2>
               <p class="archive-row__dek">{item.dek}</p>
-              {item.author && <p class="archive-author">{item.author}</p>}
             </div>
 
             {item.image && (
@@ -175,47 +175,6 @@ const supportingItems = items.slice(1);
 </main>
 
 <style>
-  @font-face { font-family: "Instrument Sans"; font-style: normal; font-display: swap; font-weight: 400 700; src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations"); }
-  @font-face { font-family: "Source Serif 4"; font-style: normal; font-display: swap; font-weight: 200 900; src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations"); }
-  @font-face { font-family: "IBM Plex Mono"; font-style: normal; font-display: swap; font-weight: 400; src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2"); }
-
-  :global(:root) {
-    --paper: #f8f6f1;
-    --paper-soft: #efebe3;
-    --ink: #171614;
-    --muted: #68645e;
-    --line: #d4cfc6;
-    --line-strong: #aaa39a;
-    --accent: #0050a4;
-    --correction: #b42318;
-    --page-max: 84rem;
-    --content-max: 84rem;
-    --shell-gutter: clamp(1.25rem, 2.6vw, 2rem);
-    --gutter: var(--shell-gutter);
-    --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-    --serif: "Source Serif 4", Georgia, serif;
-    --mono: "IBM Plex Mono", "Courier New", monospace;
-  }
-
-  :global(*) { box-sizing: border-box; }
-  :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; }
-  :global(body.editorial-page) { margin: 0; min-width: 0; background: var(--paper); }
-  :global(body.editorial-page a) { color: inherit; }
-  :global(body.editorial-page a:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; }
-  :global(body.editorial-page .skip-link) {
-    position: fixed;
-    z-index: 50;
-    top: 0.75rem;
-    left: 0.75rem;
-    padding: 0.7rem 0.85rem;
-    background: var(--ink);
-    color: var(--paper);
-    font: 550 0.75rem/1 var(--sans);
-    text-decoration: none;
-    transform: translateY(-200%);
-  }
-  :global(body.editorial-page .skip-link:focus) { transform: translateY(0); }
-
   .page-header,
   .lead-item,
   .archive-stream,
@@ -226,13 +185,13 @@ const supportingItems = items.slice(1);
   }
 
   .page-header {
-    padding: clamp(3.2rem, 6vw, 5.8rem) 0 clamp(1.4rem, 2.6vw, 2.25rem);
+    padding: clamp(2.8rem, 2rem + 3vw, 5.6rem) 0 clamp(1.35rem, 1rem + 1.6vw, 2.2rem);
     border-bottom: 1px solid var(--ink);
   }
 
   .page-header h1 {
     margin: 0;
-    font: 680 clamp(3rem, 6vw, 5.6rem) / 0.92 var(--sans);
+    font: 680 clamp(2.7rem, 1.2rem + 4vw, 5.4rem) / 0.92 var(--sans);
     letter-spacing: -0.055em;
   }
 
@@ -245,12 +204,20 @@ const supportingItems = items.slice(1);
   }
 
   .lead-item {
-    padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(3rem, 5vw, 4.75rem);
+    padding: clamp(1.4rem, 1rem + 1.5vw, 2.5rem) 0 clamp(2.8rem, 2rem + 2.4vw, 4.7rem);
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.8fr);
-    gap: clamp(1.5rem, 3vw, 3rem);
+    gap: clamp(1.5rem, 2.7vw, 3rem);
     align-items: start;
     border-bottom: 1px solid var(--line);
+  }
+
+  .lead-item--without-image {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-item--without-image .lead-item__package {
+    max-width: 54rem;
   }
 
   .archive-image {
@@ -258,7 +225,6 @@ const supportingItems = items.slice(1);
     display: block;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-top: 3px solid var(--accent);
     background: var(--paper-soft);
     line-height: 0;
   }
@@ -281,10 +247,11 @@ const supportingItems = items.slice(1);
     letter-spacing: 0.035em;
   }
 
-  .lead-item__package { padding-top: 0.1rem; }
+  .lead-item__package {
+    padding-top: 0.1rem;
+  }
 
   .archive-meta,
-  .archive-author,
   .lead-item__dek,
   .archive-row__dek,
   .lead-item h2,
@@ -302,7 +269,9 @@ const supportingItems = items.slice(1);
     text-transform: uppercase;
   }
 
-  .archive-meta .is-accent { color: var(--accent); }
+  .archive-meta .is-accent {
+    color: var(--accent);
+  }
 
   .archive-meta > * + *::before {
     content: "/";
@@ -313,12 +282,14 @@ const supportingItems = items.slice(1);
   .lead-item h2 {
     max-width: 18ch;
     margin-top: 0.7rem;
-    font: 670 clamp(2.2rem, 3.5vw, 3.8rem) / 0.98 var(--sans);
+    font: 670 clamp(2rem, 1.25rem + 2.2vw, 3.8rem) / 0.98 var(--sans);
     letter-spacing: -0.048em;
     text-wrap: balance;
   }
 
-  h2 a { text-decoration: none; }
+  h2 a {
+    text-decoration: none;
+  }
 
   h2 a:hover {
     text-decoration: underline;
@@ -330,13 +301,7 @@ const supportingItems = items.slice(1);
     max-width: 38rem;
     margin-top: 0.8rem;
     color: var(--muted);
-    font: 430 clamp(1rem, 1.2vw, 1.12rem) / 1.52 var(--sans);
-  }
-
-  .archive-author {
-    margin-top: 1rem;
-    color: var(--muted);
-    font: 540 0.67rem/1.3 var(--sans);
+    font: 430 clamp(0.96rem, 0.88rem + 0.25vw, 1.1rem) / 1.52 var(--sans);
   }
 
   .archive-acquisition {
@@ -351,17 +316,19 @@ const supportingItems = items.slice(1);
     padding: clamp(1.8rem, 3vw, 2.6rem) 0;
     display: grid;
     grid-template-columns: minmax(0, 52rem) minmax(19rem, 1fr);
-    gap: clamp(2rem, 2.7vw, 2.5rem);
+    gap: clamp(1.5rem, 2.7vw, 2.5rem);
     align-items: center;
   }
 
   .archive-acquisition__copy h2,
-  .archive-acquisition__copy p { margin: 0; }
+  .archive-acquisition__copy p {
+    margin: 0;
+  }
 
   .archive-acquisition__copy h2 {
     max-width: 17ch;
     color: #fff;
-    font: 680 clamp(2.15rem, 2.65vw, 2.8rem) / 0.98 var(--sans);
+    font: 680 clamp(1.9rem, 1.15rem + 1.6vw, 2.8rem) / 0.98 var(--sans);
     letter-spacing: -0.045em;
     text-wrap: balance;
   }
@@ -370,15 +337,17 @@ const supportingItems = items.slice(1);
     max-width: 43rem;
     margin-top: 0.65rem;
     color: rgba(255, 255, 255, 0.8);
-    font: 440 clamp(0.9rem, 1vw, 1rem) / 1.45 var(--sans);
+    font: 440 clamp(0.9rem, 0.84rem + 0.2vw, 1rem) / 1.45 var(--sans);
   }
 
-  .archive-acquisition__form { min-width: 0; }
+  .archive-acquisition__form {
+    min-width: 0;
+  }
 
   .archive-acquisition__form :global(.newsletter-signup__row) {
     grid-template-columns: 1fr;
     gap: 0.55rem;
-    max-width: none;
+    max-width: 32rem;
   }
 
   .archive-acquisition__form :global(.newsletter-signup input) {
@@ -400,7 +369,7 @@ const supportingItems = items.slice(1);
 
   .archive-acquisition__form :global(.newsletter-signup button:hover) {
     filter: none;
-    background: rgba(248, 246, 241, 0.9);
+    background: rgba(244, 240, 232, 0.9);
   }
 
   .archive-acquisition__form :global(.newsletter-signup input:focus-visible),
@@ -413,27 +382,39 @@ const supportingItems = items.slice(1);
     color: rgba(255, 255, 255, 0.72);
   }
 
-  .archive-acquisition__form :global(.newsletter-signup__status[data-state="success"]) { color: #fff; }
-  .archive-acquisition__form :global(.newsletter-signup__status[data-state="error"]) { color: #ffe1dc; }
+  .archive-acquisition__form :global(.newsletter-signup__status[data-state="success"]) {
+    color: #fff;
+  }
 
-  .archive-stream { padding-bottom: clamp(4rem, 7vw, 7rem); }
-  .archive-stream:focus { outline: none; }
+  .archive-acquisition__form :global(.newsletter-signup__status[data-state="error"]) {
+    color: #ffe1dc;
+  }
+
+  .archive-stream {
+    padding-bottom: clamp(4rem, 7vw, 7rem);
+  }
 
   .archive-row {
-    padding: clamp(1.75rem, 3vw, 2.75rem) 0;
+    padding: clamp(1.65rem, 1.1rem + 1.5vw, 2.7rem) 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(13rem, 20rem);
-    gap: clamp(1.5rem, 3vw, 3rem);
+    gap: clamp(1.4rem, 2.7vw, 3rem);
     align-items: start;
     border-bottom: 1px solid var(--line);
   }
 
-  .archive-row:not(:has(.archive-row__image)) .archive-row__package { max-width: 54rem; }
+  .archive-row--without-image {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-row--without-image .archive-row__package {
+    max-width: 54rem;
+  }
 
   .archive-row h2 {
     max-width: 25ch;
     margin-top: 0.55rem;
-    font: 660 clamp(1.55rem, 2.35vw, 2.55rem) / 1.02 var(--sans);
+    font: 660 clamp(1.45rem, 1.05rem + 1.25vw, 2.45rem) / 1.02 var(--sans);
     letter-spacing: -0.04em;
   }
 
@@ -441,7 +422,7 @@ const supportingItems = items.slice(1);
     max-width: 43rem;
     margin-top: 0.65rem;
     color: var(--muted);
-    font: 425 clamp(0.92rem, 1vw, 1rem) / 1.52 var(--sans);
+    font: 425 clamp(0.9rem, 0.84rem + 0.2vw, 1rem) / 1.52 var(--sans);
   }
 
   .empty-state {
@@ -452,40 +433,89 @@ const supportingItems = items.slice(1);
 
   @media (max-width: 64rem) {
     .lead-item {
-      grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.75fr);
-      gap: 1.75rem;
+      grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+      gap: 1.5rem;
+    }
+
+    .lead-item--without-image {
+      grid-template-columns: 1fr;
+    }
+
+    .archive-acquisition__inner {
+      grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+      gap: 1.5rem;
+    }
+
+    .archive-row {
+      grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+      gap: 1.5rem;
+    }
+
+    .archive-row--without-image {
+      grid-template-columns: 1fr;
     }
   }
 
-  @media (max-width: 56rem) {
+  @media (max-width: 44rem) {
     .archive-acquisition__inner {
       grid-template-columns: 1fr;
       gap: 1.2rem;
     }
+
+    .archive-acquisition__form {
+      width: min(100%, 32rem);
+    }
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: 40rem) {
     .lead-item,
-    .archive-row { grid-template-columns: 1fr; }
+    .archive-row {
+      grid-template-columns: 1fr;
+    }
 
-    .lead-item__image { order: 0; }
-    .lead-item__package { order: 1; }
-    .archive-row__image { order: -1; max-width: 36rem; }
-    .lead-item h2 { max-width: 22ch; }
-  }
+    .lead-item__image {
+      order: 0;
+    }
 
-  @media (max-width: 36rem) {
-    :global(:root) { --shell-gutter: 1.1rem; }
-    .page-header { padding-top: 2.75rem; }
-    .page-header h1 { font-size: clamp(2.8rem, 15vw, 4.25rem); }
-    .fixture-notice { text-align: left; }
-    .lead-item { padding-top: 1.15rem; }
-    .lead-item h2 { font-size: clamp(2rem, 9.5vw, 2.8rem); }
-    .archive-row { padding-block: 1.6rem; }
-    .archive-row h2 { font-size: clamp(1.55rem, 7.5vw, 2.1rem); }
-  }
+    .lead-item__package {
+      order: 1;
+    }
 
-  @media (max-width: 23rem) {
-    :global(:root) { --shell-gutter: 1rem; }
+    .archive-row__image {
+      order: -1;
+      max-width: 36rem;
+    }
+
+    .lead-item h2 {
+      max-width: 22ch;
+    }
+
+    .page-header {
+      padding-top: 2.7rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2.55rem, 12vw, 3.5rem);
+    }
+
+    .fixture-notice {
+      text-align: left;
+    }
+
+    .lead-item {
+      padding-top: 1.15rem;
+    }
+
+    .lead-item h2 {
+      font-size: clamp(1.9rem, 8.5vw, 2.7rem);
+    }
+
+    .archive-row {
+      padding-block: 1.55rem;
+    }
+
+    .archive-row h2 {
+      font-size: clamp(1.5rem, 6.8vw, 2rem);
+    }
   }
 </style>
