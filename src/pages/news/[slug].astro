@@ -25,7 +25,6 @@ const {
   dek,
   metaDescription,
   topic,
-  author,
   publishedAt,
   updatedAt,
   image,
@@ -44,7 +43,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 
 const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
-const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined;
 const pageDescription = metaDescription ?? dek;
 const displayImage = image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
 
@@ -74,7 +72,11 @@ const normalizedCorrection = correction
     <SiteHead
       title={`${title} | Portfilo`}
       description={pageDescription}
-      article={{ author, authorUrl: authorHref, publishedAt, updatedAt }}
+      article={{
+        publishedAt,
+        updatedAt,
+        image: image ? { src: image.src, alt: image.alt } : undefined,
+      }}
     />
   </head>
   <body class="editorial-page">
