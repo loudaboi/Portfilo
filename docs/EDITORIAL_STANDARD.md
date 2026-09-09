@@ -1,10 +1,26 @@
 # Portfilo Editorial Standard
 
+_Last updated: 2026-09-10_
+
 ## Mission
 
-Portfilo should help ambitious Filipinos understand business, technology, startups, AI, and what it takes to build in the Philippines through useful, specific, evidence-aware journalism and analysis.
+Portfilo should help readers understand consequential business and technology developments through useful, specific, evidence-aware journalism and analysis.
+
+The Philippines is Portfilo's primary reporting ground when geography materially affects the company, market, regulation, infrastructure, workforce, customer, or consequence being examined. Global developments can belong without a manufactured Philippine angle.
 
 Portfilo is not a motivation feed, content farm, startup cheerleader, AI hype feed, or generic self-improvement publication.
+
+## Editorial direction
+
+Current internal attention priorities are defined in:
+
+- `docs/PROJECT_STATE.md`;
+- `docs/EDITORIAL_INTELLIGENCE.md`;
+- `docs/CONTENT_PLANNING.md`.
+
+The current priority areas are AI + Work, Startups + Building Companies, and Digital Economy + Infrastructure, while major business/technology developments outside those lanes may still belong when they are materially useful.
+
+These are internal attention priorities, not public taxonomy labels or publishing quotas.
 
 ## Core editorial principles
 
@@ -26,9 +42,13 @@ It is:
 
 `question -> research -> evidence -> story decision -> draft -> verification -> publication`
 
+Fast factual News may use the narrower verified-development path defined in `docs/PUBLISHING_STANDARD.md`.
+
 ### 3. Useful specificity
 
-Prefer concrete Philippine context over generic business or startup advice.
+Prefer concrete context over generic business or startup advice.
+
+When Philippine conditions materially affect the question, investigate them specifically.
 
 Weak:
 > Startups should focus on product-market fit.
@@ -104,13 +124,13 @@ A headline may be sharper than the body, but never more certain than the reporti
 
 Avoid clickbait that changes:
 
-- "some" into "all";
+- `some` into `all`;
 - correlation into causation;
 - an advertised salary into actual earnings;
 - anecdotes into population-level facts;
 - an estimate into a measured number.
 
-### 8. Local context is part of the value
+### 8. Local context is part of the value when it is real
 
 When relevant, investigate how global ideas interact with Philippine realities such as:
 
@@ -137,11 +157,29 @@ A substantial Portfilo story should contain at least one meaningful contribution
 - original calculation;
 - original dataset or structured sample;
 - useful synthesis of difficult information;
-- Philippine-specific application;
+- Philippine-specific application where geography materially affects the question;
 - case study;
 - a conclusion that genuinely emerged from research.
 
 Rewriting existing articles is not enough.
+
+## News and Stories
+
+The default operating distinction is:
+
+```text
+NEWS
+What changed?
+
+STORIES
+What is changing underneath?
+```
+
+News can be concise current reporting when a development itself is the useful thing to establish.
+
+Stories can examine mechanisms, causes, consequences, patterns, contradictions, people, companies, systems, or questions that require deeper reporting or interpretation.
+
+Story ideas do not have to originate in News discovery. `docs/CONTENT_PLANNING.md` governs substantial Story selection.
 
 ## AI coverage
 
@@ -158,7 +196,15 @@ When covering AI:
 - identify meaningful uncertainty when capabilities, policies, or market conditions are changing quickly;
 - avoid language that treats AI progress as inevitable, magical, or universally beneficial.
 
-Use **AI** as the primary topic when AI itself is the main thing the reader needs to understand. If the larger question is primarily about a company, startup, or execution decision, classify the story under Business, Startups, or Building even when AI is involved.
+Use **AI** as the primary public topic when AI itself is the main thing the reader needs to understand.
+
+If the larger question is primarily about a company, startup, product, technology, or execution decision, use whichever value in the current public taxonomy best describes the actual primary subject.
+
+Current public topic values remain:
+
+`Business / Technology / Startup / AI`
+
+Do not invent `Building`, `Work`, `Infrastructure`, or another internal lane as a runtime topic value unless a separate taxonomy decision changes the schema.
 
 ## Content types
 
@@ -285,7 +331,6 @@ Portfilo should be:
 - curious;
 - skeptical without being cynical;
 - readable without being simplistic;
-- ambitious without hustle-culture theatrics;
 - confident when evidence is strong;
 - explicit when evidence is weak.
 
@@ -310,6 +355,6 @@ Before publication, ask:
 4. Did we preserve the most important caveat?
 5. Is the headline fair?
 6. Are facts, estimates, inference, and opinion distinguishable?
-7. Does the story materially help the target reader?
+7. Does the story materially help the reader?
 8. Would we be comfortable showing the source trail?
 9. Does every verification/non-response disclosure materially help the reader, or is it newsroom self-reference that should be removed or rewritten more precisely?
