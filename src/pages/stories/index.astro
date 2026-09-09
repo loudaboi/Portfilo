@@ -8,7 +8,7 @@ import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 const entries = await getCollection(
   "stories",
-  ({ data }) => data.section === "stories" && (data.status === "published" || import.meta.env.DEV),
+  ({ data }) => data.section === "stories",
 );
 
 const stories = entries
@@ -36,7 +36,7 @@ const items = stories.map((story) => ({
     formatLabel(story.data.contentType),
     formatLabel(story.data.topic),
     ...(story.data.publishedAt ? [formatDate(story.data.publishedAt)] : []),
-    ...(import.meta.env.DEV && story.data.status === "draft" ? ["Draft"] : []),
+    ...(story.data.status === "draft" ? ["Draft"] : []),
   ],
   accentMetaCount: 2,
   image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
@@ -61,13 +61,13 @@ const items = stories.map((story) => ({
       listId="stories-list"
       leadAriaLabel="Lead story"
       streamAriaLabel="More stories"
-      emptyText="No published stories yet."
+      emptyText="No stories yet."
       signupId="stories-archive-newsletter"
       signupAriaLabel="Subscribe to Portfilo stories"
       signupHeading="Get Portfilo stories in your inbox."
       signupCopy="Deeper reporting, explainers, and analysis on business and technology."
     />
 
-    <SiteFooter showAcquisition={false} />
+    <SiteFooter />
   </body>
 </html>
