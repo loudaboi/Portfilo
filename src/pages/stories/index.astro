@@ -39,7 +39,6 @@ const items = stories.map((story) => ({
     ...(import.meta.env.DEV && story.data.status === "draft" ? ["Draft"] : []),
   ],
   accentMetaCount: 2,
-  author: story.data.author,
   image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
 }));
 ---
@@ -53,7 +52,7 @@ const items = stories.map((story) => ({
     />
   </head>
   <body class="editorial-page">
-    <a class="skip-link" href="#stories-list">Skip to stories</a>
+    <a class="skip-link" href="#main-content">Skip to stories</a>
     <SiteHeader current="stories" />
 
     <EditorialArchive
