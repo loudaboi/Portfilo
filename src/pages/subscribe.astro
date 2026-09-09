@@ -132,8 +132,12 @@ import NewsletterSignup from "../components/NewsletterSignup.astro";
         background: var(--paper);
       }
 
+      .subscribe-campaign,
+      :global(body.subscribe-page .site-header) {
+        width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max), calc(148.8svh - 6.75rem));
+      }
+
       .subscribe-campaign {
-        width: min(100%, var(--content-max), calc(148.8svh - 6.75rem));
         margin-inline: auto;
       }
 
