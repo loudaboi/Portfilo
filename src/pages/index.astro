@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
@@ -192,13 +193,13 @@ const railLabel = secondaryStory?.status === "draft"
                     href={`/stories/${featureStory.id}`}
                     aria-label={`Read ${featureStory.data.title}`}
                   >
-                    <img
+                    <Image
                       src={featureStory.data.image.src}
-                      width="1600"
-                      height="900"
                       alt={featureStory.data.image.alt}
-                      loading="eager"
-                      decoding="async"
+                      layout="constrained"
+                      width={864}
+                      height={486}
+                      priority
                     />
                     {featureStory.data.image.generated && (
                       <span class="featured-story__disclosure">AI-generated editorial image</span>
@@ -260,13 +261,12 @@ const railLabel = secondaryStory?.status === "draft"
                 {leadNews.image && (
                   leadNews.href ? (
                     <a class="news-image" href={leadNews.href} aria-label={`Read ${leadNews.title}`}>
-                      <img
+                      <Image
                         src={leadNews.image.src}
                         alt={leadNews.image.alt}
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
+                        layout="constrained"
+                        width={864}
+                        height={486}
                       />
                       {leadNews.image.generated && (
                         <span class="news-image__disclosure">AI-generated editorial image</span>
@@ -274,13 +274,12 @@ const railLabel = secondaryStory?.status === "draft"
                     </a>
                   ) : (
                     <div class="news-image">
-                      <img
+                      <Image
                         src={leadNews.image.src}
                         alt={leadNews.image.alt}
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
+                        layout="constrained"
+                        width={864}
+                        height={486}
                       />
                       {leadNews.image.generated && (
                         <span class="news-image__disclosure">AI-generated editorial image</span>
@@ -625,7 +624,7 @@ const railLabel = secondaryStory?.status === "draft"
       .latest-strip {
         width: 100%;
         min-height: 2.35rem;
-        margin: clamp(1rem, 1.4vw, 1.5rem) 0;
+        margin: 0 0 clamp(1rem, 1.4vw, 1.5rem);
         display: flex;
         background: var(--paper);
         color: var(--ink);
@@ -1055,7 +1054,7 @@ const railLabel = secondaryStory?.status === "draft"
         }
 
         .latest-strip {
-          margin-block: 1rem;
+          margin: 0 0 1rem;
         }
 
         .latest-strip__label {
