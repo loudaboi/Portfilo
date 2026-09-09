@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import EditorialArchive from "../../components/EditorialArchive.astro";
+import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
+
+const entries = await getCollection(
+  "stories",
+  ({ data }) => data.section === "hustle",
+);
+
+const hustleEntries = entries
+  .filter((story) => !story.id.startsWith("portfilo-"))
+  .sort(
+    (a, b) =>
+      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
+  );
+
+const dateFormatter = new Intl.DateTimeFormat("en-PH", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const formatDate = (date?: Date) => (date ? dateFormatter.format(date) : "");
+const formatLabel = (value: string) => value.replaceAll("-", " ");
+
+const items = hustleEntries.map((story) => ({
+  href: `/hustle/${story.id}`,
+  title: story.data.title,
+  dek: story.data.dek,
+  meta: [
+    formatLabel(story.data.contentType),
+    formatLabel(story.data.topic),
+    ...(story.data.publishedAt ? [formatDate(story.data.publishedAt)] : []),
+    ...(story.data.status === "draft" ? ["Draft"] : []),
+  ],
+  accentMetaCount: 2,
+  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
+}));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead
+      title="Hustle | Portfilo"
+      description="Portfilo reporting on founders, operators, and business owners building and running companies."
+    />
+  </head>
+  <body class="editorial-page">
+    <a class="skip-link" href="#main-content">Skip to Hustle</a>
+    <SiteHeader current="hustle" />
+
+    <EditorialArchive
+      title="Hustle"
+      items={items}
+      listId="hustle-list"
+      leadAriaLabel="Lead Hustle article"
+      streamAriaLabel="More Hustle articles"
+      emptyText="No Hustle articles yet."
+      signupId="hustle-archive-newsletter"
+      signupAriaLabel="Subscribe to Portfilo"
+      signupHeading="Get ahead in business and tech in 7 minutes."
+      signupCopy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week."
+    />
+
+    <SiteFooter />
+  </body>
+</html>
