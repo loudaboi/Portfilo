@@ -36,7 +36,7 @@ const realItems = newsByDate.map((story) => ({
   image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
 }));
 
-const fixtureItems = import.meta.env.DEV && realItems.length === 0
+const fixtureItems = realItems.length === 0
   ? DEV_NEWS_FIXTURES.map((item) => ({
       title: item.title,
       dek: item.dek,
@@ -66,16 +66,16 @@ const usingFixtures = fixtureItems.length > 0;
       title="News"
       items={items}
       listId="news-list"
-      leadAriaLabel="Latest news"
-      streamAriaLabel="News archive"
+      leadAriaLabel={usingFixtures ? "Sample news" : "Latest news"}
+      streamAriaLabel={usingFixtures ? "Sample news layout" : "News archive"}
       emptyText="No published News items yet."
       signupId="news-archive-newsletter"
       signupAriaLabel="Subscribe to Portfilo news"
       signupHeading="Get Portfilo news in your inbox."
       signupCopy="The latest news on companies, startups, products, markets, AI, and technology. Three times a week."
-      fixtureNotice={usingFixtures ? "Development fixtures only. Not Portfilo reporting." : undefined}
+      fixtureNotice={usingFixtures ? "Sample content for layout testing. Not Portfilo reporting." : undefined}
     />
 
-    <SiteFooter />
+    <SiteFooter showAcquisition={false} />
   </body>
 </html>
