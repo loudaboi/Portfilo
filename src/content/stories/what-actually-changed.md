@@ -4,7 +4,6 @@ dek: "A business or technology development can mean something different once it 
 section: stories
 contentType: perspective
 topic: technology
-author: "Louda Tuppal"
 publishedAt: 2026-09-04
 status: draft
 featured: false
