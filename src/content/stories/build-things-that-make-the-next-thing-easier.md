@@ -4,7 +4,6 @@ dek: "An early project should leave you with more than a story about what you le
 section: stories
 contentType: perspective
 topic: technology
-author: "Louda Tuppal"
 publishedAt: 2026-09-03
 status: draft
 featured: false
