@@ -2,7 +2,7 @@
 
 _Last updated: 2026-09-10_
 
-_Status: FOUNDER APPROVED FOR PILOT_
+_Status: FOUNDER APPROVED / FROZEN OPERATIONAL V0_
 
 ## Purpose
 
@@ -92,6 +92,21 @@ Why is #3 only WATCH?
 Add #1 and #4 to Portfilo Signals.
 Check whether this changes an existing Watch item.
 ```
+
+## Freeze note
+
+This prompt passed its first live scanner pilot on 2026-09-10.
+
+The pilot confirmed that the workflow could:
+
+- surface current Philippine business/technology developments from the canonical source universe;
+- use broader search without treating it as evidence;
+- trace serious candidates to primary or authoritative sources;
+- retain major global AI/startup developments without forcing a Philippine angle;
+- avoid inventing a Philippine startup signal when none surfaced strongly in the scan window;
+- keep output selective rather than headline-driven.
+
+Do not casually expand this prompt. Change it only when repeated operating evidence shows a concrete failure that cannot be solved by updating the canonical standards or source map.
 
 ## Boundary
 
