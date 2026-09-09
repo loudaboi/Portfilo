@@ -26,12 +26,9 @@ const {
   metaDescription,
   contentType,
   topic,
-  author,
   publishedAt,
   updatedAt,
   image,
-  series,
-  seriesOrder,
   methodology,
   correction,
   status,
@@ -47,7 +44,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 
 const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
-const authorHref = author === "Louda Tuppal" ? "/about#louda-tuppal" : undefined;
 const pageDescription = metaDescription ?? dek;
 const displayImage = image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
 
@@ -60,12 +56,6 @@ const classification = [
 
 const metadata = [
   ...(updatedAt ? [{ label: "Updated", value: formatDate(updatedAt) }] : []),
-  ...(series
-    ? [{
-        label: "Series",
-        value: `${formatLabel(series)}${seriesOrder !== undefined ? ` · Part ${seriesOrder}` : ""}`,
-      }]
-    : []),
 ];
 
 const tocItems = headings
@@ -87,7 +77,11 @@ const normalizedCorrection = correction
     <SiteHead
       title={`${title} | Portfilo`}
       description={pageDescription}
-      article={{ author, authorUrl: authorHref, publishedAt, updatedAt }}
+      article={{
+        publishedAt,
+        updatedAt,
+        image: image ? { src: image.src, alt: image.alt } : undefined,
+      }}
     />
   </head>
   <body class="editorial-page">
