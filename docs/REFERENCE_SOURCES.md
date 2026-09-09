@@ -1,8 +1,12 @@
 # Portfilo Reference Sources
 
-_Last reviewed: 2026-09-01_
+_Last reviewed: 2026-09-10_
 
-This file records the primary external references used to establish current v0 technical and editorial choices. It is not a substitute for re-checking changing product documentation later.
+This file records primary external references used to establish current technical, product, and editorial operating choices.
+
+It is **not** Portfilo's newsroom monitoring source map and is not a substitute for re-checking changing product documentation later.
+
+The operational source universe for News discovery is governed by `docs/EDITORIAL_INTELLIGENCE.md` and should be maintained separately from this reference file.
 
 ## Technical
 
@@ -65,14 +69,11 @@ Current relevant point at review:
 Official pricing:
 https://www.beehiiv.com/pricing
 
-Current relevant points at review:
-- Launch: $0/month.
-- up to 2,500 subscribers.
-- unlimited email sends.
-- custom domains.
-- subscribe forms.
+Current relevant points at earlier review:
+- Launch is the free tier.
+- subscriber/send limits and included features can change.
 
-These terms can change. Re-check before making a financial or launch decision.
+Re-check the current plan before relying on a specific financial or feature limit.
 
 ### beehiiv embedded subscribe forms
 
@@ -89,21 +90,49 @@ Current relevant point at review:
 Official standards:
 https://reutersagency.com/about/standards-values/
 
-Relevant principle:
-- AI-generated facts, sources, and claims must not be trusted without independent verification.
-- responsibility remains with the journalist/publication.
+Relevant principles:
+- accuracy takes precedence over speed;
+- sourcing should be honest and transparent;
+- named sources are preferred where possible;
+- information should be cross-checked where appropriate;
+- AI does not remove human editorial responsibility.
 
-### Associated Press AI standards
-
-Official 2026 update:
-https://www.ap.org/the-definitive-source/announcements/ap-updates-newsroom-standards-for-artificial-intelligence/
+### Associated Press news values and AI standards
 
 Official principles:
 https://www.ap.org/about/news-values-and-principles/
 
+Official AI standards/update:
+https://www.ap.org/the-definitive-source/announcements/ap-updates-newsroom-standards-for-artificial-intelligence/
+
 Relevant principles:
-- AI may assist with specific tasks including early research and summarization.
+- internet information should be vetted and attributed to its original source where possible;
+- AI may assist with specific tasks including research and summarization;
 - AI does not replace reporting, sourcing, editorial judgment, verification, or accountability.
+
+## Editorial-intelligence tools
+
+These are operational tool references, not editorial evidence sources.
+
+### Inoreader
+
+Official pricing:
+https://www.inoreader.com/pricing
+
+Current relevant point at 2026-09-10 review:
+- the free plan is sufficient to test a small Portfilo RSS/news-monitoring workflow before paying for advanced monitoring, rules, integrations, or larger limits.
+
+Do not encode a permanent feed-count or paid-price assumption into editorial policy. Re-check the current plan when the free tier becomes a real constraint.
+
+### Google Alerts
+
+Official help:
+https://support.google.com/websearch/answer/4815696
+
+Current relevant point at review:
+- Google Alerts can provide email alerts for new Search results and allows configuration such as frequency, source type, language, region, and result volume.
+
+Portfilo should use alerts only to fill demonstrated monitoring gaps rather than creating broad alert volume by default.
 
 ## Maintenance rule
 
@@ -113,6 +142,8 @@ Re-check changing documentation when:
 - changing hosting or newsletter plans;
 - relying on a plan limit or price;
 - changing AI/editorial policy;
+- changing the editorial-intelligence tool stack;
+- a free tool limit becomes an operational constraint;
 - beginning a new major product phase.
 
 Do not assume values in this file remain current indefinitely.
