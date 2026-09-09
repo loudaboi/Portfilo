@@ -6,11 +6,11 @@ _Last updated: 2026-09-09_
 
 **WEBSITE / PRODUCT REDESIGN ACTIVE — G COMPLETE / H RESPONSIVE AUDIT NEXT**
 
-Sequence items A–G are complete on `build/portfilo-v0`. G1 `/subscribe`, G2 `/standards`, and G3 `/privacy` are founder-approved and locally validated. Sequence H, the dedicated site-wide responsive typography/layout audit, is now the exact next task.
+Sequence items A–G are complete on `build/portfilo-v0`. G1 `/subscribe`, G2 `/standards`, and G3 `/privacy` are founder-approved and locally validated. G1 was explicitly reopened immediately before H, redesigned, reapproved, and revalidated. Sequence H, the dedicated site-wide responsive typography/layout audit, is now the exact next task.
 
 Current and last fully validated runtime HEAD:
 
-`10b3d96b1f90260cb77fbd94414a360e1e365580` — `Simplify privacy notice`
+`c63d5f0fd295acca12fbf420ed9ebf5b2e591440` — `Reset subscribe page to responsive editorial layout`
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -165,7 +165,7 @@ Production empty-archive behavior intentionally keeps the contextual blue archiv
 
 The component uses the 84rem shell and the same 52rem-primary/right-column desktop grid as the publication system. Controls remain square and the layout stacks at narrower widths.
 
-The current `/subscribe` page does not render `SiteFooter.astro` at all. That page-level exception is founder-approved and does not change the shared footer contract for other routes.
+The current `/subscribe` page renders the compact shared `SiteFooter` with acquisition explicitly suppressed. This gives the page institutional navigation without duplicating the newsletter CTA.
 
 ## D — Archive/acquisition technical + rendered QA
 
@@ -318,105 +318,81 @@ The later dedicated multi-width full-site responsive audit remains sequence H an
 
 Sequence inside G:
 
-1. `/subscribe` — **COMPLETE**;
+1. `/subscribe` — **COMPLETE / REOPENED AND REVALIDATED BEFORE H**;
 2. `/standards` — **COMPLETE**;
 3. `/privacy` — **COMPLETE**.
 
 ### G1 `/subscribe`
 
-The first G1 implementation at `adaabb4ab6ad4a37e67095363df7b1146a89bd96` used a full-width Portfilo-blue acquisition band. Founder rendered review rejected that visual direction. It has zero current visual authority and must not be used as precedent for G1.
+The image-led campaign treatment validated earlier in G1 was explicitly reopened by the founder immediately before H because its 16:9 image-as-layout-container architecture was judged too fragile for mobile and no longer aligned with the simpler current Portfilo design direction. That treatment, including the page-scoped campaign statement and image overlay composition, is now historical only.
 
-The final founder-approved G1 contract is:
+Current founder-approved Subscribe contract:
 
-- focused utility landing page using the locked `public/images/subscribe-16x9.png` asset as the central visual stage;
-- standard shared `SiteHeader` above the stage;
-- no `SiteFooter` on `/subscribe` and therefore no generic dark footer acquisition on that page;
-- paper page background with natural document scrolling;
-- centered 84rem / 1344px maximum campaign shell;
-- image stage remains 16:9 in the current runtime;
-- one restrained solid dark image overlay for legibility, with no gradient, glass panel, rounded card, or decorative container;
-- exactly two direct overlay content blocks;
-- top-left block: light Portfilo wordmark plus the approved page-specific statement;
-- bottom-right block: one-line `GET THE NEWSLETTER` label above one inline email input + `SUBSCRIBE` CTA;
-- the campaign statement remains sentence case while `GET THE NEWSLETTER` remains all caps as a functional signup heading;
-- `GET THE NEWSLETTER` uses the same Instrument Sans weight, scale, line-height, and tracking as the campaign statement at the corresponding breakpoint;
-- the signup block width follows the rendered newsletter-label width, with the 8.5rem / 136px CTA retained and the email input taking the remaining width;
-- both overlay blocks use one shared campaign inset so their geometric edge spacing is equal;
-- the wordmark alone receives a narrow optical correction to compensate for transparent space inside the SVG, while the campaign sentence remains on the geometric inset;
-- the Portfilo wordmark-to-message gap is tightened to roughly 36–40px on desktop, intentionally larger than the newsletter-label-to-form gap;
-- the form CTA is 8.5rem / 136px wide on the current desktop treatment, centered explicitly, and uses weight 650;
-- form/input controls above 32rem use the approved 2.75rem / 44px height treatment;
-- the cadence support line and shared free/unsubscribe note remain intentionally hidden on this page;
-- the shared `NewsletterSignup.astro` still owns validation, honeypot, `/api/subscribe` submission, confirmation messaging, and error states;
-- the approved statement remains page-scoped campaign/institutional copy, not a permanent Portfilo tagline and not automatic authority for other surfaces;
-- natural document scrolling remains the approved behavior; the later no-scroll experiment was rejected and reverted;
-- dedicated laptop/tablet/mobile visual tuning is deferred to sequence H rather than reopening the approved desktop composition now.
+- standard shared `SiteHeader`;
+- no campaign image in the runtime composition;
+- no duplicated Portfilo wordmark inside the page;
+- no absolute-positioned copy or form;
+- no aspect-ratio container controlling the page composition;
+- current 84rem publication shell;
+- paper background, ink typography, neutral rules, and Portfilo blue used structurally;
+- one asymmetric desktop message/form grid in normal document flow;
+- message and form stack into one column below the desktop/tablet threshold;
+- phone layout uses naturally wrapping headline/support copy plus full-width stacked email field and CTA;
+- no `white-space: nowrap` dependency for the public message;
+- existing shared `NewsletterSignup.astro` retains validation, honeypot, `/api/subscribe`, confirmation, status, and error behavior;
+- visible utility note `Free newsletter. Unsubscribe anytime.` is allowed through the shared signup component;
+- `/subscribe` renders the compact shared `SiteFooter` with `showAcquisition={false}`, so Stories / Standards / Privacy and copyright remain available without a duplicate acquisition block;
+- the old `public/images/subscribe-16x9.png` asset remains in the repository but is no longer rendered by `/subscribe`;
+- no new dependency, framework, form implementation, API change, homepage change, or shared-header redesign.
 
-Locked asset:
+Current visible Subscribe copy uses already-approved newsletter language rather than a new campaign line:
 
-`public/images/subscribe-16x9.png`
+Headline:
 
-Founder-approved exact visible `/subscribe` public copy:
+`Get ahead in business and tech in 7 minutes.`
 
-Campaign statement:
+Support:
 
-`Some changes look small, until they reshape everything. We look closer.`
-
-The runtime intentionally presents that sentence across three visual lines:
-
-- `Some changes look small,`
-- `until they reshape everything.`
-- `We look closer.`
-
-Signup heading:
-
-`GET THE NEWSLETTER`
+`The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.`
 
 CTA:
 
 `SUBSCRIBE`
 
-The page currently has no visible cadence support line and no visible `Free newsletter. Unsubscribe anytime.` note.
-
-Meta title remains:
+Meta title:
 
 `Subscribe | Portfilo`
 
-Meta description remains:
+Meta description:
 
 `Subscribe to Portfilo’s free business and technology newsletter. Business and tech in 7 minutes, three times a week.`
 
-Implementation provenance:
+Current implementation:
 
-- `b66910b0e52e6eb93556985d38ca532e0513bdfb` — locked `/subscribe` image asset;
-- `f1c5d65e179c327cd8a9fb238952b34598bebed7` — historical removal of the earlier newsletter label before the later founder-approved restoration;
-- `f29f5b4ac1d9d659b0511b9bb96ef42db90fbfbd` — remove `/subscribe` footer and set message hierarchy;
-- `406b6fd18dfefca17eb4460e4201dc633bc94a4e` — set `SUBSCRIBE` CTA and strengthen its weight;
-- `972cbf96b21be699c35550f96c68355fe3f62148` — swap overlay blocks vertically;
-- `5a7cc7663838819f16880d3ec031a2baa37e0275` — establish the shared campaign inset and tighten the original form width;
-- `bd419eac0886696022da359f77df9b214e0f3895` — set 8.5rem CTA width and explicit centering;
-- `da9f4afc08ed53ba5f214c09c3dcd3794a76b8f3` — optical wordmark alignment and 44px form-control treatment;
-- `a429bd625a8002305799adc335194184c3747291` — restore visible `GET THE NEWSLETTER`;
-- `eca1af7d4704a2c24c75648adb8c50454a07e6c3` — match newsletter-heading typography to the campaign statement;
-- `8cd8f33b47f2df3a9a84a2acba13c2c991aa86a6` — match signup-block width to the newsletter heading;
-- `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten wordmark-to-message spacing;
-- `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted correction; historical only;
-- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition.
+- `c63d5f0fd295acca12fbf420ed9ebf5b2e591440` — reset `/subscribe` to the founder-approved responsive editorial layout.
+
+Relevant historical G1 provenance remains useful only as history:
+
+- `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — rejected full-blue Subscribe direction;
+- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — final validated image-led campaign version before the founder later reopened G1;
+- intermediate image-led refinements remain historical and must not override the current reset.
 
 ### G1 validation
 
 **PASS.**
 
-Recorded against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`:
+Recorded against runtime HEAD `c63d5f0fd295acca12fbf420ed9ebf5b2e591440`:
 
-- founder rendered desktop visual review after the final revert: **PASS**;
-- founder approval of the final visible newsletter heading, matched typography, matched heading/form width relationship, tightened left lockup spacing, CTA treatment, natural scrolling, and no-footer composition: **PASS**;
-- local `npm run check`: **PASS**, reported by the founder after pulling the final runtime;
-- local `npm run build`: **PASS**, reported by the founder after pulling the final runtime;
-- source review confirms `/subscribe` continues to use the shared `NewsletterSignup.astro` submission/validation implementation;
-- dedicated multi-width laptop/tablet/mobile visual audit remains sequence H.
+- founder rendered visual review of the reset composition: **PASS**;
+- founder approval of the simpler editorial direction and compact non-acquisition footer: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the reset runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the reset runtime;
+- source/diff review confirms the reset commit changed only `src/pages/subscribe.astro`;
+- shared NewsletterSignup behavior remains in use;
+- the scrollbar-gutter shift between short and long routes was observed and explicitly accepted without change;
+- dedicated full-site responsive audit remains sequence H.
 
-G1 is closed.
+G1 is closed again. Do not reopen it during H unless the audit finds a concrete responsive defect or the founder explicitly changes direction.
 
 ### G2 `/standards`
 
@@ -491,7 +467,7 @@ Recorded against runtime HEAD `10b3d96b1f90260cb77fbd94414a360e1e365580`:
 - the approved Privacy wording and data-flow boundaries were preserved in implementation;
 - dedicated multi-width site-wide responsive QA remains sequence H.
 
-G3 and sequence G are closed. Do not reopen these utility pages during H unless the responsive audit finds a concrete defect or the founder explicitly changes a decision.
+G3 and sequence G are closed.
 
 ## Remaining sequence
 
@@ -507,7 +483,7 @@ E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**
 
 F. revised shared article-template implementation + validation — **COMPLETE**;
 
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **COMPLETE**;
+G. simplify `/subscribe`, then `/standards`, then `/privacy` — **COMPLETE; SUBSCRIBE LATER REOPENED AND REVALIDATED BEFORE H**;
 
 H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NEXT**;
 
