@@ -95,25 +95,20 @@ main:focus,
   transform: translateY(0);
 }
 
-/* Keep zero-inventory states intentional without changing populated layouts. */
-.home-page .newsletter-band + .featured-section {
-  margin-top: clamp(1rem, 1.4vw, 1.5rem);
+/* Archive pages keep contextual signup copy but use the same dark footer family. */
+body.editorial-page .archive-acquisition {
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.home-page .news-section:has(.news-empty) {
-  display: none;
+body.editorial-page .archive-acquisition .newsletter-signup button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
 }
 
-.home-page .feature-rail:has(.feature-rail__latest-empty) {
-  justify-content: center;
-}
-
-.home-page .feature-rail__latest:has(.feature-rail__latest-empty) {
-  display: none;
-}
-
-.editorial-page main:has(.empty-state) .archive-acquisition {
-  display: none;
+body.editorial-page .archive-acquisition .newsletter-signup button:hover {
+  background: #00458f;
 }
 
 @media (prefers-reduced-motion: reduce) {
