@@ -1,10 +1,8 @@
 # Portfilo
 
-Portfilo is a business-and-technology media product.
+Portfilo is a business and technology publication.
 
-The current v0 direction is a **focused business/technology briefing + original reporting** product: News is the intended current/day-to-day layer, Features are the deeper editorial layer, and newsletter/email acquisition is a primary recurring-reader relationship. Portfilo makes no geographic product promise and remains free in v0.
-
-The working branch is currently in a website/product redesign. The transitional homepage is not design or copy precedent. The exact active task and approval boundary live only in `docs/PROJECT_STATE.md`.
+News is the current/day-to-day editorial layer. Stories are the deeper editorial layer. Public topics are `Business / Technology / Startup / AI`. Newsletter acquisition is an important recurring-reader relationship, but the publication remains editorial-first and free in v0.
 
 ## Repository authority
 
@@ -19,40 +17,70 @@ Read current authority in this order:
 5. the canonical standard and approved decision record relevant to the task
 6. current source code for actual runtime behavior
 
-Do not create a second execution-plan, roadmap, phase-state, or other file that competes with `docs/PROJECT_STATE.md` for the current phase or next task.
+Do not create a second execution-plan, roadmap, phase-state, or other file that competes with `docs/PROJECT_STATE.md`.
 
 For nontrivial discretionary Portfilo product, copy, design, imagery, newsletter, naming, social, or other public-facing decisions, read and apply:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
-Historical research is provenance, not current authority unless `docs/DOCUMENT_STATUS.md` says the decision has been promoted.
+Historical research is provenance, not current authority unless `docs/DOCUMENT_STATUS.md` says otherwise.
 
-## Current branch and release boundary
+## Branch and release boundary
 
-Authoritative working branch:
+Working branch:
 
 `build/portfilo-v0`
 
-`main` remains the separate release boundary. Do not merge to `main` without an intentional release review.
+Release boundary:
 
-## Current product and implementation state
+`main`
 
-Current approved direction includes:
+Do not merge to `main`, deploy, or release without the relevant explicit approval.
 
-- brand: Portfilo;
-- business-and-technology media product;
-- focused business/technology briefing + original reporting;
-- News as the intended current/day-to-day editorial layer;
-- Features as the deeper editorial layer;
-- intended reader-facing coverage labels: `Business / Technology / Startup / AI`;
-- no geographic product promise;
-- newsletter/email acquisition as a primary product relationship;
-- no approved public cadence or reading-time promise;
-- v0 remains free.
+The intended Cloudflare model is working-branch preview/test deployments and `main` as production. The actual external Cloudflare branch setting must be verified before release.
 
-The repository is intentionally between the old runtime and the approved redesign. In particular, the current content schema still uses the older topic values, and the current homepage is a rejected transitional implementation. Approved target state must not be mistaken for already-completed migration.
+## Current public route model
 
-The operational name `Portfilo Brief` still appears on current website/email surfaces. The approved redesign direction is a later coordinated migration to `Newsletter`; do not change it piecemeal.
+Keep:
+
+- `/`
+- `/news`
+- `/news/[slug]`
+- `/stories`
+- `/stories/[slug]`
+- `/standards`
+- `/privacy`
+- `/confirmed`
+- `/404`
+
+Retired:
+
+- `/subscribe` redirects to `/#newsletter`;
+- `/about` redirects to `/`;
+- public Series presentation is not part of v0.
+
+The final masthead is:
+
+`Portfilo | News | Stories`
+
+There is no individual public author/byline system in v0.
+
+## Newsletter
+
+Every visible newsletter form uses the shared `NewsletterSignup.astro` component and `/api/subscribe` endpoint.
+
+beehiiv owns double opt-in confirmation, subscriber storage, delivery, and unsubscribe handling. Portfilo does not maintain a separate subscriber database.
+
+The homepage `/#newsletter` section is the direct signup destination.
+
+## Responsive contract
+
+- 1440 / 1366: full desktop.
+- 1024: compact desktop/laptop with preserved structure and deliberate side breathing room.
+- 768: tablet remains in the desktop layout family with selective reflow only where needed.
+- 390 / 375 / 320: deliberate phone simplification.
+
+Forms should remain constrained on tablet rather than becoming unnecessarily wide after stacking. Typography must scale progressively across these widths.
 
 ## Technical direction
 
@@ -65,26 +93,13 @@ For v0:
 - minimal client-side JavaScript;
 - no frontend framework by default;
 - no database, authentication, or custom CMS;
-- Cloudflare Pages deployment;
+- Cloudflare Pages;
 - one narrow Pages Function at `/api/subscribe`;
-- beehiiv for subscriber confirmation, storage, delivery, and unsubscribe handling.
+- beehiiv for newsletter infrastructure.
+
+Node is pinned through `.node-version`.
 
 Do not add infrastructure for hypothetical scale. `docs/V0_SCOPE.md` owns the detailed boundaries.
-
-## Clean handoff procedure
-
-Before a new chat or contributor writes anything:
-
-1. verify the current branch and HEAD;
-2. read `AGENTS.md` completely;
-3. read `docs/PROJECT_STATE.md` completely;
-4. read `docs/DOCUMENT_STATUS.md` completely;
-5. read `docs/V0_SCOPE.md` completely;
-6. read the canonical standards/research named by the exact task;
-7. apply `skills/portfilo-anti-slop/SKILL.md` when the task contains a nontrivial discretionary decision;
-8. stay inside the exact approval gate.
-
-At a meaningful handoff boundary, commit stable work, update `docs/PROJECT_STATE.md` only when the current phase/next task actually changes, update `docs/DOCUMENT_STATUS.md` when authority changes, record unresolved assets/issues, and state the exact next gate.
 
 ## Local development
 
@@ -93,14 +108,15 @@ npm install
 npm run dev
 ```
 
-Validation commands when runtime work requires them:
+Validation:
 
 ```bash
 npm run check
 npm run build
+npm run preview
 ```
 
-Never report either command as passing unless it actually ran in the relevant state.
+Never report a command as passing unless it actually ran against the relevant state.
 
 ## Security
 
@@ -117,8 +133,15 @@ Never commit or upload:
 
 Use `.dev.vars.example` only as a local configuration template.
 
-For a clean local handoff archive from a stable commit:
+## Handoff
 
-```bash
-git archive --format=zip --output=portfilo-context.zip HEAD
-```
+Before a new contributor writes anything:
+
+1. verify branch and HEAD;
+2. read `AGENTS.md`;
+3. read `docs/PROJECT_STATE.md`;
+4. read `docs/DOCUMENT_STATUS.md`;
+5. read `docs/V0_SCOPE.md`;
+6. read the task-specific canonical standards;
+7. apply the anti-slop skill when the task contains a material discretionary decision;
+8. stay inside the current approval gate.
