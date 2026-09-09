@@ -9,8 +9,7 @@ import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 export async function getStaticPaths() {
   const stories = await getCollection(
     "stories",
-    ({ data }) =>
-      data.section === "stories" && (data.status === "published" || import.meta.env.DEV),
+    ({ data }) => data.section === "stories",
   );
 
   return stories.map((story) => ({
@@ -46,12 +45,13 @@ const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 const pageDescription = metaDescription ?? dek;
 const displayImage = image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
+const isDraft = status === "draft";
 
 const classification = [
   formatLabel(contentType),
   formatLabel(topic),
   ...(publishedAt ? [formatDate(publishedAt)] : []),
-  ...(import.meta.env.DEV && status === "draft" ? ["Draft"] : []),
+  ...(isDraft ? ["Draft"] : []),
 ];
 
 const metadata = [
@@ -77,7 +77,10 @@ const normalizedCorrection = correction
     <SiteHead
       title={`${title} | Portfilo`}
       description={pageDescription}
-      article={{
+      robots={isDraft ? "noindex, nofollow" : undefined}
+      canonical={!isDraft}
+      social={!isDraft}
+      article={isDraft ? undefined : {
         publishedAt,
         updatedAt,
         image: image ? { src: image.src, alt: image.alt } : undefined,
