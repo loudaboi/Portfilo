@@ -314,7 +314,7 @@ const railArchiveLabel = formatLabel(railSection);
 
     <SiteFooter />
 
-    <script is:inline>
+    <script is:inline data-astro-rerun>
       (() => {
         const rail = document.querySelector("[data-latest-rail]");
         const track = rail?.querySelector("[data-latest-track]");
@@ -512,11 +512,13 @@ const railArchiveLabel = formatLabel(railSection);
           window.removeEventListener("resize", handleResize);
           motionQuery.removeEventListener?.("change", setupTicker);
           window.removeEventListener("pagehide", cleanupTicker);
+          document.removeEventListener("astro:before-swap", cleanupTicker);
         };
 
         window.addEventListener("resize", handleResize);
         motionQuery.addEventListener?.("change", setupTicker);
         window.addEventListener("pagehide", cleanupTicker, { once: true });
+        document.addEventListener("astro:before-swap", cleanupTicker, { once: true });
 
         setupTicker();
       })();
