@@ -27,7 +27,7 @@ Do not create a second execution-plan document. `docs/PROJECT_STATE.md` owns the
 
 ### Product and state
 
-- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–F are complete. G is active. G1 `/subscribe` is complete and validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`. G2 `/standards` is complete and validated against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`, with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. G3 `/privacy` is next and begins at inspection/planning, not implementation.
+- `docs/PROJECT_STATE.md` — **CURRENT PHASE AND EXACT NEXT TASK**. A–G are complete. G1 `/subscribe` is validated against runtime HEAD `9e2348763a0d6c811a095767beeb5bc6e5962f83`. G2 `/standards` is validated against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`. G3 `/privacy` is validated against runtime HEAD `10b3d96b1f90260cb77fbd94414a360e1e365580`, with founder rendered approval plus user-reported local `npm run check` and `npm run build` PASS. Sequence H responsive audit is next and begins at inspection/audit planning, not implementation.
 - `docs/V0_SCOPE.md` — current v0 product/technical boundary document. Older clauses describing News/Stories architecture, legacy taxonomy, `/latest`, ticker motion, or legacy newsletter naming as future/current gates are subordinate to `PROJECT_STATE` where they conflict.
 - `BACKLOG.md` — valid ideas outside current scope.
 
@@ -49,7 +49,7 @@ Current:
 
 ### Design and imagery
 
-- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, current shared article runtime, final G1 subscribe runtime, or final G2 Standards runtime are subordinate to `PROJECT_STATE` and current source.
+- `docs/DESIGN_DIRECTION.md` — current general visual principles. Homepage-specific passages that predate the current header, blue hero, ticker behavior, archive unification, shared acquisition runtime, current shared article runtime, final G1 subscribe runtime, final G2 Standards runtime, or final G3 Privacy runtime are subordinate to `PROJECT_STATE` and current source.
 - `docs/IMAGE_SYSTEM.md` — canonical editorial image rules; v0 primary story-image ratio remains 16:9 landscape.
 - `docs/PHOTO_TREATMENT.md` — current photo treatment where applicable.
 
@@ -125,7 +125,9 @@ Current:
 - `docs/BEEHIIV_EMAIL_SETUP.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-The email infrastructure remains current. The final G1 `/subscribe` implementation uses the shared newsletter component and does not reintroduce stale `Portfilo Brief` wording or duplicate form logic. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
+The email infrastructure remains current. The final G1 `/subscribe` implementation uses the shared newsletter component and does not reintroduce stale `Portfilo Brief` wording or duplicate form logic. The final G3 Privacy notice uses neutral `Portfilo newsletter` website language without claiming the beehiiv-side operational naming migration has occurred. Do not opportunistically migrate unrelated deferred surfaces outside their active gate.
+
+Cloudflare Web Analytics remains described in production setup as a v0 capability whose enablement/verification is still unresolved. The final G3 Privacy notice intentionally does not claim that analytics is active.
 
 ### Audience / distribution
 
@@ -297,6 +299,25 @@ Current contract:
 - no decorative sidebars or card-like note system;
 - no new dependency, framework, schema, shared-component, archive, article, homepage, Subscribe, or Privacy changes.
 
+### `/privacy`
+
+The founder-approved G3 runtime is the restrained privacy notice implemented at `10b3d96b1f90260cb77fbd94414a360e1e365580`.
+
+Current contract:
+
+- current 84rem publication shell and shared header alignment;
+- normal shared SiteHeader and SiteFooter behavior, including the normal shared footer acquisition;
+- simple unnumbered `On this page` links;
+- Instrument Sans hierarchy and Source Serif 4 substantive reading copy;
+- sections for Information we collect, Newsletter, Service providers, Retention, Your choices and rights, and Contact;
+- website-facing newsletter terminology uses `Portfilo newsletter` rather than stale `Portfilo Brief` wording;
+- notice reflects the current email-address submission, hidden honeypot field, Cloudflare Pages Function proxy, fixed website attribution, beehiiv double opt-in/subscriber storage/delivery/unsubscribe role, and absence of a separate Portfilo subscriber database;
+- service-provider section identifies Cloudflare, beehiiv, and jsDelivr based on the current runtime;
+- notice does not claim Cloudflare Web Analytics is active while that configuration remains unresolved;
+- privacy contact is `portfilo.ph@gmail.com` for v0;
+- rights language is qualified to applicable privacy law and includes the Philippine National Privacy Commission complaint route;
+- no invented legal identity, unsupported provider/account feature claim, cookie-banner requirement, analytics implementation, database, or new dependency.
+
 ## Current validation authority
 
 Archive/acquisition sequence A–D is validated.
@@ -331,6 +352,15 @@ G2 `/standards` is validated against runtime HEAD `b7c764647d8b583ceb64d54aca1ee
 - local `npm run build`: **PASS**, reported by the founder after pulling the G2 runtime;
 - source/diff review confirms the runtime commit changed only `src/pages/standards.astro`;
 - substantive institutional standards were preserved rather than materially rewritten;
+- dedicated multi-width site-wide responsive QA remains sequence H.
+
+G3 `/privacy` is validated against runtime HEAD `10b3d96b1f90260cb77fbd94414a360e1e365580`:
+
+- founder rendered visual review: **PASS**;
+- local `npm run check`: **PASS**, reported by the founder after pulling the G3 runtime;
+- local `npm run build`: **PASS**, reported by the founder after pulling the G3 runtime;
+- source/diff review confirms the runtime commit changed only `src/pages/privacy.astro`;
+- approved privacy wording and verified data-flow boundaries were preserved in implementation;
 - dedicated multi-width site-wide responsive QA remains sequence H.
 
 Because there are currently no published News entries, absence of a production `/news/[slug]` page is expected. No production News article was fabricated solely for QA.
@@ -376,7 +406,8 @@ G utility runtime:
 - `b8b72646ea288fa9b5c40858082d48d8dcdb9995` — tighten wordmark-to-message spacing;
 - `ad7cb5520163c56e573d6e6e26622e34439252c7` and `0ba54ef882d78ced023ae2bb6c172f442dd24c10` — rejected no-scroll experiment and attempted correction; historical only;
 - `9e2348763a0d6c811a095767beeb5bc6e5962f83` — revert the no-scroll experiment and restore the approved natural-scrolling composition;
-- `b7c764647d8b583ceb64d54aca1ee1b99df3027c` — simplify `/standards` into the founder-approved restrained editorial page.
+- `b7c764647d8b583ceb64d54aca1ee1b99df3027c` — simplify `/standards` into the founder-approved restrained editorial page;
+- `10b3d96b1f90260cb77fbd94414a360e1e365580` — simplify `/privacy` into the founder-approved notice aligned to the verified current data flow.
 
 Initial News + Stories implementation remains historical runtime provenance:
 
@@ -417,6 +448,9 @@ Do not reintroduce:
 - numbered five-cell Standards index and repeated `01 / 02 / 03` presentation scaffold;
 - giant numeric AI marker and black AI takeover treatment on Standards;
 - red correction-card and decorative sidebar treatments on Standards;
+- old G3 Privacy 100rem / 12-column utility-page composition;
+- numbered Privacy `01 / 02 / 03` scaffold and stale `Portfilo Brief` website-facing privacy terminology;
+- the incomplete old three-section Privacy notice as current data-flow authority;
 - fabricated production News;
 - generic production fallback imagery;
 - implementation-time global design changes without approval.
