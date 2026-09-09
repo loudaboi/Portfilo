@@ -4,13 +4,21 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REDESIGN ACTIVE — G COMPLETE / H RESPONSIVE AUDIT NEXT**
+**WEBSITE / PRODUCT REMEDIATION IMPLEMENTED — VALIDATION PENDING**
 
-Sequence items A–G are complete on `build/portfilo-v0`. G1 `/subscribe`, G2 `/standards`, and G3 `/privacy` are founder-approved and locally validated. G1 was explicitly reopened immediately before H, redesigned, reapproved, and revalidated. Sequence H, the dedicated site-wide responsive typography/layout audit, is now the exact next task.
+The founder-approved full-site remediation pass has been implemented on `build/portfilo-v0` at source level.
 
-Current and last fully validated runtime HEAD:
+The latest runtime/asset-changing commit before documentation reconciliation is:
+
+`281153849d737206ca0602aa1e52d2ab9ec5d428` — `Remove retired subscribe campaign image`
+
+Documentation-only reconciliation commits follow that runtime state on the same working branch.
+
+The last previously fully validated runtime remains:
 
 `c63d5f0fd295acca12fbf420ed9ebf5b2e591440` — `Reset subscribe page to responsive editorial layout`
+
+That older validation does **not** validate the new remediation implementation.
 
 No deployment, merge to `main`, or release is authorized.
 
@@ -22,37 +30,42 @@ Read in this order:
 2. `docs/PROJECT_STATE.md`
 3. `docs/DOCUMENT_STATUS.md`
 4. `docs/V0_SCOPE.md`
-5. the canonical standard and approved decision record relevant to the task
+5. the canonical standard/approved decision relevant to the task
 6. current source code for actual runtime behavior
 
 Mandatory discretionary-decision gate:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
-Do not create another execution-plan or roadmap file. This document owns current phase and next task.
-
 ## Branch and release boundary
 
-Authoritative working branch:
+Working branch:
 
 `build/portfilo-v0`
 
-`main` remains the release boundary.
+Release boundary:
+
+`main`
+
+Intended Cloudflare branch model:
+
+- `build/portfilo-v0` -> preview/test
+- `main` -> production
+
+The actual Cloudflare Pages production-branch setting still requires external verification/correction before release readiness.
 
 ## Approved product direction
 
-- Brand: **Portfilo**.
-- Product: business and technology publication.
-- **News** is the current/day-to-day editorial layer.
-- **Stories** is the deeper editorial layer.
-- Header: `Portfilo | News | Stories | SUBSCRIBE FREE`.
-- Public topic taxonomy: `Business / Technology / Startup / AI`.
+- Portfilo is a business and technology publication.
+- News is the current/day-to-day editorial layer.
+- Stories is the deeper editorial layer.
+- Public topics: `Business / Technology / Startup / AI`.
 - Portfilo remains free in v0.
-- Newsletter acquisition remains primary.
-- Approved main newsletter promise: latest news, a 7-minute read, three times per week.
-- Exact newsletter send days/times remain open.
-- `briefing` remains rejected as public acquisition language.
-- Four-issue newsletter pilot remains parked until the core site is built.
+- Newsletter acquisition remains important but must not dominate the publication identity.
+- Approved newsletter promise: latest news, a 7-minute read, three times per week.
+- Exact send days/times remain open.
+- `briefing` is rejected as website acquisition language.
+- No individual public author/byline system is part of v0.
 
 Approved internal selection lens:
 
@@ -60,469 +73,171 @@ Approved internal selection lens:
 
 This is internal only.
 
-## Current implemented publication system
+## Current public route model
 
-### Homepage
+Keep:
 
-The homepage remains the visual reference for broad publication surfaces. Current approved characteristics include:
-
-- shared 84rem / 1344px shell;
-- matched 5.8rem header/footer wordmarks;
-- Portfilo-blue newsletter hero;
-- Instrument Sans homepage direction;
-- square newsletter controls;
-- desktop publication grid based on a 52rem primary column + shared gap + right column;
-- full-bleed Latest-news ticker;
-- restrained automatic ticker movement only when inventory is sufficient, with hover/focus/manual-interaction pause and `prefers-reduced-motion` support;
-- 16:9 Feature imagery with a thin Portfilo-blue top rule;
-- Feature + continuous blue Stories rail;
-- homepage News sourced only from News;
-- development-only synthetic News fixtures when real published News is absent;
-- production never fabricates News;
-- one shared dark footer-acquisition section before the compact SiteFooter;
-- compact SiteFooter: wordmark | Stories | Standards | Privacy | copyright;
-- shared header CTA renders as `SUBSCRIBE FREE` on all routes.
-
-Do not reopen unrelated homepage design during later page work.
-
-### News + Stories collection and routes
-
-The existing Astro editorial collection remains one collection with:
-
-```yaml
-section: news | stories
-```
-
-`section`, `contentType`, and `topic` remain separate dimensions.
-
-Current public topics:
-
-`business / technology / startup / ai`
-
-Optional editorial image metadata remains:
-
-```yaml
-image:
-  src: /images/...
-  alt: ...
-  credit: ...        # optional
-  generated: true    # optional
-```
-
-Implemented routes:
-
+- `/`
 - `/news`
 - `/news/[slug]`
 - `/stories`
 - `/stories/[slug]`
+- `/standards`
+- `/privacy`
+- `/confirmed`
+- `/404`
+- `/robots.txt`
+- `/api/subscribe`
 
-At current inventory there are no published News entries. Production stays factual and does not fabricate News. Development may use clearly synthetic News fixtures on archive/homepage surfaces, but no fake News article route should be created merely for presentation.
+Retired:
 
-### Shared archive system
+- `/subscribe` as a standalone page; Cloudflare redirect target is `/#newsletter`.
+- `/about`; Cloudflare redirect target is `/`.
+- public `/series/[slug]` presentation.
 
-`src/components/EditorialArchive.astro` owns the archive presentation for both `/news` and `/stories`.
+## Current implementation contract
 
-Both archives share:
+### Shared foundation
 
-- page-title treatment;
-- 84rem shell;
-- lead package grid;
-- 16:9 image treatment;
-- headline/dek placement;
-- metadata-slot geometry;
-- supporting-row geometry;
-- spacing/dividers;
-- optional supporting image slot;
-- breakpoint behavior;
-- full-width blue archive acquisition band.
+`src/styles/global.css` now owns font loading, current palette, the 84rem shell variables, shared responsive gutter, base focus behavior, and other global foundations.
 
-News and Stories retain section-specific data and metadata values without separate layout systems.
+The shared shell gutter is designed to provide about 32px of breathing room at 1024px while remaining fluid at desktop/tablet/phone widths.
 
-Approved archive acquisition copy remains:
+### Header
 
-News:
+Final masthead:
 
-- `Get Portfilo news in your inbox.`
-- `The latest news on companies, startups, products, markets, AI, and technology. Three times a week.`
+`Portfilo | News | Stories`
 
-Stories:
+The persistent Subscribe CTA, ClientRouter, header persistence, and custom route-state synchronization have been removed.
 
-- `Get Portfilo stories in your inbox.`
-- `Deeper reporting, explainers, and analysis on business and technology.`
+### Homepage
 
-Production empty-archive behavior intentionally keeps the contextual blue archive signup and suppresses the redundant generic dark footer signup when an archive has zero items.
+Current structure remains:
 
-### Shared footer acquisition
+- top newsletter acquisition;
+- Latest News strip when inventory exists;
+- primary Feature + contextual blue rail;
+- News section;
+- shared footer acquisition and compact footer.
 
-`src/components/FooterAcquisition.astro` owns the dark/ink pre-footer newsletter acquisition.
+Real published News receives `/news/[slug]` links. Development-only synthetic News remains non-clickable and cannot create fake article routes.
 
-`src/components/SiteFooter.astro` renders it by default on substantive pages and excludes:
+Real secondary Story content now takes precedence over the synthetic development Story rail fallback.
 
-- `/subscribe`;
-- `/confirmed`;
-- `/404`;
-- any page that explicitly disables it for a justified local acquisition state.
+### Newsletter forms
 
-The component uses the 84rem shell and the same 52rem-primary/right-column desktop grid as the publication system. Controls remain square and the layout stacks at narrower widths.
+All visible newsletter forms continue to use `NewsletterSignup.astro` and `/api/subscribe`.
 
-The current `/subscribe` page renders the compact shared `SiteFooter` with acquisition explicitly suppressed. This gives the page institutional navigation without duplicating the newsletter CTA.
+Forms are measure-constrained so tablet stacking does not produce uncontrolled full-width inputs.
 
-## D — Archive/acquisition technical + rendered QA
+The standalone `/subscribe` page has been removed. The homepage `/#newsletter` section is the direct signup destination.
 
-**COMPLETE.**
+### Responsive model
 
-Recorded validation against the A–D runtime state:
+Acceptance widths:
 
-- founder visual inspection: PASS;
-- `npm run check`: PASS;
-- `npm run build`: PASS;
-- source inspection verified NewsletterSignup form behavior remains on the existing `/api/subscribe` contract;
-- `/subscribe` remains excluded from the shared footer acquisition;
-- archive supporting images remain optional and 16:9 when present;
-- one production-only empty-News double-acquisition edge case was discovered during QA and fixed in `80349a49d6aa484d320d51b648c1964e2c3f7697`.
+`1440 / 1366 / 1024 / 768 / 390 / 375 / 320`
 
-The later dedicated full-site responsive audit is still separate and has not been completed.
+Approved interpretation:
 
-## E — Shared article-template design gate
+- desktop, laptop, and tablet are one layout family;
+- 1024 preserves compact-desktop structure with more side breathing room;
+- 768 uses selective reflow instead of blanket mobile stacking;
+- phone is the main structural simplification point;
+- important typography scales progressively rather than waiting for one abrupt mobile breakpoint.
 
-**COMPLETE, THEN AMENDED BY FOUNDER REVIEW DURING F.**
+The homepage, shared archives, and footer acquisition now preserve multi-column structure through tablet widths where viable and stack near phone widths instead.
 
-The original E decision established one shared article system for News and Stories, an optional restrained 16:9 hero, narrow reading measure, shared notes/corrections, legitimate News-vs-Stories reading-font differences, and no parallel article CSS systems.
+### Archives
 
-The original E scope excluded a table of contents. During rendered F review, the founder explicitly reopened the article composition because the left-aligned header continued to feel visually unbalanced. The founder supplied the current OpenAI article treatment as a structural reference and explicitly approved this later correction:
+`EditorialArchive.astro` remains the shared News/Stories archive system.
 
-- center the article classification/headline/dek package and any remaining supplemental metadata;
-- keep the restrained 54rem 16:9 hero;
-- keep the body around 41–42rem;
-- add a Stories-only in-page section navigation when enough real `h2` sections exist;
-- keep News simpler without that rail;
-- defer article audio/listen functionality rather than adding it to F.
+Current behavior:
 
-During the same rendered F review, the founder later removed visible article bylines because the author block created awkward header positioning. This is a presentation decision only: the canonical content `author` field remains internal editorial metadata and continues to feed article structured data/SEO where applicable.
+- explicit image and image-less lead/supporting states;
+- supporting archive images do **not** use repeated blue top rules;
+- contextual acquisition remains;
+- supporting layouts preserve desktop-family structure through tablet where viable.
 
-The founder also approved a dedicated thin neutral divider between the article header package and an optional hero image. The divider is independent of author/update/series metadata and does not replace the hero's existing blue top rule.
+### Articles
 
-These later founder decisions supersede the original E exclusion of table-of-contents navigation and visible author metadata in the article header. They do not authorize unrelated OpenAI-style features, visual copying, audio, sharing, related content, or new dependencies.
+`EditorialArticle.astro` remains the shared News/Stories article system.
 
-## F — Revised shared article-template implementation
+Current behavior:
 
-**COMPLETE.**
+- centered header package;
+- no visible author/byline;
+- content schema no longer contains an individual `author` field;
+- Article structured data uses Portfilo Organization as author/publisher;
+- no neutral divider between article header and hero;
+- tighter deliberate header-to-image whitespace;
+- primary article hero retains its thin blue top rule;
+- 54rem header/hero geometry and 41.5rem reading measure retained;
+- News remains sans reading mode;
+- Stories remains serif reading mode;
+- conditional Story `In this story` rail remains when at least three real `h2` sections exist;
+- methodology/corrections remain supported;
+- real article hero image now feeds article social/structured metadata when available.
 
-`src/components/EditorialArticle.astro` remains the single article presentation component for `/news/[slug]` and `/stories/[slug]`.
+### Institutional and utility pages
 
-Current shared article contract:
+- Standards and Privacy now use the shared publication foundation rather than redeclaring a competing root/font system.
+- `/confirmed` uses current `Portfilo newsletter` language and restrained shared utility styling.
+- `/404` uses the same restrained utility family.
 
-- centered classification row;
-- centered Instrument Sans headline;
-- centered dek;
-- visible article author/byline omitted;
-- supplemental article metadata renders only when genuinely present, such as Updated or Series;
-- internal `author` content metadata remains retained and continues to feed `SiteHead` article metadata;
-- article header max width: 54rem;
-- headline max width: 54rem with a restrained desktop maximum around 4.35rem for more resilient multi-line titles;
-- optional 16:9 hero max width: 54rem;
-- thin neutral structural divider between header package and hero when a hero is present;
-- thin Portfilo-blue hero top rule;
-- image credit and generated-image disclosure preserved;
-- reading measure: 41.5rem;
-- News uses Instrument Sans reading mode;
-- Stories use Source Serif 4 reading mode;
-- shared headings, links, lists, blockquotes, code/media spacing, methodology and correction treatment;
-- one shared dark footer acquisition at the article end;
-- no route-local article CSS and no inline article newsletter block.
+### Retired fixtures/assets
 
-### Stories in-page section navigation
+Removed:
 
-Stories receive Markdown headings from Astro `render()`.
+- public Series route and Series fixture collection;
+- obsolete `portfilo-*` architecture/order fixtures;
+- old homepage source/background image variants;
+- retired Subscribe campaign image.
 
-The shared component renders the `In this story` rail only when:
+The approved `public/images/homepage-feature-16x9.png` remains the canonical Feature/Story asset. It is still a large PNG and requires a separate binary optimization step if/when tooling permits without altering the approved visual.
 
-- `mode === "stories"`; and
-- the article has at least three real level-2 (`h2`) headings.
+### Node
 
-Behavior:
+`.node-version` pins Node `22.12.0` for the current Astro toolchain.
 
-- desktop: left in-page navigation + narrow main reading column;
-- rail links are generated from existing Markdown heading slugs/text;
-- rail is sticky while the article is read on sufficiently wide screens;
-- below 56rem the rail is hidden and the reading column returns to the centered single-column layout;
-- no headings are invented solely to make the navigation appear.
+## Validation status
 
-The published Story `/stories/what-actually-makes-starting-a-business-hard` contains no `h2` headings and therefore intentionally shows no rail.
+**NOT YET VALIDATED.**
 
-The existing DEV-visible draft `/stories/what-higher-value-work-means-in-philippine-it-bpm` contains six `h2` headings and remains the current rendered test case for the rail.
+No new `npm run check`, `npm run build`, or rendered cross-device QA has been recorded against this remediation state.
 
-### Explicitly deferred from F
-
-Do not add without a later approved requirement:
-
-- listen-to-article / TTS / audio generation;
-- audio player;
-- share toolbar;
-- related stories;
-- most-popular modules;
-- comments;
-- author biography system;
-- reading-time calculation;
-- custom article motion;
-- special one-off feature templates;
-- new dependencies.
-
-Audio was discussed during founder review and intentionally deferred because player UI is simple but reliable article audio requires a separate source/generation and publishing workflow decision.
-
-### F runtime commits
-
-Initial shared article implementation:
-
-- `ca853921ae19d36d08188090ac29a916d8584b1e` — shared article component;
-- `d3606dfbcb8f97357084b6e98dea3974aaedfcb8` — News route migration;
-- `87e9b2b083622b80f9a66652806e5f8ed4a5d924` — Stories route migration;
-- `dff79cd039de478c47583a06b5aecd5810e38c67` — obsolete article-newsletter suppression cleanup.
-
-Founder-review geometry corrections:
-
-- `52eed7f71fab1ebed46ee0545ff270b167f2dde6` — tighten article geometry;
-- `5d8ca03d8aa2fa8141d0e1387a45bae1d836222a` — align header and hero frame;
-- `9dcbfc6bb1c2b58d0c04afd6bde0b3a75687e441` — balance internal header widths;
-- `98ee5dfdb20d01735485a34031138730ef021ce9` — reduce headline scale and use full 54rem title frame.
-
-Current structural correction:
-
-- `88acad2f36135d3149e6ed4aa07792810ba3dfec` — centered header + conditional Story section rail;
-- `f3ebed7441dfef4726bd65e0c9b4d17f737e6ef8` — feed Astro Story headings into the shared article component;
-- `e87a82f6dfc6f6afd0659ff89a08094f7ca82700` — remove visible News author metadata;
-- `94effd0f89efd675dad82aba2d88f5ead983656f` — remove visible Story author metadata;
-- `7ffc3021c93a8a512b1c220cea8ef7b4361d611b` — restore the independent neutral header/hero divider.
-
-The byline removal changed only article presentation. It did not remove the `author` field from content, schema, structured metadata, or editorial provenance.
-
-No dependency, schema, framework, CMS, database, production-content, archive, homepage, or utility-page changes were made by these corrections.
-
-### F validation
-
-**PASS.**
-
-Recorded against runtime HEAD `7ffc3021c93a8a512b1c220cea8ef7b4361d611b`:
-
-- founder rendered visual review: **PASS**;
-- local `npm run check`: **PASS**, reported by the founder after pulling the latest branch;
-- local `npm run build`: **PASS**, reported by the founder after pulling the latest branch;
-- article geometry, headline wrapping, visible-byline removal, independent divider, 16:9 hero treatment and reading composition were founder-approved through rendered review;
-- no published News article was fabricated solely for QA.
-
-The later dedicated multi-width full-site responsive audit remains sequence H and is not complete.
-
-## G — Utility/editorial page simplification
-
-**COMPLETE.**
-
-Sequence inside G:
-
-1. `/subscribe` — **COMPLETE / REOPENED AND REVALIDATED BEFORE H**;
-2. `/standards` — **COMPLETE**;
-3. `/privacy` — **COMPLETE**.
-
-### G1 `/subscribe`
-
-The image-led campaign treatment validated earlier in G1 was explicitly reopened by the founder immediately before H because its 16:9 image-as-layout-container architecture was judged too fragile for mobile and no longer aligned with the simpler current Portfilo design direction. That treatment, including the page-scoped campaign statement and image overlay composition, is now historical only.
-
-Current founder-approved Subscribe contract:
-
-- standard shared `SiteHeader`;
-- no campaign image in the runtime composition;
-- no duplicated Portfilo wordmark inside the page;
-- no absolute-positioned copy or form;
-- no aspect-ratio container controlling the page composition;
-- current 84rem publication shell;
-- paper background, ink typography, neutral rules, and Portfilo blue used structurally;
-- one asymmetric desktop message/form grid in normal document flow;
-- message and form stack into one column below the desktop/tablet threshold;
-- phone layout uses naturally wrapping headline/support copy plus full-width stacked email field and CTA;
-- no `white-space: nowrap` dependency for the public message;
-- existing shared `NewsletterSignup.astro` retains validation, honeypot, `/api/subscribe`, confirmation, status, and error behavior;
-- visible utility note `Free newsletter. Unsubscribe anytime.` is allowed through the shared signup component;
-- `/subscribe` renders the compact shared `SiteFooter` with `showAcquisition={false}`, so Stories / Standards / Privacy and copyright remain available without a duplicate acquisition block;
-- the old `public/images/subscribe-16x9.png` asset remains in the repository but is no longer rendered by `/subscribe`;
-- no new dependency, framework, form implementation, API change, homepage change, or shared-header redesign.
-
-Current visible Subscribe copy uses already-approved newsletter language rather than a new campaign line:
-
-Headline:
-
-`Get ahead in business and tech in 7 minutes.`
-
-Support:
-
-`The latest news on companies, startups, products, markets, AI, and technology. Three times a week, straight to your inbox.`
-
-CTA:
-
-`SUBSCRIBE`
-
-Meta title:
-
-`Subscribe | Portfilo`
-
-Meta description:
-
-`Subscribe to Portfilo’s free business and technology newsletter. Business and tech in 7 minutes, three times a week.`
-
-Current implementation:
-
-- `c63d5f0fd295acca12fbf420ed9ebf5b2e591440` — reset `/subscribe` to the founder-approved responsive editorial layout.
-
-Relevant historical G1 provenance remains useful only as history:
-
-- `adaabb4ab6ad4a37e67095363df7b1146a89bd96` — rejected full-blue Subscribe direction;
-- `9e2348763a0d6c811a095767beeb5bc6e5962f83` — final validated image-led campaign version before the founder later reopened G1;
-- intermediate image-led refinements remain historical and must not override the current reset.
-
-### G1 validation
-
-**PASS.**
-
-Recorded against runtime HEAD `c63d5f0fd295acca12fbf420ed9ebf5b2e591440`:
-
-- founder rendered visual review of the reset composition: **PASS**;
-- founder approval of the simpler editorial direction and compact non-acquisition footer: **PASS**;
-- local `npm run check`: **PASS**, reported by the founder after pulling the reset runtime;
-- local `npm run build`: **PASS**, reported by the founder after pulling the reset runtime;
-- source/diff review confirms the reset commit changed only `src/pages/subscribe.astro`;
-- shared NewsletterSignup behavior remains in use;
-- the scrollbar-gutter shift between short and long routes was observed and explicitly accepted without change;
-- dedicated full-site responsive audit remains sequence H.
-
-G1 is closed again. Do not reopen it during H unless the audit finds a concrete responsive defect or the founder explicitly changes direction.
-
-### G2 `/standards`
-
-The previous Standards runtime used a bespoke 100rem / 12-column microsite treatment with numbered section scaffolding, oversized display typography, a five-cell numbered index, a black AI takeover section, a special red correction treatment, and sidebar/card-like notes. That visual system is superseded by the founder-approved G2 simplification.
-
-The final founder-approved G2 contract is:
-
-- one restrained text-led editorial/utility page inside the current 84rem publication shell;
-- standard shared `SiteHeader` and normal shared `SiteFooter` behavior, including the shared footer acquisition;
-- current page title, introduction, substantive standards copy, metadata title, and metadata description preserved;
-- simple unnumbered `On this page` jump links for Sources, Verification, AI use, Corrections, and Commercial independence;
-- one consistent section system rather than separate visual treatments for each topic;
-- Instrument Sans for hierarchy and utility text;
-- Source Serif 4 for substantive reading copy;
-- narrow reading measure aligned with the current editorial reading system;
-- supporting principles and process information preserved inline rather than deleted merely because their old containers were removed;
-- no giant numeric markers, numbered presentation scaffold, black AI takeover, red correction card, decorative sidebars, cards, gradients, or new graphics;
-- no dependency, framework, schema, shared-header, shared-footer, archive, article, homepage, Subscribe, or Privacy changes.
-
-Implementation:
-
-- `b7c764647d8b583ceb64d54aca1ee1b99df3027c` — simplify `/standards` into the approved restrained editorial page.
-
-### G2 validation
-
-**PASS.**
-
-Recorded against runtime HEAD `b7c764647d8b583ceb64d54aca1ee1b99df3027c`:
-
-- founder rendered visual review: **PASS**;
-- local `npm run check`: **PASS**, reported by the founder after pulling the G2 runtime;
-- local `npm run build`: **PASS**, reported by the founder after pulling the G2 runtime;
-- source/diff review confirms only `src/pages/standards.astro` changed in the G2 runtime commit;
-- the substantive institutional standards were preserved rather than materially rewritten;
-- dedicated multi-width site-wide responsive QA remains sequence H.
-
-G2 is closed.
-
-### G3 `/privacy`
-
-The previous Privacy runtime used the older 100rem / 12-column utility-page system, numbered `01 / 02 / 03` scaffolding, stale `Portfilo Brief` website terminology, and an incomplete three-section notice that did not fully reflect the current data flow.
-
-The final founder-approved G3 contract is:
-
-- one restrained text-led privacy notice inside the current 84rem publication shell;
-- normal shared `SiteHeader` and `SiteFooter` behavior, including the shared footer acquisition;
-- simple unnumbered `On this page` links;
-- Instrument Sans hierarchy and Source Serif 4 substantive reading copy;
-- sections for Information we collect, Newsletter, Service providers, Retention, Your choices and rights, and Contact;
-- public website terminology uses `Portfilo newsletter` rather than the stale `Portfilo Brief` website label;
-- newsletter data-flow copy reflects the actual `/api/subscribe` proxy, double opt-in, beehiiv subscriber storage/delivery/unsubscribe handling, fixed website attribution, honeypot behavior, and the absence of a separate Portfilo subscriber database;
-- service-provider disclosure covers Cloudflare, beehiiv, and jsDelivr based on the current runtime;
-- the notice does not claim Cloudflare Web Analytics is active because the repository still records enablement/verification as unresolved;
-- privacy requests use the founder-approved v0 contact `portfilo.ph@gmail.com`;
-- rights language remains qualified to applicable privacy law and records the Philippine National Privacy Commission complaint route;
-- no invented legal identity, unsupported account-level beehiiv feature claim, cookie-banner requirement, analytics implementation, new provider, dependency, database, or shared-component redesign.
-
-Implementation:
-
-- `10b3d96b1f90260cb77fbd94414a360e1e365580` — simplify `/privacy` and align the public notice to the verified current data flow.
-
-### G3 validation
-
-**PASS.**
-
-Recorded against runtime HEAD `10b3d96b1f90260cb77fbd94414a360e1e365580`:
-
-- founder rendered visual review: **PASS**;
-- local `npm run check`: **PASS**, reported by the founder after pulling the G3 runtime;
-- local `npm run build`: **PASS**, reported by the founder after pulling the G3 runtime;
-- source/diff review confirms only `src/pages/privacy.astro` changed in the G3 runtime commit;
-- the approved Privacy wording and data-flow boundaries were preserved in implementation;
-- dedicated multi-width site-wide responsive QA remains sequence H.
-
-G3 and sequence G are closed.
-
-## Remaining sequence
-
-A. unify `/news` with `/stories` archive layout — **COMPLETE**;
-
-B. shared full-blue archive acquisition band — **COMPLETE**;
-
-C. shared site-wide footer acquisition + homepage migration — **COMPLETE**;
-
-D. archive/acquisition technical + rendered QA — **COMPLETE**;
-
-E. shared article-template design gate — **COMPLETE / LATER AMENDED DURING F**;
-
-F. revised shared article-template implementation + validation — **COMPLETE**;
-
-G. simplify `/subscribe`, then `/standards`, then `/privacy` — **COMPLETE; SUBSCRIBE LATER REOPENED AND REVALIDATED BEFORE H**;
-
-H. dedicated site-wide responsive typography/layout audit across at least `1440 / 1366 / 1024 / 768 / 390 / 375 / 320` — **NEXT**;
-
-I. final site-wide QA and release-readiness review — **NOT STARTED**.
+Do not reuse older PASS results as evidence for the current implementation.
 
 ## Exact next task
 
-Begin sequence H at the **site-wide responsive inspection and audit-planning gate**, not broad redesign or implementation.
+Perform the remediation validation gate without introducing new product/design changes:
 
-Required first step:
+1. verify current branch/HEAD;
+2. run `npm run check`;
+3. run `npm run build`;
+4. run `npm run preview` and inspect the actual production inventory;
+5. inspect DEV separately for synthetic News and the Story TOC stress case;
+6. inspect at `1440 / 1366 / 1024 / 768 / 390 / 375 / 320`;
+7. verify no horizontal overflow, broken type wrapping, giant tablet form fields, or premature stacking;
+8. verify supporting News/Stories imagery has no blue top rule while primary Feature/article heroes retain approved treatment;
+9. verify every distinct visible signup form handles validation/success/error correctly;
+10. verify real News links route to `/news/[slug]`;
+11. verify no public individual author appears and no individual author metadata remains in the runtime/content schema;
+12. verify `/confirmed`, `/404`, Standards, Privacy, archives, homepage, and articles at the target widths;
+13. verify production excludes drafts/DEV fixtures;
+14. on an actual Cloudflare Pages deployment, verify `/subscribe` and `/about` redirects;
+15. record only checks that actually ran.
 
-1. verify the current branch/HEAD and the last validated runtime;
-2. inspect the current implemented public routes and shared components that materially affect responsive layout;
-3. audit at minimum the target viewport widths `1440 / 1366 / 1024 / 768 / 390 / 375 / 320`;
-4. include homepage, News archive/empty state, Stories archive, representative News/Stories article states that actually exist, `/subscribe`, `/standards`, `/privacy`, `/confirmed`, `/about`, and `/404` where applicable;
-5. inspect typography wrapping, shell/gutter alignment, horizontal overflow, image ratios/crops, forms, navigation, footer/acquisition behavior, section rails, jump-link layouts, and touch-target/readability issues;
-6. distinguish real responsive defects from already approved intentional behavior;
-7. group findings by shared root cause before proposing route-local patches;
-8. do not redesign approved desktop compositions merely because a narrower breakpoint needs correction;
-9. present the responsive defect list and narrow remediation plan for founder approval before making runtime edits.
+If validation reveals a concrete defect, fix only that defect and re-run the affected checks.
 
-Sequence H is a correction/audit gate, not permission to reopen product direction, copy, page architecture, or visual identity without a concrete responsive defect.
+## Release work not authorized
 
-## Deferred / not authorized now
+Do not perform without a separate approval:
 
-- article audio/listen system;
-- share toolbar;
-- unrelated desktop redesign during H;
-- `/latest`;
-- pagination;
-- topic filters;
-- search;
-- CMS/database/framework changes;
-- new dependencies;
-- fabricated production content;
-- deployment;
 - merge to `main`;
-- release.
-
-## Deployment / release boundary
-
-Cloudflare Pages project remains `portfilo-app` with `build/portfilo-v0` recorded as the production branch. No explicit deployment action, domain finalization, public newsletter sending, merge to `main`, or release is authorized by A–H.
+- production deployment/release;
+- Cloudflare dashboard branch/domain changes;
+- final-domain cutover;
+- beehiiv provider-side naming/template changes;
+- public newsletter send.
