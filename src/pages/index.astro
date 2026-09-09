@@ -47,7 +47,7 @@ const realNews = newsByDate.map((story) => ({
   fixture: false as const,
 }));
 
-const devNews = import.meta.env.DEV && realNews.length === 0
+const devNews = realNews.length === 0
   ? DEV_NEWS_FIXTURES.map((item) => ({
       ...item,
       href: undefined,
@@ -72,10 +72,10 @@ const secondaryStory = storiesByDate
     dek: story.data.dek,
   }))[0];
 
-const devStory = import.meta.env.DEV && !secondaryStory
+const devStory = !secondaryStory
   ? {
       title: "AI was supposed to kill Philippine BPO. So why is it still growing?",
-      dek: "Development-only story teaser used to test the deeper Stories rail and headline hierarchy.",
+      dek: "Sample story teaser used to hold the Stories rail until a second published Story exists.",
     }
   : undefined;
 
@@ -118,14 +118,18 @@ const railStory = secondaryStory ?? devStory;
 
       {
         tickerItems.length > 0 && (
-          <section class="latest-strip" id="latest" aria-label="Latest news from Portfilo">
+          <section
+            class="latest-strip"
+            id="latest"
+            aria-label={usingDevNews ? "Sample news layout items" : "Latest news from Portfilo"}
+          >
             <div class="latest-strip__label">
-              <strong>Latest news</strong>
+              <strong>{usingDevNews ? "Sample news" : "Latest news"}</strong>
             </div>
             <div
               class="latest-strip__rail"
               tabindex="0"
-              aria-label="Latest news headlines"
+              aria-label={usingDevNews ? "Sample news headlines" : "Latest news headlines"}
               data-latest-rail
               data-auto-ticker={tickerItems.length > 1 ? "true" : "false"}
             >
@@ -214,7 +218,7 @@ const railStory = secondaryStory ?? devStory;
                 </div>
 
                 <div class="feature-rail__latest">
-                  <p class="feature-rail__latest-label">Stories</p>
+                  <p class="feature-rail__latest-label">{devStory ? "Sample story" : "Stories"}</p>
                   {
                     railStory ? (
                       <>
@@ -237,7 +241,7 @@ const railStory = secondaryStory ?? devStory;
         <header class="news-section__heading">
           <h2 id="news-section-title">News</h2>
           {usingDevNews && (
-            <p class="fixture-warning">Development fixtures only. Not Portfilo reporting.</p>
+            <p class="fixture-warning">Sample content for layout testing. Not Portfilo reporting.</p>
           )}
         </header>
 
