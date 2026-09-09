@@ -27,7 +27,7 @@ interface ArticleTocItem {
 }
 
 interface Props {
-  mode: "news" | "stories";
+  mode: "news" | "longform";
   title: string;
   dek: string;
   classification: string[];
@@ -52,7 +52,7 @@ const {
   bodyId = "article-body",
 } = Astro.props;
 
-const showToc = mode === "stories" && tocItems.length >= 3;
+const showToc = mode === "longform" && tocItems.length >= 3;
 ---
 
 <main id="main-content">
@@ -359,7 +359,7 @@ const showToc = mode === "stories" && tocItems.length >= 3;
     line-height: 1.66;
   }
 
-  .editorial-article--stories .article-body {
+  .editorial-article--longform .article-body {
     font-family: var(--serif);
     font-weight: 400;
     line-height: 1.72;
