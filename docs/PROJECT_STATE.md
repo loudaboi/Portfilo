@@ -4,7 +4,7 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**WEBSITE / PRODUCT REMEDIATION IMPLEMENTED — RENDERED QA PASSED / FUNCTIONAL QA PENDING**
+**WEBSITE / PRODUCT REMEDIATION IMPLEMENTED — RENDERED QA PASSED / RELEASE-READINESS QA IN PROGRESS**
 
 The founder-approved full-site remediation pass has been implemented on `build/portfilo-v0` at source level.
 
@@ -14,7 +14,7 @@ The latest runtime-changing commit is:
 
 This narrow cleanup removed only the stale blue top rule from the homepage News image treatment. The primary homepage Feature and primary article hero blue rules remain intact.
 
-No deployment, merge to `main`, or release is authorized.
+No merge to `main` or release is authorized.
 
 ## Repository authority
 
@@ -46,7 +46,7 @@ Intended Cloudflare branch model:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-The actual Cloudflare Pages production-branch setting still requires external verification/correction before release readiness.
+Cloudflare was founder-inspected on 2026-09-09 and currently has `build/portfilo-v0` configured as the Production branch with automatic deployments enabled. This conflicts with the intended release boundary and must be corrected before release. Do not switch Cloudflare to `main` yet because `main` is still the original foundation state rather than the current validated website.
 
 ## Approved product direction
 
@@ -129,6 +129,8 @@ Forms are measure-constrained so tablet stacking does not produce uncontrolled f
 
 The standalone `/subscribe` page has been removed. The homepage `/#newsletter` section is the direct signup destination.
 
+A founder-run test on the deployed `portfilo-app.pages.dev` site successfully submitted a real email through the live `/api/subscribe` -> beehiiv path. The Cloudflare Pages Function is deployed and reachable, and the critical production-like signup path is therefore accepted. Source review also confirms the shared component handles frontend validation, POST submission, success/error messaging, and all visible instances through the same component/backend path.
+
 ### Responsive model
 
 Acceptance widths:
@@ -201,7 +203,7 @@ The approved `public/images/homepage-feature-16x9.png` remains the canonical Fea
 
 ## Validation status
 
-**PRIOR TECHNICAL PASS / RENDERED ROUTE PASS / NARROW FIX RE-VALIDATION + FUNCTIONAL QA PENDING.**
+**PRIOR TECHNICAL PASS / RENDERED ROUTE PASS / DEPLOYED NEWSLETTER SIGNUP PASS / RELEASE-READINESS QA IN PROGRESS.**
 
 Founder-reported local validation on 2026-09-09 against the remediation branch before the final one-line homepage News image cleanup:
 
@@ -231,23 +233,29 @@ Rendered route QA:
 - `/404`: **FOUNDER ACCEPTED**;
 - responsive editorial typography behavior was technically reviewed in source and founder accepted the rendered result.
 
-The previously known homepage News image blue-rule defect is now **IMPLEMENTED / FIXED IN SOURCE**, pending the narrow post-fix validation run.
+Newsletter functional QA:
 
-Do not treat the site as release-ready until the narrow re-validation and remaining functional/deployment QA are resolved.
+- deployed `/api/subscribe` endpoint reachable: **PASS**;
+- real deployed signup successfully submitted to beehiiv: **FOUNDER-REPORTED PASS**;
+- shared frontend/backend implementation source review: **PASS**;
+- no newsletter implementation rewrite is warranted absent a concrete defect.
+
+The previously known homepage News image blue-rule defect is **IMPLEMENTED / FIXED IN SOURCE**, pending the narrow post-fix technical validation run.
+
+Do not treat the site as release-ready until the narrow post-fix validation and remaining deployment/release-boundary checks are resolved.
 
 ## Exact next task
 
-Complete the remediation validation gate without introducing new product/design changes:
+Complete the remaining release-readiness gate without introducing new product/design changes:
 
 1. pull the latest `build/portfilo-v0` commit locally and re-run `npm run check` and `npm run build` after the one-line homepage News image cleanup;
 2. visually confirm the homepage News image no longer has the blue top rule while the Feature/article hero rules remain intact;
-3. verify every distinct visible signup form handles validation/success/error correctly through the shared `/api/subscribe` path;
-4. verify production excludes drafts/DEV fixtures and DEV-only synthetic News remains non-clickable;
-5. verify real News links route to `/news/[slug]` when real News inventory exists;
-6. verify no public individual author appears and no individual author metadata remains in the runtime/content schema;
-7. on an actual Cloudflare Pages deployment, verify `/subscribe` -> `/#newsletter` and `/about` -> `/` redirects;
-8. verify the actual Cloudflare production-branch setting is aligned with the intended `main` production boundary before release;
-9. record only checks that actually ran.
+3. verify production/source excludes drafts/DEV fixtures and DEV-only synthetic News remains non-clickable;
+4. verify real News links route to `/news/[slug]` when real News inventory exists;
+5. verify no public individual author appears and no individual author metadata remains in the runtime/content schema;
+6. on the current Cloudflare deployment, verify `/subscribe` -> `/#newsletter` and `/about` -> `/` redirects;
+7. prepare the release-boundary transition: current `main` is still the original foundation state, so merge/update `main` only after explicit founder approval, then change Cloudflare production branch from `build/portfilo-v0` to `main` as a separate approved release action;
+8. record only checks that actually ran.
 
 If validation reveals a concrete defect, fix only that defect and re-run the affected checks.
 
@@ -255,9 +263,9 @@ If validation reveals a concrete defect, fix only that defect and re-run the aff
 
 Do not perform without a separate approval:
 
-- merge to `main`;
-- production deployment/release;
-- Cloudflare dashboard branch/domain changes;
+- merge/update `main`;
+- Cloudflare production-branch change;
+- final production release/cutover;
 - final-domain cutover;
 - beehiiv provider-side naming/template changes;
 - public newsletter send.
