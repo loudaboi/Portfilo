@@ -37,7 +37,14 @@ const titleId = `${id}-title`;
     )
   }
 
-  <form class="newsletter-signup__form" action="/api/subscribe" method="post" novalidate data-newsletter-form>
+  <form
+    class="newsletter-signup__form"
+    action="/api/subscribe"
+    method="post"
+    novalidate
+    data-newsletter-form
+    data-astro-reload
+  >
     <div class="newsletter-signup__field">
       <label class="newsletter-signup__label" for={emailId}>Email address</label>
       <div class="newsletter-signup__row">
@@ -152,6 +159,7 @@ const titleId = `${id}-title`;
   };
 
   bindNewsletterForms();
+  document.addEventListener("astro:page-load", bindNewsletterForms);
 </script>
 
 <style>
