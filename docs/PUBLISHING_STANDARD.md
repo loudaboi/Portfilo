@@ -1,6 +1,6 @@
 # Portfilo Publishing Standard
 
-_Last updated: 2026-09-09_
+_Last updated: 2026-09-10_
 
 ## Principle
 
@@ -82,7 +82,7 @@ Fast does not mean speculative. Use this path only when the development itself i
 
 `AI Update` may be used internally for a fast factual item about a material AI model, product, company, policy, research, or market development. It is not a public topic or Astro `contentType`.
 
-An AI Update may live only on a social or newsletter surface when a website story would add no meaningful value. If the development requires explanation, testing, comparison, or consequential interpretation, create a separate assignment and use the deeper path.
+An AI Update may live only on a social or newsletter surface when a website News page would add no meaningful value. If the development requires explanation, testing, comparison, consequential interpretation, or people-led reporting, create a separate Why/Hustle assignment and use the deeper path.
 
 ## Portfilo Test
 
@@ -224,13 +224,13 @@ Add `metaDescription` only when the approved dek has a concrete metadata problem
 
 The exact implemented schema is defined in `src/content.config.ts`.
 
-Current v0 story fields are:
+Current v0 editorial fields are:
 
 ```yaml
 title: required
 dek: required
 metaDescription: optional
-section: news | stories
+section: news | why | hustle
 contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
 topic: business | technology | startup | ai
 publishedAt: required when published
@@ -244,11 +244,15 @@ correction: optional
 
 There is no individual author field and no Series metadata in the current v0 schema.
 
+`section` is the public editorial destination. `contentType` remains the editorial form. The internal Astro collection may remain named `stories`; that implementation name is not a public section.
+
+News entries cannot be featured. Why and Hustle entries may be featured when editorially justified.
+
 ## Status rules
 
 ### draft
 
-Not public. May contain unfinished prose but should not contain fabricated placeholder reporting.
+Not public by default. During the current pre-audience staging period, draft Why/Hustle routes may render only under the explicit preview/noindex behavior defined by current product authority. Draft content should not contain fabricated placeholder reporting.
 
 ### published
 
@@ -303,7 +307,7 @@ Do not silently erase the history of a consequential error.
 
 ## Publication checklist
 
-Before changing a Story or News item to `published`:
+Before changing a News, Why, or Hustle item to `published`:
 
 - [ ] central question/job is handled fairly;
 - [ ] research packet exists when required;
@@ -313,6 +317,7 @@ Before changing a Story or News item to `published`:
 - [ ] reader need/audience assumptions are recorded where required;
 - [ ] style research and style brief are complete where required;
 - [ ] selected writing form still fits the evidence;
+- [ ] section assignment (`news`, `why`, or `hustle`) matches the actual editorial job;
 - [ ] structure pass is complete;
 - [ ] AI-slop/human-language pass is complete;
 - [ ] institutional claims have provenance;
