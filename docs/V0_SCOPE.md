@@ -69,6 +69,8 @@ News is concise current reporting. Real published News items route to `/news/[sl
 
 Stories are deeper editorial work. The shared article system supports long-form reading, optional hero imagery, methodology/corrections, and a conditional in-page section rail when a Story contains enough real `h2` sections.
 
+During the current pre-audience staging period, existing Story drafts may also render as explicit previews so the Stories archive can use the Story inventory already in the repository. Draft status must remain visible, draft routes must be `noindex, nofollow`, and draft routes must not emit the canonical/social/article metadata reserved for published work. This staging visibility does not change `status: draft` to `published` and does not replace a later editorial publication decision.
+
 ### Authors
 
 Individual authors are not part of the public v0 product or content schema. Article structured data identifies Portfilo as the organizational author/publisher.
@@ -199,6 +201,7 @@ Before release readiness can be declared:
 - one real production-configured beehiiv double-opt-in flow is validated;
 - sitemap/robots/canonical/social metadata are correct;
 - retired routes redirect correctly on Cloudflare;
-- any temporary production sample fixtures are clearly labeled, non-clickable, route-less, and replaced before broad audience launch;
+- any temporary production sample News fixtures are clearly labeled, non-clickable, route-less, and replaced before broad audience launch;
+- any temporarily exposed Story drafts remain visibly labeled and noindex until separately approved for publication;
 - final domain/deployment settings are correct;
 - release receives explicit founder approval before merge to `main`.
