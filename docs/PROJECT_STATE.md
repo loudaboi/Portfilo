@@ -126,6 +126,10 @@ Canonical upstream operating contract:
 
 `docs/EDITORIAL_INTELLIGENCE.md`
 
+Canonical initial operating source registry:
+
+`docs/EDITORIAL_SOURCE_MAP.md`
+
 Core flow:
 
 ```text
@@ -146,7 +150,7 @@ NEWS / WATCH / IGNORE
 
 Automation may collect and organize. Human editorial judgment remains responsible for significance, verification, routing, and publication decisions.
 
-Initial v0 should use free or already-available tools and a deliberately small source universe. No custom newsroom infrastructure is authorized.
+Initial v0 uses free or already-available tools and a deliberately small source universe. No custom newsroom infrastructure is authorized.
 
 ## Repository conflict audit
 
@@ -170,7 +174,8 @@ The following existing systems remain valid and should not be rebuilt:
 - `docs/CONTENT_PLANNING.md` now explicitly allows Story ideas to originate from observation, curiosity, experience, conversations, data, News signals, or other worthwhile questions rather than requiring a News signal;
 - `docs/EDITORIAL_STANDARD.md` now uses the approved Philippines-primary/not-Philippines-only reporting direction rather than the narrower old `ambitious Filipinos` mission language;
 - `docs/EDITORIAL_STANDARD.md` no longer treats `Building` as a runtime/public topic value;
-- `docs/REFERENCE_SOURCES.md` now distinguishes decision-reference sources from the future operational newsroom source map and records the re-check rule for changing free-tool limits.
+- `docs/REFERENCE_SOURCES.md` now distinguishes decision-reference sources from the operational newsroom source map and records the re-check rule for changing free-tool limits;
+- `docs/EDITORIAL_SOURCE_MAP.md` now owns the first monitored source universe and collection defaults.
 
 ### Known dependencies / deferred hygiene
 
@@ -179,6 +184,29 @@ The following existing systems remain valid and should not be rebuilt:
 - `docs/SOCIAL_DISTRIBUTION.md` contains legacy `Portfilo Brief` naming even though current newsletter authority uses `Portfilo newsletter`.
 
 The last two items are adjacent authority-hygiene issues. They do not block Editorial Intelligence v0. Later maintenance should reconcile them without reopening the underlying product decisions.
+
+## Current source-map state
+
+The initial operating source map contains 29 fixed sources across:
+
+- Philippine primary/official sources;
+- Philippine secondary discovery sources;
+- global AI primary sources;
+- global secondary discovery sources.
+
+Company/startup official channels remain on-demand rather than permanent feed inventory so the default system does not become a PR firehose.
+
+Monitoring labels `CORE / WATCH / TARGETED` describe attention frequency only. They do not replace the evidentiary tiers in `docs/RESEARCH_STANDARD.md`.
+
+The free collection contract is:
+
+- one Inoreader Free account as the main RSS/feed surface where public feeds exist;
+- one Gmail label, `Portfilo / Signals`, for useful newsletters/press mail;
+- optional gap alerts only when needed;
+- one private lightweight signal list outside the repository;
+- manual checks for useful non-RSS official sources rather than paid web monitoring or custom scraping.
+
+As reviewed on 2026-09-10, Inoreader Free supports up to 150 RSS subscriptions and Google News alerts. Changing plan limits must be re-checked before later financial or tooling decisions.
 
 ## Current production/staging facts
 
@@ -219,7 +247,7 @@ No React/framework migration, SPA router, service worker, external image CDN, pe
 
 **WEBSITE RELEASE REMAINS CLOSED / PRODUCTION FOUNDER-APPROVED.**
 
-This Editorial Direction + News Intelligence reconciliation is documentation-only unless a later explicit gate authorizes runtime changes.
+This Editorial Direction + News Intelligence work remains documentation/operations-only unless a later explicit gate authorizes runtime changes.
 
 Do not claim `npm run check` or `npm run build` passed for documentation commits unless those commands were actually run against that state. No runtime validation pass is created by documentation-only work.
 
@@ -227,30 +255,33 @@ Do not claim `npm run check` or `npm run build` passed for documentation commits
 
 1. **Repository conflict audit** — complete.
 2. **Canonical editorial-direction and intelligence documentation** — complete.
-3. **Initial source map** — exact next task.
-4. **Free gathering setup** — use one main RSS/feed surface, Gmail filtering, optional alerts, and one lightweight private signal list.
-5. **Manual News pilot** — operate with real developments before adding automation.
+3. **Initial source map** — complete.
+4. **Free gathering setup contract** — complete in repository; external account setup not yet claimed.
+5. **Activate free gathering stack + first manual News pilot** — exact next task.
 6. **Review real friction** — remove noisy sources, add missing sources, and identify repeated manual problems.
 7. **Automate only proven friction** — no speculative newsroom tooling.
 
 ## Exact next task
 
-**Initial Editorial Source Map + Manual News Gathering Setup**
+**Activate Free Gathering Stack + First Manual News Pilot**
 
-Build a deliberately small first source universe, roughly 25-40 useful sources as a starting range rather than a quota.
+Use `docs/EDITORIAL_SOURCE_MAP.md` as the operating checklist.
 
-The source map should prioritize the approved editorial attention areas and distinguish discovery from evidence. It should not create a second evidentiary hierarchy because `docs/RESEARCH_STANDARD.md` already owns source tiers for reporting.
+Activation should remain free and minimal:
 
-Then define the smallest practical free setup for:
+1. create/use one Inoreader Free account;
+2. create the four approved folders: `PH — Primary`, `PH — News`, `AI — Primary`, `Global — News`;
+3. add only the source-map pages for which Inoreader detects a useful public RSS feed;
+4. leave non-RSS official sources as manual `WATCH`/`TARGETED` checks;
+5. create one Gmail label: `Portfilo / Signals`;
+6. create one private signal list with only `Date / Signal / Source URL / Decision / Note or trigger`;
+7. create no more than three gap alerts only if the fixed feeds leave a real gap;
+8. run the first manual News scan and record only signals that survive the first editorial check;
+9. do not publish merely because the pilot found something. Any real News item must enter the existing verification/publishing path.
 
-- RSS/feed collection;
-- useful newsletters/press mail;
-- optional gap alerts;
-- one private signal list;
-- daily News scan;
-- weekly Watch/pattern review.
+No paid upgrade, scraper, News API, AI agent, custom dashboard, automated ranking, n8n/Zapier/Make workflow, or database is authorized.
 
-Do not build a scraper, source database, AI news agent, custom dashboard, automation chain, or paid monitoring stack at this gate.
+The purpose of the first pilot is to learn whether the source map finds useful developments with manageable noise.
 
 ## Deferred / separate workstreams
 
