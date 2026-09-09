@@ -4,15 +4,26 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**RELEASE COMPLETE / PRODUCTION VERIFIED**
+**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING DECISION COMPLETE**
 
 The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, signup-heading width correction, release to `main`, and external Cloudflare production verification are complete and founder-validated.
 
 The validated release state passed GitHub Actions CI on `main` and the founder confirmed the production Pages deployment passed the release verification checklist. This closes the release cycle.
 
-This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, or other deferred/post-v0 workstreams.
+The subsequent **Editorial Packaging Standard Refinement** research and decision gate is also complete and founder-approved. Canonical documentation has been reconciled around the approved image policy. No runtime image-system implementation, schema expansion, image generation, editorial publication, or new production release was authorized by that documentation work.
 
-`Editorial Packaging Standard Refinement` is now promoted from deferred work to the **next research and decision gate**. No runtime implementation or publication change is authorized by that promotion.
+The current founder-approved publication-level image policy is:
+
+- News imagery is optional;
+- Why imagery is preferred when it performs a real explanatory, documentary, or conceptual job, but is not required;
+- Hustle authentic subject/operating-context imagery is strongly preferred when available, but is not required;
+- no News, Why, or Hustle piece may be blocked from publication solely because no suitable image is available;
+- `NO IMAGE` remains a valid editorial outcome;
+- imagery must not be manufactured merely to fill a visual slot;
+- generated imagery remains editorial illustration, never documentary evidence;
+- one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate, while individual surfaces may remain text-led.
+
+This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, runtime image-system changes, schema expansion, or other deferred/post-v0 workstreams.
 
 ## Repository authority
 
@@ -91,6 +102,52 @@ Newsletter acquisition remains important but must not dominate publication ident
 The former 7-minute reading-time promise is retired. The approved newsletter cadence remains three times per week; exact send days/times remain open.
 
 No individual public author/byline system is part of v0.
+
+## Approved editorial packaging direction
+
+Canonical packaging authority:
+
+`docs/EDITORIAL_PACKAGING_STANDARD.md`
+
+Canonical image-integrity authority:
+
+- `docs/IMAGE_SYSTEM.md`;
+- `docs/PHOTO_TREATMENT.md`.
+
+The reader-facing textual package remains:
+
+1. headline;
+2. dek.
+
+Metadata remains infrastructure and normally resolves from:
+
+```text
+metaDescription ?? dek
+```
+
+Imagery is a separate visual-presentation layer, not a mandatory third packaging element.
+
+Section defaults:
+
+### News imagery
+
+Optional. Fast/current News must not be delayed or blocked merely to obtain or manufacture an image.
+
+### Why imagery
+
+Preferred when it performs a meaningful explanatory, documentary, data, or conceptual job, but not required.
+
+### Hustle imagery
+
+Authentic subject, company, workplace, product, process, or operating-context imagery is strongly preferred when available, but not required.
+
+Missing visual access must not be replaced with generated likenesses, invented workplaces, fake documentary scenes, or generic promotional filler.
+
+Across all sections, `NO IMAGE` is an acceptable editorial outcome and absence of a suitable image alone does not block publication.
+
+When a piece has an approved visual identity, the same approved image or crop-safe derivative may be reused across article, homepage/archive, social-preview, and structured-data surfaces. A surface may remain text-led when that better serves hierarchy or scanning.
+
+The implemented schema-level `image` field remains optional. The packaging decision did not authorize runtime or schema changes.
 
 ## Approved newsletter acquisition copy
 
@@ -217,6 +274,8 @@ The internal Astro collection remains named `stories`. That implementation name 
 
 News entries cannot be `featured`; Why/Hustle entries may be featured when editorially justified.
 
+The `image` field remains optional for all sections.
+
 ### Existing content migration
 
 All four existing non-News entries were reclassified from `section: stories` to `section: why`.
@@ -279,6 +338,8 @@ The contextual rail can identify another Why/Hustle item without reintroducing S
 - `longform` mode for Why/Hustle.
 
 Why and Hustle preserve the long-form Source Serif reading treatment and optional section rail/table-of-contents behavior without duplicating components.
+
+Current archive/article components already support image and no-image states. The packaging decision did not modify those components.
 
 ### Short-page footer behavior
 
@@ -395,6 +456,8 @@ Founder production verification on the Cloudflare Pages deployment is PASS for t
 
 The release cycle is closed.
 
+The later Editorial Packaging Standard Refinement is documentation-only. It does not create a new runtime validation, production deployment, or publication claim.
+
 ## Active work plan
 
 1. **News scanner/source-map system** - operational.
@@ -413,31 +476,24 @@ The release cycle is closed.
 14. **Newsletter acquisition copy refinement** - COMPLETE / VALIDATED.
 15. **Release decision / merge to `main`** - COMPLETE.
 16. **Production deployment verification** - COMPLETE / founder PASS.
-17. **Editorial Packaging Standard Refinement** - exact next task / research and decision gate only.
+17. **Editorial Packaging Standard Refinement research and decision** - COMPLETE / founder-approved.
+18. **Editorial Packaging canonical-document reconciliation** - COMPLETE / documentation only.
 
 ## Exact next task
 
-**Begin Editorial Packaging Standard Refinement at the research and decision gate.**
+**No further packaging implementation is authorized yet. Await explicit founder promotion of the next workstream.**
 
-Before proposing or changing the packaging standard, inspect current authority, especially:
+If editorial-image runtime implementation is later promoted, begin at an implementation-impact review rather than silently changing schema or components. Inspect current runtime and the approved packaging/image contracts first, and preserve these invariants:
 
-- `AGENTS.md`;
-- `docs/PROJECT_STATE.md`;
-- `docs/DOCUMENT_STATUS.md`;
-- `skills/portfilo-anti-slop/SKILL.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
-- `docs/IMAGE_SYSTEM.md`;
-- `docs/PHOTO_TREATMENT.md`;
-- `docs/EDITORIAL_STANDARD.md`;
-- `docs/RESEARCH_STANDARD.md`;
-- `docs/PUBLISHING_STANDARD.md`;
-- relevant current runtime components only when needed to understand implementation constraints.
+- `image` remains optional across News, Why, and Hustle;
+- no piece is blocked solely because no suitable image exists;
+- `NO IMAGE` is a valid outcome;
+- section preferences must not become hard schema invariants;
+- generated imagery remains visibly disclosed editorial illustration;
+- current no-image runtime states must remain functional;
+- mobile hierarchy must be reviewed deliberately rather than assuming image-first ordering everywhere.
 
-Research credible business and technology publication packaging patterns before recommending a Portfilo rule. The primary unresolved decision is whether published News, Why, and Hustle work should normally require an editorial image, and whether the answer should differ by section or editorial job.
-
-The refinement should also reconcile any stale public `Stories` terminology in the packaging standard with the current News / Why / Hustle architecture and verify that headline, dek, optional metadata, image/disclosure, and index/article presentation form one coherent system.
-
-Do not implement runtime changes, generate new editorial images, publish content, or rewrite the standard before the founder approves the researched recommendation and decision contract.
+Do not implement runtime changes, generate editorial images, publish content, alter topic taxonomy, or change the News / Why / Hustle architecture without a separately authorized task.
 
 ## Deferred / separate workstreams
 
@@ -446,6 +502,7 @@ Remain separate unless explicitly promoted:
 - individual News reporting and publication;
 - individual Why development and publication;
 - individual Hustle reporting and publication;
+- editorial-image runtime/schema refinement;
 - distribution execution and platform posting;
 - provider-side newsletter naming/template changes;
 - final custom-domain cutover;
