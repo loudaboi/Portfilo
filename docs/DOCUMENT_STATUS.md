@@ -22,11 +22,22 @@ When documents disagree, use:
 
 The latest News / Why / Hustle release is complete and production-verified.
 
-Current primary workstream:
+**Editorial Packaging Standard Refinement is now decision-complete and canonically reconciled.**
 
-**Editorial Packaging Standard Refinement / research and decision gate**
+Founder-approved image policy:
 
-The packaging-refinement task has been promoted from deferred work after release closure. The current gate is research and recommendation only. No runtime implementation, new image generation, editorial publication, or standard rewrite is authorized until the founder approves the researched decision contract.
+- News imagery is optional;
+- Why imagery is preferred when it performs a real explanatory, documentary, or conceptual job, but is not required;
+- Hustle authentic subject/operating-context imagery is strongly preferred when available, but is not required;
+- no News, Why, or Hustle piece may be blocked from publication solely because no suitable image is available;
+- `NO IMAGE` remains a valid editorial outcome;
+- imagery must never be manufactured merely to fill a visual slot.
+
+Canonical image-integrity and generated-image controls remain in `docs/IMAGE_SYSTEM.md` and `docs/PHOTO_TREATMENT.md`.
+
+The packaging reconciliation changed canonical documentation only. It did not change runtime behavior, schema, routes, topic taxonomy, section architecture, production state, or publication status of any editorial item.
+
+No runtime image-system implementation, schema expansion, image generation, or publication is authorized by this documentation reconciliation.
 
 Canonical upstream News operating contract remains:
 
@@ -74,8 +85,8 @@ Current:
 - `docs/WRITING_SYSTEM.md` - writing-form selection and structural/stylistic authority.
 - `docs/STYLE_RESEARCH_STANDARD.md` - story-specific professional form research.
 - `docs/EXPLAINED_STANDARD.md` - founder-approved Explained direction; no universal Explainer structure is canonical.
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture and the primary standard under refinement in the active workstream.
-- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths plus current `section: news | why | hustle` schema contract.
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture plus the founder-approved optional-image policy and section-specific image preferences.
+- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths, current `section: news | why | hustle` schema contract, and publication image-necessity checks.
 - `docs/COPY_STYLE.md` - public copy rules and institutional-copy provenance.
 - `docs/PORTFILO_TEST_STANDARD.md` - Portfilo Test methodology.
 
@@ -90,8 +101,8 @@ source map + current web -> signal -> original-source check -> News / Watch / St
 CONTENT PLANNING
 idea/question -> editorial gate -> priority -> Why / Hustle assignment
 
-RESEARCH + WRITING + PUBLISHING
-research packet -> evidence -> story decision -> form -> draft -> verification -> package -> publish
+RESEARCH + WRITING + PACKAGING + PUBLISHING
+research packet -> evidence -> story decision -> form -> draft -> verification -> package -> image-necessity decision -> publish
 ```
 
 `STORY IDEA` remains a private scanner/Sheet label, not a public section.
@@ -118,7 +129,7 @@ This topic taxonomy is separate from the public section architecture:
 
 `News / Why / Hustle`
 
-Do not infer a topic-taxonomy migration from the section migration.
+Do not infer a topic-taxonomy migration from the section migration or packaging refinement.
 
 ### Design and imagery
 
@@ -127,10 +138,21 @@ Current:
 - `docs/DESIGN_DIRECTION.md`
 - `docs/IMAGE_SYSTEM.md`
 - `docs/PHOTO_TREATMENT.md`
+- `docs/EDITORIAL_PACKAGING_STANDARD.md`
 
 Astro's native image pipeline remains the current runtime authority for editorial image rendering.
 
-Whether published News/Why/Hustle work should normally require an image is the primary unresolved decision in the active Editorial Packaging Standard Refinement workstream. Research and decide this before changing runtime or publication requirements.
+Approved publication-level image rule:
+
+- `image` remains optional across News, Why, and Hustle;
+- News does not require an image;
+- Why may prefer imagery when useful, but absence is not a publication blocker;
+- Hustle strongly prefers authentic subject/operating imagery when available, but absence is not a publication blocker;
+- generated imagery remains illustration, not documentary evidence;
+- one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate;
+- a surface may remain text-led even when an approved story image exists elsewhere.
+
+Any later runtime implementation work must preserve this policy rather than turning image preference into a schema invariant.
 
 ### Email and deployment
 
@@ -156,12 +178,14 @@ The latest released `main` state is founder production-verified.
 
 ## Known adjacent authority hygiene issues
 
-The 2026-09-10 conflict audit identified two stale documentation issues that do not block the active workstream:
+The 2026-09-10 conflict audit identified two stale documentation issues that do not block current editorial operation:
 
 1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, `DESIGN_DIRECTION`, and runtime source takes precedence.
 2. `docs/SOCIAL_DISTRIBUTION.md` still contains legacy `Portfilo Brief` naming. Current newsletter public naming authority is `Portfilo newsletter`.
 
 Treat these as maintenance/reconciliation items. Do not use the stale clauses to reopen already-approved product decisions.
+
+The stale public `Stories` packaging terminology previously present in `docs/EDITORIAL_PACKAGING_STANDARD.md` was reconciled during the approved Editorial Packaging Standard Refinement.
 
 ## Current runtime authority
 
@@ -208,6 +232,7 @@ section: news | why | hustle
 contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
 topic: business | technology | startup | ai
 status: draft | published
+image: optional
 ```
 
 The internal Astro collection remains named `stories`. That collection name is implementation plumbing, not public navigation.
@@ -220,6 +245,8 @@ All four existing non-News content entries have been reclassified to `section: w
 
 `src/components/EditorialArticle.astro` owns shared article presentation with `news` and `longform` rendering modes. Why and Hustle use the shared long-form mode.
 
+The current components already accept image and no-image states. No runtime changes were made as part of the packaging documentation reconciliation.
+
 The homepage keeps one primary long-form Feature that may draw from Why or Hustle inventory. It does not add separate homepage section blocks merely because the public navigation has three editorial destinations.
 
 ## Current validation status
@@ -228,9 +255,9 @@ The homepage keeps one primary long-form Feature that may draw from Why or Hustl
 
 The News/Why/Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction were validated before release, released to `main` after explicit founder approval, and verified on the production Cloudflare Pages deployment.
 
-The production verification closes that release cycle. Documentation-only release closure does not create a new runtime validation claim.
+The later Editorial Packaging Standard Refinement is documentation-only. It does not create a new runtime validation or production-deployment claim.
 
-No new runtime or publication change is authorized by the start of the Editorial Packaging Standard Refinement research gate.
+No new runtime or publication change is authorized by the packaging decision.
 
 ## Historical/provenance records
 
