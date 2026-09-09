@@ -4,21 +4,21 @@ _Last updated: 2026-09-09_
 
 ## Current phase
 
-**RESPONSIVE TYPOGRAPHY REPAIR IMPLEMENTED ON BUILD / VALIDATION PENDING**
+**PERFORMANCE PASS IMPLEMENTED ON BUILD / VALIDATION PENDING**
 
-The main website remediation was previously released, then sparse production inventory exposed layout problems. The archive acquisition/footer regression was corrected on `build/portfilo-v0`, and a follow-up typography audit found a separate systemic responsive defect: several older breakpoint overrides made important headings become larger when the viewport crossed into phone widths.
+The founder visually approved the responsive typography and archive correction state for this pass, then reported that the site still felt slow as a whole, including page-to-page navigation and image loading.
 
-The founder approved a narrow system-level repair instead of more screenshot-by-screenshot patches.
+A final whole-site performance audit was completed before implementation. The approved approach was to inspect broadly but change narrowly, preserving the static Astro architecture and avoiding a framework, SPA router, service worker, image CDN, performance package, or broad cache layer.
 
 Latest runtime-changing commit:
 
-`ca6c77c651487d8c2c059ebf06d87004127a9610` — `Prefer real Story inventory in homepage rail`
+`9afec05851c130d3b4cb135dae591edb94f620b8` — `Pass optimized News image URL to metadata`
 
 Current `main` remains:
 
 `11c9587123b0812cc8b09316dac50213858f0f01`
 
-The founder has already authorized advancing the corrected state to `main` after the corrected deployment/render validation passes. Do not fast-forward `main` before that validation.
+Do not fast-forward `main` until the current performance state passes build, render, and deployed-preview validation and the founder explicitly approves the release boundary.
 
 ## Repository authority
 
@@ -50,7 +50,7 @@ Intended Cloudflare model:
 - `build/portfilo-v0` -> preview/test
 - `main` -> production
 
-Cloudflare branch behavior appeared inconsistent in dashboard screenshots during this release cycle. Re-verify the effective Production branch after the corrected state reaches `main`; do not infer it from intent alone.
+Cloudflare branch behavior appeared inconsistent in dashboard screenshots during this release cycle. Re-verify the effective Production branch when the validated state is released; do not infer it from intent alone.
 
 ## Approved product direction
 
@@ -100,7 +100,7 @@ Draft handling remains explicit:
 
 Current Story inventory is four files: one published Story and three draft Story previews.
 
-The homepage primary Feature remains published-only. The adjacent Stories rail now prefers an existing real Story, including an explicitly labeled draft during this pre-audience period, before falling back to a synthetic sample Story.
+The homepage primary Feature remains published-only. The adjacent Stories rail prefers an existing real Story, including an explicitly labeled draft during this pre-audience period, before falling back to a synthetic sample Story.
 
 ## Current public route model
 
@@ -124,7 +124,7 @@ Retired:
 - `/about`; redirect target `/`.
 - public `/series/[slug]`.
 
-## Current correction
+## Current correction state
 
 ### Archive acquisition and footer
 
@@ -136,114 +136,203 @@ Canonical archive structure is restored:
 4. normal shared footer acquisition;
 5. compact institutional footer.
 
-The erroneous global rule that forced `.archive-acquisition` to black is removed.
+`EditorialArchive.astro` renders the supporting stream only when supporting items exist, preventing dead empty space.
 
-News and Stories use the normal `<SiteFooter />` again rather than disabling its acquisition block.
+### Responsive typography
 
-### Archive spacing
+The founder visually approved the repaired responsive typography state before the performance pass.
 
-`EditorialArchive.astro` renders the supporting stream only when `supportingItems.length > 0`.
+Current behavior keeps continuous fluid scaling for:
 
-This prevents a one-item archive from creating an empty stream section with large dead beige space.
+- News/Stories archive titles;
+- archive lead and supporting headlines;
+- article titles and article-header spacing;
+- Standards and Privacy titles;
+- Confirmed and 404 titles.
 
-### Responsive typography repair
-
-The source audit found reverse-scaling jumps at narrow breakpoints. Important headings could shrink progressively through desktop/tablet, then become larger when crossing an old phone media query.
-
-The approved repair is now implemented:
-
-- News/Stories archive section titles use one continuous fluid scale with a lower phone minimum;
-- archive lead and supporting headlines keep their existing fluid scales without phone-only font-size overrides;
-- article titles use one continuous fluid scale, with article header top spacing also fluid through phone widths;
-- article body text, body `h2`/`h3`, reading measure, hero, and Story TOC behavior were not redesigned;
-- Standards and Privacy page titles no longer use a tiny-screen enlargement override;
-- Confirmed and 404 titles no longer use a phone-only enlargement override;
-- homepage editorial headline typography, masthead, newsletter forms, and footer typography were not retuned.
-
-The layout breakpoints themselves remain where needed for structural reflow. The change removes conflicting type-size overrides rather than removing responsive layout behavior.
+Article body typography, reading measure, hero composition, Story TOC behavior, homepage editorial headline typography, masthead, newsletter typography, and footer typography were not redesigned.
 
 ### Homepage Story rail
 
 - primary Feature selection remains published-only;
-- the secondary Stories rail now looks across the existing Story inventory;
-- an existing draft can appear there during the approved pre-audience period and is labeled `Draft story`;
-- the synthetic Story teaser is used only if no additional real Story exists.
+- the secondary Stories rail uses existing Story inventory first;
+- an existing draft can appear during the approved pre-audience period and is labeled `Draft story`;
+- the synthetic Story teaser is a last fallback only.
 
-### News
+### News and Stories staging
 
-- sample News fixtures remain available when there are zero real News items;
-- fixtures remain explicitly labeled and non-clickable;
-- real News continues to take precedence automatically;
-- no fake article routes were added.
+- sample News fixtures remain clearly labeled and non-clickable when there are zero real News items;
+- real News replaces fixtures automatically;
+- `/stories` includes the four existing Story entries during pre-audience staging;
+- draft Story pages remain noindex/nofollow and without published-story social/canonical metadata.
 
-### Stories
+## Approved performance pass
 
-- `/stories` includes the existing Story collection regardless of draft/published status for the current pre-audience staging period;
-- draft items are labeled `Draft`;
-- draft `/stories/[slug]` routes are generated so the existing stories can be inspected;
-- draft routes are noindex/nofollow and do not publish canonical/social/article metadata;
-- the normal shared archive footer is restored.
+The performance audit identified three concrete inefficiencies in the current implementation plus one founder-requested composition adjustment.
 
-### Shared foundation
+### 1. Astro CSS defaults restored
 
-`src/styles/global.css` remains the canonical shared foundation only. It contains no archive-specific color override.
+The custom:
 
-No dependency, framework, database, CMS, runtime service, route family, or schema field was added.
+`build.inlineStylesheets = "always"`
+
+has been removed from `astro.config.mjs`.
+
+Portfilo now uses Astro's default CSS handling instead of forcing every stylesheet into each HTML document. No custom chunking, Vite configuration, or additional CSS tooling was added.
+
+### 2. Targeted primary-navigation prefetch
+
+Astro built-in prefetch is enabled.
+
+Only the persistent primary header destinations use `data-astro-prefetch="viewport"`:
+
+- Portfilo wordmark -> `/`
+- News -> `/news`
+- Stories -> `/stories`
+
+There is no `prefetchAll`, no article-grid prefetching, no custom prefetch JavaScript, and no `ClientRouter`.
+
+### 3. Native Astro editorial-image pipeline
+
+The approximately 2.2 MB canonical editorial PNG was previously stored under `public/images/`, where Astro served it unchanged.
+
+The approved source asset is now:
+
+`src/assets/editorial/homepage-feature-16x9.png`
+
+The unprocessed duplicate at:
+
+`public/images/homepage-feature-16x9.png`
+
+has been removed.
+
+The Content Collection image schema now uses Astro's native `image()` helper, so local editorial images resolve as `ImageMetadata`.
+
+The existing image renderers now use `astro:assets` `<Image />`:
+
+- homepage Feature: constrained 864 x 486, priority;
+- homepage lower News image: constrained 864 x 486, default lazy behavior;
+- archive lead image: constrained 864 x 486, priority;
+- archive supporting image: constrained 640 x 360, default lazy behavior;
+- article hero: constrained 864 x 486, priority.
+
+No external image service, new dependency, Picture abstraction, AVIF matrix, custom responsive-image component, or manually maintained size set was added.
+
+The Story/News article metadata boundary now passes the underlying generated image URL string to `SiteHead`, while the visual renderer receives `ImageMetadata`.
+
+### 4. Fingerprinted-asset caching only
+
+`public/_headers` now adds:
+
+```text
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+```
+
+This applies only to Astro's fingerprinted build assets.
+
+No broad cache rule was added for HTML, public routes, redirects, or `/api/subscribe`.
+
+### 5. Homepage ticker spacing
+
+The ticker now has zero top margin and preserves its existing bottom breathing room at desktop and phone widths.
+
+Intended composition:
+
+`blue newsletter band -> ticker -> breathing room -> Feature`
+
+Ticker height, animation, content, typography, and interaction behavior were not changed.
+
+## Explicitly not added
+
+The current performance pass does not add or authorize:
+
+- React or another frontend framework;
+- `ClientRouter` or SPA navigation;
+- a service worker;
+- Cloudflare Images or another image CDN;
+- a performance or caching library;
+- custom lazy-loading JavaScript;
+- self-hosted font migration;
+- broad Cloudflare Cache Rules;
+- speculative prefetching of article/content links;
+- analytics or RUM solely for this pass.
+
+If the site still feels materially slow after this pass, inspect a real deployed network waterfall before introducing another performance mechanism.
 
 ## Prior validation evidence
 
-Before this latest responsive typography repair, founder-reported validation included:
+Before the current performance-changing commits, founder-reported validation included:
 
 - `npm run check`: PASS
 - `npm run build`: PASS
 - homepage responsive QA: founder accepted
 - News / Stories / Story article / Standards / Privacy / Confirmed / 404 rendered QA: founder accepted
+- responsive typography correction: founder visually approved for this pass
 - deployed `/api/subscribe` real email -> beehiiv: PASS
 - `/subscribe` -> `/#newsletter`: PASS
 - `/about` -> `/`: PASS
 
-Those results are baseline evidence only. They do not validate the current runtime-changing commits.
+These are baseline results only. They do not validate the current performance pass.
 
 ## Current validation status
 
-**SOURCE IMPLEMENTATION COMPLETE / BUILD + RENDER VALIDATION PENDING.**
+**SOURCE AUDIT COMPLETE / PERFORMANCE IMPLEMENTATION COMPLETE / BUILD + DEPLOYED-PREVIEW VALIDATION PENDING.**
 
-Source inspection confirms the old archive/article title enlargement overrides targeted by this repair have been removed. Do not claim the corrected build or rendered layouts pass until the latest branch build is actually checked.
+Source verification confirms:
+
+- Astro's forced-inline CSS override is removed;
+- only the three primary header destinations opt into viewport prefetch;
+- the Content Collection uses native image metadata;
+- homepage, archive, and article editorial renderers use Astro `<Image />`;
+- the approved PNG exists under `src/assets/editorial`;
+- the old `public/images/homepage-feature-16x9.png` path no longer exists on the working branch;
+- `/_astro/*` has the narrow immutable cache rule;
+- the ticker has no top margin at base or phone widths.
+
+GitHub exposes no commit status checks for the latest runtime commit, so no CI/build pass can be inferred from GitHub.
+
+Do not claim `npm run check`, `npm run build`, generated WebP output, deployed cache headers, or navigation-speed improvement until those are actually observed for the current state.
 
 ## Exact next task
 
-1. Let Cloudflare build the latest `build/portfilo-v0` state.
-2. Run or confirm `npm run check` and `npm run build` for the current branch state.
-3. Inspect responsive boundary behavior at widths most likely to expose discontinuities:
-   - `1440`
-   - `1024`
-   - `768`
-   - `641`
-   - `640`
-   - `449`
-   - `448`
-   - `390`
-   - `320`
-4. Focus rendered checks on:
-   - `/news` archive title, lead headline, supporting headlines, acquisition, and footer;
-   - `/stories` with all four existing Story entries and visible draft labels;
-   - one published Story article title/dek/body/hero;
-   - one draft Story article title/dek/body and `Draft` classification;
-   - `/standards` and `/privacy` page-title continuity;
-   - `/confirmed` and `/404` title continuity;
-   - homepage Feature remains published, rail uses the existing secondary Story, and homepage headline sizing is unchanged.
-5. Specifically compare `641 -> 640` and `449 -> 448`. Important type must not jump larger when crossing either breakpoint.
-6. If those checks pass, fast-forward `main` to the validated build state. That action is already founder-authorized for this correction.
-7. Verify Cloudflare Production branch is `main` and the resulting production deployment succeeds.
-8. Smoke-test production `/`, `/news`, `/stories`, one published Story, one draft Story preview, newsletter signup, `/subscribe`, and `/about`.
-9. Record only checks actually performed.
+1. Pull the latest `build/portfilo-v0` state locally.
+2. Run:
+   - `npm run check`
+   - `npm run build`
+3. Stop and fix only concrete errors if either command fails.
+4. On the latest Cloudflare build-branch preview, inspect:
+   - `/`
+   - `/news`
+   - `/stories`
+   - one published Story article
+   - one draft Story article
+5. Confirm the approved visual state remains intact:
+   - archive typography and footers remain correct;
+   - Story draft labels remain visible where expected;
+   - homepage primary Feature remains published-only;
+   - ticker sits directly below the blue newsletter band with breathing room below it;
+   - responsive layouts remain stable on desktop and phone.
+6. In browser DevTools Network, confirm editorial images are requested from fingerprinted `/_astro/` output and use generated responsive image markup rather than requesting `/images/homepage-feature-16x9.png`.
+7. Confirm the selected `/_astro/` asset response includes:
+   - `Cache-Control: public, max-age=31536000, immutable`
+8. Compare cold and warm navigation through:
+   - Home -> News
+   - News -> Stories
+   - Stories -> Home
+   - archive -> article -> archive
+9. Confirm the primary navigation feels materially improved without layout or interaction regressions.
+10. If this performance state passes, obtain explicit founder approval to advance this new runtime state to `main`.
+11. After release approval, fast-forward `main`, verify Cloudflare Production branch is `main`, confirm deployment success, and smoke-test production.
+12. Record only checks actually performed.
 
-If validation reveals a concrete defect, fix only that defect before advancing `main`.
+If validation still shows material slowness, do not add another optimization by guess. Capture the deployed network waterfall and identify the remaining bottleneck first.
 
 ## Still separate
 
-The current authorization does not imply:
+The current performance implementation approval does not imply:
 
+- release to `main`;
 - final custom-domain cutover;
 - beehiiv provider-side naming/template changes;
 - public newsletter send;
