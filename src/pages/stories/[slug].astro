@@ -83,7 +83,7 @@ const normalizedCorrection = correction
       article={isDraft ? undefined : {
         publishedAt,
         updatedAt,
-        image: image ? { src: image.src, alt: image.alt } : undefined,
+        image: image ? { src: image.src.src, alt: image.alt } : undefined,
       }}
     />
   </head>
