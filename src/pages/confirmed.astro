@@ -9,170 +9,97 @@ import SiteFooter from "../components/SiteFooter.astro";
   <head>
     <SiteHead
       title="Subscription confirmed | Portfilo"
-      description="Your Portfilo Brief subscription is confirmed."
+      description="Your Portfilo newsletter subscription is confirmed."
       robots="noindex"
       canonical={false}
       social={false}
     />
   </head>
-  <body>
+  <body class="utility-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <SiteHeader />
 
     <main id="main-content" tabindex="-1">
-      <section class="confirmation" aria-labelledby="confirmation-title">
-        <p class="confirmation__kicker">Portfilo Brief / Confirmed</p>
-
-        <div class="confirmation__content">
-          <h1 id="confirmation-title">Subscription confirmed.</h1>
-          <p>You’re subscribed to Portfilo Brief. New stories will arrive by email.</p>
-
-          <a class="confirmation__action" href="/stories">
-            Browse stories <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+      <section class="utility-panel" aria-labelledby="confirmation-title">
+        <p class="utility-kicker">Confirmed</p>
+        <h1 id="confirmation-title">Subscription confirmed.</h1>
+        <p class="utility-copy">You’re subscribed to the Portfilo newsletter.</p>
+        <a class="utility-action" href="/stories">Browse stories <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
     <SiteFooter />
 
     <style>
-      @font-face {
-        font-family: "Instrument Sans";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400 700;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "Source Serif 4";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 200 900;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4:vf@5.3.0/latin-wght-normal.woff2") format("woff2-variations");
-      }
-      @font-face {
-        font-family: "IBM Plex Mono";
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: url("https://cdn.jsdelivr.net/fontsource/fonts/ibm-plex-mono@5.3.0/latin-400-normal.woff2") format("woff2");
-      }
-
-      :global(:root) {
-        --paper: #f4f0e8;
-        --ink: #171614;
-        --muted: #69655e;
-        --line: #cbc5bb;
-        --accent: #0050a4;
-        --correction: #b42318;
-        --page-max: 100rem;
-        --gutter: clamp(1.25rem, 3.3vw, 3.75rem);
-        --grid-gap: clamp(0.8rem, 1.6vw, 1.5rem);
-        --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-        --serif: "Source Serif 4", Georgia, serif;
-        --mono: "IBM Plex Mono", "Courier New", monospace;
-      }
-
-      :global(*) { box-sizing: border-box; }
-      :global(html) { background: var(--paper); color: var(--ink); font-family: var(--sans); font-synthesis: none; }
-      :global(body) { margin: 0; min-width: 0; background: var(--paper); }
-      :global(a) { color: inherit; }
-      :global(a:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; }
-      :global(#main-content:focus) { outline: none; }
-
-      .skip-link {
-        position: fixed;
-        z-index: 20;
-        top: 0.75rem;
-        left: 0.75rem;
-        padding: 0.65rem 0.8rem;
-        background: var(--ink);
-        color: var(--paper);
-        font: 400 0.75rem/1 var(--mono);
-        text-decoration: none;
-        transform: translateY(-200%);
-      }
-      .skip-link:focus { transform: translateY(0); }
-
-      .confirmation {
-        width: min(100%, var(--page-max));
-        min-height: clamp(34rem, 68vh, 48rem);
+      .utility-panel {
+        width: min(calc(100% - (2 * var(--shell-gutter))), 54rem);
+        min-height: clamp(26rem, 58vh, 38rem);
         margin-inline: auto;
-        padding: clamp(4rem, 8vw, 8rem) var(--gutter) clamp(5rem, 9vw, 9rem);
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: var(--grid-gap);
-        align-content: center;
+        padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
-      .confirmation__kicker {
-        grid-column: 1 / 4;
-        margin: 0.55rem 0 0;
+      .utility-kicker,
+      .utility-copy,
+      .utility-panel h1 {
+        margin: 0;
+      }
+
+      .utility-kicker {
         color: var(--accent);
-        font: 400 0.67rem/1.4 var(--mono);
-        letter-spacing: 0.09em;
+        font: 600 0.7rem/1.3 var(--sans);
+        letter-spacing: 0.07em;
         text-transform: uppercase;
       }
 
-      .confirmation__content { grid-column: 4 / 11; }
-
-      .confirmation h1 {
-        max-width: 11ch;
-        margin: 0;
-        font: 500 clamp(4rem, 8vw, 8rem) / 0.89 var(--sans);
-        letter-spacing: -0.07em;
+      .utility-panel h1 {
+        max-width: 13ch;
+        margin-top: 0.85rem;
+        font: 670 clamp(2.7rem, 1.35rem + 3.5vw, 5rem) / 0.95 var(--sans);
+        letter-spacing: -0.055em;
         text-wrap: balance;
       }
 
-      .confirmation__content > p {
-        max-width: 38rem;
-        margin: clamp(2rem, 3.5vw, 3.25rem) 0 0;
+      .utility-copy {
+        max-width: 36rem;
+        margin-top: clamp(1.25rem, 2vw, 1.75rem);
         color: var(--muted);
-        font: 400 clamp(1.2rem, 1.55vw, 1.5rem) / 1.58 var(--serif);
+        font: 400 clamp(1.05rem, 0.95rem + 0.25vw, 1.2rem) / 1.6 var(--serif);
       }
 
-      .confirmation__action {
+      .utility-action {
         width: fit-content;
-        margin-top: clamp(2.5rem, 4vw, 4rem);
-        padding: 0.9rem 0 0.75rem;
-        display: block;
-        border-top: 3px solid var(--accent);
+        min-height: 2.75rem;
+        margin-top: clamp(1.8rem, 3vw, 2.5rem);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
         border-bottom: 1px solid var(--ink);
-        font: 500 clamp(1.05rem, 1.4vw, 1.25rem) / 1.2 var(--sans);
+        font: 600 0.9rem/1.2 var(--sans);
         text-decoration: none;
       }
-      .confirmation__action span { color: var(--accent); }
-      .confirmation__action:hover { color: var(--accent); }
 
-      @media (max-width: 64rem) {
-        .confirmation__content { grid-column: 3 / 12; }
+      .utility-action span {
+        color: var(--accent);
       }
 
-      @media (max-width: 50rem) {
-        .confirmation {
-          min-height: 0;
-          display: block;
-          padding-top: clamp(4.5rem, 14vw, 7rem);
-          padding-bottom: clamp(5rem, 16vw, 8rem);
+      .utility-action:hover {
+        color: var(--accent);
+      }
+
+      @media (max-width: 40rem) {
+        .utility-panel {
+          min-height: 24rem;
+          padding-block: 3.5rem 4.5rem;
+          justify-content: flex-start;
         }
-        .confirmation__kicker { margin-bottom: 1.5rem; }
-        .confirmation h1 {
-          max-width: none;
-          font-size: clamp(3.25rem, 13vw, 5rem);
-          line-height: 0.92;
-          text-wrap: pretty;
+
+        .utility-panel h1 {
+          font-size: clamp(2.45rem, 11vw, 3.35rem);
         }
-        .confirmation__content > p { font-size: 1.2rem; }
-      }
-
-      @media (max-width: 28rem) {
-        .confirmation h1 { font-size: clamp(2.9rem, 13vw, 3.7rem); }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        :global(*) { scroll-behavior: auto !important; }
       }
     </style>
   </body>
