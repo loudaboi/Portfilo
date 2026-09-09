@@ -1,32 +1,38 @@
 # Portfilo Cloudflare Production Setup
 
-_Status: PARTIALLY CONFIGURED / TRACK 6 IN PROGRESS / FINAL DOMAIN PENDING_
+_Status: REPOSITORY CONFIGURATION DEFINED / CLOUDFLARE BRANCH SETTING MUST BE VERIFIED_
 
-_Last updated: 2026-09-05_
+_Last updated: 2026-09-09_
 
-This document records the approved v0 production configuration for Cloudflare Pages.
+This document records the intended v0 Cloudflare Pages configuration. It does not claim the external Cloudflare dashboard currently matches every setting below.
 
 Current Pages project:
 
 `portfilo-app`
 
-Current temporary production URL:
+Current temporary Pages URL:
 
 `https://portfilo-app.pages.dev`
 
-Current production branch:
+## Release branch model
 
-`build/portfilo-v0`
+Repository authority defines:
 
-The Pages deployment and subscription baseline exist. Cloudflare Web Analytics can be enabled on the current Pages project before the final domain exists. Final public-domain configuration, zone-level rate limiting, beehiiv redirect, compliance, and final-domain QA remain pending.
+- working branch: `build/portfilo-v0`
+- release boundary: `main`
 
-Do not invent or hard-code a final production domain. Apply domain-specific values only after the final public Portfilo domain is selected and connected.
+Therefore the intended Pages model is:
 
-## Pages project
+```text
+build/portfilo-v0 -> preview/test deployment
+main              -> production deployment
+```
 
-Production branch:
+An earlier Cloudflare setup used `build/portfilo-v0` as the Pages production branch. That conflicts with the repository release boundary and must be verified/corrected in the Cloudflare dashboard before release readiness is declared.
 
-`build/portfilo-v0`
+Do not treat a push to the working branch as release authorization.
+
+## Build configuration
 
 Build command:
 
@@ -36,12 +42,15 @@ Build output directory:
 
 `dist`
 
+Node version is pinned by `.node-version`.
+
 Runtime architecture:
 
 - static Astro output;
 - one Pages Function at `/api/subscribe`;
+- Cloudflare `_redirects` for retired `/subscribe` and `/about` routes;
 - no database;
-- no auth service;
+- no authentication;
 - no custom subscriber store.
 
 ## Production environment variables
@@ -59,8 +68,7 @@ Requirements:
 - use the canonical public HTTPS origin only;
 - do not use a preview deployment URL as the final canonical origin;
 - do not use `CF_PAGES_URL` as the canonical production origin;
-- keep the current temporary `https://portfilo-app.pages.dev` value until the final domain is known;
-- replace the temporary deployment-origin configuration only after the final domain is connected and ready for canonical cutover.
+- replace any temporary pages.dev value only after the final domain is connected and ready for canonical cutover.
 
 `SITE_URL` controls canonical URLs, social URLs, sitemap generation, and the production sitemap reference in `robots.txt`.
 
@@ -68,12 +76,24 @@ Requirements:
 
 Store the dedicated Portfilo beehiiv API key as a production secret/environment variable.
 
-Requirements:
+Never commit or expose the key through public Astro variables, logs, issues, screenshots, or client-side code. Rotate it immediately if exposure is suspected.
 
-- never commit the key;
-- never expose it through a public Astro environment variable;
-- never paste it into public logs, issues, screenshots, or client-side code;
-- rotate it immediately if exposure is suspected.
+## Retired route redirects
+
+Cloudflare Pages should honor the repository `public/_redirects` rules:
+
+```text
+/subscribe /#newsletter 301
+/about / 301
+```
+
+These redirects must be checked on an actual Pages deployment before release. Astro's local preview server is not the authority for Cloudflare Pages redirect behavior.
+
+## Temporary pages.dev indexing
+
+The temporary/pre-release deployment must not become the unintended canonical public site.
+
+Before public launch, verify that preview/test deployments are not indexable and that the configured production branch/domain is the only intended crawlable origin. Do not add a repository-wide `noindex` header that would also block the final production site.
 
 ## Custom domain
 
@@ -81,27 +101,17 @@ After the final domain is selected:
 
 1. Attach it to the Portfilo Pages project.
 2. Confirm HTTPS is active.
-3. Decide one canonical hostname if both apex and `www` are used.
+3. Choose one canonical hostname if both apex and `www` are used.
 4. Redirect the non-canonical hostname to the canonical hostname.
 5. Set production `SITE_URL` to the canonical HTTPS origin.
-6. Deploy and verify generated canonical URLs, Open Graph URLs, `robots.txt`, and sitemap URLs use only that origin.
+6. Deploy from `main` only after explicit release approval.
+7. Verify canonical URLs, Open Graph URLs, `robots.txt`, and sitemap URLs use only that origin.
 
 ## `/api/subscribe` edge rate limiting
 
-The v0 protection should stay simple and should not introduce Turnstile unless actual abuse requires it.
+Keep v0 protection simple. Do not add Turnstile unless actual abuse requires it.
 
-Cloudflare rate limiting rules are deployed at the zone level. The temporary `portfilo-app.pages.dev` hostname is not a Portfilo-owned zone, so this WAF rule should be created only after the final custom domain is attached to a Cloudflare zone.
-
-Current Cloudflare Free-plan constraints verified during Track 6:
-
-- one rate limiting rule;
-- URI Path is available as a rule-expression field;
-- IP is available as the counting characteristic;
-- the Free-plan counting period is 10 seconds;
-- the Free-plan mitigation timeout is 10 seconds;
-- HTTP Method is not available as a Free-plan rule-expression field.
-
-Recommended initial rule after the final domain is active:
+After the final custom domain is attached to a Cloudflare zone, the intended initial rate-limit rule remains:
 
 - matching path: `/api/subscribe`;
 - counting characteristic: IP;
@@ -110,28 +120,17 @@ Recommended initial rule after the final domain is active:
 - action: Block;
 - mitigation duration: 10 seconds.
 
-Because Method matching is not available on the Free-plan rate limiting rule, the path-level rule will count all requests to `/api/subscribe`. The endpoint itself still rejects non-POST requests with `405`.
+The endpoint itself rejects non-POST requests with `405`.
 
-This threshold is deliberately tolerant of normal signup retries while stopping simple high-rate automation. Review Cloudflare security events after launch and adjust only if real traffic shows false positives or abuse.
-
-Do not add Turnstile by default. Revisit it only if the existing honeypot, same-origin browser check, body-size limit, and edge rate limiting are insufficient.
+Review real security events after launch before changing the threshold.
 
 ## Web Analytics
 
-Cloudflare Pages provides a one-click Web Analytics integration and does not require the final public domain to be selected first.
+Cloudflare Web Analytics remains optional/pending verification for v0. The public Privacy notice does not claim it is active.
 
-Current Track 6 action:
+If enabled through the Pages integration, verify the actual deployment is reporting before treating analytics as operational. Do not add a second analytics backend or duplicate beacon.
 
-1. In Cloudflare, open **Workers & Pages**.
-2. Select the `portfilo-app` Pages project.
-3. Open **Metrics**.
-4. Select **Enable** under **Web Analytics**.
-5. Trigger or wait for the next production deployment.
-6. Verify the Pages deployment is reporting traffic in Cloudflare Web Analytics.
-
-Cloudflare automatically injects the Web Analytics JavaScript snippet into valid HTML on the next deployment. Do not add a separate analytics backend or manually insert a second beacon for v0.
-
-If the implementation method changes from Cloudflare's Pages integration to a manually inserted beacon, review and update the Privacy page before launch.
+If analytics implementation changes materially, review the Privacy page before launch.
 
 ## beehiiv production redirect
 
@@ -139,61 +138,54 @@ After the final public domain is stable, set beehiiv's Opt-in Redirect URL to:
 
 `https://<final-production-domain>/confirmed`
 
-Do not use the temporary Pages URL as the permanent redirect.
+Do not use a temporary preview URL as the permanent redirect.
 
 ## Production email QA
 
-Run one real end-to-end final-domain test after the custom domain is connected:
+Run one real end-to-end test after the final domain is connected:
 
-1. Open `/subscribe` on the canonical production domain.
+1. Open the homepage newsletter form at `/#newsletter` on the canonical production domain.
 2. Submit a real test address.
-3. Confirm the Portfilo page shows the pending-confirmation state.
-4. Confirm beehiiv sends the double-opt-in email.
-5. Click the confirmation link.
-6. Confirm beehiiv redirects to the production `/confirmed` route.
-7. Confirm the subscriber is Active in beehiiv.
-8. Send or use an appropriate test email containing beehiiv's unsubscribe link.
-9. Confirm unsubscribe works and the subscriber state updates as expected.
+3. Confirm the form shows the pending-confirmation state.
+4. Repeat the submission test from each distinct visible newsletter form placement.
+5. Confirm beehiiv sends the double-opt-in email for a valid new test address.
+6. Click the confirmation link.
+7. Confirm beehiiv redirects to `/confirmed`.
+8. Confirm the subscriber is Active in beehiiv.
+9. Verify an unsubscribe link works and subscriber state updates as expected.
 10. Confirm no API key, raw beehiiv response, or sensitive value appears in browser-visible output.
 
-## Security verification
+## Security baseline
 
-Repository-side subscription hardening:
+The current repository subscription endpoint includes:
 
-- `/api/subscribe` enforces the 4 KB request cap against actual body bytes as well as the `Content-Length` fast-path;
-- JSON signup: validated;
-- URL-encoded form fallback: validated;
-- multipart form parsing: validated;
-- cross-origin request rejection when `Origin` is supplied: validated;
-- oversized actual body without relying on `Content-Length`: validated;
-- honeypot requests remain accepted without forwarding to beehiiv: validated;
-- upstream beehiiv requests use a 10-second timeout;
-- latest recorded `npm audit`: zero vulnerabilities;
-- latest post-Track-5 `npm run check`: PASS, user-reported 2026-09-05;
-- latest post-Track-5 `npm run build`: PASS, user-reported 2026-09-05.
+- 4 KB request-size cap against actual body bytes plus `Content-Length` fast path;
+- JSON and form request handling;
+- same-origin browser check when `Origin` is supplied;
+- honeypot handling;
+- server-side beehiiv API key;
+- upstream timeout;
+- double opt-in behavior;
+- safe client-facing errors;
+- no-store response behavior.
 
-These checks do not replace the final deployed Track 6 runtime QA.
+Do not rewrite the endpoint without a concrete defect.
 
-## Still pending
+## Release checklist still pending
 
-Can be completed before the final domain:
+Before final release:
 
-- enable and verify Cloudflare Web Analytics on the `portfilo-app` Pages project;
-- synchronize the root `package-lock.json` package license snapshot from `ISC` to `UNLICENSED`;
-- continue temporary-production browser/mobile/link/404/console/metadata QA where the environment permits.
+- verify Cloudflare production branch is `main`;
+- verify `build/portfilo-v0` behaves as preview/test only;
+- run and pass local/source validation;
+- inspect actual Pages redirects;
+- protect temporary/pre-release origins from indexing;
+- select/connect final domain;
+- set final production `SITE_URL`;
+- configure final-domain rate limiting;
+- set beehiiv production confirmation redirect;
+- run final-domain signup/confirmation/unsubscribe QA;
+- verify canonical host and metadata;
+- complete mailing-address/compliance requirements before first public newsletter send.
 
-Blocked on the final public domain:
-
-- final public domain selection;
-- Cloudflare custom-domain connection;
-- final production `SITE_URL` value;
-- Cloudflare zone-level `/api/subscribe` rate limiting rule;
-- beehiiv final production Opt-in Redirect URL;
-- final-domain signup/confirmation/unsubscribe QA;
-- final canonical-host metadata/redirect verification.
-
-Also required before first public newsletter send:
-
-- mailing-address/compliance clearance.
-
-The existing `portfilo-app.pages.dev` deployment remains the working temporary production baseline, not the final public-domain configuration.
+No Cloudflare dashboard change, deployment, or release is implied by repository edits alone.
