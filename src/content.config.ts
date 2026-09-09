@@ -37,17 +37,11 @@ const stories = defineCollection({
       section: z.enum(sections),
       contentType: z.enum(contentTypes),
       topic: z.enum(topics),
-      author: z.string().min(1),
       publishedAt: z.coerce.date().optional(),
       updatedAt: z.coerce.date().optional(),
       status: z.enum(["draft", "published"]),
       featured: z.boolean().default(false),
       image: imageSchema.optional(),
-      series: z
-        .string()
-        .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
-        .optional(),
-      seriesOrder: z.number().int().positive().optional(),
       methodology: z.string().min(1).optional(),
       correction: z
         .object({
@@ -62,14 +56,6 @@ const stories = defineCollection({
           code: "custom",
           path: ["publishedAt"],
           message: "Published stories require publishedAt.",
-        });
-      }
-
-      if (story.seriesOrder !== undefined && !story.series) {
-        context.addIssue({
-          code: "custom",
-          path: ["seriesOrder"],
-          message: "seriesOrder requires series.",
         });
       }
 
@@ -92,36 +78,7 @@ const stories = defineCollection({
           message: "Only Stories entries may be featured.",
         });
       }
-
-      if (story.section === "news" && story.series) {
-        context.addIssue({
-          code: "custom",
-          path: ["series"],
-          message: "News entries cannot belong to a series.",
-        });
-      }
-
-      if (story.section === "news" && story.seriesOrder !== undefined) {
-        context.addIssue({
-          code: "custom",
-          path: ["seriesOrder"],
-          message: "News entries cannot define seriesOrder.",
-        });
-      }
     }),
 });
 
-const series = defineCollection({
-  loader: glob({
-    base: "./src/content/series",
-    pattern: "*.md",
-  }),
-  schema: z.object({
-    title: z.string().min(1),
-    description: z.string().min(1),
-    status: z.enum(["active", "completed"]),
-    fixture: z.boolean().default(false),
-  }),
-});
-
-export const collections = { stories, series };
+export const collections = { stories };
