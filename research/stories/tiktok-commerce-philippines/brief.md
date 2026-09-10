@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / FOUNDER PREVIEW QA NEXT**
+**COMPLETE / SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / FOUNDER PREVIEW QA PASS**
 
 ## Assignment
 
@@ -150,4 +150,4 @@ The strongest defensible thesis is:
 
 That should be presented as a layered mechanism, not a claim that every Filipino buyer follows the same path.
 
-Founder research approval, Draft 2 editorial approval, and the final headline/dek package are complete. The founder-selected Pexels image is attached to `src/content/articles/tiktok-commerce-philippines.md` with credit `greenwish_ / Pexels`. The article is published and featured on `build/portfilo-v0` for preview/test. The next gate is founder preview QA before any release to `main`.
+Founder research approval, Draft 2 editorial approval, final packaging, image attachment, working-branch publication, homepage integration, and founder preview QA are complete. Why #2 is closed on `build/portfilo-v0`. Any release to `main` remains a separate release decision.
