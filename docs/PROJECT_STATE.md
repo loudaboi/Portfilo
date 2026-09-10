@@ -523,7 +523,7 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
-24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / CI #149 PASS / FOUNDER PREVIEW QA NEXT.
+24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FOUNDER PREVIEW QA NEXT.
 25. **Why #3: digital banks in the Philippines** - RESERVED NEXT WHY ASSIGNMENT.
 
 ## Exact next task
@@ -536,9 +536,9 @@ Manual Draft 2 exists at:
 
 The article is now `status: published` with `publishedAt: 2026-09-11` and `featured: true` on `build/portfilo-v0`. It uses the founder-selected Pexels image at `src/assets/editorial/greenwish-tiktok-phone-pexels.jpg` and was written from the verified research packet only.
 
-The Draft 2 body, structure, headline, dek, metadata direction, and claim integrity are founder-approved. The founder-supplied real Pexels image has been attached with credit and alt text. The article is published and featured on the preview/test branch only. The next gate is founder preview QA of `/why`, the article page, and homepage feature before any release to `main`.
+The Draft 2 body, structure, headline, dek, metadata direction, and claim integrity are founder-approved. The founder-supplied real Pexels image has been attached with credit and alt text. Homepage feature imagery now uses natural color and no blue top border; article hero imagery also uses no blue top border. TikTok Why #2 remains the explicitly featured homepage longform item even after Why #3 is created, until the founder explicitly changes the feature selection. The article is published and featured on the preview/test branch only. The next gate is founder preview QA of `/why`, the article page, and homepage feature before any release to `main`.
 
-Do not publish, generate an image, merge to `main`, deploy, or begin Why #3 without separate approval.
+Do not merge to `main`, deploy, or begin Why #3 without separate approval.
 
 No merge to `main` or deployment is authorized.
 
