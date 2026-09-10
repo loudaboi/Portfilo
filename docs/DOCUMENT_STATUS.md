@@ -22,7 +22,7 @@ When documents disagree, use:
 
 The latest News / Why / Hustle release is complete and production-verified.
 
-**Editorial Packaging Standard Refinement is now decision-complete and canonically reconciled.**
+**Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequent editorial-image runtime impact review and default social-preview refresh are also complete on the working branch.**
 
 Founder-approved image policy:
 
@@ -35,9 +35,11 @@ Founder-approved image policy:
 
 Canonical image-integrity and generated-image controls remain in `docs/IMAGE_SYSTEM.md` and `docs/PHOTO_TREATMENT.md`.
 
-The packaging reconciliation changed canonical documentation only. It did not change runtime behavior, schema, routes, topic taxonomy, section architecture, production state, or publication status of any editorial item.
+The packaging reconciliation itself changed canonical documentation only. The later founder-promoted image-runtime review concluded that no schema expansion or article/archive component change is justified for v0 because the existing optional image model, no-image states, per-article social-image behavior, and structured-data behavior already satisfy the approved policy.
 
-No runtime image-system implementation, schema expansion, image generation, or publication is authorized by this documentation reconciliation.
+The default social fallback at `public/social/portfilo-default.png` has been replaced on `build/portfilo-v0` with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed. This asset refresh is not yet a production release to `main`.
+
+No further runtime image-system implementation, schema expansion, image generation, publication, or production release is authorized by this closure.
 
 Canonical upstream News operating contract remains:
 
@@ -152,7 +154,14 @@ Approved publication-level image rule:
 - one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate;
 - a surface may remain text-led even when an approved story image exists elsewhere.
 
-Any later runtime implementation work must preserve this policy rather than turning image preference into a schema invariant.
+The completed v0 image-runtime impact review preserved the existing schema and shared article/archive components. Do not expand image metadata or introduce dynamic social-card generation merely for completeness without a new justified task.
+
+Current default social behavior:
+
+- articles with an approved image use that image for Open Graph/X metadata and Article structured data;
+- articles without an approved image fall back to `/social/portfilo-default.png`;
+- non-article pages use the same default fallback where social metadata is enabled;
+- the current working-branch default fallback asset is a `1200 x 630` Portfilo stairs/wordmark PNG at `public/social/portfilo-default.png`.
 
 ### Email and deployment
 
@@ -174,7 +183,7 @@ Cloudflare production behavior remains:
 - automatic deployments: enabled;
 - `build/portfilo-v0` remains the preview/test working branch.
 
-The latest released `main` state is founder production-verified.
+The latest released `main` state is founder production-verified. The new default social-preview asset remains working-branch preview/test state until separately approved for release.
 
 ## Known adjacent authority hygiene issues
 
@@ -245,19 +254,35 @@ All four existing non-News content entries have been reclassified to `section: w
 
 `src/components/EditorialArticle.astro` owns shared article presentation with `news` and `longform` rendering modes. Why and Hustle use the shared long-form mode.
 
-The current components already accept image and no-image states. No runtime changes were made as part of the packaging documentation reconciliation.
+The current components already accept image and no-image states. The completed image-runtime review left these components unchanged because the current behavior satisfies the approved v0 image policy.
 
 The homepage keeps one primary long-form Feature that may draw from Why or Hustle inventory. It does not add separate homepage section blocks merely because the public navigation has three editorial destinations.
 
+### Social metadata
+
+`src/components/SiteHead.astro` remains the runtime authority for default and per-article Open Graph/X image selection.
+
+The current working-branch default fallback asset is:
+
+`public/social/portfilo-default.png`
+
+Current prepared dimensions:
+
+`1200 x 630`
+
+No new social-image generator, route, schema field, or metadata component was introduced in the completed image-runtime review.
+
 ## Current validation status
 
-**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS.**
+**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / WORKING-BRANCH SOCIAL PREVIEW CI PASS.**
 
 The News/Why/Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction were validated before release, released to `main` after explicit founder approval, and verified on the production Cloudflare Pages deployment.
 
-The later Editorial Packaging Standard Refinement is documentation-only. It does not create a new runtime validation or production-deployment claim.
+The Editorial Packaging Standard Refinement is decision-complete and canonically reconciled.
 
-No new runtime or publication change is authorized by the packaging decision.
+The subsequently promoted editorial-image runtime review concluded with no schema or article/archive component expansion. The working-branch replacement of `public/social/portfilo-default.png` passed CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9`.
+
+That social-preview refresh has not yet been released to `main`, so no new production-deployment claim is made for it.
 
 ## Historical/provenance records
 
