@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE FOUNDER-APPROVED / IMAGE ASSET REVIEW NEXT**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / FOUNDER IMAGE PREVIEW QA NEXT**
 
 ## Assignment
 
@@ -150,4 +150,4 @@ The strongest defensible thesis is:
 
 That should be presented as a layered mechanism, not a claim that every Filipino buyer follows the same path.
 
-Founder research approval, Draft 2 editorial approval, and the final headline/dek package are complete. The approved draft remains at `src/content/articles/tiktok-commerce-philippines.md`; the next gate is review of any founder-supplied real image for article/homepage use. No publication is authorized.
+Founder research approval, Draft 2 editorial approval, and the final headline/dek package are complete. The founder-selected Pexels image is attached to `src/content/articles/tiktok-commerce-philippines.md` with credit `greenwish_ / Pexels`; the next gate is founder preview QA of the article/homepage image treatment. No publication is authorized.
