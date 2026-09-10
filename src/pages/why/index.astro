@@ -12,10 +12,13 @@ const entries = await getCollection(
 
 const whyEntries = entries
   .filter((story) => !story.id.startsWith("portfilo-"))
-  .sort(
-    (a, b) =>
-      (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
-  );
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) {
+      return a.data.featured ? -1 : 1;
+    }
+
+    return (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0);
+  });
 
 const dateFormatter = new Intl.DateTimeFormat("en-PH", {
   day: "numeric",
