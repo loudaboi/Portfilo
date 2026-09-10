@@ -1,6 +1,6 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-10_
+_Last updated: 2026-09-11_
 
 ## Current phase
 
@@ -524,19 +524,25 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
 24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FOUNDER PREVIEW QA PASS / CI PASS.
-25. **Why #3: digital banks in the Philippines** - RESERVED NEXT WHY ASSIGNMENT.
+25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVAL NEXT.
 
 ## Exact next task
 
-**Why #3 research and question-selection gate: digital banks in the Philippines.**
+**Founder research approval for Why #3: why do digital banks in the Philippines pay so much more interest on savings?**
 
-Manual Draft 2 exists at:
+Research packet:
 
-`src/content/articles/tiktok-commerce-philippines.md`
+`research/stories/digital-bank-savings-rates-philippines/`
 
-Why #2 is founder-approved and preview-validated on `build/portfilo-v0`. It remains `status: published`, `publishedAt: 2026-09-11`, and `featured: true`, with the founder-selected Pexels image and approved natural-color/no-top-border treatment. TikTok Why #2 remains the explicitly featured homepage longform item even after Why #3 is created, until the founder explicitly changes the feature selection.
+The subject-research outcome is `PUBLISH`.
 
-The next task is the research and question-selection gate for Why #3: digital banks in the Philippines. Do not draft Why #3, merge to `main`, or deploy without separate approval.
+The strongest defensible thesis is that Philippine digital banks pay more for deposits because deposits are a competitive source of funding and customer acquisition for newer banks, while their higher-yielding asset mix gives them more room to absorb that funding cost. Branchless operations help, but current BSP group data show that lower physical-network overhead is not the whole explanation: the digital-bank group still has a higher cost-to-income ratio and remains loss-making in aggregate.
+
+The article must distinguish base rates from promotional headline rates, sector averages from individual-bank economics, and the BSP's formal digital-bank classification from looser consumer use of the term.
+
+TikTok Why #2 remains the explicitly featured homepage longform item even after Why #3 is created, until the founder explicitly changes the feature selection.
+
+Do not draft Why #3, select or generate an image, merge to `main`, or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
