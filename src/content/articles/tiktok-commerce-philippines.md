@@ -8,46 +8,58 @@ status: draft
 featured: false
 ---
 
-TikTok Shop is already too large in the Philippines to treat as a side feature inside a video app.
+Shopping on TikTok can begin before someone decides to shop.
 
-[Momentum Works estimated](https://thelowdown.momentum.asia/wp-content/uploads/2026/04/Embargoed-Press-release-Momentum-Works-Ecommerce-in-SEA-2026.pdf) Philippine platform e-commerce GMV at **US$21.1 billion in 2025**, with Shopee at 49%, TikTok Shop at 29% and Lazada at 22%. That puts TikTok Shop at roughly **US$6.1 billion in GMV** under the firm's methodology. GMV is not TikTok revenue, and Momentum Works includes paid orders that may later be cancelled, returned or refunded.
+A conventional marketplace visit usually starts with intent. You open the app because you already want something, search for it, compare listings, then decide whether to buy.
 
-A separate [Rakuten Insight survey, surfaced by Statista](https://www.statista.com/statistics/1375392/philippines-popular-social-media-platforms-used-for-shopping/), found TikTok was the most popular social-media platform used for purchases among 7,630 surveyed Filipinos aged 16 and above who had already bought through social media. That does not mean most Filipinos shop on TikTok. It does show that TikTok has become a real purchase channel among social-commerce buyers.
+TikTok can reverse that order. You can be watching a short video or LIVE, encounter a product, see it demonstrated or recommended, tap into the listing and move toward checkout without starting a separate shopping journey.
+
+That change in where the journey begins helps explain how a video app became a serious marketplace.
 
 ## The storefront moved into the feed
 
-A conventional marketplace usually starts with intent. A shopper opens the app, searches for a product, compares listings and decides whether to buy.
+The scale is already material.
 
-TikTok can start earlier. A person can encounter a product while watching a short video or LIVE, see it demonstrated or recommended, tap into the listing and move toward checkout without starting a separate search journey.
+[Momentum Works estimated](https://thelowdown.momentum.asia/wp-content/uploads/2026/04/Embargoed-Press-release-Momentum-Works-Ecommerce-in-SEA-2026.pdf) Philippine platform e-commerce GMV at **US$21.1 billion in 2025**, with Shopee at 49%, TikTok Shop at 29% and Lazada at 22%. That puts TikTok Shop at roughly **US$6.1 billion in GMV** under the firm's methodology.
 
-That matters because the feed itself becomes part of the shopping funnel. Product discovery is mixed into the same social-video surface.
+That figure is not TikTok revenue. Momentum Works counts paid orders that may later be cancelled, returned or refunded. But the estimate is large enough to show that TikTok Shop is no longer a small commerce feature attached to the feed.
 
-This is not only a TikTok phenomenon. Momentum Works estimated content commerce at **US$49.7 billion across Southeast Asia in 2025**, equal to about 32% of platform e-commerce GMV under its definition, up from 20% in 2024. [Google, Temasek and Bain](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2025/e-conomy-sea-2025-report-aseans-digital-economy-poised-to-surpass-300-billion) separately estimated video commerce at roughly 25% of regional e-commerce GMV in 2025. The figures use different definitions, so they should not be compared directly, but both point to the same broader shift: video and creator content are becoming a meaningful route into online transactions.
+A separate [Rakuten Insight survey, surfaced by Statista](https://www.statista.com/statistics/1375392/philippines-popular-social-media-platforms-used-for-shopping/), found TikTok was the most popular social-media platform used for purchases among 7,630 surveyed Filipinos aged 16 and above who had already bought through social media. The survey does not represent all Filipinos, but it adds another signal that people are using TikTok as an actual place to buy.
+
+The shift is also bigger than TikTok. Momentum Works estimated content commerce at **US$49.7 billion across Southeast Asia in 2025**, around 32% of platform e-commerce GMV under its definition, up from 20% in 2024. [Google, Temasek and Bain](https://www.temasek.com.sg/en/news-and-resources/news-room/news/2025/e-conomy-sea-2025-report-aseans-digital-economy-poised-to-surpass-300-billion) separately estimated video commerce at roughly 25% of regional e-commerce GMV in 2025.
+
+The two reports use different definitions, so their percentages should not be compared directly. What they both show is that video and creator content are becoming an important route into online shopping across Southeast Asia.
 
 ## Creators became sales channels
 
-TikTok also wired creator content directly to commerce.
+TikTok did more than put product links under videos. It connected creators directly to transactions.
 
-According to [TikTok Shop Philippines' own documentation](https://seller-ph.tiktok.com/university/essay?identity=1&knowledge_id=8720745652406018), creators can earn commissions from qualifying product sales attributed through **LIVE, short video, Showcase and Affiliate Links**. [Sellers can set commission rates](https://seller-ph.tiktok.com/university/essay?default_language=en&knowledge_id=3748690541577985) for affiliates.
+According to [TikTok Shop Philippines' own documentation](https://seller-ph.tiktok.com/university/essay?identity=1&knowledge_id=8720745652406018), creators can earn commissions from qualifying sales attributed through **LIVE, short video, Showcase and Affiliate Links**. [Sellers can set commission rates](https://seller-ph.tiktok.com/university/essay?default_language=en&knowledge_id=3748690541577985) for affiliates.
 
-That makes creator commerce different from ordinary word of mouth. The creator may be demonstrating or recommending a product, but there is also a direct financial incentive attached to an attributable sale.
+That changes what a product recommendation can be. A creator may still be showing how something works or explaining why they like it, but an attributable sale can also pay them.
 
-The system can reinforce itself: more sellers and creators can produce more product content, creating more opportunities for discovery and transactions, which gives participants more reason to keep producing commerce content.
+So creator content is not simply word of mouth. It can function as performance marketing inside the same feed where people are already watching entertainment.
 
-The available evidence does not tell us how much of TikTok Shop's Philippine GMV comes from affiliates, LIVE, short video, Shop Tab search or repeat purchases. It supports the sales architecture, not a precise ranking of what caused each purchase.
+That gives sellers more distribution, gives creators a reason to make commerce content, and gives viewers a direct path from seeing a product to opening its listing.
+
+What the available data cannot tell us is how much of TikTok Shop's Philippine GMV comes from affiliates, LIVE, short video, Shop Tab search or repeat purchases. The important point is that all of those routes now sit inside one commerce system.
 
 ## Content is only half the system
 
-It would be easy to explain TikTok Shop's growth as a story about entertaining videos making people buy things. The platform's own seller programs show why that is incomplete.
+Content alone does not explain TikTok Shop's growth.
 
-TikTok Shop Philippines currently supports [shipping-fee programs, discount vouchers, cashback and flash-sale subsidies](https://seller-ph.tiktok.com/university/essay?default_language=en&knowledge_id=4992213747156753), alongside [platform-funded promotions](https://seller-ph.tiktok.com/university/essay?knowledge_id=7654200012457730&lang=en) and co-funded discount programs. These tools can reduce the price and delivery friction between seeing a product and checking out. Current program terms show that subsidies are part of today's system; they do not establish how much those subsidies caused the platform's earlier growth.
+TikTok Shop Philippines currently supports [shipping-fee programs, discount vouchers, cashback and flash-sale subsidies](https://seller-ph.tiktok.com/university/essay?default_language=en&knowledge_id=4992213747156753), alongside [platform-funded promotions](https://seller-ph.tiktok.com/university/essay?knowledge_id=7654200012457730&lang=en) and co-funded discount programs.
 
-That means TikTok is combining two systems: a content engine that creates discovery and a marketplace that can push conversion with incentives.
+Those incentives can reduce another kind of friction: price and delivery cost. A product can appear in the feed, lead directly to a listing, then arrive with a voucher or shipping benefit attached.
 
-Trust remains the counterweight. In Rakuten Insight's Philippine social-commerce research, convenience was the leading stated reason for buying through social media among surveyed buyers. Among people who had not bought through social media, lack of trust in the buying process and a preference for official websites or physical stores were common reasons to stay away. The Department of Trade and Industry's [2025 E-Commerce Philippine Trustmark](https://www.dti.gov.ph/dti-news-archived/dti-dti-launches-e-commerce-philippine-trustmark-opens-online-application-sellers) was itself designed to strengthen safety, reliability and consumer confidence in online transactions.
+Current promotion terms do not tell us how much subsidies caused TikTok Shop's earlier growth. They do show that today's shopping experience is built from more than content and creator recommendations.
 
-TikTok's rise therefore does not prove that consumers simply trust creators or social platforms more. It shows that the platform has made shopping easier to encounter and easier to complete, while using commissions and promotions to give both creators and buyers reasons to participate.
+Trust remains a constraint too. In Rakuten Insight's Philippine social-commerce research, convenience was the leading stated reason for buying through social media among surveyed buyers. Among people who had not bought through social media, lack of trust in the buying process and a preference for official websites or physical stores were common reasons not to buy.
 
-TikTok did not turn into a marketplace by replacing entertainment with shopping. It made shopping part of the entertainment feed, then connected that attention to sellers, creator incentives, product pages, checkout and discounts.
+The Department of Trade and Industry's [2025 E-Commerce Philippine Trustmark](https://www.dti.gov.ph/dti-news-archived/dti-dti-launches-e-commerce-philippine-trustmark-opens-online-application-sellers) was designed to strengthen safety, reliability and consumer confidence in online transactions.
 
-That layered system helps explain why TikTok Shop has grown into a major Philippine commerce channel. The evidence does not tell us exactly how much each mechanism contributed.
+So the answer is not simply that Filipinos started trusting TikTok creators, or that shopping became entertaining.
+
+TikTok changed where shopping can start. The feed can create the discovery, creators can turn that attention into attributable sales, the product page and checkout are close by, and promotions can make the purchase easier to complete.
+
+That combination helps explain why TikTok is increasingly becoming somewhere Filipinos buy things, not just somewhere they watch videos.
