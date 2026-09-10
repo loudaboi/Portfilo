@@ -4,8 +4,9 @@ dek: "TikTok has made the feed itself part of the shopping funnel, connecting pr
 section: why
 contentType: explained
 topic: business
-status: draft
-featured: false
+publishedAt: 2026-09-11
+status: published
+featured: true
 image:
   src: "../../assets/editorial/greenwish-tiktok-phone-pexels.jpg"
   alt: "A person holding a phone displaying the TikTok app."
