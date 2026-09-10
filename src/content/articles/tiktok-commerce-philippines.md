@@ -6,6 +6,11 @@ contentType: explained
 topic: business
 status: draft
 featured: false
+image:
+  src: "../../assets/editorial/greenwish-tiktok-phone-pexels.jpg"
+  alt: "A person holding a phone displaying the TikTok app."
+  credit: "greenwish_ / Pexels"
+  generated: false
 ---
 
 Shopping on TikTok can begin before someone decides to shop.
