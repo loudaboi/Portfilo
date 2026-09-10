@@ -523,12 +523,12 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
-24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / MANUAL DRAFT 2 COMPLETE / CI #130 PASS / FOUNDER EDITORIAL REVIEW NEXT.
+24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / CI #134 PASS / FINAL PACKAGING + PUBLICATION PREP NEXT.
 25. **Why #3: digital banks in the Philippines** - RESERVED NEXT WHY ASSIGNMENT.
 
 ## Exact next task
 
-**Founder editorial review of Manual Draft 2 for Why #2: TikTok commerce in the Philippines.**
+**Final packaging and publication preparation for Why #2: TikTok commerce in the Philippines.**
 
 Manual Draft 2 exists at:
 
@@ -536,9 +536,9 @@ Manual Draft 2 exists at:
 
 The draft remains `status: draft`, uses no article image, and was written from the verified research packet only.
 
-Review the draft for factual fidelity, framing, structure, natural language, concision, and whether the layered mechanism answers the working question without overstating causality.
+The Draft 2 body and structure are founder-approved. Review only the final reader-facing package and publication readiness: headline, dek, metadata, final claim integrity, and whether an article image is warranted under the current image system.
 
-Do not publish, select or generate an image, or begin Why #3 at this gate.
+Do not publish, generate an image, merge to `main`, deploy, or begin Why #3 without separate approval.
 
 No merge to `main` or deployment is authorized.
 
