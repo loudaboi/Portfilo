@@ -524,11 +524,11 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
 24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FOUNDER PREVIEW QA PASS / CI PASS.
-25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / CI #168 PASS / FINAL PACKAGING REVIEW NEXT.
+25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 COMPLETE / CI #175 PASS / FOUNDER EDITORIAL REVIEW NEXT.
 
 ## Exact next task
 
-**Final packaging review for Why #3: headline, dek, and metadata direction.**
+**Founder editorial review of revised Draft 2 for Why #3.**
 
 Research packet:
 
@@ -536,13 +536,13 @@ Research packet:
 
 The subject-research outcome is `PUBLISH` and the founder approved the research question and thesis.
 
-Draft 1 now exists at:
+Draft 2 now exists at:
 
 `src/content/articles/digital-bank-savings-rates-philippines.md`
 
-The draft is approximately 887 body words, remains `status: draft`, `featured: false`, has no image and no `publishedAt`, and passed CI #168 including check and build.
+The revised draft is approximately 841 body words, remains `status: draft`, `featured: false`, has no image and no `publishedAt`, and passed CI #175 including check and build.
 
-Draft 1 has passed founder editorial review. The article body, structure, explanation, and claim framing are approved. The next gate is final packaging review of the headline, dek, and metadata direction. Image selection remains a separate later gate.
+The revision keeps the approved question and evidence while reducing jargon, removing the redundant net-interest-margin figure, simplifying the opening, and tightening the explanation around four ideas: deposits as funding, higher earning-asset yields, the limits of the branch-cost explanation, and promotional-rate mechanics.
 
 TikTok Why #2 remains the explicitly featured homepage longform item.
 
