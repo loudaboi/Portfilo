@@ -4,7 +4,8 @@ dek: "Nearly four in five BYDs sold in the Philippines through August 2026 were 
 section: why
 contentType: explained
 topic: technology
-status: draft
+publishedAt: 2026-09-11
+status: published
 featured: false
 image:
   src: "../../assets/editorial/byd-emblem-pexels-pedro-h-novais.jpg"
