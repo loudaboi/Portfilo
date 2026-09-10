@@ -120,4 +120,4 @@ Do not generate imagery at the research stage.
 The question has a clear reader payoff, strong independent evidence of market scale, official documentation for the commerce mechanics, and meaningful counterevidence that prevents an overly promotional explanation.
 
 Next gate:
-**Final packaging and publication preparation for the founder-approved Draft 2.**
+**Review a founder-supplied real image for the founder-approved Draft 2, if provided.**
