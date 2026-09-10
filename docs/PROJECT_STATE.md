@@ -523,25 +523,38 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
+24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / FOUNDER RESEARCH REVIEW PENDING.
+25. **Why #3: digital banks in the Philippines** - RESERVED NEXT WHY ASSIGNMENT.
 
 ## Exact next task
 
-**Why #2 subject research: TikTok commerce in the Philippines.**
+**Founder research review for Why #2: TikTok commerce in the Philippines.**
 
-Approved Why sequence:
-- Why #1: BYD Philippines - COMPLETE.
-- Why #2: TikTok commerce in the Philippines - ACTIVE SUBJECT RESEARCH.
-- Why #3: digital banks in the Philippines - RESERVED NEXT WHY ASSIGNMENT.
-
-Working Why #2 question:
+Working question:
 
 > **Why is TikTok increasingly becoming a place Filipinos buy things, not just watch videos?**
 
-Do not reopen Why #1 unless new evidence or a concrete defect appears.
+The subject-research packet is complete at:
 
-For Why #2, complete the subject-research packet first and reach a research outcome before Draft 1. Do not require the old style-research or style-brief workflow for this manual pilot.
+`research/stories/tiktok-commerce-philippines/`
 
-Continue the founder-approved inventory-first sequence: finish Why #2 and Why #3, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
+Research outcome:
+`PUBLISH`
+
+Current evidence supports a layered mechanism:
+- TikTok Shop has reached material Philippine e-commerce scale;
+- short-form video and LIVE turn product discovery into part of entertainment;
+- affiliate commissions turn creators into attributable sales channels;
+- integrated shopping paths reduce the distance between discovery and checkout;
+- vouchers, shipping support and other subsidies also materially reduce conversion friction;
+- trust and consumer-protection concerns remain real constraints.
+
+Do not claim one proven cause or claim that creator trust alone explains adoption.
+
+Next gate after founder approval:
+**Manual Draft 1.**
+
+Do not require style research or a style brief for this pilot. Do not begin Why #3 until Why #2 reaches its appropriate stopping point.
 
 No merge to `main` or deployment is authorized at this gate.
 
