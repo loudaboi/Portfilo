@@ -69,7 +69,7 @@ const tickerItems = newsItems.slice(0, 5).map((item) => ({
   href: item.href,
 }));
 
-const secondaryStory = longformByDate
+const secondaryStory = publishedLongformByDate
   .filter((story) => story.id !== featureStory?.id)
   .map((story) => ({
     title: story.data.title,
