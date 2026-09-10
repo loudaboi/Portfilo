@@ -294,10 +294,11 @@ All four existing non-News entries were reclassified from `section: stories` to 
 
 Current Why inventory therefore contains:
 
-- one published article;
-- three draft previews.
+- one pre-existing published article;
+- no retained draft previews;
+- one new active research assignment: `research/stories/byd-everywhere-philippines/`.
 
-There is currently no Hustle inventory. `/hustle` intentionally renders an honest empty state rather than synthetic founder/business-owner content.
+The three rejected draft Why pieces were removed on 2026-09-11 and must not be used as writing precedent. There is currently no Hustle inventory. `/hustle` intentionally renders an honest empty state rather than synthetic founder/business-owner content.
 
 The first approved real News report is the Kita funding item. It remains on `build/portfilo-v0` pending the normal release boundary.
 
@@ -520,13 +521,20 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 19. **Editorial-image runtime/schema impact review** - COMPLETE / no schema or component expansion justified.
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
-22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; fresh Why and Hustle work remain.
+22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
+23. **Why #1: BYD Philippines research packet** - ACTIVE / initial evidence, contradictions, sources, and notes recorded; outcome `CONTINUE`; no Draft 1 authorization yet.
 
 ## Exact next task
 
-**Start Why #1 from zero.**
+**Continue Why #1 BYD evidence validation before style research.**
 
-Do not rehabilitate, paraphrase, or use the rejected Why drafts as a writing base. First select a strong question with a clear Portfilo reader payoff, then complete the required research and style-research work. Present the proposed angle, evidence base, limitations, and structure for founder approval before Draft 1.
+Working question:
+
+`Why is BYD suddenly everywhere in the Philippines?`
+
+The strongest current corrective finding is that BYD's Philippine growth is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. The research still needs to validate the relative importance of product architecture, price, policy, distribution, the 2026 fuel-price shock, and BYD's wider export push.
+
+Close the material evidence gaps and contradiction checks recorded in `research/stories/byd-everywhere-philippines/`. Do not begin style research until the subject-research outcome is stable enough for a story decision. Do not begin Draft 1 until the required style research and founder-approved style brief are complete.
 
 The current working-branch editorial inventory remains preview/test work. Do not merge or release it to `main` without explicit founder release approval.
 
