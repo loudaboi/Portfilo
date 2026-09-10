@@ -118,4 +118,4 @@ The source image is 3:2 and will use the site's existing 16:9 crop behavior. Fou
 The question has a clear reader payoff, strong independent evidence of market scale, official documentation for the commerce mechanics, and meaningful counterevidence that prevents an overly promotional explanation.
 
 Next gate:
-**Founder preview QA of the published working-branch article on `/why`, the article page, and homepage feature.**
+**COMPLETE. Founder preview QA passed on `/why`, the article page, and homepage feature.**
