@@ -103,15 +103,13 @@ These interviews are optional for the current desk explainer.
 
 ## Image direction
 
-No image decision yet.
+Founder-selected real image attached:
+- asset: `src/assets/editorial/greenwish-tiktok-phone-pexels.jpg`;
+- source: Pexels, creator `greenwish_`;
+- alt: `A person holding a phone displaying the TikTok app.`;
+- generated: `false`.
 
-If imagery is used later, useful options are:
-- documentary screenshot/photo of a Philippine TikTok Shop LIVE or seller event with clear reuse rights;
-- licensed neutral smartphone/social-commerce image only if it adds real context;
-- simple original Portfilo data graphic showing the 2025 Philippine platform-GMV split, if the methodology and design are worth the production effort;
-- `NO IMAGE` remains valid.
-
-Do not generate imagery at the research stage.
+The source image is 3:2 and will use the site's existing 16:9 crop behavior. Founder preview QA must confirm the article/homepage crop before publication.
 
 ## Current decision
 
@@ -120,4 +118,4 @@ Do not generate imagery at the research stage.
 The question has a clear reader payoff, strong independent evidence of market scale, official documentation for the commerce mechanics, and meaningful counterevidence that prevents an overly promotional explanation.
 
 Next gate:
-**Review a founder-supplied real image for the founder-approved Draft 2, if provided.**
+**Founder preview QA of the attached real image on the article/homepage treatment.**
