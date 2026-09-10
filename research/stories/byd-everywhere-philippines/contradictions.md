@@ -99,6 +99,22 @@ BYD attributes demand to innovation, practicality, reliability and lower ownersh
 Implication:
 Those are company claims. Reliability and ownership-cost superiority require independent evidence or should be presented only as attributed claims.
 
+## C13 - End-2024 dealership counts conflict across Ayala/BYD records
+
+BYD's February 2026 release says the network grew from 25 locations at the close of 2024 to 79 operational dealerships at end-2025. Ayala's 2024 Integrated Report also describes 25 BYD dealerships at end-2024.
+
+However, Ayala's 2024 SEC Form 17-A states that ACMobility managed a network of 27 BYD dealerships at end-2024.
+
+Implication:
+Use 25 only when specifically attributing the BYD / integrated-report network count, and do not present the exact 2024 count as uncontested. The central finding, a roughly threefold network expansion by end-2025, survives either baseline.
+
+## C14 - Consumer-survey evidence supports the mechanism but not BYD-specific motivation
+
+Deloitte's 2026 Philippine survey results show rising interest in electrified vehicles, fuel-cost motivation and charging-infrastructure concerns.
+
+Implication:
+This makes the DM-i product-market-fit hypothesis more plausible independently of BYD's marketing. It still does not justify writing that Filipino BYD buyers chose DM-i because of those factors unless buyer-specific evidence is obtained.
+
 ## Current adversarial conclusion
 
 The strongest defensible answer is unlikely to be one cause.
@@ -112,4 +128,4 @@ The current evidence supports a layered explanation:
 - a 2026 fuel-price accelerant;
 - a global BYD push to expand overseas.
 
-The relative causal weight of those factors remains open.
+The relative causal weight of those factors remains open, but the story no longer requires a precise causal ranking. The evidence is sufficient for a carefully qualified, layered explanation that distinguishes verified conditions from inference. Buyer-specific claims about trust, reliability, financing preference or exact purchase motivation should remain out unless directly sourced.
