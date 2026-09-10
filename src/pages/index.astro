@@ -63,7 +63,7 @@ const newsItems = realNews.length > 0 ? realNews : devNews;
 const leadNews = newsItems[0];
 const usingDevNews = devNews.length > 0;
 
-const tickerItems = newsItems.map((item) => ({
+const tickerItems = newsItems.slice(0, 5).map((item) => ({
   label: item.topic,
   title: item.title,
   href: item.href,
@@ -246,9 +246,12 @@ const railArchiveLabel = formatLabel(railSection);
       <section class="news-section" id="news" aria-labelledby="news-section-title">
         <header class="news-section__heading">
           <h2 id="news-section-title">News</h2>
-          {usingDevNews && (
-            <p class="fixture-warning">Sample content for layout testing. Not Portfilo reporting.</p>
-          )}
+          <div class="news-section__heading-side">
+            {usingDevNews && (
+              <p class="fixture-warning">Sample content for layout testing. Not Portfilo reporting.</p>
+            )}
+            <a class="news-section__all" href="/news">All News <span aria-hidden="true">→</span></a>
+          </div>
         </header>
 
         {
@@ -293,7 +296,7 @@ const railArchiveLabel = formatLabel(railSection);
               </article>
 
               <div class="news-list">
-                {newsItems.slice(1, 5).map((item) => (
+                {newsItems.slice(1, 4).map((item) => (
                   <article class="news-list__item">
                     <div class="news-meta">
                       <span>{item.topic}</span>
@@ -888,6 +891,28 @@ const railArchiveLabel = formatLabel(railSection);
         letter-spacing: -0.04em;
       }
 
+      .news-section__heading-side {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .news-section__all {
+        min-height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--ink);
+        font: 620 0.8rem/1.2 var(--sans);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .news-section__all:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
+      }
+
       .fixture-warning {
         max-width: 19rem;
         color: var(--muted);
@@ -1037,6 +1062,10 @@ const railArchiveLabel = formatLabel(railSection);
 
         .news-section__heading {
           align-items: start;
+        }
+
+        .news-section__heading-side {
+          align-items: flex-start;
         }
       }
 

@@ -4,7 +4,6 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import EditorialArticle from "../../components/EditorialArticle.astro";
-import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 export async function getStaticPaths() {
   const whyEntries = await getCollection(
@@ -44,7 +43,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-PH", {
 const formatDate = (date: Date) => dateFormatter.format(date);
 const formatLabel = (value: string) => value.replaceAll("-", " ");
 const pageDescription = metaDescription ?? dek;
-const displayImage = image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined);
+const displayImage = image;
 const isDraft = status === "draft";
 
 const classification = [

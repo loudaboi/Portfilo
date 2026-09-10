@@ -4,7 +4,6 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import EditorialArchive from "../../components/EditorialArchive.astro";
-import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 import { DEV_NEWS_FIXTURES } from "../../data/devNewsFixtures";
 
 const publishedNews = await getCollection(
@@ -33,7 +32,7 @@ const realItems = newsByDate.map((story) => ({
   dek: story.data.dek,
   meta: [formatLabel(story.data.topic), formatDate(story.data.publishedAt)].filter(Boolean),
   accentMetaCount: 1,
-  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
+  image: story.data.image,
 }));
 
 const fixtureItems = realItems.length === 0

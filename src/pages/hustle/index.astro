@@ -4,7 +4,6 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import EditorialArchive from "../../components/EditorialArchive.astro";
-import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 const entries = await getCollection(
   "articles",
@@ -39,7 +38,7 @@ const items = hustleEntries.map((story) => ({
     ...(story.data.status === "draft" ? ["Draft"] : []),
   ],
   accentMetaCount: 2,
-  image: story.data.image ?? (import.meta.env.DEV ? DEV_EDITORIAL_IMAGE : undefined),
+  image: story.data.image,
 }));
 ---
 
