@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / AWAITING STYLE-RESEARCH GATE**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #1 / WRITING-SYSTEM UPDATE DEFERRED**
 
 ## Assignment
 
@@ -133,7 +133,7 @@ The remaining source gaps are optional strengthening opportunities rather than b
 
 **PUBLISH**
 
-This is a research outcome only. It does not authorize Draft 1, website publication, or release.
+This research outcome is approved for the current manual editorial-inventory pilot. Drafting, founder review, revision, packaging, and publication remain separate editorial steps. The existing writing/style system is not being treated as a mandatory drafting gate for this pilot, and system redesign is deferred until the Why and Hustle inventory is complete.
 
 The evidence supports a useful Why story built around a non-obvious correction: BYD's Philippine surge is predominantly a plug-in-hybrid story, inside a broader shift toward electrified vehicles. The strongest defensible explanation is layered rather than monocausal: DM-i product fit, rapid physical distribution, mainstream price positioning, favorable policy, broader electrified-vehicle demand, a 2026 fuel-cost accelerant, and BYD's wider overseas expansion.
 
