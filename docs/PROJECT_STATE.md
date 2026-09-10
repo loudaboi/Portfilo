@@ -522,11 +522,11 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 1 COMPLETE / founder editorial review pending / writing-system update deferred until Why + Hustle inventory is complete.
+23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 COMPLETE / founder editorial review pending / writing-system update deferred until Why + Hustle inventory is complete.
 
 ## Exact next task
 
-**Founder editorial review of Why #1 BYD Draft 1.**
+**Founder editorial review of Why #1 BYD Draft 2.**
 
 Draft:
 
@@ -536,7 +536,7 @@ Working headline:
 
 `Why is BYD suddenly everywhere in the Philippines?`
 
-Draft 1 is complete as a manual editorial pilot and remains `status: draft`. It has no `publishedAt` value and no article image. The draft uses only the completed subject-research packet as its evidentiary basis and does not use the deferred writing/style system as a mandatory gate.
+Draft 2 is complete as a manual editorial pilot and remains `status: draft`. It has no `publishedAt` value and no article image. The draft uses only the completed subject-research packet as its evidentiary basis and does not use the deferred writing/style system as a mandatory gate.
 
 The founder should review the actual article for factual framing, structure, readability, tone, evidence discipline, and AI-slop failure modes. Revision follows only from that editorial review.
 
