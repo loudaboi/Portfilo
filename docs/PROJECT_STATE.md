@@ -522,27 +522,29 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines** - EDITORIAL PACKAGE COMPLETE / Draft 2 founder-approved / approved Pedro H. Novais/Pexels image implemented / image integration CI PASS / remains `status: draft` / publication and release pending.
+23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / writing-system update deferred until Why + Hustle inventory is complete.
 
 ## Exact next task
 
-**Founder visual preview QA of the Why #1 BYD image integration.**
+**Begin Why #2 as the next manual editorial pilot.**
 
-Why #1 BYD currently has:
+Why #1 BYD is complete and published on the working branch:
 
-- founder-approved Draft 2;
-- founder-approved headline/dek;
-- original Pedro H. Novais / Pexels JPG attached;
-- credit: `Pedro H. Novais / Pexels`;
-- alt: `Close-up of the BYD emblem on a vehicle.`;
-- `generated: false`;
-- existing site 16:9 media container handling the display crop;
-- redundant pre-cropped BYD derivative removed;
-- article still `status: draft` with no `publishedAt`.
+- body: founder-approved Draft 2;
+- headline/dek: founder-approved;
+- image: original Pedro H. Novais / Pexels JPG;
+- founder visual preview: PASS on the existing 16:9 article container;
+- status: `published`;
+- publishedAt: `2026-09-11`;
+- retired placeholder Why article removed;
+- its now-unused image removed;
+- Why archive and homepage longform rail now show published content only.
 
-The founder should inspect the rendered article and confirm that the automatic 16:9 crop keeps the BYD emblem composed correctly on desktop and mobile. If it passes, close Why #1 at the editorial-package level and begin Why #2.
+Do not reopen Why #1 unless new evidence or a concrete defect appears.
 
-Do not manually crop the source unless the actual rendered preview exposes a concrete framing problem. Do not publish, merge to `main`, deploy, or redesign the writing/article system at this gate.
+Continue the founder-approved inventory-first sequence: finish the remaining Why pieces, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
+
+No merge to `main` or deployment is authorized at this gate.
 
 ## Deferred / separate workstreams
 
