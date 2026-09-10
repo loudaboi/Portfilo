@@ -4,7 +4,6 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import EditorialArchive from "../../components/EditorialArchive.astro";
-import { DEV_NEWS_FIXTURES } from "../../data/devNewsFixtures";
 
 const publishedNews = await getCollection(
   "articles",
@@ -35,18 +34,7 @@ const realItems = newsByDate.map((story) => ({
   image: story.data.image,
 }));
 
-const fixtureItems = realItems.length === 0
-  ? DEV_NEWS_FIXTURES.map((item) => ({
-      title: item.title,
-      dek: item.dek,
-      meta: [formatLabel(item.topic), item.time],
-      accentMetaCount: 1,
-      image: item.image,
-    }))
-  : [];
-
-const items = realItems.length > 0 ? realItems : fixtureItems;
-const usingFixtures = fixtureItems.length > 0;
+const items = realItems;
 ---
 
 <!doctype html>
@@ -65,14 +53,13 @@ const usingFixtures = fixtureItems.length > 0;
       title="News"
       items={items}
       listId="news-list"
-      leadAriaLabel={usingFixtures ? "Sample news" : "Latest news"}
-      streamAriaLabel={usingFixtures ? "Sample news layout" : "News archive"}
+      leadAriaLabel="Latest news"
+      streamAriaLabel="News archive"
       emptyText="No published News items yet."
       signupId="news-archive-newsletter"
       signupAriaLabel="Subscribe to Portfilo news"
       signupHeading="Stay on top of what’s changing."
       signupCopy="Current reporting on the developments moving companies, technology, work, and the digital economy."
-      fixtureNotice={usingFixtures ? "Sample content for layout testing. Not Portfilo reporting." : undefined}
     />
 
     <SiteFooter />
