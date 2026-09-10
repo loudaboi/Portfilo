@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE LOCKED / IMAGE NECESSITY + SELECTION NEXT**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS APPLIED / FOUNDER PROSE QA NEXT**
 
 ## Assignment
 
@@ -152,6 +152,6 @@ The strongest defensible thesis is:
 
 > Philippine digital banks pay more for deposits because deposits are a competitive source of funding and customer acquisition for newer banks, while their higher-yielding asset mix gives them more room to absorb that cost. Branchless operations help, but current BSP data show that "lower overhead" is not the whole explanation.
 
-Founder approval of the research direction, Draft 1 editorial review, and revised Draft 2 are complete. The article body and text package are locked. The next gate is image necessity and image selection.
+Founder approval of the research direction, Draft 1 editorial review, and revised Draft 2 are complete. A founder-authorized final prose-quality pass has now been applied without changing the headline/dek package or factual structure. Founder prose QA is the next gate; image necessity follows if that passes.
 
 No article draft, image selection, publication, merge to `main`, or deployment is authorized at this gate.
