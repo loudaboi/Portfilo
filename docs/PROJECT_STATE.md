@@ -522,39 +522,27 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines research packet** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / writing-system update deferred until Why + Hustle inventory is complete.
+23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 1 COMPLETE / founder editorial review pending / writing-system update deferred until Why + Hustle inventory is complete.
 
 ## Exact next task
 
-**Continue Why #1 BYD as manual article pilot #1 from the completed subject research.**
+**Founder editorial review of Why #1 BYD Draft 1.**
 
-Working question:
+Draft:
+
+`src/content/articles/byd-everywhere-philippines.md`
+
+Working headline:
 
 `Why is BYD suddenly everywhere in the Philippines?`
 
-The subject research supports a qualified layered answer. The central corrective finding is that BYD's Philippine surge is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. Independent 2026 Philippine consumer research also shows rising interest in electrified vehicles, strong fuel-cost motivation, and charging-infrastructure concerns.
+Draft 1 is complete as a manual editorial pilot and remains `status: draft`. It has no `publishedAt` value and no article image. The draft uses only the completed subject-research packet as its evidentiary basis and does not use the deferred writing/style system as a mandatory gate.
 
-Founder-approved workflow for the remaining Why and Hustle inventory:
+The founder should review the actual article for factual framing, structure, readability, tone, evidence discipline, and AI-slop failure modes. Revision follows only from that editorial review.
 
-`SUBJECT RESEARCH -> MANUAL DRAFT -> FOUNDER EDITORIAL REVIEW -> REVISION -> PACKAGING / IMAGE DECISION -> MANUAL PUBLICATION DECISION`
+Do not publish the article, set `status: published`, add a publication date, select or generate an image, merge to `main`, deploy, or redesign the writing/article system without a separate explicit gate.
 
-Do not require the current `STYLE_RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, `style-research.md`, or `style-brief.md` workflow as a drafting gate for these manual pilots. Preserve those documents for later evaluation rather than redesigning them during the inventory build. After the Why and Hustle inventory is complete, audit the approved and rejected real articles, then update the writing/article system from that evidence.
-
-Drafting does not itself authorize website publication, merge to `main`, or deployment.
-
-The current working-branch editorial inventory remains preview/test work. Do not merge or release it to `main` without explicit founder release approval.
-
-The following image invariants remain locked:
-
-- `image` remains optional across News, Why, and Hustle;
-- no piece is blocked solely because no suitable image exists;
-- `NO IMAGE` is a valid outcome;
-- section preferences must not become hard schema invariants;
-- generated imagery remains visibly disclosed editorial illustration;
-- current no-image runtime states must remain functional;
-- future mobile hierarchy changes require a separately justified task rather than assuming image-first ordering everywhere.
-
-Do not generate editorial images, alter topic taxonomy, change the News / Why / Hustle architecture, or expand the runtime image schema without a separately authorized task. Individual pieces in the approved editorial inventory batch must continue through their normal research, editorial, and publication gates.
+After the Why and Hustle inventory is complete, audit the approved and rejected real articles and update the writing/article system from that evidence.
 
 ## Deferred / separate workstreams
 
