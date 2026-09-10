@@ -522,23 +522,25 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / packaging + image decision pending / writing-system update deferred until Why + Hustle inventory is complete.
+23. **Why #1: BYD Philippines** - EDITORIAL PACKAGE COMPLETE / Draft 2 founder-approved / approved Pedro H. Novais/Pexels image implemented / image integration CI PASS / remains `status: draft` / publication and release pending.
 
 ## Exact next task
 
-**Final packaging and image-necessity decision for Why #1 BYD.**
+**Begin Why #2 as the next manual editorial pilot.**
 
-Draft:
+Why #1 BYD is complete at the editorial-package level:
 
-`src/content/articles/byd-everywhere-philippines.md`
+- body: founder-approved Draft 2;
+- headline/dek: founder-approved;
+- image: Pedro H. Novais / Pexels, implemented at 16:9 with credit;
+- runtime image integration: CI PASS;
+- article remains `status: draft`;
+- no `publishedAt` value;
+- no merge to `main` or deployment is authorized.
 
-Working headline:
+Publication remains a separate later decision. Do not reopen Why #1 unless new evidence or a concrete defect appears.
 
-`Why is BYD suddenly everywhere in the Philippines?`
-
-Draft 2 is founder-approved and remains `status: draft`. It has no `publishedAt` value and no article image. The next task is limited to confirming the final headline/dek package and deciding whether the article needs an image. Do not publish the article, set `status: published`, add a publication date, merge to `main`, deploy, or redesign the writing/article system without a separate explicit gate.
-
-After the Why and Hustle inventory is complete, audit the approved and rejected real articles and update the writing/article system from that evidence.
+Continue the founder-approved inventory-first sequence: finish the remaining Why pieces, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
 
 ## Deferred / separate workstreams
 
