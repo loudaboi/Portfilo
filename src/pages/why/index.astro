@@ -7,7 +7,7 @@ import EditorialArchive from "../../components/EditorialArchive.astro";
 
 const entries = await getCollection(
   "articles",
-  ({ data }) => data.section === "why",
+  ({ data }) => data.section === "why" && data.status === "published",
 );
 
 const whyEntries = entries
