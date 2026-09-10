@@ -16,7 +16,7 @@ TikTok can reverse that order. You can be watching a short video or LIVE, encoun
 
 That change in where the journey begins helps explain how a video app became a serious marketplace.
 
-## The storefront moved into the feed
+## TikTok Shop is already a real marketplace
 
 The scale is already material.
 
