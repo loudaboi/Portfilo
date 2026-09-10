@@ -7,7 +7,7 @@ import EditorialArchive from "../../components/EditorialArchive.astro";
 import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 const entries = await getCollection(
-  "stories",
+  "articles",
   ({ data }) => data.section === "hustle",
 );
 

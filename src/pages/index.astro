@@ -7,7 +7,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
 import { DEV_NEWS_FIXTURES } from "../data/devNewsFixtures";
 
-const entries = await getCollection("stories");
+const entries = await getCollection("articles");
 const publishedEntries = entries.filter(({ data }) => data.status === "published");
 
 const longformByDate = entries

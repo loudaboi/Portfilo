@@ -8,7 +8,7 @@ import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 export async function getStaticPaths() {
   const hustleEntries = await getCollection(
-    "stories",
+    "articles",
     ({ data }) => data.section === "hustle",
   );
 

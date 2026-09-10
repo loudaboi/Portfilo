@@ -8,7 +8,7 @@ import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 
 export async function getStaticPaths() {
   const news = await getCollection(
-    "stories",
+    "articles",
     ({ data }) =>
       data.section === "news" && (data.status === "published" || import.meta.env.DEV),
   );

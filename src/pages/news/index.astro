@@ -8,7 +8,7 @@ import { DEV_EDITORIAL_IMAGE } from "../../data/devEditorialImage";
 import { DEV_NEWS_FIXTURES } from "../../data/devNewsFixtures";
 
 const publishedNews = await getCollection(
-  "stories",
+  "articles",
   ({ data }) => data.section === "news" && data.status === "published",
 );
 

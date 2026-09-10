@@ -17,9 +17,9 @@ const contentTypes = [
 
 const topics = ["business", "technology", "startup", "ai"] as const;
 
-const stories = defineCollection({
+const articles = defineCollection({
   loader: glob({
-    base: "./src/content/stories",
+    base: "./src/content/articles",
     pattern: "*.md",
   }),
   schema: ({ image }) =>
@@ -82,4 +82,4 @@ const stories = defineCollection({
       }),
 });
 
-export const collections = { stories };
+export const collections = { articles };
