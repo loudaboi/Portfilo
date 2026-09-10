@@ -524,11 +524,11 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
 24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FOUNDER PREVIEW QA PASS / CI PASS.
-25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 COMPLETE / CI #168 PASS / FOUNDER EDITORIAL REVIEW NEXT.
+25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / CI #168 PASS / FINAL PACKAGING REVIEW NEXT.
 
 ## Exact next task
 
-**Founder editorial review of Draft 1 for Why #3: why do digital banks in the Philippines pay so much more interest on savings?**
+**Final packaging review for Why #3: headline, dek, and metadata direction.**
 
 Research packet:
 
@@ -542,7 +542,7 @@ Draft 1 now exists at:
 
 The draft is approximately 887 body words, remains `status: draft`, `featured: false`, has no image and no `publishedAt`, and passed CI #168 including check and build.
 
-Review Draft 1 for factual fidelity, natural explanation, jargon load, structure, concision, and whether it preserves the key corrective finding that branchlessness is only part of the answer.
+Draft 1 has passed founder editorial review. The article body, structure, explanation, and claim framing are approved. The next gate is final packaging review of the headline, dek, and metadata direction. Image selection remains a separate later gate.
 
 TikTok Why #2 remains the explicitly featured homepage longform item.
 
