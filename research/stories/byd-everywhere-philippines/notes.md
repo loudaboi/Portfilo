@@ -170,6 +170,10 @@ Best image job for this question:
 
 ## Current decision
 
-**CONTINUE RESEARCH**
+**PUBLISH / SUBJECT RESEARCH COMPLETE**
 
-The story has a strong question and a non-obvious answer emerging, but causal weighting and buyer-motivation claims are not yet stable enough for Draft 1.
+This is the research-packet story decision, not authorization to draft or release.
+
+The evidence is strong enough to proceed to the required reader/audience and style-research stage if the founder approves that next gate.
+
+The draft must not claim a single proven cause. Buyer-specific claims about trust, reliability, financing choice or exact motivation remain unavailable without direct reporting.
