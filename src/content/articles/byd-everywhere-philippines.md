@@ -7,7 +7,7 @@ topic: technology
 status: draft
 featured: false
 image:
-  src: "../../assets/editorial/byd-emblem-pexels-pedro-h-novais-16x9.webp"
+  src: "../../assets/editorial/byd-emblem-pexels-pedro-h-novais.jpg"
   alt: "Close-up of the BYD emblem on a vehicle."
   credit: "Pedro H. Novais / Pexels"
   generated: false
