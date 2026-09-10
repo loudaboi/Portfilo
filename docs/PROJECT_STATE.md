@@ -526,22 +526,23 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Begin Why #2 as the next manual editorial pilot.**
+**Founder visual preview QA of the Why #1 BYD image integration.**
 
-Why #1 BYD is complete at the editorial-package level:
+Why #1 BYD currently has:
 
-- body: founder-approved Draft 2;
-- headline/dek: founder-approved;
-- image: original Pedro H. Novais / Pexels source photo attached with credit; the existing site 16:9 media container handles display cropping;
-- redundant pre-cropped BYD image derivative removed;
-- current image integration changes awaiting CI;
-- article remains `status: draft`;
-- no `publishedAt` value;
-- no merge to `main` or deployment is authorized.
+- founder-approved Draft 2;
+- founder-approved headline/dek;
+- original Pedro H. Novais / Pexels JPG attached;
+- credit: `Pedro H. Novais / Pexels`;
+- alt: `Close-up of the BYD emblem on a vehicle.`;
+- `generated: false`;
+- existing site 16:9 media container handling the display crop;
+- redundant pre-cropped BYD derivative removed;
+- article still `status: draft` with no `publishedAt`.
 
-Publication remains a separate later decision. Do not reopen Why #1 unless new evidence or a concrete defect appears.
+The founder should inspect the rendered article and confirm that the automatic 16:9 crop keeps the BYD emblem composed correctly on desktop and mobile. If it passes, close Why #1 at the editorial-package level and begin Why #2.
 
-Continue the founder-approved inventory-first sequence: finish the remaining Why pieces, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
+Do not manually crop the source unless the actual rendered preview exposes a concrete framing problem. Do not publish, merge to `main`, deploy, or redesign the writing/article system at this gate.
 
 ## Deferred / separate workstreams
 
