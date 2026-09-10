@@ -5,7 +5,6 @@ import SiteHead from "../components/SiteHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import NewsletterSignup from "../components/NewsletterSignup.astro";
-import { DEV_NEWS_FIXTURES } from "../data/devNewsFixtures";
 
 const entries = await getCollection("articles");
 const publishedEntries = entries.filter(({ data }) => data.status === "published");
@@ -48,20 +47,10 @@ const realNews = newsByDate.map((story) => ({
   dek: story.data.dek,
   href: `/news/${story.id}`,
   image: story.data.image,
-  fixture: false as const,
 }));
 
-const devNews = realNews.length === 0
-  ? DEV_NEWS_FIXTURES.map((item) => ({
-      ...item,
-      href: undefined,
-      fixture: true as const,
-    }))
-  : [];
-
-const newsItems = realNews.length > 0 ? realNews : devNews;
+const newsItems = realNews;
 const leadNews = newsItems[0];
-const usingDevNews = devNews.length > 0;
 
 const tickerItems = newsItems.slice(0, 5).map((item) => ({
   label: item.topic,
@@ -127,15 +116,15 @@ const railArchiveLabel = formatLabel(railSection);
           <section
             class="latest-strip"
             id="latest"
-            aria-label={usingDevNews ? "Sample news layout items" : "Latest news from Portfilo"}
+            aria-label="Latest news from Portfilo"
           >
             <div class="latest-strip__label">
-              <strong>{usingDevNews ? "Sample news" : "Latest news"}</strong>
+              <strong>Latest news</strong>
             </div>
             <div
               class="latest-strip__rail"
               tabindex="0"
-              aria-label={usingDevNews ? "Sample news headlines" : "Latest news headlines"}
+              aria-label="Latest news headlines"
               data-latest-rail
               data-auto-ticker={tickerItems.length > 1 ? "true" : "false"}
             >
@@ -247,9 +236,6 @@ const railArchiveLabel = formatLabel(railSection);
         <header class="news-section__heading">
           <h2 id="news-section-title">News</h2>
           <div class="news-section__heading-side">
-            {usingDevNews && (
-              <p class="fixture-warning">Sample content for layout testing. Not Portfilo reporting.</p>
-            )}
             <a class="news-section__all" href="/news">All News <span aria-hidden="true">→</span></a>
           </div>
         </header>
@@ -881,8 +867,7 @@ const railArchiveLabel = formatLabel(railSection);
         border-bottom: 1px solid var(--ink);
       }
 
-      .news-section__heading h2,
-      .fixture-warning {
+      .news-section__heading h2 {
         margin: 0;
       }
 
@@ -911,13 +896,6 @@ const railArchiveLabel = formatLabel(railSection);
       .news-section__all:hover {
         text-decoration: underline;
         text-underline-offset: 0.18em;
-      }
-
-      .fixture-warning {
-        max-width: 19rem;
-        color: var(--muted);
-        font: 520 0.7rem/1.35 var(--sans);
-        text-align: right;
       }
 
       .news-grid {
@@ -1035,12 +1013,6 @@ const railArchiveLabel = formatLabel(railSection);
         }
       }
 
-      @media (max-width: 48rem) {
-        .fixture-warning {
-          max-width: 14rem;
-        }
-      }
-
       @media (max-width: 42rem) {
         .newsletter-band__inner,
         .featured-pair,
@@ -1096,9 +1068,6 @@ const railArchiveLabel = formatLabel(railSection);
           max-width: 62vw;
         }
 
-        .fixture-warning {
-          font-size: 0.62rem;
-        }
       }
     </style>
   </body>
