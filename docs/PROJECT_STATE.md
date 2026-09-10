@@ -526,13 +526,22 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Why #2 selection and research gate.**
+**Why #2 subject research: TikTok commerce in the Philippines.**
 
-Why #1 BYD is closed. Do not reopen it unless new evidence or a concrete defect appears.
+Approved Why sequence:
+- Why #1: BYD Philippines - COMPLETE.
+- Why #2: TikTok commerce in the Philippines - ACTIVE SUBJECT RESEARCH.
+- Why #3: digital banks in the Philippines - RESERVED NEXT WHY ASSIGNMENT.
 
-Select the next Why question using the current editorial gate, then conduct subject research before drafting. Do not revive rejected placeholder Why pieces merely to fill inventory.
+Working Why #2 question:
 
-Continue the founder-approved inventory-first sequence: finish the remaining Why pieces, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
+> **Why is TikTok increasingly becoming a place Filipinos buy things, not just watch videos?**
+
+Do not reopen Why #1 unless new evidence or a concrete defect appears.
+
+For Why #2, complete the subject-research packet first and reach a research outcome before Draft 1. Do not require the old style-research or style-brief workflow for this manual pilot.
+
+Continue the founder-approved inventory-first sequence: finish Why #2 and Why #3, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
 
 No merge to `main` or deployment is authorized at this gate.
 
