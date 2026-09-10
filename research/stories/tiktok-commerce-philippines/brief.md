@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / FOUNDER RESEARCH APPROVED / MANUAL DRAFT 1 NEXT**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #2 / MANUAL DRAFT 1 COMPLETE / FOUNDER EDITORIAL REVIEW NEXT**
 
 ## Assignment
 
@@ -150,4 +150,4 @@ The strongest defensible thesis is:
 
 That should be presented as a layered mechanism, not a claim that every Filipino buyer follows the same path.
 
-No Draft 1 is authorized by this research outcome alone.
+Founder research approval is complete. Manual Draft 1 now exists at `src/content/articles/tiktok-commerce-philippines.md`; the next gate is founder editorial review. No publication is authorized.
