@@ -523,14 +523,14 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
-24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / MANUAL DRAFT 1 COMPLETE / FOUNDER EDITORIAL REVIEW NEXT.
+24. **Why #2: TikTok commerce in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / MANUAL DRAFT 2 COMPLETE / CI #130 PASS / FOUNDER EDITORIAL REVIEW NEXT.
 25. **Why #3: digital banks in the Philippines** - RESERVED NEXT WHY ASSIGNMENT.
 
 ## Exact next task
 
-**Founder editorial review of Manual Draft 1 for Why #2: TikTok commerce in the Philippines.**
+**Founder editorial review of Manual Draft 2 for Why #2: TikTok commerce in the Philippines.**
 
-Manual Draft 1 exists at:
+Manual Draft 2 exists at:
 
 `src/content/articles/tiktok-commerce-philippines.md`
 
