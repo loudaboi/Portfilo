@@ -152,4 +152,4 @@ Do not generate or select an image at the research stage.
 The current evidence supports a useful, Philippine-specific Why article with a clear reader payoff and a stronger explanation than the common "no branches" shorthand.
 
 Next gate:
-**Founder approval of the research question and thesis before Draft 1.**
+**Draft 1 from the approved research packet.**
