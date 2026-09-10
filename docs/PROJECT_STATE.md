@@ -22,7 +22,7 @@ The founder subsequently promoted the first real editorial inventory build: nine
 
 The internal content-system terminology cleanup is also complete on the working branch. Portfilo uses one shared Astro Content Collection named `articles`, with `section: news | why | hustle` remaining authoritative. Runtime migration commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`, including `npm run check` and `npm run build`, and subsequent founder preview QA passed.
 
-On 2026-09-11, the founder rejected all three existing **draft Why pieces** as below the required writing standard. Those draft files were removed from `src/content/articles/` and have zero precedent or stylistic authority. The Why inventory must restart from fresh question selection, research, and style work rather than revising or paraphrasing the rejected drafts. The existing published Why article was not part of that draft-removal decision and remains untouched.
+On 2026-09-11, the founder rejected all three existing **draft Why pieces** as below the required writing standard. Those draft files were removed from `src/content/articles/` and have zero precedent or stylistic authority. The Why inventory must restart from fresh question selection and research rather than revising or paraphrasing the rejected drafts. For the current inventory build, Why and Hustle pieces are being developed as manually reviewed editorial pilots; the broader writing/style system will be evaluated and updated only after the Why and Hustle inventory is complete. The existing published Why article was not part of that draft-removal decision and remains untouched.
 
 The current founder-approved publication-level image policy is:
 
@@ -522,19 +522,25 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines research packet** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / founder review pending before style research / no Draft 1 authorization.
+23. **Why #1: BYD Philippines research packet** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / writing-system update deferred until Why + Hustle inventory is complete.
 
 ## Exact next task
 
-**Founder review the Why #1 BYD subject-research outcome and decide whether to authorize style research.**
+**Continue Why #1 BYD as manual article pilot #1 from the completed subject research.**
 
 Working question:
 
 `Why is BYD suddenly everywhere in the Philippines?`
 
-The subject research now supports a qualified layered answer. The central corrective finding is that BYD's Philippine surge is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. Independent 2026 Philippine consumer research also shows rising interest in electrified vehicles, strong fuel-cost motivation, and charging-infrastructure concerns.
+The subject research supports a qualified layered answer. The central corrective finding is that BYD's Philippine surge is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. Independent 2026 Philippine consumer research also shows rising interest in electrified vehicles, strong fuel-cost motivation, and charging-infrastructure concerns.
 
-The research outcome is `PUBLISH` in the packet sense only. It does not authorize Draft 1, website publication, or release. If the founder approves the research outcome, the next stage is the required reader/audience assumptions, professional-form research, human-edited exemplar research, `style-research.md`, and then `style-brief.md` for a separate founder approval before Draft 1.
+Founder-approved workflow for the remaining Why and Hustle inventory:
+
+`SUBJECT RESEARCH -> MANUAL DRAFT -> FOUNDER EDITORIAL REVIEW -> REVISION -> PACKAGING / IMAGE DECISION -> MANUAL PUBLICATION DECISION`
+
+Do not require the current `STYLE_RESEARCH_STANDARD.md`, `WRITING_SYSTEM.md`, `style-research.md`, or `style-brief.md` workflow as a drafting gate for these manual pilots. Preserve those documents for later evaluation rather than redesigning them during the inventory build. After the Why and Hustle inventory is complete, audit the approved and rejected real articles, then update the writing/article system from that evidence.
+
+Drafting does not itself authorize website publication, merge to `main`, or deployment.
 
 The current working-branch editorial inventory remains preview/test work. Do not merge or release it to `main` without explicit founder release approval.
 
