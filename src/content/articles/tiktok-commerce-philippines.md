@@ -1,6 +1,6 @@
 ---
 title: "Why is TikTok increasingly becoming a place Filipinos buy things, not just watch videos?"
-dek: "Market estimates put TikTok Shop at 29% of Philippine platform e-commerce GMV in 2025. The platform combines shoppable content, creator commissions, integrated buying paths and platform-funded promotions."
+dek: "TikTok has made the feed itself part of the shopping funnel, connecting product discovery to creators, listings and checkout. Market estimates put TikTok Shop at 29% of Philippine platform e-commerce GMV in 2025."
 section: why
 contentType: explained
 topic: business
