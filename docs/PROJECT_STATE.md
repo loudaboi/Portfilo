@@ -4,13 +4,19 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING DECISION COMPLETE**
+**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING + IMAGE RUNTIME REVIEW COMPLETE**
 
 The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, signup-heading width correction, release to `main`, and external Cloudflare production verification are complete and founder-validated.
 
-The validated release state passed GitHub Actions CI on `main` and the founder confirmed the production Pages deployment passed the release verification checklist. This closes the release cycle.
+The validated release state passed GitHub Actions CI on `main` and the founder confirmed the production Pages deployment passed the release verification checklist. This closes that release cycle.
 
-The subsequent **Editorial Packaging Standard Refinement** research and decision gate is also complete and founder-approved. Canonical documentation has been reconciled around the approved image policy. No runtime image-system implementation, schema expansion, image generation, editorial publication, or new production release was authorized by that documentation work.
+The subsequent **Editorial Packaging Standard Refinement** research and decision gate is complete and founder-approved. Canonical documentation has been reconciled around the approved image policy.
+
+The founder later explicitly promoted the editorial-image runtime/schema refinement workstream together with a default social-preview refresh. The implementation-impact review concluded that the current optional image schema, shared article/archive components, per-article social-image behavior, and no-image fallbacks are already sufficient for v0. No schema expansion or article/archive component change was justified.
+
+The default social fallback asset at `public/social/portfilo-default.png` was replaced on the working branch with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. `SiteHead.astro` continues to use that same path for non-article pages and for articles without an approved article image. Articles with an approved image continue to use that article image for Open Graph/X metadata and Article structured data.
+
+Working-branch CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed `npm ci`, `npm run check`, and `npm run build` for the social-preview replacement. This working-branch change is not yet a new production release and does not imply deployment to `main`.
 
 The current founder-approved publication-level image policy is:
 
@@ -23,7 +29,7 @@ The current founder-approved publication-level image policy is:
 - generated imagery remains editorial illustration, never documentary evidence;
 - one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate, while individual surfaces may remain text-led.
 
-This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, runtime image-system changes, schema expansion, or other deferred/post-v0 workstreams.
+This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, further runtime image-system changes, schema expansion, or other deferred/post-v0 workstreams.
 
 ## Repository authority
 
@@ -147,7 +153,7 @@ Across all sections, `NO IMAGE` is an acceptable editorial outcome and absence o
 
 When a piece has an approved visual identity, the same approved image or crop-safe derivative may be reused across article, homepage/archive, social-preview, and structured-data surfaces. A surface may remain text-led when that better serves hierarchy or scanning.
 
-The implemented schema-level `image` field remains optional. The packaging decision did not authorize runtime or schema changes.
+The implemented schema-level `image` field remains optional. The approved runtime impact review found no justified need to expand the schema or modify shared article/archive rendering for v0. The only implemented visual change in this workstream was replacement of the default social fallback asset at the existing path.
 
 ## Approved newsletter acquisition copy
 
@@ -339,7 +345,7 @@ The contextual rail can identify another Why/Hustle item without reintroducing S
 
 Why and Hustle preserve the long-form Source Serif reading treatment and optional section rail/table-of-contents behavior without duplicating components.
 
-Current archive/article components already support image and no-image states. The packaging decision did not modify those components.
+Current archive/article components already support image and no-image states. The later image-runtime impact review preserved these components unchanged because the existing behavior already satisfies the approved v0 packaging policy.
 
 ### Short-page footer behavior
 
@@ -384,6 +390,29 @@ Implemented and founder-validated:
 Preview QA exposed one presentation issue inherited from the previous copy: hard `ch`-based heading width caps forced unnecessary line breaks even when the signup column had enough room. The approved correction removed those artificial caps from the homepage, shared footer, shared archive acquisition, and default newsletter heading while preserving the intentionally narrow homepage feature-card treatment.
 
 No copy changes, font-size changes, signup behavior changes, layout redesign, new signup component, separate section newsletter, or new delivery promise were introduced by that correction.
+
+## Editorial-image runtime review and social preview refresh
+
+The founder promoted this workstream after the Editorial Packaging Standard Refinement was decision-complete.
+
+Impact-review conclusion:
+
+- keep the current optional `image` schema;
+- keep current article and archive image/no-image behavior;
+- keep per-article Open Graph/X image behavior in `SiteHead.astro`;
+- keep Article structured-data image behavior when an article image exists;
+- keep the default fallback path `/social/portfilo-default.png` for non-article pages and articles without an approved image;
+- do not add dynamic OG-card generation or a new image-type taxonomy in v0 merely for completeness.
+
+Implemented change:
+
+- `public/social/portfilo-default.png` was replaced with the founder-selected Portfilo stairs/wordmark image;
+- the replacement is a `1200 x 630` PNG and retains the existing path expected by `SiteHead.astro`;
+- no schema, route, article, archive, homepage, or metadata-plumbing change was required.
+
+CI run `#41` on working-branch commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed.
+
+This remains working-branch preview/test state until an explicit founder release decision moves it to `main`.
 
 ## Continuous integration
 
@@ -435,7 +464,7 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS.**
+**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / LATEST WORKING-BRANCH IMAGE PASS CI PASS.**
 
 The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction passed founder preview QA before release.
 
@@ -456,7 +485,7 @@ Founder production verification on the Cloudflare Pages deployment is PASS for t
 
 The release cycle is closed.
 
-The later Editorial Packaging Standard Refinement is documentation-only. It does not create a new runtime validation, production deployment, or publication claim.
+The later Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequently promoted image-runtime impact review found no justified schema or component expansion. The working-branch default social-preview replacement passed CI run `#41` but has not yet been promoted to `main`; therefore no new production-deployment claim is made for that asset.
 
 ## Active work plan
 
@@ -478,12 +507,18 @@ The later Editorial Packaging Standard Refinement is documentation-only. It does
 16. **Production deployment verification** - COMPLETE / founder PASS.
 17. **Editorial Packaging Standard Refinement research and decision** - COMPLETE / founder-approved.
 18. **Editorial Packaging canonical-document reconciliation** - COMPLETE / documentation only.
+19. **Editorial-image runtime/schema impact review** - COMPLETE / no schema or component expansion justified.
+20. **Default Portfilo social-preview refresh** - COMPLETE on working branch / CI PASS.
 
 ## Exact next task
 
-**No further packaging implementation is authorized yet. Await explicit founder promotion of the next workstream.**
+**Founder preview verification and release decision for the working-branch social-preview refresh.**
 
-If editorial-image runtime implementation is later promoted, begin at an implementation-impact review rather than silently changing schema or components. Inspect current runtime and the approved packaging/image contracts first, and preserve these invariants:
+Before any merge to `main`, verify the new default social preview on the preview deployment or another faithful rendered share-preview surface. Confirm that the `1200 x 630` asset is served from `/social/portfilo-default.png`, remains legible at social-card scale, and does not introduce an obvious crop or production-preview defect.
+
+Do not merge or release to `main` without separate explicit founder approval.
+
+The following image invariants remain locked:
 
 - `image` remains optional across News, Why, and Hustle;
 - no piece is blocked solely because no suitable image exists;
@@ -491,9 +526,9 @@ If editorial-image runtime implementation is later promoted, begin at an impleme
 - section preferences must not become hard schema invariants;
 - generated imagery remains visibly disclosed editorial illustration;
 - current no-image runtime states must remain functional;
-- mobile hierarchy must be reviewed deliberately rather than assuming image-first ordering everywhere.
+- future mobile hierarchy changes require a separately justified task rather than assuming image-first ordering everywhere.
 
-Do not implement runtime changes, generate editorial images, publish content, alter topic taxonomy, or change the News / Why / Hustle architecture without a separately authorized task.
+Do not generate editorial images, publish content, alter topic taxonomy, change the News / Why / Hustle architecture, or expand the runtime image schema without a separately authorized task.
 
 ## Deferred / separate workstreams
 
@@ -502,7 +537,6 @@ Remain separate unless explicitly promoted:
 - individual News reporting and publication;
 - individual Why development and publication;
 - individual Hustle reporting and publication;
-- editorial-image runtime/schema refinement;
 - distribution execution and platform posting;
 - provider-side newsletter naming/template changes;
 - final custom-domain cutover;
