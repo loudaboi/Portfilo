@@ -4,7 +4,7 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING + IMAGE RUNTIME REVIEW COMPLETE**
+**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING + IMAGE RUNTIME REVIEW + SOCIAL PREVIEW REFRESH COMPLETE**
 
 The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, signup-heading width correction, release to `main`, and external Cloudflare production verification are complete and founder-validated.
 
@@ -14,9 +14,9 @@ The subsequent **Editorial Packaging Standard Refinement** research and decision
 
 The founder later explicitly promoted the editorial-image runtime/schema refinement workstream together with a default social-preview refresh. The implementation-impact review concluded that the current optional image schema, shared article/archive components, per-article social-image behavior, and no-image fallbacks are already sufficient for v0. No schema expansion or article/archive component change was justified.
 
-The default social fallback asset at `public/social/portfilo-default.png` was replaced on the working branch with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. `SiteHead.astro` continues to use that same path for non-article pages and for articles without an approved article image. Articles with an approved image continue to use that article image for Open Graph/X metadata and Article structured data.
+The default social fallback asset at `public/social/portfilo-default.png` was replaced with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. `SiteHead.astro` continues to use that same path for non-article pages and for articles without an approved article image. Articles with an approved image continue to use that article image for Open Graph/X metadata and Article structured data.
 
-Working-branch CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed `npm ci`, `npm run check`, and `npm run build` for the social-preview replacement. This working-branch change is not yet a new production release and does not imply deployment to `main`.
+Working-branch CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed `npm ci`, `npm run check`, and `npm run build` for the social-preview replacement. The resulting release state at commit `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` was promoted to `main`; main CI run `#44` passed, and the founder confirmed the production result is working. The social-preview refresh is therefore released and production-verified.
 
 The current founder-approved publication-level image policy is:
 
@@ -412,7 +412,7 @@ Implemented change:
 
 CI run `#41` on working-branch commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed.
 
-This remains working-branch preview/test state until an explicit founder release decision moves it to `main`.
+The release state at `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` is on `main`. Main CI run `#44` passed, and founder production verification is PASS. This workstream is closed.
 
 ## Continuous integration
 
@@ -464,7 +464,7 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / LATEST WORKING-BRANCH IMAGE PASS CI PASS.**
+**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS.**
 
 The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction passed founder preview QA before release.
 
@@ -483,9 +483,9 @@ Verified by release CI:
 
 Founder production verification on the Cloudflare Pages deployment is PASS for the released state, including the main navigation and routes, client-side navigation behavior, newsletter acquisition copy and heading wrapping, legacy Stories redirects, and absence of an obvious production-only regression.
 
-The release cycle is closed.
+The original release cycle is closed.
 
-The later Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequently promoted image-runtime impact review found no justified schema or component expansion. The working-branch default social-preview replacement passed CI run `#41` but has not yet been promoted to `main`; therefore no new production-deployment claim is made for that asset.
+The later Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequently promoted image-runtime impact review found no justified schema or component expansion. The default social-preview replacement passed working-branch CI run `#41`, was released to `main` in the `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` state, passed main CI run `#44`, and passed founder production verification.
 
 ## Active work plan
 
@@ -508,15 +508,11 @@ The later Editorial Packaging Standard Refinement is decision-complete and canon
 17. **Editorial Packaging Standard Refinement research and decision** - COMPLETE / founder-approved.
 18. **Editorial Packaging canonical-document reconciliation** - COMPLETE / documentation only.
 19. **Editorial-image runtime/schema impact review** - COMPLETE / no schema or component expansion justified.
-20. **Default Portfilo social-preview refresh** - COMPLETE on working branch / CI PASS.
+20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 
 ## Exact next task
 
-**Founder preview verification and release decision for the working-branch social-preview refresh.**
-
-Before any merge to `main`, verify the new default social preview on the preview deployment or another faithful rendered share-preview surface. Confirm that the `1200 x 630` asset is served from `/social/portfilo-default.png`, remains legible at social-card scale, and does not introduce an obvious crop or production-preview defect.
-
-Do not merge or release to `main` without separate explicit founder approval.
+**No further implementation workstream is currently promoted. Await explicit founder promotion of the next task.**
 
 The following image invariants remain locked:
 
