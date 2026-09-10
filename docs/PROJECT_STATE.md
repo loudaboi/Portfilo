@@ -522,19 +522,19 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines research packet** - ACTIVE / initial evidence, contradictions, sources, and notes recorded; outcome `CONTINUE`; no Draft 1 authorization yet.
+23. **Why #1: BYD Philippines research packet** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / founder review pending before style research / no Draft 1 authorization.
 
 ## Exact next task
 
-**Continue Why #1 BYD evidence validation before style research.**
+**Founder review the Why #1 BYD subject-research outcome and decide whether to authorize style research.**
 
 Working question:
 
 `Why is BYD suddenly everywhere in the Philippines?`
 
-The strongest current corrective finding is that BYD's Philippine growth is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. The research still needs to validate the relative importance of product architecture, price, policy, distribution, the 2026 fuel-price shock, and BYD's wider export push.
+The subject research now supports a qualified layered answer. The central corrective finding is that BYD's Philippine surge is predominantly a plug-in-hybrid story rather than a pure battery-EV story: BYD reports 22,555 DM-i plug-in hybrids out of 28,399 January-August 2026 sales. Independent 2026 Philippine consumer research also shows rising interest in electrified vehicles, strong fuel-cost motivation, and charging-infrastructure concerns.
 
-Close the material evidence gaps and contradiction checks recorded in `research/stories/byd-everywhere-philippines/`. Do not begin style research until the subject-research outcome is stable enough for a story decision. Do not begin Draft 1 until the required style research and founder-approved style brief are complete.
+The research outcome is `PUBLISH` in the packet sense only. It does not authorize Draft 1, website publication, or release. If the founder approves the research outcome, the next stage is the required reader/audience assumptions, professional-form research, human-edited exemplar research, `style-research.md`, and then `style-brief.md` for a separate founder approval before Draft 1.
 
 The current working-branch editorial inventory remains preview/test work. Do not merge or release it to `main` without explicit founder release approval.
 
