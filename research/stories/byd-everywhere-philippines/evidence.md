@@ -364,3 +364,99 @@ Online anecdotes are not representative. Do not convert them into a population-l
 
 Status:
 QUALIFY
+
+
+### C13 - Independent Philippine consumer evidence supports the fuel-cost and charging-friction mechanism
+
+Candidate claim:
+The broader Philippine market is becoming more interested in electrified vehicles because of fuel economics, while charging access remains a material adoption concern.
+
+Evidence:
+Deloitte's 2026 Global Automotive Consumer Study covered the Philippines as one of six Southeast Asian markets. Philippine reporting on the country results states:
+- 34% of Filipino respondents expressed interest in hybrid and electric vehicles, up from 27% a year earlier;
+- 62% cited lower fuel costs as a reason for preferring electrified vehicles;
+- 49% cited environmental concerns;
+- 45% cited driving experience;
+- 48% cited lack of charging stations as a drawback;
+- 41% cited battery replacement cost;
+- 41% cited charging speed.
+
+Deloitte's own Southeast Asia summary separately says hybrid interest is strengthening as consumers balance affordability, charging access and everyday practicality.
+
+Source:
+- Deloitte Southeast Asia, 2026 Global Automotive Consumer Study.
+- BusinessWorld, 21 May 2026, reporting the Philippine survey results.
+- Philippine Star, 24 May 2026, reporting the same study.
+
+Tier:
+A / B
+
+Confidence:
+HIGH for the survey findings; MEDIUM for application to BYD.
+
+Caveat:
+This is evidence about surveyed Philippine consumers generally, not a survey of BYD buyers. It supports the market mechanism but does not prove that a specific BYD buyer chose DM-i because of fuel cost or charging concerns.
+
+Status:
+VERIFIED / QUALIFY ON BYD-SPECIFIC CAUSATION
+
+### C14 - The Philippine market appears unusually open to switching vehicle brands
+
+Candidate claim:
+BYD entered a market in which a meaningful share of consumers are willing to consider brands outside legacy incumbents.
+
+Evidence:
+BusinessWorld's report on Deloitte's 2026 Philippine results says:
+- 37% of surveyed car owners were classified as having low brand loyalty;
+- first-time owners represented an estimated 31% of the market.
+
+Deloitte's official Southeast Asia summary says brand loyalty is shifting and that consumers in many SEA markets show high switching intent, with product quality, performance, value, transparent pricing, dealer visits and physical vehicle experience important to purchase decisions.
+
+Source:
+- Deloitte Southeast Asia, 2026 Global Automotive Consumer Study.
+- BusinessWorld, 21 May 2026.
+
+Tier:
+A / B
+
+Confidence:
+MEDIUM-HIGH
+
+Caveat:
+This does not establish that low loyalty caused BYD sales or that BYD disproportionately captured first-time owners. It supports only a broader market-openness condition.
+
+Status:
+QUALIFY
+
+### C15 - BYD's retail expansion includes repeated mall and test-drive activations, not only permanent dealerships
+
+Candidate claim:
+BYD has increased physical exposure through a combination of permanent retail expansion and repeated high-traffic product activations.
+
+Evidence:
+BYD's 2026 first-party event record includes Tech Tour stops at:
+- Ayala Malls Nuvali in January;
+- Alabang Town Center in April;
+- Glorietta in May;
+- Robinsons Magnolia in June;
+- SM City Clark in June;
+- SM Megamall in July;
+- Trinoma in July;
+- SM City Cebu in August.
+
+These events offered physical vehicle inspection, test drives, product comparison and on-site purchase/reservation offers.
+
+Source:
+BYD Cars Philippines 2026 blog/event pages.
+
+Tier:
+A
+
+Confidence:
+HIGH for event occurrence.
+
+Caveat:
+This helps explain why the brand may feel unusually visible, but no evidence yet quantifies how much these activations contribute to sales.
+
+Status:
+VERIFIED / CAUSAL WEIGHT OPEN
