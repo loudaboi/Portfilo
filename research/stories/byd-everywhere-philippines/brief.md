@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / PACKAGING + IMAGE DECISION PENDING**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / EDITORIAL PACKAGE COMPLETE / PUBLICATION PENDING**
 
 ## Assignment
 
@@ -138,3 +138,23 @@ This research outcome is approved for the current manual editorial-inventory pil
 The evidence supports a useful Why story built around a non-obvious correction: BYD's Philippine surge is predominantly a plug-in-hybrid story, inside a broader shift toward electrified vehicles. The strongest defensible explanation is layered rather than monocausal: DM-i product fit, rapid physical distribution, mainstream price positioning, favorable policy, broader electrified-vehicle demand, a 2026 fuel-cost accelerant, and BYD's wider overseas expansion.
 
 Exact causal weights remain unknowable from the available evidence and must not be fabricated.
+
+
+## Approved image
+
+Selected asset:
+`src/assets/editorial/byd-emblem-pexels-pedro-h-novais-16x9.webp`
+
+Source:
+Pedro H. Novais / Pexels
+
+Source page:
+https://www.pexels.com/photo/close-up-of-byd-car-emblem-on-vehicle-38901701/
+
+Treatment:
+- cropped to 16:9 at 1600 x 900;
+- otherwise kept as the supplied photograph rather than generating or reconstructing the scene;
+- article credit: `Pedro H. Novais / Pexels`;
+- `generated: false`.
+
+The photo is used as a brand-identifying editorial image, not as evidence of a Philippine location or event.
