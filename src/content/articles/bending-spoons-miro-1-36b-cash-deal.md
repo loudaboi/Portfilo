@@ -7,6 +7,9 @@ topic: technology
 publishedAt: 2026-09-11
 status: published
 featured: false
+image:
+  src: "../../assets/editorial/84741d7b-9fe7-413e-bf3e-bc5d22a90120.png"
+  alt: "Miro wordmark in dark blue on a yellow background."
 ---
 
 Bending Spoons has agreed to acquire **Miro in an all-cash transaction**, valuing the workplace-collaboration software company at an enterprise value of **$1.355 billion**, or about $1.36 billion. ([Deal announcement](https://ms.investing.com/news/company-news/bending-spoons-akan-akuisisi-miro-dengan-nilai-1355-bilion-93CH-789415))
