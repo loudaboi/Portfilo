@@ -93,7 +93,7 @@ For v0:
 - Astro + TypeScript;
 - static-first output;
 - Astro Content Collections + local Markdown;
-- one internal collection currently named `stories` with public `section: news | why | hustle`;
+- one internal collection named `articles` with public `section: news | why | hustle`;
 - custom CSS;
 - minimal client-side JavaScript;
 - no frontend framework by default;

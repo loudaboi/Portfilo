@@ -4,7 +4,7 @@ _Last updated: 2026-09-10_
 
 ## Current phase
 
-**RELEASE COMPLETE / PRODUCTION VERIFIED / EDITORIAL PACKAGING + IMAGE RUNTIME REVIEW + SOCIAL PREVIEW REFRESH COMPLETE**
+**EDITORIAL INVENTORY BUILD ACTIVE / INTERNAL CONTENT COLLECTION RENAME COMPLETE ON WORKING BRANCH / CI PASS**
 
 The News / Why / Hustle section migration, client-side navigation enhancement, newsletter acquisition copy refinement, signup-heading width correction, release to `main`, and external Cloudflare production verification are complete and founder-validated.
 
@@ -18,6 +18,10 @@ The default social fallback asset at `public/social/portfilo-default.png` was re
 
 Working-branch CI run `#41` on commit `5bc981c65dd6a50db9d020ed4d8f8e4c4cd5a9d9` passed `npm ci`, `npm run check`, and `npm run build` for the social-preview replacement. The resulting release state at commit `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` was promoted to `main`; main CI run `#44` passed, and the founder confirmed the production result is working. The social-preview refresh is therefore released and production-verified.
 
+The founder subsequently promoted the first real editorial inventory build: nine News reports, three Why pieces, and three Hustle pieces. Each piece still requires its own research, editorial approval, publication decision, and release boundary. The first approved News report, on Kita's $4.5 million seed round, is present on the working branch and has not been released to `main`.
+
+Before continuing News #2, the founder approved a narrow internal content-system terminology cleanup. Portfilo still uses one shared Astro Content Collection, but the internal collection and content directory were renamed from `stories` to `articles`. The existing `section: news | why | hustle` dimension remains authoritative, all five Markdown entries were moved without content changes, and public routes, slugs, schema fields, article/archive components, and presentation remain unchanged. Runtime migration commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`, including `npm run check` and `npm run build`. This change remains preview/test work on `build/portfilo-v0`; it has not been released to `main`.
+
 The current founder-approved publication-level image policy is:
 
 - News imagery is optional;
@@ -29,7 +33,7 @@ The current founder-approved publication-level image policy is:
 - generated imagery remains editorial illustration, never documentary evidence;
 - one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate, while individual surfaces may remain text-led.
 
-This closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, individual editorial publication, further runtime image-system changes, schema expansion, or other deferred/post-v0 workstreams.
+The earlier release closure does not authorize provider-side beehiiv template changes, a final custom-domain cutover, broad-audience launch, further runtime image-system changes, schema expansion, or other deferred/post-v0 workstreams. The current editorial inventory build and internal collection rename are separately founder-promoted work.
 
 ## Repository authority
 
@@ -263,11 +267,11 @@ RSS/Inoreader, Gmail, alerts, and direct manual checks remain optional supportin
 
 ## Current section/runtime migration state
 
-The founder-approved migration has been implemented, validated, released to `main`, and production-verified.
+The founder-approved News / Why / Hustle migration has been implemented, validated, released to `main`, and production-verified. A later working-branch-only terminology cleanup renamed the single internal collection from `stories` to `articles` without changing the public section model.
 
 ### Content schema
 
-`src/content.config.ts` now owns:
+`src/content.config.ts` now owns one collection named `articles` with:
 
 ```text
 section: news | why | hustle
@@ -276,7 +280,7 @@ topic: business | technology | startup | ai
 status: draft | published
 ```
 
-The internal Astro collection remains named `stories`. That implementation name is not a public section.
+News, Why, and Hustle remain section values within that one collection rather than separate collections.
 
 News entries cannot be `featured`; Why/Hustle entries may be featured when editorially justified.
 
@@ -284,7 +288,7 @@ The `image` field remains optional for all sections.
 
 ### Existing content migration
 
-All four existing non-News entries were reclassified from `section: stories` to `section: why`.
+All four existing non-News entries were reclassified from `section: stories` to `section: why` during the earlier public-section migration.
 
 Current Why inventory therefore contains:
 
@@ -292,6 +296,8 @@ Current Why inventory therefore contains:
 - three draft previews.
 
 There is currently no Hustle inventory. `/hustle` intentionally renders an honest empty state rather than synthetic founder/business-owner content.
+
+The first approved real News report is the Kita funding item. It remains on `build/portfilo-v0` pending the normal release boundary.
 
 ### Public routes
 
@@ -464,7 +470,7 @@ No broad alert set is currently required. Add an alert only when repeated scanne
 
 ## Validation status
 
-**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS.**
+**RELEASE CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS / ARTICLE COLLECTION RENAME WORKING-BRANCH CI PASS.**
 
 The News / Why / Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction passed founder preview QA before release.
 
@@ -486,6 +492,8 @@ Founder production verification on the Cloudflare Pages deployment is PASS for t
 The original release cycle is closed.
 
 The later Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequently promoted image-runtime impact review found no justified schema or component expansion. The default social-preview replacement passed working-branch CI run `#41`, was released to `main` in the `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` state, passed main CI run `#44`, and passed founder production verification.
+
+The later internal collection terminology migration at `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`, including `npm run check` and `npm run build`. Founder preview QA and any release to `main` remain separate gates.
 
 ## Active work plan
 
@@ -509,10 +517,23 @@ The later Editorial Packaging Standard Refinement is decision-complete and canon
 18. **Editorial Packaging canonical-document reconciliation** - COMPLETE / documentation only.
 19. **Editorial-image runtime/schema impact review** - COMPLETE / no schema or component expansion justified.
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
+21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview QA pending.
+22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / each piece retains its own editorial and publication gate.
 
 ## Exact next task
 
-**No further implementation workstream is currently promoted. Await explicit founder promotion of the next task.**
+**Founder preview QA the working-branch collection rename, then resume editorial review of News #2.**
+
+Minimum preview checks for the rename:
+
+- `/` loads the same editorial composition and uses real News inventory;
+- `/news` lists the Kita report;
+- `/news/kita-raises-4-5m-ai-credit-underwriting` renders correctly;
+- `/why` retains the existing Why inventory;
+- `/why/what-higher-value-work-means-in-philippine-it-bpm` retains its route and draft treatment;
+- `/hustle` retains the intentional empty state.
+
+Do not merge the collection rename or the first News report to `main` without explicit founder release approval.
 
 The following image invariants remain locked:
 
@@ -524,15 +545,12 @@ The following image invariants remain locked:
 - current no-image runtime states must remain functional;
 - future mobile hierarchy changes require a separately justified task rather than assuming image-first ordering everywhere.
 
-Do not generate editorial images, publish content, alter topic taxonomy, change the News / Why / Hustle architecture, or expand the runtime image schema without a separately authorized task.
+Do not generate editorial images, alter topic taxonomy, change the News / Why / Hustle architecture, or expand the runtime image schema without a separately authorized task. Individual pieces in the approved editorial inventory batch must continue through their normal research, editorial, and publication gates.
 
 ## Deferred / separate workstreams
 
 Remain separate unless explicitly promoted:
 
-- individual News reporting and publication;
-- individual Why development and publication;
-- individual Hustle reporting and publication;
 - distribution execution and platform posting;
 - provider-side newsletter naming/template changes;
 - final custom-domain cutover;

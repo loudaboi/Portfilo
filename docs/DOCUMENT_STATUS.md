@@ -24,6 +24,8 @@ The latest News / Why / Hustle release is complete and production-verified.
 
 **Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequent editorial-image runtime impact review and default social-preview refresh are also complete, released, and production-verified.**
 
+A later founder-approved working-branch cleanup renamed the single internal Astro Content Collection from `stories` to `articles` while preserving `section: news | why | hustle` as the editorial-routing dimension. Existing Markdown files were moved to `src/content/articles/` without content changes, and public routes, slugs, schemas, and presentation remain unchanged. Runtime migration commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`. The rename remains preview/test work and has not been released to `main`; founder preview QA remains pending.
+
 Founder-approved image policy:
 
 - News imagery is optional;
@@ -39,7 +41,7 @@ The packaging reconciliation itself changed canonical documentation only. The la
 
 The default social fallback at `public/social/portfilo-default.png` was replaced with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. Working-branch CI run `#41` passed. The resulting release state at `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` is on `main`, main CI run `#44` passed, and the founder confirmed the production result is working.
 
-No further runtime image-system implementation, schema expansion, image generation, or publication is authorized by this closure.
+No further runtime image-system implementation, schema expansion, image generation, or publication is authorized by this closure. The current editorial inventory build and internal collection rename are separately founder-promoted work and remain subject to their own gates.
 
 Canonical upstream News operating contract remains:
 
@@ -234,7 +236,7 @@ Retired routes:
 
 ### Content schema
 
-`src/content.config.ts` currently owns:
+`src/content.config.ts` currently owns one internal collection named `articles`:
 
 ```text
 section: news | why | hustle
@@ -244,9 +246,9 @@ status: draft | published
 image: optional
 ```
 
-The internal Astro collection remains named `stories`. That collection name is implementation plumbing, not public navigation.
+News, Why, and Hustle remain section values inside that one collection. The collection name is implementation plumbing, not public navigation.
 
-All four existing non-News content entries have been reclassified to `section: why`. There is no synthetic Hustle content.
+All four existing non-News content entries have been reclassified to `section: why`. There is no synthetic Hustle content. The first approved real News report, Kita's funding item, is present on the working branch.
 
 ### Archives and articles
 
@@ -274,13 +276,15 @@ No new social-image generator, route, schema field, or metadata component was in
 
 ## Current validation status
 
-**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS.**
+**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS / ARTICLE COLLECTION RENAME WORKING-BRANCH CI PASS.**
 
 The News/Why/Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction were validated before release, released to `main` after explicit founder approval, and verified on the production Cloudflare Pages deployment.
 
 The Editorial Packaging Standard Refinement is decision-complete and canonically reconciled.
 
 The subsequently promoted editorial-image runtime review concluded with no schema or article/archive component expansion. The replacement of `public/social/portfilo-default.png` passed working-branch CI run `#41`, was released to `main` in the `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` state, passed main CI run `#44`, and passed founder production verification.
+
+The internal collection rename at runtime commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`, including `npm run check` and `npm run build`. Founder preview QA and any release to `main` remain separate gates.
 
 ## Historical/provenance records
 

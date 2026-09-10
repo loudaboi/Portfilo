@@ -112,7 +112,7 @@ Current acquisition model:
 
 ## Content system
 
-Portfilo uses one Astro Content Collection backed by local Markdown. The collection may remain named `stories` internally; the collection name is implementation plumbing and is not a public section label.
+Portfilo uses one Astro Content Collection named `articles`, backed by local Markdown. News, Why, and Hustle remain values of the required `section` field rather than separate collections; the collection name is implementation plumbing, not a public section label.
 
 Required editorial dimensions include:
 
