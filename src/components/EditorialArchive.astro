@@ -214,11 +214,20 @@ const supportingItems = items.slice(1);
 
   .lead-item--without-image {
     grid-template-columns: 1fr;
+    padding-top: clamp(1.2rem, 0.9rem + 1vw, 2rem);
+    padding-bottom: clamp(2.2rem, 1.7rem + 1.8vw, 3.8rem);
   }
 
   .lead-item--without-image .lead-item__package {
     max-width: 54rem;
-    margin-inline: auto;
+  }
+
+  .lead-item--without-image h2 {
+    max-width: 23ch;
+  }
+
+  .lead-item--without-image .lead-item__dek {
+    max-width: 46rem;
   }
 
   .archive-image {
