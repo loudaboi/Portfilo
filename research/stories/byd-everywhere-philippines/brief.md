@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**ACTIVE / INITIAL EVIDENCE PASS / CONTINUE**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / AWAITING STYLE-RESEARCH GATE**
 
 ## Assignment
 
@@ -111,23 +111,30 @@ Existing Philippine coverage is strong on BYD sales milestones, launches and pro
 
 The potential Portfilo contribution is a synthesis that tests which of those mechanisms actually explain the visible Philippine phenomenon rather than repeating BYD's own explanation.
 
-## Evidence threshold before style research
+## Evidence threshold review
 
-Do not move to style research or Draft 1 until:
+The subject-research threshold is sufficiently cleared for a carefully qualified Why story:
 
-- the 2024, 2025 and January-August 2026 sales sequence is verified;
-- the 2026 DM-i versus BEV mix is calculated and source-traceable;
-- dealership growth from end-2024 through 2026 is verified;
-- current price comparisons use defensible peer vehicles and preserve category differences;
-- EVIDA and tariff treatment are verified from law or government sources;
+- the 2024, 2025 and January-August 2026 BYD sales sequence is verified;
+- the 2026 DM-i versus BEV mix is source-traceable and calculated;
+- the rapid dealership expansion is verified, with the 25-versus-27 end-2024 discrepancy preserved;
+- current pricing supports a limited claim that BYD competes across mainstream price bands, not a blanket `BYD is cheaper` claim;
+- EVIDA, tariff and excise-tax treatment are verified from primary legal/government sources;
 - broader Philippine xEV growth is established independently of BYD;
-- fuel-price effects are attributed carefully rather than presented as proven causation;
-- BYD's global export push is treated as context, not a direct explanation of Philippine demand;
-- claims about buyer motivation, trust, reliability or lower ownership cost are either independently supported, directly reported, or excluded;
-- meaningful counterevidence is recorded.
+- Deloitte's 2026 Philippine consumer findings independently support fuel-cost motivation, charging friction and increasing openness to alternative powertrains;
+- the 2026 fuel-price shock remains an attributed accelerant rather than a proven root cause;
+- BYD's global export push remains supply-side context rather than a proven cause of Philippine demand;
+- unsupported buyer-specific claims about trust, reliability, financing preference or exact purchase motivation are excluded unless further direct reporting establishes them;
+- meaningful counterevidence and alternative explanations are recorded.
+
+The remaining source gaps are optional strengthening opportunities rather than blockers if the story stays within those limits.
 
 ## Research outcome
 
-**CONTINUE**
+**PUBLISH**
 
-The question remains strong. The first evidence pass already shows that the most obvious explanation, `Filipinos are suddenly buying EVs`, is incomplete because plug-in hybrids account for most BYD sales. Further causal validation is required before the story decision can move to `PUBLISH`.
+This is a research outcome only. It does not authorize Draft 1, website publication, or release.
+
+The evidence supports a useful Why story built around a non-obvious correction: BYD's Philippine surge is predominantly a plug-in-hybrid story, inside a broader shift toward electrified vehicles. The strongest defensible explanation is layered rather than monocausal: DM-i product fit, rapid physical distribution, mainstream price positioning, favorable policy, broader electrified-vehicle demand, a 2026 fuel-cost accelerant, and BYD's wider overseas expansion.
+
+Exact causal weights remain unknowable from the available evidence and must not be fabricated.
