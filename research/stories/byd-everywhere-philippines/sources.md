@@ -157,7 +157,51 @@ https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK
 
 Use as primary entry point for BYD 2026 interim and monthly sales disclosures.
 
+### Ayala Corporation 2024 SEC Form 17-A
+
+https://ayala.com/app/uploads/2025/04/2024-Ayala-Corporation_SEC-Form-17-A_11April2025.pdf
+
+Use for:
+- formal 2024 ACMobility disclosures;
+- the 27-dealership end-2024 count that conflicts with the 25-location figure in BYD's later release and Ayala's integrated-report presentation.
+
+Limitation:
+The discrepancy must be preserved rather than silently reconciled.
+
+### Deloitte Southeast Asia - 2026 Global Automotive Consumer Study
+
+https://www.deloitte.com/southeast-asia/en/Industries/automotive/perspectives/global-automotive-consumer-study-2026.html
+
+Use for:
+- Southeast Asia consumer context;
+- strengthening hybrid interest;
+- fuel-cost, charging-access and practical-use mechanisms;
+- brand-switching context.
+
+Limitation:
+The public summary is regional. Use the Philippine-specific figures below through reporting that quotes the study unless the underlying country table is directly available.
+
 ## Tier B - Strong independent secondary
+
+### BusinessWorld - Philippine 2026 automotive consumer study
+
+https://www.bworldonline.com/economy/2026/05/21/751367/hybrids-evs-gain-momentum-as-energy-crisis-deepens-deloitte/
+
+Date: 21 May 2026
+
+Use for:
+- Philippine Deloitte survey figures on electrified-vehicle interest;
+- lower-fuel-cost motivation;
+- charging-station, battery-cost and charging-speed concerns;
+- low brand loyalty and first-time-owner context.
+
+### Philippine Star - Philippine 2026 automotive consumer study
+
+https://www.philstar.com/business/2026/05/24/2530019/pinoys-show-growing-interest-hybrids-evs-study
+
+Date: 24 May 2026
+
+Use as a second independent report of the Deloitte Philippine findings.
 
 ### Philippine Star - BYD 2025 sales
 
@@ -236,14 +280,15 @@ https://www.reddit.com/r/CarsPH/comments/1s1886a/is_byds_aftersales_service_real
 
 Use only to identify after-sales and parts-availability questions for potential reporting.
 
-## Source gaps
+## Remaining optional reporting leads
 
-Still desirable before a final story decision:
+These would strengthen the piece but are no longer required for the current subject-research decision if the article avoids unsupported claims:
 
-- current common-denominator Philippine market share/ranking that includes BYD and CAMPI/non-CAMPI brands;
-- model-level monthly BYD sales to test whether acceleration follows specific launches or fuel-price changes;
-- a disciplined peer-price comparison for Seal 5, Atto 2, Sealion 5 and Sealion 6;
-- independent evidence on buyer motivation rather than company statements;
-- direct evidence on financing mix and whether low-down-payment offers materially affect sales;
-- geographically structured dealership-opening timeline;
-- if obtainable, direct comment from BYD/ACMobility on DM-i versus BEV demand and from an independent industry source on why PHEVs are growing so quickly.
+- current common-denominator BYD market share/ranking across CAMPI and non-CAMPI brands;
+- model-level monthly BYD sales to quantify timing around launches and the 2026 fuel shock;
+- buyer-specific interviews on why they chose DM-i, BYD, or another powertrain;
+- financing-share data;
+- direct BYD/ACMobility comment on DM-i versus BEV demand;
+- an independent automotive-industry source on why PHEVs are growing so quickly.
+
+The article must not fill these gaps with inference.
