@@ -4,7 +4,7 @@ _Last updated: 2026-09-11_
 
 ## Status
 
-**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 COMPLETE / FOUNDER EDITORIAL REVIEW NEXT**
+**SUBJECT RESEARCH COMPLETE / PUBLISH / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / FINAL PACKAGING REVIEW NEXT**
 
 ## Assignment
 
@@ -152,6 +152,6 @@ The strongest defensible thesis is:
 
 > Philippine digital banks pay more for deposits because deposits are a competitive source of funding and customer acquisition for newer banks, while their higher-yielding asset mix gives them more room to absorb that cost. Branchless operations help, but current BSP data show that "lower overhead" is not the whole explanation.
 
-Founder approval of this research direction is complete. Draft 1 now exists at `src/content/articles/digital-bank-savings-rates-philippines.md`; founder editorial review is the next gate.
+Founder approval of the research direction and Draft 1 editorial review are complete. Final packaging review of the headline, dek, and metadata direction is the next gate.
 
 No article draft, image selection, publication, merge to `main`, or deployment is authorized at this gate.
