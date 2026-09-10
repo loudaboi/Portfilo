@@ -532,8 +532,9 @@ Why #1 BYD is complete at the editorial-package level:
 
 - body: founder-approved Draft 2;
 - headline/dek: founder-approved;
-- image: Pedro H. Novais / Pexels, implemented at 16:9 with credit;
-- runtime image integration: CI PASS;
+- image: original Pedro H. Novais / Pexels source photo attached with credit; the existing site 16:9 media container handles display cropping;
+- redundant pre-cropped BYD image derivative removed;
+- current image integration changes awaiting CI;
 - article remains `status: draft`;
 - no `publishedAt` value;
 - no merge to `main` or deployment is authorized.
