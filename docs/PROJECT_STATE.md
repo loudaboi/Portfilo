@@ -521,26 +521,16 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 19. **Editorial-image runtime/schema impact review** - COMPLETE / no schema or component expansion justified.
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
-22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; rejected draft Why inventory removed; Why #1 BYD research active; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / writing-system update deferred until Why + Hustle inventory is complete.
+22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
+23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / CI PASS / writing-system update deferred until Why + Hustle inventory is complete.
 
 ## Exact next task
 
-**Begin Why #2 as the next manual editorial pilot.**
+**Why #2 selection and research gate.**
 
-Why #1 BYD is complete and published on the working branch:
+Why #1 BYD is closed. Do not reopen it unless new evidence or a concrete defect appears.
 
-- body: founder-approved Draft 2;
-- headline/dek: founder-approved;
-- image: original Pedro H. Novais / Pexels JPG;
-- founder visual preview: PASS on the existing 16:9 article container;
-- status: `published`;
-- publishedAt: `2026-09-11`;
-- retired placeholder Why article removed;
-- its now-unused image removed;
-- Why archive and homepage longform rail now show published content only.
-
-Do not reopen Why #1 unless new evidence or a concrete defect appears.
+Select the next Why question using the current editorial gate, then conduct subject research before drafting. Do not revive rejected placeholder Why pieces merely to fill inventory.
 
 Continue the founder-approved inventory-first sequence: finish the remaining Why pieces, then Hustle, then evaluate and update the writing/article system from the real approved and rejected work.
 
