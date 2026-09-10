@@ -6,6 +6,11 @@ contentType: explained
 topic: technology
 status: draft
 featured: false
+image:
+  src: "../../assets/editorial/byd-emblem-pexels-pedro-h-novais-16x9.webp"
+  alt: "Close-up of the BYD emblem on a vehicle."
+  credit: "Pedro H. Novais / Pexels"
+  generated: false
 ---
 
 BYD sold 4,780 vehicles in the Philippines in 2024. It reported 26,122 in 2025. In the first eight months of 2026, it sold another 28,399, already more than its full-year total for 2025, [according to the company](https://bydcarsphilippines.com/blog/byd-sales-growth-2026).
