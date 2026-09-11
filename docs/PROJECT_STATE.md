@@ -528,34 +528,25 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Founder preview QA for the Kita lead image.**
+**Current approved working state is release-authorized for `main`.**
 
-The founder selected the official Kita seed-round announcement graphic from the company's website for the Kita News story and pushed it to:
+Founder preview QA for the Kita lead image is PASS.
 
-`src/assets/editorial/kita-seed-round-4-5m.png`
+Locked release state includes:
 
-It is attached to `kita-raises-4-5m-ai-credit-underwriting.md` with:
+- initial 9 News inventory;
+- Why #1 BYD, Why #2 TikTok, and Why #3 digital-bank savings rates;
+- TikTok as the homepage/main longform Why feature;
+- Kita as the explicit homepage editorial News lead;
+- chronological latest-news ticker and News archive;
+- official Kita seed-round image credited `Kita / kita.ai`;
+- current approved article/archive/image behavior and repository cleanup.
 
-- alt: `Kita fundraising announcement graphic showing a $4.5 million seed round.`
-- credit: `Kita / kita.ai`
-- `generated: false`
+Working branch is a clean fast-forward from `main` and the latest working-branch validation passed.
 
-Kita remains the explicit homepage editorial lead for News. The latest-news ticker and News archive remain chronological, and TikTok remains the homepage/main longform Why feature.
+The founder explicitly authorized publishing the current approved state to `main` on 2026-09-11.
 
-Image-attachment commit: `567e0686f9bcbe3d9edf78a7eed3068f0859efc0`.
-
-CI #206 passed `npm run check` and `npm run build`.
-
-Founder preview QA should confirm:
-
-- the Kita image renders correctly in the homepage News lead;
-- the Kita article page renders the image and credit correctly;
-- the News archive treatment remains appropriate;
-- no crop, sizing, or layout regression is visible.
-
-Do not merge to `main` or deploy without separate approval.
-
-No merge to `main` or deployment is authorized.
+After release, the next editorial inventory workstream is Hustle #1 research/question selection. Hustle work is not a prerequisite for this release.
 
 ## Deferred / separate workstreams
 
