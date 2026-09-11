@@ -528,21 +528,32 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Hustle #1 research/question-selection gate, when explicitly promoted.**
+**Founder preview QA for the Kita lead image.**
 
-The Kita homepage News lead preview QA is founder-approved and complete.
+The founder selected the official Kita seed-round announcement graphic from the company's website for the Kita News story and pushed it to:
 
-Locked homepage News behavior:
+`src/assets/editorial/kita-seed-round-4-5m.png`
 
-- Kita remains the explicit homepage editorial lead for News;
-- the latest-news ticker remains chronological;
-- the News archive remains chronological;
-- supporting homepage News items exclude Kita to avoid duplication;
-- TikTok remains the homepage/main longform Why feature.
+It is attached to `kita-raises-4-5m-ai-credit-underwriting.md` with:
 
-The approved Kita implementation passed CI #201, and the latest documentation sync CI #203 also passed.
+- alt: `Kita fundraising announcement graphic showing a $4.5 million seed round.`
+- credit: `Kita / kita.ai`
+- `generated: false`
 
-Do not begin Hustle #1, change homepage feature selection, merge to `main`, or deploy without separate approval.
+Kita remains the explicit homepage editorial lead for News. The latest-news ticker and News archive remain chronological, and TikTok remains the homepage/main longform Why feature.
+
+Image-attachment commit: `567e0686f9bcbe3d9edf78a7eed3068f0859efc0`.
+
+CI #206 passed `npm run check` and `npm run build`.
+
+Founder preview QA should confirm:
+
+- the Kita image renders correctly in the homepage News lead;
+- the Kita article page renders the image and credit correctly;
+- the News archive treatment remains appropriate;
+- no crop, sizing, or layout regression is visible.
+
+Do not merge to `main` or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
