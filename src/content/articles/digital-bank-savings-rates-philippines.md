@@ -4,7 +4,8 @@ dek: "A 3% base savings rate is about 48 times the 0.0625% offered by some large
 section: why
 contentType: explained
 topic: business
-status: draft
+publishedAt: 2026-09-11
+status: published
 featured: false
 ---
 
