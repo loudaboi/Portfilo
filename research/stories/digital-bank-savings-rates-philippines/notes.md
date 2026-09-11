@@ -152,4 +152,4 @@ Do not generate or select an image at the research stage.
 The current evidence supports a useful, Philippine-specific Why article with a clear reader payoff and a stronger explanation than the common "no branches" shorthand.
 
 Next gate:
-**Founder preview QA of the working-branch publication. Verify the no-image article/archive state and confirm TikTok Why #2 remains the homepage/main longform feature.**
+**COMPLETE. Founder preview QA passed for the no-image working-branch publication; TikTok Why #2 remains the homepage/main longform feature.**
