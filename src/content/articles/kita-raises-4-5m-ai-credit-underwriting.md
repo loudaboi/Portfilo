@@ -7,6 +7,11 @@ topic: startup
 publishedAt: 2026-09-10
 status: published
 featured: false
+image:
+  src: "../../assets/editorial/kita-seed-round-4-5m.png"
+  alt: "Kita fundraising announcement graphic showing a $4.5 million seed round."
+  credit: "Kita / kita.ai"
+  generated: false
 ---
 
 Kita, an AI credit assessment startup in Y Combinator's Winter 2026 batch, announced in August that it raised **$4.5 million in seed funding** led by BoxGroup.
