@@ -201,6 +201,9 @@ const railArchiveLabel = formatLabel(railSection);
                     <a href={getEditorialHref(featureStory)}>{featureStory.data.title}</a>
                   </h2>
                   <p>{featureStory.data.dek}</p>
+                  <a class="editorial-read-link" href={getEditorialHref(featureStory)}>
+                    Read <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </article>
 
@@ -282,6 +285,11 @@ const railArchiveLabel = formatLabel(railSection);
                 </div>
                 <h3>{leadNews.href ? <a href={leadNews.href}>{leadNews.title}</a> : leadNews.title}</h3>
                 <p>{leadNews.dek}</p>
+                {leadNews.href && (
+                  <a class="editorial-read-link" href={leadNews.href}>
+                    Read <span aria-hidden="true">→</span>
+                  </a>
+                )}
               </article>
 
               <div class="news-list">
@@ -293,6 +301,11 @@ const railArchiveLabel = formatLabel(railSection);
                     </div>
                     <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
                     <p>{item.dek}</p>
+                    {item.href && (
+                      <a class="editorial-read-link" href={item.href}>
+                        Read <span aria-hidden="true">→</span>
+                      </a>
+                    )}
                   </article>
                 ))}
               </div>
@@ -785,6 +798,27 @@ const railArchiveLabel = formatLabel(railSection);
         margin-top: 0.5rem;
         color: var(--muted);
         font: 420 clamp(0.9rem, 0.84rem + 0.2vw, 1rem) / 1.48 var(--sans);
+      }
+
+      .editorial-read-link {
+        min-height: 2.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.65rem;
+        color: var(--ink);
+        font: 620 0.78rem/1.2 var(--sans);
+        text-decoration: none;
+      }
+
+      .editorial-read-link span {
+        font-family: var(--sans);
+        line-height: 1;
+      }
+
+      .editorial-read-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.18em;
       }
 
       .feature-rail {
