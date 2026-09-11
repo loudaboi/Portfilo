@@ -528,11 +528,24 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Why inventory is complete. Next inventory workstream: Hustle #1 research/question-selection gate, when explicitly promoted.**
+**Founder preview QA for the approved Kita homepage News lead.**
 
-Why #3 founder preview QA is PASS. Its no-image article route and archive state are approved, and TikTok Why #2 remains the homepage/main featured longform item.
+The founder approved Kita as the homepage editorial lead for News because it better represents Portfilo's editorial identity, while acknowledging that it is not necessarily the largest story by raw scale.
 
-Do not begin Hustle #1, change homepage feature selection, merge to `main`, or deploy without separate approval.
+Implemented on `build/portfilo-v0`:
+
+- homepage News lead is explicitly pinned to `kita-raises-4-5m-ai-credit-underwriting`;
+- the homepage latest-news ticker remains chronological;
+- the News archive remains chronological;
+- supporting homepage News items exclude the pinned Kita lead to avoid duplication;
+- no News schema change was introduced;
+- TikTok remains the homepage/main longform Why feature.
+
+Implementation commit: `1d6a8acfdc1833a1c96d2ed2bdf76e0046b50009`.
+
+CI #201 is validating this homepage-only change. After CI passes, founder preview QA should confirm the Kita lead renders correctly and that chronological News surfaces remain unchanged.
+
+Do not merge to `main` or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
