@@ -152,4 +152,4 @@ Do not generate or select an image at the research stage.
 The current evidence supports a useful, Philippine-specific Why article with a clear reader payoff and a stronger explanation than the common "no branches" shorthand.
 
 Next gate:
-**Image necessity and image-selection gate for the founder-approved final prose.**
+**Publication gate. NO IMAGE is founder-approved, and Why #3 must remain non-featured so TikTok Why #2 stays the homepage/main longform feature.**
