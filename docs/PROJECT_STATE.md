@@ -528,27 +528,30 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Production smoke verification of the 2026-09-11 release.**
+**Founder preview QA for restored article Read links.**
 
-The founder-approved working state was fast-forwarded to `main` at commit:
+The 2026-09-11 production smoke check is founder PASS.
 
-`2caab431e56317362a1189a1860fb1d22646b80d`
+A founder-approved narrow presentation correction is now implemented on `build/portfilo-v0`:
 
-Release CI #209 on `main` passed `npm run check` and `npm run build`.
+- restore a visible `Read →` text link on homepage editorial cards;
+- restore the same `Read →` text link on News, Why, and Hustle archive cards through the shared archive component;
+- keep article pages unchanged;
+- use the plain text right arrow only, with no emoji, icon library, pill, border, or button treatment;
+- preserve existing clickable headlines and images.
 
-The released state includes:
+Implementation commits:
 
-- initial 9 News inventory;
-- Why #1 BYD, Why #2 TikTok, and Why #3 digital-bank savings rates;
-- TikTok as the homepage/main longform Why feature;
-- Kita as the explicit homepage editorial News lead;
-- chronological latest-news ticker and News archive;
-- official Kita seed-round image credited `Kita / kita.ai`;
-- current approved article/archive/image behavior and repository cleanup.
+- homepage: `32c94347b583af60adbcca9cc3cbcc88ea883bd1`;
+- shared archives: `c6856a249d45ebe2e018fa63bc34150a5f386957`.
 
-The only immediate release follow-up is a production smoke check of the Cloudflare deployment for obvious production-only regressions. This does not reopen approved editorial or design decisions.
+CI #212 passed `npm run check` and `npm run build`.
 
-After production verification, the next editorial inventory workstream is Hustle #1 research/question selection. Hustle work is not a release prerequisite.
+Founder preview QA should confirm the links read cleanly on desktop and mobile and that the right arrow renders as a normal text glyph, not an emoji.
+
+Do not merge this follow-up change to `main` without separate release approval.
+
+After this presentation correction is closed, the next editorial inventory workstream remains Hustle #1 research/question selection.
 
 ## Deferred / separate workstreams
 
