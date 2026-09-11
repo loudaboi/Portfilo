@@ -528,30 +528,27 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Founder preview QA for restored article Read links.**
+**Production smoke verification for the restored article Read links.**
 
-The 2026-09-11 production smoke check is founder PASS.
+The founder approved the restored `Read →` presentation for release to `main`.
 
-A founder-approved narrow presentation correction is now implemented on `build/portfilo-v0`:
+`main` was fast-forwarded to:
 
-- restore a visible `Read →` text link on homepage editorial cards;
-- restore the same `Read →` text link on News, Why, and Hustle archive cards through the shared archive component;
-- keep article pages unchanged;
-- use the plain text right arrow only, with no emoji, icon library, pill, border, or button treatment;
-- preserve existing clickable headlines and images.
+`6381372e0b61265329ab5df4b24d6ea71e72b348`
 
-Implementation commits:
+Release CI #214 passed `npm run check` and `npm run build`.
 
-- homepage: `32c94347b583af60adbcca9cc3cbcc88ea883bd1`;
-- shared archives: `c6856a249d45ebe2e018fa63bc34150a5f386957`.
+Released behavior:
 
-CI #212 passed `npm run check` and `npm run build`.
+- homepage featured Why uses a visible `Read →` text link;
+- homepage main News and supporting News use the same treatment;
+- News, Why, and Hustle archive cards use the same treatment through the shared archive component;
+- article pages remain unchanged;
+- the arrow is the plain text right-arrow glyph only, with no emoji, icon library, pill, border, or button treatment.
 
-Founder preview QA should confirm the links read cleanly on desktop and mobile and that the right arrow renders as a normal text glyph, not an emoji.
+The only immediate follow-up is a production smoke check on desktop and mobile, especially confirming the arrow renders as a normal text glyph.
 
-Do not merge this follow-up change to `main` without separate release approval.
-
-After this presentation correction is closed, the next editorial inventory workstream remains Hustle #1 research/question selection.
+After that, the next editorial inventory workstream remains Hustle #1 research/question selection.
 
 ## Deferred / separate workstreams
 
