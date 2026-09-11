@@ -524,19 +524,26 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
 24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
-25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS / IMAGE NECESSITY + SELECTION NEXT.
+25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / NO IMAGE FOUNDER-APPROVED / NON-FEATURED LOCKED / PUBLICATION GATE NEXT.
 
 ## Exact next task
 
-**Image necessity and image-selection gate for Why #3.**
+**Publication gate for Why #3.**
 
-Founder prose QA of the final quality pass across BYD, TikTok commerce, and digital-bank savings rates is PASS. The revised prose is now approved.
+The founder approved **NO IMAGE** for Why #3. The article should remain text-led.
 
-Why #3 remains `status: draft`, `featured: false`, with no image and no `publishedAt`. TikTok remains the explicitly featured homepage longform item.
+Why #3 must remain `featured: false`. It must not replace TikTok Why #2 as the homepage/main longform feature. TikTok remains the explicitly featured homepage Why until the founder separately changes that decision.
 
-The next decision is whether Why #3 needs a meaningful editorial image and, if so, what truthful image category should be used. Valid outcomes remain real/verified image, data/diagram, brand graphic where genuinely justified, generated editorial illustration only through the separate approved image workflow, or no image.
+Current Why #3 state remains:
 
-Do not publish Why #3, select or generate an image, change the homepage feature, merge to `main`, or deploy without separate approval.
+- `status: draft`;
+- `featured: false`;
+- no image;
+- no `publishedAt`.
+
+The text package, final prose pass, and no-image decision are founder-approved. The next separate gate is authorization to set Why #3 to `status: published` on the working branch with a publication date, while preserving `featured: false`.
+
+Do not publish Why #3, change the homepage feature, merge to `main`, or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
