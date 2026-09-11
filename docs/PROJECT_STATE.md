@@ -528,11 +528,15 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 
 ## Exact next task
 
-**Current approved working state is release-authorized for `main`.**
+**Production smoke verification of the 2026-09-11 release.**
 
-Founder preview QA for the Kita lead image is PASS.
+The founder-approved working state was fast-forwarded to `main` at commit:
 
-Locked release state includes:
+`2caab431e56317362a1189a1860fb1d22646b80d`
+
+Release CI #209 on `main` passed `npm run check` and `npm run build`.
+
+The released state includes:
 
 - initial 9 News inventory;
 - Why #1 BYD, Why #2 TikTok, and Why #3 digital-bank savings rates;
@@ -542,11 +546,9 @@ Locked release state includes:
 - official Kita seed-round image credited `Kita / kita.ai`;
 - current approved article/archive/image behavior and repository cleanup.
 
-Working branch is a clean fast-forward from `main` and the latest working-branch validation passed.
+The only immediate release follow-up is a production smoke check of the Cloudflare deployment for obvious production-only regressions. This does not reopen approved editorial or design decisions.
 
-The founder explicitly authorized publishing the current approved state to `main` on 2026-09-11.
-
-After release, the next editorial inventory workstream is Hustle #1 research/question selection. Hustle work is not a prerequisite for this release.
+After production verification, the next editorial inventory workstream is Hustle #1 research/question selection. Hustle work is not a release prerequisite.
 
 ## Deferred / separate workstreams
 
