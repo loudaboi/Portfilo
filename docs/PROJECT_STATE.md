@@ -524,29 +524,15 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
 23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
 24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
-25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / NO IMAGE FOUNDER-APPROVED / NON-FEATURED LOCKED / PUBLISHED ON WORKING BRANCH / CI #194 PASS / FOUNDER PREVIEW QA NEXT.
+25. **Why #3: digital bank savings rates in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / NO IMAGE FOUNDER-APPROVED / NON-FEATURED LOCKED / PUBLISHED ON WORKING BRANCH / CI #194 PASS / FOUNDER PREVIEW QA PASS.
 
 ## Exact next task
 
-**Founder preview QA for Why #3 on the working branch.**
+**Why inventory is complete. Next inventory workstream: Hustle #1 research/question-selection gate, when explicitly promoted.**
 
-Why #3 is now published on `build/portfilo-v0` with:
+Why #3 founder preview QA is PASS. Its no-image article route and archive state are approved, and TikTok Why #2 remains the homepage/main featured longform item.
 
-- `publishedAt: 2026-09-11`;
-- `status: published`;
-- `featured: false`;
-- no image.
-
-CI #194 passed `npm run check` and `npm run build` on publication commit `288449338443f445cff27647a7defcd8b66bd907`.
-
-Preview QA should confirm that:
-
-- the Why #3 article route renders correctly without an image;
-- the Why archive includes Why #3 correctly;
-- TikTok Why #2 remains the homepage/main featured longform item;
-- no no-image layout regression is visible.
-
-Do not change the homepage feature, merge to `main`, or deploy without separate approval.
+Do not begin Hustle #1, change homepage feature selection, merge to `main`, or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
