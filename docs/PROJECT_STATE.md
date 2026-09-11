@@ -543,7 +543,7 @@ Implemented on `build/portfilo-v0`:
 
 Implementation commit: `1d6a8acfdc1833a1c96d2ed2bdf76e0046b50009`.
 
-CI #201 is validating this homepage-only change. After CI passes, founder preview QA should confirm the Kita lead renders correctly and that chronological News surfaces remain unchanged.
+CI #201 passed `npm run check` and `npm run build` for this homepage-only change. Founder preview QA should confirm the Kita lead renders correctly and that chronological News surfaces remain unchanged.
 
 Do not merge to `main` or deploy without separate approval.
 
