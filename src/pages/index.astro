@@ -50,7 +50,10 @@ const realNews = newsByDate.map((story) => ({
 }));
 
 const newsItems = realNews;
-const leadNews = newsItems[0];
+const homepageLeadNewsId = "kita-raises-4-5m-ai-credit-underwriting";
+const leadNews =
+  newsItems.find((item) => item.href === `/news/${homepageLeadNewsId}`) ?? newsItems[0];
+const supportingNews = newsItems.filter((item) => item.href !== leadNews?.href);
 
 const tickerItems = newsItems.slice(0, 5).map((item) => ({
   label: item.topic,
@@ -282,7 +285,7 @@ const railArchiveLabel = formatLabel(railSection);
               </article>
 
               <div class="news-list">
-                {newsItems.slice(1, 4).map((item) => (
+                {supportingNews.slice(0, 3).map((item) => (
                   <article class="news-list__item">
                     <div class="news-meta">
                       <span>{item.topic}</span>
