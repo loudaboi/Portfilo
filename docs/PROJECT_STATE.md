@@ -522,29 +522,21 @@ The later internal collection terminology migration at `b7b275de7e3fa2d808ef8bae
 20. **Default Portfilo social-preview refresh** - COMPLETE / RELEASED / CI PASS / founder production PASS.
 21. **Internal content collection rename: `stories` -> `articles`** - COMPLETE ON WORKING BRANCH / CI #49 PASS / founder preview PASS.
 22. **First real editorial inventory build: 9 News + 3 Why + 3 Hustle** - ACTIVE / initial 9 News complete; Why #1 BYD complete and published on working branch; rejected draft Why inventory removed; remaining Why and Hustle work pending.
-23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / FINAL PROSE-QUALITY PASS APPLIED / CI #184 PASS / FOUNDER PROSE QA NEXT.
-24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FINAL PROSE-QUALITY PASS APPLIED / CI #184 PASS / FOUNDER PROSE QA NEXT.
-25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS APPLIED / CI #184 PASS / FOUNDER PROSE QA NEXT.
+23. **Why #1: BYD Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #1 / DRAFT 2 FOUNDER-APPROVED / IMAGE PREVIEW PASS / PUBLISHED ON WORKING BRANCH / homepage integration PASS / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
+24. **Why #2: TikTok commerce in the Philippines** - COMPLETE / SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #2 / DRAFT 2 FOUNDER-APPROVED / STRUCTURE PASS / TEXT PACKAGE FOUNDER-APPROVED / REAL IMAGE ATTACHED / PUBLISHED + FEATURED ON WORKING BRANCH / HOMEPAGE NATURAL-COLOR IMAGE TREATMENT APPROVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS.
+25. **Why #3: digital bank savings rates in the Philippines** - SUBJECT RESEARCH COMPLETE / research outcome `PUBLISH` / MANUAL ARTICLE PILOT #3 / FOUNDER RESEARCH APPROVED / DRAFT 1 FOUNDER-APPROVED / DRAFT 2 FOUNDER-APPROVED / TEXT PACKAGE PRESERVED / FINAL PROSE-QUALITY PASS FOUNDER-APPROVED / CI #184 PASS / IMAGE NECESSITY + SELECTION NEXT.
 
 ## Exact next task
 
-**Founder prose QA of the final quality pass across all three current Why pieces.**
+**Image necessity and image-selection gate for Why #3.**
 
-The founder approved one final prose-quality pass across BYD, TikTok commerce, and digital-bank savings rates after identifying overly regular one-line paragraphing and AI-explainer cadence as a quality risk.
+Founder prose QA of the final quality pass across BYD, TikTok commerce, and digital-bank savings rates is PASS. The revised prose is now approved.
 
-The pass was deliberately unequal:
+Why #3 remains `status: draft`, `featured: false`, with no image and no `publishedAt`. TikTok remains the explicitly featured homepage longform item.
 
-- BYD received a minor rhythm/integration polish;
-- TikTok received a minor-to-moderate pass integrating caveats and explanatory scaffolding;
-- digital-bank savings received a moderate paragraph-rhythm and sentence-integration pass.
+The next decision is whether Why #3 needs a meaningful editorial image and, if so, what truthful image category should be used. Valid outcomes remain real/verified image, data/diagram, brand graphic where genuinely justified, generated editorial illustration only through the separate approved image workflow, or no image.
 
-The reporting questions, factual claims, section structures, headlines/deks, images, publication states, and feature selection were preserved. TikTok remains the explicitly featured homepage longform item. Why #3 remains `status: draft`, `featured: false`, with no image and no `publishedAt`.
-
-CI #184 passed `npm run check` and `npm run build` on the three-article prose-pass state.
-
-The next gate is founder review of the revised prose. If it passes, return to the Why #3 image-necessity / image-selection gate.
-
-Do not publish Why #3, change the homepage feature, select or generate an image, merge to `main`, or deploy without separate approval.
+Do not publish Why #3, select or generate an image, change the homepage feature, merge to `main`, or deploy without separate approval.
 
 No merge to `main` or deployment is authorized.
 
