@@ -103,6 +103,11 @@ const supportingItems = items.slice(1);
           </p>
           <h2>{leadItem.href ? <a href={leadItem.href}>{leadItem.title}</a> : leadItem.title}</h2>
           <p class="lead-item__dek">{leadItem.dek}</p>
+          {leadItem.href && (
+            <a class="editorial-read-link" href={leadItem.href}>
+              Read <span aria-hidden="true">→</span>
+            </a>
+          )}
         </div>
       </section>
     ) : (
@@ -136,6 +141,11 @@ const supportingItems = items.slice(1);
               </p>
               <h2>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h2>
               <p class="archive-row__dek">{item.dek}</p>
+              {item.href && (
+                <a class="editorial-read-link" href={item.href}>
+                  Read <span aria-hidden="true">→</span>
+                </a>
+              )}
             </div>
 
             {item.image && (
@@ -312,6 +322,27 @@ const supportingItems = items.slice(1);
     margin-top: 0.8rem;
     color: var(--muted);
     font: 430 clamp(0.96rem, 0.88rem + 0.25vw, 1.1rem) / 1.52 var(--sans);
+  }
+
+  .editorial-read-link {
+    min-height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+    color: var(--ink);
+    font: 620 0.78rem/1.2 var(--sans);
+    text-decoration: none;
+  }
+
+  .editorial-read-link span {
+    font-family: var(--sans);
+    line-height: 1;
+  }
+
+  .editorial-read-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
   }
 
   .archive-acquisition {
