@@ -12,9 +12,10 @@ When documents disagree, use:
 2. `docs/PROJECT_STATE.md`
 3. this status map
 4. `docs/V1_SCOPE.md`
-5. the task-specific current standard or approved decision record
-6. current runtime source
-7. historical records for provenance only
+5. `docs/V1_DESIGN_DIRECTION.md` for current visual/interaction direction
+6. the task-specific current standard or approved decision record
+7. current runtime source
+8. historical records for provenance only
 
 `docs/PROJECT_STATE.md` owns the current phase and exact next task.
 
@@ -29,8 +30,13 @@ When documents disagree, use:
 
 - `docs/PROJECT_STATE.md` - current phase, active branch, next task, approval boundary.
 - `docs/V1_SCOPE.md` - approved v1 company/product/technical boundaries.
+- `docs/V1_DESIGN_DIRECTION.md` - founder-approved Obsidian Precision design direction.
 - `README.md` - repository overview.
 - `BACKLOG.md` - future ideas only unless explicitly promoted.
+
+### Research provenance
+
+- `research/design/v1-design-direction-research.md` - reference corpus, candidate directions, tradeoffs, technical implications, and rationale behind the approved design direction. Research supports the decision but does not override the canonical design-direction document.
 
 ### Current editorial integrity rules carried forward
 
@@ -68,33 +74,53 @@ Editorial:
 
 Commercial:
 
-- Portfilo is a software design and development studio;
+- Portfilo's internal category is a software design and development studio;
 - the studio focuses on solving business problems through custom software, automation, and practical AI;
+- this internal category phrase is not approved public positioning copy;
 - services should be framed around real business needs rather than a generic technology menu.
 
 ## Design status
 
+### Current v1 design authority
+
+`docs/V1_DESIGN_DIRECTION.md`
+
+Approved direction:
+
+**Obsidian Precision**
+
+Key rules:
+
+- near-black / graphite / muted silver / cold-white territory;
+- minimal persistent brand color;
+- precision and project evidence over decorative spectacle;
+- Work receives the strongest motion and visual expression;
+- Services is quieter;
+- Hustle introduces authentic human imagery and may retain natural color;
+- Journal remains reading-first;
+- motion is controlled and purposeful;
+- silver is hierarchy/material, not literal chrome;
+- no foundation-level WebGL/Three.js;
+- current wordmark is tested in monochrome before redesign.
+
+Still open:
+
+- exact typography;
+- exact palette values;
+- navigation composition;
+- homepage composition;
+- spacing/grid tokens;
+- detailed motion system;
+- case-study structure;
+- media framing;
+- wordmark refinement;
+- GSAP dependency approval.
+
 ### Historical v0 design authority
 
-`docs/DESIGN_DIRECTION.md` describes the released publication-era system and is now **historical for v1**.
+`docs/DESIGN_DIRECTION.md` describes the released publication-era system and is **historical for v1**.
 
 It may be consulted for provenance or reusable implementation details, but it does not constrain v1 visual decisions.
-
-### Current v1 visual brief
-
-Current approved direction for research:
-
-- dark / near-black;
-- graphite / silver / cold white;
-- minimal color;
-- alive and technically excellent;
-- expensive and controlled;
-- high visual ambition with low visual noise;
-- sophisticated motion;
-- strong Work presentation;
-- no generic SaaS/agency gimmicks.
-
-No final typography, palette values, animation library, motion grammar, page composition, or component system is approved yet.
 
 ## Historical v0 publication authority
 
@@ -112,7 +138,7 @@ The following remain historical unless explicitly promoted into v1:
 - old newsletter cadence/acquisition copy;
 - old homepage/masthead composition.
 
-Do not delete these merely because they are historical. Git history and retained documents preserve useful provenance while migration decisions are made.
+Do not delete these merely because they are historical.
 
 ## Runtime status
 
@@ -120,19 +146,9 @@ The runtime currently inherited on `build/portfilo-v1` is still the v0 publicati
 
 That is expected.
 
-Current runtime structures such as:
+Current runtime structures such as `/news`, `/why`, the old homepage/masthead, current article schema, and publication-specific archive/article components do not become v1 product authority merely because they still exist in source.
 
-- `/news`
-- `/why`
-- `/hustle`
-- the old homepage;
-- the old masthead;
-- the current `articles` schema;
-- publication-specific archive/article components
-
-do not become v1 product authority merely because they still exist in source.
-
-Runtime migration begins only after v1 design direction and information architecture are approved.
+Runtime migration begins only after the v1 design system and information architecture are approved.
 
 ## Branches
 
@@ -150,14 +166,12 @@ Production/release boundary:
 
 ## Validation
 
-The v1 authority reset is documentation/workspace work.
-
-No new v1 visual/runtime behavior has been validated or released.
+No new v1 runtime behavior has been implemented or validated.
 
 Prior v0 CI and production verification remain valid only for the released v0 implementation.
 
 ## Exact next decision gate
 
-`V1 DESIGN DIRECTION RESEARCH AND DECISION`
+`V1 DESIGN SYSTEM + INFORMATION ARCHITECTURE RESEARCH AND DECISION`
 
-No implementation is authorized by that gate until the founder approves a specific design direction and subsequent implementation plan.
+No production UI implementation is authorized by this gate.
