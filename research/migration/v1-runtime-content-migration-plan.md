@@ -4,11 +4,11 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**PROPOSED / AWAITING FOUNDER APPROVAL**
+**FOUNDER-APPROVED / CURRENT MIGRATION PLAN**
 
 This plan translates the approved v1 product, Obsidian Precision direction, and concrete design system into a targeted migration from the inherited v0 publication runtime.
 
-It does not authorize implementation by itself.
+Founder approval authorizes Phase 0 + Phase 1 foundation implementation only, subject to the boundaries in this plan.
 
 Canonical inputs:
 
@@ -43,7 +43,6 @@ Inherited v0:
 - `/why/[slug]`
 - `/hustle`
 - `/hustle/[slug]`
-- `/standards`
 - `/privacy`
 - `/confirmed`
 - `/404`
@@ -150,7 +149,7 @@ Possible later endpoint:
 
 `Work / Services / Hustle / Journal / Contact`
 
-`/standards` and `/privacy` remain footer/institutional routes.
+`/privacy` remains a footer/institutional route.
 
 Newsletter remains embedded.
 
@@ -242,20 +241,13 @@ This bridge is intentionally temporary and should be documented as such.
 
 ## `/standards`
 
-**ADAPT / KEEP**
+**RETIRE**
 
-Keep it as a footer-only institutional page.
+The public Standards page is not part of v1.
 
-Reason: the studio + editorial model creates more, not less, need for explicit editorial/commercial independence.
+Preserve the useful research, verification, corrections, and editorial-integrity rules internally in canonical repo documentation. Do not maintain a public institutional page for them.
 
-Update it to reflect:
-
-- Hustle and Journal;
-- potential client/prospect/partner conflicts;
-- disclosure when a relevant commercial relationship exists;
-- no News-specific operating promises.
-
-Do not place Standards in primary navigation.
+Remove `/standards` from the footer and route surface during v1 migration.
 
 ## `/privacy`
 
@@ -343,7 +335,6 @@ V1 footer should handle:
 - wordmark;
 - primary/institutional links;
 - Privacy;
-- Standards;
 - copyright/contact detail as approved.
 
 Newsletter remains a separate explicit homepage/editorial module.
@@ -776,16 +767,11 @@ Do not add elaborate Work schema until real case-study data justifies it.
 
 ## Standards
 
-**ADAPT**
+**RETIRE**
 
-Preserve the evidence/verification/corrections core.
+Remove the public `/standards` route during migration.
 
-Add explicit v1 commercial-conflict handling for:
-
-- clients;
-- prospects;
-- partners;
-- subjects with commercial relationships.
+Keep the useful editorial-integrity rules in internal documentation rather than as a public site surface.
 
 ## Privacy
 
@@ -911,7 +897,7 @@ This is the main visual-craft phase.
 - Journal reading treatment;
 - Hustle portrait/feature treatment;
 - newsletter neutral redesign;
-- Standards update;
+- retire the public Standards route;
 - Confirmed/Privacy/404 visual migration.
 
 ## Phase 6 — Motion refinement
@@ -976,7 +962,7 @@ Verify:
 - temporary News bridge;
 - canonical/social metadata;
 - sitemap/robots;
-- Privacy/Standards;
+- Privacy;
 - 404/Confirmed;
 - performance regressions caused by media/motion.
 
@@ -1008,7 +994,6 @@ Production release remains a separate explicit approval gate.
 - global accessibility base
 - content schema
 - Hustle routes
-- Standards
 - Privacy
 - Confirmed
 - 404
@@ -1089,7 +1074,7 @@ Use current v1 docs as authority and remove old runtime modules only after their
 
 Mitigation:
 
-Keep/adapt Standards and require disclosure where a Hustle/Journal subject has a material Portfilo commercial relationship.
+Keep the conflict/disclosure rule internally in editorial standards. A public Standards page is not required.
 
 ---
 
