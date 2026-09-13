@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - build/portfilo-v0
+      - build/portfilo-v1
   pull_request:
     branches:
       - main
       - build/portfilo-v0
+      - build/portfilo-v1
 
 permissions:
   contents: read
