@@ -1,54 +1,198 @@
 ---
-type CurrentPage = "news" | "why" | "hustle" | "standards";
-
 interface Props {
-  current?: CurrentPage;
+  current?: string;
 }
 
 const { current } = Astro.props;
+const pathname = Astro.url.pathname;
+const inferredCurrent =
+  pathname.startsWith("/work") ? "work"
+  : pathname.startsWith("/services") ? "services"
+  : pathname.startsWith("/hustle") ? "hustle"
+  : pathname.startsWith("/journal") || pathname.startsWith("/why") ? "journal"
+  : pathname.startsWith("/contact") ? "contact"
+  : current === "why" ? "journal"
+  : current;
+
+const navItems = [
+  { label: "Work", href: "/work", key: "work" },
+  { label: "Services", href: "/services", key: "services" },
+  { label: "Hustle", href: "/hustle", key: "hustle" },
+  { label: "Journal", href: "/journal", key: "journal" },
+  { label: "Contact", href: "/contact", key: "contact" },
+] as const;
 ---
 
-<header class="site-header">
-  <a class="wordmark" href="/" aria-label="Portfilo home" data-astro-prefetch="viewport">
-    <img src="/brand/portfilo-wordmark-color.svg" alt="Portfilo" />
-  </a>
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <a class="wordmark" href="/" aria-label="Portfilo home" data-astro-prefetch="viewport">
+      <img src="/brand/portfilo-wordmark-v1.svg" alt="Portfilo" />
+    </a>
 
-  <nav class="site-nav" aria-label="Primary">
-    <a
-      class="site-nav__link"
-      href="/news"
-      aria-current={current === "news" ? "page" : undefined}
-      data-astro-prefetch="viewport"
-    >News</a>
-    <a
-      class="site-nav__link"
-      href="/why"
-      aria-current={current === "why" ? "page" : undefined}
-      data-astro-prefetch="viewport"
-    >Why</a>
-    <a
-      class="site-nav__link"
-      href="/hustle"
-      aria-current={current === "hustle" ? "page" : undefined}
-      data-astro-prefetch="viewport"
-    >Hustle</a>
-  </nav>
+    <nav class="site-nav" aria-label="Primary">
+      {navItems.map((item) => (
+        <a
+          class="site-nav__link"
+          href={item.href}
+          aria-current={inferredCurrent === item.key ? "page" : undefined}
+          data-astro-prefetch="viewport"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      class="menu-control"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-control
+    >
+      <span data-menu-label>MENU</span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <nav class="mobile-menu__nav" aria-label="Mobile primary">
+      {navItems.map((item, index) => (
+        <a
+          class="mobile-menu__link"
+          href={item.href}
+          aria-current={inferredCurrent === item.key ? "page" : undefined}
+          data-mobile-menu-link
+          data-first-mobile-link={index === 0 ? "true" : undefined}
+        >
+          <span class="mobile-menu__index">{String(index + 1).padStart(2, "0")}</span>
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
 </header>
+
+<script>
+  const syncHeaderState = () => {
+    const header = document.querySelector("[data-site-header]");
+    if (!(header instanceof HTMLElement)) return;
+    header.dataset.scrolled = window.scrollY > 8 ? "true" : "false";
+  };
+
+  const bindCurrentHeader = () => {
+    const header = document.querySelector("[data-site-header]");
+    if (!(header instanceof HTMLElement) || header.dataset.bound === "true") {
+      syncHeaderState();
+      return;
+    }
+
+    header.dataset.bound = "true";
+
+    const button = header.querySelector("[data-menu-control]");
+    const menu = header.querySelector("[data-mobile-menu]");
+    const label = header.querySelector("[data-menu-label]");
+    const firstLink = header.querySelector("[data-first-mobile-link='true']");
+    const links = Array.from(header.querySelectorAll("[data-mobile-menu-link]"))
+      .filter((node): node is HTMLAnchorElement => node instanceof HTMLAnchorElement);
+
+    const setOpen = (open: boolean, restoreFocus = false) => {
+      if (!(button instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+
+      button.setAttribute("aria-expanded", String(open));
+      menu.hidden = !open;
+      document.body.dataset.menuOpen = open ? "true" : "false";
+
+      if (label instanceof HTMLElement) {
+        label.textContent = open ? "CLOSE" : "MENU";
+      }
+
+      if (open && firstLink instanceof HTMLAnchorElement) {
+        requestAnimationFrame(() => firstLink.focus());
+      } else if (!open && restoreFocus) {
+        button.focus();
+      }
+    };
+
+    if (button instanceof HTMLButtonElement && menu instanceof HTMLElement) {
+      button.addEventListener("click", () => {
+        const open = button.getAttribute("aria-expanded") !== "true";
+        setOpen(open);
+      });
+
+      links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+
+      header.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
+          event.preventDefault();
+          setOpen(false, true);
+          return;
+        }
+
+        if (
+          event.key !== "Tab" ||
+          button.getAttribute("aria-expanded") !== "true" ||
+          links.length === 0
+        ) {
+          return;
+        }
+
+        const focusable = [button, ...links];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+    }
+
+    syncHeaderState();
+  };
+
+  if (document.documentElement.dataset.portfiloHeaderScroll !== "true") {
+    document.documentElement.dataset.portfiloHeaderScroll = "true";
+    window.addEventListener("scroll", syncHeaderState, { passive: true });
+  }
+
+  bindCurrentHeader();
+  document.addEventListener("astro:page-load", bindCurrentHeader);
+</script>
 
 <style>
   .site-header {
-    width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
+    --header-height: 4.5rem;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    color: var(--cold-white);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color var(--motion-component) ease,
+      border-color var(--motion-component) ease;
+  }
+
+  .site-header[data-scrolled="true"] {
+    background: var(--obsidian);
+    border-bottom-color: var(--line);
+  }
+
+  .site-header__inner {
+    width: min(calc(100% - (2 * var(--shell-gutter))), var(--page-max));
+    min-height: var(--header-height);
     margin-inline: auto;
-    padding-block: 0.72rem;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: clamp(1rem, 2.4vw, 2.5rem);
+    grid-template-columns: auto 1fr auto;
+    gap: var(--grid-gap);
     align-items: center;
-    border-bottom: 1px solid var(--line);
   }
 
   .wordmark {
-    width: 5.8rem;
+    width: 6.15rem;
     display: block;
     line-height: 0;
   }
@@ -60,60 +204,111 @@ const { current } = Astro.props;
   }
 
   .site-nav {
+    grid-column: 2 / 4;
     justify-self: end;
     display: flex;
     align-items: center;
-    gap: clamp(0.7rem, 1.4vw, 1.2rem);
+    gap: clamp(1rem, 1.8vw, 1.8rem);
+  }
+
+  .site-nav__link,
+  .menu-control {
+    color: var(--muted-silver);
+    font: 500 0.78rem/1 var(--sans);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: color var(--motion-micro) ease;
   }
 
   .site-nav__link {
-    position: relative;
     min-height: 2.75rem;
-    padding-inline: 0.15rem;
     display: inline-flex;
     align-items: center;
-    color: inherit;
-    font: 550 clamp(0.74rem, 0.72rem + 0.1vw, 0.82rem) / 1 var(--sans);
+  }
+
+  .site-nav__link:hover,
+  .site-nav__link[aria-current="page"] {
+    color: var(--bright-white);
+  }
+
+  .menu-control {
+    display: none;
+    min-height: 2.75rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-control:hover {
+    color: var(--bright-white);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    z-index: 99;
+    inset: var(--header-height) 0 0;
+    overflow-y: auto;
+    background: var(--obsidian);
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-menu__nav {
+    width: min(calc(100% - (2 * var(--shell-gutter))), var(--page-max));
+    margin-inline: auto;
+    padding-block: clamp(2rem, 8vh, 5rem);
+  }
+
+  .mobile-menu__link {
+    min-height: clamp(4.5rem, 14vw, 6.5rem);
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    color: var(--cold-white);
+    font: 620 clamp(2.1rem, 9vw, 4.5rem) / 0.95 var(--sans);
+    font-variation-settings: "wdth" 86, "wght" 620;
+    letter-spacing: -0.055em;
     text-decoration: none;
-    white-space: nowrap;
   }
 
-  .site-nav__link::after {
-    content: "";
-    position: absolute;
-    right: 0.15rem;
-    bottom: 0.35rem;
-    left: 0.15rem;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: right center;
-    transition: transform 140ms ease;
+  .mobile-menu__index {
+    align-self: start;
+    padding-top: 0.4rem;
+    color: var(--muted-silver);
+    font: 400 0.67rem/1 var(--mono);
+    letter-spacing: 0;
   }
 
-  .site-nav__link:hover::after,
-  .site-nav__link[aria-current="page"]::after {
-    transform: scaleX(1);
-    transform-origin: left center;
-  }
-
-  @media (max-width: 40rem) {
+  @media (max-width: 48rem) {
     .site-header {
-      gap: 0.8rem;
-      padding-block: 0.6rem;
-    }
-
-    .wordmark {
-      width: 5.35rem;
+      --header-height: 4.25rem;
     }
 
     .site-nav {
-      gap: 0.65rem;
+      display: none;
+    }
+
+    .site-header__inner {
+      grid-template-columns: auto 1fr auto;
+    }
+
+    .menu-control {
+      display: inline-flex;
+      align-items: center;
+      justify-self: end;
+    }
+
+    .wordmark {
+      width: 5.8rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .site-nav__link::after {
+    .site-header,
+    .site-nav__link,
+    .menu-control {
       transition: none;
     }
   }

@@ -1,5 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import "@fontsource-variable/instrument-sans/standard.css";
+import "@fontsource/ibm-plex-mono/400.css";
 import "../styles/global.css";
 
 interface ArticleImageMeta {
@@ -111,13 +113,13 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="description" content={description} />
-<meta name="theme-color" content="#f4f0e8" />
+<meta name="theme-color" content="#090909" />
+<meta name="color-scheme" content="dark" />
 {robots && <meta name="robots" content={robots} />}
 <title>{title}</title>
 
 <ClientRouter fallback="swap" />
 
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />

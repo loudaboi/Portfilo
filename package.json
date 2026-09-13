@@ -2,7 +2,7 @@
   "name": "portfilo",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfilo is a business and technology publication.",
+  "description": "Portfilo v1 studio website and editorial platform.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
@@ -16,8 +16,11 @@
   "license": "UNLICENSED",
   "type": "commonjs",
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
     "astro": "^7.2.10",
-    "@astrojs/sitemap": "^3.7.4"
+    "gsap": "^3.15.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

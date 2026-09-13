@@ -1,60 +1,57 @@
 ---
-import FooterAcquisition from "./FooterAcquisition.astro";
-
 interface Props {
   showAcquisition?: boolean;
 }
 
-const pathname = Astro.url.pathname.replace(/\/+$/, "") || "/";
-const routeShowsAcquisition = !["/confirmed", "/404"].includes(pathname);
-const { showAcquisition = routeShowsAcquisition } = Astro.props;
+Astro.props as Props;
+
+const primaryLinks = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "Hustle", href: "/hustle" },
+  { label: "Journal", href: "/journal" },
+  { label: "Contact", href: "/contact" },
+] as const;
 ---
 
-<div class="site-footer-stack">
-  {showAcquisition && <FooterAcquisition />}
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a class="site-footer__brand" href="/" aria-label="Portfilo home">
+      <img src="/brand/portfilo-wordmark-v1.svg" alt="Portfilo" />
+    </a>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <a class="site-footer__brand" href="/" aria-label="Portfilo home">
-        <img src="/brand/portfilo-wordmark-light.svg" alt="Portfilo" />
-      </a>
+    <nav class="site-footer__nav" aria-label="Footer">
+      {primaryLinks.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
 
-      <nav class="site-footer__nav" aria-label="Footer">
-        <a href="/why">Why</a>
-        <a href="/hustle">Hustle</a>
-        <a href="/standards">Standards</a>
-        <a href="/privacy">Privacy</a>
-      </nav>
-
-      <p class="site-footer__meta">© 2026 Portfilo</p>
+    <div class="site-footer__utility">
+      <a href="/privacy">Privacy</a>
+      <p>© 2026 Portfilo</p>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>
 
 <style>
-  .site-footer-stack {
-    width: 100%;
-    margin-top: auto;
-  }
-
   .site-footer {
     width: 100%;
-    background: var(--ink);
-    color: #fff;
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    background: var(--obsidian);
+    color: var(--cold-white);
   }
 
   .site-footer__inner {
-    width: min(calc(100% - (2 * var(--shell-gutter))), var(--content-max));
+    width: min(calc(100% - (2 * var(--shell-gutter))), var(--page-max));
     margin-inline: auto;
-    padding: 1.2rem 0 1.55rem;
+    padding-block: clamp(2rem, 4vw, 4rem);
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: clamp(1.2rem, 3vw, 3rem);
-    align-items: center;
+    grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr) auto;
+    gap: var(--grid-gap);
+    align-items: start;
   }
 
   .site-footer__brand {
-    width: 5.8rem;
+    width: 6.15rem;
     display: block;
     line-height: 0;
   }
@@ -66,50 +63,66 @@ const { showAcquisition = routeShowsAcquisition } = Astro.props;
   }
 
   .site-footer__nav {
-    justify-self: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem 1.25rem;
-    font: 500 0.72rem/1.2 var(--sans);
+    gap: 0.5rem clamp(1rem, 2vw, 2rem);
   }
 
-  .site-footer__nav a {
+  .site-footer__nav a,
+  .site-footer__utility a {
     min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--muted-silver);
+    font: 500 0.78rem/1 var(--sans);
     text-decoration: none;
+    transition: color var(--motion-micro) ease;
   }
 
-  .site-footer__nav a:hover {
-    color: #fff;
+  .site-footer__nav a:hover,
+  .site-footer__utility a:hover {
+    color: var(--bright-white);
   }
 
-  .site-footer__meta {
-    margin: 0;
+  .site-footer__utility {
     justify-self: end;
-    color: rgba(255, 255, 255, 0.5);
-    font: 430 0.68rem/1.4 var(--sans);
-    text-align: right;
+    display: grid;
+    justify-items: end;
   }
 
-  .site-footer a:focus-visible {
-    outline-color: var(--accent-light);
+  .site-footer__utility p {
+    margin: 0;
+    color: var(--muted-silver);
+    font: 400 0.68rem/1.4 var(--mono);
   }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 48rem) {
     .site-footer__inner {
       grid-template-columns: 1fr;
-      align-items: start;
-      gap: 0.85rem;
+      gap: 1.5rem;
     }
 
-    .site-footer__nav,
-    .site-footer__meta {
-      justify-self: start;
-      justify-content: flex-start;
-      text-align: left;
+    .site-footer__nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer__nav a {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-footer__utility {
+      justify-self: stretch;
+      justify-items: start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-footer__nav a,
+    .site-footer__utility a {
+      transition: none;
     }
   }
 </style>
