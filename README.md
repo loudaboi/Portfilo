@@ -1,33 +1,33 @@
 # Portfilo
 
-Portfilo is a business and technology publication.
+Portfilo is being repositioned as a software design and development studio focused on solving real business problems through custom software, automation, and practical AI.
 
-News is the current/day-to-day editorial layer. Why is the question-led deeper layer. Hustle is the people-led reported layer focused on founders, operators, and business owners. Public topics are `Business / Technology / Startup / AI`. Newsletter acquisition is an important recurring-reader relationship, but the publication remains editorial-first and free in v0.
+The studio is the primary product. Hustle, Journal, and the newsletter form the supporting editorial and distribution layer.
 
 ## Repository authority
-
-The repository is the durable source of truth. Chat conversations are working sessions, not project memory.
 
 Read current authority in this order:
 
 1. `AGENTS.md`
 2. `docs/PROJECT_STATE.md`
 3. `docs/DOCUMENT_STATUS.md`
-4. `docs/V0_SCOPE.md`
-5. the canonical standard and approved decision record relevant to the task
-6. current source code for actual runtime behavior
+4. `docs/V1_SCOPE.md`
+5. task-specific current standards/decision records
+6. current source
 
-Do not create a second execution-plan, roadmap, phase-state, or other file that competes with `docs/PROJECT_STATE.md`.
+Historical v0 publication files remain useful provenance but do not override the v1 authority map.
 
-For nontrivial discretionary Portfilo product, copy, design, imagery, newsletter, naming, social, or other public-facing decisions, read and apply:
+For nontrivial product, copy, design, motion, naming, editorial, or other public-facing decisions, apply:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
-Historical research is provenance, not current authority unless `docs/DOCUMENT_STATUS.md` says otherwise.
+## Branches
 
-## Branch and release boundary
+Active v1 working branch:
 
-Working branch:
+`build/portfilo-v1`
+
+Historical v0 working branch:
 
 `build/portfilo-v0`
 
@@ -35,76 +35,47 @@ Release boundary:
 
 `main`
 
-Do not merge to `main`, deploy, or release without the relevant explicit approval.
+Do not merge to `main`, deploy, or release without explicit approval.
 
-The intended Cloudflare model is working-branch preview/test deployments and `main` as production. The actual external Cloudflare branch setting must be verified before release.
+## Approved v1 public architecture
 
-## Current public route model
+Primary navigation:
 
-Keep:
+`Work / Services / Hustle / Journal / Contact`
 
-- `/`
-- `/news`
-- `/news/[slug]`
-- `/why`
-- `/why/[slug]`
-- `/hustle`
-- `/hustle/[slug]`
-- `/standards`
-- `/privacy`
-- `/confirmed`
-- `/404`
+Newsletter remains an important embedded acquisition/distribution layer rather than a required primary page.
 
-Retired:
+News is retired as a primary v1 product.
 
-- `/stories` redirects to `/why`;
-- `/stories/[slug]` redirects to the corresponding `/why/[slug]` legacy target;
-- `/subscribe` redirects to `/#newsletter`;
-- `/about` redirects to `/`;
-- public Series presentation is not part of v0.
+Why evolves into Journal.
 
-The current masthead is:
+Hustle remains people-led reporting and may cover founders, CTOs, engineers, operators, independent builders, and other relevant people building or operating businesses and technology.
 
-`Portfilo | News | Why | Hustle`
+## Design status
 
-There is no individual public author/byline system in v0.
+The inherited runtime still uses the v0 publication design.
 
-## Newsletter
+That is temporary.
 
-Every visible newsletter form uses the shared `NewsletterSignup.astro` component and `/api/subscribe` endpoint.
+V1 design research is the next active phase. Current approved research direction is dark, neutral, silver/graphite, minimal color, highly crafted motion, strong Work presentation, and an overall feeling of technical excellence and premium control.
 
-beehiiv owns double opt-in confirmation, subscriber storage, delivery, and unsubscribe handling. Portfilo does not maintain a separate subscriber database.
+No final v1 design system is approved yet.
 
-The homepage `/#newsletter` section is the direct signup destination.
+## Technical baseline
 
-## Responsive contract
+Default foundation:
 
-- 1440 / 1366: full desktop.
-- 1024: compact desktop/laptop with preserved structure and deliberate side breathing room.
-- 768: tablet remains in the desktop layout family with selective reflow only where needed.
-- 390 / 375 / 320: deliberate phone simplification.
+- Astro + TypeScript
+- static-first output
+- Astro Content Collections where useful
+- custom CSS
+- semantic HTML
+- Cloudflare Pages
+- existing beehiiv integration where useful
 
-Forms should remain constrained on tablet rather than becoming unnecessarily wide after stacking. Typography must scale progressively across these widths.
+A dedicated motion library may be evaluated after the design system establishes a real need.
 
-## Technical direction
-
-For v0:
-
-- Astro + TypeScript;
-- static-first output;
-- Astro Content Collections + local Markdown;
-- one internal collection named `articles` with public `section: news | why | hustle`;
-- custom CSS;
-- minimal client-side JavaScript;
-- no frontend framework by default;
-- no database, authentication, or custom CMS;
-- Cloudflare Pages;
-- one narrow Pages Function at `/api/subscribe`;
-- beehiiv for newsletter infrastructure.
-
-Node is pinned through `.node-version`.
-
-Do not add infrastructure for hypothetical scale. `docs/V0_SCOPE.md` owns the detailed boundaries.
+Do not add major infrastructure for hypothetical scale.
 
 ## Local development
 
@@ -125,28 +96,4 @@ Never report a command as passing unless it actually ran against the relevant st
 
 ## Security
 
-Never commit or upload:
-
-- `.env` or `.env.*`;
-- `.dev.vars`;
-- API keys;
-- access tokens;
-- passwords;
-- private credentials;
-- `node_modules`;
-- build output unless explicitly required.
-
-Use `.dev.vars.example` only as a local configuration template.
-
-## Handoff
-
-Before a new contributor writes anything:
-
-1. verify branch and HEAD;
-2. read `AGENTS.md`;
-3. read `docs/PROJECT_STATE.md`;
-4. read `docs/DOCUMENT_STATUS.md`;
-5. read `docs/V0_SCOPE.md`;
-6. read the task-specific canonical standards;
-7. apply the anti-slop skill when the task contains a material discretionary decision;
-8. stay inside the current approval gate.
+Never commit credentials, tokens, secrets, `.env` files, `.dev.vars`, `node_modules`, or build output unless explicitly required.
