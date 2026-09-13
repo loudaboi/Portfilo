@@ -4,16 +4,18 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 2 CLEAN-CUT ROUTE + CONTENT MIGRATION ACTIVE**
+**PORTFILO V1 PHASE 2 CLEAN-CUT MIGRATION COMPLETE / PHASE 3 APPROVAL GATE**
 
-Approved:
+Approved and completed:
 
 - v1 studio repositioning;
 - Obsidian Precision;
-- concrete design system;
+- concrete v1 design system;
 - clean v1 working-tree strategy;
-- removal of obsolete v0 routes/content/assets/docs/research;
-- namespaced newsletter API.
+- Journal migration;
+- Work / Services / Hustle / Journal / Contact route foundations;
+- namespaced newsletter API;
+- removal of obsolete v0 routes/content/assets/docs/research.
 
 ## Branches
 
@@ -35,34 +37,71 @@ Newsletter is embedded.
 
 News, Why, and the public Standards page are retired.
 
-## Current implementation boundary
+## Phase 2 result
 
-Phase 2 may:
+The active v1 branch now:
 
-- migrate the three surviving Why articles to Journal;
-- add Journal, Work, Services, and Contact route foundations;
-- rebuild Hustle route foundations;
-- namespace newsletter API;
-- remove obsolete v0 runtime/content/assets;
-- prune superseded v0 docs/research;
-- reconcile Privacy/404/confirmation;
-- validate the resulting branch.
+- keeps only the three durable former Why articles, migrated to `journal`;
+- removes all nine News articles and News routes;
+- removes Why routes;
+- removes the public Standards route;
+- removes the old v0 redirects file;
+- removes legacy publication-only article/archive/footer components;
+- removes News-only media;
+- removes legacy v0 wordmark/symbol variants;
+- uses `/api/newsletter/subscribe`;
+- updates Privacy for local font delivery;
+- updates 404/confirmation links away from `/stories`;
+- adds the `work` content collection and route foundation;
+- adds Services and Contact foundations;
+- prunes obsolete v0 docs/research from the active branch.
 
-Phase 3 homepage replacement is **not** authorized yet.
+Tracked-file count moved from **306** at audit time to **87** after cleanup.
 
-The existing homepage may receive only the minimum compatibility edits required to function with the Phase 2 content model.
+Approximate tracked size moved from **7.69 MB** to **3.29 MB**.
 
-## Current unresolved release blockers
+Git history remains the historical archive.
+
+## Validation
+
+Validated runtime/head:
+
+`a0f6878bcd205c3ebd0089ac2730195d9a806281`
+
+GitHub Actions run:
+
+`34781911660`
+
+Result:
+
+**PASS**
+
+Passed:
+
+- dependency installation;
+- `astro check`;
+- production build.
+
+No merge to `main` or deployment occurred.
+
+## Intentionally unresolved before release
 
 - final homepage positioning/copy;
+- Phase 3 homepage implementation;
 - real Work case-study evidence/media;
 - final Services copy;
 - public Contact destination/email;
-- v1 favicon/icon decision;
-- v1 default social preview;
+- v1 favicon/icon replacement;
+- v1 default social preview replacement;
 - final newsletter promise/cadence;
-- optional confirmation-route namespace change coordinated with beehiiv.
+- optional move from `/confirmed` to `/newsletter/confirmed`, coordinated with beehiiv.
 
 ## Exact next task
 
-Complete Phase 2 cleanup and validation, then stop for founder approval before Phase 3 homepage implementation.
+**PHASE 3 HOMEPAGE REBUILD RESEARCH / COPY / IMPLEMENTATION GATE**
+
+Do not begin Phase 3 until founder approval.
+
+The homepage should then be replaced at `/` using the approved hierarchy:
+
+`Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`
