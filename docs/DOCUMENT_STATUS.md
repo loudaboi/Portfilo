@@ -1,8 +1,8 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-10_
+_Last updated: 2026-09-14_
 
-This file prevents historical implementation notes and research records from being mistaken for current authority.
+This file distinguishes current v1 authority from historical v0 publication material.
 
 ## Authority order
 
@@ -11,283 +11,153 @@ When documents disagree, use:
 1. `AGENTS.md`
 2. `docs/PROJECT_STATE.md`
 3. this status map
-4. `docs/V0_SCOPE.md`
-5. the canonical standard for the subject
+4. `docs/V1_SCOPE.md`
+5. the task-specific current standard or approved decision record
 6. current runtime source
-7. historical research/decision records for provenance only
+7. historical records for provenance only
 
-`docs/PROJECT_STATE.md` owns the current phase and exact next task. Do not create a competing execution plan.
+`docs/PROJECT_STATE.md` owns the current phase and exact next task.
 
-## Current phase
-
-The latest News / Why / Hustle release is complete and production-verified.
-
-**Editorial Packaging Standard Refinement is decision-complete and canonically reconciled. The subsequent editorial-image runtime impact review and default social-preview refresh are also complete, released, and production-verified.**
-
-A later founder-approved working-branch cleanup renamed the single internal Astro Content Collection from `stories` to `articles` while preserving `section: news | why | hustle` as the editorial-routing dimension. Existing Markdown files were moved to `src/content/articles/` without content changes, and public routes, slugs, schemas, and presentation remain unchanged. Runtime migration commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`. The rename remains preview/test work and has not been released to `main`; founder preview QA remains pending.
-
-Founder-approved image policy:
-
-- News imagery is optional;
-- Why imagery is preferred when it performs a real explanatory, documentary, or conceptual job, but is not required;
-- Hustle authentic subject/operating-context imagery is strongly preferred when available, but is not required;
-- no News, Why, or Hustle piece may be blocked from publication solely because no suitable image is available;
-- `NO IMAGE` remains a valid editorial outcome;
-- imagery must never be manufactured merely to fill a visual slot.
-
-Canonical image-integrity and generated-image controls remain in `docs/IMAGE_SYSTEM.md` and `docs/PHOTO_TREATMENT.md`.
-
-The packaging reconciliation itself changed canonical documentation only. The later founder-promoted image-runtime review concluded that no schema expansion or article/archive component change is justified for v0 because the existing optional image model, no-image states, per-article social-image behavior, and structured-data behavior already satisfy the approved policy.
-
-The default social fallback at `public/social/portfilo-default.png` was replaced with the founder-selected Portfilo stairs/wordmark composition, prepared as a `1200 x 630` PNG. Working-branch CI run `#41` passed. The resulting release state at `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` is on `main`, main CI run `#44` passed, and the founder confirmed the production result is working.
-
-No further runtime image-system implementation, schema expansion, image generation, or publication is authorized by this closure. The current editorial inventory build and internal collection rename are separately founder-promoted work and remain subject to their own gates.
-
-Canonical upstream News operating contract remains:
-
-`docs/EDITORIAL_INTELLIGENCE.md`
-
-Canonical operating source registry remains:
-
-`docs/EDITORIAL_SOURCE_MAP.md`
-
-Canonical reusable scanner prompt remains:
-
-`docs/NEWS_SCANNER_PROMPT.md`
-
-The public editorial architecture is:
-
-`News / Why / Hustle`
-
-`Stories` is retired as a public section name. The generic journalistic word `story` may still appear internally where it describes an editorial artifact, research packet, or writing job rather than a public navigation section.
-
-## Current canonical documents
+## Current v1 authority
 
 ### Contributor and decision control
 
 - `AGENTS.md`
 - `skills/portfilo-anti-slop/SKILL.md`
 
-### Product and implementation state
+### Product and state
 
-- `docs/PROJECT_STATE.md` - current phase, validated state, active work plan, and exact next task.
-- `docs/V0_SCOPE.md` - current v0 product/technical boundaries and News/Why/Hustle public section contract.
-- `docs/DESIGN_DIRECTION.md` - current visual/responsive contract.
-- `README.md` - current repository overview.
-- `BACKLOG.md` - ideas outside current scope only.
+- `docs/PROJECT_STATE.md` - current phase, active branch, next task, approval boundary.
+- `docs/V1_SCOPE.md` - approved v1 company/product/technical boundaries.
+- `README.md` - repository overview.
+- `BACKLOG.md` - future ideas only unless explicitly promoted.
 
-### Editorial direction, intelligence, research, writing, packaging, publishing
+### Current editorial integrity rules carried forward
 
-Current:
+The v1 repositioning does not lower editorial standards.
 
-- `docs/EDITORIAL_INTELLIGENCE.md` - upstream News discovery, ChatGPT-led scanner model, signal handling, automation boundary, and handoff into existing editorial systems.
-- `docs/EDITORIAL_SOURCE_MAP.md` - starting source universe, monitoring priority, optional supporting inputs, and source-map review rules.
-- `docs/NEWS_SCANNER_PROMPT.md` - short reusable prompt for a dedicated ChatGPT News-scanner conversation; substantive authority remains in the canonical standards.
-- `docs/CONTENT_PLANNING.md` - substantial Why/Hustle candidate selection and prioritization.
-- `docs/EDITORIAL_STANDARD.md` - editorial integrity, coverage principles, and public News/Why/Hustle distinction.
-- `docs/RESEARCH_STANDARD.md` - evidence, source hierarchy, contradiction search, research packets, and verification.
-- `docs/WRITING_SYSTEM.md` - writing-form selection and structural/stylistic authority.
-- `docs/STYLE_RESEARCH_STANDARD.md` - story-specific professional form research.
-- `docs/EXPLAINED_STANDARD.md` - founder-approved Explained direction; no universal Explainer structure is canonical.
-- `docs/EDITORIAL_PACKAGING_STANDARD.md` - current headline/dek/metadata architecture plus the founder-approved optional-image policy and section-specific image preferences.
-- `docs/PUBLISHING_STANDARD.md` - substantial and fast-factual publication paths, current `section: news | why | hustle` schema contract, and publication image-necessity checks.
-- `docs/COPY_STYLE.md` - public copy rules and institutional-copy provenance.
-- `docs/PORTFILO_TEST_STANDARD.md` - Portfilo Test methodology.
+These remain usable where applicable to Hustle, Journal, newsletter editorial work, and case-study factual claims:
 
-### Relationship between intelligence and reporting standards
-
-Use the layers in this order:
-
-```text
-EDITORIAL INTELLIGENCE
-source map + current web -> signal -> original-source check -> News / Watch / Story Idea / Ignore
-
-CONTENT PLANNING
-idea/question -> editorial gate -> priority -> Why / Hustle assignment
-
-RESEARCH + WRITING + PACKAGING + PUBLISHING
-research packet -> evidence -> story decision -> form -> draft -> verification -> package -> image-necessity decision -> publish
-```
-
-`STORY IDEA` remains a private scanner/Sheet label, not a public section.
-
-`docs/EDITORIAL_INTELLIGENCE.md` does not create a second evidence hierarchy. `docs/RESEARCH_STANDARD.md` remains the authority for evidentiary source tiers and claim verification.
-
-`docs/EDITORIAL_SOURCE_MAP.md` uses `CORE / WATCH / TARGETED` only as monitoring-frequency labels. They are not credibility tiers.
-
-`docs/NEWS_SCANNER_PROMPT.md` is an invocation contract, not a substitute for repository authority.
-
-Deeper editorial ideas do not have to originate in the News pipeline.
-
-### Public topic taxonomy
-
-Current public topic taxonomy remains:
-
-`Business / Technology / Startup / AI`
-
-Runtime values remain:
-
-`business / technology / startup / ai`
-
-This topic taxonomy is separate from the public section architecture:
-
-`News / Why / Hustle`
-
-Do not infer a topic-taxonomy migration from the section migration or packaging refinement.
-
-### Design and imagery
-
-Current:
-
-- `docs/DESIGN_DIRECTION.md`
+- `docs/RESEARCH_STANDARD.md`
+- `docs/WRITING_SYSTEM.md`
+- `docs/STYLE_RESEARCH_STANDARD.md`
+- `docs/COPY_STYLE.md`
 - `docs/IMAGE_SYSTEM.md`
 - `docs/PHOTO_TREATMENT.md`
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`
 
-Astro's native image pipeline remains the current runtime authority for editorial image rendering.
+Other publication-specific editorial documents may contain useful methods, but are not automatically v1 product authority.
 
-Approved publication-level image rule:
+## Approved v1 product model
 
-- `image` remains optional across News, Why, and Hustle;
-- News does not require an image;
-- Why may prefer imagery when useful, but absence is not a publication blocker;
-- Hustle strongly prefers authentic subject/operating imagery when available, but absence is not a publication blocker;
-- generated imagery remains illustration, not documentary evidence;
-- one approved story visual may be reused across article/homepage/archive/share derivatives where appropriate;
-- a surface may remain text-led even when an approved story image exists elsewhere.
+Primary studio architecture:
 
-The completed v0 image-runtime impact review preserved the existing schema and shared article/archive components. Do not expand image metadata or introduce dynamic social-card generation merely for completeness without a new justified task.
+`Work / Services / Hustle / Journal / Contact`
 
-Current default social behavior:
+Newsletter:
 
-- articles with an approved image use that image for Open Graph/X metadata and Article structured data;
-- articles without an approved image fall back to `/social/portfilo-default.png`;
-- non-article pages use the same default fallback where social metadata is enabled;
-- the current default fallback asset is a `1200 x 630` Portfilo stairs/wordmark PNG at `public/social/portfilo-default.png`.
+- important owned-distribution and potential monetization layer;
+- may appear on the homepage and editorial surfaces;
+- does not require a primary-navigation destination;
+- old v0 cadence/acquisition copy is not automatically carried forward.
 
-### Email and deployment
+Editorial:
 
-Current:
+- `News` is retired as a primary v1 product;
+- `Why` is retired as a public section name and evolves into `Journal`;
+- `Hustle` remains and broadens to founders, CTOs, engineers, operators, independent builders, and other relevant people building/operating businesses and technology.
 
-- `docs/EMAIL_SYSTEM_PLAN.md`
-- `docs/BEEHIIV_EMAIL_SETUP.md`
-- `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
+Commercial:
 
-Important boundary:
+- Portfilo is a software design and development studio;
+- the studio focuses on solving business problems through custom software, automation, and practical AI;
+- services should be framed around real business needs rather than a generic technology menu.
 
-- website-facing acquisition language uses `Portfilo newsletter`, not `Portfilo Brief`;
-- provider-side beehiiv records may still contain historical naming;
-- repository edits do not imply provider-side beehiiv settings were changed.
+## Design status
 
-Cloudflare production behavior remains:
+### Historical v0 design authority
 
-- production branch: `main`;
-- automatic deployments: enabled;
-- `build/portfilo-v0` remains the preview/test working branch.
+`docs/DESIGN_DIRECTION.md` describes the released publication-era system and is now **historical for v1**.
 
-The latest released `main` state, including the default social-preview refresh, is founder production-verified.
+It may be consulted for provenance or reusable implementation details, but it does not constrain v1 visual decisions.
 
-## Known adjacent authority hygiene issues
+### Current v1 visual brief
 
-The 2026-09-10 conflict audit identified two stale documentation issues that do not block current editorial operation:
+Current approved direction for research:
 
-1. `docs/COPY_STYLE.md` still contains route/header facts from an earlier standalone `/subscribe` and persistent header-CTA state. Current route/header authority in `PROJECT_STATE`, `V0_SCOPE`, `DESIGN_DIRECTION`, and runtime source takes precedence.
-2. `docs/SOCIAL_DISTRIBUTION.md` still contains legacy `Portfilo Brief` naming. Current newsletter public naming authority is `Portfilo newsletter`.
+- dark / near-black;
+- graphite / silver / cold white;
+- minimal color;
+- alive and technically excellent;
+- expensive and controlled;
+- high visual ambition with low visual noise;
+- sophisticated motion;
+- strong Work presentation;
+- no generic SaaS/agency gimmicks.
 
-Treat these as maintenance/reconciliation items. Do not use the stale clauses to reopen already-approved product decisions.
+No final typography, palette values, animation library, motion grammar, page composition, or component system is approved yet.
 
-The stale public `Stories` packaging terminology previously present in `docs/EDITORIAL_PACKAGING_STANDARD.md` was reconciled during the approved Editorial Packaging Standard Refinement.
+## Historical v0 publication authority
 
-## Current runtime authority
+The following remain historical unless explicitly promoted into v1:
 
-### Header
+- `docs/V0_SCOPE.md`
+- publication-era sections `News / Why / Hustle` as a combined product model;
+- `docs/EDITORIAL_INTELLIGENCE.md`
+- `docs/EDITORIAL_SOURCE_MAP.md`
+- `docs/NEWS_SCANNER_PROMPT.md`
+- publication-era `docs/CONTENT_PLANNING.md` assumptions;
+- publication-era `docs/EDITORIAL_STANDARD.md` section taxonomy;
+- `docs/EDITORIAL_PACKAGING_STANDARD.md` where it assumes News/Why/Hustle publication packaging;
+- `docs/PUBLISHING_STANDARD.md` where it assumes v0 section/schema behavior;
+- old newsletter cadence/acquisition copy;
+- old homepage/masthead composition.
 
-`src/components/SiteHeader.astro`
+Do not delete these merely because they are historical. Git history and retained documents preserve useful provenance while migration decisions are made.
 
-Current masthead:
+## Runtime status
 
-`Portfilo | News | Why | Hustle`
+The runtime currently inherited on `build/portfilo-v1` is still the v0 publication implementation.
 
-There is no persistent Subscribe CTA.
+That is expected.
 
-### Public route set
+Current runtime structures such as:
 
-Current editorial/institutional routes:
-
-- `/`
 - `/news`
-- `/news/[slug]`
 - `/why`
-- `/why/[slug]`
 - `/hustle`
-- `/hustle/[slug]`
-- `/standards`
-- `/privacy`
-- `/confirmed`
-- `/404`
+- the old homepage;
+- the old masthead;
+- the current `articles` schema;
+- publication-specific archive/article components
 
-Retired routes:
+do not become v1 product authority merely because they still exist in source.
 
-- `/stories` -> `/why` via Cloudflare redirect
-- `/stories/*` -> `/why/:splat` via Cloudflare redirect
-- `/subscribe` -> `/#newsletter` via Cloudflare redirect
-- `/about` -> `/`
-- `/series/[slug]` removed from v0
+Runtime migration begins only after v1 design direction and information architecture are approved.
 
-### Content schema
+## Branches
 
-`src/content.config.ts` currently owns one internal collection named `articles`:
+Active v1 working branch:
 
-```text
-section: news | why | hustle
-contentType: reported | explained | guide | profile | analysis | perspective | field-notes | partner
-topic: business | technology | startup | ai
-status: draft | published
-image: optional
-```
+`build/portfilo-v1`
 
-News, Why, and Hustle remain section values inside that one collection. The collection name is implementation plumbing, not public navigation.
+Historical v0 working branch:
 
-All four existing non-News content entries have been reclassified to `section: why`. There is no synthetic Hustle content. The first approved real News report, Kita's funding item, is present on the working branch.
+`build/portfilo-v0`
 
-### Archives and articles
+Production/release boundary:
 
-`src/components/EditorialArchive.astro` owns shared News/Why/Hustle archive presentation.
+`main`
 
-`src/components/EditorialArticle.astro` owns shared article presentation with `news` and `longform` rendering modes. Why and Hustle use the shared long-form mode.
+## Validation
 
-The current components already accept image and no-image states. The completed image-runtime review left these components unchanged because the current behavior satisfies the approved v0 image policy.
+The v1 authority reset is documentation/workspace work.
 
-The homepage keeps one primary long-form Feature that may draw from Why or Hustle inventory. It does not add separate homepage section blocks merely because the public navigation has three editorial destinations.
+No new v1 visual/runtime behavior has been validated or released.
 
-### Social metadata
+Prior v0 CI and production verification remain valid only for the released v0 implementation.
 
-`src/components/SiteHead.astro` remains the runtime authority for default and per-article Open Graph/X image selection.
+## Exact next decision gate
 
-The current default fallback asset is:
+`V1 DESIGN DIRECTION RESEARCH AND DECISION`
 
-`public/social/portfilo-default.png`
-
-Current prepared dimensions:
-
-`1200 x 630`
-
-No new social-image generator, route, schema field, or metadata component was introduced in the completed image-runtime review.
-
-## Current validation status
-
-**LATEST RELEASE COMPLETE / CI PASS / FOUNDER PREVIEW QA PASS / PRODUCTION VERIFICATION PASS / SOCIAL PREVIEW RELEASE PASS / ARTICLE COLLECTION RENAME WORKING-BRANCH CI PASS.**
-
-The News/Why/Hustle migration, short-page footer correction, client-side navigation enhancement, newsletter acquisition copy refinement, and signup-heading width correction were validated before release, released to `main` after explicit founder approval, and verified on the production Cloudflare Pages deployment.
-
-The Editorial Packaging Standard Refinement is decision-complete and canonically reconciled.
-
-The subsequently promoted editorial-image runtime review concluded with no schema or article/archive component expansion. The replacement of `public/social/portfilo-default.png` passed working-branch CI run `#41`, was released to `main` in the `99c8275e403bcd2155093fb3d5b5ac581b2e0d0c` state, passed main CI run `#44`, and passed founder production verification.
-
-The internal collection rename at runtime commit `b7b275de7e3fa2d808ef8baee144be95b0d596e7` passed working-branch CI run `#49`, including `npm run check` and `npm run build`. Founder preview QA and any release to `main` remain separate gates.
-
-## Historical/provenance records
-
-Files under `research/` and older implementation/copy records remain useful for provenance only unless explicitly promoted by a current canonical document.
-
-Rejected or superseded designs, copy, strategies, and generated outputs do not become precedent merely because they remain in Git history or research files.
+No implementation is authorized by that gate until the founder approves a specific design direction and subsequent implementation plan.
