@@ -10,7 +10,7 @@ const entries = await getCollection("articles");
 const publishedEntries = entries.filter(({ data }) => data.status === "published");
 
 const longformByDate = entries
-  .filter(({ data }) => data.section === "why" || data.section === "hustle")
+  .filter(({ data }) => data.section === "journal" || data.section === "hustle")
   .sort(
     (a, b) =>
       (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
@@ -21,7 +21,7 @@ const publishedLongformByDate = longformByDate.filter(
 );
 
 const newsByDate = publishedEntries
-  .filter(({ data }) => data.section === "news")
+  .filter(({ data }) => data.section === "journal")
   .sort(
     (a, b) =>
       (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0),
@@ -45,14 +45,14 @@ const realNews = newsByDate.map((story) => ({
   time: formatDate(story.data.publishedAt),
   title: story.data.title,
   dek: story.data.dek,
-  href: `/news/${story.id}`,
+  href: `/journal/${story.id}`,
   image: story.data.image,
 }));
 
 const newsItems = realNews;
-const homepageLeadNewsId = "kita-raises-4-5m-ai-credit-underwriting";
+const homepageLeadNewsId = "tiktok-commerce-philippines";
 const leadNews =
-  newsItems.find((item) => item.href === `/news/${homepageLeadNewsId}`) ?? newsItems[0];
+  newsItems.find((item) => item.href === `/journal/${homepageLeadNewsId}`) ?? newsItems[0];
 const supportingNews = newsItems.filter((item) => item.href !== leadNews?.href);
 
 const tickerItems = newsItems.slice(0, 5).map((item) => ({
@@ -72,7 +72,7 @@ const secondaryStory = publishedLongformByDate
   }))[0];
 
 const railStory = secondaryStory;
-const railSection = railStory?.section ?? featureStory?.data.section ?? "why";
+const railSection = railStory?.section ?? featureStory?.data.section ?? "journal";
 const railLabel = railStory
   ? `${railStory.status === "draft" ? "Draft " : ""}${formatLabel(railStory.section)}`
   : formatLabel(railSection);
@@ -84,8 +84,8 @@ const railArchiveLabel = formatLabel(railSection);
 <html lang="en">
   <head>
     <SiteHead
-      title="Portfilo | Business and Technology News"
-      description="The latest news on companies, startups, products, markets, AI, and technology."
+      title="Portfilo"
+      description="Portfilo"
     />
   </head>
   <body class="home-page">
@@ -96,10 +96,9 @@ const railArchiveLabel = formatLabel(railSection);
       <section class="newsletter-band" id="newsletter" aria-labelledby="newsletter-title">
         <div class="newsletter-band__inner">
           <div class="newsletter-band__copy">
-            <h1 id="newsletter-title">Get ahead in business and tech.</h1>
+            <h1 id="newsletter-title">Portfilo newsletter</h1>
             <p>
-              Reporting on what changed, why it’s happening, and how companies are built and run.
-              Three times a week, straight to your inbox.
+              Updates from Portfilo.
             </p>
           </div>
 
@@ -108,7 +107,7 @@ const railArchiveLabel = formatLabel(railSection);
               id="home-hero-newsletter"
               variant="hero"
               showCopy={false}
-              buttonLabel="Send me the news"
+              buttonLabel="Subscribe"
             />
           </div>
         </div>
@@ -119,10 +118,10 @@ const railArchiveLabel = formatLabel(railSection);
           <section
             class="latest-strip"
             id="latest"
-            aria-label="Latest news from Portfilo"
+            aria-label="Latest Journal articles from Portfilo"
           >
             <div class="latest-strip__label">
-              <strong>Latest news</strong>
+              <strong>Latest Journal</strong>
             </div>
             <div
               class="latest-strip__rail"
@@ -240,9 +239,9 @@ const railArchiveLabel = formatLabel(railSection);
 
       <section class="news-section" id="news" aria-labelledby="news-section-title">
         <header class="news-section__heading">
-          <h2 id="news-section-title">News</h2>
+          <h2 id="news-section-title">Journal</h2>
           <div class="news-section__heading-side">
-            <a class="news-section__all" href="/news">All News <span aria-hidden="true">→</span></a>
+            <a class="news-section__all" href="/journal">All Journal <span aria-hidden="true">→</span></a>
           </div>
         </header>
 
@@ -311,7 +310,7 @@ const railArchiveLabel = formatLabel(railSection);
               </div>
             </div>
           ) : (
-            <p class="news-empty">No published News items yet.</p>
+            <p class="news-empty">No published Journal articles yet.</p>
           )
         }
       </section>

@@ -1,4 +1,0 @@
-/subscribe /#newsletter 301
-/about / 301
-/stories /why 301
-/stories/* /why/:splat 301

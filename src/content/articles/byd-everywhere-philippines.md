@@ -1,7 +1,7 @@
 ---
 title: "Why is BYD suddenly everywhere in the Philippines?"
 dek: "Nearly four in five BYDs sold in the Philippines through August 2026 were DM-i plug-in hybrids. Rapid dealer expansion and a broader shift toward electrified cars made the brand harder to miss."
-section: why
+section: journal
 contentType: explained
 topic: technology
 publishedAt: 2026-09-11

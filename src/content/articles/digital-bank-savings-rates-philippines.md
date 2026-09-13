@@ -1,7 +1,7 @@
 ---
 title: "Why do digital banks in the Philippines pay so much more interest on savings?"
 dek: "A 3% base savings rate is about 48 times the 0.0625% offered by some large-bank savings accounts. Digital banks are paying more to attract deposits, while their loans and other earning assets also generate much higher yields."
-section: why
+section: journal
 contentType: explained
 topic: business
 publishedAt: 2026-09-11

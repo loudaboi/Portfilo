@@ -2,7 +2,7 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const sections = ["news", "why", "journal", "hustle"] as const;
+const sections = ["journal", "hustle"] as const;
 const contentTypes = ["reported", "explained", "guide", "profile", "analysis", "perspective", "field-notes", "partner"] as const;
 const topics = ["business", "technology", "startup", "ai"] as const;
 
@@ -42,9 +42,6 @@ const articles = defineCollection({
       }
       if (story.publishedAt && story.updatedAt && story.updatedAt < story.publishedAt) {
         context.addIssue({ code: "custom", path: ["updatedAt"], message: "updatedAt cannot be earlier than publishedAt." });
-      }
-      if (story.section === "news" && story.featured) {
-        context.addIssue({ code: "custom", path: ["featured"], message: "News entries cannot be featured." });
       }
     }),
 });
