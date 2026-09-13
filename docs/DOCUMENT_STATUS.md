@@ -26,6 +26,7 @@ When documents disagree, use:
 
 - `AGENTS.md`
 - `skills/portfilo-anti-slop/SKILL.md`
+- `skills/portfilo-v1-design/SKILL.md`
 
 ### Product and state
 
@@ -36,12 +37,16 @@ When documents disagree, use:
 - `README.md`
 - `BACKLOG.md`
 
+### Migration authority
+
+- `research/migration/v1-runtime-content-migration-plan.md` — founder-approved targeted v0 -> v1 migration plan.
+
 ### Research provenance
 
 - `research/design/v1-design-direction-research.md`
 - `research/design/v1-design-system-ia-research.md`
 
-Research supports the decisions but does not override canonical documents.
+Research supports decisions but does not override canonical documents.
 
 ## Approved v1 product model
 
@@ -56,6 +61,8 @@ News is retired as a primary product.
 Why evolves into Journal.
 
 Hustle remains and broadens to founders, CTOs, engineers, operators, independent builders, and other relevant people.
+
+The public Standards page is retired from v1.
 
 Portfilo's internal category is a software design and development studio focused on solving business problems through custom software, automation, and practical AI. This is not final public positioning copy.
 
@@ -76,16 +83,16 @@ Approved direction:
 Locked decisions include:
 
 - Instrument Sans + IBM Plex Mono;
-- exact neutral palette tokens;
+- Obsidian / graphite / muted-silver / cold-white tokens;
 - 12 / 8 / 4 responsive grid;
 - sharp geometry;
 - direct desktop navigation and mobile MENU pattern;
 - homepage IA;
 - Work/Services/Hustle/Journal visual hierarchy;
-- newsletter and contact placement;
+- newsletter/contact placement;
 - motion timing/easing families;
 - software-media hierarchy;
-- existing wordmark first;
+- current wordmark geometry retained;
 - GSAP approved;
 - native scrolling;
 - no foundation WebGL/Three.js.
@@ -94,7 +101,7 @@ Final public copy remains separate.
 
 ## Editorial integrity rules carried forward
 
-Applicable current standards include:
+Applicable internal standards include:
 
 - `docs/RESEARCH_STANDARD.md`
 - `docs/WRITING_SYSTEM.md`
@@ -103,7 +110,7 @@ Applicable current standards include:
 - `docs/IMAGE_SYSTEM.md`
 - `docs/PHOTO_TREATMENT.md`
 
-Publication-specific v0 assumptions inside these or other files do not override v1 product authority.
+These remain internal authority where applicable. A public `/standards` route is not required.
 
 ## Historical v0 authority
 
@@ -118,13 +125,34 @@ Historical unless explicitly promoted:
 - old homepage/masthead composition;
 - publication-specific runtime/schema decisions.
 
-Do not delete historical material merely because it is superseded.
+Do not delete historical documentation merely because it is superseded.
 
 ## Runtime status
 
-`build/portfilo-v1` still inherits the v0 publication runtime at the start of the approved foundation phase.
+Phase 0 + Phase 1 foundation implementation is complete.
 
-The migration plan is approved. Phase 0 + Phase 1 foundation implementation is authorized; Phase 2 route/content migration is not yet authorized.
+Validated runtime foundation commit:
+
+`b88550e5e705e6d02a9db60fc2777429f692c43c`
+
+Validation:
+
+- GitHub Actions run `34777682809`;
+- dependency install PASS;
+- Astro check PASS;
+- build PASS.
+
+Implemented foundation includes:
+
+- GSAP;
+- local variable Instrument Sans + IBM Plex Mono;
+- v1 tokens/accessibility base;
+- SiteHead adaptation;
+- new v1 header/footer;
+- cold-white wordmark application;
+- shared motion lifecycle utility.
+
+The inherited v0 homepage and editorial route/content model still exist and are intentionally awaiting Phase 2/Phase 3 migration.
 
 ## Branches
 
@@ -140,14 +168,10 @@ Release boundary:
 
 `main`
 
-## Migration authority
-
-- `research/migration/v1-runtime-content-migration-plan.md` — founder-approved targeted v0 -> v1 migration plan.
-
-The public `/standards` page is explicitly retired from v1. Relevant research/verification/corrections rules remain internal documentation authority.
-
 ## Exact next task
 
-**EXECUTE AND VALIDATE PHASE 0 + PHASE 1 FOUNDATION**
+**PHASE 2 ROUTE + CONTENT FOUNDATION APPROVAL GATE**
 
-Only the approved foundation scope is authorized. Phase 2 route/content migration requires another approval.
+Phase 2 is not authorized until founder approval.
+
+No merge to `main` or deployment is authorized.
