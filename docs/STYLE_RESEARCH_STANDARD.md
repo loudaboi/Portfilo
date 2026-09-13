@@ -14,10 +14,8 @@ Every substantial article must research its **purpose, audience need, profession
 
 This standard is a companion to:
 
-- `docs/EDITORIAL_STANDARD.md`;
 - `docs/RESEARCH_STANDARD.md`;
 - `docs/WRITING_SYSTEM.md`;
-- `docs/PUBLISHING_STANDARD.md`;
 - `docs/COPY_STYLE.md`.
 
 ## Core rule

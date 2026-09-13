@@ -22,13 +22,10 @@ It applies to:
 
 It does not replace:
 
-- `docs/EDITORIAL_STANDARD.md`;
 - `docs/RESEARCH_STANDARD.md`;
-- `docs/EDITORIAL_PACKAGING_STANDARD.md`;
-- `docs/PUBLISHING_STANDARD.md`;
 - `docs/COPY_STYLE.md`.
 
-Those documents govern evidence, editorial integrity, story packaging, publication, and copy. This document governs **how a writing form is selected and how prose is allowed to be produced**.
+Those documents govern evidence and public copy. This document governs **how a writing form is selected and how prose is allowed to be produced**.
 
 ## Rule zero
 
@@ -418,9 +415,11 @@ Prefer familiar labels and active verbs.
 
 Examples of legitimate jobs:
 
-- `Stories`
-- `About`
-- `Standards`
+- `Work`
+- `Services`
+- `Hustle`
+- `Journal`
+- `Contact`
 - `Subscribe`
 - `Read story`
 - `Confirm email`
@@ -452,7 +451,7 @@ Every sentence should be traceable to one of:
 
 If the sentence's main job is to make Portfilo sound thoughtful, ambitious, clear, rigorous, curious, or different, it is probably a deletion candidate.
 
-### Standards, methodology, corrections, and privacy
+### Methodology, corrections, and privacy
 
 Source of truth: actual procedure, evidence rule, correction record, or data flow.
 
@@ -512,7 +511,7 @@ During the site-copy audit, record the class and provenance for every nontrivial
 
 ## Story packaging: headline + dek
 
-For stories, the complete reader-facing editorial package is **headline + dek**. `docs/EDITORIAL_PACKAGING_STANDARD.md` governs the detailed workflow.
+For Journal and Hustle stories, the default reader-facing editorial package is **headline + dek** unless a story-specific approved form requires something else.
 
 Do not force a third reader-facing story-summary sentence into the package merely because metadata exists.
 
@@ -531,7 +530,7 @@ Adds useful editorial information that the headline does not carry, such as:
 - a material limitation;
 - why the question matters now.
 
-The same approved dek should travel with the headline across the story page, homepage, and Stories archive.
+The same approved dek should travel with the headline across the story page, homepage, and relevant Journal or Hustle archive.
 
 ### Metadata description
 

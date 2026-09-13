@@ -12,9 +12,6 @@ The research packet is the source of truth for a factual story. The article is a
 
 AI may help locate, organize, compare, calculate, challenge, and draft. A claim becomes publishable because reliable evidence supports it, not because a model produced it.
 
-For a Portfilo Test, the recorded execution, output, artifact, and verified final state may be direct evidence of **how the tested system behaved under the recorded conditions**. That does not make factual assertions inside the AI output evidence about the outside world. A model-generated citation, statistic, legal claim, company fact, or other external assertion still requires independent verification.
-
-Portfilo Tests additionally follow `docs/PORTFILO_TEST_STANDARD.md`.
 
 ## Research sequence
 
@@ -93,31 +90,6 @@ These labels are operational judgments, not measures of source credibility.
 Do not avoid an essential high-value source merely because Portfilo is early-stage. Make the attempt when the reporting warrants it. But do not design a time-sensitive story so that publication depends indefinitely on a low-probability reply when public records, datasets, calculations, alternative knowledgeable sources, or a narrower question can answer it properly.
 
 As Portfilo's relationships, visibility, and response history change, reassess reachability. A source class that is unrealistic at launch may become practical later.
-
-## Portfilo Test packets
-
-A Portfilo Test is a substantial research assignment with additional experimental controls.
-
-Use:
-
-- `docs/PORTFILO_TEST_STANDARD.md` for the governing methodology;
-- `research/PORTFILO_TEST_TEMPLATE.md` for the packet structure.
-
-Default workspace:
-
-```text
-research/tests/<slug>/
-├── brief.md
-├── runs.csv
-├── evaluation.md
-└── evidence/
-```
-
-The Test brief must be frozen before final scored runs. Pilot attempts used to repair tasks, graders, fixtures, permissions, or environment defects are separate from the final evidence set unless they were explicitly designated as final before execution.
-
-The packet must retain valid failures and material protocol changes rather than preserving only successful or attractive runs.
-
-A completed experiment does not force publication. The normal `Publish / Reframe / Continue research / Kill` decision still applies.
 
 ## Source hierarchy
 
@@ -226,7 +198,6 @@ Status:
 VERIFIED
 ```
 
-For a Portfilo Test, `runs.csv`, retained evidence, and `evaluation.md` form the primary execution record. Consequential article claims drawn from the Test should still be traceable to that record and to any external sources needed for context.
 
 ## Contradiction search
 
@@ -243,15 +214,6 @@ Ask:
 - Is the time period distorting the result?
 - Is the source financially interested in the conclusion?
 
-For a Portfilo Test, also ask:
-
-- Could setup differences explain the result?
-- Did version opacity or product routing affect comparability?
-- Is the task set too narrow for the proposed claim?
-- Did non-determinism produce an unstable result?
-- Could benchmark contamination or task leakage matter?
-- Did a grader, fixture, network, or runtime failure get attributed to the system incorrectly?
-- Is a highlighted success/failure representative of the full final-run set?
 
 Record meaningful counterevidence in `contradictions.md` or, for a Test, in the contradiction/alternative-explanation section of `evaluation.md`.
 
@@ -372,7 +334,6 @@ Do not introduce new factual claims during prose generation unless they are adde
 
 Do not automatically surface every internal `QUALIFY`, source-access failure, or research gap. Apply the verification-disclosure decision above and preserve only limitations that materially help the reader understand the evidence.
 
-For a Portfilo Test, do not introduce an unrecorded result, replace a failed final run with a later prettier run, or imply that one highlighted example represents the full test unless the execution record supports that characterization.
 
 ## Adversarial review
 
@@ -410,7 +371,6 @@ For unsupported material:
 
 For material verification limitations that remain in the story, audit the disclosure itself: confirm that it is necessary, precise, proportionate, and supported by the actual reporting record.
 
-For a Portfilo Test, also audit every consequential comparison, rate, ranking, reliability statement, cost figure, timing figure, and statement about failure against the frozen protocol and retained execution evidence.
 
 ## Sources and method
 
@@ -427,14 +387,22 @@ It may explain:
 - distinction between advertised and actual values;
 - calculation methodology.
 
-For Portfilo Tests, follow the public-methodology requirements in `docs/PORTFILO_TEST_STANDARD.md`.
 
 Methodology is not a dumping ground for every unsuccessful outreach attempt. Include limitations that affect interpretation of the findings.
 
 ## Research packet structure
 
-See `research/README.md`.
+Keep research packets separate from public story files so unfinished notes and unverified claims cannot accidentally become publication content.
 
-For Portfilo Tests, use `research/PORTFILO_TEST_TEMPLATE.md` and `research/tests/<slug>/` rather than a normal story packet for the execution record. If a published story is later drafted from that Test, keep the Test evidence separate from public story files.
+Recommended workspace:
 
-The research packet stays separate from the public story files so unfinished notes and unverified claims cannot accidentally become publication content.
+```text
+research/stories/<slug>/
+├── brief.md
+├── sources.md
+├── evidence.md
+├── contradictions.md
+└── notes.md
+```
+
+A published piece does not require every suggested file when the reporting job is smaller, but consequential claims must remain traceable to evidence.
