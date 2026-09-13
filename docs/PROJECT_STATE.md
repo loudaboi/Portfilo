@@ -4,13 +4,14 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 RUNTIME + CONTENT MIGRATION PLANNING ACTIVE**
+**PORTFILO V1 PHASE 0 + PHASE 1 FOUNDATION IMPLEMENTATION ACTIVE**
 
 The founder has approved:
 
 - the Portfilo v1 studio repositioning;
 - the Obsidian Precision design direction;
-- the concrete v1 design system and information architecture.
+- the concrete v1 design system and information architecture;
+- the targeted v0 -> v1 runtime/content migration plan, with the public Standards page explicitly retired.
 
 Portfilo is being developed primarily as a software design and development studio focused on solving real business problems through custom software, automation, and practical AI, with Hustle, Journal, and the newsletter acting as supporting editorial/distribution products.
 
@@ -48,6 +49,8 @@ Why evolves into Journal.
 
 Hustle remains and broadens to people-led reporting about founders, CTOs, technical leaders, engineers, operators, independent builders, and other relevant people.
 
+The public `/standards` page is retired from v1. Relevant editorial-integrity rules remain internal repo authority.
+
 ## Approved design authority
 
 Direction:
@@ -58,77 +61,70 @@ Concrete system:
 
 `docs/V1_DESIGN_SYSTEM.md`
 
-Research provenance:
-
-- `research/design/v1-design-direction-research.md`
-- `research/design/v1-design-system-ia-research.md`
-
-Approved system summary:
-
-- Instrument Sans + IBM Plex Mono;
-- Obsidian / graphite / silver / cold-white neutral system;
-- 12 / 8 / 4 responsive grid;
-- sharp geometry and thin structural rules;
-- direct navigation;
-- homepage hierarchy: Hero -> Work -> Services -> Hustle -> Journal -> Newsletter -> Contact;
-- Work carries the strongest motion/visual expression;
-- Services remains quieter;
-- Hustle supplies human imagery/context;
-- Journal remains reading-first;
-- real software interfaces are the preferred Work media;
-- existing wordmark is retained for initial monochrome testing;
-- GSAP is approved for v1 motion;
-- native scrolling remains the default;
-- no foundation WebGL/Three.js.
-
 Approved standard:
 
 **High visual ambition. Low visual noise.**
 
-## Current runtime state
+## Approved migration authority
 
-The inherited runtime is still the v0 publication implementation.
+`research/migration/v1-runtime-content-migration-plan.md`
 
-That is expected.
+Key migration decisions:
 
-No v1 production UI implementation has begun yet.
+- keep Astro/TypeScript/Cloudflare/beehiiv infrastructure;
+- replace the homepage/header/footer rather than incrementally restyling v0;
+- Why -> Journal with slug-preserving redirects;
+- retire News as a public product while temporarily preserving article URLs as legacy noindex pages;
+- preserve Hustle routes but rebuild their presentation;
+- add a separate Work collection;
+- keep Services static;
+- create Contact with direct-email fallback before any form backend is approved;
+- retire the public Standards route;
+- clean obsolete files only after replacements exist.
 
-Prior v0 CI/production verification does not count as v1 runtime validation.
+## Current implementation authorization
+
+Founder approval authorizes **Phase 0 + Phase 1 only**.
+
+### Phase 0
+
+- create `skills/portfilo-v1-design/SKILL.md`;
+- record branch/HEAD;
+- verify the inherited baseline with install/check/build evidence.
+
+### Phase 1
+
+Implement only the v1 foundation:
+
+- GSAP dependency;
+- variable Instrument Sans + IBM Plex Mono delivery;
+- v1 global tokens and accessibility base;
+- SiteHead adaptation;
+- new SiteHeader;
+- new SiteFooter;
+- monochrome wordmark application;
+- shared motion lifecycle/utilities;
+- no page-specific spectacle.
+
+Do not yet:
+
+- replace the homepage content model;
+- migrate Why -> Journal;
+- create Work case-study claims;
+- publish Hustle;
+- add a contact-form provider;
+- change beehiiv provider-side configuration;
+- merge to `main`;
+- deploy.
+
+## Current validation state
+
+No v1 production runtime changes have been validated yet.
+
+Phase 0 must establish the baseline before Phase 1 runtime changes are considered validated.
 
 ## Exact next task
 
-**TARGETED V0 -> V1 RUNTIME + CONTENT MIGRATION PLAN**
+**EXECUTE AND VALIDATE PHASE 0 + PHASE 1 FOUNDATION**
 
-Before editing the production UI, inspect the inherited runtime and produce a concrete migration plan covering:
-
-1. current route inventory;
-2. component/layout inventory;
-3. global CSS/tokens/fonts/assets;
-4. content collections and schema;
-5. existing Why content -> Journal migration;
-6. existing Hustle state/content preservation;
-7. News content/infrastructure retirement;
-8. new Work content architecture;
-9. Services implementation model;
-10. Contact route/form approach;
-11. newsletter component/API reuse;
-12. header/footer replacement;
-13. redirects and legacy URL behavior;
-14. metadata/sitemap/robots implications;
-15. dependency changes, including GSAP;
-16. assets/media that can be reused;
-17. obsolete code/docs/assets to remove only after replacements exist;
-18. phased implementation order;
-19. validation plan.
-
-The migration plan must distinguish:
-
-- keep as-is;
-- adapt;
-- replace;
-- retire;
-- defer.
-
-Do not perform broad deletion or UI implementation during the planning gate.
-
-After founder approval of the migration plan, targeted cleanup/restructuring and v1 foundation implementation may begin.
+After foundation validation, stop at the next approval gate before Phase 2 route/content migration.
