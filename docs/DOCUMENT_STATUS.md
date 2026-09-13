@@ -47,7 +47,7 @@ _Last updated: 2026-09-14_
 
 ## Removed v0 authority
 
-V0-specific News/Why product docs, scanner/source-map material, old design/copy decisions, old navigation research, old site audits, obsolete test-format standards, and other superseded material have been removed from the active v1 branch.
+V0-specific News/Why product docs, scanner/source-map material, old design/copy decisions, old navigation research, old site audits, obsolete test-format standards, and other superseded material were removed from the active v1 branch during Phase 2.
 
 Git history remains the historical archive.
 
@@ -63,8 +63,26 @@ News, Why, and the public Standards page are retired.
 
 ## Runtime status
 
-Phase 0 + Phase 1 foundation is validated.
+Phase 0 + Phase 1 foundation: **COMPLETE / VALIDATED**
 
-Phase 2 clean-cut route/content migration is in progress.
+Phase 2 clean-cut route/content migration: **COMPLETE / VALIDATED**
+
+Validated runtime commit:
+
+`a0f6878bcd205c3ebd0089ac2730195d9a806281`
+
+Validation run:
+
+`34781911660`
+
+Result:
+
+**PASS**
+
+The current branch may contain documentation-only commits after that runtime commit.
+
+## Exact next task
+
+**PHASE 3 HOMEPAGE REBUILD APPROVAL GATE**
 
 No merge to `main` or deployment is authorized.
