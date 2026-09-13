@@ -4,9 +4,9 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**AUDIT COMPLETE / NO DELETION AUTHORIZED BY THIS FILE**
+**FOUNDER-APPROVED / EXECUTED IN PHASE 2**
 
-This audit was requested before Phase 2 so the v1 rebuild does not preserve unused v0 routes, content, assets, components, documentation, or research merely because they exist in Git.
+This audit was requested before Phase 2 so the v1 rebuild would not preserve unused v0 routes, content, assets, components, documentation, or research merely because they existed in Git. The founder approved the clean-cut strategy and Phase 2 executed it.
 
 The user clarified that the v0 site was not meaningfully released/distributed publicly. Therefore the preferred migration model is now a **clean v1 cutover**, not a compatibility-heavy migration.
 
@@ -538,3 +538,34 @@ Approve the **clean v1 working-tree strategy**:
 - rely on Git history for historical recovery.
 
 This produces a smaller and clearer codebase before the actual v1 homepage and Work showcase are built.
+
+
+---
+
+# 15. Execution result
+
+Phase 2 completed the clean-cut migration.
+
+Validated runtime commit:
+
+`a0f6878bcd205c3ebd0089ac2730195d9a806281`
+
+CI run:
+
+`34781911660`
+
+Result:
+
+**PASS**
+
+Tracked files:
+
+- before cleanup audit: 306;
+- after Phase 2 cleanup: 87.
+
+Approximate tracked size:
+
+- before: 7.69 MB;
+- after: 3.29 MB.
+
+Remaining v0-era favicon/social-preview files are intentional release blockers awaiting their own v1 identity replacement decision.
