@@ -122,11 +122,9 @@ Do not delete historical material merely because it is superseded.
 
 ## Runtime status
 
-`build/portfilo-v1` still inherits the v0 publication runtime.
+`build/portfilo-v1` still inherits the v0 publication runtime at the start of the approved foundation phase.
 
-Current routes/components/schema are implementation evidence to inspect during migration planning, not v1 product authority.
-
-No v1 UI has been implemented or validated.
+The migration plan is approved. Phase 0 + Phase 1 foundation implementation is authorized; Phase 2 route/content migration is not yet authorized.
 
 ## Branches
 
@@ -142,8 +140,14 @@ Release boundary:
 
 `main`
 
-## Exact next decision gate
+## Migration authority
 
-**TARGETED V0 -> V1 RUNTIME + CONTENT MIGRATION PLAN**
+- `research/migration/v1-runtime-content-migration-plan.md` — founder-approved targeted v0 -> v1 migration plan.
 
-No broad cleanup or production UI implementation is authorized until that plan is approved.
+The public `/standards` page is explicitly retired from v1. Relevant research/verification/corrections rules remain internal documentation authority.
+
+## Exact next task
+
+**EXECUTE AND VALIDATE PHASE 0 + PHASE 1 FOUNDATION**
+
+Only the approved foundation scope is authorized. Phase 2 route/content migration requires another approval.
