@@ -1,99 +1,68 @@
 # Portfilo
 
-Portfilo is being repositioned as a software design and development studio focused on solving real business problems through custom software, automation, and practical AI.
+Portfilo v1 is being built as a software-focused business with Work, Services, Hustle, Journal, Contact, and an embedded newsletter.
 
-The studio is the primary product. Hustle, Journal, and the newsletter form the supporting editorial and distribution layer.
+The internal product definition is a software design and development studio focused on solving real business problems through custom software, automation, and practical AI. That phrase is internal and is not approved homepage copy.
 
-## Repository authority
+## Current authority
 
-Read current authority in this order:
+Read:
 
 1. `AGENTS.md`
 2. `docs/PROJECT_STATE.md`
 3. `docs/DOCUMENT_STATUS.md`
 4. `docs/V1_SCOPE.md`
-5. task-specific current standards/decision records
-6. current source
-
-Historical v0 publication files remain useful provenance but do not override the v1 authority map.
-
-For nontrivial product, copy, design, motion, naming, editorial, or other public-facing decisions, apply:
-
-`skills/portfilo-anti-slop/SKILL.md`
+5. `docs/V1_DESIGN_DIRECTION.md`
+6. `docs/V1_DESIGN_SYSTEM.md`
 
 ## Branches
 
-Active v1 working branch:
+Working branch:
 
 `build/portfilo-v1`
-
-Historical v0 working branch:
-
-`build/portfilo-v0`
 
 Release boundary:
 
 `main`
 
-Do not merge to `main`, deploy, or release without explicit approval.
+Do not merge or deploy without explicit approval.
 
-## Approved v1 public architecture
+## Runtime
 
-Primary navigation:
+- Astro 7
+- TypeScript
+- static-first output
+- Content Collections
+- custom CSS
+- GSAP
+- Instrument Sans Variable
+- IBM Plex Mono
+- Cloudflare Pages
+- beehiiv subscription proxy
+
+## Public architecture
 
 `Work / Services / Hustle / Journal / Contact`
 
-Newsletter remains an important embedded acquisition/distribution layer rather than a required primary page.
+News and Why are retired.
 
-News is retired as a primary v1 product.
+## Design
 
-Why evolves into Journal.
+Approved direction:
 
-Hustle remains people-led reporting and may cover founders, CTOs, engineers, operators, independent builders, and other relevant people building or operating businesses and technology.
+**Obsidian Precision**
 
-## Design status
+Approved standard:
 
-The inherited runtime still uses the v0 publication design.
+**High visual ambition. Low visual noise.**
 
-That is temporary.
-
-V1 design research is the next active phase. Current approved research direction is dark, neutral, silver/graphite, minimal color, highly crafted motion, strong Work presentation, and an overall feeling of technical excellence and premium control.
-
-No final v1 design system is approved yet.
-
-## Technical baseline
-
-Default foundation:
-
-- Astro + TypeScript
-- static-first output
-- Astro Content Collections where useful
-- custom CSS
-- semantic HTML
-- Cloudflare Pages
-- existing beehiiv integration where useful
-
-A dedicated motion library may be evaluated after the design system establishes a real need.
-
-Do not add major infrastructure for hypothetical scale.
-
-## Local development
+## Development
 
 ```bash
-npm install
+npm ci
+npm run check
+npm run build
 npm run dev
 ```
 
-Validation:
-
-```bash
-npm run check
-npm run build
-npm run preview
-```
-
-Never report a command as passing unless it actually ran against the relevant state.
-
-## Security
-
-Never commit credentials, tokens, secrets, `.env` files, `.dev.vars`, `node_modules`, or build output unless explicitly required.
+Never report a validation command as passing unless it actually ran against the relevant state.

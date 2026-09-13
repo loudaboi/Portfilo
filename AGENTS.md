@@ -4,155 +4,126 @@ _Last updated: 2026-09-14_
 
 These instructions apply to any AI or human contributor working in this repository.
 
-## 1. Repository authority
+## Authority
 
-The repository is the durable source of truth. Chat is a working session, not project memory.
+Read in this order:
 
-Read current authority in this order:
+1. `AGENTS.md`
+2. `docs/PROJECT_STATE.md`
+3. `docs/DOCUMENT_STATUS.md`
+4. `docs/V1_SCOPE.md`
+5. `docs/V1_DESIGN_DIRECTION.md`
+6. `docs/V1_DESIGN_SYSTEM.md`
+7. the current task-specific decision record
+8. current runtime source
 
-1. `AGENTS.md` — contributor, approval, and execution rules;
-2. `docs/PROJECT_STATE.md` — current phase, validated state, and exact next task;
-3. `docs/DOCUMENT_STATUS.md` — current vs historical/superseded document map;
-4. `docs/V1_SCOPE.md` — current v1 product boundaries;
-5. the canonical standard and approved decision record relevant to the task;
-6. current source code for actual runtime behavior.
+The repository is the durable source of truth. Chat is a working session.
 
-Historical v0 files remain provenance, not current authority, unless `docs/DOCUMENT_STATUS.md` explicitly carries a rule forward.
+## Approval scope
 
-Do not create a second execution plan, roadmap, phase-state, or competing source of truth. If the sequence changes, update `docs/PROJECT_STATE.md` and the status map.
+Approval advances only the gate explicitly awaiting approval.
 
-## 2. Approval scope
+Do not infer authorization for:
 
-Human approval applies only to the artifact, decision, or gate explicitly awaiting approval.
-
-A short response such as `I approve`, `yes`, or `go ahead` advances only that immediately pending gate unless the message explicitly authorizes additional named actions.
-
-Do not infer authorization for implementation from research approval, publication from drafting approval, deployment from local validation, or merge to `main` from preview readiness.
+- final public copy from structural approval;
+- publication from drafting approval;
+- provider changes from code approval;
+- merge to `main` from validation;
+- deployment from merge readiness.
 
 `main` remains the release boundary.
 
-## 3. Mandatory anti-slop decision gate
+## Required skills
 
-Before the first nontrivial discretionary Portfilo recommendation in a task or conversation, read and apply:
+For nontrivial discretionary Portfilo decisions, read:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
-Apply it again whenever the decision job changes materially.
+For v1 UI/runtime implementation, also read:
 
-This includes product direction, information architecture, homepage structure, positioning, naming, services, Work presentation, editorial structure, newsletter product, design direction, motion, imagery, and other public-facing choices.
+`skills/portfilo-v1-design/SKILL.md`
 
-Do not generate the answer first and rationalize it afterward.
+## Technical baseline
 
-## 4. Current technical architecture
-
-Unless `docs/PROJECT_STATE.md` records an explicitly approved change:
+Unless current authority explicitly changes it:
 
 - Astro + TypeScript;
 - static-first output;
 - Astro Content Collections where useful;
-- local content where appropriate;
 - custom CSS;
 - semantic HTML;
-- no frontend framework by default;
-- no database;
-- no authentication;
-- no custom CMS;
 - Cloudflare Pages;
-- existing narrow beehiiv subscription proxy may remain while useful.
+- GSAP for approved motion;
+- local Instrument Sans Variable + IBM Plex Mono;
+- beehiiv behind the narrow newsletter proxy.
 
-V1 may legitimately require a motion library. Evaluate one only when the design system establishes a real sequencing/interaction need and the dependency is simpler and more maintainable than bespoke infrastructure.
+Do not add React, Tailwind, a database, auth, CMS, WebGL/Three.js, smooth-scroll infrastructure, or other major dependencies without a concrete approved requirement.
 
-Do not add React, a database, authentication, WebGL/3D, or other major infrastructure for hypothetical scale or visual novelty.
+## Product model
 
-Before adding any dependency, establish the requirement, why the current stack cannot meet it cleanly, maintenance/runtime cost, and reversibility.
+Primary public architecture:
 
-## 5. Editorial, research, and case-study integrity
+`Work / Services / Hustle / Journal / Contact`
 
-Do not fabricate journalism, quotes, interviews, statistics, sources, screenshots, client outcomes, documents, metrics, or findings.
+Newsletter is embedded distribution/acquisition.
+
+News and Why are retired v0 product surfaces.
+
+## Integrity
+
+Do not fabricate:
+
+- reporting;
+- quotes;
+- sources;
+- statistics;
+- screenshots;
+- client outcomes;
+- case-study metrics;
+- testimonials;
+- interviews;
+- project evidence.
 
 AI output has zero evidentiary authority.
 
-For Hustle, Journal, newsletter editorial work, or factual Work case studies, use the applicable research/writing standards identified as current in `docs/DOCUMENT_STATUS.md`.
+Use the current research/writing/image standards for factual Journal, Hustle, newsletter, and Work claims.
 
-Prefer primary sources, preserve contradictions and caveats, distinguish fact from inference, and do not imply client or business outcomes that cannot be supported.
+## Public copy
 
-## 6. Writing and public copy
+Final positioning, service promises, newsletter promise/cadence, case-study claims, and other material public copy require their own approval gate.
 
-AI output has zero automatic stylistic, structural, or institutional authority.
+Implementation may use literal functional labels and clearly temporary development copy where needed. Do not silently turn temporary copy into final brand language.
 
-For significant public copy, apply the anti-slop gate and current copy/writing standards.
+## Design
 
-Do not jump directly from strategy to polished homepage positioning, service promises, case-study claims, or newsletter promises. Establish the communication job, approved claims, reference patterns, and message architecture first.
+Obsidian Precision is locked.
 
-Existing v0 copy is not precedent merely because it is committed or deployed.
+Follow `docs/V1_DESIGN_SYSTEM.md` and `skills/portfilo-v1-design/SKILL.md`.
 
-## 7. Design, motion, and imagery
+Do not introduce generic dark-SaaS styling, card soup, glow, glass, gradients, decorative 3D, fake terminals, scroll hijacking, or motion without a clear hierarchy/state/product job.
 
-V1 design authority is defined by `docs/PROJECT_STATE.md`, `docs/V1_SCOPE.md`, and the future approved v1 design-direction record.
+## Clean-cut v1 migration
 
-The old publication-era `docs/DESIGN_DIRECTION.md` is historical for v1.
+The founder explicitly approved a clean v1 working tree.
 
-Do not default to generic SaaS layout, card soup, gradients, glassmorphism, glow, rounded-everything UI, fake terminal interfaces, meaningless marquees, decorative 3D, scroll hijacking, or generic business/AI imagery.
+For material that has no v1 responsibility, current evidence value, or real external dependency:
 
-High visual ambition is allowed. Motion must reinforce control, hierarchy, product understanding, or technical craft rather than exist as decoration.
+- remove it from the active v1 branch;
+- do not preserve compatibility for hypothetical traffic;
+- rely on Git history for historical recovery.
 
-Mobile, reduced motion, accessibility, and performance are first-class constraints.
+Before deleting, confirm the file is not still referenced by current runtime or current authority.
 
-Generated editorial imagery is illustration, not documentary evidence.
+Do not delete the existing homepage until its approved Phase 3 replacement is ready at the same route.
 
-## 8. Implementation discipline
+## Validation
 
-Before editing runtime code:
+After runtime edits:
 
-- verify the current branch and HEAD;
-- read the current phase and exact task;
-- inspect nearby implementation;
-- identify locked decisions;
-- modify only what the task requires.
+- run/check CI or equivalent install/check/build evidence;
+- inspect obvious routing and dependency regressions;
+- never claim a command passed unless it actually ran.
 
-An approved design/copy/product contract is not an invitation for implementation-time improvisation.
+## Release
 
-If a material choice is missing, surface the gap instead of inventing it.
-
-After runtime edits, run the relevant checks, inspect affected behavior, fix regressions introduced by the change, and record validation accurately.
-
-Never claim a check passed unless it actually ran.
-
-## 9. Scope and migration discipline
-
-Do not perform broad cleanup simply because a file belongs to v0.
-
-During the v1 migration:
-
-- preserve useful engineering;
-- preserve valuable content/research;
-- retire obsolete product assumptions deliberately;
-- delete or redirect runtime surfaces only when the approved migration plan calls for it;
-- avoid cleaning code that may shortly be replaced by the approved v1 architecture.
-
-Do not implement items from `BACKLOG.md` unless explicitly promoted.
-
-## 10. Chat handoffs
-
-At a meaningful boundary:
-
-1. commit stable work;
-2. update `docs/PROJECT_STATE.md` if current phase/next task changed;
-3. update `docs/DOCUMENT_STATUS.md` when authority changed;
-4. record unresolved issues and required assets;
-5. provide a handoff prompt that names the exact next task and approval boundary.
-
-A new conversation should be able to continue from the repository without the previous transcript.
-
-## 11. Definition of done
-
-A task is done only when:
-
-- the requested job is actually complete;
-- scope did not silently expand;
-- discretionary decisions passed the evidence/anti-slop gate;
-- relevant validation actually ran;
-- obvious regressions were checked;
-- documentation/state is synchronized when necessary;
-- the next gate is explicit;
-- no publication, deployment, send, or release boundary was crossed without approval.
+Do not merge to `main`, deploy, or cut over domains without explicit founder approval.
