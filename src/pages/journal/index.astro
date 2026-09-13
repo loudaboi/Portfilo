@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+
+const entries = (await getCollection("articles", ({ data }) => data.section === "journal" && data.status === "published"))
+  .sort((a, b) => (b.data.publishedAt?.getTime() ?? 0) - (a.data.publishedAt?.getTime() ?? 0));
+const dateFormatter = new Intl.DateTimeFormat("en-PH", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const formatDate = (date?: Date) => date ? dateFormatter.format(date) : "";
+const formatLabel = (value: string) => value.replaceAll("-", " ");
+---
+<!doctype html>
+<html lang="en">
+  <head><SiteHead title="Journal | Portfilo" description="Journal | Portfilo" /></head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to Journal</a>
+    <SiteHeader current="journal" />
+    <main id="main-content" tabindex="-1" class="journal">
+      <header class="journal__header"><p>Journal / {String(entries.length).padStart(2, "0")}</p><h1>Journal</h1></header>
+      <div class="journal__list">
+        {entries.map((story, index) => (
+          <article class="journal-row">
+            <p class="journal-row__index">{String(index + 1).padStart(2, "0")}</p>
+            <div class="journal-row__main">
+              <div class="journal-row__meta"><span>{formatLabel(story.data.topic)}</span><span>{formatDate(story.data.publishedAt)}</span></div>
+              <h2><a href={`/journal/${story.id}`}>{story.data.title}</a></h2>
+              <p>{story.data.dek}</p>
+            </div>
+            <a class="journal-row__open" href={`/journal/${story.id}`} aria-label={`Read ${story.data.title}`}>↗</a>
+          </article>
+        ))}
+      </div>
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style>
+  .journal { width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max)); margin-inline:auto; padding-block:clamp(4rem,8vw,8rem); }
+  .journal__header { padding-bottom:clamp(3rem,7vw,7rem); }
+  .journal__header p,.journal-row__index,.journal-row__meta { margin:0; color:var(--muted-silver); font:400 .68rem/1.3 var(--mono); text-transform:uppercase; }
+  .journal__header h1 { margin:var(--space-4) 0 0; color:var(--cold-white); font:650 clamp(4rem,10vw,10rem)/.82 var(--sans); font-variation-settings:"wdth" 80,"wght" 650; letter-spacing:-.075em; }
+  .journal__list { border-top:1px solid var(--line); }
+  .journal-row { display:grid; grid-template-columns:3rem minmax(0,1fr) auto; gap:var(--grid-gap); padding-block:clamp(1.5rem,3vw,2.5rem); border-bottom:1px solid var(--line); }
+  .journal-row__index { padding-top:.3rem; }
+  .journal-row__meta { display:flex; flex-wrap:wrap; gap:var(--space-4); }
+  .journal-row h2 { max-width:24ch; margin:var(--space-3) 0 0; color:var(--cold-white); font:610 clamp(1.65rem,1.1rem + 1.5vw,3rem)/1.02 var(--sans); letter-spacing:-.045em; text-wrap:balance; }
+  .journal-row h2 a,.journal-row__open { color:inherit; text-decoration:none; }
+  .journal-row__main>p { max-width:62ch; margin:var(--space-4) 0 0; color:var(--muted-silver); font:430 .98rem/1.55 var(--sans); }
+  .journal-row__open { align-self:start; color:var(--muted-silver); font-size:1.2rem; transition:color var(--motion-micro) ease; }
+  .journal-row:hover .journal-row__open { color:var(--bright-white); }
+  @media(max-width:40rem){ .journal-row{grid-template-columns:2rem minmax(0,1fr)} .journal-row__open{display:none} }
+</style>

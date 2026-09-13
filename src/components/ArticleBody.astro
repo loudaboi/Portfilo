@@ -1,0 +1,27 @@
+<div class="article-body"><slot /></div>
+
+<style>
+  .article-body {
+    width: min(calc(100% - (2 * var(--shell-gutter))), var(--reading-max));
+    margin-inline: auto;
+    padding-block: clamp(3rem, 7vw, 7rem);
+    color: var(--silver);
+    font: 430 clamp(1.02rem, 0.98rem + 0.15vw, 1.12rem) / 1.72 var(--sans);
+  }
+  .article-body :global(p),
+  .article-body :global(ul),
+  .article-body :global(ol),
+  .article-body :global(blockquote) { margin: 0 0 1.4em; }
+  .article-body :global(h2),
+  .article-body :global(h3) {
+    color: var(--cold-white);
+    font-family: var(--sans);
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  .article-body :global(h2) { margin: 2.4em 0 0.7em; font-size: clamp(1.65rem, 1.2rem + 1.3vw, 2.5rem); line-height: 1.05; font-weight: 620; }
+  .article-body :global(h3) { margin: 2em 0 0.65em; font-size: 1.25rem; line-height: 1.15; font-weight: 600; }
+  .article-body :global(a) { color: var(--cold-white); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  .article-body :global(strong) { color: var(--cold-white); font-weight: 620; }
+  .article-body :global(blockquote) { padding-left: var(--space-6); border-left: 1px solid var(--line-strong); color: var(--cold-white); }
+</style>

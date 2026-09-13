@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ArticleBody from "../../components/ArticleBody.astro";
+export async function getStaticPaths(){const entries=await getCollection("work");return entries.map(project=>({params:{slug:project.id},props:{project}}));}
+const {project}=Astro.props;const {title,dek,year,status,client,capabilities,cover,outcome}=project.data;const {Content}=await render(project);const isDraft=status==="draft";const formatLabel=(value:string)=>value.replaceAll("-"," ");
+---
+<!doctype html><html lang="en"><head><SiteHead title={`${title} | Portfilo`} description={dek} robots={isDraft?"noindex, nofollow":undefined} canonical={!isDraft} social={!isDraft}/></head>
+<body><a class="skip-link" href="#project-body">Skip to project</a><SiteHeader current="work"/>
+<main><header class="project-hero"><div class="project-hero__meta"><span>Work</span><span>{year}</span>{client&&<span>{client}</span>}</div><h1>{title}</h1><p>{dek}</p>{capabilities.length>0&&<ul>{capabilities.map(capability=><li>{formatLabel(capability)}</li>)}</ul>}</header>
+{cover&&<figure class="project-media"><Image src={cover.src} alt={cover.alt} layout="full-width" widths={[640,960,1280,1600]} sizes="100vw"/></figure>}
+{outcome&&<p class="project-outcome">{outcome}</p>}<div id="project-body"><ArticleBody><Content/></ArticleBody></div></main><SiteFooter/></body></html>
+<style>
+.project-hero{width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max));margin-inline:auto;padding-block:clamp(4rem,9vw,9rem) clamp(2.5rem,6vw,6rem)}
+.project-hero__meta,.project-hero ul{display:flex;flex-wrap:wrap;gap:var(--space-4);color:var(--muted-silver);font:400 .68rem/1.3 var(--mono);text-transform:uppercase}
+.project-hero h1{max-width:16ch;margin:var(--space-6) 0 0;color:var(--cold-white);font:650 clamp(3.5rem,9vw,9rem)/.86 var(--sans);font-variation-settings:"wdth" 80,"wght" 650;letter-spacing:-.075em}
+.project-hero>p{max-width:54rem;margin:clamp(1.5rem,3vw,2.5rem) 0 0;color:var(--silver);font:430 clamp(1.15rem,.95rem + .55vw,1.55rem)/1.5 var(--sans)}
+.project-hero ul{margin:var(--space-6) 0 0;padding:0;list-style:none}.project-media{width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max));margin:0 auto}.project-media :global(img){display:block;width:100%;height:auto;background:var(--graphite)}
+.project-outcome{width:min(calc(100% - (2 * var(--shell-gutter))),var(--reading-max));margin:clamp(3rem,7vw,7rem) auto 0;color:var(--cold-white);font:520 clamp(1.4rem,1.1rem + .9vw,2rem)/1.35 var(--sans)}
+</style>

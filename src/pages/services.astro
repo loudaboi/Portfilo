@@ -1,0 +1,14 @@
+---
+import SiteHead from "../components/SiteHead.astro";import SiteHeader from "../components/SiteHeader.astro";import SiteFooter from "../components/SiteFooter.astro";
+const capabilities=["Custom Software","Automation","AI Integration","Digital Products"];
+---
+<!doctype html><html lang="en"><head><SiteHead title="Services | Portfilo" description="Services | Portfilo" robots="noindex"/></head><body>
+<a class="skip-link" href="#main-content">Skip to Services</a><SiteHeader current="services"/>
+<main id="main-content" tabindex="-1" class="services"><header><p>Services</p><h1>Services</h1></header><section aria-labelledby="capabilities-title"><h2 id="capabilities-title">Capabilities</h2><ol>{capabilities.map((capability,index)=><li><span>{String(index+1).padStart(2,"0")}</span>{capability}</li>)}</ol></section></main><SiteFooter/></body></html>
+<style>
+.services{width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max));min-height:60vh;margin-inline:auto;padding-block:clamp(4rem,8vw,8rem)}
+.services header p,.services li span,.services section h2{margin:0;color:var(--muted-silver);font:400 .68rem/1.3 var(--mono);text-transform:uppercase}
+.services header h1{margin:var(--space-4) 0 0;color:var(--cold-white);font:650 clamp(4rem,10vw,10rem)/.82 var(--sans);font-variation-settings:"wdth" 80,"wght" 650;letter-spacing:-.075em}
+.services section{margin-top:clamp(5rem,12vw,12rem)}.services section h2{margin-bottom:var(--space-6)}
+.services ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}.services li{display:grid;grid-template-columns:3rem 1fr;gap:var(--grid-gap);padding-block:clamp(1.25rem,2.5vw,2rem);border-bottom:1px solid var(--line);color:var(--cold-white);font:570 clamp(1.5rem,2.5vw,2.75rem)/1 var(--sans);letter-spacing:-.035em}
+</style>

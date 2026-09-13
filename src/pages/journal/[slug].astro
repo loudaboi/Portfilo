@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import SiteHead from "../../components/SiteHead.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ArticleBody from "../../components/ArticleBody.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("articles", ({ data }) => data.section === "journal");
+  return entries.map((story) => ({ params: { slug: story.id }, props: { story } }));
+}
+const { story } = Astro.props;
+const { title, dek, metaDescription, topic, publishedAt, updatedAt, image, methodology, correction, status } = story.data;
+const { Content } = await render(story);
+const isDraft = status === "draft";
+const dateFormatter = new Intl.DateTimeFormat("en-PH", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const formatDate = (date?: Date) => date ? dateFormatter.format(date) : "";
+const formatLabel = (value: string) => value.replaceAll("-", " ");
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead title={`${title} | Portfilo`} description={metaDescription ?? dek} robots={isDraft ? "noindex, nofollow" : undefined} canonical={!isDraft} social={!isDraft}
+      article={isDraft ? undefined : { publishedAt, updatedAt, image: image ? { src: image.src.src, alt: image.alt } : undefined }} />
+  </head>
+  <body>
+    <a class="skip-link" href="#article-body">Skip to article</a>
+    <SiteHeader current="journal" />
+    <main>
+      <header class="article-hero">
+        <div class="article-hero__meta"><span>Journal</span><span>{formatLabel(topic)}</span>{publishedAt && <time datetime={publishedAt.toISOString()}>{formatDate(publishedAt)}</time>}</div>
+        <h1>{title}</h1><p>{dek}</p>
+      </header>
+      {image && <figure class="article-media"><Image src={image.src} alt={image.alt} layout="full-width" widths={[640,960,1280,1600]} sizes="100vw" />{(image.credit||image.generated)&&<figcaption>{image.credit && <span>{image.credit}</span>}{image.generated&&<span>AI-generated editorial image</span>}</figcaption>}</figure>}
+      <div id="article-body">
+        {correction && <aside class="article-note"><strong>Correction / {formatDate(correction.correctedAt)}</strong><p>{correction.note}</p></aside>}
+        <ArticleBody><Content /></ArticleBody>
+        {methodology && <aside class="article-note article-note--bottom"><strong>Methodology</strong><p>{methodology}</p></aside>}
+      </div>
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+<style>
+  .article-hero { width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max)); margin-inline:auto; padding-block:clamp(4rem,9vw,9rem) clamp(2.5rem,6vw,6rem); }
+  .article-hero__meta { display:flex; flex-wrap:wrap; gap:var(--space-4); color:var(--muted-silver); font:400 .68rem/1.3 var(--mono); text-transform:uppercase; }
+  .article-hero h1 { max-width:18ch; margin:var(--space-6) 0 0; color:var(--cold-white); font:650 clamp(3rem,7vw,7.5rem)/.9 var(--sans); font-variation-settings:"wdth" 84,"wght" 650; letter-spacing:-.065em; text-wrap:balance; }
+  .article-hero>p { max-width:54rem; margin:clamp(1.5rem,3vw,2.5rem) 0 0; color:var(--silver); font:430 clamp(1.15rem,.95rem + .55vw,1.55rem)/1.5 var(--sans); }
+  .article-media { width:min(calc(100% - (2 * var(--shell-gutter))),var(--page-max)); margin:0 auto; }
+  .article-media :global(img){display:block;width:100%;height:auto;background:var(--graphite)}
+  .article-media figcaption{display:flex;justify-content:space-between;gap:var(--space-4);margin-top:var(--space-2);color:var(--muted-silver);font:400 .64rem/1.4 var(--mono)}
+  .article-note{width:min(calc(100% - (2 * var(--shell-gutter))),var(--reading-max));margin:clamp(3rem,7vw,7rem) auto 0;padding:var(--space-4) 0;border-block:1px solid var(--line);color:var(--silver);font:430 .9rem/1.55 var(--sans)}
+  .article-note--bottom{margin-top:0;margin-bottom:clamp(3rem,7vw,7rem)}
+  .article-note strong{color:var(--cold-white);font:400 .68rem/1.3 var(--mono);text-transform:uppercase}.article-note p{margin:var(--space-3) 0 0}
+</style>
