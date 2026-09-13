@@ -4,9 +4,13 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 DESIGN SYSTEM + INFORMATION ARCHITECTURE GATE ACTIVE**
+**PORTFILO V1 RUNTIME + CONTENT MIGRATION PLANNING ACTIVE**
 
-The founder has approved the Portfilo v1 repositioning and the first canonical v1 design direction.
+The founder has approved:
+
+- the Portfilo v1 studio repositioning;
+- the Obsidian Precision design direction;
+- the concrete v1 design system and information architecture.
 
 Portfilo is being developed primarily as a software design and development studio focused on solving real business problems through custom software, automation, and practical AI, with Hustle, Journal, and the newsletter acting as supporting editorial/distribution products.
 
@@ -36,99 +40,95 @@ Primary public architecture:
 
 `Work / Services / Hustle / Journal / Contact`
 
-Newsletter remains an important homepage/editorial acquisition and distribution layer, but does not need a primary-nav destination or standalone page.
+Newsletter remains an embedded acquisition/distribution layer rather than a primary-nav destination.
 
 News is retired as a primary v1 product.
 
-Why is retired as a public section name and evolves into Journal.
+Why evolves into Journal.
 
-Hustle remains and is broadened to people-led reporting about founders, CTOs, technical leaders, engineers, operators, independent builders, and other people materially involved in building or operating businesses and technology.
+Hustle remains and broadens to people-led reporting about founders, CTOs, technical leaders, engineers, operators, independent builders, and other relevant people.
 
-Hustle may be inspiring, but must remain substantive and reported rather than becoming generic motivation content.
+## Approved design authority
 
-## Approved v1 design direction
-
-Canonical authority:
+Direction:
 
 `docs/V1_DESIGN_DIRECTION.md`
 
-Founder-approved direction:
+Concrete system:
 
-**Obsidian Precision**
+`docs/V1_DESIGN_SYSTEM.md`
 
-Core principles:
+Research provenance:
 
-- near-black / graphite / silver / cold-white system;
-- minimal persistent brand color;
-- precision over decoration;
-- Work carries the strongest visual and motion expression;
-- Services remains quieter and structured;
-- Hustle brings authentic human imagery and may retain contextual color;
-- Journal is reading-first and lower-motion;
-- navigation remains direct and legible;
-- motion feels fast, weighted, deliberate, and precise;
-- silver is treated as tonal/material hierarchy, not chrome effects;
-- no foundation-level WebGL/Three.js;
-- existing wordmark is tested first in monochrome before any redesign decision.
+- `research/design/v1-design-direction-research.md`
+- `research/design/v1-design-system-ia-research.md`
+
+Approved system summary:
+
+- Instrument Sans + IBM Plex Mono;
+- Obsidian / graphite / silver / cold-white neutral system;
+- 12 / 8 / 4 responsive grid;
+- sharp geometry and thin structural rules;
+- direct navigation;
+- homepage hierarchy: Hero -> Work -> Services -> Hustle -> Journal -> Newsletter -> Contact;
+- Work carries the strongest motion/visual expression;
+- Services remains quieter;
+- Hustle supplies human imagery/context;
+- Journal remains reading-first;
+- real software interfaces are the preferred Work media;
+- existing wordmark is retained for initial monochrome testing;
+- GSAP is approved for v1 motion;
+- native scrolling remains the default;
+- no foundation WebGL/Three.js.
 
 Approved standard:
 
 **High visual ambition. Low visual noise.**
 
-Research provenance:
-
-`research/design/v1-design-direction-research.md`
-
-## Technical direction
-
-The current technical foundation remains:
-
-- Astro + TypeScript;
-- static-first output;
-- Content Collections where useful;
-- custom CSS;
-- semantic HTML;
-- Cloudflare Pages;
-- existing beehiiv integration where useful.
-
-A dedicated motion library is likely justified. GSAP is the leading candidate, but dependency approval remains part of the later implementation-planning gate.
-
-React, a database, authentication, CMS, WebGL/3D, and other major infrastructure remain unapproved unless a concrete v1 requirement establishes the need.
-
-## Current validation state
-
-The v1 product and design direction are documentation/decision work.
+## Current runtime state
 
 The inherited runtime is still the v0 publication implementation.
 
-No v1 UI implementation or runtime QA has occurred yet.
+That is expected.
+
+No v1 production UI implementation has begun yet.
+
+Prior v0 CI/production verification does not count as v1 runtime validation.
 
 ## Exact next task
 
-**V1 DESIGN SYSTEM + INFORMATION ARCHITECTURE RESEARCH AND DECISION GATE**
+**TARGETED V0 -> V1 RUNTIME + CONTENT MIGRATION PLAN**
 
-Resolve the concrete system required to design the site:
+Before editing the production UI, inspect the inherited runtime and produce a concrete migration plan covering:
 
-1. typography candidates and roles;
-2. exact neutral palette and contrast hierarchy;
-3. grid, shell, spacing, and geometry rules;
-4. navigation composition and behavior;
-5. homepage information hierarchy and pacing;
-6. Work preview and case-study model;
-7. Services page structure;
-8. Hustle archive/article presentation;
-9. Journal archive/article presentation;
-10. newsletter placement;
-11. contact/start-project flow;
-12. motion grammar, timing families, and responsive/reduced-motion behavior;
-13. media framing and project UI presentation;
-14. current wordmark testing inside the selected system;
-15. technical implications, including whether GSAP is justified.
+1. current route inventory;
+2. component/layout inventory;
+3. global CSS/tokens/fonts/assets;
+4. content collections and schema;
+5. existing Why content -> Journal migration;
+6. existing Hustle state/content preservation;
+7. News content/infrastructure retirement;
+8. new Work content architecture;
+9. Services implementation model;
+10. Contact route/form approach;
+11. newsletter component/API reuse;
+12. header/footer replacement;
+13. redirects and legacy URL behavior;
+14. metadata/sitemap/robots implications;
+15. dependency changes, including GSAP;
+16. assets/media that can be reused;
+17. obsolete code/docs/assets to remove only after replacements exist;
+18. phased implementation order;
+19. validation plan.
 
-This gate may use references, low-fidelity structural sketches, and design tokens/prototypes where useful.
+The migration plan must distinguish:
 
-Do not implement the production UI yet.
+- keep as-is;
+- adapt;
+- replace;
+- retire;
+- defer.
 
-Do not perform broad v0 runtime cleanup yet.
+Do not perform broad deletion or UI implementation during the planning gate.
 
-After this gate is approved, create the runtime/content migration plan and then clean/restructure only what that plan requires.
+After founder approval of the migration plan, targeted cleanup/restructuring and v1 foundation implementation may begin.
