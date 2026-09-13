@@ -9,9 +9,8 @@ const inferredCurrent =
   pathname.startsWith("/work") ? "work"
   : pathname.startsWith("/services") ? "services"
   : pathname.startsWith("/hustle") ? "hustle"
-  : pathname.startsWith("/journal") || pathname.startsWith("/why") ? "journal"
+  : pathname.startsWith("/journal") ? "journal"
   : pathname.startsWith("/contact") ? "contact"
-  : current === "why" ? "journal"
   : current;
 
 const navItems = [
