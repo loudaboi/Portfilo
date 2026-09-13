@@ -153,7 +153,7 @@ export async function onRequest(context) {
   const apiKey = env.BEEHIIV_API_KEY;
 
   if (!apiKey) {
-    console.error("Portfilo subscribe endpoint is missing the beehiiv API key.");
+    console.error("Portfilo newsletter subscribe endpoint is missing the beehiiv API key.");
     return json(
       {
         ok: false,
@@ -183,7 +183,7 @@ export async function onRequest(context) {
           double_opt_override: "on",
           utm_source: "portfilo",
           utm_medium: "website",
-          utm_campaign: "portfilo_brief_signup",
+          utm_campaign: "portfilo_newsletter_signup",
         }),
         signal: controller.signal,
       },
