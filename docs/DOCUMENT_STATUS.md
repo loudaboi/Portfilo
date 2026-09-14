@@ -96,7 +96,7 @@ Favicon:
 
 Typography:
 
-**OPEN / CURRENT RUNTIME FONTS NOT LOCKED**
+**THREE WEBSITE TYPE SYSTEMS READY FOR FOUNDER SELECTION / MONA SANS RECOMMENDED**
 
 Homepage:
 
@@ -130,10 +130,10 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER GENERATION PLAN APPROVAL**
+**FOUNDER WEBSITE TYPOGRAPHY SELECTION**
 
 Current task authority:
 
-`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
+`docs/V1_TYPOGRAPHY_DIRECTION.md`
 
 No homepage implementation, merge to `main`, or deployment is authorized.
