@@ -27,7 +27,7 @@ Locked:
 - Responsive Identity remains the broader creative direction;
 - Sharp Ornamental 01 is the approved emblem;
 - `PORTFILO` in all-caps Noto Serif Display SemiCondensed Medium remains the approved brand wordmark;
-- homepage/header chrome uses the Sharp Ornamental 01 emblem only;
+- homepage/header chrome may use both the Sharp Ornamental 01 emblem and approved `PORTFILO` wordmark as perimeter anchors;
 - the wordmark typeface is **not automatically the website typeface**;
 - the current homepage is dark-first on a near-black environment;
 - Problem-led software remains the positioning;
@@ -309,13 +309,14 @@ The first exact Perimeter Field prototype was rejected as visual authority becau
 - visible wordmark in site chrome;
 - light/stone homepage environment.
 
-Founder-approved correction:
+Founder-approved correction now refined to:
 
-**DARK-FIRST PERIMETER FIELD + EMBLEM-ONLY WEBSITE IDENTITY**
+**DARK-FIRST PERIMETER FIELD + EMBLEM AND WORDMARK AS PERIMETER IDENTITY**
 
 Rebuild Gate 3 using:
 
-- Sharp Ornamental 01 emblem only in website chrome;
+- Sharp Ornamental 01 emblem at upper-left;
+- approved `PORTFILO` wordmark at upper-right;
 - Mona Sans;
 - exact approved hero copy;
 - exact navigation labels;
