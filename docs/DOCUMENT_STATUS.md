@@ -12,8 +12,9 @@ _Last updated: 2026-09-14_
 6. `docs/V1_DESIGN_SYSTEM.md`
 7. `docs/V1_HOMEPAGE_PLAN.md`
 8. `docs/V1_HOMEPAGE_POSITIONING.md`
-9. current task-specific decision record
-10. current runtime source
+9. `docs/V1_HOMEPAGE_COPY.md`
+10. current task-specific decision record
+11. current runtime source
 
 ## Current v1 authority
 
@@ -25,6 +26,7 @@ _Last updated: 2026-09-14_
 - `docs/V1_DESIGN_SYSTEM.md`
 - `docs/V1_HOMEPAGE_PLAN.md`
 - `docs/V1_HOMEPAGE_POSITIONING.md`
+- `docs/V1_HOMEPAGE_COPY.md`
 
 ### Decision control
 
@@ -73,6 +75,8 @@ Phase 2 clean-cut route/content migration: **COMPLETE / VALIDATED**
 
 Phase 3A homepage positioning + narrative research: **COMPLETE / FOUNDER-APPROVED**
 
+Phase 3B homepage copy approval: **COMPLETE / FOUNDER-APPROVED**
+
 Validated runtime commit:
 
 `a0f6878bcd205c3ebd0089ac2730195d9a806281`
@@ -89,10 +93,10 @@ The current branch may contain documentation-only commits after that runtime com
 
 ## Exact next task
 
-**PHASE 3B HOMEPAGE COPY APPROVAL**
+**PHASE 3C HOMEPAGE COMPOSITION + INTERACTION**
 
-The approved positioning territory is **Problem-led software**. Final public wording remains unapproved.
+Use the approved positioning and copy authorities.
 
-Do not implement the homepage during Phase 3B.
+Do not implement the homepage during Phase 3C.
 
 No merge to `main` or deployment is authorized.
