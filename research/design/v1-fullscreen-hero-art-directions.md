@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**READY FOR FOUNDER SELECTION**
+**ASSEMBLY SELECTED / FOUNDER-APPROVED**
 
 Parent authority:
 
@@ -510,40 +510,39 @@ It requires extremely disciplined art direction.
 | Risk of trend/slop | Medium | Medium | High |
 | Current recommendation | **1** | **2** | 3 |
 
-## Recommendation
+## Founder decision
 
-**A — Pressure Field** is the strongest current direction.
+**B — Assembly** is founder-selected.
 
-Reason:
+The selection is conceptual, not a visual lock.
 
-- it makes the **whole viewport** the visual;
-- it directly connects to software being built around constraints;
-- it can remain dark and premium without darkness becoming the concept;
-- it works with authored motion, which gives us visual quality;
-- a lightweight shader can make it genuinely responsive;
-- it does not require fake Work/media;
-- the loader can naturally become the first state of the same visual;
-- the underlying interaction idea is simple enough to remember: **the surface is under tension and responds to forces.**
+Assembly is now defined as:
 
-**B — Assembly** is the strongest alternative if the founder prefers a more graphic/art-directed and less fluid/material experience.
+- one full-screen visual composition;
+- several large invisible or near-invisible layers that begin misregistered;
+- loader behavior that resolves those layers into one coherent hero;
+- subtle later misregistration may support interaction;
+- first scroll may eventually separate the assembled composition to reveal the next state;
+- no card grid, portal imitation, editorial collage, or visible panel system by default.
 
-**C — Signal** is technically interesting but has the highest probability of collapsing into generic technology aesthetics.
+Pressure Field and Signal remain research alternatives only. They have no active implementation authority.
 
 ---
 
-# Founder selection gate
+# Next gate
 
-Select:
+**ASSEMBLY LOADER → RESOLVED HERO MOTION STUDY**
 
-- **A — Pressure Field**
-- **B — Assembly**
-- **C — Signal**
-- or reject all three.
+Build one real browser prototype using the existing Portfilo stack assumptions.
 
-After selection:
+Scope is intentionally narrow:
 
-1. lock the art-direction concept;
-2. decide the lightest technical implementation that can express it;
-3. define loader state + resting hero + one response behavior;
-4. build one real browser prototype using the Portfilo stack;
-5. do not design the rest of the homepage yet.
+1. unresolved full-screen visual layers;
+2. loader identity state;
+3. layers align into one coherent visual;
+4. approved hero interface resolves above it;
+5. no below-fold homepage design;
+6. no final artwork lock;
+7. no merge or deployment.
+
+The visual material in this first motion study may be provisional. The decision being tested is the Assembly behavior itself.
