@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 RESPONSIVE IDENTITY EXPLORATION ACTIVE**
+**PORTFILO V1 VECTOR IDENTITY PRODUCTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -92,19 +92,26 @@ Result:
 
 The runtime remains useful engineering scaffolding, but its homepage visual design is rejected.
 
-## Identity decisions now open
+## Approved identity
 
-Explore and seek founder approval for:
+Current identity authority:
 
-1. simple premium Portfilo wordmark territory;
-2. independent compact symbol territory;
-3. wordmark + symbol compatibility without requiring shared letterform geometry;
-4. static lockups and small-scale behavior;
-5. typography candidates;
-6. neutral + signal-color behavior;
-7. transparent-background emblem favicon as the preferred browser treatment;
-8. social/UI behavior;
-9. responsive identity behavior around the marks.
+`docs/V1_IDENTITY_SYSTEM.md`
+
+Founder-approved direction:
+
+**Sharp Ornamental 01**
+
+Locked at the creative level:
+
+- independent sharp ornamental emblem;
+- restrained premium wordmark;
+- monochrome-first application;
+- transparent-background emblem favicon;
+- horizontal and stacked lockups;
+- optional neutral silver treatment.
+
+The generated identity study is reference artwork only. Production vector geometry and exact wordmark resolution remain to be finalized.
 
 ## Design process
 
@@ -118,19 +125,9 @@ Do not return to:
 
 ## Exact next task
 
-**ROUND 1 STATIC IDENTITY STUDIES**
+**VECTOR IDENTITY PRODUCTION**
 
-Approved exploration brief:
-
-`docs/V1_IDENTITY_VISUAL_BRIEF.md`
-
-Produce:
-
-- 3–5 Soft Geometric symbol studies;
-- 2 Sharp Ornamental symbol studies;
-- 1–2 Digital Abstract symbol studies;
-- restrained Portfilo wordmark pairings;
-- monochrome form studies only.
+Produce clean vector production assets for the founder-approved Sharp Ornamental 01 identity, validate small-size behavior, resolve the final wordmark, and seek founder approval before replacing any runtime brand assets.
 
 Do not redesign or implement the homepage yet.
 
