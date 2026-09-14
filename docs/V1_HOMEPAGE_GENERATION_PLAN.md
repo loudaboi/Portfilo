@@ -26,7 +26,7 @@ Locked:
 
 - Responsive Identity remains the broader creative direction;
 - Sharp Ornamental 01 is the approved emblem;
-- Noto Serif Display Regular is the approved wordmark treatment;
+- `PORTFILO` in all-caps Noto Serif Display SemiCondensed Medium is the approved wordmark treatment;
 - the wordmark typeface is **not automatically the website typeface**;
 - Problem-led software remains the positioning;
 - approved hero headline remains **Software built around the problem.**;
@@ -290,14 +290,20 @@ This selects the structural model only.
 
 ## Intervening identity refinement
 
-The exact hero prototype is temporarily paused because in-context review reopened the title-case wordmark.
+**COMPLETE**
 
-The emblem remains locked.
+Founder-approved replacement wordmark:
 
-Current micro-gate:
+**PORTFILO / Noto Serif Display SemiCondensed Medium / ALL CAPS**
 
-**ALL-CAPS WORDMARK REFINEMENT**
+The Sharp Ornamental 01 emblem remains unchanged.
 
-After the founder selects and approves a replacement wordmark, return to Gate 3 and build the exact Perimeter Field hero prototype.
+The canonical final identity assets, brand exports, and runtime wordmark now use the approved all-caps geometry.
 
-Do not add imagery or expand the page during this refinement.
+## Current gate
+
+**GATE 3 — EXACT PERIMETER FIELD HERO PROTOTYPE**
+
+Build one exact 1440 × 900 desktop hero only.
+
+Do not add imagery, below-fold sections, or unapproved copy.
