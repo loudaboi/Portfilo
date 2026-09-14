@@ -4,7 +4,23 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED / CURRENT V1 DESIGN AUTHORITY**
+**SUPERSEDED / HISTORICAL EVIDENCE**
+
+This document records the former **Obsidian Precision** direction.
+
+It is no longer current authority.
+
+The founder rejected the rendered result derived from this direction on 2026-09-14 because it produced a generic dark creative-tech homepage rather than the intended premium, distinctive Portfilo experience.
+
+Current creative authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+Do not use the former wordmark constraint, permanent dark-neutral assumptions, or composition guidance below as requirements for new design work.
+
+---
+
+## Historical content
 
 Research provenance:
 
