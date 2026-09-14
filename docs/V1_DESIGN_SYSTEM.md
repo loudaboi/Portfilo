@@ -4,7 +4,32 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED / CURRENT V1 DESIGN SYSTEM AUTHORITY**
+**SUPERSEDED / HISTORICAL EVIDENCE**
+
+This document is the former concrete system derived from Obsidian Precision.
+
+It is not current design authority.
+
+Current creative authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+The following are not locked for the redesign:
+
+- Instrument Sans;
+- IBM Plex Mono;
+- permanent Obsidian/graphite palette;
+- previous spacing/grid expression;
+- previous navigation composition;
+- current wordmark geometry;
+- old homepage composition;
+- old motion grammar.
+
+Product architecture and valid content/integrity decisions survive only where confirmed by current authority.
+
+---
+
+## Historical content
 
 Parent direction:
 
