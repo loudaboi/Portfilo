@@ -96,7 +96,7 @@ Favicon:
 
 Typography:
 
-**THREE WEBSITE TYPE SYSTEMS READY FOR FOUNDER SELECTION / MONA SANS RECOMMENDED**
+**MONA SANS / FOUNDER-APPROVED WEBSITE TYPOGRAPHY**
 
 Homepage:
 
@@ -130,9 +130,13 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER WEBSITE TYPOGRAPHY SELECTION**
+**STRUCTURAL HERO WIREFRAMES**
 
 Current task authority:
+
+`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
+
+Typography authority:
 
 `docs/V1_TYPOGRAPHY_DIRECTION.md`
 
