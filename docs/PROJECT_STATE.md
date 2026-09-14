@@ -123,11 +123,33 @@ Do not return to:
 
 `tokens -> grid -> sections -> CSS -> reveal motion`
 
+## Vector production status
+
+Production candidates now exist under:
+
+`research/identity/sharp-ornamental-01/`
+
+Completed for review:
+
+- symmetric emblem master SVG;
+- transparent-background favicon candidate;
+- 16px / 24px / 32px / 48px small-size validation;
+- three vector wordmark candidates;
+- production notes.
+
+Current recommendation:
+
+**Wordmark B — Noto Serif Display Regular**
+
+No runtime brand assets have been replaced.
+
 ## Exact next task
 
-**VECTOR IDENTITY PRODUCTION**
+**FOUNDER WORDMARK SELECTION**
 
-Produce clean vector production assets for the founder-approved Sharp Ornamental 01 identity, validate small-size behavior, resolve the final wordmark, and seek founder approval before replacing any runtime brand assets.
+Select Wordmark A, B, C, or reject all three.
+
+After selection: finalize optical spacing/lockups and seek final production identity approval.
 
 Do not redesign or implement the homepage yet.
 
