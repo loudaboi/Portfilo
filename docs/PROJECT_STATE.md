@@ -255,20 +255,34 @@ The Sharp Ornamental 01 emblem remains approved and unchanged.
 
 The current title-case Noto Serif Display wordmark has been reopened after in-context review inside the selected Perimeter Field structure.
 
-Current hypothesis:
+Founder-selected wordmark direction:
 
-**an all-caps wordmark may better balance the emblem and Mona Sans website typography.**
+**A — Noto Serif Display ALL CAPS**
 
-Do not replace production assets until the founder selects a refined wordmark candidate.
+Production candidate:
+
+`research/identity/sharp-ornamental-01/all-caps-a/`
+
+Candidate construction:
+
+- Noto Serif Display SemiCondensed Medium;
+- `PORTFILO`;
+- 0.115em tracking;
+- SVG vector outlines;
+- `currentColor`;
+- emblem unchanged.
+
+The existing title-case runtime asset remains active until the exact production geometry is founder-approved.
 
 ## Exact next task
 
-**ALL-CAPS WORDMARK REFINEMENT**
+**ALL-CAPS WORDMARK PRODUCTION REVIEW**
 
-Compare three restrained wordmark treatments at:
-- wordmark-only scale;
-- emblem + wordmark lockup;
-- actual small header scale;
-- ink and off-white applications.
+Review the exact vector wordmark and horizontal/stacked lockups.
 
-No homepage implementation, imagery, merge to `main`, or deployment is authorized.
+After production approval:
+1. replace final/runtime wordmark + lockups;
+2. regenerate the brand asset pack;
+3. return to the selected **Perimeter Field** exact hero prototype.
+
+No homepage implementation, merge to `main`, or deployment is authorized yet.
