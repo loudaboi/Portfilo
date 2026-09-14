@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PERIMETER FIELD EXACT HERO PROTOTYPE ACTIVE**
+**PORTFILO V1 PERIMETER FIELD HERO VISUAL REVIEW ACTIVE**
 
 ## Founder-approved current direction
 
@@ -259,17 +259,31 @@ The exact production geometry and lockups are now adopted in:
 
 Sharp Ornamental 01 remains unchanged.
 
-## Exact next task
+## Exact hero prototype
 
-**PERIMETER FIELD EXACT HERO PROTOTYPE**
+Current review record:
 
-Build one exact 1440 × 900 desktop hero using:
+`research/design/v1-perimeter-field-hero-prototype.md`
 
+Prototype constraints satisfied:
+
+- 1440 × 900 desktop reference;
 - selected Perimeter Field structure;
 - approved all-caps wordmark + emblem;
 - Mona Sans;
 - exact approved hero copy;
 - exact navigation labels;
-- no fake Work, imagery, CTA, or below-fold sections.
+- no fake Work;
+- no generated imagery;
+- no CTA;
+- no below-fold sections.
+
+## Exact next task
+
+**FOUNDER HERO VISUAL REVIEW**
+
+If approved, move to one signature interaction only.
+
+Do not expand the homepage yet.
 
 No merge to `main` or deployment is authorized.
