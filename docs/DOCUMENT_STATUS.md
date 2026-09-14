@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**CURRENT RUNTIME VISUAL DESIGN REJECTED / REPLACEMENT NOT YET DESIGNED**
+**CURRENT RUNTIME VISUAL DESIGN REJECTED / CREATIVE PROTOTYPE NEXT**
 
 Positioning:
 
@@ -112,22 +112,24 @@ Homepage copy:
 
 ## Runtime status
 
-Engineering baseline remains validated at:
+Brand replacement validated at:
 
-`ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
+`797d089d15b0712efa5c1f1b6102c3f69378051a`
 
 Validation run:
 
-`34807816064`
+`34841160013`
 
 Result:
 
 **PASS**
 
-This validation does not make the rejected homepage design release-ready.
+The approved identity is now active in the shared runtime branding.
+
+This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**RUNTIME BRAND-ASSET REPLACEMENT**
+**HOMEPAGE CREATIVE PROTOTYPE**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
