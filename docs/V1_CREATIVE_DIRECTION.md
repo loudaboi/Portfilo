@@ -122,7 +122,13 @@ Do not invent a generic:
 
 The symbol should perform real jobs such as favicon, compact UI identity, transition state, social avatar, or product mark.
 
-It should feel stylistically related to the wordmark without simply being a letter inside a shape.
+The symbol is **not required to derive from the wordmark or from any Portfilo letterform**.
+
+Founder preference is now explicit:
+
+**simple premium wordmark + independent premium symbol**
+
+The relationship between the two should come from shared taste, proportion, visual tension, and application rather than literal letter extraction.
 
 The current favicon/symbol has no authority over the new direction.
 
