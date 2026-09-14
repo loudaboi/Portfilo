@@ -102,13 +102,16 @@ Approved brand applications:
 
 ### Website chrome rule
 
-For the current website direction:
+For the current Perimeter Field homepage direction:
 
-**use the Sharp Ornamental 01 emblem as the site chrome identity.**
+**use both the Sharp Ornamental 01 emblem and the approved `PORTFILO` wordmark as perimeter identity anchors.**
 
-The `PORTFILO` wordmark remains a canonical brand asset for documents, social, editorial/brand applications, and other contexts where the full name is useful.
+Current desktop hero placement:
 
-Do not place the wordmark in the homepage/header merely because the asset exists.
+- emblem: upper-left perimeter;
+- wordmark: upper-right perimeter.
+
+The wordmark should remain restrained and secondary to the hero proposition. It must not behave like another headline or dominate the interface.
 
 Spacing and optical alignment must be finalized during production asset development.
 
@@ -237,8 +240,8 @@ The all-caps wordmark production geometry is founder-approved and adopted.
 
 Identity inputs are now fixed for the hero prototype:
 
-- Sharp Ornamental 01 emblem as website chrome identity;
-- no wordmark in the homepage/header hero chrome;
+- Sharp Ornamental 01 emblem at the upper-left perimeter;
+- approved `PORTFILO` wordmark at the upper-right perimeter;
 - Mona Sans website typography;
 - dark-first near-black homepage environment.
 
