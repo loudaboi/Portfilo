@@ -70,31 +70,26 @@ Approved character:
 - no monogram extraction;
 - no exaggerated futuristic customization.
 
-Previously approved production wordmark base:
+Current founder-approved production wordmark:
 
-**Noto Serif Display Regular / title case**
+**PORTFILO / Noto Serif Display SemiCondensed Medium / ALL CAPS**
 
-After review inside the selected homepage structure, the founder reopened only the wordmark treatment.
+Production construction:
 
-Founder-selected refinement:
-
-**A — NOTO SERIF DISPLAY ALL CAPS**
-
-Production candidate construction:
-
-- Noto Serif Display SemiCondensed Medium;
 - `PORTFILO`;
-- 0.115em tracking;
+- Noto Serif Display SemiCondensed Medium;
+- 0.115em tracking basis;
 - vector outlines;
-- `currentColor` fill.
+- `currentColor` master;
+- fixed ink/off-white exports.
 
-Candidate files:
+The exact approved geometry originated from:
 
 `research/identity/sharp-ornamental-01/all-caps-a/`
 
-The existing title-case production wordmark remains the runtime fallback until the exact all-caps vector geometry and lockups are founder-approved.
+and now replaces the prior title-case wordmark in the canonical final identity set, brand package, and runtime wordmark asset.
 
-The Sharp Ornamental 01 emblem is not reopened.
+The Sharp Ornamental 01 emblem remains unchanged.
 
 ## Lockups
 
@@ -171,10 +166,10 @@ Final production candidates:
 
 Includes:
 
-- emblem;
-- founder-selected Noto Serif Display Regular wordmark;
-- horizontal lockup;
-- stacked lockup;
+- Sharp Ornamental 01 emblem;
+- approved all-caps Noto Serif Display wordmark;
+- updated horizontal lockup;
+- updated stacked lockup;
 - transparent adaptive favicon.
 
 The emblem was validated at 16px / 24px / 32px / 48px during production review.
@@ -189,41 +184,41 @@ is **FOUNDER-APPROVED**.
 
 Approved production assets:
 
-- emblem;
-- Noto Serif Display Regular wordmark;
-- horizontal lockup;
-- stacked lockup;
+- Sharp Ornamental 01 emblem;
+- `PORTFILO` all-caps wordmark;
+- horizontal emblem + all-caps wordmark lockup;
+- stacked emblem + all-caps wordmark lockup;
 - transparent adaptive favicon.
 
 ## Runtime adoption
 
 **COMPLETE / VALIDATED**
 
-Validated runtime commit:
+The runtime wordmark asset now uses the founder-approved all-caps production geometry.
 
-`797d089d15b0712efa5c1f1b6102c3f69378051a`
-
-Validation run:
-
-`34841160013`
-
-The approved identity is now used by:
+The approved identity is used by:
 
 - shared header wordmark;
 - shared footer wordmark;
 - browser SVG favicon;
 - organization structured-data emblem.
 
-Retired legacy favicon fallbacks and old wordmark runtime assets were removed.
+The emblem and favicon geometry were not changed during the all-caps wordmark refinement.
+
+A fresh CI validation is required for the new runtime wordmark commit before release.
 
 ## Current gate
 
-**ALL-CAPS WORDMARK PRODUCTION REVIEW**
+**PERIMETER FIELD EXACT HERO PROTOTYPE**
 
-The founder selected Candidate A.
+The all-caps wordmark production geometry is founder-approved and adopted.
 
-Review the exact outlined wordmark and lockups before replacing final/runtime brand assets.
+Identity inputs are now fixed for the hero prototype:
 
-Do not change the emblem.
+- Sharp Ornamental 01 emblem;
+- `PORTFILO` all-caps wordmark;
+- Mona Sans website typography.
 
-After production approval, update the final identity set and resume the exact **Perimeter Field** hero prototype.
+Resume the selected **Perimeter Field** hero as an exact desktop prototype.
+
+Do not expand into the rest of the homepage yet.
