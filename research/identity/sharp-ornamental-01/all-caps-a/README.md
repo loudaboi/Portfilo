@@ -1,19 +1,25 @@
-# Portfilo All-Caps Wordmark Production Candidate
+# Portfilo All-Caps Wordmark A
 
-Status: **FOUNDER-SELECTED DIRECTION / PRODUCTION REVIEW ACTIVE**
+_Last updated: 2026-09-14_
 
-Selected exploration:
+## Status
 
-**A — Noto Serif Display ALL CAPS**
+**FOUNDER-APPROVED / PRODUCTION IDENTITY**
 
-Construction:
-- Noto Serif Display SemiCondensed Medium;
-- text: `PORTFILO`;
-- tracking: 0.115em;
-- converted to SVG vector outlines;
-- `currentColor` fill;
-- no font file committed.
+Selected construction:
 
-The Sharp Ornamental 01 emblem remains unchanged.
+- wordmark: `PORTFILO`;
+- source family: Noto Serif Display;
+- production cut: SemiCondensed Medium;
+- tracking basis: 0.115em;
+- exported as SVG vector outlines;
+- fill: `currentColor`;
+- emblem: Sharp Ornamental 01, unchanged.
 
-These files are production candidates only. Do not replace runtime or final identity assets until founder approval of the exact production geometry.
+Approved files:
+
+- `portfilo-wordmark-allcaps.svg`;
+- `portfilo-lockup-horizontal-allcaps.svg`;
+- `portfilo-lockup-stacked-allcaps.svg`.
+
+These exact geometries now replace the prior title-case wordmark in the canonical final identity set and runtime wordmark asset.
