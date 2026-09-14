@@ -51,6 +51,7 @@ _Last updated: 2026-09-14_
 
 - `research/design/v1-responsive-identity-research.md`
 - `research/design/v1-wordmark-symbol-research.md`
+- `research/design/v1-fullscreen-hero-reference-research.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -100,7 +101,7 @@ Typography:
 
 Homepage:
 
-**DARK-FIRST PERIMETER FIELD / EMBLEM + WORDMARK PERIMETER IDENTITY / HERO VISUAL MATERIAL EXPLORATION ACTIVE**
+**FULL-SCREEN HERO ART-DIRECTION GATE ACTIVE / PERIMETER FIELD PROVISIONAL EVIDENCE**
 
 Positioning:
 
@@ -130,7 +131,7 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**HERO VISUAL MATERIAL GATE**
+**FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
 
 Review record:
 
