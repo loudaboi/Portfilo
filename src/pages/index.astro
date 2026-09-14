@@ -292,16 +292,17 @@ const contactReady = false;
     <SiteFooter />
 
     <script>
-      import { gsap } from "gsap";
-      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      import {
+        createMotionContext,
+        gsap,
+        prefersReducedMotion,
+      } from "../scripts/motion";
 
-      gsap.registerPlugin(ScrollTrigger);
-
-      let homepageContext: ReturnType<typeof gsap.context> | undefined;
+      let disposeHomepageMotion = () => {};
 
       const cleanupHomepageMotion = () => {
-        homepageContext?.revert();
-        homepageContext = undefined;
+        disposeHomepageMotion();
+        disposeHomepageMotion = () => {};
       };
 
       const initHomepageMotion = () => {
@@ -311,9 +312,9 @@ const contactReady = false;
         root.dataset.motionBound = "true";
         cleanupHomepageMotion();
 
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (prefersReducedMotion()) return;
 
-        homepageContext = gsap.context(() => {
+        disposeHomepageMotion = createMotionContext(root, () => {
           const heroLines = gsap.utils.toArray<HTMLElement>("[data-hero-line]");
           const heroSupport = document.querySelector("[data-hero-support]");
 
@@ -352,7 +353,7 @@ const contactReady = false;
               },
             });
           });
-        }, root);
+        });
       };
 
       initHomepageMotion();
