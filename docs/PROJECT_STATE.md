@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 RUNTIME BRAND-ASSET REPLACEMENT READY**
+**PORTFILO V1 HOMEPAGE CREATIVE PROTOTYPE READY**
 
 ## Founder-approved current direction
 
@@ -159,14 +159,45 @@ Approved production assets:
 - stacked lockup;
 - transparent adaptive favicon.
 
-No runtime brand assets have been replaced yet.
+## Runtime brand replacement
+
+**COMPLETE / VALIDATED**
+
+Validated runtime commit:
+
+`797d089d15b0712efa5c1f1b6102c3f69378051a`
+
+GitHub Actions run:
+
+`34841160013`
+
+Result:
+
+**PASS**
+
+Runtime changes:
+
+- header and footer now use the approved Noto Serif Display Regular Portfilo wordmark;
+- `/favicon.svg` now uses the approved transparent Sharp Ornamental 01 emblem;
+- structured-data organization logo now references the approved emblem;
+- retired wordmark asset removed;
+- retired PNG/ICO favicon fallbacks removed;
+- retired apple-touch icon removed so the old identity cannot remain active through a fallback format.
+
+Passed:
+
+- dependency installation;
+- `astro check`;
+- production build.
 
 ## Exact next task
 
-**RUNTIME BRAND-ASSET REPLACEMENT**
+**HOMEPAGE CREATIVE PROTOTYPE**
 
-Replace the retired public wordmark/favicon with the approved production SVG assets, validate runtime references and CI, and stop there.
+Develop the new homepage creative concept from Responsive Identity + the approved identity system before any replacement homepage implementation.
 
-Do not redesign or implement the homepage in that gate.
+Do not treat the current rejected homepage as the design baseline.
+
+No merge to `main` or deployment is authorized.
 
 No merge to `main` or deployment is authorized.
