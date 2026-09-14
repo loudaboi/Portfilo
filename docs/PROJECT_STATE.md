@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 APERTURE VISUAL PROTOTYPE ACTIVE**
+**PORTFILO V1 HOMEPAGE GENERATION PLANNING GATE ACTIVE**
 
 ## Founder-approved current direction
 
@@ -190,26 +190,49 @@ Passed:
 - `astro check`;
 - production build.
 
-## Homepage creative directions
+## Homepage design reset
 
-Current authority:
+The Aperture visual direction is **founder-rejected** after prototype review.
 
-`docs/V1_HOMEPAGE_CREATIVE_PROTOTYPE.md`
+The prior Aperture, Relay, and Cut Scene concepts have no current homepage design authority.
 
-Founder-selected homepage creative direction:
+The failure mode is now treated as a process problem as well as a visual problem: broad image generation repeatedly translated research into generic agency/editorial website conventions.
 
-**Aperture**
+Current homepage generation authority:
 
-Relay and Cut Scene remain non-authoritative exploration evidence.
+`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
+
+Key process rule:
+
+**Do not ask image generation to render the complete website screen.**
+
+Exact identity, typography, copy, spacing, navigation, and layout must be built with real SVG + HTML/CSS or an exact design tool. Generative imagery is optional and limited to non-text visual material.
+
+## Brand asset delivery status
+
+A durable brand package now exists under:
+
+`brand/`
+
+It includes:
+
+- currentColor SVG masters;
+- fixed ink SVG exports;
+- fixed off-white SVG exports;
+- approved transparent adaptive favicon.
+
+A 33-file raster/export delivery pack was also generated from the approved masters.
 
 ## Exact next task
 
-**APERTURE DESKTOP VISUAL MOCKUP + SIGNATURE INTERACTION PROTOTYPE**
+**FOUNDER GENERATION PLAN APPROVAL**
 
-Produce the first desktop homepage mockup around the approved Aperture direction, then prototype the aperture behavior through the first major state transition.
+Review:
 
-No runtime homepage implementation is authorized until that visual/prototype gate is founder-approved.
+`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
 
-No merge to `main` or deployment is authorized.
+After approval, begin **Website Typography Direction** only.
+
+Do not generate another polished homepage image yet.
 
 No merge to `main` or deployment is authorized.
