@@ -42,9 +42,14 @@ _Last updated: 2026-09-14_
 - `docs/NEWSLETTER_SYSTEM.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
+### Current identity authority
+
+- `docs/V1_IDENTITY_VISUAL_BRIEF.md`
+
 ### Current research
 
 - `research/design/v1-responsive-identity-research.md`
+- `research/design/v1-wordmark-symbol-research.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -118,6 +123,6 @@ This validation does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**RESPONSIVE IDENTITY: WORDMARK + BEHAVIOR EXPLORATION**
+**ROUND 1 STATIC IDENTITY STUDIES**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
