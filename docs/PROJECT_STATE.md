@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 FULL-SCREEN HERO ART-DIRECTION GATE ACTIVE**
+**PORTFILO V1 FULL-SCREEN HERO ART-DIRECTION SELECTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -304,13 +304,31 @@ Key outcome:
 - Perimeter Field remains useful evidence but is no longer protected if a stronger full-screen visual requires another composition;
 - current technical recommendation, if the art direction supports it, is authored full-screen motion + lightweight shader + semantic HTML/GSAP interface.
 
+## Full-screen hero art directions
+
+Current selection record:
+
+`research/design/v1-fullscreen-hero-art-directions.md`
+
+Candidates:
+
+- A — Pressure Field;
+- B — Assembly;
+- C — Signal.
+
+Current recommendation:
+
+**A — Pressure Field**
+
+The loader is included as the opening state of each concept rather than treated as a separate splash screen.
+
 ## Exact next task
 
-**FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
+**FOUNDER FULL-SCREEN HERO ART-DIRECTION SELECTION**
 
-Produce no more than three concepts for what the full viewport actually becomes.
+Select A, B, C, or reject all three.
 
-Do not generate another website mockup yet.
+After selection, choose the lightest implementation family that can express the approved concept and build one real browser prototype.
 
 Do not expand the homepage yet.
 
