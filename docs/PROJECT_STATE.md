@@ -4,23 +4,65 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 3E HOMEPAGE QA ACTIVE**
+**PORTFILO V1 RESPONSIVE IDENTITY EXPLORATION ACTIVE**
 
-Approved and completed:
+## Founder-approved current direction
 
-- v1 studio repositioning;
+**Responsive Identity**
+
+Current creative authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+The Portfilo identity should behave like software: responsive, stateful, and capable of changing across Work, Services, Hustle, Journal, and studio contexts while remaining recognizably Portfilo.
+
+## Product decisions retained
+
+Still current:
+
+- Portfilo is a software design and development studio with supporting editorial surfaces;
+- primary public architecture is `Work / Services / Hustle / Journal / Contact`;
+- newsletter remains embedded distribution/acquisition;
+- News and Why remain retired;
+- **Problem-led software** remains the approved positioning territory;
+- AI remains a capability, not the company category;
+- current homepage copy remains approved copy authority unless explicitly reopened;
+- Work remains the primary proof surface;
+- no fabricated Work/Hustle evidence.
+
+## Design reset
+
+Founder-rendered review rejected the previous visual system.
+
+Superseded/rejected as current design authority:
+
 - Obsidian Precision;
-- concrete v1 design system;
-- clean v1 working-tree strategy;
-- Journal migration;
-- Work / Services / Hustle / Journal / Contact route foundations;
-- namespaced newsletter API;
-- removal of obsolete v0 routes/content/assets/docs/research;
-- Phase 3A homepage positioning + narrative research;
-- founder-approved **Problem-led software** positioning territory and claim boundaries;
-- Phase 3B homepage copy approval;
-- Phase 3C homepage composition + interaction approval;
-- Phase 3D homepage implementation.
+- `docs/V1_DESIGN_DIRECTION.md`;
+- `docs/V1_DESIGN_SYSTEM.md`;
+- `docs/V1_HOMEPAGE_COMPOSITION.md`;
+- the Phase 3C visual composition;
+- the Phase 3D rendered homepage as a design/release candidate;
+- the current wordmark geometry as a required foundation;
+- the current favicon/symbol as a required foundation;
+- the old v1 design implementation skill.
+
+The rejected homepage may remain temporarily in runtime while replacement identity and prototypes are developed. Do not refine it as the future design.
+
+## Why the reset happened
+
+The rendered homepage was technically valid but visually failed the intended standard.
+
+Observed failure:
+
+- generic dark creative-tech composition;
+- oversized white sans-serif typography carrying too much of the identity;
+- flat black/gray hierarchy;
+- insufficient visual authorship;
+- weak signature behavior;
+- reveal animation mistaken for meaningful motion;
+- no convincing relationship between identity and software.
+
+This is a creative-direction failure, not a small Phase 3E QA defect.
 
 ## Branches
 
@@ -34,69 +76,9 @@ Release boundary:
 
 No merge or deployment is authorized.
 
-## Product architecture
+## Runtime baseline
 
-`Work / Services / Hustle / Journal / Contact`
-
-Newsletter is embedded.
-
-News, Why, and the public Standards page are retired.
-
-## Phase 3A result
-
-Founder-approved positioning authority:
-
-`docs/V1_HOMEPAGE_POSITIONING.md`
-
-Locked territory:
-
-**Problem-led software**
-
-Portfilo starts with the business problem and determines the appropriate software response. AI remains a capability, not the company category. Work remains the primary proof surface.
-
-## Phase 3B result
-
-Founder-approved copy authority:
-
-`docs/V1_HOMEPAGE_COPY.md`
-
-Approved hero:
-
-**Software built around the problem.**
-
-Approved supporting sentence:
-
-Portfilo designs and develops software around business needs and constraints, from internal systems and automation to practical AI integrations and customer-facing products.
-
-Approved section framing, newsletter message, and Contact CTA are recorded in the copy authority.
-
-## Phase 3C result
-
-Founder-approved composition authority:
-
-`docs/V1_HOMEPAGE_COMPOSITION.md`
-
-The homepage composition, responsive behavior, motion hierarchy, reduced-motion behavior, and conditional-rendering rules are locked.
-
-## Phase 3D result
-
-The legacy editorial homepage was replaced at `/` with the approved v1 studio homepage.
-
-Implemented:
-
-- restrained typographic hero;
-- conditional Selected Work sourced from published `work` entries;
-- problem-led Services composition;
-- conditional single-feature Hustle surface;
-- conditional three-item Journal preview;
-- embedded newsletter acquisition surface;
-- homepage Contact section held back until a real public contact path exists;
-- GSAP hero/section reveal behavior with Astro navigation cleanup;
-- reduced-motion behavior;
-- responsive desktop/tablet/mobile composition;
-- removal of the legacy homepage ticker/news presentation.
-
-Final validated runtime commit:
+Last validated runtime before the creative reset:
 
 `ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
 
@@ -108,68 +90,35 @@ Result:
 
 **PASS**
 
-Passed:
+The runtime remains useful engineering scaffolding, but its homepage visual design is rejected.
 
-- dependency installation;
-- `astro check`;
-- production build.
+## Identity decisions now open
 
-Phase 3E code-quality hardening also completed:
+Explore and seek founder approval for:
 
-- production static paths now exclude draft Work, Hustle, and Journal entries while local development can still preview drafts;
-- homepage GSAP lifecycle now uses the shared `src/scripts/motion.ts` utility;
-- unused `SiteFooter` prop scaffolding was removed;
-- CI no longer runs `astro check` twice.
+1. Portfilo wordmark design territory;
+2. responsive/variable behavior;
+3. static fallback;
+4. typography candidates;
+5. neutral + signal-color behavior;
+6. whether a symbol naturally emerges;
+7. favicon/social/small UI behavior;
+8. identity motion prototype.
 
-No merge to `main` or deployment occurred.
+## Design process
 
-## Intentionally unresolved before release
+Use:
 
-- Phase 3E visual/interaction QA;
-- real Work case-study evidence/media;
-- final Services page copy beyond the approved homepage framing;
-- public Contact destination/email;
-- v1 favicon/icon replacement;
-- v1 default social preview replacement;
-- final newsletter cadence;
-- optional move from `/confirmed` to `/newsletter/confirmed`, coordinated with beehiiv.
+`idea -> identity -> signature behavior -> prototype -> content/media -> composition -> system -> implementation`
 
-## Phase 3E status
+Do not return to:
 
-Source-level QA evidence:
-
-`research/qa/v1-homepage-phase3e.md`
-
-Verified so far:
-
-- CI install/check/build: PASS;
-- semantic/source structure: PASS;
-- approved copy fidelity: PASS;
-- conditional rendering: PASS;
-- responsive source contract: PASS;
-- reduced-motion source contract: PASS;
-- Astro/GSAP cleanup source contract: PASS;
-- keyboard/focus source contract: PASS;
-- metadata source contract: PASS.
-
-Rendered browser QA is not yet verified.
-
-Current content means the homepage renders:
-
-`Hero -> Services -> Journal -> Newsletter -> Footer`
-
-Work, Hustle, and homepage Contact are intentionally omitted until real public content/path exists.
+`tokens -> grid -> sections -> CSS -> reveal motion`
 
 ## Exact next task
 
-**PHASE 3E RENDERED HOMEPAGE QA**
+**RESPONSIVE IDENTITY: WORDMARK + BEHAVIOR EXPLORATION**
 
-Inspect an actual rendered branch runtime for desktop/tablet/mobile composition, keyboard/focus, reduced motion, Astro navigation/GSAP cleanup, overflow/layout stability, newsletter layout, and basic performance.
+Do not redesign or implement the homepage yet.
 
-Do not merge to `main` or deploy.
-
-The homepage hierarchy remains:
-
-`Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`
-
-Sections with no real public content remain omitted from the homepage.
+No merge to `main` or deployment is authorized.
