@@ -10,8 +10,9 @@ _Last updated: 2026-09-14_
 4. `docs/V1_SCOPE.md`
 5. `docs/V1_DESIGN_DIRECTION.md`
 6. `docs/V1_DESIGN_SYSTEM.md`
-7. current task-specific decision record
-8. current runtime source
+7. `docs/V1_HOMEPAGE_PLAN.md`
+8. current task-specific decision record
+9. current runtime source
 
 ## Current v1 authority
 
