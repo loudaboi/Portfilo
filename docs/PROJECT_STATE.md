@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 VECTOR IDENTITY PRODUCTION ACTIVE**
+**PORTFILO V1 FINAL IDENTITY ASSET APPROVAL ACTIVE**
 
 ## Founder-approved current direction
 
@@ -143,13 +143,31 @@ Current recommendation:
 
 No runtime brand assets have been replaced.
 
+## Final identity candidate status
+
+Founder selected:
+
+**Wordmark B — Noto Serif Display Regular**
+
+Final candidate assets now exist under:
+
+`research/identity/sharp-ornamental-01/final/`
+
+- emblem;
+- wordmark;
+- horizontal lockup;
+- stacked lockup;
+- transparent adaptive favicon.
+
+No runtime brand assets have been replaced.
+
 ## Exact next task
 
-**FOUNDER WORDMARK SELECTION**
+**FOUNDER FINAL IDENTITY ASSET APPROVAL**
 
-Select Wordmark A, B, C, or reject all three.
+Approve or reject the final SVG identity set.
 
-After selection: finalize optical spacing/lockups and seek final production identity approval.
+After approval, runtime brand-asset replacement becomes the next gate.
 
 Do not redesign or implement the homepage yet.
 
