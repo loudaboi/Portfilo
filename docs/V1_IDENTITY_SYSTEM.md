@@ -205,7 +205,19 @@ The approved identity is used by:
 
 The emblem and favicon geometry were not changed during the all-caps wordmark refinement.
 
-A fresh CI validation is required for the new runtime wordmark commit before release.
+Validated branch state:
+
+`a32c093d8b55be9a49dad2ddd1d6ef430f0ba092`
+
+GitHub Actions run:
+
+`34864948342`
+
+Result:
+
+**PASS**
+
+The all-caps runtime wordmark and subsequent authority updates passed CI.
 
 ## Current gate
 
