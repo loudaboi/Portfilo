@@ -97,8 +97,8 @@ The runtime remains useful engineering scaffolding, but its homepage visual desi
 Explore and seek founder approval for:
 
 1. simple premium Portfilo wordmark territory;
-2. compact standalone symbol territory;
-3. wordmark + symbol relationship;
+2. independent compact symbol territory;
+3. wordmark + symbol compatibility without requiring shared letterform geometry;
 4. static lockups and small-scale behavior;
 5. typography candidates;
 6. neutral + signal-color behavior;
