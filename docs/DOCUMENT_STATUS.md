@@ -84,11 +84,11 @@ Founder-approved direction:
 
 Wordmark:
 
-**NOTO SERIF DISPLAY REGULAR / FOUNDER-SELECTED / FINAL SVG CANDIDATE READY**
+**NOTO SERIF DISPLAY REGULAR / FOUNDER-APPROVED / PRODUCTION SVG APPROVED**
 
 Symbol:
 
-**SHARP ORNAMENTAL 01 / FOUNDER-APPROVED / FINAL SVG CANDIDATE READY**
+**SHARP ORNAMENTAL 01 / FOUNDER-APPROVED / PRODUCTION SVG APPROVED**
 
 Favicon:
 
@@ -128,6 +128,6 @@ This validation does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER FINAL IDENTITY ASSET APPROVAL**
+**RUNTIME BRAND-ASSET REPLACEMENT**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
