@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**PERIMETER FIELD EXACT HERO PROTOTYPE READY / FOUNDER VISUAL REVIEW ACTIVE**
+**DARK-FIRST PERIMETER FIELD / EMBLEM-ONLY CHROME / CORRECTED EXACT HERO REVIEW ACTIVE**
 
 Positioning:
 
@@ -130,7 +130,7 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER HERO VISUAL REVIEW**
+**CORRECTED DARK-FIRST HERO VISUAL REVIEW**
 
 Review record:
 
@@ -140,6 +140,10 @@ Homepage structure:
 
 **A — Perimeter Field**
 
-The exact hero prototype exists for review only.
+Locked corrections:
+
+- dark-first near-black homepage environment;
+- emblem-only website chrome;
+- no wordmark in the homepage/header hero.
 
 No full homepage expansion, merge to `main`, or deployment is authorized.
