@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 HERO VISUAL MATERIAL EXPLORATION ACTIVE**
+**PORTFILO V1 FULL-SCREEN HERO ART-DIRECTION GATE ACTIVE**
 
 ## Founder-approved current direction
 
@@ -283,27 +283,34 @@ Founder-approved corrected contract:
 
 ## Hero visual diagnosis
 
-Founder review identified the remaining weakness in the static hero:
+The central-object visual experiments are **founder-rejected**:
 
-**the Perimeter Field structure is viable, but the central field lacks a compelling visual event.**
+- Responsive geometric field;
+- Sculptural graphic object;
+- System-resolution visual.
 
-Do not redesign the layout again.
+The rejection exposed the actual requirement:
 
-Current visual-material candidates:
+**the hero visual should be considered at the full-viewport level, not as a decorative object placed in the middle of a dark layout.**
 
-- A — Responsive geometric field;
-- B — Sculptural graphic object;
-- C — System-resolution visual.
+Deep reference/implementation research is recorded at:
 
-All candidates must be isolated non-text hero material only. No logo, wordmark, UI, fake product, fake Work, photography, or filler graphics inside the generated asset.
+`research/design/v1-fullscreen-hero-reference-research.md`
+
+Key outcome:
+
+- art direction must be selected before rendering technology;
+- authored video, WebGL, Three.js, canvas, and GSAP are implementation options rather than directions;
+- Perimeter Field remains useful evidence but is no longer protected if a stronger full-screen visual requires another composition;
+- current technical recommendation, if the art direction supports it, is authored full-screen motion + lightweight shader + semantic HTML/GSAP interface.
 
 ## Exact next task
 
-**HERO VISUAL MATERIAL GATE**
+**FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
 
-Generate and compare A / B / C inside the same dark Perimeter Field composition.
+Produce no more than three concepts for what the full viewport actually becomes.
 
-After founder selection, composite only the selected visual into the exact hero and then judge whether motion is required to complete it.
+Do not generate another website mockup yet.
 
 Do not expand the homepage yet.
 
