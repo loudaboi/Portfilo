@@ -8,11 +8,14 @@ Approved Phase 3 plan.
 
 Phase 3A is complete and founder-approved.
 
-Phase 3B is active.
+Phase 3B is complete and founder-approved.
 
-Approved Phase 3A positioning authority:
+Phase 3C is active.
 
-`docs/V1_HOMEPAGE_POSITIONING.md`
+Approved authorities:
+
+- `docs/V1_HOMEPAGE_POSITIONING.md`
+- `docs/V1_HOMEPAGE_COPY.md`
 
 ## Homepage hierarchy
 
@@ -26,29 +29,35 @@ Work is the primary proof surface. The hero introduces Portfilo but should not o
 
 **COMPLETE / FOUNDER-APPROVED**
 
-Research strong software/studio positioning patterns, define credible claim boundaries, define the homepage narrative, and recommend one positioning territory.
-
 Approved territory:
 
 **Problem-led software**
 
 See `docs/V1_HOMEPAGE_POSITIONING.md`.
 
-No final public copy was approved during 3A.
-
 ### 3B Copy approval
 
-**ACTIVE**
+**COMPLETE / FOUNDER-APPROVED**
 
-Approve the hero headline, supporting sentence, section framing, newsletter message, and Contact CTA.
+Approved homepage copy is recorded in:
 
-All wording must remain within the approved Phase 3A positioning and claim boundaries.
+`docs/V1_HOMEPAGE_COPY.md`
 
-Do not implement the homepage during 3B.
+This includes:
+
+- hero headline;
+- hero supporting sentence;
+- section framing;
+- newsletter message;
+- Contact CTA.
 
 ### 3C Composition + interaction
 
+**ACTIVE**
+
 Define exact layout, pacing, typography, Work media framing, GSAP behavior, responsive simplification, reduced-motion behavior, and conditional rendering.
+
+Do not implement the homepage during 3C.
 
 ### 3D Implementation
 
@@ -81,7 +90,6 @@ Phase 3 may establish the homepage Work composition, but real M7 evidence, scree
 
 ## Still open
 
-- final homepage copy;
 - exact homepage composition and motion;
 - whether Hustle is surfaced before its first real piece;
 - final Work case study;
