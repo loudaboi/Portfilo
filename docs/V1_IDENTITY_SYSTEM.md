@@ -73,7 +73,11 @@ Approved character:
 - no monogram extraction;
 - no exaggerated futuristic customization.
 
-The exact production typeface or custom-drawn wordmark still requires final vector/type resolution.
+Founder-selected production wordmark base:
+
+**Noto Serif Display Regular**
+
+The production wordmark is stored as SVG outlines, so runtime identity use does not require shipping the font file.
 
 ## Lockups
 
@@ -142,19 +146,24 @@ Do not reopen without a new founder decision:
 - generic AI/crypto/software marks;
 - ornamental marks that require effects to look premium.
 
+## Production asset set
+
+Final production candidates:
+
+`research/identity/sharp-ornamental-01/final/`
+
+Includes:
+
+- emblem;
+- founder-selected Noto Serif Display Regular wordmark;
+- horizontal lockup;
+- stacked lockup;
+- transparent adaptive favicon.
+
+The emblem was validated at 16px / 24px / 32px / 48px during production review.
+
 ## Current production gate
 
-**VECTOR IDENTITY PRODUCTION**
+**FINAL IDENTITY ASSET APPROVAL**
 
-Next work:
-
-1. redraw the Sharp Ornamental 01 emblem as production vector geometry;
-2. resolve the production Portfilo wordmark type/custom lettering;
-3. refine horizontal and stacked lockup spacing;
-4. validate emblem at 16px / 24px / 32px / 48px;
-5. produce transparent favicon SVG;
-6. produce black/off-white identity assets;
-7. optionally test neutral silver;
-8. seek founder approval on final vector assets.
-
-Do not replace current runtime branding or redesign the homepage until the production identity assets are founder-approved.
+Do not replace current runtime branding or redesign the homepage until the final SVG asset set is founder-approved.
