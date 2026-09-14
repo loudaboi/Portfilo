@@ -82,7 +82,7 @@ Wordmark:
 
 Symbol:
 
-**OPEN / NOT REQUIRED**
+**OPEN / PREFERRED IF CONCEPTUALLY STRONG**
 
 Typography:
 
