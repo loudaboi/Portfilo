@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 HOMEPAGE GENERATION PLANNING GATE ACTIVE**
+**PORTFILO V1 WEBSITE TYPOGRAPHY SELECTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -223,15 +223,35 @@ It includes:
 
 A 33-file raster/export delivery pack was also generated from the approved masters.
 
-## Exact next task
-
-**FOUNDER GENERATION PLAN APPROVAL**
-
-Review:
+## Generation plan status
 
 `docs/V1_HOMEPAGE_GENERATION_PLAN.md`
 
-After approval, begin **Website Typography Direction** only.
+**FOUNDER-APPROVED**
+
+## Typography candidates
+
+Current authority:
+
+`docs/V1_TYPOGRAPHY_DIRECTION.md`
+
+Candidates:
+
+- A — Instrument Sans;
+- B — Mona Sans;
+- C — Geist Sans.
+
+Current recommendation:
+
+**B — Mona Sans**
+
+## Exact next task
+
+**FOUNDER WEBSITE TYPOGRAPHY SELECTION**
+
+Select A, B, C, or reject all three.
+
+After selection: produce three structural grayscale hero wireframes only.
 
 Do not generate another polished homepage image yet.
 
