@@ -14,7 +14,13 @@ Current preference:
 
 **simple premium wordmark + simple standalone symbol**
 
-The symbol should emerge from the same form language as the wordmark rather than being invented as a separate decorative icon.
+The founder rejected the requirement that the symbol emerge from the wordmark.
+
+Current identity model:
+
+**simple premium wordmark + independent premium symbol**
+
+The two should be visually compatible but conceptually independent.
 
 ## Shared criteria
 
@@ -38,7 +44,7 @@ Reject:
 - fake futuristic geometry;
 - logos whose only idea is a fashionable typeface.
 
-## Concept A — Ligature
+## Rejected direction — Ligature
 
 ### Core idea
 
@@ -234,23 +240,35 @@ If overdone it becomes a generic technology wordmark.
 | Risk of generic result | Low-medium | Medium-high | Medium |
 | Responsive identity potential | 9/10 | 8/10 | 10/10 |
 
-## Current recommendation
+## Founder rejection
 
-Explore **Concept A — Ligature** first, with the restraint and proportion discipline of Concept B.
+The ligature-derived symbol direction was visually reviewed and rejected.
 
-Reason:
+Do not continue exploring:
+- fi ligatures as the logo;
+- P/PF monograms;
+- symbols extracted directly from the Portfilo wordmark;
+- letter-in-shape logo concepts.
 
-- it derives directly from the Portfilo name;
-- it gives the symbol a legitimate origin;
-- it can stay extremely simple;
-- it avoids generic P/PF monograms;
-- it can bridge studio, editorial, and fashion-adjacent presentation;
-- it supports Responsive Identity behavior without forcing a complicated logo.
+## New exploration model
 
-Concept C should remain the fallback if the ligature cannot produce a sufficiently distinctive compact mark.
+Explore the identity as two coordinated but independent assets:
+
+1. **Wordmark**
+   - simple;
+   - premium;
+   - restrained;
+   - distinctive through proportion, spacing, and subtle custom lettering rather than logo tricks.
+
+2. **Symbol**
+   - independent from the wordmark;
+   - non-letter-based unless an exceptional concept later justifies otherwise;
+   - simple enough for favicon/social/UI use;
+   - stylistic rather than literal;
+   - capable of becoming a recognizable Portfilo asset on its own.
 
 ## Next gate
 
-Produce visual wordmark/symbol studies for A, B, and C.
+Research and develop independent symbol territories first, then test them beside restrained wordmark directions.
 
-Do not select a final typeface, color system, or homepage implementation until the form studies are reviewed.
+Do not select a final typeface, color system, or homepage implementation until the identity studies are reviewed.
