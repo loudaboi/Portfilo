@@ -93,12 +93,22 @@ The Sharp Ornamental 01 emblem remains unchanged.
 
 ## Lockups
 
-Approved applications:
+Approved brand applications:
 
 - emblem alone;
 - wordmark alone;
 - horizontal emblem + wordmark;
 - stacked emblem + wordmark.
+
+### Website chrome rule
+
+For the current website direction:
+
+**use the Sharp Ornamental 01 emblem as the site chrome identity.**
+
+The `PORTFILO` wordmark remains a canonical brand asset for documents, social, editorial/brand applications, and other contexts where the full name is useful.
+
+Do not place the wordmark in the homepage/header merely because the asset exists.
 
 Spacing and optical alignment must be finalized during production asset development.
 
@@ -227,9 +237,10 @@ The all-caps wordmark production geometry is founder-approved and adopted.
 
 Identity inputs are now fixed for the hero prototype:
 
-- Sharp Ornamental 01 emblem;
-- `PORTFILO` all-caps wordmark;
-- Mona Sans website typography.
+- Sharp Ornamental 01 emblem as website chrome identity;
+- no wordmark in the homepage/header hero chrome;
+- Mona Sans website typography;
+- dark-first near-black homepage environment.
 
 Resume the selected **Perimeter Field** hero as an exact desktop prototype.
 
