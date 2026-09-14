@@ -65,6 +65,8 @@ Founder preference:
 
 The core marks should remain strong in static form.
 
+For website chrome, the founder has selected **emblem-only identity**. The wordmark remains a canonical brand asset but is not required in the homepage/header chrome.
+
 Responsive behavior should primarily come from:
 
 - composition;
@@ -150,9 +152,11 @@ Do not select typefaces only because they look futuristic or fashionable.
 
 ## Color and material
 
-Do not lock Portfilo to permanent black.
+Portfilo is not globally locked to one permanent surface across every page.
 
-The new system may move between:
+For the current homepage direction, the founder has explicitly selected a **dark-first near-black environment**.
+
+Other surfaces may still move between:
 
 - off-white;
 - ink black;
