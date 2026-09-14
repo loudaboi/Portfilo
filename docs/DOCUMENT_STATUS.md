@@ -102,7 +102,7 @@ Typography:
 
 Homepage:
 
-**ASSEMBLY SELECTED / LOADER-TO-HERO MOTION PROTOTYPE ACTIVE**
+**ASSEMBLY MOTION APPROVED / FULL-SCREEN MATERIAL SELECTION ACTIVE**
 
 Positioning:
 
@@ -132,11 +132,17 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**ASSEMBLY LOADER → RESOLVED HERO MOTION STUDY**
+**ASSEMBLY FULL-SCREEN VISUAL MATERIAL SELECTION**
 
-Selected direction:
+Selected behavior:
 
-**B — Assembly**
+**B — Assembly / LOADER-TO-HERO MOTION APPROVED**
+
+Material candidates:
+
+- A — Crossfield;
+- B — Refraction;
+- C — Strata.
 
 Review record:
 
