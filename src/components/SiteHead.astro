@@ -46,7 +46,7 @@ const articleImageUrl = article?.image?.src && site
   : undefined;
 const socialImageUrl = articleImageUrl ?? defaultSocialImageUrl;
 const socialImageAlt = article?.image?.alt ?? "Portfilo";
-const brandLogoUrl = site ? new URL("/apple-touch-icon.png", site).href : undefined;
+const brandLogoUrl = site ? new URL("/brand/portfilo-emblem.svg", site).href : undefined;
 const sitemapUrl = site ? new URL("/sitemap-index.xml", site).href : undefined;
 const isHomepage = Astro.url.pathname === "/";
 const organizationId = siteRootUrl ? `${siteRootUrl}#organization` : undefined;
@@ -63,8 +63,8 @@ const publisherStructuredData = siteRootUrl && organizationId
             logo: {
               "@type": "ImageObject",
               url: brandLogoUrl,
-              width: 180,
-              height: 180,
+              width: 256,
+              height: 256,
             },
           }
         : {}),
@@ -121,10 +121,6 @@ const structuredData = articleStructuredData ?? homepageStructuredData;
 <ClientRouter fallback="swap" />
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
-<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 
 {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 {sitemapUrl && <link rel="sitemap" href={sitemapUrl} />}
