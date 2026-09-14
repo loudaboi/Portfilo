@@ -57,21 +57,28 @@ Premium quality must come from authorship and coherence, not darkness, empty spa
 
 ## Core idea
 
-The Portfilo identity should be able to respond to context.
+The Portfilo identity should be able to respond to context without requiring the logo itself to become visually complex.
 
-Potential behaviors to explore include:
+Founder preference:
 
-- variable width or weight;
-- compression and expansion;
-- reconfiguration;
-- typographic state changes;
-- spatial rearrangement;
-- content-responsive identity states;
-- transitions between commercial, editorial, and human surfaces.
+**simple premium wordmark + simple standalone symbol**
 
-These are exploration territories, not approved effects.
+The core marks should remain strong in static form.
 
-The identity must remain legible and useful.
+Responsive behavior should primarily come from:
+
+- composition;
+- scale;
+- placement;
+- transitions;
+- surrounding typography;
+- media relationships;
+- surface state;
+- controlled motion.
+
+The wordmark may support subtle responsive behavior where useful, but constant morphing, distortion, or generative deformation is not the identity objective.
+
+The identity must remain legible, memorable, and useful.
 
 ## Identity
 
@@ -81,7 +88,9 @@ The current italic Portfilo wordmark is **retired as the default design constrai
 
 It may remain in Git history and current runtime until replacement work is approved, but future identity exploration must not preserve its geometry merely because it exists.
 
-The new wordmark should be designed as part of the Responsive Identity system.
+The new wordmark should be **simple, premium, distinctive, and primarily static**, with careful custom lettering or typographic refinement rather than visual gimmicks.
+
+It should be designed to coexist with a compact standalone mark.
 
 It should be evaluated for:
 
@@ -97,7 +106,7 @@ It should be evaluated for:
 
 ### Symbol
 
-A standalone symbol is **open, not required**.
+A standalone symbol is now **preferred**, provided it earns its form conceptually and works independently at small sizes.
 
 Do not invent a generic:
 
@@ -111,7 +120,9 @@ Do not invent a generic:
 - grid;
 - AI mark.
 
-A symbol should exist only if it emerges naturally from the identity system and performs a real job such as favicon, compact UI identity, transition state, social avatar, or product mark.
+The symbol should perform real jobs such as favicon, compact UI identity, transition state, social avatar, or product mark.
+
+It should feel stylistically related to the wordmark without simply being a letter inside a shape.
 
 The current favicon/symbol has no authority over the new direction.
 
@@ -273,13 +284,13 @@ One idea from Spatial Editorial is retained:
 
 Next decisions:
 
-1. wordmark design territory;
-2. responsive/variable behavior;
-3. static identity fallback;
-4. typography candidates;
-5. signal color / neutral behavior;
-6. whether a symbol emerges;
+1. simple premium wordmark territory;
+2. compact standalone symbol territory;
+3. wordmark + symbol relationship;
+4. static identity lockups;
+5. typography candidates;
+6. neutral + signal-color behavior;
 7. small-scale favicon/social behavior;
-8. initial motion prototype.
+8. identity behavior and motion around the marks.
 
 Do not redesign or implement the homepage until the identity and creative prototype are founder-approved.
