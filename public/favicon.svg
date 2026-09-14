@@ -1,26 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
 <title id="title">Portfilo</title>
 <style>
-.bg { fill: #f4f0e8; }
-.mark { fill: #171614; }
-@media (prefers-color-scheme: dark) {
-  .bg { fill: #171614; }
-  .mark { fill: #f4f0e8; }
-}
+  .mark { fill: #111111; }
+  @media (prefers-color-scheme: dark) { .mark { fill: #f5f3ee; } }
 </style>
-<rect class="bg" width="64" height="64"/>
-<g transform="translate(8 13.677) scale(0.1032258)">
-  <path class="mark" d="M32 0
-C98 0 164 66 232.5 66
-C301 66 367 0 433 0
-C451 0 465 14 465 32
-L465 323
-C465 341 451 355 433 355
-C367 355 301 289 232.5 289
-C164 289 98 355 32 355
-C14 355 0 341 0 323
-L0 32
-C0 14 14 0 32 0
-Z"/>
-</g>
+<path class="mark" fill-rule="evenodd" d="M128 0C128 71 187 128 256 128C185 128 128 187 128 256C128 185 69 128 0 128C71 128 128 69 128 0ZM128 51C128 87 169 128 205 128C169 128 128 169 128 205C128 169 87 128 51 128C87 128 128 87 128 51Z"/>
 </svg>
