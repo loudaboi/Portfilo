@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Portfilo emblem</title>
+  <desc id="desc">Four-point sharp ornamental emblem.</desc>
+  <path fill="#111111" fill-rule="evenodd" d="
+    M128 0
+    C128 71 187 128 256 128
+    C185 128 128 187 128 256
+    C128 185 69 128 0 128
+    C71 128 128 69 128 0 Z
+
+    M128 51
+    C128 87 169 128 205 128
+    C169 128 128 169 128 205
+    C128 169 87 128 51 128
+    C87 128 128 87 128 51 Z
+  "/>
+</svg>
