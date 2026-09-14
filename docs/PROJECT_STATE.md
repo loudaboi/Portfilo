@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 DARK-FIRST PERIMETER FIELD HERO REVIEW ACTIVE**
+**PORTFILO V1 HERO VISUAL MATERIAL EXPLORATION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -281,11 +281,29 @@ Founder-approved corrected contract:
 - no CTA;
 - no below-fold sections.
 
+## Hero visual diagnosis
+
+Founder review identified the remaining weakness in the static hero:
+
+**the Perimeter Field structure is viable, but the central field lacks a compelling visual event.**
+
+Do not redesign the layout again.
+
+Current visual-material candidates:
+
+- A — Responsive geometric field;
+- B — Sculptural graphic object;
+- C — System-resolution visual.
+
+All candidates must be isolated non-text hero material only. No logo, wordmark, UI, fake product, fake Work, photography, or filler graphics inside the generated asset.
+
 ## Exact next task
 
-**DARK-FIRST PERIMETER FIELD HERO VISUAL REVIEW**
+**HERO VISUAL MATERIAL GATE**
 
-If approved, move to one signature interaction only.
+Generate and compare A / B / C inside the same dark Perimeter Field composition.
+
+After founder selection, composite only the selected visual into the exact hero and then judge whether motion is required to complete it.
 
 Do not expand the homepage yet.
 
