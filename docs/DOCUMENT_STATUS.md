@@ -84,11 +84,11 @@ Founder-approved direction:
 
 Wordmark:
 
-**SHARP ORNAMENTAL 01 WORDMARK CHARACTER APPROVED / PRODUCTION TYPE RESOLUTION OPEN**
+**NOTO SERIF DISPLAY REGULAR / FOUNDER-SELECTED / FINAL SVG CANDIDATE READY**
 
 Symbol:
 
-**SHARP ORNAMENTAL 01 FOUNDER-APPROVED / VECTOR PRODUCTION OPEN**
+**SHARP ORNAMENTAL 01 / FOUNDER-APPROVED / FINAL SVG CANDIDATE READY**
 
 Favicon:
 
@@ -128,6 +128,6 @@ This validation does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**VECTOR IDENTITY PRODUCTION**
+**FOUNDER FINAL IDENTITY ASSET APPROVAL**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
