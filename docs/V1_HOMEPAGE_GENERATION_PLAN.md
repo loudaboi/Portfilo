@@ -300,10 +300,28 @@ The Sharp Ornamental 01 emblem remains unchanged.
 
 The canonical final identity assets, brand exports, and runtime wordmark now use the approved all-caps geometry.
 
+## Gate 3 outcome
+
+**EXACT PERIMETER FIELD HERO PROTOTYPE COMPLETE / READY FOR FOUNDER REVIEW**
+
+Review record:
+
+`research/design/v1-perimeter-field-hero-prototype.md`
+
+The prototype uses:
+
+- approved identity;
+- Mona Sans;
+- exact approved hero copy;
+- exact navigation labels;
+- no generated imagery;
+- no CTA;
+- no below-fold content.
+
 ## Current gate
 
-**GATE 3 — EXACT PERIMETER FIELD HERO PROTOTYPE**
+**FOUNDER HERO VISUAL REVIEW**
 
-Build one exact 1440 × 900 desktop hero only.
+If approved, proceed to **Gate 6 — First Interaction Only**.
 
-Do not add imagery, below-fold sections, or unapproved copy.
+Do not expand the full homepage yet.
