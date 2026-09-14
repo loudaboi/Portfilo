@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Portfilo</title>
+  <style>
+    .mark { fill: #111111; }
+    @media (prefers-color-scheme: dark) { .mark { fill: #f5f3ee; } }
+  </style>
+  <path class="mark" fill-rule="evenodd" d="M128 0C128 71 187 128 256 128C185 128 128 187 128 256C128 185 69 128 0 128C71 128 128 69 128 0ZM128 51C128 87 169 128 205 128C169 128 128 169 128 205C128 169 87 128 51 128C87 128 128 87 128 51Z"/>
+</svg>
