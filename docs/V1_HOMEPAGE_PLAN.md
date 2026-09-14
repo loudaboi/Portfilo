@@ -80,7 +80,11 @@ Passed:
 
 ### 3E QA
 
-**ACTIVE**
+**ACTIVE / SOURCE-LEVEL QA PASSED**
+
+Evidence:
+
+`research/qa/v1-homepage-phase3e.md`
 
 Validate:
 
