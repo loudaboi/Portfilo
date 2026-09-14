@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**DARK-FIRST PERIMETER FIELD / EMBLEM-ONLY CHROME / CORRECTED EXACT HERO REVIEW ACTIVE**
+**DARK-FIRST PERIMETER FIELD / EMBLEM + WORDMARK PERIMETER IDENTITY / EXACT HERO REVIEW ACTIVE**
 
 Positioning:
 
@@ -143,7 +143,8 @@ Homepage structure:
 Locked corrections:
 
 - dark-first near-black homepage environment;
-- emblem-only website chrome;
-- no wordmark in the homepage/header hero.
+- emblem at the upper-left perimeter;
+- approved `PORTFILO` wordmark at the upper-right perimeter;
+- Mona Sans website typography.
 
 No full homepage expansion, merge to `main`, or deployment is authorized.
