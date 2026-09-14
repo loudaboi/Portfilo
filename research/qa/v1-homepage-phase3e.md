@@ -12,11 +12,11 @@ This record distinguishes checks that were actually performed from checks that s
 
 Final validated homepage runtime commit:
 
-`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
+`ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
 
 GitHub Actions run:
 
-`34805811760`
+`34807816064`
 
 Result:
 
@@ -27,6 +27,19 @@ Passed:
 - dependency installation;
 - `astro check`;
 - production build.
+
+## Phase 3E code-quality hardening
+
+**PASS**
+
+Before rendered QA, the approved targeted cleanup was completed:
+
+- Work, Hustle, and Journal dynamic routes now generate draft pages only during development; production builds generate published routes only;
+- homepage GSAP setup now uses the existing shared `src/scripts/motion.ts` registration/reduced-motion/context utility rather than maintaining a second motion architecture;
+- unused `showAcquisition` footer prop scaffolding was removed;
+- `npm run build` now performs `astro build`, while CI runs `npm run check` once before build, removing the duplicated Astro check.
+
+Validation run `34807816064` passed dependency installation, Astro check, and production build on `ffdfbbef0340d412feb5c6f8d41468b05ae99af9`.
 
 ## Source-level QA
 
