@@ -47,7 +47,7 @@ The homepage should ultimately prioritize:
 6. newsletter acquisition;
 7. Contact.
 
-Exact homepage composition remains open until design research and information-architecture work are complete.
+Homepage composition is governed by `docs/V1_HOMEPAGE_PLAN.md`. The approved hierarchy is `Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`.
 
 ## Work
 
@@ -65,7 +65,7 @@ Case studies should emphasize:
 
 Technology may be shown where useful, but the work should not be reduced to a stack showcase.
 
-A dedicated Work content model is expected, but its final schema is not yet approved.
+A dedicated `work` Content Collection and route foundation are now implemented. Case-study claims and media still require project-specific evidence and approval.
 
 ## Services
 
@@ -121,9 +121,7 @@ The existing Why inventory should be reviewed during migration. Useful work may 
 
 News is retired as a primary Portfilo product for v1.
 
-Existing News content and infrastructure should not be deleted impulsively. During the migration phase, determine which material is worth preserving, archiving, redirecting, or removing.
-
-The previous News scanner, source-map workflow, and publication-specific News architecture are historical v0 systems unless explicitly reused for a later editorial need.
+The clean-cut migration is complete. News routes, News content, and News-specific runtime were removed from the active v1 branch. Git history is the archive.
 
 ## Newsletter
 
@@ -158,9 +156,7 @@ Approved directional intent for research:
 - strong project presentation;
 - no generic SaaS or creative-agency gimmicks.
 
-This is a research brief, not a finished design system.
-
-Do not lock typography, color values, animation frameworks, layout motifs, or brand accents until the v1 design-research gate is complete.
+The finished v1 design direction and system are governed by `docs/V1_DESIGN_DIRECTION.md` and `docs/V1_DESIGN_SYSTEM.md`.
 
 ## Technical architecture
 
@@ -176,7 +172,7 @@ Preserve unless research or implementation proves a requirement to change:
 - the existing narrow beehiiv subscription proxy if still useful;
 - minimal framework surface.
 
-Motion is now a legitimate product requirement. GSAP or another motion dependency may be evaluated during design/technical research if sophisticated sequencing would otherwise create worse custom infrastructure.
+GSAP is the approved v1 motion dependency. Native scrolling remains the default.
 
 Do not add React, a database, authentication, CMS, 3D/WebGL, or other major infrastructure by default.
 
@@ -200,17 +196,15 @@ No v1 merge to `main`, production deployment, or release is authorized by this s
 - preserve strong editorial work and research where it still fits;
 - retire obsolete product assumptions;
 - do not preserve old UI merely because it exists;
-- do not perform broad code cleanup before the new information architecture and design system justify what should remain;
+- keep the active v1 working tree focused on current product responsibilities and evidence;
 - use Git history as the archive instead of carrying obsolete runtime structures forward indefinitely.
 
 ## Current sequence
 
-1. v1 authority reset;
-2. design/reference research;
-3. v1 information architecture and visual-system decision;
-4. runtime/content migration plan;
-5. targeted repository cleanup and restructuring;
-6. implementation;
-7. responsive, accessibility, performance, metadata, redirect, newsletter, and release QA.
+Completed: authority reset, design research, information architecture/design system, migration planning, clean-cut migration, foundation implementation, and route/content foundation.
+
+Current: Phase 3 homepage rebuild.
+
+Later: Work proof/case studies, remaining page/content refinement, and release QA.
 
 `docs/PROJECT_STATE.md` owns the exact current task and approval gate.
