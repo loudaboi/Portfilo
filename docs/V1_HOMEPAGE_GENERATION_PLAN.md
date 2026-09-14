@@ -26,8 +26,10 @@ Locked:
 
 - Responsive Identity remains the broader creative direction;
 - Sharp Ornamental 01 is the approved emblem;
-- `PORTFILO` in all-caps Noto Serif Display SemiCondensed Medium is the approved wordmark treatment;
+- `PORTFILO` in all-caps Noto Serif Display SemiCondensed Medium remains the approved brand wordmark;
+- homepage/header chrome uses the Sharp Ornamental 01 emblem only;
 - the wordmark typeface is **not automatically the website typeface**;
+- the current homepage is dark-first on a near-black environment;
 - Problem-led software remains the positioning;
 - approved hero headline remains **Software built around the problem.**;
 - approved supporting copy remains unchanged unless separately reopened;
@@ -300,28 +302,30 @@ The Sharp Ornamental 01 emblem remains unchanged.
 
 The canonical final identity assets, brand exports, and runtime wordmark now use the approved all-caps geometry.
 
-## Gate 3 outcome
+## Gate 3 correction
 
-**EXACT PERIMETER FIELD HERO PROTOTYPE COMPLETE / READY FOR FOUNDER REVIEW**
+The first exact Perimeter Field prototype was rejected as visual authority because it carried forward two unapproved assumptions:
 
-Review record:
+- visible wordmark in site chrome;
+- light/stone homepage environment.
 
-`research/design/v1-perimeter-field-hero-prototype.md`
+Founder-approved correction:
 
-The prototype uses:
+**DARK-FIRST PERIMETER FIELD + EMBLEM-ONLY WEBSITE IDENTITY**
 
-- approved identity;
+Rebuild Gate 3 using:
+
+- Sharp Ornamental 01 emblem only in website chrome;
 - Mona Sans;
 - exact approved hero copy;
 - exact navigation labels;
+- near-black homepage environment;
 - no generated imagery;
 - no CTA;
 - no below-fold content.
 
 ## Current gate
 
-**FOUNDER HERO VISUAL REVIEW**
+**CORRECTED EXACT HERO VISUAL REVIEW**
 
-If approved, proceed to **Gate 6 — First Interaction Only**.
-
-Do not expand the full homepage yet.
+Do not advance to interaction or page expansion until the corrected hero passes founder review.
