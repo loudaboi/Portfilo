@@ -114,3 +114,20 @@ If approved:
 move to **Gate 6 — First Interaction Only**.
 
 Do not expand the full homepage yet.
+
+
+## Visual-material diagnosis
+
+Founder review concluded that the resting composition still feels visually incomplete because the central field has no compelling visual event.
+
+The structural hero is not being reopened.
+
+Approved visual-material exploration:
+
+- A — Responsive geometric field;
+- B — Sculptural graphic object;
+- C — System-resolution visual.
+
+The center is no longer treated as an empty placeholder. It is the reserved area for the selected visual system and later motion behavior.
+
+Generated material must remain non-text and independent from the exact HTML/CSS composition.
