@@ -102,8 +102,9 @@ Explore and seek founder approval for:
 4. static lockups and small-scale behavior;
 5. typography candidates;
 6. neutral + signal-color behavior;
-7. favicon/social/UI behavior;
-8. responsive identity behavior around the marks.
+7. transparent-background emblem favicon as the preferred browser treatment;
+8. social/UI behavior;
+9. responsive identity behavior around the marks.
 
 ## Design process
 
