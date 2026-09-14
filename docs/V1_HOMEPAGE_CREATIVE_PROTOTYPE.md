@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**CREATIVE DIRECTION EXPLORATION / AWAITING FOUNDER SELECTION**
+**APERTURE FOUNDER-APPROVED / CURRENT HOMEPAGE CREATIVE DIRECTION**
 
 Parent authority:
 
@@ -31,6 +31,8 @@ All concepts must:
 ---
 
 # Concept 01 — Aperture
+
+**FOUNDER-SELECTED**
 
 ## Thesis
 
@@ -343,21 +345,25 @@ Reason:
 - it lets Journal remain editorial and Services remain interactive;
 - it feels most compatible with the new premium wordmark and Sharp Ornamental emblem.
 
+## Selection outcome
+
+Founder selected:
+
+**Aperture**
+
+Relay and Cut Scene remain exploration evidence only.
+
 ## Current gate
 
-Founder reviews the three creative directions and selects:
+**APERTURE DESKTOP VISUAL MOCKUP + SIGNATURE INTERACTION PROTOTYPE**
 
-- Aperture;
-- Relay;
-- Cut Scene;
-- or rejects all three.
+Next work:
 
-After selection:
-
-1. produce desktop visual mockup;
-2. refine top-of-page/hero;
-3. prototype signature interaction;
-4. test mobile simplification;
-5. only then define the implementation system.
+1. produce the first desktop homepage mockup using Aperture;
+2. refine the top-of-page / hero composition;
+3. define and prototype the aperture behavior through the first major content transition;
+4. verify that the emblem remains restrained rather than decorative;
+5. test a simplified mobile behavior;
+6. seek founder approval before defining the implementation system.
 
 No homepage runtime implementation is authorized yet.
