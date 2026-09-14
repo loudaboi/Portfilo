@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**TYPOGRAPHY SELECTION ACTIVE / AWAITING FOUNDER CHOICE**
+**FOUNDER-APPROVED / CURRENT WEBSITE TYPOGRAPHY AUTHORITY**
 
 Parent authority:
 
@@ -181,19 +181,24 @@ Founder review should compare the three candidates using:
 
 Do not evaluate them inside a homepage composition.
 
+## Founder selection
+
+**B — Mona Sans**
+
+Approved usage direction:
+
+- display: slightly condensed, moderate weight, restrained optical-size use;
+- body: regular width and regular weight;
+- UI/navigation: modestly heavier than body;
+- no decorative mono by default;
+- no excessive width/slant animation.
+
+The Portfilo wordmark remains Noto Serif Display Regular as vector outlines and is not replaced by Mona Sans.
+
 ## Current gate
-
-Founder selects:
-
-- A — Instrument Sans;
-- B — Mona Sans;
-- C — Geist Sans;
-- or rejects all three.
-
-After selection:
 
 **STRUCTURAL HERO WIREFRAMES**
 
-Three grayscale 1440 × 900 hero wireframes may then be produced using the selected typography and exact identity/copy.
+Produce three grayscale 1440 × 900 hero wireframes using Mona Sans, the exact approved identity assets, and exact homepage copy.
 
 No polished homepage design or image generation is authorized yet.
