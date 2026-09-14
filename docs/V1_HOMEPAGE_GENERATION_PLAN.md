@@ -280,10 +280,24 @@ Current typography authority:
 
 `docs/V1_TYPOGRAPHY_DIRECTION.md`
 
-## Current gate
+## Structural wireframe outcome
 
-**STRUCTURAL HERO WIREFRAMES**
+Founder selected:
 
-Produce three grayscale 1440 × 900 hero wireframes only.
+**A — Perimeter Field**
 
-Do not polish, add imagery, or proceed to an exact hero prototype until the founder selects a composition.
+This selects the structural model only.
+
+## Intervening identity refinement
+
+The exact hero prototype is temporarily paused because in-context review reopened the title-case wordmark.
+
+The emblem remains locked.
+
+Current micro-gate:
+
+**ALL-CAPS WORDMARK REFINEMENT**
+
+After the founder selects and approves a replacement wordmark, return to Gate 3 and build the exact Perimeter Field hero prototype.
+
+Do not add imagery or expand the page during this refinement.
