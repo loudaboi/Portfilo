@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 3A HOMEPAGE POSITIONING + NARRATIVE RESEARCH ACTIVE**
+**PORTFILO V1 PHASE 3B HOMEPAGE COPY APPROVAL ACTIVE**
 
 Approved and completed:
 
@@ -15,7 +15,9 @@ Approved and completed:
 - Journal migration;
 - Work / Services / Hustle / Journal / Contact route foundations;
 - namespaced newsletter API;
-- removal of obsolete v0 routes/content/assets/docs/research.
+- removal of obsolete v0 routes/content/assets/docs/research;
+- Phase 3A homepage positioning + narrative research;
+- founder-approved **Problem-led software** positioning territory and claim boundaries.
 
 ## Branches
 
@@ -62,6 +64,20 @@ Approximate tracked size moved from **7.69 MB** to **3.29 MB**.
 
 Git history remains the historical archive.
 
+## Phase 3A result
+
+Founder-approved positioning authority:
+
+`docs/V1_HOMEPAGE_POSITIONING.md`
+
+Locked territory:
+
+**Problem-led software**
+
+Portfilo starts with the business problem and determines the appropriate software response. AI remains a capability, not the company category. Work remains the primary proof surface.
+
+Final public wording is not yet approved.
+
 ## Validation
 
 Validated runtime/head:
@@ -82,11 +98,13 @@ Passed:
 - `astro check`;
 - production build.
 
+No runtime changes occurred during Phase 3A documentation advancement.
+
 No merge to `main` or deployment occurred.
 
 ## Intentionally unresolved before release
 
-- final homepage positioning/copy;
+- final homepage copy;
 - Phase 3 homepage implementation;
 - real Work case-study evidence/media;
 - final Services copy;
@@ -98,10 +116,18 @@ No merge to `main` or deployment occurred.
 
 ## Exact next task
 
-**PHASE 3A HOMEPAGE POSITIONING + NARRATIVE RESEARCH**
+**PHASE 3B HOMEPAGE COPY APPROVAL**
 
-Founder approval has advanced the project into Phase 3A. Do not implement the homepage during 3A.
+Use the approved Phase 3A positioning authority to develop and approve:
 
-The homepage should then be replaced at `/` using the approved hierarchy:
+- hero headline;
+- hero supporting sentence;
+- section framing;
+- newsletter message;
+- Contact CTA.
+
+Do not implement the homepage during Phase 3B.
+
+The homepage hierarchy remains:
 
 `Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`
