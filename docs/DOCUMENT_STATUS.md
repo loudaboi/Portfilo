@@ -13,8 +13,9 @@ _Last updated: 2026-09-14_
 7. `docs/V1_HOMEPAGE_PLAN.md`
 8. `docs/V1_HOMEPAGE_POSITIONING.md`
 9. `docs/V1_HOMEPAGE_COPY.md`
-10. current task-specific decision record
-11. current runtime source
+10. `docs/V1_HOMEPAGE_COMPOSITION.md`
+11. current task-specific decision record
+12. current runtime source
 
 ## Current v1 authority
 
@@ -27,6 +28,7 @@ _Last updated: 2026-09-14_
 - `docs/V1_HOMEPAGE_PLAN.md`
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
+- `docs/V1_HOMEPAGE_COMPOSITION.md`
 
 ### Decision control
 
@@ -77,6 +79,8 @@ Phase 3A homepage positioning + narrative research: **COMPLETE / FOUNDER-APPROVE
 
 Phase 3B homepage copy approval: **COMPLETE / FOUNDER-APPROVED**
 
+Phase 3C homepage composition + interaction: **COMPLETE / FOUNDER-APPROVED**
+
 Validated runtime commit:
 
 `a0f6878bcd205c3ebd0089ac2730195d9a806281`
@@ -93,10 +97,10 @@ The current branch may contain documentation-only commits after that runtime com
 
 ## Exact next task
 
-**PHASE 3C HOMEPAGE COMPOSITION + INTERACTION**
+**PHASE 3D HOMEPAGE IMPLEMENTATION**
 
-Use the approved positioning and copy authorities.
+Use the approved positioning, copy, design-system, and composition authorities.
 
-Do not implement the homepage during Phase 3C.
+No merge to `main` or deployment is authorized.
 
 No merge to `main` or deployment is authorized.
