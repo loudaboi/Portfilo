@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 3D HOMEPAGE IMPLEMENTATION ACTIVE**
+**PORTFILO V1 PHASE 3E HOMEPAGE QA ACTIVE**
 
 Approved and completed:
 
@@ -19,7 +19,8 @@ Approved and completed:
 - Phase 3A homepage positioning + narrative research;
 - founder-approved **Problem-led software** positioning territory and claim boundaries;
 - Phase 3B homepage copy approval;
-- Phase 3C homepage composition + interaction approval.
+- Phase 3C homepage composition + interaction approval;
+- Phase 3D homepage implementation.
 
 ## Branches
 
@@ -69,15 +70,39 @@ Portfilo designs and develops software around business needs and constraints, fr
 
 Approved section framing, newsletter message, and Contact CTA are recorded in the copy authority.
 
-## Validation
+## Phase 3C result
 
-Validated runtime/head:
+Founder-approved composition authority:
 
-`a0f6878bcd205c3ebd0089ac2730195d9a806281`
+`docs/V1_HOMEPAGE_COMPOSITION.md`
+
+The homepage composition, responsive behavior, motion hierarchy, reduced-motion behavior, and conditional-rendering rules are locked.
+
+## Phase 3D result
+
+The legacy editorial homepage was replaced at `/` with the approved v1 studio homepage.
+
+Implemented:
+
+- restrained typographic hero;
+- conditional Selected Work sourced from published `work` entries;
+- problem-led Services composition;
+- conditional single-feature Hustle surface;
+- conditional three-item Journal preview;
+- embedded newsletter acquisition surface;
+- homepage Contact section held back until a real public contact path exists;
+- GSAP hero/section reveal behavior with Astro navigation cleanup;
+- reduced-motion behavior;
+- responsive desktop/tablet/mobile composition;
+- removal of the legacy homepage ticker/news presentation.
+
+Final validated runtime commit:
+
+`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
 
 GitHub Actions run:
 
-`34781911660`
+`34805811760`
 
 Result:
 
@@ -89,13 +114,11 @@ Passed:
 - `astro check`;
 - production build.
 
-No runtime changes occurred during Phase 3A or Phase 3B documentation advancement.
-
 No merge to `main` or deployment occurred.
 
 ## Intentionally unresolved before release
 
-- Phase 3 homepage implementation and QA;
+- Phase 3E visual/interaction QA;
 - real Work case-study evidence/media;
 - final Services page copy beyond the approved homepage framing;
 - public Contact destination/email;
@@ -104,22 +127,24 @@ No merge to `main` or deployment occurred.
 - final newsletter cadence;
 - optional move from `/confirmed` to `/newsletter/confirmed`, coordinated with beehiiv.
 
-## Phase 3C result
-
-Founder-approved composition authority:
-
-`docs/V1_HOMEPAGE_COMPOSITION.md`
-
-The homepage composition, responsive behavior, motion hierarchy, reduced-motion behavior, and conditional-rendering rules are locked for implementation.
-
 ## Exact next task
 
-**PHASE 3D HOMEPAGE IMPLEMENTATION**
+**PHASE 3E HOMEPAGE QA**
 
-Replace the legacy homepage at `/` using the approved positioning, copy, design system, and composition authorities.
+Validate:
+
+- desktop/tablet/mobile composition;
+- keyboard/focus behavior;
+- reduced motion;
+- Astro navigation lifecycle and GSAP cleanup;
+- overflow/layout stability;
+- homepage performance;
+- metadata and conditional rendering.
 
 Do not merge to `main` or deploy.
 
 The homepage hierarchy remains:
 
 `Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`
+
+Sections with no real public content remain omitted from the homepage.
