@@ -117,7 +117,19 @@ Do not return to:
 
 ## Exact next task
 
-**RESPONSIVE IDENTITY: WORDMARK + BEHAVIOR EXPLORATION**
+**ROUND 1 STATIC IDENTITY STUDIES**
+
+Approved exploration brief:
+
+`docs/V1_IDENTITY_VISUAL_BRIEF.md`
+
+Produce:
+
+- 3–5 Soft Geometric symbol studies;
+- 2 Sharp Ornamental symbol studies;
+- 1–2 Digital Abstract symbol studies;
+- restrained Portfilo wordmark pairings;
+- monochrome form studies only.
 
 Do not redesign or implement the homepage yet.
 
