@@ -270,12 +270,20 @@ No new polished homepage image may be generated until:
 
 Founder approved this generation process.
 
-## Current gate
+## Typography outcome
 
-**WEBSITE TYPOGRAPHY DIRECTION**
+Founder selected:
 
-Current typography decision record:
+**Mona Sans**
+
+Current typography authority:
 
 `docs/V1_TYPOGRAPHY_DIRECTION.md`
 
-Do not generate a homepage design during this task.
+## Current gate
+
+**STRUCTURAL HERO WIREFRAMES**
+
+Produce three grayscale 1440 × 900 hero wireframes only.
+
+Do not polish, add imagery, or proceed to an exact hero prototype until the founder selects a composition.
