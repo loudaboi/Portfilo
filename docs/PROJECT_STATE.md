@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 FULL-SCREEN HERO ART-DIRECTION SELECTION ACTIVE**
+**PORTFILO V1 ASSEMBLY MOTION PROTOTYPE ACTIVE**
 
 ## Founder-approved current direction
 
@@ -304,31 +304,32 @@ Key outcome:
 - Perimeter Field remains useful evidence but is no longer protected if a stronger full-screen visual requires another composition;
 - current technical recommendation, if the art direction supports it, is authored full-screen motion + lightweight shader + semantic HTML/GSAP interface.
 
-## Full-screen hero art directions
+## Full-screen hero art direction
+
+Founder-selected:
+
+**B — Assembly**
 
 Current selection record:
 
 `research/design/v1-fullscreen-hero-art-directions.md`
 
-Candidates:
+Assembly means one full-screen visual composition whose large layers begin misregistered, then resolve into a coherent hero. The loader is the first Assembly event, not a separate splash screen.
 
-- A — Pressure Field;
-- B — Assembly;
-- C — Signal.
-
-Current recommendation:
-
-**A — Pressure Field**
-
-The loader is included as the opening state of each concept rather than treated as a separate splash screen.
+This selection does not lock final artwork, layer geometry, or implementation technology.
 
 ## Exact next task
 
-**FOUNDER FULL-SCREEN HERO ART-DIRECTION SELECTION**
+**ASSEMBLY LOADER → RESOLVED HERO MOTION STUDY**
 
-Select A, B, C, or reject all three.
+Prototype only:
 
-After selection, choose the lightest implementation family that can express the approved concept and build one real browser prototype.
+- unresolved full-screen layers;
+- loader identity state;
+- alignment into one coherent hero;
+- approved interface resolving above it.
+
+Use provisional visual material if needed. Judge the behavior before final art direction/material production.
 
 Do not expand the homepage yet.
 
