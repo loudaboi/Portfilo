@@ -49,9 +49,10 @@ _Last updated: 2026-09-14_
 - `docs/NEWSLETTER_SYSTEM.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-### Current migration evidence
+### Current migration / QA evidence
 
 - `research/migration/v1-full-rebuild-audit.md`
+- `research/qa/v1-homepage-phase3e.md`
 
 ## Removed v0 authority
 
@@ -97,8 +98,18 @@ Result:
 
 The current branch may contain documentation-only commits after that runtime commit.
 
+## Phase 3E status
+
+Source-level QA: **PASS**
+
+Rendered browser QA: **NOT YET VERIFIED**
+
+Evidence:
+
+`research/qa/v1-homepage-phase3e.md`
+
 ## Exact next task
 
-**PHASE 3E HOMEPAGE QA**
+**PHASE 3E RENDERED HOMEPAGE QA**
 
 No merge to `main` or deployment is authorized.
