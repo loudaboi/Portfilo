@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**APERTURE FOUNDER-APPROVED / CURRENT HOMEPAGE CREATIVE DIRECTION**
+**SUPERSEDED / HISTORICAL CREATIVE EXPLORATION**
 
 Parent authority:
 
@@ -32,7 +32,7 @@ All concepts must:
 
 # Concept 01 — Aperture
 
-**FOUNDER-SELECTED**
+**FOUNDER-REJECTED AFTER VISUAL PROTOTYPE REVIEW**
 
 ## Thesis
 
@@ -345,25 +345,25 @@ Reason:
 - it lets Journal remain editorial and Services remain interactive;
 - it feels most compatible with the new premium wordmark and Sharp Ornamental emblem.
 
-## Selection outcome
+## Outcome
 
-Founder selected:
+Aperture was selected for visual testing, then founder-rejected after the generated prototypes repeatedly collapsed into generic traditional/editorial website patterns.
 
-**Aperture**
+Observed failure included:
 
-Relay and Cut Scene remain exploration evidence only.
+- conventional agency composition;
+- oversized serif-led hero treatment;
+- light luxury/editorial styling becoming the concept;
+- generic navigation and section language;
+- invented filler content;
+- insufficient authorship despite the written concept.
 
-## Current gate
+Relay and Cut Scene were never founder-selected and remain exploration evidence only.
 
-**APERTURE DESKTOP VISUAL MOCKUP + SIGNATURE INTERACTION PROTOTYPE**
+None of the three concepts has current homepage design authority.
 
-Next work:
+Current generation/process authority:
 
-1. produce the first desktop homepage mockup using Aperture;
-2. refine the top-of-page / hero composition;
-3. define and prototype the aperture behavior through the first major content transition;
-4. verify that the emblem remains restrained rather than decorative;
-5. test a simplified mobile behavior;
-6. seek founder approval before defining the implementation system.
+`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
 
-No homepage runtime implementation is authorized yet.
+No homepage runtime implementation is authorized.
