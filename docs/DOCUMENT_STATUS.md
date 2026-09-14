@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**PERIMETER FIELD STRUCTURE FOUNDER-SELECTED / EXACT HERO PROTOTYPE ACTIVE**
+**PERIMETER FIELD EXACT HERO PROTOTYPE READY / FOUNDER VISUAL REVIEW ACTIVE**
 
 Positioning:
 
@@ -130,18 +130,16 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**PERIMETER FIELD EXACT HERO PROTOTYPE**
+**FOUNDER HERO VISUAL REVIEW**
 
-Identity inputs are fixed:
+Review record:
 
-- Sharp Ornamental 01 emblem;
-- approved `PORTFILO` all-caps wordmark;
-- Mona Sans website typography.
+`research/design/v1-perimeter-field-hero-prototype.md`
 
-Homepage structure selected:
+Homepage structure:
 
 **A — Perimeter Field**
 
-Do not expand below the first viewport yet.
+The exact hero prototype exists for review only.
 
-No merge to `main` or deployment is authorized.
+No full homepage expansion, merge to `main`, or deployment is authorized.
