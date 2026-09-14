@@ -22,6 +22,7 @@ _Last updated: 2026-09-14_
 - `docs/V1_SCOPE.md`
 - `docs/V1_DESIGN_DIRECTION.md`
 - `docs/V1_DESIGN_SYSTEM.md`
+- `docs/V1_HOMEPAGE_PLAN.md`
 
 ### Decision control
 
@@ -84,6 +85,6 @@ The current branch may contain documentation-only commits after that runtime com
 
 ## Exact next task
 
-**PHASE 3 HOMEPAGE REBUILD APPROVAL GATE**
+**PHASE 3A HOMEPAGE POSITIONING + NARRATIVE RESEARCH**
 
 No merge to `main` or deployment is authorized.
