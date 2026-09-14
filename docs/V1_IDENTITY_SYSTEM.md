@@ -76,11 +76,23 @@ Previously approved production wordmark base:
 
 After review inside the selected homepage structure, the founder reopened only the wordmark treatment.
 
-Current refinement hypothesis:
+Founder-selected refinement:
 
-**ALL CAPS**
+**A — NOTO SERIF DISPLAY ALL CAPS**
 
-The existing title-case production wordmark remains the runtime fallback until a new wordmark is explicitly selected and production-approved.
+Production candidate construction:
+
+- Noto Serif Display SemiCondensed Medium;
+- `PORTFILO`;
+- 0.115em tracking;
+- vector outlines;
+- `currentColor` fill.
+
+Candidate files:
+
+`research/identity/sharp-ornamental-01/all-caps-a/`
+
+The existing title-case production wordmark remains the runtime fallback until the exact all-caps vector geometry and lockups are founder-approved.
 
 The Sharp Ornamental 01 emblem is not reopened.
 
@@ -206,10 +218,12 @@ Retired legacy favicon fallbacks and old wordmark runtime assets were removed.
 
 ## Current gate
 
-**ALL-CAPS WORDMARK REFINEMENT**
+**ALL-CAPS WORDMARK PRODUCTION REVIEW**
 
-The founder selected **Perimeter Field** as the homepage structural direction, and in-context review exposed concern with the title-case wordmark.
+The founder selected Candidate A.
 
-Compare restrained all-caps wordmark candidates before continuing to the exact hero prototype.
+Review the exact outlined wordmark and lockups before replacing final/runtime brand assets.
 
-Do not change the emblem or runtime brand assets until the replacement wordmark is founder-approved.
+Do not change the emblem.
+
+After production approval, update the final identity set and resume the exact **Perimeter Field** hero prototype.
