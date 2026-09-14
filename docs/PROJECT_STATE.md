@@ -96,14 +96,14 @@ The runtime remains useful engineering scaffolding, but its homepage visual desi
 
 Explore and seek founder approval for:
 
-1. Portfilo wordmark design territory;
-2. responsive/variable behavior;
-3. static fallback;
-4. typography candidates;
-5. neutral + signal-color behavior;
-6. whether a symbol naturally emerges;
-7. favicon/social/small UI behavior;
-8. identity motion prototype.
+1. simple premium Portfilo wordmark territory;
+2. compact standalone symbol territory;
+3. wordmark + symbol relationship;
+4. static lockups and small-scale behavior;
+5. typography candidates;
+6. neutral + signal-color behavior;
+7. favicon/social/UI behavior;
+8. responsive identity behavior around the marks.
 
 ## Design process
 
