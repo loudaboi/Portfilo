@@ -163,32 +163,25 @@ Approved production assets:
 
 **COMPLETE / VALIDATED**
 
-Validated runtime commit:
+Current validated branch state:
 
-`797d089d15b0712efa5c1f1b6102c3f69378051a`
+`a32c093d8b55be9a49dad2ddd1d6ef430f0ba092`
 
 GitHub Actions run:
 
-`34841160013`
+`34864948342`
 
 Result:
 
 **PASS**
 
-Runtime changes:
+Runtime identity now uses:
 
-- header and footer now use the approved Noto Serif Display Regular Portfilo wordmark;
-- `/favicon.svg` now uses the approved transparent Sharp Ornamental 01 emblem;
-- structured-data organization logo now references the approved emblem;
-- retired wordmark asset removed;
-- retired PNG/ICO favicon fallbacks removed;
-- retired apple-touch icon removed so the old identity cannot remain active through a fallback format.
+- approved `PORTFILO` all-caps wordmark geometry in shared header/footer;
+- approved transparent Sharp Ornamental 01 favicon;
+- Sharp Ornamental 01 structured-data organization emblem.
 
-Passed:
-
-- dependency installation;
-- `astro check`;
-- production build.
+The all-caps wordmark replacement passed CI together with the current authority updates.
 
 ## Homepage design reset
 
@@ -221,7 +214,7 @@ It includes:
 - fixed off-white SVG exports;
 - approved transparent adaptive favicon.
 
-A 33-file raster/export delivery pack was also generated from the approved masters.
+A 33-file raster/export delivery pack was regenerated after the all-caps wordmark approval.
 
 ## Generation plan status
 
