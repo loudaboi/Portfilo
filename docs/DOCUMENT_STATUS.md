@@ -102,7 +102,7 @@ Typography:
 
 Homepage:
 
-**FULL-SCREEN HERO ART-DIRECTION SELECTION ACTIVE / PERIMETER FIELD PROVISIONAL EVIDENCE**
+**ASSEMBLY SELECTED / LOADER-TO-HERO MOTION PROTOTYPE ACTIVE**
 
 Positioning:
 
@@ -132,13 +132,11 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER FULL-SCREEN HERO ART-DIRECTION SELECTION**
+**ASSEMBLY LOADER → RESOLVED HERO MOTION STUDY**
 
-Candidates:
+Selected direction:
 
-- A — Pressure Field;
-- B — Assembly;
-- C — Signal.
+**B — Assembly**
 
 Review record:
 
