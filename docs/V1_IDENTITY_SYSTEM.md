@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED / CURRENT IDENTITY AUTHORITY**
+**FOUNDER-APPROVED / PRODUCTION ASSETS APPROVED / CURRENT IDENTITY AUTHORITY**
 
 Parent authority:
 
@@ -43,19 +43,16 @@ Approved characteristics:
 
 The emblem should remain simple enough for favicon, social avatar, UI identity, and transition/loading contexts.
 
-### Production constraint
+### Production status
 
-The approved generated study is a **visual reference only**.
+The approved generated study remains visual reference evidence.
 
-It is not the production master artwork.
-
-Before runtime replacement, the emblem must be redrawn as a clean vector with:
+The production emblem has now been redrawn and founder-approved as clean vector geometry with:
 
 - exact geometric symmetry;
-- optical rather than merely mathematical balance;
-- consistent curve tension;
+- controlled curve tension;
 - clean inner/outer apex behavior;
-- verified small-size legibility;
+- verified small-size legibility at 16px / 24px / 32px / 48px;
 - no raster artifacts;
 - no dependency on glow, blur, bevel, gradient, or texture.
 
@@ -162,8 +159,26 @@ Includes:
 
 The emblem was validated at 16px / 24px / 32px / 48px during production review.
 
-## Current production gate
+## Production approval
 
-**FINAL IDENTITY ASSET APPROVAL**
+The final SVG asset set under:
 
-Do not replace current runtime branding or redesign the homepage until the final SVG asset set is founder-approved.
+`research/identity/sharp-ornamental-01/final/`
+
+is **FOUNDER-APPROVED**.
+
+Approved production assets:
+
+- emblem;
+- Noto Serif Display Regular wordmark;
+- horizontal lockup;
+- stacked lockup;
+- transparent adaptive favicon.
+
+## Current gate
+
+**RUNTIME BRAND-ASSET REPLACEMENT**
+
+Replacing the old public wordmark/favicon is the next implementation gate.
+
+Homepage redesign remains separate and is not authorized by identity approval alone.
