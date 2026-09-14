@@ -330,3 +330,50 @@ Rebuild Gate 3 using:
 **CORRECTED EXACT HERO VISUAL REVIEW**
 
 Do not advance to interaction or page expansion until the corrected hero passes founder review.
+
+
+## Hero visual-material gate
+
+Founder review of the dark Perimeter Field hero identified a specific remaining weakness:
+
+**the structure is acceptable, but the central field lacks a compelling visual event.**
+
+Do not reopen the layout.
+
+Compare three isolated non-text visual directions inside the same hero:
+
+### A — Responsive geometric field
+
+A living geometric system derived from perimeter, boundary, frame, plane, mask, and opening/closing behavior. It must not become generic motion-design wallpaper.
+
+### B — Sculptural graphic object
+
+One strong monochrome or neutral sculptural graphic form that gives the hero immediate visual gravity without becoming unrelated decorative art.
+
+### C — System-resolution visual
+
+A visual system that suggests fragmented constraints resolving into coherent structure. It must remain abstract enough to avoid explainer-diagram literalism.
+
+### Shared constraints
+
+- dark-first near-black environment;
+- same Perimeter Field composition;
+- same approved copy and navigation;
+- no text inside generated material;
+- no logo or wordmark inside generated material;
+- no UI or devices;
+- no fake product imagery;
+- no fake Work;
+- no people or stock photography;
+- no chrome sphere / aurora / AI particle cliché;
+- no decorative filler added merely because the field is empty.
+
+The generated asset is evaluated separately before compositing.
+
+## Current gate
+
+**HERO VISUAL MATERIAL EXPLORATION**
+
+Founder selects A, B, C, or rejects all three.
+
+Only after selection may the chosen visual be composited into the exact hero.
