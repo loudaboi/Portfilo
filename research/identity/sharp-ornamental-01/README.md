@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FINAL IDENTITY CANDIDATES / AWAITING FOUNDER PRODUCTION APPROVAL**
+**FOUNDER-APPROVED PRODUCTION IDENTITY**
 
 ## Emblem
 
@@ -43,7 +43,7 @@ The mark remains recognizable at 16px. Final favicon approval still belongs to t
 - black mark in light mode;
 - off-white mark in dark mode through `prefers-color-scheme`.
 
-This remains a candidate until founder approval.
+Founder-approved for production use.
 
 ## Wordmark candidates
 
@@ -123,8 +123,12 @@ Production characteristics:
 - emblem/wordmark/lockups use `currentColor` for flexible monochrome application;
 - favicon remains transparent and adapts between black/off-white using `prefers-color-scheme`.
 
-## Next decision
+## Approval outcome
 
-Founder approves or rejects the final production asset set.
+Founder approved the final production asset set.
 
-Only after approval may these assets replace the current runtime branding.
+Next gate:
+
+**runtime brand-asset replacement**
+
+No homepage redesign is authorized by this approval.
