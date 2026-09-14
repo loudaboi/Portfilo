@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**APERTURE FOUNDER-APPROVED / VISUAL PROTOTYPE ACTIVE**
+**NO APPROVED HOMEPAGE DESIGN / APERTURE REJECTED / GENERATION PLAN ACTIVE**
 
 Positioning:
 
@@ -130,6 +130,10 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**APERTURE DESKTOP VISUAL MOCKUP + SIGNATURE INTERACTION PROTOTYPE**
+**FOUNDER GENERATION PLAN APPROVAL**
+
+Current task authority:
+
+`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
 
 No homepage implementation, merge to `main`, or deployment is authorized.
