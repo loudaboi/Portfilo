@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 HOMEPAGE CREATIVE PROTOTYPE READY**
+**PORTFILO V1 HOMEPAGE CREATIVE DIRECTION SELECTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -190,13 +190,29 @@ Passed:
 - `astro check`;
 - production build.
 
+## Homepage creative directions
+
+Current authority:
+
+`docs/V1_HOMEPAGE_CREATIVE_PROTOTYPE.md`
+
+Three directions are ready for founder selection:
+
+1. **Aperture**
+2. **Relay**
+3. **Cut Scene**
+
+Current recommendation:
+
+**Aperture**
+
 ## Exact next task
 
-**HOMEPAGE CREATIVE PROTOTYPE**
+**FOUNDER HOMEPAGE CREATIVE DIRECTION SELECTION**
 
-Develop the new homepage creative concept from Responsive Identity + the approved identity system before any replacement homepage implementation.
+Select Aperture, Relay, Cut Scene, or reject all three.
 
-Do not treat the current rejected homepage as the design baseline.
+After selection: produce the first desktop visual mockup and signature-interaction prototype before any runtime homepage implementation.
 
 No merge to `main` or deployment is authorized.
 
