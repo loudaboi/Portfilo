@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 WEBSITE TYPOGRAPHY SELECTION ACTIVE**
+**PORTFILO V1 STRUCTURAL HERO WIREFRAMES ACTIVE**
 
 ## Founder-approved current direction
 
@@ -229,30 +229,32 @@ A 33-file raster/export delivery pack was also generated from the approved maste
 
 **FOUNDER-APPROVED**
 
-## Typography candidates
+## Website typography
 
 Current authority:
 
 `docs/V1_TYPOGRAPHY_DIRECTION.md`
 
-Candidates:
+Founder-approved website typography:
 
-- A — Instrument Sans;
-- B — Mona Sans;
-- C — Geist Sans.
+**Mona Sans**
 
-Current recommendation:
-
-**B — Mona Sans**
+The Noto Serif Display Portfilo wordmark remains independent from the site type system.
 
 ## Exact next task
 
-**FOUNDER WEBSITE TYPOGRAPHY SELECTION**
+**STRUCTURAL HERO WIREFRAMES**
 
-Select A, B, C, or reject all three.
+Produce three materially different grayscale 1440 × 900 hero compositions using:
 
-After selection: produce three structural grayscale hero wireframes only.
+- real Portfilo identity;
+- Mona Sans;
+- exact approved hero copy;
+- exact navigation labels;
+- no imagery;
+- no invented CTA;
+- no visual polish intended to imply final design.
 
-Do not generate another polished homepage image yet.
+Founder selects or rejects before any exact hero prototype.
 
 No merge to `main` or deployment is authorized.
