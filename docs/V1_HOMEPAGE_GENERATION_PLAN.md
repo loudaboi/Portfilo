@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**PLANNING GATE / NO DESIGN GENERATION AUTHORIZED YET**
+**FOUNDER-APPROVED PROCESS AUTHORITY**
 
 ## Decision job
 
@@ -266,10 +266,16 @@ No new polished homepage image may be generated until:
 2. the website typography gate is completed;
 3. a structural wireframe is founder-selected.
 
-## Exact next task after approval
+## Approval outcome
+
+Founder approved this generation process.
+
+## Current gate
 
 **WEBSITE TYPOGRAPHY DIRECTION**
 
-Research and compare no more than three site typography systems against the approved Portfilo identity.
+Current typography decision record:
 
-Do not generate a homepage design during that task.
+`docs/V1_TYPOGRAPHY_DIRECTION.md`
+
+Do not generate a homepage design during this task.
