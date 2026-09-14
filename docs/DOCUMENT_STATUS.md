@@ -84,7 +84,7 @@ Founder-approved direction:
 
 Wordmark:
 
-**NOTO SERIF DISPLAY REGULAR / FOUNDER-APPROVED / PRODUCTION SVG APPROVED**
+**REFINEMENT REOPENED / ALL-CAPS DIRECTION ACTIVE / CURRENT TITLE-CASE ASSET REMAINS RUNTIME FALLBACK UNTIL REPLACEMENT APPROVAL**
 
 Symbol:
 
@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**NO APPROVED HOMEPAGE DESIGN / THREE STRUCTURAL HERO WIREFRAMES READY FOR SELECTION**
+**PERIMETER FIELD STRUCTURE FOUNDER-SELECTED / EXACT HERO PROTOTYPE PAUSED FOR WORDMARK REFINEMENT**
 
 Positioning:
 
@@ -130,11 +130,15 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER STRUCTURAL HERO WIREFRAME SELECTION**
+**ALL-CAPS WORDMARK REFINEMENT**
 
-Current task authority:
+The Sharp Ornamental 01 emblem remains locked.
 
-`docs/V1_HOMEPAGE_GENERATION_PLAN.md`
+The current title-case wordmark remains in runtime until a replacement is explicitly founder-approved.
+
+Homepage structure selected:
+
+**A — Perimeter Field**
 
 Typography authority:
 
