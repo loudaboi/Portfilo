@@ -377,3 +377,48 @@ The generated asset is evaluated separately before compositing.
 Founder selects A, B, C, or rejects all three.
 
 Only after selection may the chosen visual be composited into the exact hero.
+
+
+## Full-screen hero research correction
+
+The founder rejected the three center-object visual studies.
+
+Rejected:
+
+- Responsive geometric field;
+- Sculptural graphic object;
+- System-resolution visual.
+
+Reason:
+
+**they treated the page as a dark website with a visual inserted into its middle rather than treating the entire viewport as the visual environment.**
+
+Current research authority:
+
+`research/design/v1-fullscreen-hero-reference-research.md`
+
+Research references include:
+
+- MetaLab;
+- Cloudflare;
+- Dash Creative;
+- Stripe gradient implementation research;
+- Lusion;
+- Apple-style scroll image sequences;
+- Buffer's hero design/engineering process;
+- Spline's interactive 3D delivery model.
+
+Current conclusions:
+
+1. art direction precedes implementation technology;
+2. full-screen video is a valid high-end production technique;
+3. WebGL earns its complexity when it provides realtime behavior;
+4. hybrid video + shader + HTML/GSAP is a strong Portfilo candidate;
+5. Three.js/full realtime 3D remains conditional, not default;
+6. Perimeter Field may change if the selected full-screen visual requires a different composition.
+
+## Current gate
+
+**FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
+
+Define up to three full-viewport visual concepts before generating or coding another polished hero.
