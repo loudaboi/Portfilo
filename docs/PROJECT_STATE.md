@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 FINAL IDENTITY ASSET APPROVAL ACTIVE**
+**PORTFILO V1 RUNTIME BRAND-ASSET REPLACEMENT READY**
 
 ## Founder-approved current direction
 
@@ -143,13 +143,13 @@ Current recommendation:
 
 No runtime brand assets have been replaced.
 
-## Final identity candidate status
+## Final identity asset status
 
-Founder selected:
+Founder-approved production identity:
 
-**Wordmark B — Noto Serif Display Regular**
+**Sharp Ornamental 01 + Noto Serif Display Regular**
 
-Final candidate assets now exist under:
+Approved production assets:
 
 `research/identity/sharp-ornamental-01/final/`
 
@@ -159,16 +159,14 @@ Final candidate assets now exist under:
 - stacked lockup;
 - transparent adaptive favicon.
 
-No runtime brand assets have been replaced.
+No runtime brand assets have been replaced yet.
 
 ## Exact next task
 
-**FOUNDER FINAL IDENTITY ASSET APPROVAL**
+**RUNTIME BRAND-ASSET REPLACEMENT**
 
-Approve or reject the final SVG identity set.
+Replace the retired public wordmark/favicon with the approved production SVG assets, validate runtime references and CI, and stop there.
 
-After approval, runtime brand-asset replacement becomes the next gate.
-
-Do not redesign or implement the homepage yet.
+Do not redesign or implement the homepage in that gate.
 
 No merge to `main` or deployment is authorized.
