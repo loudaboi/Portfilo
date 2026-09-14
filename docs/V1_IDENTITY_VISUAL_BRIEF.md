@@ -237,9 +237,10 @@ Each concept must show only the following:
 3. horizontal symbol + wordmark lockup;
 4. stacked lockup;
 5. favicon/social-avatar scale;
-6. black on off-white;
-7. off-white on black;
-8. one neutral/silver treatment only if useful.
+6. transparent-background favicon treatment using the emblem alone;
+7. black on off-white;
+8. off-white on black;
+9. one neutral/silver treatment only if useful.
 
 Do not add:
 
@@ -300,6 +301,18 @@ Reject a concept immediately if:
 - its concept needs a paragraph to justify weak geometry;
 - the wordmark is doing more visual work than the emblem;
 - presentation polish is masking an average mark.
+
+## Favicon boundary
+
+The preferred favicon treatment is:
+
+- emblem only;
+- transparent background;
+- no enclosing square, circle, or app-tile field by default;
+- black or off-white mark selected to preserve contrast where the browser/platform permits;
+- simplified geometry only if required for clarity at very small sizes.
+
+A filled app-icon tile may still be developed later for contexts that explicitly require one, but it is not the primary favicon treatment.
 
 ## Color boundary
 
