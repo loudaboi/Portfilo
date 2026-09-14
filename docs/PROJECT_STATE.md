@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 STRUCTURAL HERO WIREFRAMES ACTIVE**
+**PORTFILO V1 STRUCTURAL HERO WIREFRAME SELECTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -241,20 +241,26 @@ Founder-approved website typography:
 
 The Noto Serif Display Portfilo wordmark remains independent from the site type system.
 
+## Structural hero wireframes
+
+Current record:
+
+`research/design/v1-structural-hero-wireframes.md`
+
+Ready for founder review:
+
+- A — Perimeter Field;
+- B — Identity Rail;
+- C — Cross Axis.
+
 ## Exact next task
 
-**STRUCTURAL HERO WIREFRAMES**
+**FOUNDER STRUCTURAL HERO WIREFRAME SELECTION**
 
-Produce three materially different grayscale 1440 × 900 hero compositions using:
+Select A, B, C, or reject all three.
 
-- real Portfilo identity;
-- Mona Sans;
-- exact approved hero copy;
-- exact navigation labels;
-- no imagery;
-- no invented CTA;
-- no visual polish intended to imply final design.
+After selection: build one exact hero prototype only.
 
-Founder selects or rejects before any exact hero prototype.
+No full homepage design, imagery, merge to `main`, or deployment is authorized.
 
 No merge to `main` or deployment is authorized.
