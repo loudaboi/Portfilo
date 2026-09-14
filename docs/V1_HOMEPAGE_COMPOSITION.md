@@ -4,7 +4,23 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED / PHASE 3C COMPOSITION AUTHORITY**
+**REJECTED / SUPERSEDED / HISTORICAL EVIDENCE**
+
+This composition was implemented and then founder-rejected after rendered review.
+
+It no longer authorizes implementation.
+
+Current creative authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+The approved Problem-led software positioning and homepage copy survive separately; this visual composition does not.
+
+Do not use this document to constrain the new Responsive Identity exploration.
+
+---
+
+## Historical content
 
 This document records the approved homepage visual composition and interaction model for Portfilo v1.
 
