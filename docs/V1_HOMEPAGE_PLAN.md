@@ -12,7 +12,9 @@ Phase 3B is complete and founder-approved.
 
 Phase 3C is complete and founder-approved.
 
-Phase 3D is active.
+Phase 3D is complete and validated.
+
+Phase 3E is active.
 
 Approved authorities:
 
@@ -25,6 +27,8 @@ Approved authorities:
 `Hero -> Selected Work -> Services -> Hustle -> Journal -> Newsletter -> Contact -> Footer`
 
 Work is the primary proof surface. The hero introduces Portfilo but should not overshadow Work.
+
+Homepage sections with no real public content do not render.
 
 ## Phase 3 gates
 
@@ -42,23 +46,13 @@ See `docs/V1_HOMEPAGE_POSITIONING.md`.
 
 **COMPLETE / FOUNDER-APPROVED**
 
-Approved homepage copy is recorded in:
+Approved homepage copy:
 
 `docs/V1_HOMEPAGE_COPY.md`
-
-This includes:
-
-- hero headline;
-- hero supporting sentence;
-- section framing;
-- newsletter message;
-- Contact CTA.
 
 ### 3C Composition + interaction
 
 **COMPLETE / FOUNDER-APPROVED**
-
-Define exact layout, pacing, typography, Work media framing, GSAP behavior, responsive simplification, reduced-motion behavior, and conditional rendering.
 
 Approved composition authority:
 
@@ -66,17 +60,44 @@ Approved composition authority:
 
 ### 3D Implementation
 
-**ACTIVE**
+**COMPLETE / VALIDATED**
 
-Replace `src/pages/index.astro` with the approved v1 homepage.
+The legacy homepage at `/` was replaced with the approved v1 homepage.
+
+Validated runtime commit:
+
+`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
+
+Validation run:
+
+`34805811760`
+
+Passed:
+
+- dependency installation;
+- `astro check`;
+- production build.
 
 ### 3E QA
 
-Validate desktop/tablet/mobile, keyboard/focus, reduced motion, Astro navigation lifecycle, GSAP cleanup, overflow, layout stability, performance, and metadata.
+**ACTIVE**
+
+Validate:
+
+- desktop/tablet/mobile;
+- keyboard/focus;
+- reduced motion;
+- Astro navigation lifecycle;
+- GSAP cleanup;
+- overflow;
+- layout stability;
+- performance;
+- metadata;
+- conditional rendering.
 
 ## Empty-state policy
 
-Content-driven routes should have minimal designed empty states.
+Content-driven routes may have minimal designed empty states.
 
 Do not use fake projects, fake testimonials, construction graphics, fabricated media, or filler "coming soon" content.
 
@@ -89,16 +110,17 @@ Before release:
 - Journal should have real content.
 - Contact must have a real contact path.
 - Newsletter must function.
-- Hustle should ideally have at least one real piece; otherwise consider omitting it from public navigation/homepage until one exists.
+- Hustle should ideally have at least one real piece; otherwise omit it from the homepage until one exists.
 
 ## Work boundary
 
-Phase 3 may establish the homepage Work composition, but real M7 evidence, screenshots, workflow demonstrations, and substantiated case-study claims belong to the Work proof phase.
+The homepage Work composition is implemented.
+
+Real M7 evidence, screenshots, workflow demonstrations, and substantiated case-study claims still belong to the Work proof phase.
 
 ## Still open
 
-- exact homepage composition and motion;
-- whether Hustle is surfaced before its first real piece;
+- Phase 3E visual/interaction QA;
 - final Work case study;
 - Contact destination/form backend;
 - favicon and social preview;
