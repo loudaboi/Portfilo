@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 ASSEMBLY MOTION PROTOTYPE ACTIVE**
+**PORTFILO V1 ASSEMBLY VISUAL MATERIAL SELECTION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -318,18 +318,29 @@ Assembly means one full-screen visual composition whose large layers begin misre
 
 This selection does not lock final artwork, layer geometry, or implementation technology.
 
+## Assembly motion outcome
+
+**FOUNDER-APPROVED**
+
+The loader → unresolved layers → alignment → resolved hero behavior passed founder review.
+
+The motion language remains active authority.
+
 ## Exact next task
 
-**ASSEMBLY LOADER → RESOLVED HERO MOTION STUDY**
+**ASSEMBLY FULL-SCREEN VISUAL MATERIAL SELECTION**
 
-Prototype only:
+Current material gate:
 
-- unresolved full-screen layers;
-- loader identity state;
-- alignment into one coherent hero;
-- approved interface resolving above it.
+`research/design/v1-assembly-visual-materials.md`
 
-Use provisional visual material if needed. Judge the behavior before final art direction/material production.
+Candidates:
+
+- A — Crossfield;
+- B — Refraction;
+- C — Strata.
+
+Build and compare the materials as full-viewport graphics under the approved hero interface.
 
 Do not expand the homepage yet.
 
