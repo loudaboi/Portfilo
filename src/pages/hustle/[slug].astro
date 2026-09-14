@@ -6,7 +6,19 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
 
-export async function getStaticPaths(){const entries=await getCollection("articles",({data})=>data.section==="hustle");return entries.map(story=>({params:{slug:story.id},props:{story}}));}
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    "articles",
+    ({ data }) =>
+      data.section === "hustle" &&
+      (!import.meta.env.PROD || data.status === "published"),
+  );
+
+  return entries.map((story) => ({
+    params: { slug: story.id },
+    props: { story },
+  }));
+}
 const {story}=Astro.props;const {title,dek,metaDescription,publishedAt,updatedAt,image,subject,methodology,correction,status}=story.data;const {Content}=await render(story);const isDraft=status==="draft";
 const dateFormatter=new Intl.DateTimeFormat("en-PH",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});const formatDate=(date?:Date)=>date?dateFormatter.format(date):"";
 ---
