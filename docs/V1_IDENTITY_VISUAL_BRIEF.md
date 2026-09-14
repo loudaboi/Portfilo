@@ -4,7 +4,13 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED EXPLORATION BRIEF**
+**COMPLETED / SUPERSEDED BY APPROVED IDENTITY SYSTEM**
+
+Round 1 and Round 2 exploration concluded with founder approval of **Sharp Ornamental 01**.
+
+Current identity authority:
+
+`docs/V1_IDENTITY_SYSTEM.md`
 
 Parent authority:
 
