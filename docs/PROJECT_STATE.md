@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 STRUCTURAL HERO WIREFRAME SELECTION ACTIVE**
+**PORTFILO V1 WORDMARK REFINEMENT ACTIVE**
 
 ## Founder-approved current direction
 
@@ -243,24 +243,32 @@ The Noto Serif Display Portfilo wordmark remains independent from the site type 
 
 ## Structural hero wireframes
 
-Current record:
+Founder-selected direction:
 
-`research/design/v1-structural-hero-wireframes.md`
+**A — Perimeter Field**
 
-Ready for founder review:
+The selection locks the structural idea only. It does not lock final spacing, color, motion, or visual material.
 
-- A — Perimeter Field;
-- B — Identity Rail;
-- C — Cross Axis.
+## Wordmark refinement
+
+The Sharp Ornamental 01 emblem remains approved and unchanged.
+
+The current title-case Noto Serif Display wordmark has been reopened after in-context review inside the selected Perimeter Field structure.
+
+Current hypothesis:
+
+**an all-caps wordmark may better balance the emblem and Mona Sans website typography.**
+
+Do not replace production assets until the founder selects a refined wordmark candidate.
 
 ## Exact next task
 
-**FOUNDER STRUCTURAL HERO WIREFRAME SELECTION**
+**ALL-CAPS WORDMARK REFINEMENT**
 
-Select A, B, C, or reject all three.
+Compare three restrained wordmark treatments at:
+- wordmark-only scale;
+- emblem + wordmark lockup;
+- actual small header scale;
+- ink and off-white applications.
 
-After selection: build one exact hero prototype only.
-
-No full homepage design, imagery, merge to `main`, or deployment is authorized.
-
-No merge to `main` or deployment is authorized.
+No homepage implementation, imagery, merge to `main`, or deployment is authorized.
