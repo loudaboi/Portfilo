@@ -8,14 +8,11 @@ _Last updated: 2026-09-14_
 2. `docs/PROJECT_STATE.md`
 3. this file
 4. `docs/V1_SCOPE.md`
-5. `docs/V1_DESIGN_DIRECTION.md`
-6. `docs/V1_DESIGN_SYSTEM.md`
-7. `docs/V1_HOMEPAGE_PLAN.md`
-8. `docs/V1_HOMEPAGE_POSITIONING.md`
-9. `docs/V1_HOMEPAGE_COPY.md`
-10. `docs/V1_HOMEPAGE_COMPOSITION.md`
-11. current task-specific decision record
-12. current runtime source
+5. `docs/V1_CREATIVE_DIRECTION.md`
+6. `docs/V1_HOMEPAGE_POSITIONING.md`
+7. `docs/V1_HOMEPAGE_COPY.md`
+8. current task-specific decision record
+9. current runtime source
 
 ## Current v1 authority
 
@@ -23,17 +20,13 @@ _Last updated: 2026-09-14_
 
 - `docs/PROJECT_STATE.md`
 - `docs/V1_SCOPE.md`
-- `docs/V1_DESIGN_DIRECTION.md`
-- `docs/V1_DESIGN_SYSTEM.md`
-- `docs/V1_HOMEPAGE_PLAN.md`
+- `docs/V1_CREATIVE_DIRECTION.md`
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
-- `docs/V1_HOMEPAGE_COMPOSITION.md`
 
 ### Decision control
 
 - `skills/portfilo-anti-slop/SKILL.md`
-- `skills/portfilo-v1-design/SKILL.md`
 
 ### Current supporting standards
 
@@ -49,16 +42,23 @@ _Last updated: 2026-09-14_
 - `docs/NEWSLETTER_SYSTEM.md`
 - `docs/CLOUDFLARE_PRODUCTION_SETUP.md`
 
-### Current migration / QA evidence
+### Current research
 
+- `research/design/v1-responsive-identity-research.md`
 - `research/migration/v1-full-rebuild-audit.md`
-- `research/qa/v1-homepage-phase3e.md`
 
-## Removed v0 authority
+## Superseded / historical design evidence
 
-V0-specific News/Why product docs, scanner/source-map material, old design/copy decisions, old navigation research, old site audits, obsolete test-format standards, and other superseded material were removed from the active v1 branch during Phase 2.
+The following documents remain for provenance but have no current design authority:
 
-Git history remains the historical archive.
+- `docs/V1_DESIGN_DIRECTION.md` — Obsidian Precision, founder-rejected after rendered review;
+- `docs/V1_DESIGN_SYSTEM.md` — implementation system derived from Obsidian Precision;
+- `docs/V1_HOMEPAGE_PLAN.md` — old Phase 3 implementation sequence;
+- `docs/V1_HOMEPAGE_COMPOSITION.md` — rejected homepage composition;
+- `research/qa/v1-homepage-phase3e.md` — technical/source QA evidence for the rejected runtime design;
+- `skills/portfilo-v1-design/SKILL.md` — old Obsidian Precision implementation contract.
+
+Git history remains the archive.
 
 ## Product model
 
@@ -70,21 +70,39 @@ Newsletter is embedded.
 
 News, Why, and the public Standards page are retired.
 
+## Current creative state
+
+Founder-approved direction:
+
+**Responsive Identity**
+
+Wordmark:
+
+**OPEN / CURRENT GEOMETRY NOT AUTHORITATIVE**
+
+Symbol:
+
+**OPEN / NOT REQUIRED**
+
+Typography:
+
+**OPEN / CURRENT RUNTIME FONTS NOT LOCKED**
+
+Homepage:
+
+**CURRENT RUNTIME VISUAL DESIGN REJECTED / REPLACEMENT NOT YET DESIGNED**
+
+Positioning:
+
+**PROBLEM-LED SOFTWARE / CURRENT**
+
+Homepage copy:
+
+**FOUNDER-APPROVED / CURRENT UNLESS EXPLICITLY REOPENED**
+
 ## Runtime status
 
-Phase 0 + Phase 1 foundation: **COMPLETE / VALIDATED**
-
-Phase 2 clean-cut route/content migration: **COMPLETE / VALIDATED**
-
-Phase 3A homepage positioning + narrative research: **COMPLETE / FOUNDER-APPROVED**
-
-Phase 3B homepage copy approval: **COMPLETE / FOUNDER-APPROVED**
-
-Phase 3C homepage composition + interaction: **COMPLETE / FOUNDER-APPROVED**
-
-Phase 3D homepage implementation: **COMPLETE / VALIDATED**
-
-Validated runtime commit:
+Engineering baseline remains validated at:
 
 `ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
 
@@ -96,20 +114,10 @@ Result:
 
 **PASS**
 
-The current branch may contain documentation-only commits after that runtime commit.
-
-## Phase 3E status
-
-Source-level QA: **PASS**
-
-Rendered browser QA: **NOT YET VERIFIED**
-
-Evidence:
-
-`research/qa/v1-homepage-phase3e.md`
+This validation does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**PHASE 3E RENDERED HOMEPAGE QA**
+**RESPONSIVE IDENTITY: WORDMARK + BEHAVIOR EXPLORATION**
 
-No merge to `main` or deployment is authorized.
+No homepage implementation, merge to `main`, or deployment is authorized.
