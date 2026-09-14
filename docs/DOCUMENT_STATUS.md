@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**NO APPROVED HOMEPAGE DESIGN / APERTURE REJECTED / GENERATION PLAN ACTIVE**
+**NO APPROVED HOMEPAGE DESIGN / THREE STRUCTURAL HERO WIREFRAMES READY FOR SELECTION**
 
 Positioning:
 
@@ -130,7 +130,7 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**STRUCTURAL HERO WIREFRAMES**
+**FOUNDER STRUCTURAL HERO WIREFRAME SELECTION**
 
 Current task authority:
 
