@@ -7,8 +7,17 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("articles", ({ data }) => data.section === "journal");
-  return entries.map((story) => ({ params: { slug: story.id }, props: { story } }));
+  const entries = await getCollection(
+    "articles",
+    ({ data }) =>
+      data.section === "journal" &&
+      (!import.meta.env.PROD || data.status === "published"),
+  );
+
+  return entries.map((story) => ({
+    params: { slug: story.id },
+    props: { story },
+  }));
 }
 const { story } = Astro.props;
 const { title, dek, metaDescription, topic, publishedAt, updatedAt, image, methodology, correction, status } = story.data;
