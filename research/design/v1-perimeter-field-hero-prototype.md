@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**CORRECTED DARK-FIRST PROTOTYPE / READY FOR FOUNDER VISUAL REVIEW / NOT RUNTIME IMPLEMENTATION**
+**DARK-FIRST PERIMETER FIELD PROTOTYPE / READY FOR FOUNDER VISUAL REVIEW / NOT RUNTIME IMPLEMENTATION**
 
 Parent authority:
 
@@ -31,8 +31,8 @@ Do not iterate that artifact by cosmetic adjustment.
 
 Website identity:
 
-- Sharp Ornamental 01 emblem only in homepage/header chrome;
-- the `PORTFILO` wordmark remains a canonical brand asset but is not shown in this hero;
+- Sharp Ornamental 01 emblem at upper-left perimeter;
+- approved `PORTFILO` wordmark at upper-right perimeter;
 - Mona Sans website typography.
 
 Environment:
@@ -66,7 +66,7 @@ Reference viewport:
 Perimeter:
 
 - emblem at upper-left;
-- no wordmark in the opposite corner;
+- approved `PORTFILO` wordmark at upper-right;
 - vertical navigation remains on the right perimeter;
 - structural lines remain restrained and functional.
 
@@ -81,7 +81,6 @@ Content:
 
 No:
 
-- wordmark in site chrome;
 - CTA;
 - fake Work;
 - photography;
@@ -108,7 +107,7 @@ Perimeter Field remains the authored spatial idea.
 
 ## Current gate
 
-**CORRECTED DARK-FIRST HERO VISUAL REVIEW**
+**DARK-FIRST HERO VISUAL REVIEW**
 
 If approved:
 
