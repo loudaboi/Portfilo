@@ -4,7 +4,15 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**EXPLORATION / NOT YET FOUNDER-APPROVED**
+**EXPLORATION COMPLETE / HISTORICAL EVIDENCE**
+
+Selected outcome:
+
+**Sharp Ornamental 01**
+
+Current identity authority:
+
+`docs/V1_IDENTITY_SYSTEM.md`
 
 Parent authority:
 
