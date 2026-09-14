@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**PRODUCTION CANDIDATES / AWAITING FOUNDER WORDMARK SELECTION**
+**FINAL IDENTITY CANDIDATES / AWAITING FOUNDER PRODUCTION APPROVAL**
 
 ## Emblem
 
@@ -77,9 +77,9 @@ Character:
 - strongest balance between premium/editorial and robust digital use;
 - closest current production candidate to the approved generated identity study while retaining better small-header durability than the light cut.
 
-Current recommendation:
+Founder selection:
 
-**B**
+**B — Noto Serif Display Regular**
 
 ### C — Noto Serif Display Light
 
@@ -101,18 +101,30 @@ Hairlines are more fragile at small header sizes.
 
 The source typefaces used for these studies are open-source fonts. The committed candidates contain only converted vector outlines, not font files.
 
+## Final asset set
+
+Located under:
+
+`research/identity/sharp-ornamental-01/final/`
+
+Files:
+
+- `portfilo-emblem.svg`
+- `portfilo-wordmark.svg`
+- `portfilo-lockup-horizontal.svg`
+- `portfilo-lockup-stacked.svg`
+- `portfilo-favicon.svg`
+
+Production characteristics:
+
+- emblem uses exact vector geometry;
+- wordmark uses founder-selected B outlines;
+- lockups use fixed optical spacing;
+- emblem/wordmark/lockups use `currentColor` for flexible monochrome application;
+- favicon remains transparent and adapts between black/off-white using `prefers-color-scheme`.
+
 ## Next decision
 
-Founder selects:
+Founder approves or rejects the final production asset set.
 
-- A;
-- B;
-- C;
-- or rejects all three.
-
-After selection:
-
-1. refine wordmark spacing and optical details;
-2. finalize horizontal/stacked lockups;
-3. approve production emblem + wordmark + favicon;
-4. only then replace runtime brand assets.
+Only after approval may these assets replace the current runtime branding.
