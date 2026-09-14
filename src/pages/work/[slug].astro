@@ -5,7 +5,17 @@ import SiteHead from "../../components/SiteHead.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import ArticleBody from "../../components/ArticleBody.astro";
-export async function getStaticPaths(){const entries=await getCollection("work");return entries.map(project=>({params:{slug:project.id},props:{project}}));}
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    "work",
+    ({ data }) => !import.meta.env.PROD || data.status === "published",
+  );
+
+  return entries.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
 const {project}=Astro.props;const {title,dek,year,status,client,capabilities,cover,outcome}=project.data;const {Content}=await render(project);const isDraft=status==="draft";const formatLabel=(value:string)=>value.replaceAll("-"," ");
 ---
 <!doctype html><html lang="en"><head><SiteHead title={`${title} | Portfilo`} description={dek} robots={isDraft?"noindex, nofollow":undefined} canonical={!isDraft} social={!isDraft}/></head>
