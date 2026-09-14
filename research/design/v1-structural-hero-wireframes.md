@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**THREE STRUCTURAL WIREFRAMES READY / AWAITING FOUNDER SELECTION**
+**COMPLETE / A — PERIMETER FIELD FOUNDER-SELECTED**
 
 Parent authority:
 
@@ -101,19 +101,22 @@ Risk:
 
 - could become overly diagrammatic if the horizontal axis is treated as decoration rather than functional structure.
 
-## Current gate
+## Founder selection
 
-Founder selects:
+**A — Perimeter Field**
 
-- A — Perimeter Field;
-- B — Identity Rail;
-- C — Cross Axis;
-- or rejects all three.
+The founder selected Perimeter Field as the homepage structural direction.
 
-After selection:
+This selection locks the structural logic only:
 
-**EXACT HERO PROTOTYPE**
+- identity separated across the top perimeter;
+- vertical navigation on the right edge;
+- compact supporting copy upper-left;
+- headline anchored lower-left / lower-center;
+- intentional open spatial field.
 
-The selected composition may then be built with exact spacing, selected typography, approved identity, and exact copy.
+It does not lock the full homepage, motion system, media, or below-fold composition.
 
-No imagery or full-page design is authorized by wireframe selection alone.
+Next gate:
+
+**EXACT PERIMETER FIELD HERO PROTOTYPE**
