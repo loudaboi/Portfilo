@@ -84,7 +84,7 @@ Founder-approved direction:
 
 Wordmark:
 
-**REFINEMENT REOPENED / ALL-CAPS DIRECTION ACTIVE / CURRENT TITLE-CASE ASSET REMAINS RUNTIME FALLBACK UNTIL REPLACEMENT APPROVAL**
+**A — NOTO SERIF DISPLAY ALL CAPS / FOUNDER-SELECTED DIRECTION / EXACT PRODUCTION GEOMETRY AWAITING APPROVAL**
 
 Symbol:
 
@@ -130,11 +130,15 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**ALL-CAPS WORDMARK REFINEMENT**
+**ALL-CAPS WORDMARK PRODUCTION REVIEW**
+
+Production candidate:
+
+`research/identity/sharp-ornamental-01/all-caps-a/`
 
 The Sharp Ornamental 01 emblem remains locked.
 
-The current title-case wordmark remains in runtime until a replacement is explicitly founder-approved.
+The current title-case wordmark remains in runtime until the exact replacement vector is founder-approved.
 
 Homepage structure selected:
 
