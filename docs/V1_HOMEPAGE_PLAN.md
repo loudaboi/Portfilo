@@ -66,17 +66,24 @@ The legacy homepage at `/` was replaced with the approved v1 homepage.
 
 Validated runtime commit:
 
-`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
+`ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
 
 Validation run:
 
-`34805811760`
+`34807816064`
 
 Passed:
 
 - dependency installation;
 - `astro check`;
 - production build.
+
+Phase 3E hardening completed before rendered QA:
+
+- production draft routes are excluded;
+- homepage motion uses the shared motion utility;
+- unused footer prop scaffolding was removed;
+- CI validation no longer duplicates `astro check`.
 
 ### 3E QA
 
