@@ -84,7 +84,7 @@ Founder-approved direction:
 
 Wordmark:
 
-**A — NOTO SERIF DISPLAY ALL CAPS / FOUNDER-SELECTED DIRECTION / EXACT PRODUCTION GEOMETRY AWAITING APPROVAL**
+**PORTFILO ALL CAPS / NOTO SERIF DISPLAY SEMICONDENSED MEDIUM / FOUNDER-APPROVED PRODUCTION ASSET**
 
 Symbol:
 
@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**PERIMETER FIELD STRUCTURE FOUNDER-SELECTED / EXACT HERO PROTOTYPE PAUSED FOR WORDMARK REFINEMENT**
+**PERIMETER FIELD STRUCTURE FOUNDER-SELECTED / EXACT HERO PROTOTYPE ACTIVE**
 
 Positioning:
 
@@ -130,22 +130,18 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**ALL-CAPS WORDMARK PRODUCTION REVIEW**
+**PERIMETER FIELD EXACT HERO PROTOTYPE**
 
-Production candidate:
+Identity inputs are fixed:
 
-`research/identity/sharp-ornamental-01/all-caps-a/`
-
-The Sharp Ornamental 01 emblem remains locked.
-
-The current title-case wordmark remains in runtime until the exact replacement vector is founder-approved.
+- Sharp Ornamental 01 emblem;
+- approved `PORTFILO` all-caps wordmark;
+- Mona Sans website typography.
 
 Homepage structure selected:
 
 **A — Perimeter Field**
 
-Typography authority:
+Do not expand below the first viewport yet.
 
-`docs/V1_TYPOGRAPHY_DIRECTION.md`
-
-No homepage implementation, merge to `main`, or deployment is authorized.
+No merge to `main` or deployment is authorized.
