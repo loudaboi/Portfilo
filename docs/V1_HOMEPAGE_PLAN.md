@@ -10,12 +10,15 @@ Phase 3A is complete and founder-approved.
 
 Phase 3B is complete and founder-approved.
 
-Phase 3C is active.
+Phase 3C is complete and founder-approved.
+
+Phase 3D is active.
 
 Approved authorities:
 
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
+- `docs/V1_HOMEPAGE_COMPOSITION.md`
 
 ## Homepage hierarchy
 
@@ -53,13 +56,17 @@ This includes:
 
 ### 3C Composition + interaction
 
-**ACTIVE**
+**COMPLETE / FOUNDER-APPROVED**
 
 Define exact layout, pacing, typography, Work media framing, GSAP behavior, responsive simplification, reduced-motion behavior, and conditional rendering.
 
-Do not implement the homepage during 3C.
+Approved composition authority:
+
+`docs/V1_HOMEPAGE_COMPOSITION.md`
 
 ### 3D Implementation
+
+**ACTIVE**
 
 Replace `src/pages/index.astro` with the approved v1 homepage.
 
