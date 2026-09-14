@@ -81,13 +81,15 @@ Phase 3B homepage copy approval: **COMPLETE / FOUNDER-APPROVED**
 
 Phase 3C homepage composition + interaction: **COMPLETE / FOUNDER-APPROVED**
 
+Phase 3D homepage implementation: **COMPLETE / VALIDATED**
+
 Validated runtime commit:
 
-`a0f6878bcd205c3ebd0089ac2730195d9a806281`
+`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
 
 Validation run:
 
-`34781911660`
+`34805811760`
 
 Result:
 
@@ -97,10 +99,6 @@ The current branch may contain documentation-only commits after that runtime com
 
 ## Exact next task
 
-**PHASE 3D HOMEPAGE IMPLEMENTATION**
-
-Use the approved positioning, copy, design-system, and composition authorities.
-
-No merge to `main` or deployment is authorized.
+**PHASE 3E HOMEPAGE QA**
 
 No merge to `main` or deployment is authorized.
