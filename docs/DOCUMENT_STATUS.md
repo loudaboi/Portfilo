@@ -52,6 +52,7 @@ _Last updated: 2026-09-14_
 - `research/design/v1-responsive-identity-research.md`
 - `research/design/v1-wordmark-symbol-research.md`
 - `research/design/v1-fullscreen-hero-reference-research.md`
+- `research/design/v1-fullscreen-hero-art-directions.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -101,7 +102,7 @@ Typography:
 
 Homepage:
 
-**FULL-SCREEN HERO ART-DIRECTION GATE ACTIVE / PERIMETER FIELD PROVISIONAL EVIDENCE**
+**FULL-SCREEN HERO ART-DIRECTION SELECTION ACTIVE / PERIMETER FIELD PROVISIONAL EVIDENCE**
 
 Positioning:
 
@@ -131,7 +132,13 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
+**FOUNDER FULL-SCREEN HERO ART-DIRECTION SELECTION**
+
+Candidates:
+
+- A — Pressure Field;
+- B — Assembly;
+- C — Signal.
 
 Review record:
 
