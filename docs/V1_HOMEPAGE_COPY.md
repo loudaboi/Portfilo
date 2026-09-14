@@ -124,10 +124,14 @@ Do not add:
 
 Any material wording change requires a new copy decision.
 
-## Next gate
+## Current design relationship
 
-**PHASE 3C HOMEPAGE COMPOSITION + INTERACTION**
+The former Phase 3C composition and Phase 3D rendered homepage were later founder-rejected.
 
-Phase 3C defines the exact visual composition, pacing, typography, media framing, motion, responsive simplification, reduced-motion behavior, and conditional rendering.
+This copy remains approved content authority unless explicitly reopened.
 
-Do not implement the homepage until Phase 3C is approved.
+Current creative authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+Do not force this copy into the rejected composition. Future identity/homepage prototypes may explore different typographic and spatial treatments while preserving the approved wording until a separate copy decision changes it.
