@@ -297,7 +297,7 @@ const contactReady = false;
 
       gsap.registerPlugin(ScrollTrigger);
 
-      let homepageContext: gsap.Context | undefined;
+      let homepageContext: ReturnType<typeof gsap.context> | undefined;
 
       const cleanupHomepageMotion = () => {
         homepageContext?.revert();
