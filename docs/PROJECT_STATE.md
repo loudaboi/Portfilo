@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 HOMEPAGE CREATIVE DIRECTION SELECTION ACTIVE**
+**PORTFILO V1 APERTURE VISUAL PROTOTYPE ACTIVE**
 
 ## Founder-approved current direction
 
@@ -196,23 +196,19 @@ Current authority:
 
 `docs/V1_HOMEPAGE_CREATIVE_PROTOTYPE.md`
 
-Three directions are ready for founder selection:
-
-1. **Aperture**
-2. **Relay**
-3. **Cut Scene**
-
-Current recommendation:
+Founder-selected homepage creative direction:
 
 **Aperture**
 
+Relay and Cut Scene remain non-authoritative exploration evidence.
+
 ## Exact next task
 
-**FOUNDER HOMEPAGE CREATIVE DIRECTION SELECTION**
+**APERTURE DESKTOP VISUAL MOCKUP + SIGNATURE INTERACTION PROTOTYPE**
 
-Select Aperture, Relay, Cut Scene, or reject all three.
+Produce the first desktop homepage mockup around the approved Aperture direction, then prototype the aperture behavior through the first major state transition.
 
-After selection: produce the first desktop visual mockup and signature-interaction prototype before any runtime homepage implementation.
+No runtime homepage implementation is authorized until that visual/prototype gate is founder-approved.
 
 No merge to `main` or deployment is authorized.
 
