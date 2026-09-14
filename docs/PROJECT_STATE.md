@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 3C HOMEPAGE COMPOSITION + INTERACTION ACTIVE**
+**PORTFILO V1 PHASE 3D HOMEPAGE IMPLEMENTATION ACTIVE**
 
 Approved and completed:
 
@@ -18,7 +18,8 @@ Approved and completed:
 - removal of obsolete v0 routes/content/assets/docs/research;
 - Phase 3A homepage positioning + narrative research;
 - founder-approved **Problem-led software** positioning territory and claim boundaries;
-- Phase 3B homepage copy approval.
+- Phase 3B homepage copy approval;
+- Phase 3C homepage composition + interaction approval.
 
 ## Branches
 
@@ -94,8 +95,7 @@ No merge to `main` or deployment occurred.
 
 ## Intentionally unresolved before release
 
-- Phase 3 homepage composition + interaction;
-- Phase 3 homepage implementation;
+- Phase 3 homepage implementation and QA;
 - real Work case-study evidence/media;
 - final Services page copy beyond the approved homepage framing;
 - public Contact destination/email;
@@ -104,22 +104,21 @@ No merge to `main` or deployment occurred.
 - final newsletter cadence;
 - optional move from `/confirmed` to `/newsletter/confirmed`, coordinated with beehiiv.
 
+## Phase 3C result
+
+Founder-approved composition authority:
+
+`docs/V1_HOMEPAGE_COMPOSITION.md`
+
+The homepage composition, responsive behavior, motion hierarchy, reduced-motion behavior, and conditional-rendering rules are locked for implementation.
+
 ## Exact next task
 
-**PHASE 3C HOMEPAGE COMPOSITION + INTERACTION**
+**PHASE 3D HOMEPAGE IMPLEMENTATION**
 
-Define and approve:
+Replace the legacy homepage at `/` using the approved positioning, copy, design system, and composition authorities.
 
-- exact section composition;
-- hierarchy and pacing;
-- typography application;
-- Work media framing;
-- GSAP behavior;
-- responsive simplification;
-- reduced-motion behavior;
-- conditional rendering.
-
-Do not implement the homepage during Phase 3C.
+Do not merge to `main` or deploy.
 
 The homepage hierarchy remains:
 
