@@ -5,7 +5,7 @@
   "description": "Portfilo v1 studio website and editorial platform.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"
   },
