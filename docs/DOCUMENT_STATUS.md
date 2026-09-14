@@ -100,7 +100,7 @@ Typography:
 
 Homepage:
 
-**CURRENT RUNTIME VISUAL DESIGN REJECTED / CREATIVE PROTOTYPE NEXT**
+**CURRENT RUNTIME VISUAL DESIGN REJECTED / THREE CREATIVE DIRECTIONS READY FOR SELECTION**
 
 Positioning:
 
@@ -130,6 +130,6 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**HOMEPAGE CREATIVE PROTOTYPE**
+**FOUNDER HOMEPAGE CREATIVE DIRECTION SELECTION**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
