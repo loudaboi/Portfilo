@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PHASE 2 CLEAN-CUT MIGRATION COMPLETE / PHASE 3 APPROVAL GATE**
+**PORTFILO V1 PHASE 3A HOMEPAGE POSITIONING + NARRATIVE RESEARCH ACTIVE**
 
 Approved and completed:
 
@@ -98,9 +98,9 @@ No merge to `main` or deployment occurred.
 
 ## Exact next task
 
-**PHASE 3 HOMEPAGE REBUILD RESEARCH / COPY / IMPLEMENTATION GATE**
+**PHASE 3A HOMEPAGE POSITIONING + NARRATIVE RESEARCH**
 
-Do not begin Phase 3 until founder approval.
+Founder approval has advanced the project into Phase 3A. Do not implement the homepage during 3A.
 
 The homepage should then be replaced at `/` using the approved hierarchy:
 
