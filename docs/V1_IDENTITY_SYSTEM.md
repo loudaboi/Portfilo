@@ -175,10 +175,31 @@ Approved production assets:
 - stacked lockup;
 - transparent adaptive favicon.
 
+## Runtime adoption
+
+**COMPLETE / VALIDATED**
+
+Validated runtime commit:
+
+`797d089d15b0712efa5c1f1b6102c3f69378051a`
+
+Validation run:
+
+`34841160013`
+
+The approved identity is now used by:
+
+- shared header wordmark;
+- shared footer wordmark;
+- browser SVG favicon;
+- organization structured-data emblem.
+
+Retired legacy favicon fallbacks and old wordmark runtime assets were removed.
+
 ## Current gate
 
-**RUNTIME BRAND-ASSET REPLACEMENT**
+**HOMEPAGE CREATIVE PROTOTYPE**
 
-Replacing the old public wordmark/favicon is the next implementation gate.
+The identity may now inform the next homepage design exploration.
 
-Homepage redesign remains separate and is not authorized by identity approval alone.
+Do not jump directly from identity approval to homepage implementation.
