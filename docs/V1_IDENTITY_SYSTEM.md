@@ -70,11 +70,19 @@ Approved character:
 - no monogram extraction;
 - no exaggerated futuristic customization.
 
-Founder-selected production wordmark base:
+Previously approved production wordmark base:
 
-**Noto Serif Display Regular**
+**Noto Serif Display Regular / title case**
 
-The production wordmark is stored as SVG outlines, so runtime identity use does not require shipping the font file.
+After review inside the selected homepage structure, the founder reopened only the wordmark treatment.
+
+Current refinement hypothesis:
+
+**ALL CAPS**
+
+The existing title-case production wordmark remains the runtime fallback until a new wordmark is explicitly selected and production-approved.
+
+The Sharp Ornamental 01 emblem is not reopened.
 
 ## Lockups
 
@@ -198,8 +206,10 @@ Retired legacy favicon fallbacks and old wordmark runtime assets were removed.
 
 ## Current gate
 
-**HOMEPAGE CREATIVE PROTOTYPE**
+**ALL-CAPS WORDMARK REFINEMENT**
 
-The identity may now inform the next homepage design exploration.
+The founder selected **Perimeter Field** as the homepage structural direction, and in-context review exposed concern with the title-case wordmark.
 
-Do not jump directly from identity approval to homepage implementation.
+Compare restrained all-caps wordmark candidates before continuing to the exact hero prototype.
+
+Do not change the emblem or runtime brand assets until the replacement wordmark is founder-approved.
