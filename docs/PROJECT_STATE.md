@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 WORDMARK REFINEMENT ACTIVE**
+**PORTFILO V1 PERIMETER FIELD EXACT HERO PROTOTYPE ACTIVE**
 
 ## Founder-approved current direction
 
@@ -147,14 +147,14 @@ No runtime brand assets have been replaced.
 
 Founder-approved production identity:
 
-**Sharp Ornamental 01 + Noto Serif Display Regular**
+**Sharp Ornamental 01 + PORTFILO all-caps Noto Serif Display**
 
 Approved production assets:
 
 `research/identity/sharp-ornamental-01/final/`
 
 - emblem;
-- wordmark;
+- all-caps wordmark;
 - horizontal lockup;
 - stacked lockup;
 - transparent adaptive favicon.
@@ -251,38 +251,32 @@ The selection locks the structural idea only. It does not lock final spacing, co
 
 ## Wordmark refinement
 
-The Sharp Ornamental 01 emblem remains approved and unchanged.
+**COMPLETE / FOUNDER-APPROVED / ADOPTED**
 
-The current title-case Noto Serif Display wordmark has been reopened after in-context review inside the selected Perimeter Field structure.
+Current wordmark:
 
-Founder-selected wordmark direction:
+**PORTFILO / Noto Serif Display SemiCondensed Medium / ALL CAPS**
 
-**A — Noto Serif Display ALL CAPS**
+The exact production geometry and lockups are now adopted in:
 
-Production candidate:
+- canonical final identity assets;
+- repository brand masters;
+- fixed ink/off-white exports;
+- runtime shared wordmark asset.
 
-`research/identity/sharp-ornamental-01/all-caps-a/`
-
-Candidate construction:
-
-- Noto Serif Display SemiCondensed Medium;
-- `PORTFILO`;
-- 0.115em tracking;
-- SVG vector outlines;
-- `currentColor`;
-- emblem unchanged.
-
-The existing title-case runtime asset remains active until the exact production geometry is founder-approved.
+Sharp Ornamental 01 remains unchanged.
 
 ## Exact next task
 
-**ALL-CAPS WORDMARK PRODUCTION REVIEW**
+**PERIMETER FIELD EXACT HERO PROTOTYPE**
 
-Review the exact vector wordmark and horizontal/stacked lockups.
+Build one exact 1440 × 900 desktop hero using:
 
-After production approval:
-1. replace final/runtime wordmark + lockups;
-2. regenerate the brand asset pack;
-3. return to the selected **Perimeter Field** exact hero prototype.
+- selected Perimeter Field structure;
+- approved all-caps wordmark + emblem;
+- Mona Sans;
+- exact approved hero copy;
+- exact navigation labels;
+- no fake Work, imagery, CTA, or below-fold sections.
 
-No homepage implementation, merge to `main`, or deployment is authorized yet.
+No merge to `main` or deployment is authorized.
