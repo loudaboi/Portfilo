@@ -127,19 +127,37 @@ No merge to `main` or deployment occurred.
 - final newsletter cadence;
 - optional move from `/confirmed` to `/newsletter/confirmed`, coordinated with beehiiv.
 
+## Phase 3E status
+
+Source-level QA evidence:
+
+`research/qa/v1-homepage-phase3e.md`
+
+Verified so far:
+
+- CI install/check/build: PASS;
+- semantic/source structure: PASS;
+- approved copy fidelity: PASS;
+- conditional rendering: PASS;
+- responsive source contract: PASS;
+- reduced-motion source contract: PASS;
+- Astro/GSAP cleanup source contract: PASS;
+- keyboard/focus source contract: PASS;
+- metadata source contract: PASS.
+
+Rendered browser QA is not yet verified.
+
+Current content means the homepage renders:
+
+`Hero -> Services -> Journal -> Newsletter -> Footer`
+
+Work, Hustle, and homepage Contact are intentionally omitted until real public content/path exists.
+
 ## Exact next task
 
-**PHASE 3E HOMEPAGE QA**
+**PHASE 3E RENDERED HOMEPAGE QA**
 
-Validate:
-
-- desktop/tablet/mobile composition;
-- keyboard/focus behavior;
-- reduced motion;
-- Astro navigation lifecycle and GSAP cleanup;
-- overflow/layout stability;
-- homepage performance;
-- metadata and conditional rendering.
+Inspect an actual rendered branch runtime for desktop/tablet/mobile composition, keyboard/focus, reduced motion, Astro navigation/GSAP cleanup, overflow/layout stability, newsletter layout, and basic performance.
 
 Do not merge to `main` or deploy.
 
