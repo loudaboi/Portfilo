@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 PERIMETER FIELD HERO VISUAL REVIEW ACTIVE**
+**PORTFILO V1 DARK-FIRST PERIMETER FIELD HERO REVIEW ACTIVE**
 
 ## Founder-approved current direction
 
@@ -261,15 +261,17 @@ Sharp Ornamental 01 remains unchanged.
 
 ## Exact hero prototype
 
-Current review record:
+The first polished Perimeter Field prototype exposed two incorrect assumptions and is rejected as visual authority:
 
-`research/design/v1-perimeter-field-hero-prototype.md`
+- the wordmark does not belong in homepage/header chrome;
+- the homepage should not be light-first.
 
-Prototype constraints satisfied:
+Founder-approved corrected contract:
 
 - 1440 × 900 desktop reference;
 - selected Perimeter Field structure;
-- approved all-caps wordmark + emblem;
+- **dark-first near-black environment**;
+- **Sharp Ornamental 01 emblem only in website chrome**;
 - Mona Sans;
 - exact approved hero copy;
 - exact navigation labels;
@@ -280,7 +282,7 @@ Prototype constraints satisfied:
 
 ## Exact next task
 
-**FOUNDER HERO VISUAL REVIEW**
+**CORRECTED DARK-FIRST HERO VISUAL REVIEW**
 
 If approved, move to one signature interaction only.
 
