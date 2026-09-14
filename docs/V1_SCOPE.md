@@ -141,22 +141,31 @@ The previous three-times-per-week cadence is not automatically carried into v1. 
 
 ## Visual direction
 
-The previous v0 visual direction, "premium editorial restraint + digital immediacy," is retired as current authority for v1.
+The previous Obsidian Precision direction and its concrete design system were founder-rejected after rendered homepage review.
 
-Approved directional intent for research:
+Current founder-approved creative direction:
 
-- alive;
-- technically excellent;
-- expensive;
-- high visual ambition with low visual noise;
-- predominantly dark and neutral;
-- silver / graphite / cold-white material language;
-- minimal color;
-- motion used as evidence of craft and control;
-- strong project presentation;
-- no generic SaaS or creative-agency gimmicks.
+**Responsive Identity**
 
-The finished v1 design direction and system are governed by `docs/V1_DESIGN_DIRECTION.md` and `docs/V1_DESIGN_SYSTEM.md`.
+Authority:
+
+`docs/V1_CREATIVE_DIRECTION.md`
+
+The identity itself should behave like software: responsive, stateful, and capable of changing across studio, Work, Hustle, and Journal contexts while remaining recognizably Portfilo.
+
+Current identity questions are intentionally open:
+
+- wordmark geometry;
+- responsive/variable behavior;
+- typography;
+- signal color;
+- symbol need;
+- favicon/social behavior;
+- motion prototype.
+
+The current wordmark, favicon, Instrument Sans, permanent dark palette, and old grid/composition rules have no automatic authority over the redesign.
+
+Do not implement another homepage before identity and prototype approval.
 
 ## Technical architecture
 
@@ -172,9 +181,11 @@ Preserve unless research or implementation proves a requirement to change:
 - the existing narrow beehiiv subscription proxy if still useful;
 - minimal framework surface.
 
-GSAP is the approved v1 motion dependency. Native scrolling remains the default.
+GSAP remains available as the current motion dependency. Native scrolling remains the default.
 
-Do not add React, a database, authentication, CMS, 3D/WebGL, or other major infrastructure by default.
+Do not add React, a database, authentication, CMS, or other major infrastructure by default.
+
+WebGL/canvas/shader/Three.js work requires a specific founder-approved concept that materially benefits from it; it is neither foundation infrastructure nor categorically prohibited.
 
 ## Branch and release boundary
 
@@ -201,9 +212,13 @@ No v1 merge to `main`, production deployment, or release is authorized by this s
 
 ## Current sequence
 
-Completed: authority reset, design research, information architecture/design system, migration planning, clean-cut migration, foundation implementation, and route/content foundation.
+Completed and retained: product repositioning, migration planning, clean-cut migration, engineering foundation, route/content foundation, positioning, and homepage copy.
 
-Current: Phase 3 homepage rebuild.
+Rejected/superseded: Obsidian Precision design authority and its rendered homepage implementation.
+
+Current: Responsive Identity exploration.
+
+Next: wordmark/behavior prototypes -> identity approval -> homepage creative prototype -> design system -> implementation.
 
 Later: Work proof/case studies, remaining page/content refinement, and release QA.
 
