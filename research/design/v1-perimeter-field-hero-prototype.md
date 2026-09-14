@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**READY FOR FOUNDER VISUAL REVIEW / NOT RUNTIME IMPLEMENTATION**
+**CORRECTED DARK-FIRST PROTOTYPE / READY FOR FOUNDER VISUAL REVIEW / NOT RUNTIME IMPLEMENTATION**
 
 Parent authority:
 
@@ -16,23 +16,32 @@ Parent authority:
 
 ## Decision job
 
-Translate the founder-selected **Perimeter Field** wireframe into one exact 1440 × 900 desktop hero prototype without expanding into the full homepage.
+Translate the founder-selected **Perimeter Field** structure into one exact 1440 × 900 desktop hero while preserving the founder-approved dark-first, emblem-only website identity.
+
+## Rejected prototype evidence
+
+The first exact prototype is rejected as visual authority because it carried forward two assumptions that were not actually locked:
+
+1. visible `PORTFILO` wordmark in homepage/header chrome;
+2. light/stone homepage environment.
+
+Do not iterate that artifact by cosmetic adjustment.
 
 ## Locked inputs
 
-Identity:
+Website identity:
 
-- Sharp Ornamental 01 emblem;
-- `PORTFILO` all-caps wordmark;
-- Noto Serif Display SemiCondensed Medium wordmark geometry;
-- monochrome-first identity.
+- Sharp Ornamental 01 emblem only in homepage/header chrome;
+- the `PORTFILO` wordmark remains a canonical brand asset but is not shown in this hero;
+- Mona Sans website typography.
 
-Website typography:
+Environment:
 
-- Mona Sans;
-- display uses restrained semi-condensed width;
-- body uses normal width;
-- UI/navigation uses modestly heavier weight.
+- dark-first;
+- near-black primary surface;
+- off-white primary text;
+- restrained graphite/neutral secondary values;
+- darkness is the environment, not the design idea by itself.
 
 Exact public copy:
 
@@ -48,38 +57,31 @@ Navigation:
 - Journal
 - Contact
 
-## Exact prototype composition
+## Corrected prototype composition
 
 Reference viewport:
 
 **1440 × 900**
 
-Surface:
-
-- neutral stone-gray field: `#E9E8E3`;
-- ink: `#111111`;
-- supporting text: `#555550`;
-- structural lines: low-opacity ink.
-
 Perimeter:
 
 - emblem at upper-left;
-- all-caps wordmark at upper-right;
-- one horizontal structural line below the top identity perimeter;
-- one narrow right-side navigation rail;
-- navigation is vertical and distributed through the rail.
+- no wordmark in the opposite corner;
+- vertical navigation remains on the right perimeter;
+- structural lines remain restrained and functional.
 
 Content:
 
-- supporting sentence occupies the upper-left field;
+- supporting sentence remains compact in the upper-left field;
 - headline anchors the lower-left / lower-center;
-- headline remains large enough to establish hierarchy but is not treated as a full-screen billboard;
-- one intentionally unresolved central spatial field remains open for the later signature-interaction gate.
+- central spatial field remains intentionally unresolved for the signature-interaction gate;
+- no content is added merely to fill the dark field.
 
-## What is deliberately absent
+## What remains deliberately absent
 
 No:
 
+- wordmark in site chrome;
 - CTA;
 - fake Work;
 - photography;
@@ -90,38 +92,23 @@ No:
 - fake metadata;
 - below-fold section;
 - mobile design;
-- scroll animation;
-- full homepage composition.
+- scroll animation.
 
-## Anti-slop check
+## Anti-slop requirement
 
-The prototype intentionally avoids:
+The dark surface must not regress into the rejected generic formula:
 
-- standard logo-left/navigation-right header;
-- left-copy/right-image hero;
-- centered manifesto composition;
-- generic bento/card layout;
-- fashion/editorial serif headline;
-- permanent black creative-tech canvas;
-- decorative symbol wallpaper;
-- filler copy;
-- image generation.
+- permanent black + giant white grotesk as the whole identity;
+- generic creative-tech grid;
+- repeated thin-rule sections;
+- decorative glow/chrome/particles;
+- empty darkness used as a substitute for composition.
 
-## Review questions
-
-Founder review should judge:
-
-1. Does Perimeter Field still work once it is no longer low-fidelity?
-2. Does the new all-caps wordmark improve the identity in context?
-3. Does the right perimeter navigation feel authored rather than awkward?
-4. Is the open center intentional enough without becoming empty-for-empty's-sake?
-5. Does Mona Sans communicate software without turning the page into generic SaaS?
-6. Is the headline scale controlled enough?
-7. Does the composition create a credible foundation for one meaningful interaction?
+Perimeter Field remains the authored spatial idea.
 
 ## Current gate
 
-**FOUNDER HERO VISUAL REVIEW**
+**CORRECTED DARK-FIRST HERO VISUAL REVIEW**
 
 If approved:
 
