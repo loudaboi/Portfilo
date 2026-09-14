@@ -44,7 +44,8 @@ _Last updated: 2026-09-14_
 
 ### Current identity authority
 
-- `docs/V1_IDENTITY_VISUAL_BRIEF.md`
+- `docs/V1_IDENTITY_SYSTEM.md`
+- `docs/V1_IDENTITY_VISUAL_BRIEF.md` — completed exploration brief
 
 ### Current research
 
@@ -83,15 +84,15 @@ Founder-approved direction:
 
 Wordmark:
 
-**OPEN / CURRENT GEOMETRY NOT AUTHORITATIVE**
+**SHARP ORNAMENTAL 01 WORDMARK CHARACTER APPROVED / PRODUCTION TYPE RESOLUTION OPEN**
 
 Symbol:
 
-**SHARP ORNAMENTAL 01 SELECTED FOR ROUND 2 REFINEMENT**
+**SHARP ORNAMENTAL 01 FOUNDER-APPROVED / VECTOR PRODUCTION OPEN**
 
 Favicon:
 
-**TRANSPARENT BACKGROUND / EMBLEM ONLY PREFERRED**
+**TRANSPARENT BACKGROUND / EMBLEM ONLY APPROVED**
 
 Typography:
 
@@ -127,6 +128,6 @@ This validation does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**ROUND 1 STATIC IDENTITY STUDIES**
+**VECTOR IDENTITY PRODUCTION**
 
 No homepage implementation, merge to `main`, or deployment is authorized.
