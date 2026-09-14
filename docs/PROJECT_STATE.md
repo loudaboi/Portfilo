@@ -271,7 +271,8 @@ Founder-approved corrected contract:
 - 1440 × 900 desktop reference;
 - selected Perimeter Field structure;
 - **dark-first near-black environment**;
-- **Sharp Ornamental 01 emblem only in website chrome**;
+- **Sharp Ornamental 01 emblem at upper-left perimeter**;
+- **approved `PORTFILO` wordmark at upper-right perimeter**;
 - Mona Sans;
 - exact approved hero copy;
 - exact navigation labels;
@@ -282,7 +283,7 @@ Founder-approved corrected contract:
 
 ## Exact next task
 
-**CORRECTED DARK-FIRST HERO VISUAL REVIEW**
+**DARK-FIRST PERIMETER FIELD HERO VISUAL REVIEW**
 
 If approved, move to one signature interaction only.
 
