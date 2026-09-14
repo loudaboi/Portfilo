@@ -98,11 +98,11 @@ Implemented:
 
 Final validated runtime commit:
 
-`4de81ee79f8a5bd3dc73d2dcc7d6897674064c67`
+`ffdfbbef0340d412feb5c6f8d41468b05ae99af9`
 
 GitHub Actions run:
 
-`34805811760`
+`34807816064`
 
 Result:
 
@@ -113,6 +113,13 @@ Passed:
 - dependency installation;
 - `astro check`;
 - production build.
+
+Phase 3E code-quality hardening also completed:
+
+- production static paths now exclude draft Work, Hustle, and Journal entries while local development can still preview drafts;
+- homepage GSAP lifecycle now uses the shared `src/scripts/motion.ts` utility;
+- unused `SiteFooter` prop scaffolding was removed;
+- CI no longer runs `astro check` twice.
 
 No merge to `main` or deployment occurred.
 
