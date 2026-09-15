@@ -53,7 +53,8 @@ _Last updated: 2026-09-15_
 - `research/design/v1-wordmark-symbol-research.md`
 - `research/design/v1-fullscreen-hero-reference-research.md`
 - `research/design/v1-fullscreen-hero-art-directions.md`
-- `research/design/v1-stateful-typeset-constraint-fit.md`
+- `research/design/v1-stateful-typeset-constraint-fit.md` — founder-rejected specimen / historical evidence
+- `research/design/v1-background-atmosphere-motion-language.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -99,11 +100,11 @@ Favicon:
 
 Typography:
 
-**STATEFUL TYPESET SPECIMEN REVIEW / BRICOLAGE GROTESQUE + ONEST UNDER TEST / NOT LOCKED**
+**HERO TYPOGRAPHY OPEN / BRICOLAGE GROTESQUE REJECTED FOR HERO / NEXT TYPE REVIEW AFTER BACKGROUND SELECTION**
 
 Homepage:
 
-**STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW / ASSEMBLY RETAINED AS OPTIONAL INTERACTION EVIDENCE**
+**BACKGROUND ATMOSPHERE + MOTION LANGUAGE DECISION GATE / STATIC FRAME + TRANSITION-LED STRATEGY**
 
 Positioning:
 
@@ -133,34 +134,28 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER VISUAL REVIEW — STATEFUL TYPESET / CONSTRAINT FIT**
+**BACKGROUND ATMOSPHERE SELECTION**
 
-Current review record:
+Current authority:
 
-`research/design/v1-stateful-typeset-constraint-fit.md`
+`research/design/v1-background-atmosphere-motion-language.md`
 
-Static specimen:
+Candidates:
 
-`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
+- A — Graphite Exposure — recommended;
+- B — Low-Chroma Spectrum;
+- C — Authored Light Plate.
+
+Constraint Fit / Bricolage are rejected as current hero authority.
 
 Retain:
 
 - Sharp Ornamental 01;
 - approved `PORTFILO` all-caps production wordmark;
 - exact approved homepage copy;
-- exact primary navigation;
-- dark-first environment.
+- dark-first environment;
+- Responsive Identity.
 
-Under review, not locked:
+Motion direction now emphasizes clean masks, continuity, shared-element transitions, and precise state changes rather than complex background rendering.
 
-- Bricolage Grotesque display treatment;
-- Onest interface/support treatment;
-- stepped headline geometry;
-- lower information rail;
-- final relationship to Assembly motion.
-
-Crossfield / Refraction / Strata remain rejected.
-
-Perimeter Field is not protected as the final structure.
-
-No full homepage expansion, merge to `main`, or deployment is authorized.
+No full hero composition, homepage expansion, merge to `main`, or deployment is authorized.
