@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Current phase
 
-**PORTFILO V1 ASSEMBLY VISUAL MATERIAL SELECTION ACTIVE**
+**PORTFILO V1 HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION ACTIVE**
 
 ## Founder-approved current direction
 
@@ -228,11 +228,13 @@ Current authority:
 
 `docs/V1_TYPOGRAPHY_DIRECTION.md`
 
-Founder-approved website typography:
+Status:
 
-**Mona Sans**
+**REOPENED FOR HERO REVIEW**
 
-The Noto Serif Display Portfilo wordmark remains independent from the site type system.
+Mona Sans is no longer locked as the hero display solution after rendered review.
+
+The Noto Serif Display Portfilo wordmark remains independent and approved.
 
 ## Structural hero wireframes
 
@@ -326,21 +328,34 @@ The loader → unresolved layers → alignment → resolved hero behavior passed
 
 The motion language remains active authority.
 
+## Latest founder visual review
+
+Current review record:
+
+`research/design/v1-hero-visual-review-reset.md`
+
+Still strong:
+
+- Sharp Ornamental 01 emblem;
+- approved PORTFILO wordmark;
+- Assembly loader-to-resolved-hero behavior as an interaction idea.
+
+Reopened / rejected:
+
+- Mona Sans as a locked hero display treatment;
+- support paragraph placement/treatment;
+- Crossfield;
+- Refraction;
+- Strata;
+- the latest total hero composition.
+
 ## Exact next task
 
-**ASSEMBLY FULL-SCREEN VISUAL MATERIAL SELECTION**
+**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
 
-Current material gate:
+Research and define a small number of stronger full-screen hero directions where background, typography, and support-copy composition are evaluated as one system.
 
-`research/design/v1-assembly-visual-materials.md`
-
-Candidates:
-
-- A — Crossfield;
-- B — Refraction;
-- C — Strata.
-
-Build and compare the materials as full-viewport graphics under the approved hero interface.
+Do not jump directly into another shader or polished mockup.
 
 Do not expand the homepage yet.
 
