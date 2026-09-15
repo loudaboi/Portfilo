@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 OPENING-SCREEN CONTENT + HIERARCHY LOCKED / GEOMETRY OPEN**
+**PORTFILO V1 METALAB-REFERENCED OPENING GEOMETRY STUDY**
 
 ## Founder-approved current direction
 
@@ -714,16 +714,35 @@ Reopened assumptions:
 
 Obys remains structural evidence only.
 
+## Structural reference selection
+
+Founder-selected single structural reference:
+
+**MetaLab**
+
+MetaLab now owns the macro opening-screen reference role for this phase.
+
+Do not combine multiple reference-site geometries while deciding the opening composition.
+
+Obys measurements remain historical evidence only and must not drive the next geometry decision.
+
 ## Exact next task
 
-**OPENING-SCREEN GEOMETRY DECISION**
+**MEASURE THE CURRENT METALAB OPENING**
 
-Derive the simplest strong composition for the five approved elements using the measured reference evidence.
+Inspect the real current MetaLab homepage at a fixed desktop viewport and document:
 
-Do not add more content.
+- identity placement and scale;
+- navigation placement;
+- proposition placement and scale;
+- first visible real Work/content;
+- major alignment axes;
+- viewport proportions;
+- intentional empty regions;
+- relationship between the opening and the next content state.
 
-Do not implement until the geometry itself is founder-approved.
+No Portfilo implementation yet.
 
-Codex remains implementation-only after geometry approval.
+After measurement, translate only the transferable MetaLab structure into Portfilo's approved five opening elements and real Work.
 
 No merge to `main` or deployment is authorized.
