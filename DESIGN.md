@@ -69,7 +69,7 @@ No visible spotlight, orb, blob, glow source, or obvious radial-gradient shape.
 
 Grain must actually be visible.
 
-## Approved hero copy
+## Approved opening copy
 
 Headline:
 
@@ -77,9 +77,9 @@ Headline:
 
 Support:
 
-**Portfilo designs and develops software around business needs and constraints, from internal systems and automation to practical AI integrations and customer-facing products.**
+**We design and develop software around business needs and constraints.**
 
-Do not rewrite this during visual iteration.
+Do not add capability enumeration, CTA copy, kickers, or extra explanatory text to the opening screen without a separate founder decision.
 
 ## Avoid
 
@@ -182,6 +182,38 @@ Do not redesign below-fold sections yet.
 Do not add hero motion yet.
 
 The current goal is to make the **static real first viewport visually strong in-browser** before interaction work resumes.
+
+## Opening-screen hierarchy
+
+Treat the first screen as **Portfilo's opening screen**, not as a conventional marketing hero.
+
+Only five content elements are currently justified:
+
+1. approved PORTFILO wordmark;
+2. Sharp Ornamental 01 emblem;
+3. navigation;
+4. approved headline;
+5. approved short support sentence.
+
+Current hierarchy:
+
+- PORTFILO wordmark is the primary textual identity;
+- headline is the primary proposition;
+- support clarifies the proposition;
+- navigation is secondary interface;
+- emblem is a secondary independent identity marker.
+
+Do not force equal visual weight between emblem and wordmark.
+
+Do not give every element its own rail or visual event.
+
+The opening is **not required** to be exactly 100vh.
+
+The next section may be partially visible when that continuation is intentional and visually useful.
+
+Do not place the support sentence on a separate rail merely because a reference uses descriptive copy there.
+
+Do not copy Obys coordinates literally. Use its measurements to understand structure, not to reproduce its page.
 
 ## First-viewport constraints
 
