@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**HERO TYPOGRAPHY REOPENED / STATEFUL TYPESET SPECIMEN UNDER REVIEW**
+**HERO TYPOGRAPHY OPEN / BRICOLAGE GROTESQUE REJECTED FOR HERO**
 
 Parent authority:
 
@@ -222,25 +222,25 @@ The approved PORTFILO wordmark remains unchanged.
 
 Current next gate:
 
-**STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW**
+**BACKGROUND ATMOSPHERE SELECTION BEFORE TYPOGRAPHY**
 
-Founder selected **Stateful Typeset** as the primary hero direction and approved **A — Constraint Fit** for the first static specimen.
+The Stateful Typeset / Constraint Fit specimen was founder-rejected.
 
-Current specimen typography under test:
+Hero-specific outcome:
 
-- **Bricolage Grotesque** — hero display;
-- **Onest** — interface/navigation/support.
+- Bricolage Grotesque is rejected;
+- Onest has no current authority;
+- Mona Sans remains reopened and unprotected;
+- no replacement hero family is selected yet.
 
-This is a test, not a typography lock.
+Reason for sequencing change:
 
-Review record:
+The hero type should be evaluated inside the selected background environment rather than being forced to carry the entire visual system on an empty black canvas.
 
-`research/design/v1-stateful-typeset-constraint-fit.md`
+Current background/motion authority:
 
-Specimen:
+`research/design/v1-background-atmosphere-motion-language.md`
 
-`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
+Do not start another typography specimen until the founder selects a background family.
 
-Do not treat the previous Mona Sans hero treatment as locked.
-
-Do not promote Bricolage Grotesque or Onest to production typography until the static specimen passes founder visual review.
+The approved PORTFILO wordmark remains unchanged.
