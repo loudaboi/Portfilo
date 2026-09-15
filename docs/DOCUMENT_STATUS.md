@@ -116,7 +116,7 @@ Typography:
 
 Homepage:
 
-**FIRST-VIEWPORT IMPLEMENTATION REJECTED / VISUAL PROCESS RESET PENDING**
+**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY / CODEX IMPLEMENTATION ONLY**
 
 Positioning:
 
@@ -152,12 +152,14 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**VISUAL AUTHORSHIP PROCESS RESET**
+**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY**
 
-The first Codex browser-first composition pass is founder-rejected and was not committed.
+Lead structural reference:
 
-Do not ask Codex to invent another hero layout from abstract constraints.
+**Obys**
 
-Next step is to define a concrete reference-pinned geometry source of truth before implementation.
+Codex must not invent the macro composition.
 
-No runtime homepage implementation, hero motion, below-fold redesign, merge to `main`, or deployment is authorized.
+Next output must define the actual first-viewport geometry before implementation.
+
+No runtime homepage implementation, merge to `main`, or deployment is authorized.
