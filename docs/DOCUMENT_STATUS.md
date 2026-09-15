@@ -27,6 +27,7 @@ _Last updated: 2026-09-15_
 ### Decision control
 
 - `skills/portfilo-anti-slop/SKILL.md`
+- `skills/portfilo-visual-direction/SKILL.md` — mandatory for consequential visual work
 
 ### Current supporting standards
 
@@ -55,7 +56,8 @@ _Last updated: 2026-09-15_
 - `research/design/v1-fullscreen-hero-art-directions.md`
 - `research/design/v1-stateful-typeset-constraint-fit.md` — founder-rejected specimen / historical evidence
 - `research/design/v1-background-atmosphere-motion-language.md`
-- `research/design/v1-graphite-exposure-background-specimen.html`
+- `research/design/v1-graphite-exposure-background-specimen.html` — founder-rejected background-only specimen
+- `research/design/v1-impeccable-method-study.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -105,7 +107,7 @@ Typography:
 
 Homepage:
 
-**GRAPHITE EXPOSURE BACKGROUND REVIEW / TRANSITION-LED STRATEGY**
+**VISUAL REFERENCE TRANSLATION / COMPLETE HERO DIRECTION RESET**
 
 Positioning:
 
@@ -135,18 +137,24 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER VISUAL REVIEW — GRAPHITE EXPOSURE BACKGROUND**
+**REFERENCE EXTRACTION + COMPLETE HERO DIRECTION PROPOSAL**
 
-Founder-selected background:
+Mandatory visual skill:
 
-**A — Graphite Exposure**
+`skills/portfilo-visual-direction/SKILL.md`
 
-Review specimen:
+Method study:
 
-`research/design/v1-graphite-exposure-background-specimen.html`
+`research/design/v1-impeccable-method-study.md`
 
-The plate contains only the background atmosphere plus approved emblem and wordmark anchors.
+Graphite Exposure is rejected and must not be tuned.
 
-Hero typography remains open and must not be selected until this background passes review.
+The OpenAI Business reference applies to the quiet grainy background/material only, not its structure.
 
-No full hero composition, motion prototype, homepage expansion, merge to `main`, or deployment is authorized.
+MERSI / 4WIDE / Dash / MetaLab should be translated by mechanism into Portfilo rather than imitated at the surface level.
+
+Next output is no more than two complete first-viewport directions for founder selection.
+
+No isolated background or typography specimen.
+
+No hero implementation, homepage expansion, merge to `main`, or deployment is authorized.
