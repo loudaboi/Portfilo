@@ -11,8 +11,9 @@ _Last updated: 2026-09-15_
 5. `docs/V1_CREATIVE_DIRECTION.md`
 6. `docs/V1_HOMEPAGE_POSITIONING.md`
 7. `docs/V1_HOMEPAGE_COPY.md`
-8. current task-specific decision record
-9. current runtime source
+8. `docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+9. current task-specific decision record
+10. current runtime source
 
 ## Current v1 authority
 
@@ -23,6 +24,7 @@ _Last updated: 2026-09-15_
 - `docs/V1_CREATIVE_DIRECTION.md`
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
+- `docs/V1_HERO_EXPERIENCE_CONTRACT.md` — founder-approved current hero design authority
 
 ### Decision control
 
@@ -60,8 +62,9 @@ _Last updated: 2026-09-15_
 - `research/design/v1-impeccable-method-study.md`
 - `research/design/v1-hero-reference-translation-and-directions.md`
 - `research/design/v1-quiet-surface-hero-typography-composition.md`
-- `research/design/v1-quiet-surface-hero-prototype.html`
-- `research/design/v1-quiet-surface-hero-prototype-review.md`
+- `research/design/v1-quiet-surface-hero-prototype.html` — founder-rejected historical prototype
+- `research/design/v1-quiet-surface-hero-prototype-review.md` — founder-rejected historical review
+- `research/design/v1-hero-four-state-storyboard.md` — current founder review gate
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -107,11 +110,11 @@ Favicon:
 
 Typography:
 
-**HERO TYPOGRAPHY OPEN / BRICOLAGE GROTESQUE REJECTED FOR HERO / NEXT TYPE REVIEW AFTER BACKGROUND SELECTION**
+**HERO TYPOGRAPHY OPEN / NEXT TYPE REVIEW AFTER STORYBOARD APPROVAL**
 
 Homepage:
 
-**STATIC HERO REJECTED / COMPLETE HERO EXPERIENCE REDESIGN**
+**FOUR-STATE HERO STORYBOARD REVIEW / EXPERIENCE CONTRACT LOCKED**
 
 Positioning:
 
@@ -147,20 +150,23 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**COMPLETE HERO EXPERIENCE REDESIGN**
+**FOUNDER 4-STATE STORYBOARD REVIEW**
 
-The prior Quiet Surface static hero is founder-rejected and historical only.
+Authority:
 
-Do not tune it.
+`docs/V1_HERO_EXPERIENCE_CONTRACT.md`
 
-Current non-negotiable correction:
+Storyboard:
 
-- neutral black / graphite, not blue;
-- grain must be visibly present and refined;
-- no generic left-heavy giant-sans hero;
-- interaction, transition, and pointer behavior must be part of the hero design itself;
-- Schibsted is reopened and not locked by the failed prototype.
+`research/design/v1-hero-four-state-storyboard.md`
 
-Next output is a materially different complete hero composition proposal before any new implementation.
+Review:
 
-No runtime homepage replacement, merge to `main`, or deployment is authorized.
+1. identity-led composition;
+2. material-based pointer response;
+3. navigation-driven identity-field reorganization;
+4. wordmark-led first-scroll continuity.
+
+Typography remains open until the storyboard passes.
+
+No new hero implementation, page expansion, merge to `main`, or deployment is authorized.
