@@ -64,7 +64,8 @@ _Last updated: 2026-09-15_
 - `research/design/v1-quiet-surface-hero-typography-composition.md`
 - `research/design/v1-quiet-surface-hero-prototype.html` — founder-rejected historical prototype
 - `research/design/v1-quiet-surface-hero-prototype-review.md` — founder-rejected historical review
-- `research/design/v1-hero-four-state-storyboard.md` — current founder review gate
+- `research/design/v1-hero-four-state-storyboard.md`
+- `research/design/v1-hero-layout-storyboard-comparison.md` — current founder review gate
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -114,7 +115,7 @@ Typography:
 
 Homepage:
 
-**FOUR-STATE HERO STORYBOARD REVIEW / EXPERIENCE CONTRACT LOCKED**
+**HERO LAYOUT STORYBOARD SELECTION / EXPERIENCE CONTRACT LOCKED**
 
 Positioning:
 
@@ -150,23 +151,18 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**FOUNDER 4-STATE STORYBOARD REVIEW**
+**FOUNDER LAYOUT ARCHITECTURE SELECTION**
 
-Authority:
+Candidates:
 
-`docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+- B — Split Tension — recommended;
+- A — Identity Spine — challenger;
+- reject both.
 
-Storyboard:
+Current comparison:
 
-`research/design/v1-hero-four-state-storyboard.md`
+`research/design/v1-hero-layout-storyboard-comparison.md`
 
-Review:
-
-1. identity-led composition;
-2. material-based pointer response;
-3. navigation-driven identity-field reorganization;
-4. wordmark-led first-scroll continuity.
-
-Typography remains open until the storyboard passes.
+Typography remains open.
 
 No new hero implementation, page expansion, merge to `main`, or deployment is authorized.
