@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW**
+**PORTFILO V1 BACKGROUND ATMOSPHERE + MOTION LANGUAGE DECISION GATE**
 
 ## Founder-approved current direction
 
@@ -349,44 +349,84 @@ Reopened / rejected:
 - Strata;
 - the latest total hero composition.
 
-## Stateful Typeset selection
+## Latest hero review
 
-Founder-selected hero direction:
+The Stateful Typeset / Constraint Fit specimen is **founder-rejected** as the current hero direction.
 
-**Stateful Typeset**
+Rejected:
 
-Selected first specimen:
+- stepped headline composition as the primary visual event;
+- Bricolage Grotesque as hero display typography;
+- typography-only hero strategy.
 
-**A — Constraint Fit**
+Onest has no current typography authority.
 
-Current review record:
+The review established a stronger direction:
 
-`research/design/v1-stateful-typeset-constraint-fit.md`
+**restrained static atmosphere + excellent identity/typography + high-quality motion/transitions**
 
-Static review specimen:
+4WIDE remains useful motion/experience evidence, but its Three.js/WebGL background complexity is not a Portfilo requirement.
 
-`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
+MERSI is especially relevant for:
 
-Current typography under test:
+- clean shared-element transitions;
+- project media acting as transition material;
+- GSAP Flip layout continuity;
+- deliberate masks and page transitions.
 
-- Bricolage Grotesque for hero display;
-- Onest for navigation and support copy.
+Current research authority:
 
-These typefaces are **not yet locked**. The specimen must pass founder visual review before typography or composition advances.
+`research/design/v1-background-atmosphere-motion-language.md`
 
-The current composition hypothesis moves the approved support sentence into a lower information rail rather than placing it directly beneath the headline.
+## Background candidates
 
-No shader, generated imagery, fake Work, or below-fold design is part of this gate.
+Current decision gate:
+
+1. **A — Graphite Exposure** — recommended first prototype;
+2. **B — Low-Chroma Spectrum**;
+3. **C — Authored Light Plate**.
+
+No candidate is selected yet.
+
+## Motion direction
+
+Current motion territory favors:
+
+- identity-led load;
+- mask/clip hero exit;
+- continuity between sections;
+- future Work → case-study shared-element transitions;
+- fast restrained global route transitions.
+
+Use HTML/CSS + GSAP first.
+
+GSAP Flip is a likely future fit for real Work transitions.
+
+No current requirement exists for Three.js, realtime WebGL, or a new framework.
+
+## Typography
+
+Hero typography remains open.
+
+Bricolage Grotesque is rejected for the hero.
+
+Do not select another display family until the background family is approved.
+
+The approved `PORTFILO` wordmark remains unchanged.
 
 ## Exact next task
 
-**FOUNDER VISUAL REVIEW — STATEFUL TYPESET / CONSTRAINT FIT**
+**BACKGROUND ATMOSPHERE SELECTION**
 
-Judge the 1440 × 900 static specimen as one typography/identity composition.
+Founder selects:
 
-If it passes, refine only the approved static composition before testing motion.
+- A — Graphite Exposure;
+- B — Low-Chroma Spectrum;
+- C — Authored Light Plate.
 
-If it fails, diagnose whether the failure is the typeface, stepped geometry, information rail, or Stateful Typeset direction itself before producing another candidate.
+After selection, build only the isolated 1440 × 900 background plate with the approved emblem + wordmark as context anchors.
+
+Do not compose another full hero yet.
 
 Do not add motion yet.
 
