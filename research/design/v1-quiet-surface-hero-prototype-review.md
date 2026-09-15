@@ -1,0 +1,148 @@
+# Portfilo v1 Quiet Surface Hero Prototype Review
+
+_Last updated: 2026-09-15_
+
+## Status
+
+**STATIC PROTOTYPE READY FOR FOUNDER REVIEW**
+
+## Decision job
+
+Judge the complete 1440 × 900 resting hero for the selected **Quiet Surface / Active Interface** direction before any motion is added.
+
+## Prototype
+
+`research/design/v1-quiet-surface-hero-prototype.html`
+
+## Includes
+
+- approved Sharp Ornamental 01 + PORTFILO horizontal lockup geometry;
+- Schibsted Grotesk website typography;
+- exact approved hero headline;
+- exact approved support copy;
+- exact primary navigation;
+- quiet dark blue-black / near-black grain surface;
+- exact static composition.
+
+## Excludes
+
+- motion;
+- pointer response;
+- first-scroll transition;
+- below-fold homepage;
+- responsive/mobile treatment;
+- runtime homepage replacement.
+
+## What to observe
+
+1. Does the resting frame feel calm and intentional rather than empty or generic?
+2. Does Schibsted Grotesk sit correctly beside the serif PORTFILO wordmark?
+3. Is the headline large enough to lead without returning to the rejected giant-poster treatment?
+4. Does the support copy finally feel integrated into the hero rather than detached?
+
+## Rendered critique
+
+### Specificity
+
+The static frame remains deliberately restrained and would not carry the entire Portfilo identity by itself.
+
+That is consistent with the selected direction: the strongest authorship is reserved for state change, continuity, and interaction.
+
+The static frame now carries Portfilo through:
+
+- the approved emblem/wordmark relationship;
+- the exact problem-led proposition;
+- the studio/editorial tension between the wordmark and website grotesk;
+- the selected quiet surface.
+
+Do not add decorative material merely to increase static distinctiveness.
+
+### Hierarchy
+
+Pass after correction.
+
+Order:
+
+1. headline;
+2. identity / primary navigation;
+3. support explanation.
+
+The headline was reduced from the first pass so it no longer dominates the entire viewport.
+
+### Coherence
+
+Pass.
+
+The serif wordmark provides the refined brand voice while the grotesk carries software/interface communication.
+
+The grainy dark surface remains supporting material rather than a competing visual object.
+
+### Restraint
+
+Pass.
+
+No:
+
+- abstract hero object;
+- filler imagery;
+- fake Work;
+- extra labels;
+- arbitrary rules;
+- detached information rail;
+- decorative center composition.
+
+### Craft corrections made before founder review
+
+First render exposed:
+
+- headline too close to the previous oversized-display failure;
+- unreliable header geometry in the review render;
+- identity contrast needed to be explicit;
+- full five-item navigation needed reliable right alignment.
+
+Correction pass:
+
+- headline reduced to 84 px reference territory;
+- hero pinned to a deliberate lower-left resting position;
+- approved identity geometry forced to off-white in the prototype;
+- header geometry made explicit;
+- support measure retained directly beneath headline;
+- navigation keeps all five approved labels.
+
+## Verification note
+
+The review environment could not fetch the external Schibsted webfont during local image rendering.
+
+The geometry/material review therefore used a local sans fallback for the internal screenshot.
+
+The actual HTML prototype loads **Schibsted Grotesk** from Google Fonts and is the founder typography-review artifact.
+
+The explicit headline line break is fixed, so the main composition does not depend on automatic wrapping.
+
+## Current gate
+
+**FOUNDER STATIC HERO REVIEW**
+
+If approved:
+
+1. lock Schibsted Grotesk for the current hero/web direction;
+2. retain this resting composition as the motion baseline;
+3. prototype the focal interaction layer:
+   - controlled load/reveal;
+   - first-scroll continuity;
+   - subtle pointer/material response.
+
+If rejected, record whether the failure is:
+
+- typography;
+- composition;
+- surface/material;
+- or the Quiet Surface direction itself.
+
+Do not add motion to rescue a rejected static composition.
+
+No runtime homepage replacement.
+
+No merge to `main`.
+
+No deployment.
