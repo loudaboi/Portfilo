@@ -22,7 +22,9 @@ This document approves wording only. It does not authorize homepage implementati
 
 ### Supporting sentence
 
-Portfilo designs and develops software around business needs and constraints, from internal systems and automation to practical AI integrations and customer-facing products.
+**We design and develop software around business needs and constraints.**
+
+The longer capability-heavy sentence is retired from the opening screen. Service range belongs in the Services section rather than being compressed into the opening message.
 
 ## Selected Work
 
