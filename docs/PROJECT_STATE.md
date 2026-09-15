@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 VISUAL REFERENCE TRANSLATION / HERO DIRECTION RESET**
+**PORTFILO V1 COMPLETE HERO DIRECTION SELECTION**
 
 ## Founder-approved current direction
 
@@ -440,43 +440,39 @@ Hero typography should be evaluated inside the selected complete first-viewport 
 
 The approved `PORTFILO` wordmark remains unchanged.
 
+## Reference translation outcome
+
+Current record:
+
+`research/design/v1-hero-reference-translation-and-directions.md`
+
+Mechanism roles are now explicit:
+
+- OpenAI Business — quiet grainy background/material only;
+- MERSI — continuity, masks, shared-media transitions;
+- 4WIDE — deliberate interaction states and motion quality;
+- Dash — concept-bound pointer/material response;
+- MetaLab — interaction-triggered alternate visual worlds.
+
+Two complete first-viewport directions are ready:
+
+1. **A — Quiet Surface / Active Interface** — recommended;
+2. **B — Context Frames** — more ambitious MetaLab-derived challenger.
+
+Both retain the approved identity, copy, product architecture, and no-fake-evidence constraints.
+
+Hero typography remains open and will be selected inside the chosen direction.
+
 ## Exact next task
 
-**REFERENCE EXTRACTION + COMPLETE HERO DIRECTION PROPOSAL**
+**FOUNDER DIRECTION SELECTION**
 
-Apply:
+Choose:
 
-`skills/portfilo-visual-direction/SKILL.md`
+- A — Quiet Surface / Active Interface;
+- B — Context Frames;
+- reject both.
 
-Study the actual current references by mechanism, especially:
+Do not implement a hero before direction selection.
 
-- OpenAI Business background/material;
-- MERSI transition continuity;
-- 4WIDE motion/interaction;
-- Dash pointer-responsive behavior;
-- MetaLab authored visual-state behavior.
-
-For each, record:
-
-1. mechanism to learn;
-2. surface not to copy;
-3. Portfilo translation;
-4. implementation consequence.
-
-Then propose no more than **two materially different complete first-viewport directions**.
-
-Each direction must describe together:
-
-- resting background/material;
-- identity placement;
-- headline/support hierarchy;
-- navigation relationship;
-- motion thesis;
-- pointer behavior;
-- credible implementation path.
-
-Do not build a new hero until the founder selects a direction.
-
-Do not create another isolated background plate.
-
-Do not merge to `main` or deploy.
+No merge to `main` or deployment is authorized.
