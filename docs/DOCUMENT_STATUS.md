@@ -116,7 +116,7 @@ Typography:
 
 Homepage:
 
-**BROWSER-FIRST FIRST-VIEWPORT ITERATION / DESIGN.MD CURRENT**
+**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS AUTHORIZED / DESIGN.MD CURRENT**
 
 Positioning:
 
@@ -152,14 +152,18 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**REAL FIRST-VIEWPORT BROWSER ITERATION**
+**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS**
+
+Founder-authorized.
+
+No homepage edit is authorized until the diagnosis reports:
+
+- the three largest visible structural problems;
+- comparison against the selected real references;
+- one bounded first composition change.
 
 Current visual implementation authority:
 
 `DESIGN.md`
-
-Work on the real homepage first viewport only.
-
-The recent storyboard/layout concepts are historical research, not current composition authority.
 
 No hero motion, below-fold redesign, merge to `main`, or deployment is authorized.
