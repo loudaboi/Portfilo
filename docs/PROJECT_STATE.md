@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 BROWSER-FIRST FIRST-VIEWPORT ITERATION**
+**PORTFILO V1 FIRST-VIEWPORT BROWSER DIAGNOSIS AUTHORIZED**
 
 ## Founder-approved current direction
 
@@ -635,32 +635,38 @@ Do not:
 - add motion to rescue a weak static composition;
 - redesign below-fold sections during this gate.
 
+## Founder approval
+
+The browser-first workflow reset is founder-approved.
+
+The next action is authorized:
+
+**diagnose the real first viewport in the running Astro site before making visual changes.**
+
+This approval does not authorize implementation yet.
+
 ## Exact next task
 
-**REAL FIRST-VIEWPORT BROWSER ITERATION**
+**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS**
 
-Target:
+Use:
 
-`src/pages/index.astro`
+- `AGENTS.md`
+- `DESIGN.md`
+- `docs/V1_IDENTITY_SYSTEM.md`
+- `docs/V1_HOMEPAGE_COPY.md`
+- the real runtime source
+- the documented Obys and MERSI references
 
-Process:
+Required output before any edit:
 
-1. inspect the current running first viewport;
-2. inspect the selected real layout references;
-3. identify the largest structural differences;
-4. propose one bounded first-viewport composition change;
-5. implement only after that plan is accepted;
-6. inspect the rendered result at 1440 × 900;
-7. inspect at a representative mobile viewport;
-8. report the three largest visible problems;
-9. make one consolidated correction pass;
-10. return the real rendered page for founder review.
+1. three largest structural/compositional problems in the actual rendered first viewport;
+2. comparison of identity scale, navigation placement, copy width, margins, vertical rhythm, and negative-space distribution against the strongest references;
+3. one bounded composition change recommended first.
 
-Use `DESIGN.md`.
+Do not modify the homepage until that diagnosis is reviewed and approved.
 
-Hero/interface typography remains open and must be judged inside the real viewport.
-
-No hero motion yet.
+No hero motion.
 
 No below-fold redesign.
 
