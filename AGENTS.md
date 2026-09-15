@@ -1,6 +1,6 @@
 # Portfilo Working Instructions
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-15_
 
 These instructions apply to any AI or human contributor working in this repository.
 
@@ -42,9 +42,15 @@ For nontrivial discretionary Portfilo decisions, read:
 
 `skills/portfilo-anti-slop/SKILL.md`
 
+For any consequential visual work, including layout, typography, motion, interaction, background/material, image treatment, identity application, prototype review, or frontend art direction, also read:
+
+`skills/portfilo-visual-direction/SKILL.md`
+
+The visual-direction skill is mandatory before visual invention or implementation. It requires mechanism-first reference analysis, a single visual thesis, a minimum-meaningful-prototype contract, rendered critique, and a rejection protocol.
+
 The old `skills/portfilo-v1-design/SKILL.md` contract is superseded and must not be used as current visual implementation authority.
 
-A replacement implementation contract should be created only after the Responsive Identity system and prototype are founder-approved.
+A future implementation contract may be added only after the current hero direction and interaction prototype are founder-approved.
 
 ## Technical baseline
 
