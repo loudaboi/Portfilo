@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**RESEARCH COMPLETE / FOUNDER DIRECTION SELECTION GATE**
+**FOUNDER-SELECTED / QUIET SURFACE + ACTIVE INTERFACE**
 
 ## Decision job
 
@@ -531,3 +531,16 @@ No runtime homepage replacement yet.
 No merge to `main`.
 
 No deployment.
+
+
+## Founder selection outcome
+
+**A — Quiet Surface / Active Interface** is selected.
+
+Direction B — Context Frames remains useful future expansion evidence, especially once stronger real Work / Hustle / Journal media exists, but it has no current implementation authority.
+
+Current next gate:
+
+**HERO TYPOGRAPHY + FIRST-VIEWPORT COMPOSITION INSIDE DIRECTION A**
+
+Do not build the hero until typography and static composition are selected.
