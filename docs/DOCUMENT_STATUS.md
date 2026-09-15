@@ -139,6 +139,12 @@ The approved identity is now active in the shared runtime branding.
 
 This does not make the rejected homepage design release-ready.
 
+## Hero identity composition
+
+**COMBINED EMBLEM + WORDMARK LOCKUP REJECTED FOR HOMEPAGE HERO**
+
+The emblem and wordmark remain approved assets, but must be treated independently in the next hero composition.
+
 ## Exact next task
 
 **COMPLETE HERO EXPERIENCE REDESIGN**
