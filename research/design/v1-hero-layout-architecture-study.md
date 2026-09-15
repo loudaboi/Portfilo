@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**RESEARCH EVIDENCE / NO LAYOUT AUTHORITY YET**
+**FOUNDER-APPROVED COMPARISON SET / STORYBOARD BUILD AUTHORIZED**
 
 ## Decision job
 
@@ -459,3 +459,38 @@ Do not prototype C yet.
 The next gate should compare A and B as **layout storyboards**, using neutral placeholder typography and the same approved identity/copy/material constraints.
 
 No polished hero implementation yet.
+
+
+## Founder agreement outcome
+
+The founder agreed with the research conclusion:
+
+- **B — Split Tension** advances as the lead layout architecture;
+- **A — Identity Spine** advances as the challenger;
+- **C — Context Field** is parked for later when stronger real media exists.
+
+This is not final layout approval.
+
+Authorized next artifact:
+
+**two low-fidelity four-state layout storyboards**
+
+Each must show:
+
+1. Rest;
+2. Pointer;
+3. Navigation / Selection;
+4. First Scroll.
+
+Shared constraints:
+
+- black / graphite / neutral silver only;
+- clearly visible grain;
+- emblem and wordmark independent;
+- approved copy only;
+- neutral placeholder typography;
+- no fake Work/media;
+- no polished visual effects;
+- no runtime implementation.
+
+The decision job is to compare spatial architecture, not aesthetic finish.
