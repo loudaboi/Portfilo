@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 QUIET SURFACE STATIC HERO REVIEW**
+**PORTFILO V1 HERO COMPOSITION RESET AFTER STATIC PROTOTYPE REJECTION**
 
 ## Founder-approved current direction
 
@@ -510,39 +510,52 @@ Recommended resting composition:
 - grainy dark surface with no hero object;
 - later motion uses clean clipping / continuity boundaries.
 
-## Selected hero typography + composition
+## Latest founder rejection
 
-Founder-selected:
+The Quiet Surface static hero prototype is **founder-rejected**.
 
-**Schibsted Grotesk + Quiet Surface recommended composition**
+Rejected:
 
-Prototype:
+- blue / blue-black tint;
+- weak/invisible grain treatment;
+- generic top-nav + large left headline + empty right-side composition;
+- treating motion and pointer behavior as post-static decoration;
+- using the static frame as if the design could be judged without the interaction language.
 
-`research/design/v1-quiet-surface-hero-prototype.html`
+Do not tune or cosmetically revise that prototype.
 
-Review record:
+Retain:
 
-`research/design/v1-quiet-surface-hero-prototype-review.md`
+- Sharp Ornamental 01;
+- approved PORTFILO wordmark;
+- approved homepage copy;
+- dark-first direction;
+- **neutral black / graphite resting surface**;
+- **visible refined grain** as material reference from OpenAI Business;
+- MERSI / 4WIDE / Dash / MetaLab as mechanism references;
+- motion, transitions, and pointer response as core design material rather than polish.
 
-Current resting composition:
-
-- approved horizontal identity lockup upper-left;
-- Work / Services / Hustle / Journal / Contact upper-right;
-- two-line approved headline in lower-left;
-- approved support copy directly beneath;
-- dark blue-black / near-black grain surface;
-- no hero object;
-- no CTA;
-- no motion yet.
+Schibsted Grotesk is reopened. The failed prototype does not prove or disprove the family in another materially different composition.
 
 ## Exact next task
 
-**FOUNDER STATIC HERO REVIEW**
+**COMPLETE HERO EXPERIENCE REDESIGN**
 
-Judge only the complete resting first viewport.
+Use:
 
-If approved, prototype the selected motion/interaction layer next.
+`skills/portfilo-visual-direction/SKILL.md`
 
-Do not replace the runtime homepage yet.
+The next proposal must define the hero as one complete experience, not as a static layout with effects added later.
+
+Required:
+
+1. neutral near-black / graphite surface, no unapproved blue tint;
+2. clearly visible but refined grain;
+3. materially different composition from the rejected left-heavy agency hero;
+4. motion / transition / pointer behavior included in the design thesis from the start;
+5. approved identity and copy only;
+6. no decorative center object, fake media, shader-as-concept, giant sans poster treatment, or empty-space compensation.
+
+Do not build a new prototype until a materially different complete hero composition is described and founder-approved.
 
 No merge to `main` or deployment is authorized.
