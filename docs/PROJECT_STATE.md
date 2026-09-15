@@ -1,10 +1,10 @@
 # Portfilo Project State
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION ACTIVE**
+**PORTFILO V1 STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW**
 
 ## Founder-approved current direction
 
@@ -349,13 +349,46 @@ Reopened / rejected:
 - Strata;
 - the latest total hero composition.
 
+## Stateful Typeset selection
+
+Founder-selected hero direction:
+
+**Stateful Typeset**
+
+Selected first specimen:
+
+**A — Constraint Fit**
+
+Current review record:
+
+`research/design/v1-stateful-typeset-constraint-fit.md`
+
+Static review specimen:
+
+`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
+
+Current typography under test:
+
+- Bricolage Grotesque for hero display;
+- Onest for navigation and support copy.
+
+These typefaces are **not yet locked**. The specimen must pass founder visual review before typography or composition advances.
+
+The current composition hypothesis moves the approved support sentence into a lower information rail rather than placing it directly beneath the headline.
+
+No shader, generated imagery, fake Work, or below-fold design is part of this gate.
+
 ## Exact next task
 
-**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
+**FOUNDER VISUAL REVIEW — STATEFUL TYPESET / CONSTRAINT FIT**
 
-Research and define a small number of stronger full-screen hero directions where background, typography, and support-copy composition are evaluated as one system.
+Judge the 1440 × 900 static specimen as one typography/identity composition.
 
-Do not jump directly into another shader or polished mockup.
+If it passes, refine only the approved static composition before testing motion.
+
+If it fails, diagnose whether the failure is the typeface, stepped geometry, information rail, or Stateful Typeset direction itself before producing another candidate.
+
+Do not add motion yet.
 
 Do not expand the homepage yet.
 
