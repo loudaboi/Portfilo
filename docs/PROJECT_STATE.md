@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 REFERENCE-PINNED GEOMETRY SELECTION**
+**PORTFILO V1 OPENING-SCREEN CONTENT + HIERARCHY LOCKED / GEOMETRY OPEN**
 
 ## Founder-approved current direction
 
@@ -675,25 +675,55 @@ Current workflow:
 
 `real reference -> measured geometry -> founder approval -> Codex implementation -> browser QA`
 
+## Opening-screen simplification
+
+Founder-approved on 2026-09-15.
+
+Approved opening copy:
+
+**Software built around the problem.**
+
+**We design and develop software around business needs and constraints.**
+
+The previous longer support sentence is retired from the opening screen.
+
+Current opening content is deliberately limited to:
+
+- PORTFILO wordmark;
+- Sharp Ornamental 01 emblem;
+- navigation;
+- headline;
+- short support sentence.
+
+Current hierarchy:
+
+- wordmark = primary textual identity;
+- headline = primary proposition;
+- support = clarification;
+- navigation = secondary interface;
+- emblem = secondary independent identity marker.
+
+Reopened assumptions:
+
+- opening does not need to be exactly 100vh;
+- following content may enter the viewport when intentional;
+- wordmark does not need to be a large hero object;
+- emblem and wordmark do not need equal visual weight;
+- support copy does not need an independent right rail;
+- exact Obys coordinates are not Portfilo authority.
+
+Obys remains structural evidence only.
+
 ## Exact next task
 
-**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY**
+**OPENING-SCREEN GEOMETRY DECISION**
 
-Research and compare a very small set of real layouts.
+Derive the simplest strong composition for the five approved elements using the measured reference evidence.
 
-Current lead structural source:
+Do not add more content.
 
-**Obys**
+Do not implement until the geometry itself is founder-approved.
 
-Supporting references:
-
-- OpenAI Business — material only;
-- MERSI — transition/continuity later.
-
-The next deliverable is a measured Portfilo first-viewport geometry spec derived from the selected real layout.
-
-Do not ask Codex to invent another hero composition before that spec is founder-approved.
-
-No runtime homepage implementation is currently authorized.
+Codex remains implementation-only after geometry approval.
 
 No merge to `main` or deployment is authorized.
