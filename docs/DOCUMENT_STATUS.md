@@ -11,7 +11,7 @@ _Last updated: 2026-09-15_
 5. `docs/V1_CREATIVE_DIRECTION.md`
 6. `docs/V1_HOMEPAGE_POSITIONING.md`
 7. `docs/V1_HOMEPAGE_COPY.md`
-8. `docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+8. `DESIGN.md` for visual implementation work
 9. current task-specific decision record
 10. current runtime source
 
@@ -24,6 +24,7 @@ _Last updated: 2026-09-15_
 - `docs/V1_CREATIVE_DIRECTION.md`
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
+- `DESIGN.md` — current browser-first visual implementation authority
 - `docs/V1_HERO_EXPERIENCE_CONTRACT.md` — founder-approved current hero design authority
 
 ### Decision control
@@ -64,8 +65,8 @@ _Last updated: 2026-09-15_
 - `research/design/v1-quiet-surface-hero-typography-composition.md`
 - `research/design/v1-quiet-surface-hero-prototype.html` — founder-rejected historical prototype
 - `research/design/v1-quiet-surface-hero-prototype-review.md` — founder-rejected historical review
-- `research/design/v1-hero-four-state-storyboard.md`
-- `research/design/v1-hero-layout-storyboard-comparison.md` — current founder review gate
+- `research/design/v1-hero-four-state-storyboard.md` — historical design exploration
+- `research/design/v1-hero-layout-storyboard-comparison.md` — historical design exploration
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -115,7 +116,7 @@ Typography:
 
 Homepage:
 
-**HERO LAYOUT STORYBOARD SELECTION / EXPERIENCE CONTRACT LOCKED**
+**BROWSER-FIRST FIRST-VIEWPORT ITERATION / DESIGN.MD CURRENT**
 
 Positioning:
 
@@ -151,18 +152,14 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**FOUNDER LAYOUT ARCHITECTURE SELECTION**
+**REAL FIRST-VIEWPORT BROWSER ITERATION**
 
-Candidates:
+Current visual implementation authority:
 
-- B — Split Tension — recommended;
-- A — Identity Spine — challenger;
-- reject both.
+`DESIGN.md`
 
-Current comparison:
+Work on the real homepage first viewport only.
 
-`research/design/v1-hero-layout-storyboard-comparison.md`
+The recent storyboard/layout concepts are historical research, not current composition authority.
 
-Typography remains open.
-
-No new hero implementation, page expansion, merge to `main`, or deployment is authorized.
+No hero motion, below-fold redesign, merge to `main`, or deployment is authorized.
