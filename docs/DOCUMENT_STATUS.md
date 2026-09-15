@@ -111,7 +111,7 @@ Typography:
 
 Homepage:
 
-**QUIET SURFACE STATIC HERO REVIEW / SCHIBSTED GROTESK SELECTED**
+**STATIC HERO REJECTED / COMPLETE HERO EXPERIENCE REDESIGN**
 
 Positioning:
 
@@ -141,16 +141,20 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER STATIC HERO REVIEW**
+**COMPLETE HERO EXPERIENCE REDESIGN**
 
-Prototype:
+The prior Quiet Surface static hero is founder-rejected and historical only.
 
-`research/design/v1-quiet-surface-hero-prototype.html`
+Do not tune it.
 
-Review record:
+Current non-negotiable correction:
 
-`research/design/v1-quiet-surface-hero-prototype-review.md`
+- neutral black / graphite, not blue;
+- grain must be visibly present and refined;
+- no generic left-heavy giant-sans hero;
+- interaction, transition, and pointer behavior must be part of the hero design itself;
+- Schibsted is reopened and not locked by the failed prototype.
 
-Schibsted Grotesk is selected for this prototype.
+Next output is a materially different complete hero composition proposal before any new implementation.
 
-No motion, runtime homepage replacement, page expansion, merge to `main`, or deployment is authorized.
+No runtime homepage replacement, merge to `main`, or deployment is authorized.
