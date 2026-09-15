@@ -55,6 +55,7 @@ _Last updated: 2026-09-15_
 - `research/design/v1-fullscreen-hero-art-directions.md`
 - `research/design/v1-stateful-typeset-constraint-fit.md` — founder-rejected specimen / historical evidence
 - `research/design/v1-background-atmosphere-motion-language.md`
+- `research/design/v1-graphite-exposure-background-specimen.html`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -104,7 +105,7 @@ Typography:
 
 Homepage:
 
-**BACKGROUND ATMOSPHERE + MOTION LANGUAGE DECISION GATE / STATIC FRAME + TRANSITION-LED STRATEGY**
+**GRAPHITE EXPOSURE BACKGROUND REVIEW / TRANSITION-LED STRATEGY**
 
 Positioning:
 
@@ -134,28 +135,18 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**BACKGROUND ATMOSPHERE SELECTION**
+**FOUNDER VISUAL REVIEW — GRAPHITE EXPOSURE BACKGROUND**
 
-Current authority:
+Founder-selected background:
 
-`research/design/v1-background-atmosphere-motion-language.md`
+**A — Graphite Exposure**
 
-Candidates:
+Review specimen:
 
-- A — Graphite Exposure — recommended;
-- B — Low-Chroma Spectrum;
-- C — Authored Light Plate.
+`research/design/v1-graphite-exposure-background-specimen.html`
 
-Constraint Fit / Bricolage are rejected as current hero authority.
+The plate contains only the background atmosphere plus approved emblem and wordmark anchors.
 
-Retain:
+Hero typography remains open and must not be selected until this background passes review.
 
-- Sharp Ornamental 01;
-- approved `PORTFILO` all-caps production wordmark;
-- exact approved homepage copy;
-- dark-first environment;
-- Responsive Identity.
-
-Motion direction now emphasizes clean masks, continuity, shared-element transitions, and precise state changes rather than complex background rendering.
-
-No full hero composition, homepage expansion, merge to `main`, or deployment is authorized.
+No full hero composition, motion prototype, homepage expansion, merge to `main`, or deployment is authorized.
