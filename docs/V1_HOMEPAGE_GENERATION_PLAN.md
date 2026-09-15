@@ -422,3 +422,85 @@ Current conclusions:
 **FULL-SCREEN HERO ART-DIRECTION CONCEPTS**
 
 Define up to three full-viewport visual concepts before generating or coding another polished hero.
+
+
+---
+
+# 2026-09-15 visual-method correction
+
+The earlier sequential gate model produced an invalid isolation problem during later hero exploration.
+
+Specifically, this sequence:
+
+`background-only -> typography-only -> composition -> motion later`
+
+must **not** be treated as mandatory when those decisions depend on one another.
+
+The founder rejected:
+
+- the Stateful Typeset / Constraint Fit specimen;
+- Bricolage Grotesque as hero display;
+- the isolated Graphite Exposure background specimen.
+
+The Graphite Exposure review demonstrated that a background can be impossible to evaluate meaningfully outside the full first-viewport composition.
+
+## Current process authority
+
+For consequential visual work, also read:
+
+`skills/portfilo-visual-direction/SKILL.md`
+
+Its **minimum meaningful unit** rule supersedes the old assumption that every visual variable should be approved in isolation.
+
+The useful constraints in this generation plan remain active:
+
+- exact identity assets must be real;
+- exact approved copy must be real;
+- no generated complete website screenshot as design authority;
+- no fake Work, UI, metrics, testimonials, or proof;
+- visual generation, when used, is limited to a clearly defined non-text asset job;
+- founder approval remains required before runtime implementation.
+
+## Current hero method
+
+Use:
+
+`reference inspection -> mechanism extraction -> Portfilo translation -> complete first-viewport direction -> founder selection -> exact prototype -> rendered critique -> motion prototype`
+
+A complete first-viewport direction must consider together:
+
+- background/material;
+- identity placement;
+- headline/support hierarchy;
+- navigation relationship;
+- typography character;
+- motion thesis;
+- pointer behavior.
+
+This does **not** mean implementing every behavior before direction selection.
+
+It means the proposed direction must explain how those parts belong to one system before a prototype is built.
+
+## Current reference roles
+
+Task-specific evidence currently includes:
+
+- OpenAI Business — quiet grainy dark background/material reference only;
+- MERSI — transition continuity / media movement;
+- 4WIDE — motion and interaction quality, not WebGL imitation;
+- Dash — pointer-responsive visual behavior evidence;
+- MetaLab — authored alternate visual states / graphics.
+
+Do not copy complete reference surfaces.
+
+Extract the mechanism and translate it through Portfilo's approved identity and product truth.
+
+## Current gate
+
+**REFERENCE EXTRACTION + COMPLETE HERO DIRECTION PROPOSAL**
+
+No isolated background plate.
+
+No disconnected typography specimen.
+
+No hero implementation until founder selection.
