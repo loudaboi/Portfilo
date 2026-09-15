@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 QUIET SURFACE HERO TYPOGRAPHY + COMPOSITION**
+**PORTFILO V1 QUIET SURFACE STATIC HERO REVIEW**
 
 ## Founder-approved current direction
 
@@ -510,17 +510,39 @@ Recommended resting composition:
 - grainy dark surface with no hero object;
 - later motion uses clean clipping / continuity boundaries.
 
+## Selected hero typography + composition
+
+Founder-selected:
+
+**Schibsted Grotesk + Quiet Surface recommended composition**
+
+Prototype:
+
+`research/design/v1-quiet-surface-hero-prototype.html`
+
+Review record:
+
+`research/design/v1-quiet-surface-hero-prototype-review.md`
+
+Current resting composition:
+
+- approved horizontal identity lockup upper-left;
+- Work / Services / Hustle / Journal / Contact upper-right;
+- two-line approved headline in lower-left;
+- approved support copy directly beneath;
+- dark blue-black / near-black grain surface;
+- no hero object;
+- no CTA;
+- no motion yet.
+
 ## Exact next task
 
-**FOUNDER TYPOGRAPHY + COMPOSITION SELECTION**
+**FOUNDER STATIC HERO REVIEW**
 
-Choose:
+Judge only the complete resting first viewport.
 
-- A — Schibsted Grotesk + recommended composition;
-- B — Instrument Sans + same composition;
-- C — Hanken Grotesk + same composition;
-- reject typography and/or composition.
+If approved, prototype the selected motion/interaction layer next.
 
-Do not build the hero before selection.
+Do not replace the runtime homepage yet.
 
 No merge to `main` or deployment is authorized.
