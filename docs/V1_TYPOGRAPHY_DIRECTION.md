@@ -4,7 +4,7 @@ _Last updated: 2026-09-14_
 
 ## Status
 
-**FOUNDER-APPROVED / CURRENT WEBSITE TYPOGRAPHY AUTHORITY**
+**HERO TYPOGRAPHY REOPENED AFTER RENDERED REVIEW**
 
 Parent authority:
 
@@ -202,3 +202,26 @@ The Portfilo wordmark remains Noto Serif Display Regular as vector outlines and 
 Produce three grayscale 1440 × 900 hero wireframes using Mona Sans, the exact approved identity assets, and exact homepage copy.
 
 No polished homepage design or image generation is authorized yet.
+
+
+## 2026-09-15 rendered review correction
+
+The founder no longer considers the current Mona Sans hero treatment visually convincing.
+
+This does **not** automatically reject Mona Sans across all future Portfilo surfaces.
+
+It reopens:
+
+- hero display family;
+- display width/weight;
+- body/support family and treatment;
+- support paragraph scale and placement;
+- relationship between website typography and the approved Noto Serif Display wordmark.
+
+The approved PORTFILO wordmark remains unchanged.
+
+Current next gate:
+
+**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
+
+Do not treat the previous Mona Sans hero treatment as locked.
