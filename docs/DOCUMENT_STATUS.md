@@ -108,7 +108,7 @@ Typography:
 
 Homepage:
 
-**COMPLETE HERO DIRECTION SELECTION / TWO DIRECTIONS READY**
+**QUIET SURFACE / ACTIVE INTERFACE SELECTED / TYPOGRAPHY + COMPOSITION ACTIVE**
 
 Positioning:
 
@@ -138,18 +138,18 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER DIRECTION SELECTION**
+**HERO TYPOGRAPHY + FIRST-VIEWPORT COMPOSITION**
+
+Selected direction:
+
+**A — Quiet Surface / Active Interface**
 
 Current direction record:
 
 `research/design/v1-hero-reference-translation-and-directions.md`
 
-Candidates:
+Hero typography remains open.
 
-- A — Quiet Surface / Active Interface — recommended;
-- B — Context Frames — MetaLab-derived, more interaction-led;
-- reject both.
+The next decision must evaluate typography inside the complete resting composition, not in isolation.
 
-Typography remains open until a complete direction is selected.
-
-No hero implementation, homepage expansion, merge to `main`, or deployment is authorized.
+No hero implementation, motion prototype, homepage expansion, merge to `main`, or deployment is authorized.
