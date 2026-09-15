@@ -116,7 +116,7 @@ Typography:
 
 Homepage:
 
-**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY / CODEX IMPLEMENTATION ONLY**
+**OPENING-SCREEN CONTENT LOCKED / GEOMETRY OPEN / CODEX IMPLEMENTATION ONLY**
 
 Positioning:
 
@@ -152,14 +152,16 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY**
+**OPENING-SCREEN GEOMETRY DECISION**
 
-Lead structural reference:
+Approved opening content:
 
-**Obys**
+- PORTFILO wordmark;
+- Sharp Ornamental 01 emblem;
+- Work / Services / Hustle / Journal / Contact;
+- “Software built around the problem.”;
+- “We design and develop software around business needs and constraints.”
 
-Codex must not invent the macro composition.
+Do not add content or force reference-owned rails/coordinates.
 
-Next output must define the actual first-viewport geometry before implementation.
-
-No runtime homepage implementation, merge to `main`, or deployment is authorized.
+No runtime homepage implementation is authorized until the geometry is founder-approved.
