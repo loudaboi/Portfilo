@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 HERO COMPOSITION RESET AFTER STATIC PROTOTYPE REJECTION**
+**PORTFILO V1 FOUR-STATE HERO STORYBOARD REVIEW**
 
 ## Founder-approved current direction
 
@@ -477,7 +477,7 @@ Selected thesis:
 
 Retained implementation territory:
 
-- dark near-black / blue-black grainy resting surface;
+- neutral near-black / graphite grainy resting surface;
 - Sharp Ornamental 01 + approved PORTFILO wordmark;
 - restrained hero typography;
 - approved headline and support copy;
@@ -551,25 +551,58 @@ Use them as independent compositional elements:
 
 This does not reject either asset individually.
 
+## Founder-approved hero experience contract
+
+Current authority:
+
+`docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+
+Locked hero fundamentals:
+
+- black / near-black / graphite / neutral silver / off-white only;
+- no blue / teal / purple or other signal color;
+- grain must be clearly visible and refined;
+- OpenAI Business is a material reference only;
+- emblem and wordmark remain independent;
+- combined horizontal lockup is rejected for the hero;
+- giant-left-headline agency topology is rejected;
+- motion / pointer / navigation / first-scroll behavior are part of the design itself;
+- typography remains open until storyboard approval.
+
+## Four-state storyboard
+
+Current review record:
+
+`research/design/v1-hero-four-state-storyboard.md`
+
+States:
+
+1. Rest;
+2. Pointer;
+3. Navigation / Selection;
+4. First Scroll.
+
+Current proposed identity behavior:
+
+- emblem remains the compact stable anchor;
+- wordmark carries more visual presence;
+- wordmark becomes the primary first-scroll continuity object;
+- pointer affects the neutral material field rather than the cursor;
+- navigation selection reorganizes the identity field without fake media.
+
 ## Exact next task
 
-**COMPLETE HERO EXPERIENCE REDESIGN**
+**FOUNDER 4-STATE STORYBOARD REVIEW**
 
-Use:
+Judge:
 
-`skills/portfilo-visual-direction/SKILL.md`
+1. identity-led composition;
+2. material-based pointer response;
+3. navigation-driven identity-field reorganization;
+4. wordmark-led first-scroll continuity.
 
-The next proposal must define the hero as one complete experience, not as a static layout with effects added later.
+Do not select typography or build another hero prototype until this storyboard passes.
 
-Required:
-
-1. neutral near-black / graphite surface, no unapproved blue tint;
-2. clearly visible but refined grain;
-3. materially different composition from the rejected left-heavy agency hero;
-4. motion / transition / pointer behavior included in the design thesis from the start;
-5. approved identity and copy only;
-6. no decorative center object, fake media, shader-as-concept, giant sans poster treatment, or empty-space compensation.
-
-Do not build a new prototype until a materially different complete hero composition is described and founder-approved.
+No runtime homepage replacement.
 
 No merge to `main` or deployment is authorized.
