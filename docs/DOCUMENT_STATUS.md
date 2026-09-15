@@ -1,6 +1,6 @@
 # Portfilo Document Status
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-15_
 
 ## Authority order
 
@@ -53,6 +53,7 @@ _Last updated: 2026-09-14_
 - `research/design/v1-wordmark-symbol-research.md`
 - `research/design/v1-fullscreen-hero-reference-research.md`
 - `research/design/v1-fullscreen-hero-art-directions.md`
+- `research/design/v1-stateful-typeset-constraint-fit.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -98,11 +99,11 @@ Favicon:
 
 Typography:
 
-**MONA SANS HERO TREATMENT REOPENED / TYPOGRAPHY REVIEW ACTIVE**
+**STATEFUL TYPESET SPECIMEN REVIEW / BRICOLAGE GROTESQUE + ONEST UNDER TEST / NOT LOCKED**
 
 Homepage:
 
-**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION ACTIVE / ASSEMBLY MOTION RETAINED AS EVIDENCE**
+**STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW / ASSEMBLY RETAINED AS OPTIONAL INTERACTION EVIDENCE**
 
 Positioning:
 
@@ -132,31 +133,34 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
+**FOUNDER VISUAL REVIEW — STATEFUL TYPESET / CONSTRAINT FIT**
 
-Latest review:
+Current review record:
 
-`research/design/v1-hero-visual-review-reset.md`
+`research/design/v1-stateful-typeset-constraint-fit.md`
 
-Retain emblem + wordmark.
+Static specimen:
 
-Reopen hero typography and supporting-copy composition.
+`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
 
-Crossfield / Refraction / Strata are rejected as current material directions.
+Retain:
 
-Review record:
+- Sharp Ornamental 01;
+- approved `PORTFILO` all-caps production wordmark;
+- exact approved homepage copy;
+- exact primary navigation;
+- dark-first environment.
 
-`research/design/v1-perimeter-field-hero-prototype.md`
+Under review, not locked:
 
-Homepage structure:
+- Bricolage Grotesque display treatment;
+- Onest interface/support treatment;
+- stepped headline geometry;
+- lower information rail;
+- final relationship to Assembly motion.
 
-**A — Perimeter Field**
+Crossfield / Refraction / Strata remain rejected.
 
-Locked corrections:
-
-- dark-first near-black homepage environment;
-- emblem at the upper-left perimeter;
-- approved `PORTFILO` wordmark at the upper-right perimeter;
-- Mona Sans website typography.
+Perimeter Field is not protected as the final structure.
 
 No full homepage expansion, merge to `main`, or deployment is authorized.
