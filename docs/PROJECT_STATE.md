@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 GRAPHITE EXPOSURE BACKGROUND REVIEW**
+**PORTFILO V1 VISUAL REFERENCE TRANSLATION / HERO DIRECTION RESET**
 
 ## Founder-approved current direction
 
@@ -378,33 +378,53 @@ Current research authority:
 
 `research/design/v1-background-atmosphere-motion-language.md`
 
-## Background candidates
+## Latest background / process review
 
-Founder-selected background family:
+The isolated **Graphite Exposure** specimen is **founder-rejected**.
 
-**A — Graphite Exposure**
+Why:
 
-Current specimen:
+- it read as generic dark-gradient AI design;
+- the background-only gate was not meaningful enough to judge the hero;
+- the background was incorrectly treated as the design concept rather than a supporting surface.
 
-`research/design/v1-graphite-exposure-background-specimen.html`
+Do not tune or revive Graphite Exposure.
 
-Low-Chroma Spectrum and Authored Light Plate remain alternatives only.
+Founder clarification:
 
-## Motion direction
+- use the grainy dark-gradient treatment on **OpenAI Business** as a background/material reference only, not as a structural reference;
+- the resting surface may remain relatively simple;
+- motion, transitions, continuity, and selective pointer response should carry more of the authored experience;
+- MERSI, 4WIDE, Dash, and MetaLab remain useful references for those behaviors;
+- a more authored MetaLab-like graphic-state direction is a fallback if the restrained resting frame cannot carry enough identity.
 
-Current motion territory favors:
+Current research record:
 
-- identity-led load;
-- mask/clip hero exit;
-- continuity between sections;
-- future Work → case-study shared-element transitions;
-- fast restrained global route transitions.
+`research/design/v1-background-atmosphere-motion-language.md`
 
-Use HTML/CSS + GSAP first.
+## Visual-direction process
 
-GSAP Flip is a likely future fit for real Work transitions.
+A new mandatory visual methodology now exists:
 
-No current requirement exists for Three.js, realtime WebGL, or a new framework.
+`skills/portfilo-visual-direction/SKILL.md`
+
+Research provenance:
+
+`research/design/v1-impeccable-method-study.md`
+
+The skill was informed by Impeccable's process strengths but is Portfilo-specific and does not import Impeccable as a dependency.
+
+It requires:
+
+- current authority before visual invention;
+- preserve / extend / replace classification;
+- mechanism-first reference extraction;
+- one visual thesis;
+- minimum meaningful prototype;
+- Portfilo-specific AI-slop red team;
+- purposeful motion thesis;
+- rendered critique before founder review;
+- hard rejection protocol.
 
 ## Typography
 
@@ -412,29 +432,51 @@ Hero typography remains open.
 
 Bricolage Grotesque is rejected for the hero.
 
-Do not select another display family until the background family is approved.
+Mona Sans remains reopened and unprotected.
+
+Do not run another disconnected font specimen merely to choose a font.
+
+Hero typography should be evaluated inside the selected complete first-viewport direction.
 
 The approved `PORTFILO` wordmark remains unchanged.
 
 ## Exact next task
 
-**FOUNDER VISUAL REVIEW — GRAPHITE EXPOSURE BACKGROUND**
+**REFERENCE EXTRACTION + COMPLETE HERO DIRECTION PROPOSAL**
 
-Review the isolated 1440 × 900 plate with emblem + wordmark only.
+Apply:
 
-Judge:
+`skills/portfilo-visual-direction/SKILL.md`
 
-- whether the background has enough depth to feel intentional;
-- whether the exposure remains subtle rather than reading as a visible gradient/blob;
-- whether the grain contributes material quality without becoming texture for its own sake;
-- whether the approved identity remains stronger than the atmosphere.
+Study the actual current references by mechanism, especially:
 
-If approved, reopen hero typography inside this environment.
+- OpenAI Business background/material;
+- MERSI transition continuity;
+- 4WIDE motion/interaction;
+- Dash pointer-responsive behavior;
+- MetaLab authored visual-state behavior.
 
-Do not compose the full hero yet.
+For each, record:
 
-Do not add motion yet.
+1. mechanism to learn;
+2. surface not to copy;
+3. Portfilo translation;
+4. implementation consequence.
 
-Do not expand the homepage yet.
+Then propose no more than **two materially different complete first-viewport directions**.
 
-No merge to `main` or deployment is authorized.
+Each direction must describe together:
+
+- resting background/material;
+- identity placement;
+- headline/support hierarchy;
+- navigation relationship;
+- motion thesis;
+- pointer behavior;
+- credible implementation path.
+
+Do not build a new hero until the founder selects a direction.
+
+Do not create another isolated background plate.
+
+Do not merge to `main` or deploy.
