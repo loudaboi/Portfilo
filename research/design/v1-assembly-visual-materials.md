@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**FOUNDER-APPROVED MOTION / MATERIAL SELECTION ACTIVE**
+**MATERIAL CANDIDATES REJECTED / HISTORICAL EVIDENCE**
 
 ## Decision job
 
@@ -107,3 +107,20 @@ Founder selects:
 - or rejects all three.
 
 After selection, integrate the chosen material into the already-approved Assembly loader → resolved hero motion study.
+
+
+## Founder review outcome
+
+Crossfield, Refraction, and Strata are all rejected as current hero background directions.
+
+Reason:
+
+The study still reads as dark abstract shader material rather than the kind of compelling full-screen hero visual the founder is seeking.
+
+Do not iterate these three by parameter tweaking.
+
+Assembly motion remains approved as interaction evidence, but visual material and hero typography are reopened together.
+
+Current review authority:
+
+`research/design/v1-hero-visual-review-reset.md`
