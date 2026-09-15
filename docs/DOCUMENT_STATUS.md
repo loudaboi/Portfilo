@@ -116,7 +116,7 @@ Typography:
 
 Homepage:
 
-**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS AUTHORIZED / DESIGN.MD CURRENT**
+**FIRST-VIEWPORT IMPLEMENTATION REJECTED / VISUAL PROCESS RESET PENDING**
 
 Positioning:
 
@@ -152,18 +152,12 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS**
+**VISUAL AUTHORSHIP PROCESS RESET**
 
-Founder-authorized.
+The first Codex browser-first composition pass is founder-rejected and was not committed.
 
-No homepage edit is authorized until the diagnosis reports:
+Do not ask Codex to invent another hero layout from abstract constraints.
 
-- the three largest visible structural problems;
-- comparison against the selected real references;
-- one bounded first composition change.
+Next step is to define a concrete reference-pinned geometry source of truth before implementation.
 
-Current visual implementation authority:
-
-`DESIGN.md`
-
-No hero motion, below-fold redesign, merge to `main`, or deployment is authorized.
+No runtime homepage implementation, hero motion, below-fold redesign, merge to `main`, or deployment is authorized.
