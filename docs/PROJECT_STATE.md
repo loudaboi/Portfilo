@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 FOUR-STATE HERO STORYBOARD REVIEW**
+**PORTFILO V1 HERO LAYOUT STORYBOARD SELECTION**
 
 ## Founder-approved current direction
 
@@ -590,18 +590,42 @@ Current proposed identity behavior:
 - pointer affects the neutral material field rather than the cursor;
 - navigation selection reorganizes the identity field without fake media.
 
+## Layout storyboard comparison
+
+Research:
+
+`research/design/v1-hero-layout-architecture-study.md`
+
+Comparison review:
+
+`research/design/v1-hero-layout-storyboard-comparison.md`
+
+Candidates:
+
+- **B — Split Tension** — lead / recommended;
+- **A — Identity Spine** — challenger;
+- Context Field remains parked.
+
+Important storyboard notation boundary:
+
+- visible seam lines are explanatory only;
+- vertical navigation is not locked;
+- placeholder typography is not authority;
+- context boxes are not production components.
+
 ## Exact next task
 
-**FOUNDER 4-STATE STORYBOARD REVIEW**
+**FOUNDER LAYOUT ARCHITECTURE SELECTION**
 
-Judge:
+Choose:
 
-1. identity-led composition;
-2. material-based pointer response;
-3. navigation-driven identity-field reorganization;
-4. wordmark-led first-scroll continuity.
+- B — Split Tension;
+- A — Identity Spine;
+- reject both.
 
-Do not select typography or build another hero prototype until this storyboard passes.
+If B is selected, define exact desktop geometry next while keeping the seam implicit.
+
+Do not select typography or build another hero prototype before layout architecture is selected.
 
 No runtime homepage replacement.
 
