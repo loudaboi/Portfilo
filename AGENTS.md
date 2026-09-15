@@ -15,7 +15,7 @@ Read in this order:
 5. `docs/V1_CREATIVE_DIRECTION.md`
 6. `docs/V1_HOMEPAGE_POSITIONING.md`
 7. `docs/V1_HOMEPAGE_COPY.md`
-8. `docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+8. `DESIGN.md` for visual implementation work
 9. the current task-specific decision record
 10. current runtime source
 
@@ -47,7 +47,7 @@ For any consequential visual work, including layout, typography, motion, interac
 
 `skills/portfilo-visual-direction/SKILL.md`
 
-The visual-direction skill is mandatory before visual invention or implementation. It requires mechanism-first reference analysis, a single visual thesis, a minimum-meaningful-prototype contract, rendered critique, and a rejection protocol.
+The visual-direction skill is mandatory before visual invention or implementation. For current homepage work, `DESIGN.md` additionally requires browser-first iteration on the real Astro page. Do not substitute detached specimens, generated website screens, abstract diagrams, or conceptual naming for inspection of the real rendered page.
 
 The old `skills/portfilo-v1-design/SKILL.md` contract is superseded and must not be used as current visual implementation authority.
 
@@ -127,7 +127,7 @@ Do not:
 - treat permanent black, oversized white sans-serif typography, thin rules, or gray hierarchy as Portfilo identity requirements;
 - implement a new homepage before the identity/prototype gates are approved.
 
-Current design work should explore identity, typography, responsive behavior, motion, color/material behavior, and small-scale brand states before runtime implementation.
+Current homepage visual work must happen in the real runtime first viewport. Keep changes bounded, inspect the rendered browser result, and do not expand below the hero or add motion until the static first viewport is founder-approved.
 
 ## Clean-cut v1 migration
 
