@@ -102,6 +102,30 @@ Do not default to:
 - custom cursor gimmicks;
 - generic fade-up animation.
 
+## Selected opening structural reference
+
+**MetaLab** is the founder-selected single structural reference for Portfilo's opening-screen composition.
+
+Use MetaLab to study:
+
+- opening-screen hierarchy;
+- relationship between identity, proposition, navigation, and work;
+- how quickly real work/content enters the experience;
+- how interface elements are distributed without a conventional agency-hero feel;
+- how the opening remains commercially understandable while still feeling authored.
+
+Do not copy:
+
+- MetaLab branding;
+- exact typography;
+- exact colors;
+- proprietary graphics;
+- project imagery;
+- literal frame/portal motifs;
+- copy.
+
+For this phase, do not mix Obys, MERSI, PX PUSH, or other sites into the macro opening geometry. They may remain later supporting references for specific mechanisms only.
+
 ## Reference roles
 
 Use real references as structural evidence, not mood words.
