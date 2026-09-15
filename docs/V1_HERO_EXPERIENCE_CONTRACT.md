@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**FOUNDER-APPROVED / CURRENT HERO DESIGN AUTHORITY**
+**SUPPORTING CONSTRAINT RECORD / DESIGN.MD OVERRIDES IMPLEMENTATION PROCESS**
 
 This document defines the current Portfilo homepage hero experience.
 
@@ -17,6 +17,8 @@ Parent authority:
 - `docs/V1_HOMEPAGE_POSITIONING.md`
 - `docs/V1_HOMEPAGE_COPY.md`
 - `skills/portfilo-visual-direction/SKILL.md`
+
+> Current visual implementation process is defined by `DESIGN.md`. This document retains approved constraints but must not be used to revive the detached storyboard/prototype workflow.
 
 ## Core thesis
 
