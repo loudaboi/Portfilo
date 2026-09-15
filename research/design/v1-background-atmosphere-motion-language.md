@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**RESEARCH COMPLETE / FOUNDER DECISION GATE READY**
+**GRAPHITE EXPOSURE SELECTED / STATIC PLATE UNDER FOUNDER REVIEW**
 
 ## Decision job
 
@@ -372,21 +372,34 @@ The approved wordmark remains unchanged.
 
 ---
 
-# Decision gate
+# Founder selection
 
-Founder selects the first background prototype:
+**A — Graphite Exposure** is selected for the first background prototype.
 
-- **A — Graphite Exposure** — recommended;
-- **B — Low-Chroma Spectrum**;
-- **C — Authored Light Plate**.
+Static review specimen:
 
-After background selection:
+`research/design/v1-graphite-exposure-background-specimen.html`
 
-1. create isolated background plate;
-2. review it with emblem + wordmark only;
-3. if approved, select hero typography inside that environment;
-4. compose the static hero;
-5. only then prototype the identity-led load + first-scroll transition.
+The specimen intentionally contains only:
+
+- Graphite Exposure background atmosphere;
+- approved Sharp Ornamental 01 emblem;
+- approved PORTFILO wordmark.
+
+No hero typography, support copy, navigation, or motion is included in this gate.
+
+## Current review gate
+
+Judge whether Graphite Exposure provides enough depth and visual authorship to become the hero environment without becoming an obvious gradient effect.
+
+If approved:
+
+1. select hero typography inside this environment;
+2. compose the static hero;
+3. prototype the identity-led load;
+4. prototype the first-scroll transition.
+
+If rejected, diagnose the background itself before moving to Authored Light Plate.
 
 No runtime homepage change.
 
