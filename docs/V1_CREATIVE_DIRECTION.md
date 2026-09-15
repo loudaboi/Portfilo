@@ -154,6 +154,18 @@ Do not select typefaces only because they look futuristic or fashionable.
 
 Portfilo is not globally locked to one permanent surface across every page.
 
+For the current homepage hero, the founder has explicitly locked:
+
+**black / graphite / neutral silver / off-white**
+
+No blue, navy, teal, purple, or other signal color is approved for the homepage hero.
+
+The OpenAI Business reference applies to grain density, dark material depth, and broad uneven illumination only. Its cool hue must not be copied.
+
+Current detailed hero material authority:
+
+`docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+
 For the current homepage direction, the founder has explicitly selected a **dark-first near-black environment**.
 
 Other surfaces may still move between:
