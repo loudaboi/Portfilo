@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**STATIC PROTOTYPE READY FOR FOUNDER REVIEW**
+**FOUNDER-REJECTED / HISTORICAL FAILURE EVIDENCE**
 
 ## Decision job
 
@@ -146,3 +146,30 @@ No runtime homepage replacement.
 No merge to `main`.
 
 No deployment.
+
+
+## Founder rejection outcome
+
+This static prototype is rejected.
+
+Observed failures:
+
+- unapproved blue tint entered the surface;
+- grain treatment was too weak to read as the intended material;
+- composition regressed to a generic creative-tech / agency hero;
+- left-heavy large sans headline + empty right field repeated the same failure pattern the redesign was supposed to eliminate;
+- motion, transitions, and pointer behavior were incorrectly deferred as decoration rather than treated as part of the hero's defining behavior;
+- the rendered result should have been rejected internally by the visual-direction skill before founder review.
+
+Do not tune this prototype.
+
+Do not preserve its composition, color treatment, or hierarchy under new cosmetics.
+
+Retained evidence only:
+
+- approved identity assets;
+- approved copy;
+- the founder's preference for a grainy neutral dark resting surface;
+- motion / transitions / pointer behavior as core design material.
+
+The next hero proposal must be materially different at the composition level.
