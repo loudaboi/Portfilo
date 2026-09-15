@@ -173,3 +173,19 @@ Retained evidence only:
 - motion / transitions / pointer behavior as core design material.
 
 The next hero proposal must be materially different at the composition level.
+
+
+## Additional founder correction — identity composition
+
+The prototype also failed by joining the Sharp Ornamental 01 emblem and PORTFILO wordmark into a conventional horizontal lockup in the hero/header.
+
+That treatment is founder-rejected for the homepage.
+
+Do not use the combined horizontal lockup as the hero identity treatment.
+
+Retain both approved assets independently:
+
+- Sharp Ornamental 01 emblem;
+- PORTFILO wordmark.
+
+Their relationship should be created through composition, placement, scale, state, and motion rather than physically joining them into one logo unit.
