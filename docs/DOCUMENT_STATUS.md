@@ -58,6 +58,7 @@ _Last updated: 2026-09-15_
 - `research/design/v1-background-atmosphere-motion-language.md`
 - `research/design/v1-graphite-exposure-background-specimen.html` — founder-rejected background-only specimen
 - `research/design/v1-impeccable-method-study.md`
+- `research/design/v1-hero-reference-translation-and-directions.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -107,7 +108,7 @@ Typography:
 
 Homepage:
 
-**VISUAL REFERENCE TRANSLATION / COMPLETE HERO DIRECTION RESET**
+**COMPLETE HERO DIRECTION SELECTION / TWO DIRECTIONS READY**
 
 Positioning:
 
@@ -137,24 +138,18 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**REFERENCE EXTRACTION + COMPLETE HERO DIRECTION PROPOSAL**
+**FOUNDER DIRECTION SELECTION**
 
-Mandatory visual skill:
+Current direction record:
 
-`skills/portfilo-visual-direction/SKILL.md`
+`research/design/v1-hero-reference-translation-and-directions.md`
 
-Method study:
+Candidates:
 
-`research/design/v1-impeccable-method-study.md`
+- A — Quiet Surface / Active Interface — recommended;
+- B — Context Frames — MetaLab-derived, more interaction-led;
+- reject both.
 
-Graphite Exposure is rejected and must not be tuned.
-
-The OpenAI Business reference applies to the quiet grainy background/material only, not its structure.
-
-MERSI / 4WIDE / Dash / MetaLab should be translated by mechanism into Portfilo rather than imitated at the surface level.
-
-Next output is no more than two complete first-viewport directions for founder selection.
-
-No isolated background or typography specimen.
+Typography remains open until a complete direction is selected.
 
 No hero implementation, homepage expansion, merge to `main`, or deployment is authorized.
