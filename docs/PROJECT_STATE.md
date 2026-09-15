@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 HERO LAYOUT STORYBOARD SELECTION**
+**PORTFILO V1 BROWSER-FIRST FIRST-VIEWPORT ITERATION**
 
 ## Founder-approved current direction
 
@@ -613,20 +613,55 @@ Important storyboard notation boundary:
 - placeholder typography is not authority;
 - context boxes are not production components.
 
+## Visual workflow reset
+
+Founder-approved on 2026-09-15.
+
+Current visual implementation authority:
+
+`DESIGN.md`
+
+The previous hero storyboard / layout-concept loop is stopped.
+
+The recent Split Tension / Identity Spine comparison, four-state storyboard, Quiet Surface prototype, and other hero studies remain research history only. They do not prescribe the next composition.
+
+The next visual iteration must happen in the **real Astro homepage** and be judged from the **real rendered browser output**.
+
+Do not:
+
+- create another detached hero specimen;
+- create another abstract layout diagram;
+- create another named visual concept before a working composition exists;
+- add motion to rescue a weak static composition;
+- redesign below-fold sections during this gate.
+
 ## Exact next task
 
-**FOUNDER LAYOUT ARCHITECTURE SELECTION**
+**REAL FIRST-VIEWPORT BROWSER ITERATION**
 
-Choose:
+Target:
 
-- B — Split Tension;
-- A — Identity Spine;
-- reject both.
+`src/pages/index.astro`
 
-If B is selected, define exact desktop geometry next while keeping the seam implicit.
+Process:
 
-Do not select typography or build another hero prototype before layout architecture is selected.
+1. inspect the current running first viewport;
+2. inspect the selected real layout references;
+3. identify the largest structural differences;
+4. propose one bounded first-viewport composition change;
+5. implement only after that plan is accepted;
+6. inspect the rendered result at 1440 × 900;
+7. inspect at a representative mobile viewport;
+8. report the three largest visible problems;
+9. make one consolidated correction pass;
+10. return the real rendered page for founder review.
 
-No runtime homepage replacement.
+Use `DESIGN.md`.
+
+Hero/interface typography remains open and must be judged inside the real viewport.
+
+No hero motion yet.
+
+No below-fold redesign.
 
 No merge to `main` or deployment is authorized.
