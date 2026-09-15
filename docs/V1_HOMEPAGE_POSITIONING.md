@@ -100,6 +100,24 @@ Website work remains valid when a website or web product is the appropriate resp
 
 Portfilo should not be positioned primarily as a web-development agency.
 
+## Opening-screen clarification
+
+Founder-approved on 2026-09-15:
+
+The opening should communicate only:
+
+- Portfilo identity;
+- the problem-led software proposition;
+- a short clarification that Portfilo designs and develops software.
+
+It does **not** need to enumerate internal systems, automation, AI integration, and customer-facing products in the opening screen.
+
+That capability range belongs later in Services and Work.
+
+The opening is not required to behave like a conventional isolated marketing hero or exactly fill 100vh.
+
+A following section may enter the initial viewport if the transition is intentional and compositionally useful.
+
 ## Homepage narrative
 
 The approved hierarchy remains:
