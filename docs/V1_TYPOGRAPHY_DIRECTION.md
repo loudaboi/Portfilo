@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**HERO TYPOGRAPHY OPEN / BRICOLAGE GROTESQUE REJECTED FOR HERO**
+**HERO TYPOGRAPHY OPEN / REVIEW INSIDE COMPLETE HERO DIRECTION**
 
 Parent authority:
 
@@ -222,25 +222,29 @@ The approved PORTFILO wordmark remains unchanged.
 
 Current next gate:
 
-**BACKGROUND ATMOSPHERE SELECTION BEFORE TYPOGRAPHY**
+**TYPOGRAPHY DEFERRED TO COMPLETE HERO DIRECTION**
 
-The Stateful Typeset / Constraint Fit specimen was founder-rejected.
+The background-only review sequence was founder-rejected as an invalid isolation of a dependent visual decision.
 
-Hero-specific outcome:
+Hero-specific status:
 
 - Bricolage Grotesque is rejected;
 - Onest has no current authority;
 - Mona Sans remains reopened and unprotected;
-- no replacement hero family is selected yet.
+- no replacement hero family is selected.
 
-Reason for sequencing change:
+Do not produce another disconnected font specimen.
 
-The hero type should be evaluated inside the selected background environment rather than being forced to carry the entire visual system on an empty black canvas.
+For hero work, typography must be judged together with:
 
-Current background/motion authority:
+- selected resting surface;
+- identity placement;
+- headline/support hierarchy;
+- navigation relationship;
+- motion thesis.
 
-`research/design/v1-background-atmosphere-motion-language.md`
+Use:
 
-Do not start another typography specimen until the founder selects a background family.
+`skills/portfilo-visual-direction/SKILL.md`
 
 The approved PORTFILO wordmark remains unchanged.
