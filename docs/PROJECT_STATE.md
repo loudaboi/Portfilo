@@ -488,26 +488,39 @@ Retained implementation territory:
 
 Direction B — Context Frames remains future expansion evidence only.
 
+## Typography + composition research outcome
+
+Current record:
+
+`research/design/v1-quiet-surface-hero-typography-composition.md`
+
+Three systems remain:
+
+1. **Schibsted Grotesk** — recommended;
+2. **Instrument Sans** — control candidate;
+3. **Hanken Grotesk** — restrained alternate.
+
+Recommended resting composition:
+
+- compact identity lockup upper-left;
+- primary navigation upper-right;
+- two-line headline in the lower half;
+- support copy directly beneath the headline as part of the same group;
+- quiet right side;
+- grainy dark surface with no hero object;
+- later motion uses clean clipping / continuity boundaries.
+
 ## Exact next task
 
-**HERO TYPOGRAPHY + FIRST-VIEWPORT COMPOSITION**
+**FOUNDER TYPOGRAPHY + COMPOSITION SELECTION**
 
-Apply:
+Choose:
 
-`skills/portfilo-visual-direction/SKILL.md`
+- A — Schibsted Grotesk + recommended composition;
+- B — Instrument Sans + same composition;
+- C — Hanken Grotesk + same composition;
+- reject typography and/or composition.
 
-Resolve the typography and exact static hero composition **inside Direction A**.
-
-The next decision output should:
-
-1. compare no more than three typography systems;
-2. use the exact approved hero headline and support copy;
-3. define the first-viewport hierarchy and placement together with the selected type;
-4. retain the quiet grainy dark surface as supporting material only;
-5. explain how the composition leaves room for the later motion thesis.
-
-Do not create another disconnected font specimen.
-
-Do not implement the hero yet.
+Do not build the hero before selection.
 
 No merge to `main` or deployment is authorized.
