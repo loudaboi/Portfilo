@@ -116,7 +116,7 @@ Typography:
 
 Homepage:
 
-**OPENING-SCREEN CONTENT LOCKED / GEOMETRY OPEN / CODEX IMPLEMENTATION ONLY**
+**METALAB SELECTED / OPENING GEOMETRY STUDY / CODEX IMPLEMENTATION ONLY**
 
 Positioning:
 
@@ -152,16 +152,10 @@ The emblem and wordmark remain approved assets, but must be treated independentl
 
 ## Exact next task
 
-**OPENING-SCREEN GEOMETRY DECISION**
+**MEASURE METALAB'S CURRENT OPENING SCREEN**
 
-Approved opening content:
+MetaLab is the single founder-selected structural reference for the next opening-geometry decision.
 
-- PORTFILO wordmark;
-- Sharp Ornamental 01 emblem;
-- Work / Services / Hustle / Journal / Contact;
-- “Software built around the problem.”;
-- “We design and develop software around business needs and constraints.”
+Do not mix in Obys or other reference geometries during this measurement phase.
 
-Do not add content or force reference-owned rails/coordinates.
-
-No runtime homepage implementation is authorized until the geometry is founder-approved.
+No runtime homepage implementation is authorized yet.
