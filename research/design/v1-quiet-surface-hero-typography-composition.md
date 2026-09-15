@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**SCHIBSTED GROTESK + RECOMMENDED COMPOSITION FOUNDER-SELECTED / PROTOTYPE BUILT**
+**STATIC COMPOSITION REJECTED / TYPOGRAPHY NO LONGER LOCKED BY THIS PROTOTYPE**
 
 ## Decision job
 
@@ -498,3 +498,19 @@ Current gate:
 **FOUNDER STATIC HERO REVIEW**
 
 Do not add motion until the static hero passes.
+
+
+## Rejection correction
+
+The built static composition was founder-rejected.
+
+This rejection invalidates:
+
+- the left-heavy hero composition;
+- the blue-black tint;
+- the assumption that motion can be layered on after the static frame is approved;
+- the assumption that the current Schibsted treatment is proven by this prototype.
+
+Schibsted Grotesk is not globally rejected, but it is no longer considered locked by this failed composition.
+
+Do not build another font-first or static-layout-first specimen from this record.
