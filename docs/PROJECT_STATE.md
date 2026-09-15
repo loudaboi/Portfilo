@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 COMPLETE HERO DIRECTION SELECTION**
+**PORTFILO V1 QUIET SURFACE HERO TYPOGRAPHY + COMPOSITION**
 
 ## Founder-approved current direction
 
@@ -463,16 +463,51 @@ Both retain the approved identity, copy, product architecture, and no-fake-evide
 
 Hero typography remains open and will be selected inside the chosen direction.
 
+## Founder-selected hero direction
+
+**A — Quiet Surface / Active Interface**
+
+Current direction record:
+
+`research/design/v1-hero-reference-translation-and-directions.md`
+
+Selected thesis:
+
+**A quiet grainy dark surface keeps Portfilo calm at rest, while masks, spatial continuity, and subtle material response make the interface feel alive when the visitor acts.**
+
+Retained implementation territory:
+
+- dark near-black / blue-black grainy resting surface;
+- Sharp Ornamental 01 + approved PORTFILO wordmark;
+- restrained hero typography;
+- approved headline and support copy;
+- compact stable navigation;
+- GSAP / masks / clip-path / Flip before WebGL;
+- subtle pointer response tied to material, not cursor gimmicks;
+- no constant background spectacle.
+
+Direction B — Context Frames remains future expansion evidence only.
+
 ## Exact next task
 
-**FOUNDER DIRECTION SELECTION**
+**HERO TYPOGRAPHY + FIRST-VIEWPORT COMPOSITION**
 
-Choose:
+Apply:
 
-- A — Quiet Surface / Active Interface;
-- B — Context Frames;
-- reject both.
+`skills/portfilo-visual-direction/SKILL.md`
 
-Do not implement a hero before direction selection.
+Resolve the typography and exact static hero composition **inside Direction A**.
+
+The next decision output should:
+
+1. compare no more than three typography systems;
+2. use the exact approved hero headline and support copy;
+3. define the first-viewport hierarchy and placement together with the selected type;
+4. retain the quiet grainy dark surface as supporting material only;
+5. explain how the composition leaves room for the later motion thesis.
+
+Do not create another disconnected font specimen.
+
+Do not implement the hero yet.
 
 No merge to `main` or deployment is authorized.
