@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**RESEARCH COMPLETE / FOUNDER TYPOGRAPHY + COMPOSITION SELECTION GATE**
+**SCHIBSTED GROTESK + RECOMMENDED COMPOSITION FOUNDER-SELECTED / PROTOTYPE BUILT**
 
 ## Decision job
 
@@ -479,3 +479,22 @@ No runtime homepage replacement yet.
 No merge to `main`.
 
 No deployment.
+
+
+## Founder selection outcome
+
+**A — Schibsted Grotesk + recommended composition** is selected.
+
+Static prototype:
+
+`research/design/v1-quiet-surface-hero-prototype.html`
+
+Rendered review record:
+
+`research/design/v1-quiet-surface-hero-prototype-review.md`
+
+Current gate:
+
+**FOUNDER STATIC HERO REVIEW**
+
+Do not add motion until the static hero passes.
