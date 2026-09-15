@@ -98,11 +98,11 @@ Favicon:
 
 Typography:
 
-**MONA SANS / FOUNDER-APPROVED WEBSITE TYPOGRAPHY**
+**MONA SANS HERO TREATMENT REOPENED / TYPOGRAPHY REVIEW ACTIVE**
 
 Homepage:
 
-**ASSEMBLY MOTION APPROVED / FULL-SCREEN MATERIAL SELECTION ACTIVE**
+**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION ACTIVE / ASSEMBLY MOTION RETAINED AS EVIDENCE**
 
 Positioning:
 
@@ -132,17 +132,17 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**ASSEMBLY FULL-SCREEN VISUAL MATERIAL SELECTION**
+**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
 
-Selected behavior:
+Latest review:
 
-**B — Assembly / LOADER-TO-HERO MOTION APPROVED**
+`research/design/v1-hero-visual-review-reset.md`
 
-Material candidates:
+Retain emblem + wordmark.
 
-- A — Crossfield;
-- B — Refraction;
-- C — Strata.
+Reopen hero typography and supporting-copy composition.
+
+Crossfield / Refraction / Strata are rejected as current material directions.
 
 Review record:
 
