@@ -15,8 +15,9 @@ Read in this order:
 5. `docs/V1_CREATIVE_DIRECTION.md`
 6. `docs/V1_HOMEPAGE_POSITIONING.md`
 7. `docs/V1_HOMEPAGE_COPY.md`
-8. the current task-specific decision record
-9. current runtime source
+8. `docs/V1_HERO_EXPERIENCE_CONTRACT.md`
+9. the current task-specific decision record
+10. current runtime source
 
 The repository is the durable source of truth. Chat is a working session.
 
