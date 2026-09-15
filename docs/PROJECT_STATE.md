@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 BACKGROUND ATMOSPHERE + MOTION LANGUAGE DECISION GATE**
+**PORTFILO V1 GRAPHITE EXPOSURE BACKGROUND REVIEW**
 
 ## Founder-approved current direction
 
@@ -380,13 +380,15 @@ Current research authority:
 
 ## Background candidates
 
-Current decision gate:
+Founder-selected background family:
 
-1. **A — Graphite Exposure** — recommended first prototype;
-2. **B — Low-Chroma Spectrum**;
-3. **C — Authored Light Plate**.
+**A — Graphite Exposure**
 
-No candidate is selected yet.
+Current specimen:
+
+`research/design/v1-graphite-exposure-background-specimen.html`
+
+Low-Chroma Spectrum and Authored Light Plate remain alternatives only.
 
 ## Motion direction
 
@@ -416,17 +418,20 @@ The approved `PORTFILO` wordmark remains unchanged.
 
 ## Exact next task
 
-**BACKGROUND ATMOSPHERE SELECTION**
+**FOUNDER VISUAL REVIEW — GRAPHITE EXPOSURE BACKGROUND**
 
-Founder selects:
+Review the isolated 1440 × 900 plate with emblem + wordmark only.
 
-- A — Graphite Exposure;
-- B — Low-Chroma Spectrum;
-- C — Authored Light Plate.
+Judge:
 
-After selection, build only the isolated 1440 × 900 background plate with the approved emblem + wordmark as context anchors.
+- whether the background has enough depth to feel intentional;
+- whether the exposure remains subtle rather than reading as a visible gradient/blob;
+- whether the grain contributes material quality without becoming texture for its own sake;
+- whether the approved identity remains stronger than the atmosphere.
 
-Do not compose another full hero yet.
+If approved, reopen hero typography inside this environment.
+
+Do not compose the full hero yet.
 
 Do not add motion yet.
 
