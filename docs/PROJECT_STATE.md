@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 FIRST-VIEWPORT IMPLEMENTATION REJECTED / VISUAL PROCESS RESET PENDING**
+**PORTFILO V1 REFERENCE-PINNED GEOMETRY SELECTION**
 
 ## Founder-approved current direction
 
@@ -662,13 +662,37 @@ The local Codex edits were not committed and have no design authority.
 
 Do not commit or preserve that composition.
 
+## Visual authorship role boundary
+
+Founder-approved:
+
+- Codex remains useful as implementer, browser inspector, critic, and QA agent;
+- Codex is no longer allowed to invent the macro hero composition from abstract constraints;
+- visual geometry must come from a founder-approved real reference translation;
+- browser inspection remains required after implementation.
+
+Current workflow:
+
+`real reference -> measured geometry -> founder approval -> Codex implementation -> browser QA`
+
 ## Exact next task
 
-**VISUAL AUTHORSHIP PROCESS RESET**
+**REFERENCE-PINNED FIRST-VIEWPORT GEOMETRY**
 
-Do not ask Codex to invent another hero composition from abstract constraints.
+Research and compare a very small set of real layouts.
 
-Before another implementation pass, establish a concrete geometry source of truth from real reference layouts and founder selection.
+Current lead structural source:
+
+**Obys**
+
+Supporting references:
+
+- OpenAI Business — material only;
+- MERSI — transition/continuity later.
+
+The next deliverable is a measured Portfilo first-viewport geometry spec derived from the selected real layout.
+
+Do not ask Codex to invent another hero composition before that spec is founder-approved.
 
 No runtime homepage implementation is currently authorized.
 
