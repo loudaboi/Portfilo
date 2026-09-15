@@ -1,10 +1,10 @@
 # Portfilo v1 Website Typography Direction
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-15_
 
 ## Status
 
-**HERO TYPOGRAPHY REOPENED AFTER RENDERED REVIEW**
+**HERO TYPOGRAPHY REOPENED / STATEFUL TYPESET SPECIMEN UNDER REVIEW**
 
 Parent authority:
 
@@ -23,7 +23,7 @@ No homepage composition, color system, navigation layout, hero mechanism, or mot
 
 ## Locked constraints
 
-- wordmark remains Noto Serif Display Regular as vector outlines;
+- wordmark remains the founder-approved `PORTFILO` all-caps Noto Serif Display SemiCondensed Medium production geometry as vector outlines;
 - website type does not need to match the wordmark;
 - approved hero headline remains:
   **Software built around the problem.**
@@ -193,7 +193,7 @@ Approved usage direction:
 - no decorative mono by default;
 - no excessive width/slant animation.
 
-The Portfilo wordmark remains Noto Serif Display Regular as vector outlines and is not replaced by Mona Sans.
+The Portfilo wordmark remains the approved all-caps Noto Serif Display SemiCondensed Medium production geometry as vector outlines and is not replaced by Mona Sans.
 
 ## Current gate
 
@@ -222,6 +222,25 @@ The approved PORTFILO wordmark remains unchanged.
 
 Current next gate:
 
-**HERO VISUAL + TYPOGRAPHIC RE-EXPLORATION**
+**STATEFUL TYPESET / CONSTRAINT FIT SPECIMEN REVIEW**
+
+Founder selected **Stateful Typeset** as the primary hero direction and approved **A — Constraint Fit** for the first static specimen.
+
+Current specimen typography under test:
+
+- **Bricolage Grotesque** — hero display;
+- **Onest** — interface/navigation/support.
+
+This is a test, not a typography lock.
+
+Review record:
+
+`research/design/v1-stateful-typeset-constraint-fit.md`
+
+Specimen:
+
+`research/design/v1-stateful-typeset-constraint-fit-specimen.html`
 
 Do not treat the previous Mona Sans hero treatment as locked.
+
+Do not promote Bricolage Grotesque or Onest to production typography until the static specimen passes founder visual review.
