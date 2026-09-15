@@ -59,6 +59,7 @@ _Last updated: 2026-09-15_
 - `research/design/v1-graphite-exposure-background-specimen.html` — founder-rejected background-only specimen
 - `research/design/v1-impeccable-method-study.md`
 - `research/design/v1-hero-reference-translation-and-directions.md`
+- `research/design/v1-quiet-surface-hero-typography-composition.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -138,18 +139,17 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**HERO TYPOGRAPHY + FIRST-VIEWPORT COMPOSITION**
+**FOUNDER TYPOGRAPHY + COMPOSITION SELECTION**
 
-Selected direction:
+Current record:
 
-**A — Quiet Surface / Active Interface**
+`research/design/v1-quiet-surface-hero-typography-composition.md`
 
-Current direction record:
+Candidates:
 
-`research/design/v1-hero-reference-translation-and-directions.md`
-
-Hero typography remains open.
-
-The next decision must evaluate typography inside the complete resting composition, not in isolation.
+- A — Schibsted Grotesk + recommended composition;
+- B — Instrument Sans + same composition;
+- C — Hanken Grotesk + same composition;
+- reject.
 
 No hero implementation, motion prototype, homepage expansion, merge to `main`, or deployment is authorized.
