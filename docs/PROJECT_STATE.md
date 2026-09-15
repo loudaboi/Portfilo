@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Current phase
 
-**PORTFILO V1 FIRST-VIEWPORT BROWSER DIAGNOSIS AUTHORIZED**
+**PORTFILO V1 FIRST-VIEWPORT IMPLEMENTATION REJECTED / VISUAL PROCESS RESET PENDING**
 
 ## Founder-approved current direction
 
@@ -645,29 +645,31 @@ The next action is authorized:
 
 This approval does not authorize implementation yet.
 
+## Latest founder rejection
+
+The first browser-first Codex composition pass is **founder-rejected**.
+
+Observed failures:
+
+- generic dark agency hero remained;
+- giant sans proposition still dominated;
+- emblem, wordmark, and proposition were distributed as isolated bands rather than one authored system;
+- conventional top-right navigation remained;
+- negative space was technically cleaner but still category-generic;
+- browser inspection improved observability but did not solve visual authorship.
+
+The local Codex edits were not committed and have no design authority.
+
+Do not commit or preserve that composition.
+
 ## Exact next task
 
-**REAL FIRST-VIEWPORT BROWSER DIAGNOSIS**
+**VISUAL AUTHORSHIP PROCESS RESET**
 
-Use:
+Do not ask Codex to invent another hero composition from abstract constraints.
 
-- `AGENTS.md`
-- `DESIGN.md`
-- `docs/V1_IDENTITY_SYSTEM.md`
-- `docs/V1_HOMEPAGE_COPY.md`
-- the real runtime source
-- the documented Obys and MERSI references
+Before another implementation pass, establish a concrete geometry source of truth from real reference layouts and founder selection.
 
-Required output before any edit:
-
-1. three largest structural/compositional problems in the actual rendered first viewport;
-2. comparison of identity scale, navigation placement, copy width, margins, vertical rhythm, and negative-space distribution against the strongest references;
-3. one bounded composition change recommended first.
-
-Do not modify the homepage until that diagnosis is reviewed and approved.
-
-No hero motion.
-
-No below-fold redesign.
+No runtime homepage implementation is currently authorized.
 
 No merge to `main` or deployment is authorized.
