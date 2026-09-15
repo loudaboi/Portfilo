@@ -537,6 +537,20 @@ Retain:
 
 Schibsted Grotesk is reopened. The failed prototype does not prove or disprove the family in another materially different composition.
 
+## Identity composition correction
+
+For the homepage hero, the combined horizontal emblem + wordmark lockup is **founder-rejected**.
+
+Do not join the two approved assets into one conventional header logo.
+
+Use them as independent compositional elements:
+
+- Sharp Ornamental 01 may act as the compact interface identity;
+- PORTFILO wordmark may appear separately where the composition benefits;
+- their relationship comes from placement, scale, state, and motion.
+
+This does not reject either asset individually.
+
 ## Exact next task
 
 **COMPLETE HERO EXPERIENCE REDESIGN**
