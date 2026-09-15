@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**FOUNDER-APPROVED DIRECTION / SPECIMEN ACTIVE / TYPOGRAPHY NOT YET LOCKED**
+**FOUNDER-REJECTED AS CURRENT HERO DIRECTION / HISTORICAL EVIDENCE**
 
 ## Decision job
 
@@ -128,3 +128,21 @@ No runtime homepage files are changed by this specimen.
 No merge to `main` or deployment is authorized.
 
 Do not add motion until the static typography/composition passes founder review.
+
+
+## Founder review outcome
+
+The Constraint Fit specimen is rejected as the current Portfilo hero direction.
+
+Observed founder feedback:
+
+- the composition does not provide the desired visual/background experience;
+- the stepped typography does not feel right;
+- Bricolage Grotesque is rejected for the hero;
+- motion and transitions in references such as 4WIDE and MERSI are more compelling evidence than making typography itself the entire visual event.
+
+Stateful Typeset / Constraint Fit must not be incrementally polished.
+
+Current authority:
+
+`research/design/v1-background-atmosphere-motion-language.md`
