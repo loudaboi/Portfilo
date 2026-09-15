@@ -115,6 +115,39 @@ Use real references as structural evidence, not mood words.
 
 Do not copy their palette, typography, branded graphics, photography, or motifs.
 
+
+## Agent role boundary
+
+For visual authorship, Codex is **not** the art director.
+
+Codex may:
+
+- inspect the running page;
+- measure layout;
+- compare rendered output against an approved reference/spec;
+- implement exact approved geometry;
+- run responsive/build/QA checks;
+- report visual defects.
+
+Codex must not independently decide:
+
+- the macro first-viewport composition;
+- where identity should live;
+- which empty region should be filled;
+- headline scale as an art-direction choice;
+- decorative visual motifs;
+- the structural layout direction.
+
+Those decisions must come from a founder-approved reference-pinned geometry spec.
+
+Current workflow:
+
+`real reference -> measured geometry -> founder approval -> Codex implementation -> browser QA`
+
+Do not return to:
+
+`abstract constraints -> Codex invents layout -> critique after the fact`
+
 ## Browser-first visual workflow
 
 The browser is the source of visual truth.
