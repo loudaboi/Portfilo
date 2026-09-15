@@ -4,7 +4,7 @@ _Last updated: 2026-09-15_
 
 ## Status
 
-**GRAPHITE EXPOSURE SELECTED / STATIC PLATE UNDER FOUNDER REVIEW**
+**GRAPHITE EXPOSURE SPECIMEN REJECTED / BACKGROUND-ONLY GATE SUPERSEDED**
 
 ## Decision job
 
@@ -372,34 +372,69 @@ The approved wordmark remains unchanged.
 
 ---
 
-# Founder selection
+# Founder review correction
 
-**A — Graphite Exposure** is selected for the first background prototype.
+The isolated **Graphite Exposure** plate is founder-rejected.
 
-Static review specimen:
+The failure is not simply that its gradient values were wrong.
 
-`research/design/v1-graphite-exposure-background-specimen.html`
+The review exposed a process error:
 
-The specimen intentionally contains only:
+- the background was treated as a standalone design concept;
+- the plate did not provide enough context to judge whether the surface works with typography, hierarchy, identity, and interaction;
+- the result read as generic AI-produced dark-gradient material;
+- the founder reasonably could not tell what meaningful design decision the artifact was proving.
 
-- Graphite Exposure background atmosphere;
-- approved Sharp Ornamental 01 emblem;
-- approved PORTFILO wordmark.
+Do not tune Graphite Exposure.
 
-No hero typography, support copy, navigation, or motion is included in this gate.
+## Clarified background intent
 
-## Current review gate
+The founder's static-background reference is the **background treatment** visible on OpenAI Business, not that site's page structure.
 
-Judge whether Graphite Exposure provides enough depth and visual authorship to become the hero environment without becoming an obvious gradient effect.
+Transferable qualities:
 
-If approved:
+- dark near-black / blue-black field;
+- visible fine grain;
+- restrained soft gradient / uneven illumination;
+- background remains supportive rather than becoming the hero concept;
+- no obvious decorative center object;
+- no need for complex realtime graphics.
 
-1. select hero typography inside this environment;
-2. compose the static hero;
-3. prototype the identity-led load;
-4. prototype the first-scroll transition.
+This is reference evidence, not a command to copy exact colors, noise, or gradient geometry.
 
-If rejected, diagnose the background itself before moving to Authored Light Plate.
+## Clarified experience intent
+
+The expressive quality should come primarily from:
+
+- clean transition choreography;
+- state continuity;
+- motion;
+- selective pointer response;
+- interaction between real media / typography / identity.
+
+Current reference roles:
+
+- **OpenAI Business** — quiet grainy static surface only;
+- **MERSI** — transition continuity and media movement;
+- **4WIDE** — clean high-quality motion and interaction, not WebGL imitation;
+- **Dash** — pointer-responsive visual material / lightweight interaction evidence;
+- **MetaLab** — authored alternate visual states / graphics and black-space alternation.
+
+A more authored MetaLab-like graphic system remains a possible fallback if a restrained static surface plus interaction cannot carry enough identity.
+
+## Process correction
+
+Do not return to:
+
+`background-only test -> font-only test -> layout-only test -> motion later`
+
+when those elements depend on each other.
+
+Use the minimum meaningful unit required by:
+
+`skills/portfilo-visual-direction/SKILL.md`
+
+For the hero, the next useful decision is a **complete but restrained first-viewport direction**, informed by explicit reference translation, before implementation.
 
 No runtime homepage change.
 
