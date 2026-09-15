@@ -60,6 +60,8 @@ _Last updated: 2026-09-15_
 - `research/design/v1-impeccable-method-study.md`
 - `research/design/v1-hero-reference-translation-and-directions.md`
 - `research/design/v1-quiet-surface-hero-typography-composition.md`
+- `research/design/v1-quiet-surface-hero-prototype.html`
+- `research/design/v1-quiet-surface-hero-prototype-review.md`
 - `research/migration/v1-full-rebuild-audit.md`
 
 ## Superseded / historical design evidence
@@ -109,7 +111,7 @@ Typography:
 
 Homepage:
 
-**QUIET SURFACE / ACTIVE INTERFACE SELECTED / TYPOGRAPHY + COMPOSITION ACTIVE**
+**QUIET SURFACE STATIC HERO REVIEW / SCHIBSTED GROTESK SELECTED**
 
 Positioning:
 
@@ -139,17 +141,16 @@ This does not make the rejected homepage design release-ready.
 
 ## Exact next task
 
-**FOUNDER TYPOGRAPHY + COMPOSITION SELECTION**
+**FOUNDER STATIC HERO REVIEW**
 
-Current record:
+Prototype:
 
-`research/design/v1-quiet-surface-hero-typography-composition.md`
+`research/design/v1-quiet-surface-hero-prototype.html`
 
-Candidates:
+Review record:
 
-- A — Schibsted Grotesk + recommended composition;
-- B — Instrument Sans + same composition;
-- C — Hanken Grotesk + same composition;
-- reject.
+`research/design/v1-quiet-surface-hero-prototype-review.md`
 
-No hero implementation, motion prototype, homepage expansion, merge to `main`, or deployment is authorized.
+Schibsted Grotesk is selected for this prototype.
+
+No motion, runtime homepage replacement, page expansion, merge to `main`, or deployment is authorized.
